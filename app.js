@@ -13,6 +13,7 @@ const CITIES = {
 const SEED_EVENTS = [
   {
     id: "aix-liberation",
+    scene: "festival",
     city: "aix",
     category: "Festival",
     title: "82ᵉ anniversaire de la Libération d'Aix-en-Provence",
@@ -26,6 +27,7 @@ const SEED_EVENTS = [
   },
   {
     id: "aix-musique-rue",
+    scene: "musique",
     city: "aix",
     category: "Musique",
     title: "Festival Musique dans la Rue — soirée de clôture",
@@ -39,6 +41,7 @@ const SEED_EVENTS = [
   },
   {
     id: "aix-apero-ugo",
+    scene: "village",
     city: "aix",
     category: "Soirée",
     title: "Les Apéros d'Ugo",
@@ -52,6 +55,7 @@ const SEED_EVENTS = [
   },
   {
     id: "aix-vasarely",
+    scene: "expo",
     city: "aix",
     category: "Expo",
     title: "Les Ateliers d'été à la Fondation Vasarely",
@@ -65,6 +69,7 @@ const SEED_EVENTS = [
   },
   {
     id: "aix-marche",
+    scene: "marche",
     city: "aix",
     category: "Marché",
     title: "Marché nocturne provençal",
@@ -78,6 +83,7 @@ const SEED_EVENTS = [
   },
   {
     id: "aix-marche-fleurs",
+    scene: "marche",
     city: "aix",
     category: "Marché",
     title: "Marché aux fleurs du matin",
@@ -91,6 +97,7 @@ const SEED_EVENTS = [
   },
   {
     id: "aix-cinema-plein-air",
+    scene: "cinema",
     city: "aix",
     category: "Soirée",
     title: "Cinéma en plein air — Le Voyage de Chihiro",
@@ -104,6 +111,7 @@ const SEED_EVENTS = [
   },
   {
     id: "aix-afterwork-rock",
+    scene: "musique",
     city: "aix",
     category: "Musique",
     title: "Afterwork Rock en plein air",
@@ -117,6 +125,7 @@ const SEED_EVENTS = [
   },
   {
     id: "aix-patrimoine",
+    scene: "chateau",
     city: "aix",
     category: "Expo",
     title: "Journées Européennes du Patrimoine",
@@ -130,6 +139,7 @@ const SEED_EVENTS = [
   },
   {
     id: "st-moutte",
+    scene: "chateau",
     city: "st",
     category: "Festival",
     title: "Les Scènes du Château de la Moutte (4ᵉ édition)",
@@ -143,6 +153,7 @@ const SEED_EVENTS = [
   },
   {
     id: "st-aoutienne",
+    scene: "sport",
     city: "st",
     category: "Sport",
     title: "L'Aoûtienne — Trophée Pourchet",
@@ -156,6 +167,7 @@ const SEED_EVENTS = [
   },
   {
     id: "st-rose-tarte",
+    scene: "marche",
     city: "st",
     category: "Marché",
     title: "Rosé & la Tarte Tropézienne",
@@ -169,6 +181,7 @@ const SEED_EVENTS = [
   },
   {
     id: "st-marche-port",
+    scene: "port",
     city: "st",
     category: "Marché",
     title: "Marché provençal du Port",
@@ -182,6 +195,7 @@ const SEED_EVENTS = [
   },
   {
     id: "st-blues-brothers",
+    scene: "chateau",
     city: "st",
     category: "Festival",
     title: "The Black Blues Brothers — Cirque musical",
@@ -195,6 +209,7 @@ const SEED_EVENTS = [
   },
   {
     id: "st-tribute-elvis",
+    scene: "musique",
     city: "st",
     category: "Musique",
     title: "Tribute to Elvis",
@@ -208,6 +223,7 @@ const SEED_EVENTS = [
   },
   {
     id: "st-voiles",
+    scene: "sport",
     city: "st",
     category: "Sport",
     title: "Les Voiles de Saint-Tropez",
@@ -221,6 +237,7 @@ const SEED_EVENTS = [
   },
   {
     id: "ram-festival",
+    scene: "festival",
     city: "ram",
     category: "Festival",
     title: "Festival de Ramatuelle",
@@ -234,6 +251,7 @@ const SEED_EVENTS = [
   },
   {
     id: "ram-dj",
+    scene: "plage",
     city: "ram",
     category: "Soirée",
     title: "DJ Set — Plage de Pampelonne",
@@ -247,6 +265,7 @@ const SEED_EVENTS = [
   },
   {
     id: "ram-cap-camarat",
+    scene: "nature",
     city: "ram",
     category: "Sport",
     title: "Randonnée du sentier du littoral — Cap Camarat",
@@ -260,6 +279,7 @@ const SEED_EVENTS = [
   },
   {
     id: "ram-marche",
+    scene: "marche",
     city: "ram",
     category: "Marché",
     title: "Marché de Ramatuelle",
@@ -273,6 +293,7 @@ const SEED_EVENTS = [
   },
   {
     id: "ram-bal-st-andre",
+    scene: "village",
     city: "ram",
     category: "Soirée",
     title: "Bal de la Saint-André et soupe au pistou",
@@ -286,6 +307,7 @@ const SEED_EVENTS = [
   },
   {
     id: "ram-escalet-melting-potes",
+    scene: "plage",
     city: "ram",
     category: "Musique",
     title: "Concerts plage de l'Escalet — Melting Potes",
@@ -299,6 +321,7 @@ const SEED_EVENTS = [
   },
   {
     id: "ram-musique-village",
+    scene: "musique",
     city: "ram",
     category: "Musique",
     title: "Musique au village — Lightnin'G-bird & Abdenor Natouri",
@@ -312,6 +335,7 @@ const SEED_EVENTS = [
   },
   {
     id: "ram-forum-associations",
+    scene: "village",
     city: "ram",
     category: "Festival",
     title: "Forum des associations",
@@ -327,7 +351,163 @@ const SEED_EVENTS = [
 
 const CATEGORIES = ["Musique", "Marché", "Festival", "Sport", "Soirée", "Expo"];
 
-// Informations pratiques sur les deux villes pilotes (sources : Ville d'Aix-en-Provence / INSEE,
+// Scène illustrée par défaut selon la catégorie (utilisée pour les événements publiés par les
+// utilisateurs, qui n'ont pas de scène assignée manuellement).
+const CATEGORY_SCENE = {
+  Musique: "musique",
+  Marché: "marche",
+  Festival: "festival",
+  Sport: "sport",
+  Soirée: "village",
+  Expo: "expo",
+};
+
+// ---- illustrations de scène (SVG faits maison, sans photo, pour éviter tout souci de droits) ----
+const SCENES = {
+  port: `
+    <rect width="200" height="120" fill="#bfe0e6"/>
+    <rect y="66" width="200" height="54" fill="#2f8a90"/>
+    <circle cx="168" cy="26" r="14" fill="#f2c869"/>
+    <polygon points="30,66 30,40 52,66" fill="#ffffff"/>
+    <rect x="26" y="60" width="30" height="14" rx="2" fill="#c1440e"/>
+    <line x1="30" y1="66" x2="30" y2="36" stroke="#8f330a" stroke-width="2"/>
+    <polygon points="100,66 100,46 118,66" fill="#ffffff"/>
+    <rect x="96" y="60" width="26" height="12" rx="2" fill="#1f6f78"/>
+    <line x1="100" y1="66" x2="100" y2="42" stroke="#17545a" stroke-width="2"/>
+    <polygon points="150,66 150,50 164,66" fill="#ffffff"/>
+    <rect x="147" y="60" width="20" height="10" rx="2" fill="#e3a72e"/>
+    <line x1="150" y1="66" x2="150" y2="46" stroke="#a9791c" stroke-width="2"/>
+  `,
+  plage: `
+    <rect width="200" height="120" fill="#fbe9c9"/>
+    <rect y="58" width="200" height="30" fill="#5db3a0"/>
+    <rect y="88" width="200" height="32" fill="#e8cd9a"/>
+    <circle cx="34" cy="28" r="16" fill="#e3a72e"/>
+    <polygon points="140,100 140,60 176,100" fill="#c1440e"/>
+    <rect x="138" y="98" width="4" height="22" fill="#8f330a"/>
+    <path d="M60,100 q10,-16 20,0" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <path d="M90,106 q10,-16 20,0" fill="none" stroke="#ffffff" stroke-width="3"/>
+  `,
+  marche: `
+    <rect width="200" height="120" fill="#faf6f1"/>
+    <polygon points="20,50 50,50 35,26" fill="#c1440e"/>
+    <rect x="24" y="50" width="22" height="40" fill="#ffffff" stroke="#e8e1d8"/>
+    <polygon points="80,50 110,50 95,22" fill="#1f6f78"/>
+    <rect x="84" y="50" width="22" height="44" fill="#ffffff" stroke="#e8e1d8"/>
+    <polygon points="140,50 170,50 155,26" fill="#e3a72e"/>
+    <rect x="144" y="50" width="22" height="40" fill="#ffffff" stroke="#e8e1d8"/>
+    <circle cx="35" cy="98" r="7" fill="#e3a72e"/>
+    <circle cx="95" cy="102" r="7" fill="#c1440e"/>
+    <circle cx="155" cy="98" r="7" fill="#1f6f78"/>
+  `,
+  chateau: `
+    <rect width="200" height="120" fill="#2c2854"/>
+    <circle cx="30" cy="20" r="2" fill="#ffffff"/>
+    <circle cx="60" cy="14" r="1.6" fill="#ffffff"/>
+    <circle cx="150" cy="18" r="2" fill="#ffffff"/>
+    <circle cx="170" cy="30" r="1.4" fill="#ffffff"/>
+    <rect x="60" y="52" width="80" height="60" fill="#1c1b1a"/>
+    <rect x="50" y="40" width="20" height="72" fill="#1c1b1a"/>
+    <rect x="130" y="40" width="20" height="72" fill="#1c1b1a"/>
+    <polygon points="50,40 60,26 70,40" fill="#1c1b1a"/>
+    <polygon points="130,40 140,26 150,40" fill="#1c1b1a"/>
+    <rect x="92" y="72" width="16" height="24" fill="#e3a72e"/>
+    <rect x="66" y="66" width="10" height="10" fill="#e3a72e"/>
+    <rect x="124" y="66" width="10" height="10" fill="#e3a72e"/>
+  `,
+  musique: `
+    <rect width="200" height="120" fill="#8f330a"/>
+    <polygon points="0,0 200,0 200,60 0,120" fill="#c1440e"/>
+    <ellipse cx="100" cy="112" rx="90" ry="10" fill="#1c1b1a" opacity="0.35"/>
+    <line x1="150" y1="30" x2="150" y2="86" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="146" cy="90" r="8" fill="#ffffff"/>
+    <text x="36" y="58" font-size="36" fill="#ffffff">♪</text>
+    <text x="68" y="84" font-size="28" fill="#f2c869">♫</text>
+  `,
+  festival: `
+    <rect width="200" height="120" fill="#faf0df"/>
+    <line x1="0" y1="18" x2="200" y2="18" stroke="#8f330a" stroke-width="2"/>
+    <polygon points="10,18 26,18 18,40" fill="#c1440e"/>
+    <polygon points="34,18 50,18 42,40" fill="#1f6f78"/>
+    <polygon points="58,18 74,18 66,40" fill="#e3a72e"/>
+    <polygon points="82,18 98,18 90,40" fill="#c1440e"/>
+    <polygon points="106,18 122,18 114,40" fill="#1f6f78"/>
+    <polygon points="130,18 146,18 138,40" fill="#e3a72e"/>
+    <polygon points="154,18 170,18 162,40" fill="#c1440e"/>
+    <polygon points="178,18 194,18 186,40" fill="#1f6f78"/>
+    <rect x="70" y="70" width="60" height="42" fill="#1c1b1a"/>
+    <polygon points="70,70 100,50 130,70" fill="#1c1b1a"/>
+    <circle cx="100" cy="94" r="10" fill="#e3a72e"/>
+  `,
+  expo: `
+    <rect width="200" height="120" fill="#f3ece1"/>
+    <rect x="46" y="20" width="108" height="72" fill="#ffffff" stroke="#1c1b1a" stroke-width="4"/>
+    <rect x="58" y="32" width="20" height="20" fill="#c1440e"/>
+    <rect x="82" y="32" width="20" height="20" fill="#e3a72e"/>
+    <rect x="106" y="32" width="20" height="20" fill="#1f6f78"/>
+    <rect x="58" y="56" width="20" height="20" fill="#1f6f78"/>
+    <rect x="82" y="56" width="20" height="20" fill="#c1440e"/>
+    <rect x="106" y="56" width="20" height="20" fill="#e3a72e"/>
+    <line x1="70" y1="92" x2="55" y2="112" stroke="#1c1b1a" stroke-width="3"/>
+    <line x1="130" y1="92" x2="145" y2="112" stroke="#1c1b1a" stroke-width="3"/>
+    <line x1="60" y1="112" x2="140" y2="112" stroke="#1c1b1a" stroke-width="3"/>
+  `,
+  village: `
+    <rect width="200" height="120" fill="#d7e6e2"/>
+    <rect y="96" width="200" height="24" fill="#cdbd9d"/>
+    <rect x="20" y="66" width="34" height="30" fill="#faf6f1" stroke="#e8e1d8"/>
+    <polygon points="16,66 37,48 58,66" fill="#c1440e"/>
+    <rect x="80" y="56" width="38" height="40" fill="#f2e7d5" stroke="#e8e1d8"/>
+    <polygon points="75,56 99,36 123,56" fill="#8f330a"/>
+    <rect x="146" y="70" width="32" height="26" fill="#faf6f1" stroke="#e8e1d8"/>
+    <polygon points="142,70 162,52 182,70" fill="#e3a72e"/>
+    <ellipse cx="68" cy="70" rx="5" ry="26" fill="#4f6e42"/>
+    <rect x="66" y="94" width="4" height="10" fill="#5c4632"/>
+    <ellipse cx="134" cy="76" rx="4" ry="20" fill="#6b8f5a"/>
+    <rect x="132" y="94" width="4" height="8" fill="#5c4632"/>
+  `,
+  cinema: `
+    <rect width="200" height="120" fill="#181433"/>
+    <circle cx="24" cy="18" r="1.6" fill="#ffffff"/>
+    <circle cx="50" cy="10" r="1.2" fill="#ffffff"/>
+    <circle cx="170" cy="16" r="1.6" fill="#ffffff"/>
+    <circle cx="184" cy="34" r="1.2" fill="#ffffff"/>
+    <circle cx="100" cy="8" r="1.2" fill="#ffffff"/>
+    <rect x="40" y="20" width="120" height="66" rx="4" fill="#faf6f1"/>
+    <rect x="46" y="26" width="108" height="54" fill="#e3a72e" opacity="0.25"/>
+    <polygon points="90,42 90,64 112,53" fill="#8f330a"/>
+    <ellipse cx="20" cy="112" rx="16" ry="8" fill="#232049"/>
+    <ellipse cx="180" cy="112" rx="16" ry="8" fill="#232049"/>
+  `,
+  sport: `
+    <rect width="200" height="120" fill="#bfe0e6"/>
+    <rect y="70" width="200" height="50" fill="#2f8a90"/>
+    <circle cx="166" cy="22" r="13" fill="#f2c869"/>
+    <polygon points="90,70 90,24 130,70" fill="#ffffff"/>
+    <polygon points="90,70 70,70 90,40" fill="#e3a72e"/>
+    <rect x="86" y="66" width="10" height="16" fill="#c1440e"/>
+    <line x1="30" y1="80" x2="50" y2="80" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+    <line x1="26" y1="90" x2="52" y2="90" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+    <polygon points="164,50 180,54 164,58" fill="#1c1b1a"/>
+    <line x1="164" y1="50" x2="164" y2="66" stroke="#1c1b1a" stroke-width="2"/>
+  `,
+  nature: `
+    <rect width="200" height="120" fill="#cfe6ea"/>
+    <circle cx="166" cy="24" r="14" fill="#f2c869"/>
+    <path d="M0,80 Q40,55 80,78 T200,70 V120 H0 Z" fill="#6b8f5a"/>
+    <path d="M0,96 Q50,78 100,96 T200,90 V120 H0 Z" fill="#4f6e42"/>
+    <ellipse cx="40" cy="70" rx="4" ry="18" fill="#3d5c33"/>
+    <rect x="38" y="86" width="4" height="8" fill="#5c4632"/>
+    <path d="M60,120 C70,100 90,100 100,120" fill="none" stroke="#e8cd9a" stroke-width="4"/>
+  `,
+};
+
+function sceneSVG(key){
+  const inner = SCENES[key] || SCENES.village;
+  return `<svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
+}
+
+// Informations pratiques sur les trois villes pilotes (sources : offices de tourisme, INSEE,
 // Wikipédia — chiffres 2022-2023, reformulés).
 const CITY_INFO = {
   aix: {
@@ -507,11 +687,10 @@ function renderMap(events){
 }
 
 function eventCardHTML(ev){
-  const thumbClass = ev.thumb ? " " + ev.thumb : "";
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
   return `
     <button class="event-card" data-id="${ev.id}">
-      <div class="thumb${thumbClass}"></div>
+      <div class="thumb">${sceneSVG(ev.scene)}</div>
       <div class="info">
         <div class="cat">${ev.category}</div>
         <div class="title">${ev.title}</div>
@@ -566,7 +745,8 @@ function openDetail(id){
   if (!ev) return;
   state.currentEventId = id;
 
-  document.getElementById("detail-hero").className = "detail-hero" + (ev.thumb === "alt2" ? " blue" : "");
+  document.getElementById("detail-hero").className = "detail-hero";
+  document.getElementById("detail-hero").innerHTML = sceneSVG(ev.scene);
   document.getElementById("detail-cat").textContent = iconFor(ev.category) + " " + ev.category;
   document.getElementById("detail-title").textContent = ev.title;
   document.getElementById("detail-date").textContent = formatDate(ev.date);
@@ -679,6 +859,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "local-" + Date.now(),
       city,
       category: fd.get("category"),
+      scene: CATEGORY_SCENE[fd.get("category")] || "village",
       title: fd.get("title"),
       date: fd.get("date"),
       time: fd.get("time"),
