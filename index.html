@@ -165,7 +165,19 @@
     <h1 class="form-title">❤️ Mes favoris</h1>
     <section id="favorites-list" class="event-list"></section>
     <p id="favorites-empty" class="empty-state hidden">Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.</p>
-  </nav>
+  </main>
+
+  <!-- ===================== MODALE : LIEU EMBLÉMATIQUE ===================== -->
+  <div id="landmark-modal" class="landmark-modal hidden">
+    <div class="landmark-modal-card">
+      <button class="modal-close" id="btn-landmark-close" aria-label="Fermer">✕</button>
+      <div id="landmark-modal-img" class="landmark-modal-img"></div>
+      <div class="landmark-modal-body">
+        <h2 id="landmark-modal-title"></h2>
+        <p id="landmark-modal-caption"></p>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

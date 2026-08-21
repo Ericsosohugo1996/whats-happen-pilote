@@ -507,6 +507,203 @@ function sceneSVG(key){
   return `<svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 }
 
+// ---- illustrations des lieux emblématiques (tags de la fiche ville) ----
+const LANDMARK_SCENES = {
+  "cours-mirabeau": `
+    <rect width="200" height="120" fill="#cfe6ea"/>
+    <rect y="86" width="200" height="34" fill="#d8cdb8"/>
+    <rect x="0" y="80" width="200" height="6" fill="#c8bb9e"/>
+    <circle cx="30" cy="46" r="16" fill="#6b8f5a"/><rect x="27" y="60" width="6" height="26" fill="#5c4632"/>
+    <circle cx="70" cy="40" r="18" fill="#7fa36b"/><rect x="66" y="56" width="7" height="30" fill="#5c4632"/>
+    <circle cx="130" cy="40" r="18" fill="#7fa36b"/><rect x="126" y="56" width="7" height="30" fill="#5c4632"/>
+    <circle cx="170" cy="46" r="16" fill="#6b8f5a"/><rect x="167" y="60" width="6" height="26" fill="#5c4632"/>
+    <circle cx="100" cy="96" r="14" fill="#bcdce0"/>
+    <rect x="94" y="92" width="12" height="14" fill="#8fa9ab"/>
+    <circle cx="100" cy="86" r="4" fill="#e3a72e"/>
+  `,
+  "quartier-mazarin": `
+    <rect width="200" height="120" fill="#f3ece1"/>
+    <rect y="90" width="200" height="30" fill="#d8cdb8"/>
+    <rect x="20" y="36" width="50" height="54" fill="#f2e3c9" stroke="#c8bb9e"/>
+    <rect x="80" y="26" width="46" height="64" fill="#e9d3ae" stroke="#c8bb9e"/>
+    <rect x="136" y="40" width="44" height="50" fill="#f2e3c9" stroke="#c8bb9e"/>
+    <rect x="30" y="50" width="10" height="14" fill="#1f6f78"/><rect x="50" y="50" width="10" height="14" fill="#1f6f78"/>
+    <rect x="92" y="42" width="10" height="14" fill="#c1440e"/><rect x="110" y="42" width="10" height="14" fill="#c1440e"/>
+    <rect x="148" y="54" width="10" height="14" fill="#1f6f78"/><rect x="164" y="54" width="10" height="14" fill="#1f6f78"/>
+    <rect x="95" y="70" width="16" height="20" fill="#8f330a"/>
+  `,
+  "ville-cezanne": `
+    <rect width="200" height="120" fill="#f3ece1"/>
+    <polygon points="60,110 100,20 140,110" fill="none" stroke="#5c4632" stroke-width="4"/>
+    <rect x="66" y="34" width="68" height="56" fill="#ffffff" stroke="#1c1b1a" stroke-width="3"/>
+    <polygon points="66,74 90,50 110,68 134,44 134,90 66,90" fill="#7fa36b"/>
+    <polygon points="90,50 100,34 112,50" fill="#8a6a8f"/>
+    <circle cx="120" cy="46" r="6" fill="#f2c869"/>
+    <line x1="100" y1="110" x2="100" y2="90" stroke="#5c4632" stroke-width="3"/>
+  `,
+  "ville-universitaire": `
+    <rect width="200" height="120" fill="#faf6f1"/>
+    <rect x="70" y="70" width="60" height="14" fill="#c1440e"/>
+    <rect x="66" y="86" width="68" height="12" fill="#1f6f78"/>
+    <rect x="74" y="100" width="52" height="10" fill="#e3a72e"/>
+    <polygon points="60,54 140,54 100,34" fill="#1c1b1a"/>
+    <rect x="96" y="54" width="8" height="8" fill="#1c1b1a"/>
+    <line x1="140" y1="54" x2="150" y2="70" stroke="#1c1b1a" stroke-width="2"/>
+    <circle cx="150" cy="72" r="3" fill="#e3a72e"/>
+  `,
+  "le-port": `
+    <rect width="200" height="120" fill="#bfe0e6"/>
+    <rect y="70" width="200" height="50" fill="#2f8a90"/>
+    <circle cx="170" cy="24" r="14" fill="#f2c869"/>
+    <polygon points="30,70 30,34 58,70" fill="#ffffff"/>
+    <rect x="24" y="62" width="38" height="16" rx="2" fill="#c1440e"/>
+    <line x1="30" y1="70" x2="30" y2="30" stroke="#8f330a" stroke-width="2"/>
+    <polygon points="90,70 90,42 114,70" fill="#ffffff"/>
+    <rect x="84" y="64" width="32" height="14" rx="2" fill="#1f6f78"/>
+    <line x1="90" y1="70" x2="90" y2="38" stroke="#17545a" stroke-width="2"/>
+    <polygon points="150,70 150,48 170,70" fill="#ffffff"/>
+    <rect x="145" y="64" width="26" height="12" rx="2" fill="#e3a72e"/>
+    <line x1="150" y1="70" x2="150" y2="44" stroke="#a9791c" stroke-width="2"/>
+  `,
+  "la-citadelle": `
+    <rect width="200" height="120" fill="#cfe6ea"/>
+    <circle cx="160" cy="22" r="14" fill="#f2c869"/>
+    <path d="M0,90 Q60,60 120,86 T200,80 V120 H0 Z" fill="#8a7a5c"/>
+    <rect x="80" y="46" width="56" height="46" fill="#c9b58f"/>
+    <rect x="70" y="34" width="16" height="58" fill="#c9b58f"/>
+    <rect x="130" y="34" width="16" height="58" fill="#c9b58f"/>
+    <polygon points="70,34 78,22 86,34" fill="#8a7a5c"/>
+    <polygon points="130,34 138,22 146,34" fill="#8a7a5c"/>
+    <rect x="76" y="26" width="4" height="8" fill="#8a7a5c"/>
+    <rect x="136" y="26" width="4" height="8" fill="#8a7a5c"/>
+    <rect x="100" y="66" width="14" height="22" fill="#5c4632"/>
+  `,
+  "plage-pampelonne": `
+    <rect width="200" height="120" fill="#fbe9c9"/>
+    <rect y="60" width="200" height="26" fill="#5db3a0"/>
+    <rect y="86" width="200" height="34" fill="#e8cd9a"/>
+    <circle cx="166" cy="26" r="15" fill="#e3a72e"/>
+    <polygon points="30,92 30,64 46,92" fill="#c1440e"/>
+    <rect x="24" y="92" width="16" height="6" fill="#8f330a"/>
+    <polygon points="76,96 76,68 92,96" fill="#1f6f78"/>
+    <rect x="70" y="96" width="16" height="6" fill="#17545a"/>
+    <polygon points="122,92 122,64 138,92" fill="#e3a72e"/>
+    <rect x="116" y="92" width="16" height="6" fill="#a9791c"/>
+    <rect x="26" y="98" width="20" height="6" rx="3" fill="#faf6f1"/>
+    <rect x="72" y="102" width="20" height="6" rx="3" fill="#faf6f1"/>
+  `,
+  "village-pecheurs": `
+    <rect width="200" height="120" fill="#cfe6ea"/>
+    <rect y="80" width="200" height="40" fill="#2f8a90"/>
+    <rect x="20" y="46" width="30" height="34" fill="#e3a72e"/>
+    <rect x="52" y="40" width="30" height="40" fill="#c1440e"/>
+    <rect x="84" y="50" width="30" height="30" fill="#f2e3c9"/>
+    <rect x="116" y="42" width="30" height="38" fill="#1f6f78"/>
+    <rect x="30" y="58" width="8" height="10" fill="#ffffff"/>
+    <rect x="62" y="52" width="8" height="10" fill="#ffffff"/>
+    <rect x="94" y="60" width="8" height="10" fill="#ffffff"/>
+    <rect x="126" y="54" width="8" height="10" fill="#ffffff"/>
+    <polygon points="160,96 160,80 180,96" fill="#ffffff"/>
+    <rect x="156" y="90" width="30" height="10" rx="2" fill="#8f330a"/>
+  `,
+  "cap-camarat": `
+    <rect width="200" height="120" fill="#bfe0e6"/>
+    <rect y="82" width="200" height="38" fill="#2f8a90"/>
+    <polygon points="60,82 130,82 150,40 90,20 70,40" fill="#8a7a5c"/>
+    <rect x="94" y="16" width="14" height="40" fill="#ffffff" stroke="#c1440e" stroke-width="3"/>
+    <polygon points="94,16 101,4 108,16" fill="#c1440e"/>
+    <circle cx="101" cy="12" r="3" fill="#f2c869"/>
+    <circle cx="170" cy="24" r="12" fill="#f2c869"/>
+  `,
+  "theatre-verdure": `
+    <rect width="200" height="120" fill="#2c2854"/>
+    <circle cx="160" cy="20" r="10" fill="#f2c869"/>
+    <path d="M20,110 Q100,70 180,110 Z" fill="#3d5c33"/>
+    <path d="M32,104 Q100,76 168,104 Z" fill="#4f6e42"/>
+    <path d="M44,98 Q100,80 156,98 Z" fill="#6b8f5a"/>
+    <rect x="90" y="70" width="20" height="18" fill="#1c1b1a"/>
+    <circle cx="100" cy="66" r="10" fill="#e3a72e" opacity="0.6"/>
+  `,
+  "vignobles-aoc": `
+    <rect width="200" height="120" fill="#fbe9c9"/>
+    <circle cx="166" cy="24" r="15" fill="#e3a72e"/>
+    <path d="M0,60 L200,50 V120 H0 Z" fill="#c9a24a"/>
+    <line x1="10" y1="70" x2="60" y2="66" stroke="#6b8f5a" stroke-width="4"/>
+    <line x1="10" y1="82" x2="70" y2="78" stroke="#6b8f5a" stroke-width="4"/>
+    <line x1="10" y1="94" x2="80" y2="90" stroke="#6b8f5a" stroke-width="4"/>
+    <line x1="90" y1="64" x2="150" y2="60" stroke="#6b8f5a" stroke-width="4"/>
+    <line x1="100" y1="76" x2="160" y2="72" stroke="#6b8f5a" stroke-width="4"/>
+    <line x1="110" y1="88" x2="170" y2="84" stroke="#6b8f5a" stroke-width="4"/>
+    <circle cx="40" cy="66" r="3" fill="#5c2a5c"/><circle cx="46" cy="66" r="3" fill="#5c2a5c"/>
+    <circle cx="120" cy="60" r="3" fill="#5c2a5c"/><circle cx="126" cy="60" r="3" fill="#5c2a5c"/>
+  `,
+};
+
+function landmarkSVG(key){
+  const inner = LANDMARK_SCENES[key] || SCENES.village;
+  return `<svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
+}
+
+// Fiche descriptive de chaque lieu emblématique cité dans les tags des fiches villes.
+const LANDMARK_INFO = {
+  "Cours Mirabeau": {
+    scene: "cours-mirabeau",
+    caption: "La grande avenue plantée de platanes centenaires, ponctuée de fontaines, qui traverse le cœur d'Aix-en-Provence.",
+  },
+  "Quartier Mazarin": {
+    scene: "quartier-mazarin",
+    caption: "Le quartier historique aux hôtels particuliers du XVIIe siècle, juste au sud du Cours Mirabeau.",
+  },
+  "Ville de Cézanne": {
+    scene: "ville-cezanne",
+    caption: "Aix a vu naître et grandir Paul Cézanne, qui a peint la montagne Sainte-Victoire depuis les collines alentour.",
+  },
+  "Ville universitaire": {
+    scene: "ville-universitaire",
+    caption: "Près d'un habitant sur quatre est étudiant, avec une université fondée dès 1409.",
+  },
+  "Le Port": {
+    scene: "le-port",
+    caption: "Le port historique de Saint-Tropez, environ 800 places de mouillage face aux façades colorées du village.",
+  },
+  "La Citadelle": {
+    scene: "la-citadelle",
+    caption: "La forteresse du XVIIe siècle qui domine le village et offre un panorama sur tout le golfe de Saint-Tropez.",
+  },
+  "Plage de Pampelonne": {
+    scene: "plage-pampelonne",
+    caption: "Près de 5 km de sable fin entre Saint-Tropez et Ramatuelle, bordés de plages et de restaurants de plage.",
+  },
+  "Village de pêcheurs": {
+    scene: "village-pecheurs",
+    caption: "Les ruelles et façades colorées de l'ancien village de pêcheurs, aux origines bien antérieures au tourisme.",
+  },
+  "Cap Camarat": {
+    scene: "cap-camarat",
+    caption: "La pointe rocheuse et son phare, au bout du sentier du littoral, avec vue sur toute la presqu'île.",
+  },
+  "Théâtre de verdure": {
+    scene: "theatre-verdure",
+    caption: "L'amphithéâtre en plein air niché dans la pinède, scène du Festival de Ramatuelle depuis 1985.",
+  },
+  "Vignobles AOC": {
+    scene: "vignobles-aoc",
+    caption: "Les collines viticoles classées en appellation Côtes-de-Provence, qui entourent le village.",
+  },
+};
+
+function openLandmark(tag){
+  const info = LANDMARK_INFO[tag] || { scene: "village", caption: "" };
+  document.getElementById("landmark-modal-img").innerHTML = landmarkSVG(info.scene);
+  document.getElementById("landmark-modal-title").textContent = tag;
+  document.getElementById("landmark-modal-caption").textContent = info.caption;
+  document.getElementById("landmark-modal").classList.remove("hidden");
+}
+
+function closeLandmark(){
+  document.getElementById("landmark-modal").classList.add("hidden");
+}
+
 // Informations pratiques sur les trois villes pilotes (sources : offices de tourisme, INSEE,
 // Wikipédia — chiffres 2022-2023, reformulés).
 const CITY_INFO = {
@@ -654,12 +851,15 @@ function renderCityInfo(){
       <span class="ci-pop">👥 ${info.population}</span>
     </div>
     <p class="ci-desc">${info.desc}</p>
-    <div class="ci-tags">${info.tags.map(t => `<span class="ci-tag">${t}</span>`).join("")}</div>
+    <div class="ci-tags">${info.tags.map(t => `<button type="button" class="ci-tag" data-tag="${t}"><span class="ci-tag-ico">📷</span>${t}</button>`).join("")}</div>
     <div class="ci-facts">
       ${info.facts.map(f => `<div class="ci-fact"><span class="ico">${f.ico}</span><span>${f.text}</span></div>`).join("")}
     </div>
     <div class="ci-source">Sources : offices de tourisme, INSEE, Wikipédia.</div>
   `;
+  el.querySelectorAll(".ci-tag").forEach(btn => {
+    btn.onclick = () => openLandmark(btn.dataset.tag);
+  });
 }
 
 function renderMap(events){
@@ -850,6 +1050,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   document.getElementById("btn-back-publish").onclick = () => showView("discover");
   document.getElementById("btn-confirm-back").onclick = () => showView("discover");
+
+  document.getElementById("btn-landmark-close").onclick = closeLandmark;
+  document.getElementById("landmark-modal").onclick = (e) => {
+    if (e.target.id === "landmark-modal") closeLandmark();
+  };
 
   document.getElementById("publish-form").onsubmit = (e) => {
     e.preventDefault();
