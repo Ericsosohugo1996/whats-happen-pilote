@@ -5,11 +5,14 @@ const CITIES = {
   aix: { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
   st:  { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407 },
   ram: { name: "Ramatuelle",      lat: 43.2135, lng: 6.6155 },
+  ste: { name: "Sainte-Maxime",   lat: 43.3097, lng: 6.6390 },
+  lcv: { name: "La Croix-Valmer", lat: 43.2076, lng: 6.5729 },
 };
 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
-// tourisme d'Aix-en-Provence, de Saint-Tropez et de Ramatuelle) — dates et lieux vérifiés le 21/08/2026.
-// Quelques événements génériques (marchés) complètent la liste pour la démonstration.
+// tourisme d'Aix-en-Provence, de Saint-Tropez, de Ramatuelle, de Sainte-Maxime et de La Croix-Valmer)
+// — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
+// liste pour la démonstration.
 const SEED_EVENTS = [
   {
     id: "aix-liberation",
@@ -347,6 +350,160 @@ const SEED_EVENTS = [
     thumb: "",
     description: "Rencontre de rentrée avec les associations locales, pour découvrir les activités proposées dans le village.",
   },
+  {
+    id: "ste-fete-vendanges",
+    scene: "festival",
+    city: "ste",
+    category: "Festival",
+    title: "Fête des Vendanges",
+    date: "2026-08-29",
+    time: "18:00",
+    place: "Vieux village, Sainte-Maxime",
+    lat: 43.3095, lng: 6.6385,
+    price: "Entrée libre",
+    thumb: "",
+    description: "Fête traditionnelle marquant les premières vendanges, avec animations et dégustations dans le vieux village.",
+  },
+  {
+    id: "ste-dj-party",
+    scene: "musique",
+    city: "ste",
+    category: "Soirée",
+    title: "Summer DJ' Party",
+    date: "2026-08-22",
+    time: "21:00",
+    place: "Port de Sainte-Maxime",
+    lat: 43.3103, lng: 6.6398,
+    price: "Entrée libre",
+    thumb: "alt2",
+    description: "Soirée DJ en plein air sur le front de mer, dans le cadre du programme des animations estivales.",
+  },
+  {
+    id: "ste-live-ville",
+    scene: "musique",
+    city: "ste",
+    category: "Musique",
+    title: "Live en ville",
+    date: "2026-08-25",
+    time: "19:00",
+    place: "Centre-ville, Sainte-Maxime",
+    lat: 43.3100, lng: 6.6392,
+    price: "Gratuit",
+    thumb: "alt",
+    description: "Concert live gratuit dans les rues du centre, pour animer les soirées d'été.",
+  },
+  {
+    id: "ste-concert-classique",
+    scene: "musique",
+    city: "ste",
+    category: "Musique",
+    title: "Concert classique — Ravel, Bach, Vivaldi, Rachmaninov, Puccini",
+    date: "2026-09-03",
+    time: "21:00",
+    place: "Théâtre de la Mer, Sainte-Maxime",
+    lat: 43.3086, lng: 6.6420,
+    price: "Billetterie sur place",
+    thumb: "",
+    description: "Concert de musique classique en plein air face à la mer, avec un programme mêlant grands compositeurs.",
+  },
+  {
+    id: "ste-reves-auto",
+    scene: "expo",
+    city: "ste",
+    category: "Expo",
+    title: "Rêves Auto Sainte-Maxime",
+    date: "2026-09-26",
+    time: "10:00",
+    place: "Théâtre de la Mer, Sainte-Maxime",
+    lat: 43.3086, lng: 6.6420,
+    price: "Entrée libre",
+    thumb: "alt2",
+    description: "Exposition de véhicules de collection et de prestige en bord de mer, 3ᵉ édition.",
+  },
+  {
+    id: "ste-part-age-nature",
+    scene: "nature",
+    city: "ste",
+    category: "Sport",
+    title: "Part'âge nature — traces et empreintes d'animaux",
+    date: "2026-08-22",
+    time: "09:30",
+    place: "Massif des Maures, Sainte-Maxime",
+    lat: 43.3050, lng: 6.6300,
+    price: "Gratuit",
+    thumb: "",
+    description: "Sortie nature en famille à la découverte des traces et empreintes laissées par la faune locale.",
+  },
+  {
+    id: "lcv-taste-chill",
+    scene: "village",
+    city: "lcv",
+    category: "Soirée",
+    title: "Taste & Chill",
+    date: "2026-08-21",
+    time: "19:00",
+    place: "Château de Chausse, La Croix-Valmer",
+    lat: 43.2090, lng: 6.5760,
+    price: "Entrée libre",
+    thumb: "alt",
+    description: "Soirée dégustation hebdomadaire au château, un rendez-vous convivial de l'été.",
+  },
+  {
+    id: "lcv-soiree-autour-de-france",
+    scene: "musique",
+    city: "lcv",
+    category: "Musique",
+    title: "Soirée d'été : Autour de France",
+    date: "2026-08-26",
+    time: "21:00",
+    place: "Forum Constantin, La Croix-Valmer",
+    lat: 43.2078, lng: 6.5732,
+    price: "Entrée libre",
+    thumb: "alt2",
+    description: "Concert hommage en plein air, dans le cadre du programme des soirées d'été.",
+  },
+  {
+    id: "lcv-marche-nocturne",
+    scene: "marche",
+    city: "lcv",
+    category: "Marché",
+    title: "Marché nocturne",
+    date: "2026-08-22",
+    time: "16:00",
+    place: "Centre-ville, La Croix-Valmer",
+    lat: 43.2076, lng: 6.5729,
+    price: "Entrée libre",
+    thumb: "alt",
+    description: "Marché artisanal et gourmand en soirée, un rendez-vous estival du centre-ville.",
+  },
+  {
+    id: "lcv-gigaro-rando",
+    scene: "nature",
+    city: "lcv",
+    category: "Sport",
+    title: "Randonnée du sentier du littoral — Cap Lardier",
+    date: "2026-08-24",
+    time: "09:00",
+    place: "Plage de Gigaro, La Croix-Valmer",
+    lat: 43.1980, lng: 6.5980,
+    price: "Gratuit",
+    thumb: "",
+    description: "Randonnée dans l'espace naturel protégé du Cap Lardier, entre pinède et criques sauvages.",
+  },
+  {
+    id: "lcv-patrimoine",
+    scene: "expo",
+    city: "lcv",
+    category: "Expo",
+    title: "Sur les traces du passé — visite patrimoine",
+    date: "2026-08-28",
+    time: "17:00",
+    place: "Le Village, La Croix-Valmer",
+    lat: 43.2076, lng: 6.5729,
+    price: "Gratuit",
+    thumb: "",
+    description: "Visite commentée sur l'histoire de la commune, de la légende de Constantin au débarquement de 1944.",
+  },
 ];
 
 const CATEGORIES = ["Musique", "Marché", "Festival", "Sport", "Soirée", "Expo"];
@@ -637,6 +794,82 @@ const LANDMARK_SCENES = {
     <circle cx="40" cy="66" r="3" fill="#5c2a5c"/><circle cx="46" cy="66" r="3" fill="#5c2a5c"/>
     <circle cx="120" cy="60" r="3" fill="#5c2a5c"/><circle cx="126" cy="60" r="3" fill="#5c2a5c"/>
   `,
+  "tour-carree": `
+    <rect width="200" height="120" fill="#bfe0e6"/>
+    <rect y="82" width="200" height="38" fill="#2f8a90"/>
+    <rect x="80" y="30" width="40" height="60" fill="#e9d3ae" stroke="#8a7a5c" stroke-width="2"/>
+    <rect x="76" y="20" width="48" height="12" fill="#8a7a5c"/>
+    <rect x="92" y="44" width="10" height="14" fill="#1c1b1a"/>
+    <rect x="108" y="44" width="10" height="14" fill="#1c1b1a"/>
+    <rect x="92" y="66" width="10" height="14" fill="#1c1b1a"/>
+    <rect x="108" y="66" width="10" height="14" fill="#1c1b1a"/>
+    <circle cx="160" cy="26" r="12" fill="#f2c869"/>
+  `,
+  "vieux-village": `
+    <rect width="200" height="120" fill="#d7e6e2"/>
+    <rect y="96" width="200" height="24" fill="#cdbd9d"/>
+    <rect x="20" y="66" width="34" height="30" fill="#faf6f1" stroke="#e8e1d8"/>
+    <polygon points="16,66 37,48 58,66" fill="#c1440e"/>
+    <rect x="80" y="56" width="38" height="40" fill="#f2e7d5" stroke="#e8e1d8"/>
+    <polygon points="75,56 99,36 123,56" fill="#8f330a"/>
+    <rect x="146" y="70" width="32" height="26" fill="#faf6f1" stroke="#e8e1d8"/>
+    <polygon points="142,70 162,52 182,70" fill="#e3a72e"/>
+    <ellipse cx="68" cy="70" rx="5" ry="26" fill="#4f6e42"/>
+    <rect x="66" y="94" width="4" height="10" fill="#5c4632"/>
+  `,
+  "plage-nartelle": `
+    <rect width="200" height="120" fill="#fbe9c9"/>
+    <rect y="58" width="200" height="30" fill="#5db3a0"/>
+    <rect y="88" width="200" height="32" fill="#e8cd9a"/>
+    <circle cx="34" cy="28" r="16" fill="#e3a72e"/>
+    <polygon points="150,100 150,64 182,100" fill="#1f6f78"/>
+    <rect x="148" y="98" width="4" height="20" fill="#17545a"/>
+    <rect x="30" y="100" width="20" height="6" rx="3" fill="#faf6f1"/>
+    <rect x="70" y="104" width="20" height="6" rx="3" fill="#faf6f1"/>
+  `,
+  "theatre-mer": `
+    <rect width="200" height="120" fill="#bfe0e6"/>
+    <rect y="70" width="200" height="50" fill="#2f8a90"/>
+    <circle cx="160" cy="22" r="13" fill="#f2c869"/>
+    <path d="M20,116 Q100,86 180,116 Z" fill="#8a7a5c"/>
+    <path d="M32,110 Q100,90 168,110 Z" fill="#a8926e"/>
+    <rect x="88" y="80" width="24" height="20" fill="#1c1b1a"/>
+    <circle cx="100" cy="76" r="9" fill="#e3a72e" opacity="0.6"/>
+  `,
+  "plage-gigaro": `
+    <rect width="200" height="120" fill="#fbe9c9"/>
+    <rect y="66" width="200" height="24" fill="#5db3a0"/>
+    <rect y="90" width="200" height="30" fill="#e8cd9a"/>
+    <circle cx="166" cy="26" r="15" fill="#e3a72e"/>
+    <path d="M0,90 Q30,78 60,90 T120,90 T200,86 V120 H0 Z" fill="#d9bd85"/>
+    <ellipse cx="40" cy="82" rx="3" ry="14" fill="#6b8f5a"/>
+    <ellipse cx="48" cy="86" rx="3" ry="10" fill="#6b8f5a"/>
+    <ellipse cx="60" cy="84" rx="3" ry="12" fill="#6b8f5a"/>
+  `,
+  "cap-lardier": `
+    <rect width="200" height="120" fill="#cfe6ea"/>
+    <circle cx="160" cy="22" r="13" fill="#f2c869"/>
+    <rect y="70" width="200" height="50" fill="#2f8a90"/>
+    <path d="M0,70 Q50,40 100,66 T200,55 V70 H0 Z" fill="#6b8f5a"/>
+    <path d="M0,80 Q60,55 120,78 T200,68 V80 H0 Z" fill="#4f6e42"/>
+    <path d="M40,120 C50,100 70,100 80,120" fill="none" stroke="#e8cd9a" stroke-width="4"/>
+  `,
+  "croix-constantin": `
+    <rect width="200" height="120" fill="#cfe6ea"/>
+    <circle cx="160" cy="22" r="13" fill="#f2c869"/>
+    <path d="M0,90 Q60,66 120,88 T200,80 V120 H0 Z" fill="#8a9a72"/>
+    <rect x="96" y="40" width="8" height="46" fill="#c9c2b4"/>
+    <rect x="82" y="54" width="36" height="8" fill="#c9c2b4"/>
+    <rect x="92" y="86" width="16" height="6" fill="#8a7a5c"/>
+  `,
+  "plage-debarquement": `
+    <rect width="200" height="120" fill="#bfe0e6"/>
+    <rect y="72" width="200" height="48" fill="#2f8a90"/>
+    <rect y="96" width="200" height="24" fill="#e8cd9a"/>
+    <circle cx="160" cy="22" r="13" fill="#f2c869"/>
+    <rect x="94" y="76" width="10" height="26" fill="#8a7a5c"/>
+    <rect x="82" y="70" width="34" height="8" fill="#c9c2b4"/>
+  `,
 };
 
 function landmarkSVG(key){
@@ -690,11 +923,49 @@ const LANDMARK_INFO = {
     scene: "vignobles-aoc",
     caption: "Les collines viticoles classées en appellation Côtes-de-Provence, qui entourent le village.",
   },
+  "Tour Carrée": {
+    scene: "tour-carree",
+    caption: "La tour de défense du XVIe siècle sur le front de mer de Sainte-Maxime, aujourd'hui transformée en musée.",
+  },
+  "Vieux village": {
+    scene: "vieux-village",
+    caption: "Les ruelles et façades du cœur historique, hérité de l'époque où Sainte-Maxime vivait de la pêche.",
+  },
+  "Plage de la Nartelle": {
+    scene: "plage-nartelle",
+    caption: "Une des plages labellisées Pavillon bleu de Sainte-Maxime, appréciée pour ses sports nautiques.",
+  },
+  "Théâtre de la Mer": {
+    scene: "theatre-mer",
+    caption: "La scène en plein air face au golfe de Saint-Tropez, qui accueille concerts et grands événements l'été.",
+  },
+  "Plage de Gigaro": {
+    scene: "plage-gigaro",
+    caption: "Une plage sauvage et préservée de La Croix-Valmer, où vécut le peintre Abel Faivre.",
+  },
+  "Cap Lardier": {
+    scene: "cap-lardier",
+    caption: "Un espace naturel protégé à la pointe de la commune, entre pinède odorante et criques sauvages.",
+  },
+  "Croix de Constantin": {
+    scene: "croix-constantin",
+    caption: "Une croix de pierre érigée en 1893, sur le lieu où l'empereur Constantin aurait eu sa vision en 312.",
+  },
+  "Plage du Débarquement": {
+    scene: "plage-debarquement",
+    caption: "Une plage de La Croix-Valmer où ont débarqué les troupes alliées le 15 août 1944.",
+  },
 };
 
 function openLandmark(tag){
   const info = LANDMARK_INFO[tag] || { scene: "village", caption: "" };
-  document.getElementById("landmark-modal-img").innerHTML = landmarkSVG(info.scene);
+  const imgWrap = document.getElementById("landmark-modal-img");
+  // On essaie d'abord d'afficher une vraie photo (photo-<scene>.jpg, à ajouter par Eric dans le
+  // dépôt GitHub). Si le fichier n'existe pas encore, on retombe automatiquement sur l'illustration.
+  imgWrap.innerHTML = `<img src="photo-${info.scene}.jpg" alt="${tag}">`;
+  imgWrap.querySelector("img").onerror = function(){
+    imgWrap.innerHTML = landmarkSVG(info.scene);
+  };
   document.getElementById("landmark-modal-title").textContent = tag;
   document.getElementById("landmark-modal-caption").textContent = info.caption;
   document.getElementById("landmark-modal").classList.remove("hidden");
@@ -704,7 +975,7 @@ function closeLandmark(){
   document.getElementById("landmark-modal").classList.add("hidden");
 }
 
-// Informations pratiques sur les trois villes pilotes (sources : offices de tourisme, INSEE,
+// Informations pratiques sur les cinq villes pilotes (sources : offices de tourisme, INSEE,
 // Wikipédia — chiffres 2022-2023, reformulés).
 const CITY_INFO = {
   aix: {
@@ -735,6 +1006,26 @@ const CITY_INFO = {
       { ico: "🏖️", text: "La majeure partie de la plage de Pampelonne se trouve sur la commune de Ramatuelle." },
       { ico: "🎭", text: "Le Festival de Ramatuelle, créé en 1985 par Jean-Claude Brialy, anime le théâtre de verdure chaque été." },
       { ico: "🍷", text: "Un terroir viticole classé en appellation Côtes-de-Provence." },
+    ],
+  },
+  ste: {
+    population: "14 118 habitants (2023)",
+    desc: "Fondée vers l'an 1000 par les moines de Lérins, la station fait face au golfe de Saint-Tropez au pied du massif des Maures. Longtemps village de pêcheurs avant de se tourner vers le tourisme, elle a conservé son vieux village et sa tour du XVIe siècle tout en développant un long front de mer animé.",
+    tags: ["Tour Carrée", "Vieux village", "Plage de la Nartelle", "Théâtre de la Mer"],
+    facts: [
+      { ico: "🗼", text: "La Tour Carrée, construite au XVIe siècle pour se défendre des attaques, abrite aujourd'hui un musée." },
+      { ico: "🏖️", text: "Près de 10 km de littoral accessible, dont plusieurs plages labellisées Pavillon bleu." },
+      { ico: "⛳", text: "Une dizaine de golfs à moins de 30 minutes, un secteur particulièrement prisé des golfeurs." },
+    ],
+  },
+  lcv: {
+    population: "3 855 habitants (2023)",
+    desc: "Commune créée en 1934 entre Saint-Tropez et Cavalaire, à l'histoire liée à une légende : c'est ici que l'empereur Constantin aurait eu sa vision avant la bataille du pont Milvius. Ses plages, dont celle de Gigaro, ont aussi servi de site de débarquement allié en août 1944.",
+    tags: ["Plage de Gigaro", "Cap Lardier", "Croix de Constantin", "Plage du Débarquement"],
+    facts: [
+      { ico: "✝️", text: "Une croix de pierre érigée en 1893 marque le lieu légendaire de la vision de l'empereur Constantin." },
+      { ico: "🪖", text: "Ses plages ont servi de point de débarquement allié le 15 août 1944, lors du débarquement de Provence." },
+      { ico: "🌿", text: "Le cap Lardier, espace naturel protégé, prolonge la commune jusqu'à la pointe de la presqu'île." },
     ],
   },
 };
