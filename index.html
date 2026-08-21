@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's happen — Événements près de vous en PACA</title>
+<meta name="description" content="Découvrez les événements autour de vous en Provence-Alpes-Côte d'Azur, ou publiez le vôtre.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="What's happen">
+      <span class="brand-word">What's <span class="accent">happen</span></span>
+    </div>
+    <button class="btn-ghost" id="btn-publish-header">＋ Publier</button>
+  </header>
+
+  <!-- ===================== VUE : DÉCOUVERTE ===================== -->
+  <main id="view-discover" class="view">
+
+    <section class="locate-bar">
+      <div class="locate-info">
+        <span class="locate-label" id="locate-label">Ville sélectionnée</span>
+        <span class="locate-value" id="locate-value">📍 Aix-en-Provence</span>
+      </div>
+      <div class="locate-actions">
+        <button class="chip-btn" data-city="aix">Aix-en-Provence</button>
+        <button class="chip-btn" data-city="st">Saint-Tropez</button>
+        <button class="chip-btn chip-btn--primary" id="btn-geoloc">📍 Ma position</button>
+      </div>
+      <p class="locate-hint" id="locate-hint">Deux villes pilotes pour cette démonstration. Le bouton « Ma position » utilise votre géolocalisation réelle et calcule la distance jusqu'à chaque événement.</p>
+    </section>
+
+    <section class="toolbar">
+      <div class="segmented">
+        <button class="seg active" data-mode="carte">🗺️ Carte</button>
+        <button class="seg" data-mode="liste">☰ Liste</button>
+      </div>
+      <button class="chip-btn" id="btn-filters">⚙️ Filtres</button>
+    </section>
+
+    <section id="filters-panel" class="filters-panel hidden">
+      <div class="filters-row">
+        <span class="filters-label">Catégories :</span>
+        <div class="chips-row" id="category-chips"></div>
+      </div>
+      <div class="filters-row">
+        <label for="radius-range" class="filters-label">Rayon : <strong id="radius-value">15</strong> km</label>
+        <input type="range" id="radius-range" min="1" max="50" value="15">
+      </div>
+    </section>
+
+    <section id="map-mock" class="map-mock">
+      <div class="ring"></div>
+      <div class="me"></div>
+      <div id="map-pins"></div>
+      <div class="map-tag">rayon <span id="map-radius-label">15</span> km</div>
+    </section>
+
+    <section id="event-list" class="event-list"></section>
+
+    <p id="empty-state" class="empty-state hidden">Aucun événement ne correspond à ces filtres pour le moment. Essayez d'élargir le rayon ou les catégories.</p>
+  </main>
+
+  <!-- ===================== VUE : FICHE ÉVÉNEMENT ===================== -->
+  <main id="view-detail" class="view hidden">
+    <button class="back-btn" id="btn-back-detail">← Retour</button>
+    <div class="detail-hero" id="detail-hero"></div>
+    <div class="detail-body">
+      <span class="pill" id="detail-cat"></span>
+      <h1 id="detail-title"></h1>
+      <div class="info-row"><span class="ico">🗓️</span><div><span id="detail-date"></span><br><span class="sub" id="detail-time"></span></div></div>
+      <div class="info-row"><span class="ico">📍</span><div><span id="detail-place"></span><br><span class="sub" id="detail-distance"></span></div></div>
+      <div class="info-row"><span class="ico">🎟️</span><div><span id="detail-price"></span></div></div>
+      <p class="detail-desc" id="detail-desc"></p>
+      <div class="cta-row">
+        <button class="btn-primary" id="btn-interested">Je suis intéressé(e)</button>
+        <button class="btn-outline" id="btn-favorite">🤍</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== VUE : PUBLICATION ===================== -->
+  <main id="view-publish" class="view hidden">
+    <button class="back-btn" id="btn-back-publish">← Retour</button>
+    <h1 class="form-title">Nouvel événement</h1>
+    <p class="form-sub">Ce pilote enregistre votre événement localement dans votre navigateur (démonstration). La publication en ligne partagée arrivera à l'étape suivante du projet.</p>
+
+    <form id="publish-form" class="publish-form">
+      <label class="field">
+        <span>Titre</span>
+        <input type="text" name="title" placeholder="Ex. Marché nocturne provençal" required>
+      </label>
+
+      <label class="field">
+        <span>Catégorie</span>
+        <select name="category" required>
+          <option value="Musique">Musique</option>
+          <option value="Marché">Marché</option>
+          <option value="Festival">Festival</option>
+          <option value="Sport">Sport</option>
+          <option value="Soirée">Soirée</option>
+          <option value="Expo">Expo</option>
+        </select>
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Date</span>
+          <input type="date" name="date" required>
+        </label>
+        <label class="field">
+          <span>Heure</span>
+          <input type="time" name="time" required>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Ville</span>
+        <select name="city" required>
+          <option value="aix">Aix-en-Provence</option>
+          <option value="st">Saint-Tropez</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Lieu précis</span>
+        <input type="text" name="place" placeholder="Adresse ou nom du lieu" required>
+      </label>
+
+      <label class="field">
+        <span>Description</span>
+        <textarea name="description" rows="3" placeholder="Quelques mots sur l'événement…"></textarea>
+      </label>
+
+      <button type="submit" class="btn-primary btn-block">Publier l'événement</button>
+    </form>
+  </main>
+
+  <!-- ===================== VUE : CONFIRMATION ===================== -->
+  <main id="view-confirm" class="view hidden">
+    <div class="confirm-box">
+      <div class="confirm-icon">✓</div>
+      <h1>Événement publié !</h1>
+      <p>Il apparaît maintenant dans la liste de sa ville (démonstration locale à votre navigateur).</p>
+      <button class="btn-primary" id="btn-confirm-back">Retour à l'accueil</button>
+    </div>
+  </main>
+
+  <nav class="bottomnav">
+    <button class="nav-item active" data-view="discover"><span class="dot">🗺️</span>Explorer</button>
+    <button class="nav-item" data-view="publish"><span class="dot">➕</span>Publier</button>
+    <button class="nav-item" data-view="favorites"><span class="dot">❤️</span>Favoris</button>
+  </nav>
+
+  <!-- ===================== VUE : FAVORIS ===================== -->
+  <main id="view-favorites" class="view hidden">
+    <h1 class="form-title">❤️ Mes favoris</h1>
+    <section id="favorites-list" class="event-list"></section>
+    <p id="favorites-empty" class="empty-state hidden">Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.</p>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
