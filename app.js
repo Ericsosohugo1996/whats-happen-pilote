@@ -89,6 +89,31 @@ const SEED_EVENTS = [
 
 const CATEGORIES = ["Musique", "Marché", "Festival", "Sport", "Soirée", "Expo"];
 
+// Informations pratiques sur les deux villes pilotes (sources : Ville d'Aix-en-Provence / INSEE,
+// Wikipédia — chiffres 2022-2023, reformulés).
+const CITY_INFO = {
+  aix: {
+    population: "147 933 habitants (2022)",
+    desc: "Fondée en 122 av. J.-C. par le consul romain Sextius sous le nom d'Aquae Sextiae, autour de ses sources thermales. Surnommée « la ville aux cent fontaines », c'est aujourd'hui la ville natale du peintre Paul Cézanne et une grande ville universitaire de Provence.",
+    tags: ["Cours Mirabeau", "Quartier Mazarin", "Ville de Cézanne", "Ville universitaire"],
+    facts: [
+      { ico: "🎓", text: "Ville universitaire depuis 1409 — près d'un habitant sur quatre est étudiant." },
+      { ico: "🎭", text: "Festival international d'art lyrique chaque été depuis 1948." },
+      { ico: "⛲", text: "Plus de 40 fontaines disséminées dans le centre historique." },
+    ],
+  },
+  st: {
+    population: "3 582 habitants (2023)",
+    desc: "Ancien village de pêcheurs devenu station internationale à partir de la fin des années 1950, popularisé notamment par le cinéma. Un tout petit village qui accueille pourtant des millions de visiteurs chaque année, entre son port et ses plages.",
+    tags: ["Le Port", "La Citadelle", "Plage de Pampelonne", "Village de pêcheurs"],
+    facts: [
+      { ico: "⛵", text: "Le port historique compte environ 800 places de mouillage." },
+      { ico: "🏖️", text: "La plage de Pampelonne s'étend sur près de 5 km au sud du village." },
+      { ico: "🚩", text: "Premier port libéré lors du débarquement de Provence, le 15 août 1944." },
+    ],
+  },
+};
+
 // ---- state ----
 const state = {
   city: "aix",
@@ -186,6 +211,29 @@ function renderLocateBar(){
   });
 }
 
+function renderCityInfo(){
+  const el = document.getElementById("city-info");
+  if (state.userPos){
+    el.classList.add("hidden");
+    return;
+  }
+  el.classList.remove("hidden");
+  const info = CITY_INFO[state.city];
+  const name = CITIES[state.city].name;
+  el.innerHTML = `
+    <div class="ci-head">
+      <span class="ci-name">${name}</span>
+      <span class="ci-pop">👥 ${info.population}</span>
+    </div>
+    <p class="ci-desc">${info.desc}</p>
+    <div class="ci-tags">${info.tags.map(t => `<span class="ci-tag">${t}</span>`).join("")}</div>
+    <div class="ci-facts">
+      ${info.facts.map(f => `<div class="ci-fact"><span class="ico">${f.ico}</span><span>${f.text}</span></div>`).join("")}
+    </div>
+    <div class="ci-source">Sources : Ville d'Aix-en-Provence, INSEE, Wikipédia.</div>
+  `;
+}
+
 function renderMap(events){
   const pinsEl = document.getElementById("map-pins");
   pinsEl.innerHTML = "";
@@ -243,6 +291,7 @@ function renderDiscover(){
 
   renderMap(events);
   renderLocateBar();
+  renderCityInfo();
 }
 
 function renderFavorites(){
