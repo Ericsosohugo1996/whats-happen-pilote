@@ -2,11 +2,12 @@
 // Aucune dépendance externe : tout est en JavaScript natif.
 
 const CITIES = {
-  aix: { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
-  st:  { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407 },
-  ram: { name: "Ramatuelle",      lat: 43.2135, lng: 6.6155 },
-  ste: { name: "Sainte-Maxime",   lat: 43.3097, lng: 6.6390 },
-  lcv: { name: "La Croix-Valmer", lat: 43.2076, lng: 6.5729 },
+  aix:  { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
+  st:   { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407 },
+  ram:  { name: "Ramatuelle",      lat: 43.2135, lng: 6.6155 },
+  ste:  { name: "Sainte-Maxime",   lat: 43.3097, lng: 6.6390 },
+  lcv:  { name: "La Croix-Valmer", lat: 43.2076, lng: 6.5729 },
+  sens: { name: "Sens",            lat: 48.1975, lng: 3.2823 },
 };
 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
@@ -504,6 +505,118 @@ const SEED_EVENTS = [
     thumb: "",
     description: "Visite commentée sur l'histoire de la commune, de la légende de Constantin au débarquement de 1944.",
   },
+  {
+    id: "sens-brocante-soucy",
+    scene: "marche",
+    city: "sens",
+    category: "Marché",
+    title: "Brocante et vide-greniers de Soucy",
+    date: "2026-08-23",
+    time: "05:30",
+    place: "Soucy (à 6 km de Sens)",
+    lat: 48.1503, lng: 3.2999,
+    price: "Entrée libre",
+    thumb: "",
+    description: "Grande brocante matinale dans le village voisin de Soucy, une habituée des week-ends de fin d'été dans le Sénonais.",
+  },
+  {
+    id: "sens-journee-famille",
+    scene: "festival",
+    city: "sens",
+    category: "Festival",
+    title: "Journée de la Famille",
+    date: "2026-08-26",
+    time: "11:00",
+    place: "Promenade du boulevard Maupéou, Sens",
+    lat: 48.1965, lng: 3.2845,
+    price: "Gratuit",
+    thumb: "",
+    description: "Animations, jeux et stands en plein air le long de la promenade, un rendez-vous familial organisé par la ville.",
+  },
+  {
+    id: "sens-nocturne-cathedrale",
+    scene: "expo",
+    city: "sens",
+    category: "Expo",
+    title: "Visite guidée nocturne de la cathédrale Saint-Étienne",
+    date: "2026-08-29",
+    time: "21:00",
+    place: "Parvis de la cathédrale, Sens",
+    lat: 48.1975, lng: 3.2823,
+    price: "Tarif office de tourisme",
+    thumb: "",
+    description: "Visite commentée de 90 minutes à la tombée de la nuit, dans la première cathédrale gothique de France.",
+  },
+  {
+    id: "sens-tour-sud",
+    scene: "sport",
+    city: "sens",
+    category: "Sport",
+    title: "Ascension de la tour sud de la cathédrale",
+    date: "2026-08-29",
+    time: "14:00",
+    place: "Cathédrale Saint-Étienne, Sens",
+    lat: 48.1975, lng: 3.2823,
+    price: "Tarif office de tourisme",
+    thumb: "",
+    description: "330 marches jusqu'à 66 mètres de haut, pour un panorama sur la ville et la vallée de l'Yonne.",
+  },
+  {
+    id: "sens-dj-rooftop",
+    scene: "village",
+    city: "sens",
+    category: "Soirée",
+    title: "Soirée DJ en rooftop",
+    date: "2026-09-05",
+    time: "19:00",
+    place: "Au Dernier Étage, Sens",
+    lat: 48.1978, lng: 3.2836,
+    price: "Entrée libre",
+    thumb: "",
+    description: "Dernière soirée DJ de la saison sur le rooftop du centre-ville, avec bar et petite restauration.",
+  },
+  {
+    id: "sens-brocante-rosoy",
+    scene: "marche",
+    city: "sens",
+    category: "Marché",
+    title: "Brocante de Rosoy",
+    date: "2026-09-06",
+    time: "07:00",
+    place: "Place des Marvageuses, Rosoy (à 5 km de Sens)",
+    lat: 48.1932, lng: 3.3466,
+    price: "Entrée libre",
+    thumb: "",
+    description: "Brocante dominicale dans le village de Rosoy, à quelques minutes du centre de Sens.",
+  },
+  {
+    id: "sens-nuit-blues",
+    scene: "musique",
+    city: "sens",
+    category: "Musique",
+    title: "15e Nuit du Blues",
+    date: "2026-09-18",
+    time: "20:30",
+    place: "Théâtre municipal, Sens",
+    lat: 48.1958, lng: 3.2839,
+    price: "15€ à 25€",
+    thumb: "",
+    description: "Concert avec le Vincent Bucher Trio et Nicolle & Dîmes, pour la 15e édition de ce rendez-vous blues sénonais.",
+  },
+  {
+    id: "sens-saint-fiacre",
+    scene: "festival",
+    city: "sens",
+    category: "Festival",
+    title: "Fête de la Saint Fiacre",
+    date: "2026-09-20",
+    time: "10:00",
+    place: "Centre historique, Sens",
+    lat: 48.1975, lng: 3.2823,
+    price: "Gratuit",
+    thumb: "",
+    description: "Fête patrimoniale et champêtre au cœur de la ville, autour du saint patron des jardiniers.",
+  },
 ];
 
 const CATEGORIES = ["Musique", "Marché", "Festival", "Sport", "Soirée", "Expo"];
@@ -870,6 +983,58 @@ const LANDMARK_SCENES = {
     <rect x="94" y="76" width="10" height="26" fill="#8a7a5c"/>
     <rect x="82" y="70" width="34" height="8" fill="#c9c2b4"/>
   `,
+  "cathedrale-saint-etienne": `
+    <rect width="200" height="120" fill="#cfe6ea"/>
+    <rect y="100" width="200" height="20" fill="#d8cdb8"/>
+    <rect x="66" y="26" width="68" height="74" fill="#e9d3ae" stroke="#8a7a5c" stroke-width="2"/>
+    <rect x="52" y="14" width="20" height="88" fill="#dcc7a0" stroke="#8a7a5c" stroke-width="2"/>
+    <polygon points="52,14 62,0 72,14" fill="#8a7a5c"/>
+    <rect x="128" y="30" width="18" height="72" fill="#dcc7a0" stroke="#8a7a5c" stroke-width="2"/>
+    <circle cx="100" cy="48" r="13" fill="#1f6f78"/>
+    <circle cx="100" cy="48" r="13" fill="none" stroke="#e3a72e" stroke-width="3"/>
+    <polygon points="88,100 100,72 112,100" fill="#5c4632"/>
+    <rect x="58" y="40" width="8" height="20" fill="#1c1b1a"/>
+    <rect x="134" y="46" width="8" height="18" fill="#1c1b1a"/>
+  `,
+  "palais-synodal": `
+    <rect width="200" height="120" fill="#f3ece1"/>
+    <rect y="96" width="200" height="24" fill="#d8cdb8"/>
+    <rect x="34" y="42" width="132" height="54" fill="#e9d3ae" stroke="#8a7a5c" stroke-width="2"/>
+    <polygon points="26,42 100,14 174,42" fill="#7a6650"/>
+    <rect x="48" y="58" width="14" height="30" fill="#1f6f78"/>
+    <rect x="76" y="58" width="14" height="30" fill="#1f6f78"/>
+    <rect x="110" y="58" width="14" height="30" fill="#1f6f78"/>
+    <rect x="138" y="58" width="14" height="30" fill="#1f6f78"/>
+    <polygon points="48,58 55,48 62,58" fill="#8a7a5c"/>
+    <polygon points="76,58 83,48 90,58" fill="#8a7a5c"/>
+    <polygon points="110,58 117,48 124,58" fill="#8a7a5c"/>
+    <polygon points="138,58 145,48 152,58" fill="#8a7a5c"/>
+    <rect x="92" y="76" width="16" height="20" fill="#5c4632"/>
+  `,
+  "basilique-saint-savinien": `
+    <rect width="200" height="120" fill="#f3ece1"/>
+    <rect y="96" width="200" height="24" fill="#d8cdb8"/>
+    <rect x="54" y="52" width="92" height="44" fill="#e9d3ae" stroke="#8a7a5c" stroke-width="2"/>
+    <rect x="84" y="14" width="24" height="82" fill="#dcc7a0" stroke="#8a7a5c" stroke-width="2"/>
+    <polygon points="84,14 96,0 108,14" fill="#8a7a5c"/>
+    <circle cx="70" cy="66" r="7" fill="#1f6f78"/>
+    <circle cx="130" cy="66" r="7" fill="#1f6f78"/>
+    <rect x="92" y="76" width="12" height="20" fill="#5c4632"/>
+    <rect x="92" y="34" width="8" height="14" fill="#1c1b1a"/>
+  `,
+  "vestiges-gallo-romains": `
+    <rect width="200" height="120" fill="#fbe9c9"/>
+    <circle cx="164" cy="24" r="15" fill="#e3a72e"/>
+    <rect y="92" width="200" height="28" fill="#c9b58f"/>
+    <rect x="30" y="46" width="14" height="46" fill="#e2d2ae"/>
+    <rect x="64" y="40" width="14" height="52" fill="#e2d2ae"/>
+    <rect x="98" y="50" width="14" height="42" fill="#d9c69c"/>
+    <rect x="132" y="38" width="14" height="54" fill="#e2d2ae"/>
+    <path d="M30,46 Q37,34 44,46" fill="none" stroke="#c9b58f" stroke-width="4"/>
+    <path d="M64,40 Q71,26 78,40" fill="none" stroke="#c9b58f" stroke-width="4"/>
+    <path d="M132,38 Q139,24 146,38" fill="none" stroke="#c9b58f" stroke-width="4"/>
+    <ellipse cx="100" cy="100" rx="70" ry="8" fill="#6b8f5a" opacity="0.5"/>
+  `,
 };
 
 function landmarkSVG(key){
@@ -954,6 +1119,22 @@ const LANDMARK_INFO = {
   "Plage du Débarquement": {
     scene: "plage-debarquement",
     caption: "Une plage de La Croix-Valmer où ont débarqué les troupes alliées le 15 août 1944.",
+  },
+  "Cathédrale Saint-Étienne": {
+    scene: "cathedrale-saint-etienne",
+    caption: "Commencée en 1135, elle est considérée comme la première cathédrale gothique de France, avec ses deux tours inégales.",
+  },
+  "Palais Synodal": {
+    scene: "palais-synodal",
+    caption: "L'ancienne résidence des archevêques de Sens, aujourd'hui l'un des rares palais synodaux médiévaux conservés en France.",
+  },
+  "Basilique Saint-Savinien": {
+    scene: "basilique-saint-savinien",
+    caption: "Une des nombreuses églises historiques de Sens, témoin de son riche passé religieux.",
+  },
+  "Vestiges gallo-romains": {
+    scene: "vestiges-gallo-romains",
+    caption: "Sens fut la capitale gallo-romaine d'Agedincum : on trouve encore des vestiges de remparts, thermes et amphithéâtre.",
   },
 };
 
@@ -1143,6 +1324,16 @@ const CITY_INFO = {
       { ico: "🌿", text: "Le cap Lardier, espace naturel protégé, prolonge la commune jusqu'à la pointe de la presqu'île." },
     ],
   },
+  sens: {
+    population: "27 275 habitants (2022)",
+    desc: "Née de l'ancienne cité gallo-romaine d'Agedincum, capitale du peuple gaulois des Sénons, Sens fut ensuite le siège d'un puissant archevêché ayant eu la primatie sur une grande partie de la France jusqu'au XVIIe siècle. Sa cathédrale, commencée en 1135, est considérée comme la première cathédrale gothique de France.",
+    tags: ["Cathédrale Saint-Étienne", "Palais Synodal", "Basilique Saint-Savinien", "Vestiges gallo-romains"],
+    facts: [
+      { ico: "⛪", text: "La cathédrale Saint-Étienne, commencée en 1135, est considérée comme la première cathédrale gothique de France." },
+      { ico: "🏛️", text: "Sens fut la capitale du peuple gaulois des Sénons, à l'origine de la cité gallo-romaine d'Agedincum." },
+      { ico: "📜", text: "L'archevêché de Sens a longtemps eu la primatie sur une grande partie de la France, jusqu'au XVIIe siècle." },
+    ],
+  },
 };
 
 // ---- state ----
@@ -1150,7 +1341,7 @@ const state = {
   city: "aix",
   mode: "carte",
   selectedCategories: new Set(),
-  radiusKm: 15,
+  radiusKm: 20,
   userPos: null, // {lat, lng}
   currentEventId: null,
   favorites: loadFavorites(),
@@ -1297,7 +1488,7 @@ function renderMap(events){
 function eventCardHTML(ev){
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
   return `
-    <button class="event-card" data-id="${ev.id}">
+    <button class="event-card" data-id="${ev.id}" data-cat="${ev.category}">
       <div class="thumb">${sceneSVG(ev.scene)}</div>
       <div class="info">
         <div class="cat">${ev.category}</div>

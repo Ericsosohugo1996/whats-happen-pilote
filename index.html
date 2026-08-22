@@ -35,9 +35,10 @@
         <button class="chip-btn" data-city="ram">Ramatuelle</button>
         <button class="chip-btn" data-city="ste">Sainte-Maxime</button>
         <button class="chip-btn" data-city="lcv">La Croix-Valmer</button>
+        <button class="chip-btn" data-city="sens">Sens</button>
         <button class="chip-btn chip-btn--primary" id="btn-geoloc">📍 Ma position</button>
       </div>
-      <p class="locate-hint" id="locate-hint">Cinq villes pilotes pour cette démonstration. Le bouton « Ma position » utilise votre géolocalisation réelle et calcule la distance jusqu'à chaque événement.</p>
+      <p class="locate-hint" id="locate-hint">Six villes pilotes pour cette démonstration (dont Sens, hors PACA, ajoutée pour un test). Le bouton « Ma position » utilise votre géolocalisation réelle et calcule la distance jusqu'à chaque événement dans un rayon de 20 km.</p>
     </section>
 
     <section id="city-info" class="city-info"></section>
@@ -56,8 +57,8 @@
         <div class="chips-row" id="category-chips"></div>
       </div>
       <div class="filters-row">
-        <label for="radius-range" class="filters-label">Rayon : <strong id="radius-value">15</strong> km</label>
-        <input type="range" id="radius-range" min="1" max="50" value="15">
+        <label for="radius-range" class="filters-label">Rayon : <strong id="radius-value">20</strong> km</label>
+        <input type="range" id="radius-range" min="1" max="50" value="20">
       </div>
     </section>
 
@@ -65,7 +66,7 @@
       <div class="ring"></div>
       <div class="me"></div>
       <div id="map-pins"></div>
-      <div class="map-tag">rayon <span id="map-radius-label">15</span> km</div>
+      <div class="map-tag">rayon <span id="map-radius-label">20</span> km</div>
     </section>
 
     <section id="event-list" class="event-list"></section>
@@ -134,6 +135,7 @@
           <option value="ram">Ramatuelle</option>
           <option value="ste">Sainte-Maxime</option>
           <option value="lcv">La Croix-Valmer</option>
+          <option value="sens">Sens</option>
         </select>
       </label>
 
