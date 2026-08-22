@@ -79,6 +79,12 @@ button,input,select,textarea{font-family:inherit;}
 .city-info .ci-fact{ font-size:11.5px; color:var(--ink); display:flex; gap:7px; }
 .city-info .ci-fact .ico{ color:var(--primary); flex:0 0 auto; }
 .city-info .ci-source{ margin-top:10px; font-size:10px; color:#a39c92; }
+.city-info .btn-photos{
+  width:100%; margin-top:14px;
+  background:var(--paper); border:1px solid var(--accent); color:var(--accent);
+  font-weight:700; font-size:13px; padding:11px; border-radius:12px;
+}
+.city-info .btn-photos:active{ background:#e6f1f0; }
 
 /* ---- toolbar / segmented ---- */
 .toolbar{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
@@ -176,6 +182,28 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 }
 .nav-item.active{ color:var(--primary); }
 .nav-item .dot{ font-size:17px; }
+
+/* ---- mes photos (souvenirs) ---- */
+#btn-add-photo{ margin-bottom:16px; }
+.photos-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; }
+.photos-grid .photo-thumb{
+  aspect-ratio:1; border-radius:10px; overflow:hidden; border:none; padding:0;
+  background:var(--line); cursor:pointer;
+}
+.photos-grid .photo-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+.photo-lightbox{
+  position:fixed; inset:0; z-index:70;
+  background:rgba(20,18,16,.92);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+  padding:20px;
+}
+.photo-lightbox.hidden{ display:none; }
+.photo-lightbox img{ max-width:92vw; max-height:68vh; border-radius:14px; object-fit:contain; }
+.lightbox-delete{
+  background:#fff; color:var(--primary); border:none; border-radius:999px;
+  padding:11px 22px; font-weight:700; font-size:13px;
+}
 
 /* ---- landmark modal ---- */
 .landmark-modal{

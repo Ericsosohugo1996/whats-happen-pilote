@@ -171,6 +171,24 @@
     <p id="favorites-empty" class="empty-state hidden">Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.</p>
   </main>
 
+  <!-- ===================== VUE : MES PHOTOS (souvenirs par ville) ===================== -->
+  <main id="view-photos" class="view hidden">
+    <button class="back-btn" id="btn-back-photos">← Retour</button>
+    <h1 class="form-title" id="photos-title">📸 Mes photos</h1>
+    <p class="form-sub">Ces photos restent sur cet appareil, dans ce navigateur — elles ne sont pas partagées avec les autres utilisateurs pour le moment.</p>
+    <input type="file" id="photo-input" accept="image/*" multiple class="hidden">
+    <button type="button" class="btn-primary btn-block" id="btn-add-photo">＋ Ajouter une photo</button>
+    <div id="photos-grid" class="photos-grid"></div>
+    <p id="photos-empty" class="empty-state hidden">Pas encore de souvenir ici. Ajoute une photo pour commencer !</p>
+  </main>
+
+  <!-- ===================== LIGHTBOX : PHOTO EN GRAND ===================== -->
+  <div id="photo-lightbox" class="photo-lightbox hidden">
+    <button class="modal-close" id="btn-lightbox-close" aria-label="Fermer">✕</button>
+    <img id="lightbox-img" alt="">
+    <button type="button" class="lightbox-delete" id="btn-lightbox-delete">🗑️ Supprimer cette photo</button>
+  </div>
+
   <!-- ===================== MODALE : LIEU EMBLÉMATIQUE ===================== -->
   <div id="landmark-modal" class="landmark-modal hidden">
     <div class="landmark-modal-card">

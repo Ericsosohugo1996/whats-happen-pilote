@@ -975,6 +975,121 @@ function closeLandmark(){
   document.getElementById("landmark-modal").classList.add("hidden");
 }
 
+// ---- souvenirs photo par ville (stockage local à l'appareil, via IndexedDB) ----
+const PHOTOS_DB_NAME = "wh_photos_db";
+const PHOTOS_STORE = "photos";
+let photosCurrentCity = null;
+
+function openPhotosDB(){
+  return new Promise((resolve, reject) => {
+    if (!window.indexedDB){ reject(new Error("IndexedDB indisponible")); return; }
+    const req = indexedDB.open(PHOTOS_DB_NAME, 1);
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      if (!db.objectStoreNames.contains(PHOTOS_STORE)){
+        const store = db.createObjectStore(PHOTOS_STORE, { keyPath: "id", autoIncrement: true });
+        store.createIndex("city", "city", { unique: false });
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+async function addPhoto(city, dataUrl){
+  const db = await openPhotosDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(PHOTOS_STORE, "readwrite");
+    tx.objectStore(PHOTOS_STORE).add({ city, dataUrl, ts: Date.now() });
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
+async function getPhotosForCity(city){
+  const db = await openPhotosDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(PHOTOS_STORE, "readonly");
+    const req = tx.objectStore(PHOTOS_STORE).index("city").getAll(city);
+    req.onsuccess = () => resolve(req.result.sort((a, b) => b.ts - a.ts));
+    req.onerror = () => reject(req.error);
+  });
+}
+
+async function deletePhotoById(id){
+  const db = await openPhotosDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(PHOTOS_STORE, "readwrite");
+    tx.objectStore(PHOTOS_STORE).delete(id);
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
+// Redimensionne et compresse une photo côté navigateur avant stockage, pour que le téléphone
+// puisse en garder un maximum sans ralentir l'appli.
+function resizePhoto(file, maxDim, quality){
+  maxDim = maxDim || 1000;
+  quality = quality || 0.75;
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        let width = img.width, height = img.height;
+        if (width > maxDim || height > maxDim){
+          if (width > height){ height = Math.round(height * maxDim / width); width = maxDim; }
+          else { width = Math.round(width * maxDim / height); height = maxDim; }
+        }
+        const canvas = document.createElement("canvas");
+        canvas.width = width; canvas.height = height;
+        canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+        resolve(canvas.toDataURL("image/jpeg", quality));
+      };
+      img.onerror = () => reject(new Error("Image illisible"));
+      img.src = reader.result;
+    };
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+async function openPhotosView(city){
+  photosCurrentCity = city;
+  document.getElementById("photos-title").textContent = "📸 Mes photos — " + CITIES[city].name;
+  showView("photos");
+  await renderPhotosGrid(city);
+}
+
+async function renderPhotosGrid(city){
+  const grid = document.getElementById("photos-grid");
+  const empty = document.getElementById("photos-empty");
+  let photos = [];
+  try { photos = await getPhotosForCity(city); }
+  catch(e){ photos = []; }
+
+  if (photos.length === 0){
+    grid.innerHTML = "";
+    empty.classList.remove("hidden");
+  } else {
+    empty.classList.add("hidden");
+    grid.innerHTML = photos.map(p => `<button type="button" class="photo-thumb" data-id="${p.id}"><img src="${p.dataUrl}" alt=""></button>`).join("");
+    grid.querySelectorAll(".photo-thumb").forEach(btn => {
+      btn.onclick = () => openLightbox(Number(btn.dataset.id), btn.querySelector("img").src);
+    });
+  }
+}
+
+function openLightbox(id, src){
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("photo-lightbox").dataset.photoId = id;
+  document.getElementById("photo-lightbox").classList.remove("hidden");
+}
+
+function closeLightbox(){
+  document.getElementById("photo-lightbox").classList.add("hidden");
+}
+
 // Informations pratiques sur les cinq villes pilotes (sources : offices de tourisme, INSEE,
 // Wikipédia — chiffres 2022-2023, reformulés).
 const CITY_INFO = {
@@ -1147,10 +1262,12 @@ function renderCityInfo(){
       ${info.facts.map(f => `<div class="ci-fact"><span class="ico">${f.ico}</span><span>${f.text}</span></div>`).join("")}
     </div>
     <div class="ci-source">Sources : offices de tourisme, INSEE, Wikipédia.</div>
+    <button type="button" class="btn-photos" id="btn-city-photos">📸 Mes photos de ${name}</button>
   `;
   el.querySelectorAll(".ci-tag").forEach(btn => {
     btn.onclick = () => openLandmark(btn.dataset.tag);
   });
+  el.querySelector("#btn-city-photos").onclick = () => openPhotosView(state.city);
 }
 
 function renderMap(events){
@@ -1260,7 +1377,7 @@ function iconFor(cat){
 
 // ---- view switching ----
 function showView(name){
-  ["discover","detail","publish","confirm","favorites"].forEach(v => {
+  ["discover","detail","publish","confirm","favorites","photos"].forEach(v => {
     document.getElementById("view-" + v).classList.toggle("hidden", v !== name);
   });
   document.querySelectorAll(".nav-item").forEach(b => {
@@ -1345,6 +1462,32 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn-landmark-close").onclick = closeLandmark;
   document.getElementById("landmark-modal").onclick = (e) => {
     if (e.target.id === "landmark-modal") closeLandmark();
+  };
+
+  document.getElementById("btn-back-photos").onclick = () => showView("discover");
+  document.getElementById("btn-add-photo").onclick = () => document.getElementById("photo-input").click();
+  document.getElementById("photo-input").onchange = async (e) => {
+    const files = Array.from(e.target.files || []);
+    for (const file of files){
+      try {
+        const dataUrl = await resizePhoto(file);
+        await addPhoto(photosCurrentCity, dataUrl);
+      } catch(err){
+        console.error("Erreur lors de l'ajout de la photo :", err);
+      }
+    }
+    e.target.value = "";
+    await renderPhotosGrid(photosCurrentCity);
+  };
+  document.getElementById("btn-lightbox-close").onclick = closeLightbox;
+  document.getElementById("photo-lightbox").onclick = (e) => {
+    if (e.target.id === "photo-lightbox") closeLightbox();
+  };
+  document.getElementById("btn-lightbox-delete").onclick = async () => {
+    const id = Number(document.getElementById("photo-lightbox").dataset.photoId);
+    await deletePhotoById(id);
+    closeLightbox();
+    await renderPhotosGrid(photosCurrentCity);
   };
 
   document.getElementById("publish-form").onsubmit = (e) => {
