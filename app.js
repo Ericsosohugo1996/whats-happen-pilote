@@ -1,4 +1,3 @@
-S
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
  
