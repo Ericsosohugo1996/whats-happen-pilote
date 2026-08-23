@@ -1,6 +1,6 @@
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
- 
+
 const CITIES = {
   aix:  { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
   st:   { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407 },
@@ -10,7 +10,7 @@ const CITIES = {
   sens: { name: "Sens",            lat: 48.1975, lng: 3.2823 },
   drag: { name: "Draguignan",      lat: 43.5375, lng: 6.4627 },
 };
- 
+
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
 // tourisme d'Aix-en-Provence, de Saint-Tropez, de Ramatuelle, de Sainte-Maxime et de La Croix-Valmer)
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
@@ -619,9 +619,9 @@ const SEED_EVENTS = [
     description: "Fête patrimoniale et champêtre au cœur de la ville, autour du saint patron des jardiniers.",
   },
 ];
- 
+
 const CATEGORIES = ["Musique", "Marché", "Festival", "Sport", "Soirée", "Expo"];
- 
+
 // Scène illustrée par défaut selon la catégorie (utilisée pour les événements publiés par les
 // utilisateurs, qui n'ont pas de scène assignée manuellement).
 const CATEGORY_SCENE = {
@@ -632,7 +632,7 @@ const CATEGORY_SCENE = {
   Soirée: "village",
   Expo: "expo",
 };
- 
+
 // ---- illustrations de scène (SVG faits maison, sans photo, pour éviter tout souci de droits) ----
 const SCENES = {
   port: `
@@ -772,12 +772,12 @@ const SCENES = {
     <path d="M60,120 C70,100 90,100 100,120" fill="none" stroke="#e8cd9a" stroke-width="4"/>
   `,
 };
- 
+
 function sceneSVG(key){
   const inner = SCENES[key] || SCENES.village;
   return `<svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 }
- 
+
 // ---- illustrations des lieux emblématiques (tags de la fiche ville) ----
 const LANDMARK_SCENES = {
   "cours-mirabeau": `
@@ -1037,12 +1037,12 @@ const LANDMARK_SCENES = {
     <ellipse cx="100" cy="100" rx="70" ry="8" fill="#6b8f5a" opacity="0.5"/>
   `,
 };
- 
+
 function landmarkSVG(key){
   const inner = LANDMARK_SCENES[key] || SCENES.village;
   return `<svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 }
- 
+
 // Fiche descriptive de chaque lieu emblématique cité dans les tags des fiches villes.
 const LANDMARK_INFO = {
   "Cours Mirabeau": {
@@ -1138,7 +1138,7 @@ const LANDMARK_INFO = {
     caption: "Sens fut la capitale gallo-romaine d'Agedincum : on trouve encore des vestiges de remparts, thermes et amphithéâtre.",
   },
 };
- 
+
 function openLandmark(tag){
   const info = LANDMARK_INFO[tag] || { scene: "village", caption: "" };
   const imgWrap = document.getElementById("landmark-modal-img");
@@ -1152,16 +1152,16 @@ function openLandmark(tag){
   document.getElementById("landmark-modal-caption").textContent = info.caption;
   document.getElementById("landmark-modal").classList.remove("hidden");
 }
- 
+
 function closeLandmark(){
   document.getElementById("landmark-modal").classList.add("hidden");
 }
- 
+
 // ---- souvenirs photo par ville (stockage local à l'appareil, via IndexedDB) ----
 const PHOTOS_DB_NAME = "wh_photos_db";
 const PHOTOS_STORE = "photos";
 let photosCurrentCity = null;
- 
+
 function openPhotosDB(){
   return new Promise((resolve, reject) => {
     if (!window.indexedDB){ reject(new Error("IndexedDB indisponible")); return; }
@@ -1177,7 +1177,7 @@ function openPhotosDB(){
     req.onerror = () => reject(req.error);
   });
 }
- 
+
 async function addPhoto(city, dataUrl){
   const db = await openPhotosDB();
   return new Promise((resolve, reject) => {
@@ -1187,7 +1187,7 @@ async function addPhoto(city, dataUrl){
     tx.onerror = () => reject(tx.error);
   });
 }
- 
+
 async function getPhotosForCity(city){
   const db = await openPhotosDB();
   return new Promise((resolve, reject) => {
@@ -1197,7 +1197,7 @@ async function getPhotosForCity(city){
     req.onerror = () => reject(req.error);
   });
 }
- 
+
 async function deletePhotoById(id){
   const db = await openPhotosDB();
   return new Promise((resolve, reject) => {
@@ -1207,7 +1207,7 @@ async function deletePhotoById(id){
     tx.onerror = () => reject(tx.error);
   });
 }
- 
+
 // Redimensionne et compresse une photo côté navigateur avant stockage, pour que le téléphone
 // puisse en garder un maximum sans ralentir l'appli.
 function resizePhoto(file, maxDim, quality){
@@ -1235,21 +1235,21 @@ function resizePhoto(file, maxDim, quality){
     reader.readAsDataURL(file);
   });
 }
- 
+
 async function openPhotosView(city){
   photosCurrentCity = city;
   document.getElementById("photos-title").textContent = "📸 Mes photos — " + CITIES[city].name;
   showView("photos");
   await renderPhotosGrid(city);
 }
- 
+
 async function renderPhotosGrid(city){
   const grid = document.getElementById("photos-grid");
   const empty = document.getElementById("photos-empty");
   let photos = [];
   try { photos = await getPhotosForCity(city); }
   catch(e){ photos = []; }
- 
+
   if (photos.length === 0){
     grid.innerHTML = "";
     empty.classList.remove("hidden");
@@ -1261,17 +1261,17 @@ async function renderPhotosGrid(city){
     });
   }
 }
- 
+
 function openLightbox(id, src){
   document.getElementById("lightbox-img").src = src;
   document.getElementById("photo-lightbox").dataset.photoId = id;
   document.getElementById("photo-lightbox").classList.remove("hidden");
 }
- 
+
 function closeLightbox(){
   document.getElementById("photo-lightbox").classList.add("hidden");
 }
- 
+
 // Informations pratiques sur les villes pilotes (sources : offices de tourisme, INSEE,
 // Wikipédia — chiffres 2022-2023, reformulés).
 const CITY_INFO = {
@@ -1346,14 +1346,20 @@ const CITY_INFO = {
     ],
   },
 };
- 
-// ---- intégration OpenAgenda (événements de Draguignan) ----
-// Source : agenda "Var Tourisme" sur OpenAgenda (agenda officiel utilisé notamment par la Ville
-// de Draguignan). Les événements sont récupérés en direct depuis le navigateur au chargement de
-// l'appli, puis fusionnés avec les événements saisis à la main (SEED_EVENTS).
+
+// ---- intégration OpenAgenda (Draguignan + Aix-en-Provence) ----
+// Draguignan : agenda "Var Tourisme" (agenda officiel utilisé par la Ville de Draguignan).
+// Aix-en-Provence : agenda "Aix-Marseille-Provence Métropole", filtré sur la ville d'Aix
+// (l'agenda métropole couvre 92 communes, on ne garde que les événements dont l'adresse est
+// bien à Aix-en-Provence).
+// Les événements sont récupérés en direct depuis le navigateur au chargement de l'appli, puis
+// fusionnés avec les événements saisis à la main (SEED_EVENTS).
 const OPENAGENDA_KEY = "oa_pk_ZHdDDGNRqTdKzUHsYWAFIigmNoaityfVcVlbNYhWrQxhxPfzpeDDsjVFvWtoDioi";
-const OPENAGENDA_AGENDA_ID = 961617;
- 
+const OPENAGENDA_SOURCES = [
+  { agendaId: 961617,   cityName: "Draguignan",      cityKey: "drag", search: null },
+  { agendaId: 21769447, cityName: "Aix-en-Provence",  cityKey: "aix",  search: "Aix-en-Provence" },
+];
+
 function sceneForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "expo";
@@ -1363,7 +1369,7 @@ function sceneForOpenAgendaEvent(title, description){
   if (/soir[ée]e|bal|f[êe]te/.test(text)) return "village";
   return "festival";
 }
- 
+
 function categoryForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "Expo";
@@ -1373,43 +1379,51 @@ function categoryForOpenAgendaEvent(title, description){
   if (/soir[ée]e|bal/.test(text)) return "Soirée";
   return "Festival";
 }
- 
-async function fetchOpenAgendaEvents(){
-  const url = "https://api.openagenda.com/v2/agendas/" + OPENAGENDA_AGENDA_ID +
+
+// Récupère et convertit les événements d'un agenda OpenAgenda pour une ville donnée.
+async function fetchOpenAgendaCityEvents(source){
+  let url = "https://api.openagenda.com/v2/agendas/" + source.agendaId +
     "/events?key=" + OPENAGENDA_KEY + "&size=100";
+  if (source.search) url += "&search=" + encodeURIComponent(source.search);
   try {
     const res = await fetch(url);
     const data = await res.json();
     if (!data.events) return [];
     return data.events
-      .filter(ev => ev.location && ev.location.city === "Draguignan" && ev.nextTiming)
+      .filter(ev => ev.location && ev.location.city === source.cityName && ev.nextTiming)
       .map(ev => {
-        const title = (ev.title && ev.title.fr) || "Événement à Draguignan";
+        const title = (ev.title && ev.title.fr) || ("Événement à " + source.cityName);
         const description = (ev.description && ev.description.fr) || "";
         const dateIso = ev.nextTiming.begin.slice(0, 10);
         const time = ev.nextTiming.begin.slice(11, 16);
         return {
           id: "oa-" + ev.uid,
           scene: sceneForOpenAgendaEvent(title, description),
-          city: "drag",
+          city: source.cityKey,
           category: categoryForOpenAgendaEvent(title, description),
           title,
           date: dateIso,
           time,
-          place: (ev.location.name || ev.location.address || "Draguignan") + ", Draguignan",
+          place: (ev.location.name || ev.location.address || source.cityName) + ", " + source.cityName,
           lat: ev.location.latitude,
           lng: ev.location.longitude,
           price: "Voir sur place",
           thumb: "",
-          description: description || "Événement importé depuis l'agenda officiel Var Tourisme (OpenAgenda).",
+          description: description || ("Événement importé depuis OpenAgenda."),
         };
       });
   } catch (err) {
-    console.error("Erreur lors de la récupération des événements OpenAgenda :", err);
+    console.error("Erreur lors de la récupération des événements OpenAgenda (" + source.cityName + ") :", err);
     return [];
   }
 }
- 
+
+// Récupère les événements de toutes les sources OpenAgenda configurées, en parallèle.
+async function fetchAllOpenAgendaEvents(){
+  const results = await Promise.all(OPENAGENDA_SOURCES.map(fetchOpenAgendaCityEvents));
+  return results.flat();
+}
+
 // ---- state ----
 const state = {
   city: "aix",
@@ -1422,11 +1436,11 @@ const state = {
   localEvents: loadLocalEvents(),
   openAgendaEvents: [],
 };
- 
+
 function allEvents(){
   return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents];
 }
- 
+
 // ---- geo helpers ----
 function haversineKm(lat1, lng1, lat2, lng2){
   const R = 6371;
@@ -1437,17 +1451,17 @@ function haversineKm(lat1, lng1, lat2, lng2){
             Math.sin(dLng/2)**2;
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 }
- 
+
 function referencePoint(){
   if (state.userPos) return state.userPos;
   return CITIES[state.city];
 }
- 
+
 function distanceToEvent(ev){
   const ref = referencePoint();
   return haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
 }
- 
+
 // ---- local persistence (this browser only, no server yet) ----
 function loadFavorites(){
   try { return new Set(JSON.parse(localStorage.getItem("wh_favorites") || "[]")); }
@@ -1463,7 +1477,7 @@ function loadLocalEvents(){
 function saveLocalEvents(){
   localStorage.setItem("wh_local_events", JSON.stringify(state.localEvents));
 }
- 
+
 // ---- filtering ----
 function visibleEvents(){
   const ref = referencePoint();
@@ -1473,12 +1487,12 @@ function visibleEvents(){
     .filter(ev => state.selectedCategories.size === 0 || state.selectedCategories.has(ev.category))
     .sort((a, b) => a.distance - b.distance);
 }
- 
+
 function formatDate(iso){
   const d = new Date(iso + "T00:00:00");
   return d.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
 }
- 
+
 // ---- rendering ----
 function renderCategoryChips(){
   const el = document.getElementById("category-chips");
@@ -1496,18 +1510,18 @@ function renderCategoryChips(){
     el.appendChild(b);
   });
 }
- 
+
 function renderLocateBar(){
   document.getElementById("locate-label").textContent = state.userPos ? "Position détectée" : "Ville sélectionnée";
   document.getElementById("locate-value").textContent = state.userPos
     ? "📍 Votre position actuelle"
     : "📍 " + CITIES[state.city].name;
- 
+
   document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
     b.classList.toggle("active", !state.userPos && b.dataset.city === state.city);
   });
 }
- 
+
 function renderCityInfo(){
   const el = document.getElementById("city-info");
   if (state.userPos){
@@ -1535,13 +1549,13 @@ function renderCityInfo(){
   });
   el.querySelector("#btn-city-photos").onclick = () => openPhotosView(state.city);
 }
- 
+
 function renderMap(events){
   const pinsEl = document.getElementById("map-pins");
   pinsEl.innerHTML = "";
   const ref = referencePoint();
   const spanKm = Math.max(state.radiusKm, 3) * 1.3;
- 
+
   events.slice(0, 8).forEach(ev => {
     const dxKm = (ev.lng - ref.lng) * 111 * Math.cos(ref.lat * Math.PI / 180);
     const dyKm = (ev.lat - ref.lat) * 111;
@@ -1556,10 +1570,10 @@ function renderMap(events){
     pin.onclick = () => openDetail(ev.id);
     pinsEl.appendChild(pin);
   });
- 
+
   document.getElementById("map-radius-label").textContent = state.userPos ? state.radiusKm : "—";
 }
- 
+
 function eventCardHTML(ev){
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
   return `
@@ -1573,12 +1587,12 @@ function eventCardHTML(ev){
       <div class="dist">${distTxt}</div>
     </button>`;
 }
- 
+
 function renderDiscover(){
   const events = visibleEvents();
   const listEl = document.getElementById("event-list");
   const emptyEl = document.getElementById("empty-state");
- 
+
   if (events.length === 0){
     listEl.innerHTML = "";
     emptyEl.classList.remove("hidden");
@@ -1589,12 +1603,12 @@ function renderDiscover(){
       card.onclick = () => openDetail(card.dataset.id);
     });
   }
- 
+
   renderMap(events);
   renderLocateBar();
   renderCityInfo();
 }
- 
+
 function renderFavorites(){
   const events = allEvents()
     .filter(ev => state.favorites.has(ev.id))
@@ -1612,13 +1626,13 @@ function renderFavorites(){
     });
   }
 }
- 
+
 // ---- detail view ----
 function openDetail(id){
   const ev = allEvents().find(e => e.id === id);
   if (!ev) return;
   state.currentEventId = id;
- 
+
   document.getElementById("detail-hero").className = "detail-hero";
   document.getElementById("detail-hero").innerHTML = sceneSVG(ev.scene);
   document.getElementById("detail-cat").textContent = iconFor(ev.category) + " " + ev.category;
@@ -1629,18 +1643,18 @@ function openDetail(id){
   document.getElementById("detail-distance").textContent = "à " + distanceToEvent(ev).toFixed(1).replace(".", ",") + " km de la référence choisie";
   document.getElementById("detail-price").textContent = ev.price;
   document.getElementById("detail-desc").textContent = ev.description;
- 
+
   const favBtn = document.getElementById("btn-favorite");
   favBtn.classList.toggle("active", state.favorites.has(id));
   favBtn.textContent = state.favorites.has(id) ? "❤️" : "🤍";
- 
+
   showView("detail");
 }
- 
+
 function iconFor(cat){
   return { Musique:"🎷", Marché:"🛍️", Festival:"🎪", Sport:"🏁", Soirée:"🎧", Expo:"🖼️" }[cat] || "📌";
 }
- 
+
 // ---- view switching ----
 function showView(name){
   ["discover","detail","publish","confirm","favorites","photos"].forEach(v => {
@@ -1652,19 +1666,19 @@ function showView(name){
   window.scrollTo(0, 0);
   if (name === "favorites") renderFavorites();
 }
- 
+
 // ---- wiring ----
 document.addEventListener("DOMContentLoaded", () => {
   renderCategoryChips();
   renderDiscover();
- 
-  // Récupération des événements OpenAgenda (Draguignan) en arrière-plan, sans bloquer l'affichage
-  // initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
-  fetchOpenAgendaEvents().then(events => {
+
+  // Récupération des événements OpenAgenda (Draguignan + Aix-en-Provence) en arrière-plan, sans
+  // bloquer l'affichage initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
+  fetchAllOpenAgendaEvents().then(events => {
     state.openAgendaEvents = events;
     renderDiscover();
   });
- 
+
   document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
     b.onclick = () => {
       state.city = b.dataset.city;
@@ -1672,7 +1686,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderDiscover();
     };
   });
- 
+
   document.getElementById("btn-geoloc").onclick = () => {
     if (!navigator.geolocation){
       alert("La géolocalisation n'est pas disponible sur ce navigateur.");
@@ -1693,7 +1707,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { enableHighAccuracy: true, timeout: 8000 }
     );
   };
- 
+
   document.querySelectorAll(".seg").forEach(b => {
     b.onclick = () => {
       document.querySelectorAll(".seg").forEach(x => x.classList.remove("active"));
@@ -1702,7 +1716,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("map-mock").classList.toggle("hidden", state.mode !== "carte");
     };
   });
- 
+
   document.getElementById("btn-filters").onclick = () => {
     document.getElementById("filters-panel").classList.toggle("hidden");
   };
@@ -1711,7 +1725,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("radius-value").textContent = state.radiusKm;
     renderDiscover();
   };
- 
+
   document.getElementById("btn-back-detail").onclick = () => showView("discover");
   document.getElementById("btn-interested").onclick = (e) => {
     e.target.textContent = e.target.textContent.startsWith("Je suis") ? "✓ Vous êtes intéressé(e)" : "Je suis intéressé(e)";
@@ -1724,19 +1738,19 @@ document.addEventListener("DOMContentLoaded", () => {
     saveFavorites();
     openDetail(id);
   };
- 
+
   document.getElementById("btn-publish-header").onclick = () => showView("publish");
   document.querySelectorAll(".nav-item").forEach(b => {
     b.onclick = () => showView(b.dataset.view);
   });
   document.getElementById("btn-back-publish").onclick = () => showView("discover");
   document.getElementById("btn-confirm-back").onclick = () => showView("discover");
- 
+
   document.getElementById("btn-landmark-close").onclick = closeLandmark;
   document.getElementById("landmark-modal").onclick = (e) => {
     if (e.target.id === "landmark-modal") closeLandmark();
   };
- 
+
   document.getElementById("btn-back-photos").onclick = () => showView("discover");
   document.getElementById("btn-add-photo").onclick = () => document.getElementById("photo-input").click();
   document.getElementById("photo-input").onchange = async (e) => {
@@ -1762,7 +1776,7 @@ document.addEventListener("DOMContentLoaded", () => {
     closeLightbox();
     await renderPhotosGrid(photosCurrentCity);
   };
- 
+
   document.getElementById("publish-form").onsubmit = (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
@@ -1788,4 +1802,3 @@ document.addEventListener("DOMContentLoaded", () => {
     showView("confirm");
   };
 });
- 
