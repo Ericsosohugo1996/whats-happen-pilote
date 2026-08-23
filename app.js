@@ -1568,10 +1568,10 @@ function renderMap(events){
     pin.style.top = topPct + "%";
     pin.title = ev.title;
     pin.onclick = () => openDetail(ev.id);
-    pinsEl.appendChild(pin);
-  });
-
-  document.getElementById("map-radius-label").textContent = state.userPos ? state.radiusKm : "—";
+    pinsEl.appendChild(pin)
+});
+document.getElementById("map-radius-label").textContent = state.userPos ? state.radiusKm : "";
+  document.getElementById("map-radius-tag").classList.toggle("hidden", !state.userPos);
 }
 
 function eventCardHTML(ev){
