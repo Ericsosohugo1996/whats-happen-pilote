@@ -1424,6 +1424,50 @@ async function fetchAllOpenAgendaEvents(){
   return results.flat();
 }
 
+// ---- fidélité (points d'utilisation, stockés localement sur cet appareil) ----
+// Chaque première ouverture de l'appli dans une nouvelle journée rapporte 5 points. Les paliers
+// affichent un statut symbolique ; rien ici n'implique de vraie transaction d'argent.
+const LOYALTY_POINTS_PER_VISIT = 5;
+const LOYALTY_TIERS = [
+  { min: 0,  label: "Découvreur" },
+  { min: 20, label: "Habitué" },
+  { min: 60, label: "Ambassadeur" },
+];
+
+function loadLoyalty(){
+  try {
+    const saved = JSON.parse(localStorage.getItem("wh_loyalty") || "null");
+    if (saved && typeof saved.points === "number") return saved;
+  } catch(e){ /* ignore */ }
+  return { points: 0, lastVisit: null };
+}
+
+function saveLoyalty(){
+  localStorage.setItem("wh_loyalty", JSON.stringify(state.loyalty));
+}
+
+// Attribue les points de la journée si l'appli n'a pas déjà été ouverte aujourd'hui.
+function awardDailyLoyaltyPoints(){
+  const today = new Date().toISOString().slice(0, 10);
+  if (state.loyalty.lastVisit !== today){
+    state.loyalty.points += LOYALTY_POINTS_PER_VISIT;
+    state.loyalty.lastVisit = today;
+    saveLoyalty();
+  }
+}
+
+function loyaltyTierLabel(points){
+  let label = LOYALTY_TIERS[0].label;
+  LOYALTY_TIERS.forEach(t => { if (points >= t.min) label = t.label; });
+  return label;
+}
+
+function renderLoyalty(){
+  const el = document.getElementById("loyalty-badge");
+  if (!el) return;
+  el.textContent = "⭐ " + state.loyalty.points + " pts · " + loyaltyTierLabel(state.loyalty.points);
+}
+
 // ---- state ----
 const state = {
   city: "aix",
@@ -1435,6 +1479,7 @@ const state = {
   favorites: loadFavorites(),
   localEvents: loadLocalEvents(),
   openAgendaEvents: [],
+  loyalty: loadLoyalty(),
 };
 
 function allEvents(){
@@ -1568,9 +1613,10 @@ function renderMap(events){
     pin.style.top = topPct + "%";
     pin.title = ev.title;
     pin.onclick = () => openDetail(ev.id);
-    pinsEl.appendChild(pin)
-});
-document.getElementById("map-radius-label").textContent = state.userPos ? state.radiusKm : "";
+    pinsEl.appendChild(pin);
+  });
+
+  document.getElementById("map-radius-label").textContent = state.userPos ? state.radiusKm : "";
   document.getElementById("map-radius-tag").classList.toggle("hidden", !state.userPos);
 }
 
@@ -1671,6 +1717,10 @@ function showView(name){
 document.addEventListener("DOMContentLoaded", () => {
   renderCategoryChips();
   renderDiscover();
+
+  // Points de fidélité : on attribue les points du jour (si pas déjà fait) et on affiche le badge.
+  awardDailyLoyaltyPoints();
+  renderLoyalty();
 
   // Récupération des événements OpenAgenda (Draguignan + Aix-en-Provence) en arrière-plan, sans
   // bloquer l'affichage initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
