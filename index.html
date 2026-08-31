@@ -55,10 +55,16 @@
       <button class="chip-btn" id="btn-filters">⚙️ Filtres</button>
     </section>
 
-    <section id="filters-panel" class="filters-panel hidden">
+        <section id="filters-panel" class="filters-panel hidden">
       <div class="filters-row">
         <span class="filters-label">Catégories :</span>
         <div class="chips-row" id="category-chips"></div>
+      </div>
+      <div class="filters-row hidden" id="arrondissement-row">
+        <label for="arrondissement-select" class="filters-label">Arrondissement :</label>
+        <select id="arrondissement-select">
+          <option value="">Tous</option>
+        </select>
       </div>
       <div class="filters-row">
         <label for="radius-range" class="filters-label">Rayon : <strong id="radius-value">20</strong> km</label>
