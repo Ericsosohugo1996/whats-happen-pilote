@@ -1381,6 +1381,7 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 961617,   cityName: "Draguignan",      cityKey: "drag", search: null },
   { agendaId: 21769447, cityName: "Aix-en-Provence",  cityKey: "aix",  search: "Aix-en-Provence" },
   { agendaId: 11035708, cityName: "Mougins",          cityKey: "moug", search: null },
+  { agendaId: 65630513, cityName: "Martigues",        cityKey: "mart", search: null },
 ];
 function sceneForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
