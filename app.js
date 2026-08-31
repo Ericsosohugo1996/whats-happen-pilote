@@ -1903,8 +1903,19 @@ document.addEventListener("DOMContentLoaded", () => {
    const beenThereBtn = document.getElementById("btn-been-there");
   if (beenThereBtn) beenThereBtn.onclick = markBeenThere;
 
-  const inviteBtn = document.getElementById("btn-invite-friend");
+    const inviteBtn = document.getElementById("btn-invite-friend");
   if (inviteBtn) inviteBtn.onclick = inviteFriend;
+
+  const newsletterBtn = document.getElementById("btn-newsletter");
+  const newsletterModal = document.getElementById("newsletter-modal");
+  const newsletterCloseBtn = document.getElementById("btn-newsletter-close");
+  if (newsletterBtn && newsletterModal) {
+    newsletterBtn.onclick = () => newsletterModal.classList.remove("hidden");
+    newsletterCloseBtn.onclick = () => newsletterModal.classList.add("hidden");
+    newsletterModal.onclick = (e) => {
+      if (e.target.id === "newsletter-modal") newsletterModal.classList.add("hidden");
+    };
+  }
 
    // Récupération des événements OpenAgenda + Paris Data en arrière-plan, sans bloquer l'affichage
   // initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
