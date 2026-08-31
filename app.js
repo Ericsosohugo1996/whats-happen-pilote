@@ -8,8 +8,9 @@ const CITIES = {
   ste:  { name: "Sainte-Maxime",   lat: 43.3097, lng: 6.6390 },
   lcv:  { name: "La Croix-Valmer", lat: 43.2076, lng: 6.5729 },
   sens: { name: "Sens",            lat: 48.1975, lng: 3.2823 },
-  drag: { name: "Draguignan",      lat: 43.5375, lng: 6.4627 },
-};
+   drag: { name: "Draguignan",      lat: 43.5375, lng: 6.4627 },
+  moug: { name: "Mougins",         lat: 43.6008, lng: 6.9956 },
+}; 
 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
 // tourisme d'Aix-en-Provence, de Saint-Tropez, de Ramatuelle, de Sainte-Maxime et de La Croix-Valmer)
