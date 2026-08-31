@@ -1495,12 +1495,15 @@ async function fetchParisEvents(){
         const startPart = occ.split("_")[0];
         const dateIso = startPart ? startPart.slice(0, 10) : (f.date_start || "").slice(0, 10);
         const time = startPart ? startPart.slice(11, 16) : "";
-        const placeName = f.address_name || f.contact_organisation_name || "Paris";
+                const placeName = f.address_name || f.contact_organisation_name || "Paris";
+        const zipcode = f.address_zipcode || "";
+        const arrondissement = zipcode.length === 5 ? parseInt(zipcode.slice(3), 10) : null;
         return {
           id: "paris-" + (r.recordid || f.event_id),
           scene: sceneForParisEvent(tags),
           city: "paris",
           category: categoryForParisEvent(tags),
+          arrondissement: arrondissement,
           title: f.title,
           date: dateIso,
           time: time,
