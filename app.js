@@ -1369,8 +1369,8 @@ const OPENAGENDA_KEY = "oa_pk_ZHdDDGNRqTdKzUHsYWAFIigmNoaityfVcVlbNYhWrQxhxPfzpe
 const OPENAGENDA_SOURCES = [
   { agendaId: 961617,   cityName: "Draguignan",      cityKey: "drag", search: null },
   { agendaId: 21769447, cityName: "Aix-en-Provence",  cityKey: "aix",  search: "Aix-en-Provence" },
+  { agendaId: 11035708, cityName: "Mougins",          cityKey: "moug", search: null },
 ];
-
 function sceneForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "expo";
