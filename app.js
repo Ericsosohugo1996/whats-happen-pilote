@@ -1506,6 +1506,21 @@ function awardReferralWelcomeBonus(){
   localStorage.setItem("wh_referral_bonus_claimed", "1");
 }
 
+// Copie le lien de parrainage dans le presse-papiers (ou propose le partage natif si disponible).
+async function inviteFriend(){
+  const url = window.location.origin + window.location.pathname + "?ref=1";
+  if (navigator.share) {
+    try { await navigator.share({ title: "What's happen", text: "Découvre les événements près de chez toi !", url }); return; }
+    catch(e){ /* l'utilisateur a annulé, on retombe sur la copie */ }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    alert("Lien copié ! Envoie-le à un ami — il recevra 10 points de bienvenue en l'ouvrant.");
+  } catch(e){
+    prompt("Copie ce lien et envoie-le à un ami :", url);
+  }
+}
+
 // ---- state ----
 
 // ---- state ----
