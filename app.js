@@ -1457,6 +1457,67 @@ async function fetchAllOpenAgendaEvents(){
   return results.flat();
 }
 
+// ---- intégration Paris Data (« Que Faire à Paris », agenda officiel de la Ville de Paris) ----
+// Format différent d'OpenAgenda : cette source est gérée séparément avec ses propres champs.
+const PARIS_DATA_URL = "https://opendata.paris.fr/api/records/1.0/search/?dataset=que-faire-a-paris-&rows=100";
+
+function sceneForParisEvent(tags){
+  const text = tags.toLowerCase();
+  if (/photo|histoire|expo/.test(text)) return "expo";
+  if (/concert|musique|spectacle musical/.test(text)) return "musique";
+  if (/march[ée]|brocante/.test(text)) return "marche";
+  if (/sport/.test(text)) return "sport";
+  if (/soir[ée]e|bal|f[êe]te/.test(text)) return "village";
+  return "festival";
+}
+
+function categoryForParisEvent(tags){
+  const text = tags.toLowerCase();
+  if (/photo|histoire|expo/.test(text)) return "Expo";
+  if (/concert|musique|spectacle musical/.test(text)) return "Musique";
+  if (/march[ée]|brocante/.test(text)) return "Marché";
+  if (/sport/.test(text)) return "Sport";
+  if (/soir[ée]e|bal/.test(text)) return "Soirée";
+  return "Festival";
+}
+
+async function fetchParisEvents(){
+  try {
+    const res = await fetch(PARIS_DATA_URL);
+    const data = await res.json();
+    if (!data.records) return [];
+    return data.records
+      .filter(r => r.fields && r.fields.lat_lon && r.fields.title)
+      .map(r => {
+        const f = r.fields;
+        const tags = f.qfap_tags || "";
+        const occ = (f.occurrences || "").split(";")[0] || "";
+        const startPart = occ.split("_")[0];
+        const dateIso = startPart ? startPart.slice(0, 10) : (f.date_start || "").slice(0, 10);
+        const time = startPart ? startPart.slice(11, 16) : "";
+        const placeName = f.address_name || f.contact_organisation_name || "Paris";
+        return {
+          id: "paris-" + (r.recordid || f.event_id),
+          scene: sceneForParisEvent(tags),
+          city: "paris",
+          category: categoryForParisEvent(tags),
+          title: f.title,
+          date: dateIso,
+          time: time,
+          place: placeName + ", Paris",
+          lat: f.lat_lon[0],
+          lng: f.lat_lon[1],
+          price: f.price_type ? f.price_type.charAt(0).toUpperCase() + f.price_type.slice(1) : "Voir sur place",
+          thumb: "",
+          description: f.lead_text || "Événement importé depuis « Que Faire à Paris ».",
+        };
+      });
+  } catch (err) {
+    console.error("Erreur lors de la récupération des événements Paris Data :", err);
+    return [];
+  }
+}
+
 // ---- fidélité (points d'utilisation, stockés localement sur cet appareil) ----
 // Chaque première ouverture de l'appli dans une nouvelle journée rapporte 5 points. Les paliers
 // affichent un statut symbolique ; rien ici n'implique de vraie transaction d'argent.
