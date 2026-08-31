@@ -1468,6 +1468,46 @@ function renderLoyalty(){
   el.textContent = "⭐ " + state.loyalty.points + " pts · " + loyaltyTierLabel(state.loyalty.points);
 }
 
+// ---- confirmation "J'y étais" et parrainage ----
+function loadVisitedEvents(){
+  try { return new Set(JSON.parse(localStorage.getItem("wh_been_there") || "[]")); }
+  catch(e){ return new Set(); }
+}
+function saveVisitedEvents(){
+  localStorage.setItem("wh_been_there", JSON.stringify([...state.visitedEvents]));
+}
+
+function markBeenThere(){
+  const id = state.currentEventId;
+  if (!id || state.visitedEvents.has(id)) return;
+  state.visitedEvents.add(id);
+  saveVisitedEvents();
+  state.loyalty.points += 3;
+  saveLoyalty();
+  renderLoyalty();
+  renderBeenThereButton();
+}
+
+function renderBeenThereButton(){
+  const btn = document.getElementById("btn-been-there");
+  if (!btn) return;
+  const done = state.visitedEvents.has(state.currentEventId);
+  btn.disabled = done;
+  btn.textContent = done ? "✅ Confirmé — merci !" : "✅ J'y étais (+3 pts)";
+}
+
+// Bonus de bienvenue pour un ami arrivé via un lien de parrainage (?ref=1 dans l'URL).
+function awardReferralWelcomeBonus(){
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("ref") !== "1") return;
+  if (localStorage.getItem("wh_referral_bonus_claimed")) return;
+  state.loyalty.points += 10;
+  saveLoyalty();
+  localStorage.setItem("wh_referral_bonus_claimed", "1");
+}
+
+// ---- state ----
+
 // ---- state ----
 const state = {
   city: "aix",
@@ -1478,9 +1518,10 @@ const state = {
   currentEventId: null,
   favorites: loadFavorites(),
   localEvents: loadLocalEvents(),
-  openAgendaEvents: [],
+ openAgendaEvents: [],
   loyalty: loadLoyalty(),
-};
+  visitedEvents: loadVisitedEvents(),
+}; 
 
 function allEvents(){
   return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents];
