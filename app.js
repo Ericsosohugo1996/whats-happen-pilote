@@ -1848,6 +1848,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     state.localEvents.push(newEvent);
     saveLocalEvents();
+    state.loyalty.points += 20;
+    saveLoyalty();
+    renderLoyalty();
     e.target.reset();
     showView("confirm");
   };
