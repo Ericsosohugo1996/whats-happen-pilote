@@ -1621,10 +1621,12 @@ async function inviteFriend(){
 // ---- state ----
 
 // ---- state ----
+// ---- state ----
 const state = {
   city: "aix",
   mode: "carte",
   selectedCategories: new Set(),
+  selectedArrondissement: null,
   radiusKm: 20,
   userPos: null, // {lat, lng}
   currentEventId: null,
