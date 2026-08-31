@@ -1780,8 +1780,11 @@ document.addEventListener("DOMContentLoaded", () => {
   awardReferralWelcomeBonus();
   renderLoyalty();
 
-  const beenThereBtn = document.getElementById("btn-been-there");
+   const beenThereBtn = document.getElementById("btn-been-there");
   if (beenThereBtn) beenThereBtn.onclick = markBeenThere;
+
+  const inviteBtn = document.getElementById("btn-invite-friend");
+  if (inviteBtn) inviteBtn.onclick = inviteFriend;
 
   // Récupération des événements OpenAgenda (Draguignan + Aix-en-Provence) en arrière-plan, sans
   // bloquer l'affichage initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
