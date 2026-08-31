@@ -1358,7 +1358,7 @@ const CITY_INFO = {
       { ico: "🖼️", text: "Le Centre d'art de Mougins accueille des expositions temporaires toute l'année." },
     ],
   },
-  mart: {
+   mart: {
     population: "49 455 habitants (2023)",
     desc: "Quatrième ville des Bouches-du-Rhône, construite au bord de l'eau entre mer et étang de Berre, ce qui lui vaut le surnom de « Venise Provençale ». Ses canaux, son port et son quartier de l'Île en font une destination prisée sur la Côte Bleue.",
     tags: [],
@@ -1368,8 +1368,17 @@ const CITY_INFO = {
       { ico: "🫒", text: "Un terroir oléicole réputé, avec plusieurs domaines producteurs d'huile d'olive autour de la ville." },
     ],
   },
+  paris: {
+    population: "2 103 778 habitants (2023)",
+    desc: "Capitale de la France et quatrième ville de l'Union européenne, Paris rassemble musées, théâtres, salles de concert et une vie associative foisonnante. Ses événements sont ici récupérés depuis « Que Faire à Paris », l'agenda participatif officiel de la Ville de Paris.",
+    tags: [],
+    facts: [
+      { ico: "🗼", text: "La ville la plus visitée au monde, avec des dizaines de millions de touristes chaque année." },
+      { ico: "🎭", text: "Des milliers de lieux culturels : théâtres, salles de concert, musées, bibliothèques..." },
+      { ico: "📖", text: "« Que Faire à Paris » est un agenda participatif : habitants et structures culturelles y publient eux-mêmes leurs événements." },
+    ],
+  },
 };
-
 // ---- intégration OpenAgenda (Draguignan + Aix-en-Provence) ----
 // Draguignan : agenda "Var Tourisme" (agenda officiel utilisé par la Ville de Draguignan).
 // Aix-en-Provence : agenda "Aix-Marseille-Provence Métropole", filtré sur la ville d'Aix
