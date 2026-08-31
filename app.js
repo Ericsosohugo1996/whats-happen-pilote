@@ -1760,9 +1760,13 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCategoryChips();
   renderDiscover();
 
-  // Points de fidélité : on attribue les points du jour (si pas déjà fait) et on affiche le badge.
+   // Points de fidélité : on attribue les points du jour (si pas déjà fait) et on affiche le badge.
   awardDailyLoyaltyPoints();
+  awardReferralWelcomeBonus();
   renderLoyalty();
+
+  const beenThereBtn = document.getElementById("btn-been-there");
+  if (beenThereBtn) beenThereBtn.onclick = markBeenThere;
 
   // Récupération des événements OpenAgenda (Draguignan + Aix-en-Provence) en arrière-plan, sans
   // bloquer l'affichage initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
