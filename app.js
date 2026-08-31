@@ -1790,6 +1790,25 @@ function eventCardHTML(ev){
     </button>`;
 }
 
+function renderArrondissementFilter(){
+  const row = document.getElementById("arrondissement-row");
+  const select = document.getElementById("arrondissement-select");
+  if (!row || !select) return;
+
+  const isParis = !state.userPos && state.city === "paris";
+  row.classList.toggle("hidden", !isParis);
+  if (!isParis) return;
+
+  const present = new Set(
+    allEvents().filter(ev => ev.city === "paris" && ev.arrondissement).map(ev => ev.arrondissement)
+  );
+  const sorted = [...present].sort((a, b) => a - b);
+  const current = select.value;
+  select.innerHTML = '<option value="">Tous</option>' +
+    sorted.map(n => `<option value="${n}">${n}ᵉ arrondissement</option>`).join("");
+  select.value = sorted.includes(Number(current)) ? current : "";
+}
+
 function renderDiscover(){
   const events = visibleEvents();
   const listEl = document.getElementById("event-list");
@@ -1809,6 +1828,7 @@ function renderDiscover(){
   renderMap(events);
   renderLocateBar();
   renderCityInfo();
+  renderArrondissementFilter();
 }
 
 function renderFavorites(){
