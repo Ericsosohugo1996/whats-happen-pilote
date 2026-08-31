@@ -1951,9 +1951,16 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   });
 
-  document.getElementById("btn-filters").onclick = () => {
+   document.getElementById("btn-filters").onclick = () => {
     document.getElementById("filters-panel").classList.toggle("hidden");
   };
+  const arrSelect = document.getElementById("arrondissement-select");
+  if (arrSelect) {
+    arrSelect.onchange = (e) => {
+      state.selectedArrondissement = e.target.value ? Number(e.target.value) : null;
+      renderDiscover();
+    };
+  }
   document.getElementById("radius-range").oninput = (e) => {
     state.radiusKm = Number(e.target.value);
     document.getElementById("radius-value").textContent = state.radiusKm;
