@@ -10,7 +10,8 @@ const CITIES = {
   sens: { name: "Sens",            lat: 48.1975, lng: 3.2823 },
    drag: { name: "Draguignan",      lat: 43.5375, lng: 6.4627 },
    moug: { name: "Mougins",         lat: 43.6008, lng: 6.9956 },
-  mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
+   mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
+  paris: { name: "Paris",          lat: 48.8566, lng: 2.3522 },
 };
 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
