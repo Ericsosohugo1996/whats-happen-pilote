@@ -1731,9 +1731,10 @@ function openDetail(id){
   document.getElementById("detail-price").textContent = ev.price;
   document.getElementById("detail-desc").textContent = ev.description;
 
-  const favBtn = document.getElementById("btn-favorite");
+   const favBtn = document.getElementById("btn-favorite");
   favBtn.classList.toggle("active", state.favorites.has(id));
   favBtn.textContent = state.favorites.has(id) ? "❤️" : "🤍";
+  renderBeenThereButton();
 
   showView("detail");
 }
