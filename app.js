@@ -1880,10 +1880,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const inviteBtn = document.getElementById("btn-invite-friend");
   if (inviteBtn) inviteBtn.onclick = inviteFriend;
 
-  // Récupération des événements OpenAgenda (Draguignan + Aix-en-Provence) en arrière-plan, sans
-  // bloquer l'affichage initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
-  fetchAllOpenAgendaEvents().then(events => {
-    state.openAgendaEvents = events;
+   // Récupération des événements OpenAgenda + Paris Data en arrière-plan, sans bloquer l'affichage
+  // initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
+  Promise.all([fetchAllOpenAgendaEvents(), fetchParisEvents()]).then(([oaEvents, parisEvents]) => {
+    state.openAgendaEvents = [...oaEvents, ...parisEvents];
     renderDiscover();
   });
 
