@@ -1459,7 +1459,7 @@ async function fetchAllOpenAgendaEvents(){
 
 // ---- intégration Paris Data (« Que Faire à Paris », agenda officiel de la Ville de Paris) ----
 // Format différent d'OpenAgenda : cette source est gérée séparément avec ses propres champs.
-const PARIS_DATA_URL = "https://opendata.paris.fr/api/records/1.0/search/?dataset=que-faire-a-paris-&rows=100";
+const PARIS_DATA_URL = "https://opendata.paris.fr/api/records/1.0/search/?dataset=que-faire-a-paris-&rows=500";
 
 function sceneForParisEvent(tags){
   const text = tags.toLowerCase();
