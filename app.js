@@ -1972,11 +1972,22 @@ document.addEventListener("DOMContentLoaded", () => {
       renderDiscover();
     };
   }
-  document.getElementById("radius-range").oninput = (e) => {
+    document.getElementById("radius-range").oninput = (e) => {
     state.radiusKm = Number(e.target.value);
-    document.getElementById("radius-value").textContent = state.radiusKm;
+    document.getElementById("radius-value").textContent = formatRadius(state.radiusKm);
     renderDiscover();
   };
+
+  document.querySelectorAll("#radius-presets .chip-btn").forEach(b => {
+    b.onclick = () => {
+      state.radiusKm = Number(b.dataset.radius);
+      document.getElementById("radius-range").value = state.radiusKm;
+      document.getElementById("radius-value").textContent = formatRadius(state.radiusKm);
+      document.querySelectorAll("#radius-presets .chip-btn").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      renderDiscover();
+    };
+  });
 
   document.getElementById("btn-back-detail").onclick = () => showView("discover");
   document.getElementById("btn-interested").onclick = (e) => {
