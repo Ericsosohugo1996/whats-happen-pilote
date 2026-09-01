@@ -1483,7 +1483,7 @@ function categoryForParisEvent(tags){
 
 async function fetchParisEvents(){
   const pageSize = 100;
-  const pagesToFetch = 4; // 4 x 100 = jusqu'à 400 événements
+    const pagesToFetch = 8; // 8 x 100 = jusqu'à 800 événements
   try {
     const requests = [];
     for (let i = 0; i < pagesToFetch; i++){
