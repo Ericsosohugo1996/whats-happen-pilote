@@ -1482,11 +1482,19 @@ function categoryForParisEvent(tags){
 }
 
 async function fetchParisEvents(){
+  const pageSize = 100;
+  const pagesToFetch = 4; // 4 x 100 = jusqu'à 400 événements
   try {
-    const res = await fetch(PARIS_DATA_URL);
-    const data = await res.json();
-    if (!data.records) return [];
-    return data.records
+    const requests = [];
+    for (let i = 0; i < pagesToFetch; i++){
+      const start = i * pageSize;
+      const url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=que-faire-a-paris-&rows=" + pageSize + "&start=" + start;
+      requests.push(fetch(url).then(res => res.json()));
+    }
+    const pages = await Promise.all(requests);
+    const allRecords = pages.flatMap(p => p.records || []);
+
+    return allRecords
       .filter(r => r.fields && r.fields.lat_lon && r.fields.title)
       .map(r => {
         const f = r.fields;
@@ -1495,7 +1503,7 @@ async function fetchParisEvents(){
         const startPart = occ.split("_")[0];
         const dateIso = startPart ? startPart.slice(0, 10) : (f.date_start || "").slice(0, 10);
         const time = startPart ? startPart.slice(11, 16) : "";
-                const placeName = f.address_name || f.contact_organisation_name || "Paris";
+        const placeName = f.address_name || f.contact_organisation_name || "Paris";
         const zipcode = f.address_zipcode || "";
         const arrondissement = zipcode.length === 5 ? parseInt(zipcode.slice(3), 10) : null;
         return {
@@ -1512,15 +1520,14 @@ async function fetchParisEvents(){
           lng: f.lat_lon[1],
           price: f.price_type ? f.price_type.charAt(0).toUpperCase() + f.price_type.slice(1) : "Voir sur place",
           thumb: "",
-          description: f.lead_text || "Événement importé depuis « Que Faire à Paris ».",
+          description: f.lead_text || "Evenement importe depuis Que Faire a Paris.",
         };
       });
   } catch (err) {
-    console.error("Erreur lors de la récupération des événements Paris Data :", err);
+    console.error("Erreur lors de la recuperation des evenements Paris Data :", err);
     return [];
   }
 }
-
 // ---- fidélité (points d'utilisation, stockés localement sur cet appareil) ----
 // Chaque première ouverture de l'appli dans une nouvelle journée rapporte 5 points. Les paliers
 // affichent un statut symbolique ; rien ici n'implique de vraie transaction d'argent.
