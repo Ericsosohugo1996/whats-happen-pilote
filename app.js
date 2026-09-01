@@ -1688,7 +1688,11 @@ function visibleEvents(){
     .filter(ev => !state.selectedArrondissement || ev.arrondissement === state.selectedArrondissement)
     .sort((a, b) => a.distance - b.distance);
 }
-
+// Affiche le rayon en mètres si < 1 km, sinon en km.
+function formatRadius(km){
+  if (km < 1) return Math.round(km * 1000) + " m";
+  return (Math.round(km * 10) / 10) + " km";
+}
 function formatDate(iso){
   const d = new Date(iso + "T00:00:00");
   return d.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
