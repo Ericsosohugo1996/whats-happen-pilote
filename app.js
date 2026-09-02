@@ -1774,8 +1774,9 @@ function renderMap(events){
     const leftPct = 50 + (dxKm / spanKm) * 50;
     const topPct = 50 - (dyKm / spanKm) * 50;
     if (leftPct < 4 || leftPct > 96 || topPct < 4 || topPct > 96) return;
-    const pin = document.createElement("div");
+       const pin = document.createElement("div");
     pin.className = "map-pin";
+    pin.dataset.cat = ev.category;
     pin.style.left = leftPct + "%";
     pin.style.top = topPct + "%";
     pin.title = ev.title;
