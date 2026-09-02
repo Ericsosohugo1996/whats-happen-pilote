@@ -1571,7 +1571,8 @@ async function fetchParisEvents(){
         const startPart = occ.split("_")[0];
         const dateIso = startPart ? startPart.slice(0, 10) : (f.date_start || "").slice(0, 10);
         const time = startPart ? startPart.slice(11, 16) : "";
-        const placeName = f.address_name || f.contact_organisation_name || "Paris";
+                const placeName = f.address_name || f.contact_organisation_name || "Paris";
+        const photo = f.cover_url || (f.image ? f.image : "");
         const zipcode = f.address_zipcode || "";
         const arrondissement = zipcode.length === 5 ? parseInt(zipcode.slice(3), 10) : null;
         return {
@@ -1586,8 +1587,9 @@ async function fetchParisEvents(){
           place: placeName + ", Paris",
           lat: f.lat_lon[0],
           lng: f.lat_lon[1],
-          price: f.price_type ? f.price_type.charAt(0).toUpperCase() + f.price_type.slice(1) : "Voir sur place",
+                   price: f.price_type ? f.price_type.charAt(0).toUpperCase() + f.price_type.slice(1) : "Voir sur place",
           thumb: "",
+          photo: photo,
           description: f.lead_text || "Evenement importe depuis Que Faire a Paris.",
         };
       });
