@@ -1937,8 +1937,13 @@ function openDetail(id){
   if (!ev) return;
   state.currentEventId = id;
 
-  document.getElementById("detail-hero").className = "detail-hero";
-  document.getElementById("detail-hero").innerHTML = sceneSVG(ev.scene);
+    const heroEl = document.getElementById("detail-hero");
+  heroEl.className = "detail-hero";
+  if (ev.photo) {
+    heroEl.innerHTML = `<img src="${ev.photo}" alt="${ev.title}" onerror="this.parentElement.innerHTML = ${JSON.stringify(sceneSVG(ev.scene))};">`;
+  } else {
+    heroEl.innerHTML = sceneSVG(ev.scene);
+  }
   document.getElementById("detail-cat").textContent = iconFor(ev.category) + " " + ev.category;
   document.getElementById("detail-title").textContent = ev.title;
   document.getElementById("detail-date").textContent = formatDate(ev.date);
