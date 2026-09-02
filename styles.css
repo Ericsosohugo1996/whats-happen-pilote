@@ -139,6 +139,17 @@ button:active{ transform:scale(.97); }
 .city-info .ci-desc{ font-size:13px; color:var(--ink-soft); line-height:1.65; margin:0 0 14px; }
 .city-info .ci-tags{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px; }
 .city-info .ci-tag{ font-size:11px; font-weight:700; color:var(--accent); background:var(--accent-soft); padding:6px 12px; border-radius:999px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:5px; }
+
+/* ---- couleurs des tags de lieux emblématiques, façon mockup ---- */
+.city-info .ci-tags .ci-tag:nth-child(4n+1){ background:#FFE0DB; color:#c0392b; }
+.city-info .ci-tags .ci-tag:nth-child(4n+2){ background:#EDE7FF; color:#6c5ce7; }
+.city-info .ci-tags .ci-tag:nth-child(4n+3){ background:#D9F7EC; color:#00905f; }
+.city-info .ci-tags .ci-tag:nth-child(4n+4){ background:#DBEEFF; color:#0984E3; }
+
+/* ---- couleurs des icônes de "facts" (infos pratiques) ---- */
+.city-info .ci-facts .ci-fact:nth-child(3n+1) .ico{ color:#FF6F61; }
+.city-info .ci-facts .ci-fact:nth-child(3n+2) .ico{ color:#6C5CE7; }
+.city-info .ci-facts .ci-fact:nth-child(3n+3) .ico{ color:#0984E3; }
 .city-info .ci-tag:active{ background:#d5e9e7; }
 .city-info .ci-tag .ci-tag-ico{ font-size:10px; }
 .city-info .ci-facts{ display:flex; flex-direction:column; gap:9px; padding-top:14px; border-top:1px solid var(--line); }
