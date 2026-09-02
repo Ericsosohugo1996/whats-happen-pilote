@@ -1371,7 +1371,7 @@ const CITY_INFO = {
       { ico: "🫒", text: "Un terroir oléicole réputé, avec plusieurs domaines producteurs d'huile d'olive autour de la ville." },
     ],
   },
-  paris: {
+   paris: {
     population: "2 103 778 habitants (2023)",
     desc: "Capitale de la France et quatrième ville de l'Union européenne, Paris rassemble musées, théâtres, salles de concert et une vie associative foisonnante. Ses événements sont ici récupérés depuis « Que Faire à Paris », l'agenda participatif officiel de la Ville de Paris.",
     tags: [],
@@ -1379,6 +1379,36 @@ const CITY_INFO = {
       { ico: "🗼", text: "La ville la plus visitée au monde, avec des dizaines de millions de touristes chaque année." },
       { ico: "🎭", text: "Des milliers de lieux culturels : théâtres, salles de concert, musées, bibliothèques..." },
       { ico: "📖", text: "« Que Faire à Paris » est un agenda participatif : habitants et structures culturelles y publient eux-mêmes leurs événements." },
+    ],
+  },
+  nantes: {
+    population: "323 204 habitants (2023)",
+    desc: "Ancienne capitale des ducs de Bretagne, Nantes est aujourd'hui la sixième ville de France. Ville d'art et d'histoire au bord de la Loire, elle est réputée pour ses Machines de l'île et sa scène culturelle très active.",
+    tags: [],
+    facts: [
+      { ico: "🐘", text: "Les Machines de l'île, dont le célèbre Grand Éléphant, attirent des visiteurs du monde entier." },
+      { ico: "🏰", text: "Le Château des ducs de Bretagne, au cœur de la ville, retrace l'histoire du duché." },
+      { ico: "🎨", text: "Une scène culturelle et festive très dynamique, entre le Voyage à Nantes et de nombreux festivals." },
+    ],
+  },
+  rennes: {
+    population: "224 950 habitants (2023)",
+    desc: "Capitale de la Bretagne, Rennes est une grande ville universitaire et étudiante, connue pour son centre historique à colombages et sa vie culturelle foisonnante toute l'année.",
+    tags: [],
+    facts: [
+      { ico: "🎓", text: "Une des villes les plus étudiantes de France, avec plusieurs universités et grandes écoles." },
+      { ico: "🏛️", text: "Un centre historique aux maisons à pans de bois, reconstruit après le grand incendie de 1720." },
+      { ico: "🎉", text: "Les Tombées de la Nuit, festival des arts de la rue, animent la ville chaque été." },
+    ],
+  },
+  brest: {
+    population: "139 456 habitants (2023)",
+    desc: "Grande ville portuaire de la pointe bretonne, Brest est tournée vers la mer et abrite l'un des plus grands ports militaires d'Europe. Reconstruite après la Seconde Guerre mondiale, elle est aussi connue pour Océanopolis, son parc de découverte des océans.",
+    tags: [],
+    facts: [
+      { ico: "🌊", text: "Océanopolis, l'un des plus grands aquariums d'Europe, est dédié à la découverte des mondes marins." },
+      { ico: "⚓", text: "Un port militaire et de commerce parmi les plus importants d'Europe." },
+      { ico: "🎪", text: "Les fêtes maritimes de Brest, organisées tous les 4 ans, rassemblent des milliers de bateaux du monde entier." },
     ],
   },
 };
