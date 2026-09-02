@@ -175,7 +175,12 @@ button:active{ transform:scale(.97); }
   background:var(--card); border-radius:var(--radius);
   box-shadow:var(--shadow-md);
   padding:16px 18px; margin-bottom:16px;
+  border-top:4px solid #6C5CE7;
 }
+
+/* ---- couleurs des boutons de rayon rapide ---- */
+#radius-presets .chip-btn{ background:#EDE7FF; border-color:#EDE7FF; color:#6c5ce7; }
+#radius-presets .chip-btn.active{ background:#6C5CE7; border-color:#6C5CE7; color:#fff; }
 .filters-row{ margin-bottom:14px; }
 .filters-row:last-child{ margin-bottom:0; }
 .filters-label{ display:block; font-size:11px; font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em; margin-bottom:9px; }
