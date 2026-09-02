@@ -1507,8 +1507,9 @@ async function fetchOpenAgendaCityEvents(source){
           place: (ev.location.name || ev.location.address || source.cityName) + ", " + source.cityName,
           lat: ev.location.latitude,
           lng: ev.location.longitude,
-          price: "Voir sur place",
+                   price: "Voir sur place",
           thumb: "",
+          photo: photo,
           description: description || ("Événement importé depuis OpenAgenda."),
         };
       });
