@@ -456,3 +456,7 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
   backdrop-filter:blur(6px);
   -webkit-backdrop-filter:blur(6px);
 }
+/* ---- titre de l'écran Favoris, accent corail plutôt que violet ---- */
+.favorites-title::before{
+  background:linear-gradient(180deg, #FF6F61, #c0392b) !important;
+}
