@@ -1425,6 +1425,9 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 21769447, cityName: "Aix-en-Provence",  cityKey: "aix",  search: "Aix-en-Provence" },
   { agendaId: 11035708, cityName: "Mougins",          cityKey: "moug", search: null },
   { agendaId: 65630513, cityName: "Martigues",        cityKey: "mart", search: null },
+  { agendaId: 82470621, cityName: "Nantes",           cityKey: "nantes", search: null },
+  { agendaId: 20500020, cityName: "Rennes",           cityKey: "rennes", search: null },
+  { agendaId: 2404802,  cityName: "Brest",            cityKey: "brest", search: null },
 ];
 function sceneForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
