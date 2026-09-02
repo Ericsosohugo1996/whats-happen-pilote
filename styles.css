@@ -305,6 +305,12 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 }
 .nav-item .dot{ font-size:18px; }
 
+/* ---- couleurs distinctes par icône, façon mockup ---- */
+.nav-item[data-view="discover"] .dot{ filter:none; }
+.nav-item[data-view="publish"]{ color:#6C5CE7; }
+.nav-item[data-view="publish"].active{ background:linear-gradient(155deg, #6C5CE7 0%, #4834b0 100%); color:#fff; }
+.nav-item[data-view="favorites"]{ color:#FF6F61; }
+.nav-item[data-view="favorites"].active{ background:linear-gradient(155deg, #FF6F61 0%, #c0392b 100%); color:#fff; }
 @media (min-width:760px){ .bottomnav{ max-width:460px; } }
 
 /* ---- mes photos (souvenirs) ---- */
