@@ -385,9 +385,20 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .nav-item[data-view="favorites"].active{ background:linear-gradient(155deg, #FF6F61 0%, #c0392b 100%); color:#fff; }
 @media (min-width:760px){ .bottomnav{ max-width:460px; } }
 
-/* ---- mes photos (souvenirs) ---- */
-#btn-add-photo{ margin-bottom:18px; }
+/* ---- mes photos (souvenirs), accent doré ---- */
+.photos-title::before{
+  background:linear-gradient(180deg, #FDCB6E, #e3a72e) !important;
+}
+#btn-add-photo{
+  margin-bottom:18px;
+  background:linear-gradient(135deg, #FDCB6E, #e3a72e) !important;
+  border:none !important;
+  color:#3a2e00 !important;
+  box-shadow:0 6px 16px -6px rgba(253,203,110,.6);
+}
 .photos-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:9px; }
+.photos-grid .photo-thumb{ transition:transform .15s ease; }
+.photos-grid .photo-thumb:active{ transform:scale(.96); }
 .photos-grid .photo-thumb{
   aspect-ratio:1; border-radius:var(--radius-sm); overflow:hidden; border:none; padding:0;
   background:var(--line); cursor:pointer; box-shadow:var(--shadow-sm);
