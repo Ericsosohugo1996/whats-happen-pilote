@@ -1404,7 +1404,7 @@ const CITY_INFO = {
       { ico: "🎉", text: "Les Tombées de la Nuit, festival des arts de la rue, animent la ville chaque été." },
     ],
   },
-  brest: {
+   brest: {
     population: "139 456 habitants (2023)",
     desc: "Grande ville portuaire de la pointe bretonne, Brest est tournée vers la mer et abrite l'un des plus grands ports militaires d'Europe. Reconstruite après la Seconde Guerre mondiale, elle est aussi connue pour Océanopolis, son parc de découverte des océans.",
     tags: [],
@@ -1412,6 +1412,26 @@ const CITY_INFO = {
       { ico: "🌊", text: "Océanopolis, l'un des plus grands aquariums d'Europe, est dédié à la découverte des mondes marins." },
       { ico: "⚓", text: "Un port militaire et de commerce parmi les plus importants d'Europe." },
       { ico: "🎪", text: "Les fêtes maritimes de Brest, organisées tous les 4 ans, rassemblent des milliers de bateaux du monde entier." },
+    ],
+  },
+  bordeaux: {
+    population: "260 958 habitants (2023)",
+    desc: "Ancienne cité marchande prospère grâce au commerce du vin, Bordeaux a connu une spectaculaire renaissance urbaine depuis les années 2000. Son centre historique, classé à l'UNESCO, est l'un des plus vastes ensembles architecturaux du XVIIIe siècle en Europe.",
+    tags: [],
+    facts: [
+      { ico: "🍷", text: "Capitale mondiale du vin, entourée des vignobles prestigieux du Médoc et de Saint-Émilion." },
+      { ico: "🏛️", text: "Le centre historique de Bordeaux est classé au patrimoine mondial de l'UNESCO depuis 2007." },
+      { ico: "💧", text: "Le Miroir d'eau, sur les quais, est la plus grande fontaine réfléchissante du monde." },
+    ],
+  },
+  toulouse: {
+    population: "504 078 habitants (2023)",
+    desc: "Surnommée la « Ville Rose » pour la couleur de ses briques en terre cuite, Toulouse est la capitale historique de l'aéronautique française et une grande ville étudiante du Sud-Ouest.",
+    tags: [],
+    facts: [
+      { ico: "🧱", text: "Surnommée la « Ville Rose » pour la couleur caractéristique de ses briques en terre cuite." },
+      { ico: "✈️", text: "Capitale européenne de l'aéronautique et de l'aérospatiale, siège d'Airbus." },
+      { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, avec plusieurs universités et grandes écoles." },
     ],
   },
 };
