@@ -14,7 +14,10 @@ const CITIES = {
    paris: { name: "Paris",          lat: 48.8566, lng: 2.3522 },
   nantes: { name: "Nantes",        lat: 47.2184, lng: -1.5536 },
   rennes: { name: "Rennes",        lat: 48.1173, lng: -1.6778 },
-  brest: { name: "Brest",          lat: 48.3904, lng: -4.4861 },
+   brest: { name: "Brest",          lat: 48.3904, lng: -4.4861 },
+  bordeaux: { name: "Bordeaux",    lat: 44.8378, lng: -0.5792 },
+  toulouse: { name: "Toulouse",    lat: 43.6047, lng: 1.4442 },
+};
 };
 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
