@@ -1451,8 +1451,9 @@ function categoryForOpenAgendaEvent(title, description){
 
 // Récupère et convertit les événements d'un agenda OpenAgenda pour une ville donnée.
 async function fetchOpenAgendaCityEvents(source){
+  const size = source.size || 100;
   let url = "https://api.openagenda.com/v2/agendas/" + source.agendaId +
-    "/events?key=" + OPENAGENDA_KEY + "&size=100";
+    "/events?key=" + OPENAGENDA_KEY + "&size=" + size;
   if (source.search) url += "&search=" + encodeURIComponent(source.search);
   try {
     const res = await fetch(url);
