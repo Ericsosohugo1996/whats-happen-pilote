@@ -315,15 +315,18 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .confirm-box{ text-align:center; padding:48px 10px; }
 .confirm-icon{ width:74px;height:74px;border-radius:50%; background:linear-gradient(155deg, #00B894, #00785e); color:#fff; font-size:32px; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; box-shadow:0 12px 26px -10px rgba(0,184,148,.5); position:relative; }
 .confirm-box{ position:relative; overflow:hidden; }
-.confirm-box::before, .confirm-box::after{
-  content:""; position:absolute; width:10px; height:10px; border-radius:3px;
-  animation:confetti-fall 1.8s ease-in forwards;
+.confetti{
+  position:absolute; top:5%; width:10px; height:10px; border-radius:3px;
+  animation:confetti-fall 1.6s ease-in forwards;
+  z-index:5;
 }
-.confirm-box::before{ top:10%; left:20%; background:#FF6F61; animation-delay:.1s; }
-.confirm-box::after{ top:10%; right:22%; background:#6C5CE7; animation-delay:.3s; }
+.confetti-1{ left:20%; background:#FF6F61; animation-delay:0s; }
+.confetti-2{ left:40%; background:#6C5CE7; animation-delay:.15s; }
+.confetti-3{ left:60%; background:#FDCB6E; animation-delay:.3s; }
+.confetti-4{ left:78%; background:#0984E3; animation-delay:.45s; }
 @keyframes confetti-fall{
   0%{ transform:translateY(0) rotate(0deg); opacity:1; }
-  100%{ transform:translateY(120px) rotate(220deg); opacity:0; }
+  100%{ transform:translateY(160px) rotate(260deg); opacity:0; }
 }
 .confirm-box h1{ font-family:var(--font-display); font-weight:600; font-size:22px; margin:0 0 9px; }
 .confirm-box p{ font-size:13.5px; color:var(--ink-soft); margin:0 0 24px; line-height:1.5; }
