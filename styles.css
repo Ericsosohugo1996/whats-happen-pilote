@@ -108,23 +108,23 @@ button:active{ transform:scale(.97); }
 }
 
 /* ---- couleurs distinctes par ville, façon mockup ---- */
-.locate-actions .chip-city-1{ background:#FF6F61; border-color:#FF6F61; color:#fff; }
-.locate-actions .chip-city-2{ background:#6C5CE7; border-color:#6C5CE7; color:#fff; }
-.locate-actions .chip-city-3{ background:#00B894; border-color:#00B894; color:#fff; }
-.locate-actions .chip-city-4{ background:#FDCB6E; border-color:#FDCB6E; color:#3a2e00; }
-.locate-actions .chip-city-5{ background:#0984E3; border-color:#0984E3; color:#fff; }
-.locate-actions .chip-city-6{ background:#E17055; border-color:#E17055; color:#fff; }
-.locate-actions .chip-city-7{ background:#00CEC9; border-color:#00CEC9; color:#0a3a38; }
-.locate-actions .chip-city-8{ background:#A29BFE; border-color:#A29BFE; color:#2a1e6b; }
-.locate-actions .chip-city-9{ background:#FD79A8; border-color:#FD79A8; color:#fff; }
-.locate-actions .chip-city-10{ background:#FAB1A0; border-color:#FAB1A0; color:#5c1e0f; }
+.locate-actions .chip-city-1{ background:#FF6F61 !important; border-color:#FF6F61 !important; color:#fff !important; }
+.locate-actions .chip-city-2{ background:#6C5CE7 !important; border-color:#6C5CE7 !important; color:#fff !important; }
+.locate-actions .chip-city-3{ background:#00B894 !important; border-color:#00B894 !important; color:#fff !important; }
+.locate-actions .chip-city-4{ background:#FDCB6E !important; border-color:#FDCB6E !important; color:#3a2e00 !important; }
+.locate-actions .chip-city-5{ background:#0984E3 !important; border-color:#0984E3 !important; color:#fff !important; }
+.locate-actions .chip-city-6{ background:#E17055 !important; border-color:#E17055 !important; color:#fff !important; }
+.locate-actions .chip-city-7{ background:#00CEC9 !important; border-color:#00CEC9 !important; color:#0a3a38 !important; }
+.locate-actions .chip-city-8{ background:#A29BFE !important; border-color:#A29BFE !important; color:#2a1e6b !important; }
+.locate-actions .chip-city-9{ background:#FD79A8 !important; border-color:#FD79A8 !important; color:#fff !important; }
+.locate-actions .chip-city-10{ background:#FAB1A0 !important; border-color:#FAB1A0 !important; color:#5c1e0f !important; }
 
 .locate-actions .chip-city-1.active, .locate-actions .chip-city-2.active,
 .locate-actions .chip-city-3.active, .locate-actions .chip-city-4.active,
 .locate-actions .chip-city-5.active, .locate-actions .chip-city-6.active,
 .locate-actions .chip-city-7.active, .locate-actions .chip-city-8.active,
 .locate-actions .chip-city-9.active, .locate-actions .chip-city-10.active{
-  outline:3px solid #fff; outline-offset:1px;
+  outline:3px solid #fff !important; outline-offset:1px;
 }
 /* ---- city info card ---- */
 .city-info{
