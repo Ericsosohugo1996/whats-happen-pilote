@@ -430,3 +430,15 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
   .event-list{ display:grid; grid-template-columns:1fr 1fr; }
   .cta-row{ max-width:360px; }
 }
+/* ---- badge de points, harmonisé avec le nouvel en-tête ---- */
+.loyalty-badge{
+  background:rgba(255,255,255,.22) !important;
+  border:1px solid rgba(255,255,255,.4) !important;
+  color:#fff !important;
+  padding:6px 14px !important;
+  border-radius:999px !important;
+  font-weight:700 !important;
+  font-size:12.5px !important;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
