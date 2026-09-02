@@ -43,8 +43,8 @@ button:active{ transform:scale(.97); }
   position:sticky; top:0; z-index:30;
   display:flex; align-items:center; justify-content:space-between;
   padding:14px 18px;
-  background:linear-gradient(120deg, var(--primary) 0%, var(--primary-dark) 65%, #125d84 100%);
-  box-shadow:0 6px 20px -10px rgba(156,55,11,.55);
+  background:linear-gradient(120deg, #00CEC9 0%, #0984E3 55%, #6C5CE7 100%);
+  box-shadow:0 6px 20px -10px rgba(9,132,227,.5);
 }
 .brand{ display:flex; align-items:center; gap:10px; }
 .brand img{ width:32px;height:32px;border-radius:24%; background:#fff; padding:2px; box-shadow:0 2px 8px rgba(0,0,0,.25); }
