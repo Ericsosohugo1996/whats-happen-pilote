@@ -1450,8 +1450,9 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 65630513, cityName: "Martigues",        cityKey: "mart", search: null },
     { agendaId: 82470621, cityName: "Nantes",           cityKey: "nantes", search: null, size: 2000 },
   { agendaId: 20500020, cityName: "Rennes",           cityKey: "rennes", search: null, size: 2000 },
-  { agendaId: 2404802,  cityName: "Brest",            cityKey: "brest", search: null, size: 300 },
-];
+   { agendaId: 2404802,  cityName: "Brest",            cityKey: "brest", search: null },
+  { agendaId: 83392987, cityName: "Bordeaux",         cityKey: "bordeaux", search: null, size: 1500 },
+  { agendaId: 42448083, cityName: "Toulouse",         cityKey: "toulouse", search: null, size: 2000 },
 function sceneForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "expo";
