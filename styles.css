@@ -195,12 +195,19 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
   border-left:3px solid transparent;
 }
 .event-card:active{ box-shadow:var(--shadow-sm); background:#fdfbf8; }
-.event-card[data-cat="Musique"]{ border-left-color:#e0524a; }
-.event-card[data-cat="Marché"]{ border-left-color:#e3a72e; }
-.event-card[data-cat="Festival"]{ border-left-color:#a34a9c; }
-.event-card[data-cat="Sport"]{ border-left-color:#1f6f78; }
-.event-card[data-cat="Soirée"]{ border-left-color:#3a4fb0; }
-.event-card[data-cat="Expo"]{ border-left-color:#2f8f5b; }
+.event-card[data-cat="Musique"]{ border-left-color:#FF6F61; }
+.event-card[data-cat="Marché"]{ border-left-color:#FDCB6E; }
+.event-card[data-cat="Festival"]{ border-left-color:#A29BFE; }
+.event-card[data-cat="Sport"]{ border-left-color:#00B894; }
+.event-card[data-cat="Soirée"]{ border-left-color:#6C5CE7; }
+.event-card[data-cat="Expo"]{ border-left-color:#0984E3; }
+
+.event-card[data-cat="Musique"] .cat{ color:#FF6F61; }
+.event-card[data-cat="Marché"] .cat{ color:#c9960a; }
+.event-card[data-cat="Festival"] .cat{ color:#6c5ce7; }
+.event-card[data-cat="Sport"] .cat{ color:#00905f; }
+.event-card[data-cat="Soirée"] .cat{ color:#6C5CE7; }
+.event-card[data-cat="Expo"] .cat{ color:#0984E3; }
 .event-card .thumb{ width:68px;height:68px;border-radius:15px; flex:0 0 auto; overflow:hidden; background:var(--line); box-shadow:0 4px 10px -4px rgba(33,31,27,.22); }
 .event-card .thumb svg{ display:block; width:100%; height:100%; }
 .event-card .info{ flex:1; min-width:0; }
