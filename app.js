@@ -2039,7 +2039,13 @@ document.addEventListener("DOMContentLoaded", () => {
       { enableHighAccuracy: true, timeout: 8000 }
     );
   };
-
+  document.getElementById("btn-see-list").onclick = () => {
+    document.querySelectorAll(".seg").forEach(x => x.classList.remove("active"));
+    document.querySelector('.seg[data-mode="liste"]').classList.add("active");
+    state.mode = "liste";
+    document.getElementById("map-mock").classList.add("hidden");
+    document.getElementById("event-list").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   document.querySelectorAll(".seg").forEach(b => {
     b.onclick = () => {
       document.querySelectorAll(".seg").forEach(x => x.classList.remove("active"));
