@@ -100,7 +100,32 @@ button:active{ transform:scale(.97); }
 .locate-actions .chip-btn.active{ background:#fff; border-color:#fff; color:var(--primary-dark); box-shadow:0 6px 16px -8px rgba(0,0,0,.4); }
 .locate-actions .chip-btn--primary{ background:rgba(255,255,255,.2); border-color:rgba(255,255,255,.46); color:#fff; box-shadow:none; }
 .locate-actions .chip-btn--primary:active{ background:rgba(255,255,255,.32); }
+/* ---- groupes de villes par région ---- */
+.region-group{ margin-bottom:14px; }
+.region-label{
+  display:block; font-size:10px; text-transform:uppercase; letter-spacing:.08em;
+  color:rgba(255,255,255,.6); font-weight:700; margin-bottom:6px;
+}
 
+/* ---- couleurs distinctes par ville, façon mockup ---- */
+.locate-actions .chip-city-1{ background:#FF6F61; border-color:#FF6F61; color:#fff; }
+.locate-actions .chip-city-2{ background:#6C5CE7; border-color:#6C5CE7; color:#fff; }
+.locate-actions .chip-city-3{ background:#00B894; border-color:#00B894; color:#fff; }
+.locate-actions .chip-city-4{ background:#FDCB6E; border-color:#FDCB6E; color:#3a2e00; }
+.locate-actions .chip-city-5{ background:#0984E3; border-color:#0984E3; color:#fff; }
+.locate-actions .chip-city-6{ background:#E17055; border-color:#E17055; color:#fff; }
+.locate-actions .chip-city-7{ background:#00CEC9; border-color:#00CEC9; color:#0a3a38; }
+.locate-actions .chip-city-8{ background:#A29BFE; border-color:#A29BFE; color:#2a1e6b; }
+.locate-actions .chip-city-9{ background:#FD79A8; border-color:#FD79A8; color:#fff; }
+.locate-actions .chip-city-10{ background:#FAB1A0; border-color:#FAB1A0; color:#5c1e0f; }
+
+.locate-actions .chip-city-1.active, .locate-actions .chip-city-2.active,
+.locate-actions .chip-city-3.active, .locate-actions .chip-city-4.active,
+.locate-actions .chip-city-5.active, .locate-actions .chip-city-6.active,
+.locate-actions .chip-city-7.active, .locate-actions .chip-city-8.active,
+.locate-actions .chip-city-9.active, .locate-actions .chip-city-10.active{
+  outline:3px solid #fff; outline-offset:1px;
+}
 /* ---- city info card ---- */
 .city-info{
   background:var(--card); border-radius:var(--radius);
