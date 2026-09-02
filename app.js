@@ -1487,8 +1487,13 @@ async function fetchOpenAgendaCityEvents(source){
     return data.events
       .filter(ev => ev.location && ev.location.city === source.cityName && ev.nextTiming)
       .map(ev => {
-        const title = (ev.title && ev.title.fr) || ("Événement à " + source.cityName);
+               const title = (ev.title && ev.title.fr) || ("Événement à " + source.cityName);
         const description = (ev.description && ev.description.fr) || "";
+        let photo = "";
+        if (ev.image && ev.image.base) {
+          const fullVariant = (ev.image.variants || []).find(v => v.type === "full");
+          photo = ev.image.base + (fullVariant ? fullVariant.filename : ev.image.filename);
+        }
         const dateIso = ev.nextTiming.begin.slice(0, 10);
         const time = ev.nextTiming.begin.slice(11, 16);
         return {
