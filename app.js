@@ -1727,8 +1727,11 @@ async function fetchOpenAgendaCityEvents(source){
 
 // Récupère les événements de toutes les sources OpenAgenda configurées, en parallèle.
 async function fetchAllOpenAgendaEvents(){
-  const results = await Promise.all(OPENAGENDA_SOURCES.map(fetchOpenAgendaCityEvents));
-  return results.flat();
+  const results = await Promise.allSettled(OPENAGENDA_SOURCES.map(fetchOpenAgendaCityEvents));
+  return results
+    .filter(r => r.status === "fulfilled")
+    .map(r => r.value)
+    .flat();
 }
 
 // ---- intégration Paris Data (« Que Faire à Paris », agenda officiel de la Ville de Paris) ----
