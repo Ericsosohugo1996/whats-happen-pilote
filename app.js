@@ -53,6 +53,7 @@ function toggleLang(){
   currentLang.value = currentLang.value === "fr" ? "en" : "fr";
   localStorage.setItem("wh_lang", currentLang.value);
   applyTranslation();
+  renderDiscover();
 }
 const CITIES = {
   aix:  { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
