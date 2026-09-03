@@ -1720,9 +1720,10 @@ function renderBeenThereButton(){
   if (!btn) return;
   const done = state.visitedEvents.has(state.currentEventId);
   btn.disabled = done;
-  btn.textContent = done ? "✅ Confirmé — merci !" : "✅ J'y étais (+3 pts)";
+  const key = done ? "✅ Confirmé — merci !" : "✅ J'y étais (+3 pts)";
+  const dict = TRANSLATIONS[currentLang.value] || {};
+  btn.textContent = currentLang.value === "en" && dict[key] ? dict[key] : key;
 }
-
 // Bonus de bienvenue pour un ami arrivé via un lien de parrainage (?ref=1 dans l'URL).
 function awardReferralWelcomeBonus(){
   const params = new URLSearchParams(window.location.search);
