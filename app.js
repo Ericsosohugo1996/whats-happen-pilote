@@ -1487,6 +1487,144 @@ const CITY_INFO = {
     ],
   },
 };
+// ---- traduction anglaise des fiches villes ----
+const CITY_INFO_EN = {
+  aix: {
+    population: "147,933 residents (2022)",
+    desc: "Founded in 122 BC by the Roman consul Sextius around its thermal springs, under the name Aquae Sextiae. Nicknamed \"the city of a hundred fountains\", it is today the birthplace of painter Paul Cézanne and a major university town in Provence.",
+    facts: [
+      { ico: "🎓", text: "A university town since 1409 — about one in four residents is a student." },
+      { ico: "🎭", text: "An international opera festival has been held every summer since 1948." },
+      { ico: "⛲", text: "More than 40 fountains are scattered throughout the historic centre." },
+    ],
+  },
+  st: {
+    population: "3,582 residents (2023)",
+    desc: "A former fishing village that became an international resort from the late 1950s onwards, made famous notably by cinema. A tiny village that nonetheless welcomes millions of visitors every year, between its harbour and its beaches.",
+    facts: [
+      { ico: "⛵", text: "The historic harbour has around 800 mooring berths." },
+      { ico: "🏖️", text: "Pampelonne beach stretches nearly 5 km south of the village." },
+      { ico: "🚩", text: "The first port liberated during the landing in Provence, on 15 August 1944." },
+    ],
+  },
+  ram: {
+    population: "1,889 residents (2022)",
+    desc: "A hilltop village a few kilometres from Saint-Tropez, on the peninsula of the same name. Its vineyards (Côtes-de-Provence AOC) and Pampelonne beach, which stretches along its coastline, make it both a nature and party destination, also known for its open-air theatre festival.",
+    facts: [
+      { ico: "🏖️", text: "Most of Pampelonne beach lies within the town of Ramatuelle." },
+      { ico: "🎭", text: "The Ramatuelle Festival, created in 1985 by Jean-Claude Brialy, animates the open-air theatre every summer." },
+      { ico: "🍷", text: "A wine-growing area classified under the Côtes-de-Provence appellation." },
+    ],
+  },
+  ste: {
+    population: "14,118 residents (2023)",
+    desc: "Founded around the year 1000 by the monks of Lérins, the resort faces the Gulf of Saint-Tropez at the foot of the Maures massif. Long a fishing village before turning to tourism, it has kept its old town and 16th-century tower while developing a long, lively seafront.",
+    facts: [
+      { ico: "🗼", text: "The Tour Carrée, built in the 16th century for defence, now houses a museum." },
+      { ico: "🏖️", text: "Nearly 10 km of accessible coastline, including several Blue Flag beaches." },
+      { ico: "⛳", text: "About ten golf courses within 30 minutes, a spot particularly popular with golfers." },
+    ],
+  },
+  lcv: {
+    population: "3,855 residents (2023)",
+    desc: "A town created in 1934 between Saint-Tropez and Cavalaire, linked to a legend: it is said to be where Emperor Constantine had his vision before the Battle of the Milvian Bridge. Its beaches, including Gigaro, also served as an Allied landing site in August 1944.",
+    facts: [
+      { ico: "✝️", text: "A stone cross erected in 1893 marks the legendary site of Emperor Constantine's vision." },
+      { ico: "🪖", text: "Its beaches served as an Allied landing point on 15 August 1944, during the landing in Provence." },
+      { ico: "🌿", text: "Cap Lardier, a protected natural area, extends the town to the tip of the peninsula." },
+    ],
+  },
+  sens: {
+    population: "27,275 residents (2022)",
+    desc: "Born from the ancient Gallo-Roman city of Agedincum, capital of the Gallic Senones people, Sens later became the seat of a powerful archbishopric that held primacy over much of France until the 17th century. Its cathedral, begun in 1135, is considered the first Gothic cathedral in France.",
+    facts: [
+      { ico: "⛪", text: "Saint-Étienne cathedral, begun in 1135, is considered the first Gothic cathedral in France." },
+      { ico: "🏛️", text: "Sens was the capital of the Gallic Senones people, at the origin of the Gallo-Roman city of Agedincum." },
+      { ico: "📜", text: "The archbishopric of Sens long held primacy over much of France, until the 17th century." },
+    ],
+  },
+  drag: {
+    population: "40,826 residents (2023)",
+    desc: "Sub-prefecture of the Var and heart of the Dracénie area, the town owes part of its reputation to its military past as well as to its rich cultural heritage, including museums, a historic chapel and a departmental exhibition hall.",
+    facts: [
+      { ico: "🖼️", text: "The Fine Arts Museum and the Museum of Arts and Popular Traditions keep the region's cultural heritage alive." },
+      { ico: "🏛️", text: "The Var departmental exhibition hall hosts major temporary exhibitions." },
+      { ico: "🌿", text: "A prefecture town surrounded by hills, gateway to the Provence Verte area and the Verdon gorges." },
+    ],
+  },
+  moug: {
+    population: "19,782 residents (2023)",
+    desc: "A hilltop medieval village in the Alpes-Maritimes, between Cannes and Grasse. Known for its Michelin-starred gastronomy and its art market, Mougins was also Pablo Picasso's last home, where he spent the final twelve years of his life.",
+    facts: [
+      { ico: "🎨", text: "Pablo Picasso spent the last twelve years of his life in Mougins, until his death in 1973." },
+      { ico: "🍽️", text: "A village renowned for its gastronomy, with several Michelin-starred restaurants." },
+      { ico: "🖼️", text: "The Mougins Art Centre hosts temporary exhibitions all year round." },
+    ],
+  },
+  mart: {
+    population: "49,455 residents (2023)",
+    desc: "The fourth-largest town in the Bouches-du-Rhône, built on the water between the sea and the Étang de Berre, earning it the nickname \"Provençal Venice\". Its canals, harbour and Île district make it a popular destination on the Côte Bleue.",
+    facts: [
+      { ico: "🚤", text: "Nicknamed the \"Provençal Venice\" for its canals running through the Île district." },
+      { ico: "🏰", text: "Fort de Bouc, also known as Fort Vauban, has guarded the harbour entrance for centuries." },
+      { ico: "🫒", text: "A renowned olive-growing area, with several producing estates around the town." },
+    ],
+  },
+  paris: {
+    population: "2,103,778 residents (2023)",
+    desc: "Capital of France and the fourth-largest city in the European Union, Paris brings together museums, theatres, concert halls and a thriving community life. Its events are gathered here from \"Que Faire à Paris\", the official participatory listings of the City of Paris.",
+    facts: [
+      { ico: "🗼", text: "The most visited city in the world, with tens of millions of tourists every year." },
+      { ico: "🎭", text: "Thousands of cultural venues: theatres, concert halls, museums, libraries..." },
+      { ico: "📖", text: "\"Que Faire à Paris\" is a participatory listings platform: residents and cultural venues publish their own events there." },
+    ],
+  },
+  nantes: {
+    population: "323,204 residents (2023)",
+    desc: "Former capital of the Dukes of Brittany, Nantes is today the sixth-largest city in France. A city of art and history on the banks of the Loire, it is known for Les Machines de l'île and its very active cultural scene.",
+    facts: [
+      { ico: "🐘", text: "Les Machines de l'île, including the famous Great Elephant, draw visitors from around the world." },
+      { ico: "🏰", text: "The Château des ducs de Bretagne, in the heart of the city, retraces the history of the duchy." },
+      { ico: "🎨", text: "A very lively cultural and festive scene, between Le Voyage à Nantes and numerous festivals." },
+    ],
+  },
+  rennes: {
+    population: "224,950 residents (2023)",
+    desc: "Capital of Brittany, Rennes is a major university and student city, known for its half-timbered historic centre and its vibrant cultural life all year round.",
+    facts: [
+      { ico: "🎓", text: "One of the most student-oriented cities in France, with several universities and top schools." },
+      { ico: "🏛️", text: "A historic centre of timber-framed houses, rebuilt after the great fire of 1720." },
+      { ico: "🎉", text: "The Tombées de la Nuit festival of street arts brings the city to life every summer." },
+    ],
+  },
+  brest: {
+    population: "139,456 residents (2023)",
+    desc: "A major port city at the tip of Brittany, Brest faces the sea and is home to one of the largest military ports in Europe. Rebuilt after the Second World War, it is also known for Océanopolis, its ocean discovery park.",
+    facts: [
+      { ico: "🌊", text: "Océanopolis, one of the largest aquariums in Europe, is dedicated to exploring the marine world." },
+      { ico: "⚓", text: "One of the most important military and commercial ports in Europe." },
+      { ico: "🎪", text: "The Brest maritime festival, held every 4 years, gathers thousands of boats from around the world." },
+    ],
+  },
+  bordeaux: {
+    population: "260,958 residents (2023)",
+    desc: "A once-prosperous trading city built on the wine trade, Bordeaux has undergone a spectacular urban renaissance since the 2000s. Its historic centre, a UNESCO World Heritage site, is one of the largest 18th-century architectural ensembles in Europe.",
+    facts: [
+      { ico: "🍷", text: "The world capital of wine, surrounded by the prestigious vineyards of the Médoc and Saint-Émilion." },
+      { ico: "🏛️", text: "Bordeaux's historic centre has been a UNESCO World Heritage site since 2007." },
+      { ico: "💧", text: "The Miroir d'eau, on the riverside, is the largest reflecting pool in the world." },
+    ],
+  },
+  toulouse: {
+    population: "504,078 residents (2023)",
+    desc: "Nicknamed the \"Pink City\" for the colour of its terracotta bricks, Toulouse is the historic capital of French aeronautics and a major student city in the south-west.",
+    facts: [
+      { ico: "🧱", text: "Nicknamed the \"Pink City\" for the distinctive colour of its terracotta bricks." },
+      { ico: "✈️", text: "The European capital of aeronautics and aerospace, home to Airbus." },
+      { ico: "🎓", text: "One of the largest student cities in France, with several universities and top schools." },
+    ],
+  },
+};
 // ---- intégration OpenAgenda (Draguignan + Aix-en-Provence) ----
 // Draguignan : agenda "Var Tourisme" (agenda officiel utilisé par la Ville de Draguignan).
 // Aix-en-Provence : agenda "Aix-Marseille-Provence Métropole", filtré sur la ville d'Aix
