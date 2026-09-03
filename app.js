@@ -1655,7 +1655,7 @@ const OPENAGENDA_SOURCES = [
    { agendaId: 2404802,  cityName: "Brest",            cityKey: "brest", search: null },
   { agendaId: 83392987, cityName: "Bordeaux",         cityKey: "bordeaux", search: null, size: 1500 },
     { agendaId: 42448083, cityName: "Toulouse",         cityKey: "toulouse", search: null, size: 2000 },
-               { agendaId: 21769447, cityName: "Marseille",        cityKey: "marseille", search: "Marseille", size: 50 },
+              { agendaId: 21769447, cityName: "Marseille",        cityKey: "marseille", search: "Marseille", size: 200 }, 
 ];
 
 function sceneForOpenAgendaEvent(title, description){ 
