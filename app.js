@@ -2034,6 +2034,10 @@ function showView(name){
 document.addEventListener("DOMContentLoaded", () => {
   renderCategoryChips();
   renderDiscover();
+  applyTranslation();
+
+  const langBtn = document.getElementById("btn-lang-toggle");
+  if (langBtn) langBtn.onclick = toggleLang;
 
    // Points de fidélité : on attribue les points du jour (si pas déjà fait) et on affiche le badge.
   awardDailyLoyaltyPoints();
