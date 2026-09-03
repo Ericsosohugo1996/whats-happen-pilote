@@ -2140,9 +2140,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("btn-back-detail").onclick = () => showView("discover");
-  document.getElementById("btn-interested").onclick = (e) => {
-    e.target.textContent = e.target.textContent.startsWith("Je suis") ? "✓ Vous êtes intéressé(e)" : "Je suis intéressé(e)";
-    e.target.classList.toggle("active");
+ document.getElementById("btn-interested").onclick = (e) => {
+    const isInterested = e.target.classList.toggle("active");
+    const dict = TRANSLATIONS[currentLang.value] || {};
+    const key = isInterested ? "✓ Vous êtes intéressé(e)" : "Je suis intéressé(e)";
+    e.target.textContent = currentLang.value === "en" && dict[key] ? dict[key] : key;
   };
   document.getElementById("btn-favorite").onclick = () => {
     const id = state.currentEventId;
