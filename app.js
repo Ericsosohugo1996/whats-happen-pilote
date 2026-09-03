@@ -1,6 +1,59 @@
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
+// ---- traduction FR/EN de l'interface (pas du contenu des événements) ----
+const TRANSLATIONS = {
+  en: {
+    "＋ Publier": "＋ Post",
+    "Publier": "Post",
+    "Explorer": "Explore",
+    "Favoris": "Favorites",
+    "📍 Ma position": "📍 My location",
+    "Ville sélectionnée": "Selected city",
+    "Position détectée": "Location detected",
+    "📸 Mes photos de": "📸 My photos of",
+    "Je suis intéressé(e)": "I'm interested",
+    "✓ Vous êtes intéressé(e)": "✓ You're interested",
+    "✅ J'y étais (+3 pts)": "✅ I was there (+3 pts)",
+    "✅ Confirmé — merci !": "✅ Confirmed — thanks!",
+    "📤 Inviter un ami (il reçoit 10 pts de bienvenue)": "📤 Invite a friend (they get 10 welcome pts)",
+    "❤️ Mes favoris": "❤️ My favorites",
+    "Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.": "You don't have any favorites yet. Open an event and tap the heart to add it here.",
+    "Nouvel événement": "New event",
+    "Publier l'événement": "Publish event",
+    "📩 Recevoir les nouveaux événements par email": "📩 Get new events by email",
+    "Événement publié !": "Event published!",
+    "Retour à l'accueil": "Back to home",
+    "⚙️ Filtres": "⚙️ Filters",
+    "Catégories :": "Categories:",
+    "Rayon rapide :": "Quick radius:",
+    "Rayon précis :": "Precise radius:",
+    "Tous": "All",
+    "Arrondissement :": "District:",
+    "Aucun événement ne correspond à ces filtres pour le moment. Essayez d'élargir le rayon ou les catégories.": "No events match these filters right now. Try widening the radius or categories.",
+    "📸 Ajouter une photo": "📸 Add a photo",
+    "＋ Ajouter une photo": "＋ Add a photo",
+    "Pas encore de souvenir ici. Ajoute une photo pour commencer !": "No memories here yet. Add a photo to get started!",
+    "☰ Voir la liste": "☰ See the list",
+  },
+};
+const currentLang = { value: localStorage.getItem("wh_lang") || "fr" };
 
+function applyTranslation(){
+  const lang = currentLang.value;
+  const dict = TRANSLATIONS[lang] || {};
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    el.textContent = lang === "en" && dict[key] ? dict[key] : key;
+  });
+  const toggleBtn = document.getElementById("btn-lang-toggle");
+  if (toggleBtn) toggleBtn.textContent = lang === "en" ? "FR" : "EN";
+}
+
+function toggleLang(){
+  currentLang.value = currentLang.value === "fr" ? "en" : "fr";
+  localStorage.setItem("wh_lang", currentLang.value);
+  applyTranslation();
+}
 const CITIES = {
   aix:  { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
   st:   { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407 },
