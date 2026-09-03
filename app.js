@@ -2003,7 +2003,11 @@ function renderCityInfo(){
     return;
   }
   el.classList.remove("hidden");
-  const info = CITY_INFO[state.city];
+  const baseInfo = CITY_INFO[state.city];
+  const enInfo = CITY_INFO_EN[state.city];
+  const info = (currentLang.value === "en" && enInfo)
+    ? { ...baseInfo, population: enInfo.population, desc: enInfo.desc, facts: enInfo.facts }
+    : baseInfo;
   const name = CITIES[state.city].name;
   el.innerHTML = `
     <div class="ci-head">
