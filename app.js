@@ -1627,7 +1627,7 @@ const CITY_INFO_EN = {
       { ico: "💧", text: "The Miroir d'eau, on the riverside, is the largest reflecting pool in the world." },
     ],
   },
-  toulouse: {
+   toulouse: {
     population: "504,078 residents (2023)",
     desc: "Nicknamed the \"Pink City\" for the colour of its terracotta bricks, Toulouse is the historic capital of French aeronautics and a major student city in the south-west.",
     facts: [
@@ -1636,7 +1636,16 @@ const CITY_INFO_EN = {
       { ico: "🎓", text: "One of the largest student cities in France, with several universities and top schools." },
     ],
   },
-};
+  marseille: {
+    population: "873,076 residents (2023)",
+    desc: "Founded by Greek sailors around 600 BC under the name Massalia, Marseille is the oldest city in France and the second most populous. A Mediterranean port city with a strong character, it overlooks the bay from the Notre-Dame-de-la-Garde basilica.",
+    facts: [
+      { ico: "⛵", text: "The Old Port, the historic heart of the city, has existed since its founding around 2,600 years ago." },
+      { ico: "🏔️", text: "The Calanques, between cliffs and turquoise waters, stretch for kilometres south of the city." },
+      { ico: "🎨", text: "European Capital of Culture in 2013, with the MuCEM museum now emblematic of the waterfront's renewal." },
+    ],
+  },
+}; 
 // ---- intégration OpenAgenda (Draguignan + Aix-en-Provence) ----
 // Draguignan : agenda "Var Tourisme" (agenda officiel utilisé par la Ville de Draguignan).
 // Aix-en-Provence : agenda "Aix-Marseille-Provence Métropole", filtré sur la ville d'Aix
