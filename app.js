@@ -2161,7 +2161,7 @@ const CITY_PHOTOS = {
   rennes: "https://commons.wikimedia.org/wiki/Special:FilePath/Vue_sud-ouest_de_la_place_du_parlement_de_Bretagne,_Rennes,_France.jpg",
   bordeaux: "https://commons.wikimedia.org/wiki/Special:FilePath/138_-_Place_de_la_Bourse_et_le_miroir_d'eau_-_Bordeaux.jpg",
   toulouse: "https://commons.wikimedia.org/wiki/Special:FilePath/Toulouse_Capitole_Night_Wikimedia_Commons.jpg",
-  marseille: "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Marseille_from_Notre-Dame_de_la_Garde_4.jpg",
+    marseille: "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame_de_la_Garde_aerial_view_2020_(cropped).jpeg",
   sens: "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale_Saint-%C3%89tienne,_Sens-6998.jpg",
 };
 function renderLocateBar(){
