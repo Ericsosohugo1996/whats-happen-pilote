@@ -1,6 +1,34 @@
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
+// What's happen — pilote web (Phase 1)
+// Aucune dépendance externe : tout est en JavaScript natif.
 
+// ---- écran de démarrage animé ----
+(function(){
+  const colors = ["#E8604C","#F2C879","#7FA8D9","#ffffff","#C64A38"];
+  const burst = document.getElementById("splashConfettiBurst");
+  if (!burst) return;
+  for (let i = 0; i < 26; i++){
+    const el = document.createElement("div");
+    el.className = "splash-confetti";
+    const angle = (Math.PI*2/26)*i + (Math.random()*0.4);
+    const dist = 260 + Math.random()*160;
+    el.style.setProperty("--tx", (Math.cos(angle)*dist) + "px");
+    el.style.setProperty("--ty", (Math.sin(angle)*dist) + "px");
+    el.style.setProperty("--rot", (Math.random()*360) + "deg");
+    el.style.background = colors[i % colors.length];
+    el.style.borderRadius = ["50%","2px","0"][i % 3];
+    burst.appendChild(el);
+  }
+  setTimeout(() => {
+    const splash = document.getElementById("splash-screen");
+    if (!splash) return;
+    splash.classList.add("hide");
+    setTimeout(() => splash.remove(), 350);
+  }, 3400);
+})();
+
+// ---- Firebase Authentication ----
 // ---- Firebase Authentication ----
 const firebaseConfig = {
   apiKey: "AIzaSyCBF51BEU354GbcIAcDVoTSwQHrZ7xHCWQ",
