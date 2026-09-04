@@ -80,7 +80,16 @@ button:active{ transform:scale(.97); }
   background:radial-gradient(circle, rgba(227,167,46,.22) 0%, transparent 70%);
   pointer-events:none;
 }
-.locate-info{ display:flex; flex-direction:column; margin-bottom:14px; position:relative; }
+.locate-bar-photo{
+  position:absolute; inset:0; background-size:cover; background-position:center;
+  opacity:0; transition:opacity .3s ease;
+}
+.locate-bar-photo.visible{ opacity:1; }
+.locate-bar::before{
+  content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(20,33,61,.55) 0%, rgba(11,21,38,.88) 100%);
+}
+.locate-info{ display:flex; flex-direction:column; margin-bottom:14px; position:relative; z-index:2; }
 .locate-label{ font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.72); font-weight:700; }
 .locate-value{ font-family:var(--font-display); font-size:21px; font-weight:600; margin-top:2px; color:#fff; }
 .locate-actions{ display:flex; flex-wrap:wrap; gap:8px; position:relative; }
