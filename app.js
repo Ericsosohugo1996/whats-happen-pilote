@@ -2354,8 +2354,12 @@ document.addEventListener("DOMContentLoaded", () => {
   renderDiscover();
   applyTranslation();
 
-    const langBtn = document.getElementById("btn-lang-toggle");
+     const langBtn = document.getElementById("btn-lang-toggle");
   if (langBtn) langBtn.onclick = toggleLang;
+
+  document.querySelectorAll(".region-toggle").forEach(btn => {
+    btn.onclick = () => btn.closest(".region-block").classList.toggle("open");
+  });
 
   auth.onAuthStateChanged(user => renderAccountState(user));
 
