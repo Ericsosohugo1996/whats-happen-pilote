@@ -79,67 +79,86 @@
     <iframe width="540" height="305" src="https://ffb7b4de.sibforms.com/v2/serve/MUIFAM-q6uel32oM6JFMBmaC-pTnIwyyYUNSTYP4OSm2zbvL9fnj3So5YrQiQFe4yHz0aSp_ZY58yVfBiht1xw7f02dirqSB1z--70y7KNY8bPQTfwwyFq_oNRajFsM_JVQz7ikX1Pjzp04FFoArIX4i2CtGhACC6wuCT9Teeb3KotfSPbS7J2sGQKmUDyp8jJHsWzW7d7fbvhICaQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
   </div>
 </div>
-    <section class="locate-bar">
-      <div class="locate-bar-photo" id="locate-bar-photo"></div>
-      <div class="locate-info">
-       <span class="locate-label" id="locate-label" data-i18n="Ville sélectionnée">Ville sélectionnée</span> 
-        <span class="locate-value" id="locate-value">📍 Aix-en-Provence</span>
-      </div> 
-     <div class="region-group">
-  <span class="region-label">Provence-Alpes-Côte d'Azur</span>
-  <div class="locate-actions">
-    <button class="chip-btn chip-city-1" data-city="aix">Aix-en-Provence</button>
-    <button class="chip-btn chip-city-2" data-city="st">Saint-Tropez</button>
-    <button class="chip-btn chip-city-3" data-city="ram">Ramatuelle</button>
-    <button class="chip-btn chip-city-4" data-city="ste">Sainte-Maxime</button>
-    <button class="chip-btn chip-city-5" data-city="lcv">La Croix-Valmer</button>
-    <button class="chip-btn chip-city-6" data-city="drag">Draguignan</button>
-    <button class="chip-btn chip-city-7" data-city="moug">Mougins</button>
-    <button class="chip-btn chip-city-8" data-city="mart">Martigues</button>
-  </div>
-</div>
-<div class="region-group">
-  <span class="region-label">Île-de-France</span>
-  <div class="locate-actions">
-    <button class="chip-btn chip-city-9" data-city="paris">Paris</button>
-  </div>
-</div>
-<div class="region-group">
-  <span class="region-label">Bourgogne-Franche-Comté</span>
-  <div class="locate-actions">
-    <button class="chip-btn chip-city-10" data-city="sens">Sens</button>
-  </div>
-</div>
-<div class="region-group">
-  <span class="region-label">Bretagne</span>
-  <div class="locate-actions">
-    <button class="chip-btn chip-city-1" data-city="nantes">Nantes</button>
-    <button class="chip-btn chip-city-2" data-city="rennes">Rennes</button>
-    <button class="chip-btn chip-city-3" data-city="brest">Brest</button>
-  </div>
-</div>
-<div class="region-group">
-  <span class="region-label">Nouvelle-Aquitaine</span>
-  <div class="locate-actions">
-    <button class="chip-btn chip-city-4" data-city="bordeaux">Bordeaux</button>
-  </div>
-</div>
-<div class="region-group">
-  <span class="region-label">Occitanie</span>
-  <div class="locate-actions">
-    <button class="chip-btn chip-city-5" data-city="toulouse">Toulouse</button>
-  </div>
-</div>
-<div class="region-group">
-  <span class="region-label">PACA (Marseille)</span>
-  <div class="locate-actions">
-    <button class="chip-btn chip-city-6" data-city="marseille">Marseille</button>
-  </div>
-</div>
-<div class="locate-actions">
- <button class="chip-btn chip-btn--primary" id="btn-geoloc" data-i18n="📍 Ma position">📍 Ma position</button>
-</div>
-      <p class="locate-hint" id="locate-hint">Six villes pilotes pour cette démonstration (dont Sens, hors PACA, ajoutée pour un test). Le bouton « Ma position » utilise votre géolocalisation réelle et calcule la distance jusqu'à chaque événement dans un rayon de 20 km.</p>
+       <section class="locate-bar">
+      <div class="locate-bar-photo" id="locate-bar-photo">
+        <div class="locate-info">
+         <span class="locate-label" id="locate-label" data-i18n="Ville sélectionnée">Ville sélectionnée</span> 
+          <span class="locate-value" id="locate-value">📍 Aix-en-Provence</span>
+        </div>
+      </div>
+      <div class="locate-body">
+        <div class="region-accordion" id="region-accordion">
+          <div class="region-block">
+            <button type="button" class="region-toggle" data-region="r1">Provence-Alpes-Côte d'Azur <span class="chevron">›</span></button>
+            <div class="region-panel" data-panel="r1">
+              <div class="locate-actions">
+                <button class="chip-btn" data-city="aix">Aix-en-Provence</button>
+                <button class="chip-btn" data-city="st">Saint-Tropez</button>
+                <button class="chip-btn" data-city="ram">Ramatuelle</button>
+                <button class="chip-btn" data-city="ste">Sainte-Maxime</button>
+                <button class="chip-btn" data-city="lcv">La Croix-Valmer</button>
+                <button class="chip-btn" data-city="drag">Draguignan</button>
+                <button class="chip-btn" data-city="moug">Mougins</button>
+                <button class="chip-btn" data-city="mart">Martigues</button>
+              </div>
+            </div>
+          </div>
+          <div class="region-block">
+            <button type="button" class="region-toggle" data-region="r2">Île-de-France <span class="chevron">›</span></button>
+            <div class="region-panel" data-panel="r2">
+              <div class="locate-actions">
+                <button class="chip-btn" data-city="paris">Paris</button>
+              </div>
+            </div>
+          </div>
+          <div class="region-block">
+            <button type="button" class="region-toggle" data-region="r3">Bourgogne-Franche-Comté <span class="chevron">›</span></button>
+            <div class="region-panel" data-panel="r3">
+              <div class="locate-actions">
+                <button class="chip-btn" data-city="sens">Sens</button>
+              </div>
+            </div>
+          </div>
+          <div class="region-block">
+            <button type="button" class="region-toggle" data-region="r4">Bretagne <span class="chevron">›</span></button>
+            <div class="region-panel" data-panel="r4">
+              <div class="locate-actions">
+                <button class="chip-btn" data-city="nantes">Nantes</button>
+                <button class="chip-btn" data-city="rennes">Rennes</button>
+                <button class="chip-btn" data-city="brest">Brest</button>
+              </div>
+            </div>
+          </div>
+          <div class="region-block">
+            <button type="button" class="region-toggle" data-region="r5">Nouvelle-Aquitaine <span class="chevron">›</span></button>
+            <div class="region-panel" data-panel="r5">
+              <div class="locate-actions">
+                <button class="chip-btn" data-city="bordeaux">Bordeaux</button>
+              </div>
+            </div>
+          </div>
+          <div class="region-block">
+            <button type="button" class="region-toggle" data-region="r6">Occitanie <span class="chevron">›</span></button>
+            <div class="region-panel" data-panel="r6">
+              <div class="locate-actions">
+                <button class="chip-btn" data-city="toulouse">Toulouse</button>
+              </div>
+            </div>
+          </div>
+          <div class="region-block">
+            <button type="button" class="region-toggle" data-region="r7">PACA (Marseille) <span class="chevron">›</span></button>
+            <div class="region-panel" data-panel="r7">
+              <div class="locate-actions">
+                <button class="chip-btn" data-city="marseille">Marseille</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="locate-actions" style="margin-top:12px;">
+         <button class="chip-btn chip-btn--primary" id="btn-geoloc" data-i18n="📍 Ma position">📍 Ma position</button>
+        </div>
+        <p class="locate-hint" id="locate-hint">Six villes pilotes pour cette démonstration (dont Sens, hors PACA, ajoutée pour un test). Le bouton « Ma position » utilise votre géolocalisation réelle et calcule la distance jusqu'à chaque événement dans un rayon de 20 km.</p>
+      </div>
     </section>
     <section id="city-info" class="city-info"></section>
     <section class="toolbar">
