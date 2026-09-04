@@ -2314,8 +2314,39 @@ document.addEventListener("DOMContentLoaded", () => {
   renderDiscover();
   applyTranslation();
 
-  const langBtn = document.getElementById("btn-lang-toggle");
+    const langBtn = document.getElementById("btn-lang-toggle");
   if (langBtn) langBtn.onclick = toggleLang;
+
+  auth.onAuthStateChanged(user => renderAccountState(user));
+
+  const accountModal = document.getElementById("account-modal");
+  document.getElementById("btn-account").onclick = () => accountModal.classList.remove("hidden");
+  document.getElementById("btn-account-close").onclick = () => accountModal.classList.add("hidden");
+  accountModal.onclick = (e) => {
+    if (e.target.id === "account-modal") accountModal.classList.add("hidden");
+  };
+
+  document.getElementById("btn-account-login").onclick = () => {
+    hideAccountError();
+    const email = document.getElementById("account-email").value;
+    const password = document.getElementById("account-password").value;
+    auth.signInWithEmailAndPassword(email, password)
+      .then(() => accountModal.classList.add("hidden"))
+      .catch(err => showAccountError(err.message));
+  };
+
+  document.getElementById("btn-account-signup").onclick = () => {
+    hideAccountError();
+    const email = document.getElementById("account-email").value;
+    const password = document.getElementById("account-password").value;
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(() => accountModal.classList.add("hidden"))
+      .catch(err => showAccountError(err.message));
+  };
+
+  document.getElementById("btn-account-logout").onclick = () => {
+    auth.signOut();
+  };
 
    // Points de fidélité : on attribue les points du jour (si pas déjà fait) et on affiche le badge.
   awardDailyLoyaltyPoints();
