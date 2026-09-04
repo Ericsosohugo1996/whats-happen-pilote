@@ -2156,7 +2156,7 @@ const CITY_PHOTOS = {
   drag: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Draguignan-tour-horloge-hiver.jpg/960px-Draguignan-tour-horloge-hiver.jpg",
   moug: "https://commons.wikimedia.org/wiki/Special:FilePath/Mougins_01_(cropped).jpg",
   mart: "https://commons.wikimedia.org/wiki/Special:FilePath/Martigues_-_Miroir_aux_Oiseaux.jpg",
-  paris: "https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg",
+   paris: "https://commons.wikimedia.org/wiki/Special:FilePath/1000_Eiffel_tower_night_illumination_by_Pierre_Bideau_in_Paris_Photo_by_Giles_Laurent.jpg",
   nantes: "https://commons.wikimedia.org/wiki/Special:FilePath/Marit%C3%A9.jpg",
   rennes: "https://commons.wikimedia.org/wiki/Special:FilePath/Vue_sud-ouest_de_la_place_du_parlement_de_Bretagne,_Rennes,_France.jpg",
   bordeaux: "https://commons.wikimedia.org/wiki/Special:FilePath/138_-_Place_de_la_Bourse_et_le_miroir_d'eau_-_Bordeaux.jpg",
