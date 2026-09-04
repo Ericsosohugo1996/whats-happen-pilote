@@ -480,3 +480,29 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
   100%{ opacity:0; transform:translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.6); }
 }
 .splash-screen.hide{ transition:opacity .35s ease; opacity:0; pointer-events:none; }
+/* ---- accordéon de sélection de ville par région ---- */
+.locate-bar{ padding:0; overflow:hidden; }
+.locate-bar-photo{
+  position:relative; height:220px;
+  background-size:cover; background-position:center;
+  display:flex; align-items:flex-end; padding:16px;
+}
+.locate-bar-photo::after{
+  content:""; position:absolute; inset:0; z-index:0;
+  background:linear-gradient(180deg, rgba(20,33,61,0) 40%, rgba(11,21,38,.9) 100%);
+}
+.locate-bar-photo .locate-info{ position:relative; z-index:1; margin-bottom:0; }
+.locate-body{ padding:16px; }
+.region-block{ border-bottom:1px solid rgba(255,255,255,.12); }
+.region-block:last-child{ border-bottom:none; }
+.region-toggle{
+  width:100%; background:none; border:none; color:#fff; text-align:left;
+  padding:13px 2px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+  display:flex; justify-content:space-between; align-items:center; cursor:pointer;
+  font-family:var(--font-body);
+}
+.chevron{ transition:transform .2s ease; font-size:16px; color:rgba(255,255,255,.6); }
+.region-block.open .chevron{ transform:rotate(90deg); }
+.region-panel{ max-height:0; overflow:hidden; transition:max-height .25s ease; }
+.region-block.open .region-panel{ max-height:220px; }
+.region-body .locate-actions{ padding:2px 2px 14px; }
