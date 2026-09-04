@@ -182,20 +182,9 @@ button:active{ transform:scale(.97); }
 .filters-label{ display:block; font-size:11px; font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em; margin-bottom:9px; }
 .chips-row{ display:flex; flex-wrap:wrap; gap:7px; }
 
-/* ---- couleurs des chips de catégorie, façon mockup ---- */
-#category-chips .chip-btn:nth-child(1){ background:#FFE0DB; border-color:#FFE0DB; color:#c0392b; }
-#category-chips .chip-btn:nth-child(2){ background:#FFF3D6; border-color:#FFF3D6; color:#a9791c; }
-#category-chips .chip-btn:nth-child(3){ background:#EDE7FF; border-color:#EDE7FF; color:#6c5ce7; }
-#category-chips .chip-btn:nth-child(4){ background:#D9F7EC; border-color:#D9F7EC; color:#00905f; }
-#category-chips .chip-btn:nth-child(5){ background:#E3E9FF; border-color:#E3E9FF; color:#3a4fb0; }
-#category-chips .chip-btn:nth-child(6){ background:#DBEEFF; border-color:#DBEEFF; color:#0984E3; }
-
-#category-chips .chip-btn.active:nth-child(1){ background:#FF6F61; border-color:#FF6F61; color:#fff; }
-#category-chips .chip-btn.active:nth-child(2){ background:#FDCB6E; border-color:#FDCB6E; color:#3a2e00; }
-#category-chips .chip-btn.active:nth-child(3){ background:#A29BFE; border-color:#A29BFE; color:#fff; }
-#category-chips .chip-btn.active:nth-child(4){ background:#00B894; border-color:#00B894; color:#fff; }
-#category-chips .chip-btn.active:nth-child(5){ background:#6C5CE7; border-color:#6C5CE7; color:#fff; }
-#category-chips .chip-btn.active:nth-child(6){ background:#0984E3; border-color:#0984E3; color:#fff; }
+/* ---- catégories : neutre au repos, accent corail unique quand actif ---- */
+#category-chips .chip-btn{ background:#fff; border:1.5px solid var(--line); color:var(--ink-soft); }
+#category-chips .chip-btn.active{ background:#fff; border-color:var(--accent); color:var(--accent-dark); }
 input[type="range"]{ width:100%; accent-color:var(--primary); }
 
 /* ---- map mock ---- */
