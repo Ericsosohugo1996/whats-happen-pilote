@@ -2119,15 +2119,28 @@ function renderCategoryChips(){
   });
 }
 
+const CITY_PHOTOS = {
+  aix: "https://commons.wikimedia.org/wiki/Special:FilePath/Les_Deux_Gar%C3%A7ons,_Cours_Mirabeau,_Aix-en-Provence_(30457419).jpg",
+  drag: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Draguignan-tour-horloge-hiver.jpg/960px-Draguignan-tour-horloge-hiver.jpg",
+};
+
 function renderLocateBar(){
   document.getElementById("locate-label").textContent = state.userPos ? "Position détectée" : "Ville sélectionnée";
   document.getElementById("locate-value").textContent = state.userPos
     ? "📍 Votre position actuelle"
     : "📍 " + CITIES[state.city].name;
-
   document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
     b.classList.toggle("active", !state.userPos && b.dataset.city === state.city);
   });
+
+  const photoEl = document.getElementById("locate-bar-photo");
+  const photoUrl = !state.userPos && CITY_PHOTOS[state.city];
+  if (photoUrl) {
+    photoEl.style.backgroundImage = `url('${photoUrl}')`;
+    photoEl.classList.add("visible");
+  } else {
+    photoEl.classList.remove("visible");
+  }
 }
 
 function renderCityInfo(){
