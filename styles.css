@@ -107,17 +107,13 @@ button:active{ transform:scale(.97); }
   color:rgba(255,255,255,.6); font-weight:700; margin-bottom:6px;
 }
 
-/* ---- couleurs distinctes par ville, façon mockup ---- */
-.locate-actions .chip-city-1{ background:#FF6F61 !important; border-color:#FF6F61 !important; color:#fff !important; }
-.locate-actions .chip-city-2{ background:#6C5CE7 !important; border-color:#6C5CE7 !important; color:#fff !important; }
-.locate-actions .chip-city-3{ background:#00B894 !important; border-color:#00B894 !important; color:#fff !important; }
-.locate-actions .chip-city-4{ background:#FDCB6E !important; border-color:#FDCB6E !important; color:#3a2e00 !important; }
-.locate-actions .chip-city-5{ background:#0984E3 !important; border-color:#0984E3 !important; color:#fff !important; }
-.locate-actions .chip-city-6{ background:#E17055 !important; border-color:#E17055 !important; color:#fff !important; }
-.locate-actions .chip-city-7{ background:#00CEC9 !important; border-color:#00CEC9 !important; color:#0a3a38 !important; }
-.locate-actions .chip-city-8{ background:#A29BFE !important; border-color:#A29BFE !important; color:#2a1e6b !important; }
-.locate-actions .chip-city-9{ background:#FD79A8 !important; border-color:#FD79A8 !important; color:#fff !important; }
-.locate-actions .chip-city-10{ background:#FAB1A0 !important; border-color:#FAB1A0 !important; color:#5c1e0f !important; }
+/* ---- villes : style neutre uniforme (plus de couleur par ville) ---- */
+.locate-actions .chip-city-1, .locate-actions .chip-city-2, .locate-actions .chip-city-3,
+.locate-actions .chip-city-4, .locate-actions .chip-city-5, .locate-actions .chip-city-6,
+.locate-actions .chip-city-7, .locate-actions .chip-city-8, .locate-actions .chip-city-9,
+.locate-actions .chip-city-10{
+  background:rgba(255,255,255,.14) !important; border-color:rgba(255,255,255,.32) !important; color:#fff !important;
+}
 
 .locate-actions .chip-city-1.active, .locate-actions .chip-city-2.active,
 .locate-actions .chip-city-3.active, .locate-actions .chip-city-4.active,
