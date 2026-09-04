@@ -704,7 +704,6 @@ const SEED_EVENTS = [
     thumb: "",
     description: "Concert avec le Vincent Bucher Trio et Nicolle & Dîmes, pour la 15e édition de ce rendez-vous blues sénonais.",
   },
-  {
     {
     id: "sens-saint-fiacre",
     scene: "festival",
