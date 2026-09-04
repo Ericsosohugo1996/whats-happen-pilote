@@ -83,9 +83,355 @@
     <iframe width="540" height="305" src="https://ffb7b4de.sibforms.com/v2/serve/MUIFAM-q6uel32oM6JFMBmaC-pTnIwyyYUNSTYP4OSm2zbvL9fnj3So5YrQiQFe4yHz0aSp_ZY58yVfBiht1xw7f02dirqSB1z--70y7KNY8bPQTfwwyFq_oNRajFsM_JVQz7ikX1Pjzp04FFoArIX4i2CtGhACC6wuCT9Teeb3KotfSPbS7J2sGQKmUDyp8jJHsWzW7d7fbvhICaQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
   </div>
 </div>
+   <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whazup — Événements près de vous en PACA</title>
+<meta name="description" content="Découvrez les événements autour de vous en Provence-Alpes-Côte d'Azur, ou publiez le vôtre.">
+<link rel="icon" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+<div id="splash-screen" class="splash-screen">
+    <svg class="splash-logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgSober" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#14213D"/>
+          <stop offset="100%" stop-color="#0B1526"/>
+        </linearGradient>
+      </defs>
+      <path d="M200 30 C 292 26, 372 74, 372 166 C 376 254, 328 336, 236 368 C 152 384, 52 358, 30 264 C 10 180, 52 78, 136 42 C 155 33, 178 31, 200 30 Z" fill="url(#bgSober)"/>
+      <g transform="translate(200,170)">
+        <path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#ffffff"/>
+        <circle cx="-26" cy="-18" r="10" fill="#14213D"/>
+        <circle cx="26" cy="-18" r="10" fill="#14213D"/>
+        <ellipse class="splash-eyelid" cx="26" cy="-18" rx="12" ry="11" fill="#ffffff"/>
+        <path d="M20 -18 Q26 -12 32 -18" fill="none" stroke="#14213D" stroke-width="2.5" stroke-linecap="round" class="splash-eyelid-line"/>
+        <path d="M-28 14 C -16 32, 16 32, 28 14" fill="none" stroke="#14213D" stroke-width="7" stroke-linecap="round"/>
+      </g>
+      <text x="200" y="345" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="54" text-anchor="middle" fill="#ffffff">Wha<tspan fill="#E8604C">zup</tspan></text>
+    </svg>
+    <div class="splash-confetti-burst" id="splashConfettiBurst"></div>
+  </div>
+
+ <header class="topbar">
+   <div class="brand"> 
+  <img src="logo.svg" alt="Whazup">
+  <span class="brand-word">Wha<span class="accent">zup</span></span>
+</div> 
+<span id="loyalty-badge" class="loyalty-badge"></span>
+    <button class="btn-ghost" id="btn-lang-toggle" style="margin-right:6px;">EN</button>
+    <button class="btn-ghost" id="btn-account" style="margin-right:6px;">👤</button>
+    <button class="btn-ghost" id="btn-publish-header">＋ Publier</button>
+  </header>
+
+  <div id="account-modal" class="modal hidden">
+    <div class="modal-content">
+      <button type="button" id="btn-account-close" class="modal-close">✕</button>
+      <div id="account-logged-out">
+        <h2 style="margin-top:0;">Mon compte</h2>
+        <p style="font-size:13px; color:#666;">Connecte-toi pour synchroniser tes points et favoris entre tes appareils. L'appli reste utilisable sans compte.</p>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" id="account-email" placeholder="ton@email.com">
+        </label>
+        <label class="field">
+          <span>Mot de passe</span>
+          <input type="password" id="account-password" placeholder="••••••••">
+        </label>
+        <p id="account-error" style="color:#c0392b; font-size:12px; display:none;"></p>
+        <button type="button" class="btn-primary btn-block" id="btn-account-login">Se connecter</button>
+        <button type="button" class="btn-outline btn-block" id="btn-account-signup" style="margin-top:8px;">Créer un compte</button>
+      </div>
+      <div id="account-logged-in" class="hidden">
+        <h2 style="margin-top:0;">Mon compte</h2>
+        <p id="account-user-email" style="font-size:14px;"></p>
+        <button type="button" class="btn-outline btn-block" id="btn-account-logout">Se déconnecter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== VUE : DÉCOUVERTE ===================== -->
+  <main id="view-discover" class="view">
+<button type="button" id="btn-newsletter" data-i18n="📩 Recevoir les nouveaux événements par email" style="display:block; width: calc(100% - 32px); box-sizing: border-box; margin: 14px 16px; padding: 14px 20px; background: linear-gradient(135deg, #2f8a90, #1c5f66); color: #ffffff; border: none; border-radius: 14px; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer;">📩 Recevoir les nouveaux événements par email</button>
+
+<div id="newsletter-modal" class="modal hidden">
+  <div class="modal-content">
+    <button type="button" id="btn-newsletter-close" class="modal-close">✕</button>
+    <iframe width="540" height="305" src="https://ffb7b4de.sibforms.com/v2/serve/MUIFAM-q6uel32oM6JFMBmaC-pTnIwyyYUNSTYP4OSm2zbvL9fnj3So5YrQiQFe4yHz0aSp_ZY58yVfBiht1xw7f02dirqSB1z--70y7KNY8bPQTfwwyFq_oNRajFsM_JVQz7ikX1Pjzp04FFoArIX4i2CtGhACC6wuCT9Teeb3KotfSPbS7J2sGQKmUDyp8jJHsWzW7d7fbvhICaQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+  </div>
+</div>
     <section class="locate-bar">
     <section class="locate-bar">
       <div class="locate-bar-photo" id="locate-bar-photo"></div>
+      <div class="locate-info">
+       <span class="locate-label" id="locate-label" data-i18n="Ville sélectionnée">Ville sélectionnée</span> 
+        <span class="locate-value" id="locate-value">📍 Aix-en-Provence</span>
+      </div> 
+     <div class="region-group">
+  <span class="region-label">Provence-Alpes-Côte d'Azur</span>
+  <div class="locate-actions">
+    <button class="chip-btn chip-city-1" data-city="aix">Aix-en-Provence</button>
+    <button class="chip-btn chip-city-2" data-city="st">Saint-Tropez</button>
+    <button class="chip-btn chip-city-3" data-city="ram">Ramatuelle</button>
+    <button class="chip-btn chip-city-4" data-city="ste">Sainte-Maxime</button>
+    <button class="chip-btn chip-city-5" data-city="lcv">La Croix-Valmer</button>
+    <button class="chip-btn chip-city-6" data-city="drag">Draguignan</button>
+    <button class="chip-btn chip-city-7" data-city="moug">Mougins</button>
+    <button class="chip-btn chip-city-8" data-city="mart">Martigues</button>
+  </div>
+</div>
+<div class="region-group">
+  <span class="region-label">Île-de-France</span>
+  <div class="locate-actions">
+    <button class="chip-btn chip-city-9" data-city="paris">Paris</button>
+  </div>
+</div>
+<div class="region-group">
+  <span class="region-label">Bourgogne-Franche-Comté</span>
+  <div class="locate-actions">
+    <button class="chip-btn chip-city-10" data-city="sens">Sens</button>
+  </div>
+</div>
+<div class="region-group">
+  <span class="region-label">Bretagne</span>
+  <div class="locate-actions">
+    <button class="chip-btn chip-city-1" data-city="nantes">Nantes</button>
+    <button class="chip-btn chip-city-2" data-city="rennes">Rennes</button>
+    <button class="chip-btn chip-city-3" data-city="brest">Brest</button>
+  </div>
+</div>
+<div class="region-group">
+  <span class="region-label">Nouvelle-Aquitaine</span>
+  <div class="locate-actions">
+    <button class="chip-btn chip-city-4" data-city="bordeaux">Bordeaux</button>
+  </div>
+</div>
+<div class="region-group">
+  <span class="region-label">Occitanie</span>
+  <div class="locate-actions">
+    <button class="chip-btn chip-city-5" data-city="toulouse">Toulouse</button>
+  </div>
+</div>
+<div class="region-group">
+  <span class="region-label">PACA (Marseille)</span>
+  <div class="locate-actions">
+    <button class="chip-btn chip-city-6" data-city="marseille">Marseille</button>
+  </div>
+</div>
+<div class="locate-actions">
+ <button class="chip-btn chip-btn--primary" id="btn-geoloc" data-i18n="📍 Ma position">📍 Ma position</button>
+</div>
+      <p class="locate-hint" id="locate-hint">Six villes pilotes pour cette démonstration (dont Sens, hors PACA, ajoutée pour un test). Le bouton « Ma position » utilise votre géolocalisation réelle et calcule la distance jusqu'à chaque événement dans un rayon de 20 km.</p>
+    </section>
+
+    <section id="city-info" class="city-info"></section>
+
+    <section class="toolbar">
+      <div class="segmented">
+        <button class="seg active" data-mode="carte">🗺️ Carte</button>
+        <button class="seg" data-mode="liste">☰ Liste</button>
+      </div>
+      <button class="chip-btn" id="btn-filters" data-i18n="⚙️ Filtres">⚙️ Filtres</button>
+    </section>
+
+        <section id="filters-panel" class="filters-panel hidden">
+      <div class="filters-row">
+        <span class="filters-label" data-i18n="Catégories :">Catégories :</span>
+        <div class="chips-row" id="category-chips"></div>
+      </div>
+      <div class="filters-row hidden" id="arrondissement-row">
+       <label for="arrondissement-select" class="filters-label" data-i18n="Arrondissement :">Arrondissement :</label>
+        <select id="arrondissement-select">
+          <option value="" data-i18n="Tous">Tous</option>
+        </select> 
+      </div>
+     <div class="filters-row">
+  <span class="filters-label" data-i18n="Rayon rapide :">Rayon rapide :</span>
+  <div class="chips-row" id="radius-presets">
+    <button type="button" class="chip-btn" data-radius="0.5">500 m</button>
+    <button type="button" class="chip-btn" data-radius="1">1 km</button>
+    <button type="button" class="chip-btn" data-radius="5">5 km</button>
+    <button type="button" class="chip-btn" data-radius="20">20 km</button>
+  </div>
+</div>
+<div class="filters-row">
+  <label for="radius-range" class="filters-label"><span data-i18n="Rayon précis :">Rayon précis :</span> <strong id="radius-value">20</strong> km</label>
+  <input type="range" id="radius-range" min="0" max="50" step="0.1" value="20">
+</div>
+    </section>
+
+       <section id="map-mock" class="map-mock">
+      <div class="ring"></div>
+      <div class="me"></div>
+      <div id="map-pins"></div>
+      <div id="map-radius-tag" class="map-tag">rayon <span id="map-radius-label">20</span> km</div>
+    </section>
+    <button type="button" id="btn-see-list" class="btn-see-list" data-i18n="☰ Voir la liste">☰ Voir la liste</button>
+
+    <section id="event-list" class="event-list"></section>
+
+    <p id="empty-state" class="empty-state hidden" data-i18n="Aucun événement ne correspond à ces filtres pour le moment. Essayez d'élargir le rayon ou les catégories.">Aucun événement ne correspond à ces filtres pour le moment. Essayez d'élargir le rayon ou les catégories.</p>
+  </main>
+
+  <!-- ===================== VUE : FICHE ÉVÉNEMENT ===================== -->
+  <main id="view-detail" class="view hidden">
+    <button class="back-btn" id="btn-back-detail">← Retour</button>
+    <div class="detail-hero" id="detail-hero"></div>
+    <div class="detail-body">
+      <span class="pill" id="detail-cat"></span>
+      <h1 id="detail-title"></h1>
+      <div class="info-row"><span class="ico">🗓️</span><div><span id="detail-date"></span><br><span class="sub" id="detail-time"></span></div></div>
+      <div class="info-row"><span class="ico">📍</span><div><span id="detail-place"></span><br><span class="sub" id="detail-distance"></span></div></div>
+      <div class="info-row"><span class="ico">🎟️</span><div><span id="detail-price"></span></div></div>
+      <p class="detail-desc" id="detail-desc"></p>
+            <div class="cta-row">
+        <button class="btn-primary" id="btn-interested" data-i18n="Je suis intéressé(e)">Je suis intéressé(e)</button>
+        <button class="btn-outline" id="btn-favorite">🤍</button>
+      </div>
+     <button type="button" class="btn-outline btn-block" id="btn-been-there" data-i18n="✅ J'y étais (+3 pts)">✅ J'y étais (+3 pts)</button>
+    </div>
+  </main>
+
+  <!-- ===================== VUE : PUBLICATION ===================== -->
+  <main id="view-publish" class="view hidden">
+    <button class="back-btn" id="btn-back-publish">← Retour</button>
+    <h1 class="form-title" data-i18n="Nouvel événement">Nouvel événement</h1>
+    <p class="form-sub">Ce pilote enregistre votre événement localement dans votre navigateur (démonstration). La publication en ligne partagée arrivera à l'étape suivante du projet.</p>
+
+    <form id="publish-form" class="publish-form">
+      <label class="field">
+        <span>Titre</span>
+        <input type="text" name="title" placeholder="Ex. Marché nocturne provençal" required>
+      </label>
+
+      <label class="field">
+        <span>Catégorie</span>
+        <select name="category" required>
+          <option value="Musique">Musique</option>
+          <option value="Marché">Marché</option>
+          <option value="Festival">Festival</option>
+          <option value="Sport">Sport</option>
+          <option value="Soirée">Soirée</option>
+          <option value="Expo">Expo</option>
+        </select>
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Date</span>
+          <input type="date" name="date" required>
+        </label>
+        <label class="field">
+          <span>Heure</span>
+          <input type="time" name="time" required>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Ville</span>
+        <select name="city" required>
+          <option value="aix">Aix-en-Provence</option>
+          <option value="st">Saint-Tropez</option>
+          <option value="ram">Ramatuelle</option>
+          <option value="ste">Sainte-Maxime</option>
+          <option value="lcv">La Croix-Valmer</option>
+          <option value="sens">Sens</option>
+          <option value="drag">Draguignan</option>
+         <option value="moug">Mougins</option> 
+          <option value="mart">Martigues</option>
+          <option value="paris">Paris</option>
+          <option value="nantes">Nantes</option>
+<option value="rennes">Rennes</option>
+<option value="brest">Brest</option>
+          <option value="bordeaux">Bordeaux</option>
+<option value="marseille">Marseille</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Lieu précis</span>
+        <input type="text" name="place" placeholder="Adresse ou nom du lieu" required>
+      </label>
+
+      <label class="field">
+        <span>Description</span>
+        <textarea name="description" rows="3" placeholder="Quelques mots sur l'événement…"></textarea>
+      </label>
+
+     <button type="submit" class="btn-primary btn-block" data-i18n="Publier l'événement">Publier l'événement</button>
+    </form>
+  </main>
+
+  <!-- ===================== VUE : CONFIRMATION ===================== -->
+  <main id="view-confirm" class="view hidden">
+   <div class="confirm-box">
+  <span class="confetti confetti-1"></span>
+  <span class="confetti confetti-2"></span>
+  <span class="confetti confetti-3"></span>
+  <span class="confetti confetti-4"></span>
+  <div class="confirm-icon">✓</div>
+ <h1 data-i18n="Événement publié !">Événement publié !</h1>
+  <p>Il apparaît maintenant dans la liste de sa ville (démonstration locale à votre navigateur).</p>
+  <button class="btn-primary" id="btn-confirm-back" data-i18n="Retour à l'accueil">Retour à l'accueil</button>
+</div>
+  </main>
+
+ <nav class="bottomnav">
+    <button class="nav-item active" data-view="discover"><span class="dot">🗺️</span><span class="nav-label" data-i18n="Explorer">Explorer</span></button>
+    <button class="nav-item" data-view="publish"><span class="dot">➕</span><span class="nav-label" data-i18n="Publier">Publier</span></button>
+    <button class="nav-item" data-view="favorites"><span class="dot">❤️</span><span class="nav-label" data-i18n="Favoris">Favoris</span></button>
+  </nav>
+
+  <!-- ===================== VUE : FAVORIS ===================== -->
+    <main id="view-favorites" class="view hidden">
+    <h1 class="form-title favorites-title" data-i18n="❤️ Mes favoris">❤️ Mes favoris</h1>
+    <button type="button" id="btn-invite-friend" style="display:block; width: calc(100% - 32px); box-sizing: border-box; margin: 14px 16px; padding: 14px 20px; background: linear-gradient(135deg, #6C5CE7, #4834b0); color: #ffffff; border: none; border-radius: 14px; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer;">📤 Inviter un ami (il reçoit 10 pts de bienvenue)</button>
+    <section id="favorites-list" class="event-list"></section>
+    <p id="favorites-empty" class="empty-state hidden" data-i18n="Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.">Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.</p>
+  </main>
+
+  <!-- ===================== VUE : MES PHOTOS (souvenirs par ville) ===================== -->
+  <main id="view-photos" class="view hidden">
+    <button class="back-btn" id="btn-back-photos">← Retour</button>
+    
+  <h1 class="form-title photos-title" id="photos-title">📸 Mes photos</h1>
+    <p class="form-sub">Ces photos restent sur cet appareil, dans ce navigateur — elles ne sont pas partagées avec les autres utilisateurs pour le moment.</p>
+    <input type="file" id="photo-input" accept="image/*" multiple class="hidden">
+    <button type="button" class="btn-primary btn-block" id="btn-add-photo">＋ Ajouter une photo</button>
+    <div id="photos-grid" class="photos-grid"></div>
+    <p id="photos-empty" class="empty-state hidden">Pas encore de souvenir ici. Ajoute une photo pour commencer !</p>
+  </main>
+
+  <!-- ===================== LIGHTBOX : PHOTO EN GRAND ===================== -->
+  <div id="photo-lightbox" class="photo-lightbox hidden">
+    <button class="modal-close" id="btn-lightbox-close" aria-label="Fermer">✕</button>
+    <img id="lightbox-img" alt="">
+    <button type="button" class="lightbox-delete" id="btn-lightbox-delete">🗑️ Supprimer cette photo</button>
+  </div>
+
+  <!-- ===================== MODALE : LIEU EMBLÉMATIQUE ===================== -->
+  <div id="landmark-modal" class="landmark-modal hidden">
+    <div class="landmark-modal-card">
+      <button class="modal-close" id="btn-landmark-close" aria-label="Fermer">✕</button>
+      <div id="landmark-modal-img" class="landmark-modal-img"></div>
+      <div class="landmark-modal-body">
+        <h2 id="landmark-modal-title"></h2>
+        <p id="landmark-modal-caption"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
       <div class="locate-info">
        <span class="locate-label" id="locate-label" data-i18n="Ville sélectionnée">Ville sélectionnée</span> 
         <span class="locate-value" id="locate-value">📍 Aix-en-Provence</span>
