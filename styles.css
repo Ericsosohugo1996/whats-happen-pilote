@@ -438,3 +438,44 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .favorites-title::before{
   background:linear-gradient(180deg, #FF6F61, #c0392b) !important;
 }
+/* ---- écran de démarrage animé ---- */
+.splash-screen{
+  position:fixed; inset:0; z-index:200;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(160deg,#14213D,#0B1526);
+}
+.splash-logo{
+  width:min(420px, 100vw); height:min(420px, 100vw);
+  opacity:0; animation:splash-logo-in .7s ease-out .15s forwards, splash-inflate .5s ease-in 2.5s forwards;
+}
+@keyframes splash-logo-in{
+  from{ opacity:0; transform:scale(.7); }
+  to{ opacity:1; transform:scale(1); }
+}
+@keyframes splash-inflate{
+  from{ transform:scale(1); }
+  to{ transform:scale(1.35); opacity:0; }
+}
+.splash-eyelid{
+  transform-box:fill-box; transform-origin:center; transform:scaleY(0);
+  animation:splash-wink 0.5s ease-in-out 1.6s;
+}
+.splash-eyelid-line{ opacity:0; animation:splash-wink-line 0.5s ease-in-out 1.6s; }
+@keyframes splash-wink{
+  0%, 100%{ transform:scaleY(0); }
+  50%{ transform:scaleY(1); }
+}
+@keyframes splash-wink-line{
+  0%, 100%{ opacity:0; }
+  50%{ opacity:1; }
+}
+.splash-confetti-burst{ position:absolute; top:50%; left:50%; width:0; height:0; }
+.splash-confetti{
+  position:absolute; width:14px; height:14px; opacity:0;
+  animation:splash-burst 1s cubic-bezier(.2,.8,.4,1) 2.95s forwards;
+}
+@keyframes splash-burst{
+  0%{ opacity:1; transform:translate(-50%,-50%) rotate(0deg) scale(1); }
+  100%{ opacity:0; transform:translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.6); }
+}
+.splash-screen.hide{ transition:opacity .35s ease; opacity:0; pointer-events:none; }
