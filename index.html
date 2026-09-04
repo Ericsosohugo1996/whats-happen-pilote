@@ -20,10 +20,37 @@
   <img src="logo.svg" alt="Whazup">
   <span class="brand-word">Wha<span class="accent">zup</span></span>
 </div> 
- <span id="loyalty-badge" class="loyalty-badge"></span>
+<span id="loyalty-badge" class="loyalty-badge"></span>
     <button class="btn-ghost" id="btn-lang-toggle" style="margin-right:6px;">EN</button>
-   <button class="btn-ghost" id="btn-publish-header" data-i18n="＋ Publier">＋ Publier</button>
-  </header> 
+    <button class="btn-ghost" id="btn-account" style="margin-right:6px;">👤</button>
+    <button class="btn-ghost" id="btn-publish-header">＋ Publier</button>
+  </header>
+
+  <div id="account-modal" class="modal hidden">
+    <div class="modal-content">
+      <button type="button" id="btn-account-close" class="modal-close">✕</button>
+      <div id="account-logged-out">
+        <h2 style="margin-top:0;">Mon compte</h2>
+        <p style="font-size:13px; color:#666;">Connecte-toi pour synchroniser tes points et favoris entre tes appareils. L'appli reste utilisable sans compte.</p>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" id="account-email" placeholder="ton@email.com">
+        </label>
+        <label class="field">
+          <span>Mot de passe</span>
+          <input type="password" id="account-password" placeholder="••••••••">
+        </label>
+        <p id="account-error" style="color:#c0392b; font-size:12px; display:none;"></p>
+        <button type="button" class="btn-primary btn-block" id="btn-account-login">Se connecter</button>
+        <button type="button" class="btn-outline btn-block" id="btn-account-signup" style="margin-top:8px;">Créer un compte</button>
+      </div>
+      <div id="account-logged-in" class="hidden">
+        <h2 style="margin-top:0;">Mon compte</h2>
+        <p id="account-user-email" style="font-size:14px;"></p>
+        <button type="button" class="btn-outline btn-block" id="btn-account-logout">Se déconnecter</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ===================== VUE : DÉCOUVERTE ===================== -->
   <main id="view-discover" class="view">
