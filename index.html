@@ -14,7 +14,29 @@
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 </head>
 <body>
+<div id="splash-screen" class="splash-screen">
+    <svg class="splash-logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgSober" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#14213D"/>
+          <stop offset="100%" stop-color="#0B1526"/>
+        </linearGradient>
+      </defs>
+      <path d="M200 30 C 292 26, 372 74, 372 166 C 376 254, 328 336, 236 368 C 152 384, 52 358, 30 264 C 10 180, 52 78, 136 42 C 155 33, 178 31, 200 30 Z" fill="url(#bgSober)"/>
+      <g transform="translate(200,170)">
+        <path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#ffffff"/>
+        <circle cx="-26" cy="-18" r="10" fill="#14213D"/>
+        <circle cx="26" cy="-18" r="10" fill="#14213D"/>
+        <ellipse class="splash-eyelid" cx="26" cy="-18" rx="12" ry="11" fill="#ffffff"/>
+        <path d="M20 -18 Q26 -12 32 -18" fill="none" stroke="#14213D" stroke-width="2.5" stroke-linecap="round" class="splash-eyelid-line"/>
+        <path d="M-28 14 C -16 32, 16 32, 28 14" fill="none" stroke="#14213D" stroke-width="7" stroke-linecap="round"/>
+      </g>
+      <text x="200" y="345" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="54" text-anchor="middle" fill="#ffffff">Wha<tspan fill="#E8604C">zup</tspan></text>
+    </svg>
+    <div class="splash-confetti-burst" id="splashConfettiBurst"></div>
+  </div>
 
+  <header class="topbar">
   <header class="topbar">
    <div class="brand">
   <img src="logo.svg" alt="Whazup">
