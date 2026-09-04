@@ -1,5 +1,42 @@
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
+
+// ---- Firebase Authentication ----
+const firebaseConfig = {
+  apiKey: "AIzaSyCBF51BEU354GbcIAcDVoTSwQHrZ7xHCWQ",
+  authDomain: "whazup-46bb4.firebaseapp.com",
+  projectId: "whazup-46bb4",
+  storageBucket: "whazup-46bb4.firebasestorage.app",
+  messagingSenderId: "371962234007",
+  appId: "1:371962234007:web:037414d1d756c6b66c15d2"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+function showAccountError(message){
+  const el = document.getElementById("account-error");
+  el.textContent = message;
+  el.style.display = "block";
+}
+function hideAccountError(){
+  document.getElementById("account-error").style.display = "none";
+}
+
+function renderAccountState(user){
+  const loggedOut = document.getElementById("account-logged-out");
+  const loggedIn = document.getElementById("account-logged-in");
+  const accountBtn = document.getElementById("btn-account");
+  if (user){
+    loggedOut.classList.add("hidden");
+    loggedIn.classList.remove("hidden");
+    document.getElementById("account-user-email").textContent = user.email;
+    if (accountBtn) accountBtn.textContent = "👤✓";
+  } else {
+    loggedOut.classList.remove("hidden");
+    loggedIn.classList.add("hidden");
+    if (accountBtn) accountBtn.textContent = "👤";
+  }
+}
 // ---- traduction FR/EN de l'interface (pas du contenu des événements) ----
 const TRANSLATIONS = {
   en: {
