@@ -2499,9 +2499,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("btn-geoloc");
     btn.textContent = "📍 Localisation…";
     navigator.geolocation.getCurrentPosition(
-      pos => {
+           pos => {
         state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
         btn.textContent = "📍 Ma position";
+        document.getElementById("filters-panel").classList.remove("hidden");
         renderDiscover();
       },
       err => {
