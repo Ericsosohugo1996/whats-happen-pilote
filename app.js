@@ -1,3 +1,45 @@
+// ---- écran de choix (localiser ou visiter une ville) ----
+function initChoiceScreen(){
+  const screen = document.getElementById("choice-screen");
+  if (!screen) return;
+  screen.classList.remove("hidden");
+
+  const colors = ["#E8604C","#F2C879","#7FA8D9","#ffffff","#C64A38"];
+  function makeConfetti(burstEl){
+    if (burstEl.children.length > 0) return;
+    for (let i = 0; i < 18; i++){
+      const el = document.createElement("div");
+      el.className = "choice-confetti";
+      const angle = (Math.PI*2/18)*i + (Math.random()*0.4);
+      const dist = 70 + Math.random()*50;
+      el.style.setProperty("--tx", (Math.cos(angle)*dist)+"px");
+      el.style.setProperty("--ty", (Math.sin(angle)*dist)+"px");
+      el.style.setProperty("--rot", (Math.random()*360)+"deg");
+      el.style.background = colors[i % colors.length];
+      el.style.borderRadius = ["50%","2px","0"][i % 3];
+      burstEl.appendChild(el);
+    }
+  }
+  makeConfetti(document.getElementById("choiceBurst1"));
+  makeConfetti(document.getElementById("choiceBurst2"));
+
+  function proceedAfterClick(card, callback){
+    card.classList.add("clicked");
+    setTimeout(() => {
+      screen.classList.add("hidden");
+      callback();
+    }, 550);
+  }
+
+  document.getElementById("choice-locate").onclick = function(){
+    proceedAfterClick(this, () => {
+      document.getElementById("btn-geoloc").click();
+    });
+  };
+  document.getElementById("choice-visit").onclick = function(){
+    proceedAfterClick(this, () => {});
+  };
+}
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
 // What's happen — pilote web (Phase 1)
