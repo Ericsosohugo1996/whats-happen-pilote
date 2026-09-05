@@ -2274,11 +2274,28 @@ function renderArrondissementFilter(){
   select.value = sorted.includes(Number(current)) ? current : "";
 }
 
+function updateStatsBanner(events){
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const tomorrowIso = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+  const weekLimit = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
+
+  const todayCount = events.filter(ev => ev.date === todayIso).length;
+  const tomorrowCount = events.filter(ev => ev.date === tomorrowIso).length;
+  const weekCount = events.filter(ev => ev.date >= todayIso && ev.date <= weekLimit).length;
+
+  const elToday = document.getElementById("stat-today");
+  const elTomorrow = document.getElementById("stat-tomorrow");
+  const elWeek = document.getElementById("stat-week");
+  if (elToday) elToday.textContent = todayCount;
+  if (elTomorrow) elTomorrow.textContent = tomorrowCount;
+  if (elWeek) elWeek.textContent = weekCount;
+}
+
 function renderDiscover(){
   const events = visibleEvents();
   const listEl = document.getElementById("event-list");
   const emptyEl = document.getElementById("empty-state");
-
+  updateStatsBanner(events);
   if (events.length === 0){
     listEl.innerHTML = "";
     emptyEl.classList.remove("hidden");
