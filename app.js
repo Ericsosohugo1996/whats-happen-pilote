@@ -2111,6 +2111,17 @@ function saveLocalEvents(){
 }
 
 // ---- filtering ----
+function matchesPeriod(ev, period){
+  if (!period) return true;
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const tomorrowIso = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+  const weekLimit = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
+  if (period === "today") return ev.date === todayIso;
+  if (period === "tomorrow") return ev.date === tomorrowIso;
+  if (period === "week") return ev.date >= todayIso && ev.date <= weekLimit;
+  return true;
+}
+
 function visibleEvents(){
   const ref = referencePoint();
   return allEvents()
@@ -2118,6 +2129,7 @@ function visibleEvents(){
     .filter(ev => state.userPos ? ev.distance <= state.radiusKm : ev.city === state.city)
     .filter(ev => state.selectedCategories.size === 0 || state.selectedCategories.has(ev.category))
     .filter(ev => !state.selectedArrondissement || ev.arrondissement === state.selectedArrondissement)
+    .filter(ev => matchesPeriod(ev, state.selectedPeriod))
     .sort((a, b) => a.distance - b.distance);
 }
 // Affiche le rayon en mètres si < 1 km, sinon en km.
