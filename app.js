@@ -2446,8 +2446,17 @@ document.addEventListener("DOMContentLoaded", () => {
   renderDiscover();
   applyTranslation();
 
-     const langBtn = document.getElementById("btn-lang-toggle");
+      const langBtn = document.getElementById("btn-lang-toggle");
   if (langBtn) langBtn.onclick = toggleLang;
+
+  const brandHome = document.getElementById("brand-home");
+  if (brandHome) brandHome.onclick = () => {
+    const screen = document.getElementById("choice-screen");
+    if (screen) {
+      screen.classList.remove("hidden");
+      document.querySelectorAll(".choice-card").forEach(c => c.classList.remove("clicked"));
+    }
+  };
 
   document.querySelectorAll(".stat[data-filter]").forEach(btn => {
     btn.onclick = () => {
