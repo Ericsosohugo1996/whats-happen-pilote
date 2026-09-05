@@ -2058,6 +2058,7 @@ const state = {
   mode: "carte",
   selectedCategories: new Set(),
   selectedArrondissement: null,
+  selectedPeriod: null,
   radiusKm: 20,
   userPos: null, // {lat, lng}
   currentEventId: null,
