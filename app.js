@@ -2132,9 +2132,18 @@ function haversineKm(lat1, lng1, lat2, lng2){
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 }
 
-function referencePoint(){
-  if (state.userPos) return state.userPos;
-  return CITIES[state.city];
+function nearestCityKey(){
+  let closest = null;
+  let closestDist = Infinity;
+  Object.keys(CITIES).forEach(key => {
+    const c = CITIES[key];
+    const d = haversineKm(state.userPos.lat, state.userPos.lng, c.lat, c.lng);
+    if (d < closestDist) {
+      closestDist = d;
+      closest = key;
+    }
+  });
+  return closest;
 }
 
 function distanceToEvent(ev){
