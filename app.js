@@ -2312,7 +2312,7 @@ function renderDiscover(){
   const events = visibleEvents();
   const listEl = document.getElementById("event-list");
   const emptyEl = document.getElementById("empty-state");
-  updateStatsBanner(events);
+  updateStatsBanner(baseVisibleEvents());
   if (events.length === 0){
     listEl.innerHTML = "";
     emptyEl.classList.remove("hidden");
