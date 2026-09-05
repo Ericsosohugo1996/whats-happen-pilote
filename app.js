@@ -2235,7 +2235,6 @@ function renderLocateBar(){
   document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
     b.classList.toggle("active", !state.userPos && b.dataset.city === state.city);
   });
-
   const photoEl = document.getElementById("locate-bar-photo");
   const photoUrl = !state.userPos && CITY_PHOTOS[state.city];
   if (photoUrl) {
@@ -2244,8 +2243,11 @@ function renderLocateBar(){
   } else {
     photoEl.classList.remove("visible");
   }
+  const accordion = document.getElementById("region-accordion");
+  const hint = document.getElementById("locate-hint");
+  if (accordion) accordion.classList.toggle("hidden", !!state.userPos);
+  if (hint) hint.classList.toggle("hidden", !!state.userPos);
 }
-
 function renderCityInfo(){
   const el = document.getElementById("city-info");
   if (state.userPos){
