@@ -37,7 +37,10 @@ function initChoiceScreen(){
     });
   };
   document.getElementById("choice-visit").onclick = function(){
-    proceedAfterClick(this, () => {});
+    proceedAfterClick(this, () => {
+      state.userPos = null;
+      renderDiscover();
+    });
   };
 }
 // What's happen — pilote web (Phase 1)
