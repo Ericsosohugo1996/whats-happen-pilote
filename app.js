@@ -2248,11 +2248,6 @@ function renderLocateBar(){
   if (accordion) accordion.classList.toggle("hidden", !!state.userPos);
   if (hint) hint.classList.toggle("hidden", !!state.userPos);
 }
-  const accordion = document.getElementById("region-accordion");
-  const hint = document.getElementById("locate-hint");
-  if (accordion) accordion.classList.toggle("hidden", !!state.userPos);
-  if (hint) hint.classList.toggle("hidden", !!state.userPos);
-}
 function renderCityInfo(){
   const el = document.getElementById("city-info");
   if (state.userPos){
