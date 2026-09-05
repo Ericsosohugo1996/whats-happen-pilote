@@ -2239,7 +2239,7 @@ function renderLocateBar(){
     b.classList.toggle("active", !state.userPos && b.dataset.city === state.city);
   });
   const photoEl = document.getElementById("locate-bar-photo");
-  const photoUrl = !state.userPos && CITY_PHOTOS[state.city];
+  const photoUrl = CITY_PHOTOS[state.city];
   if (photoUrl) {
     photoEl.style.backgroundImage = `url('${photoUrl}')`;
     photoEl.classList.add("visible");
