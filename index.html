@@ -34,7 +34,79 @@
       <text x="200" y="345" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="54" text-anchor="middle" fill="#ffffff">Wha<tspan fill="#E8604C">zup</tspan></text>
     </svg>
     <div class="splash-confetti-burst" id="splashConfettiBurst"></div>
+ </div>
+
+  <div id="choice-screen" class="choice-screen hidden">
+    <div class="choice-header">
+      <div class="brand">
+        <span class="brand-word">Wha<span class="accent">zup</span></span>
+      </div>
+      <h1>Bonjour !</h1>
+      <p>Comment veux-tu découvrir les événements ?</p>
+    </div>
+    <div class="choice-cards">
+      <button type="button" class="choice-card locate" id="choice-locate">
+        <span class="choice-badge">Recommandé</span>
+        <svg class="scene" viewBox="0 0 350 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="30" r="1.6" fill="#fff" opacity=".6"/>
+          <circle cx="90" cy="18" r="1.2" fill="#fff" opacity=".5"/>
+          <circle cx="290" cy="26" r="1.6" fill="#fff" opacity=".6"/>
+          <circle cx="250" cy="50" r="1.2" fill="#fff" opacity=".4"/>
+          <circle cx="175" cy="150" r="90" fill="none" stroke="#E8604C" stroke-width="1.5" opacity=".25"/>
+          <circle cx="175" cy="150" r="60" fill="none" stroke="#E8604C" stroke-width="1.5" opacity=".4"/>
+          <circle cx="90" cy="120" r="6" fill="#F2C879"/>
+          <circle cx="260" cy="110" r="6" fill="#7FA8D9"/>
+          <circle cx="230" cy="200" r="6" fill="#F2C879"/>
+          <circle cx="100" cy="210" r="6" fill="#7FA8D9"/>
+          <rect x="0" y="255" width="350" height="65" fill="#0B1526"/>
+          <rect x="20" y="225" width="30" height="60" fill="#16213f"/>
+          <rect x="60" y="200" width="26" height="85" fill="#16213f"/>
+          <rect x="270" y="215" width="34" height="70" fill="#16213f"/>
+          <rect x="230" y="235" width="24" height="50" fill="#16213f"/>
+          <g transform="translate(175,150) scale(1.15)">
+            <path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#E8604C"/>
+            <circle cx="-24" cy="-18" r="9" fill="#fff"/>
+            <circle cx="24" cy="-18" r="9" fill="#fff"/>
+            <ellipse class="choice-eyelid" cx="24" cy="-18" rx="11" ry="10" fill="#E8604C"/>
+            <path d="M-26 12 C -14 28, 14 28, 26 12" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="choice-confetti-burst" id="choiceBurst1"></div>
+        <div class="choice-content">
+          <h2>📍 Je me localise</h2>
+          <p>Voir les événements près de moi, où que je sois</p>
+        </div>
+      </button>
+      <button type="button" class="choice-card visit" id="choice-visit">
+        <svg class="scene" viewBox="0 0 350 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="290" cy="45" r="26" fill="#F2C879" opacity=".8"/>
+          <rect x="0" y="245" width="350" height="75" fill="#E8604C" opacity=".12"/>
+          <rect x="10" y="200" width="34" height="60" fill="#14213D" opacity=".8"/>
+          <polygon points="10,200 27,178 44,200" fill="#14213D" opacity=".8"/>
+          <rect x="60" y="215" width="28" height="45" fill="#14213D" opacity=".65"/>
+          <rect x="240" y="190" width="30" height="70" fill="#14213D" opacity=".8"/>
+          <circle cx="255" cy="175" r="10" fill="#14213D" opacity=".8"/>
+          <rect x="290" y="210" width="34" height="50" fill="#14213D" opacity=".65"/>
+          <circle cx="120" cy="150" r="5" fill="#E8604C"/>
+          <circle cx="200" cy="130" r="5" fill="#14213D"/>
+          <circle cx="160" cy="185" r="5" fill="#E8604C"/>
+          <g transform="translate(175,150) scale(1.15)">
+            <path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#14213D"/>
+            <circle cx="-24" cy="-18" r="9" fill="#fff"/>
+            <circle cx="24" cy="-18" r="9" fill="#fff"/>
+            <ellipse class="choice-eyelid" cx="24" cy="-18" rx="11" ry="10" fill="#14213D"/>
+            <path d="M-26 12 C -14 28, 14 28, 26 12" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="choice-confetti-burst" id="choiceBurst2"></div>
+        <div class="choice-content">
+          <h2>🗺️ Je visite une ville</h2>
+          <p>Choisir une ville parmi les 16 disponibles sur Whazup</p>
+        </div>
+      </button>
+    </div>
   </div>
+
  <header class="topbar">
    <div class="brand"> 
   <img src="logo.svg" alt="Whazup">
