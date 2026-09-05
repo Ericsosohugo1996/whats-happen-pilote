@@ -2399,6 +2399,21 @@ document.addEventListener("DOMContentLoaded", () => {
      const langBtn = document.getElementById("btn-lang-toggle");
   if (langBtn) langBtn.onclick = toggleLang;
 
+  document.querySelectorAll(".stat[data-filter]").forEach(btn => {
+    btn.onclick = () => {
+      const filter = btn.dataset.filter;
+      if (state.selectedPeriod === filter) {
+        state.selectedPeriod = null;
+      } else {
+        state.selectedPeriod = filter;
+      }
+      document.querySelectorAll(".stat[data-filter]").forEach(b => {
+        b.classList.toggle("active", b.dataset.filter === state.selectedPeriod);
+      });
+      renderDiscover();
+    };
+  }); 
+
   document.querySelectorAll(".region-toggle").forEach(btn => {
     btn.onclick = () => btn.closest(".region-block").classList.toggle("open");
   });
