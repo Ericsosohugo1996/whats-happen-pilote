@@ -2296,19 +2296,19 @@ function updateStatsBanner(events){
   const todayIso = new Date().toISOString().slice(0, 10);
   const tomorrowIso = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
   const weekLimit = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
-
   const todayCount = events.filter(ev => ev.date === todayIso).length;
   const tomorrowCount = events.filter(ev => ev.date === tomorrowIso).length;
   const weekCount = events.filter(ev => ev.date >= todayIso && ev.date <= weekLimit).length;
-
+  const laterCount = events.filter(ev => ev.date > weekLimit).length;
   const elToday = document.getElementById("stat-today");
   const elTomorrow = document.getElementById("stat-tomorrow");
   const elWeek = document.getElementById("stat-week");
+  const elLater = document.getElementById("stat-later");
   if (elToday) elToday.textContent = todayCount;
   if (elTomorrow) elTomorrow.textContent = tomorrowCount;
   if (elWeek) elWeek.textContent = weekCount;
+  if (elLater) elLater.textContent = laterCount;
 }
-
 function renderDiscover(){
   const events = visibleEvents();
   const listEl = document.getElementById("event-list");
