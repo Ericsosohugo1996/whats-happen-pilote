@@ -2173,13 +2173,13 @@ function matchesPeriod(ev, period){
 
 function baseVisibleEvents(){
   const ref = referencePoint();
-  return allEvents()
+  const preFiltered = state.userPos ? allEvents() : allEvents().filter(ev => ev.city === state.city);
+  return preFiltered
     .map(ev => ({ ...ev, distance: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) }))
-    .filter(ev => state.userPos ? ev.distance <= state.radiusKm : ev.city === state.city)
+    .filter(ev => state.userPos ? ev.distance <= state.radiusKm : true)
     .filter(ev => state.selectedCategories.size === 0 || state.selectedCategories.has(ev.category))
     .filter(ev => !state.selectedArrondissement || ev.arrondissement === state.selectedArrondissement);
 }
-
 function visibleEvents(){
   return baseVisibleEvents()
     .filter(ev => matchesPeriod(ev, state.selectedPeriod))
