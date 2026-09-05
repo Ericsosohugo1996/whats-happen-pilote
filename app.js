@@ -2119,6 +2119,7 @@ function matchesPeriod(ev, period){
   if (period === "today") return ev.date === todayIso;
   if (period === "tomorrow") return ev.date === tomorrowIso;
   if (period === "week") return ev.date >= todayIso && ev.date <= weekLimit;
+  if (period === "later") return ev.date > weekLimit;
   return true;
 }
 
