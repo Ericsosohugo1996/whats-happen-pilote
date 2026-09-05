@@ -2131,7 +2131,10 @@ function haversineKm(lat1, lng1, lat2, lng2){
             Math.sin(dLng/2)**2;
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 }
-
+function referencePoint(){
+  if (state.userPos) return state.userPos;
+  return CITIES[state.city];
+}
 function nearestCityKey(){
   let closest = null;
   let closestDist = Infinity;
