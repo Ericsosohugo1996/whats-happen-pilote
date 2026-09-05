@@ -2247,8 +2247,8 @@ function renderLocateBar(){
   document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
     b.classList.toggle("active", !state.userPos && b.dataset.city === state.city);
   });
-  const photoEl = document.getElementById("locate-bar-photo");
-  const photoUrl = CITY_PHOTOS[state.city];
+   const photoEl = document.getElementById("locate-bar-photo");
+  const photoUrl = state.userPos ? CITY_PHOTOS[nearestCityKey()] : CITY_PHOTOS[state.city];
   if (photoUrl) {
     photoEl.style.backgroundImage = `url('${photoUrl}')`;
     photoEl.classList.add("visible");
