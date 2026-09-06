@@ -2021,12 +2021,12 @@ function categoryForParisEvent(tags){
   const text = tags.toLowerCase();
   if (/photo|histoire|expo/.test(text)) return "Expo";
   if (/concert|musique|spectacle musical/.test(text)) return "Musique";
-  if (/march[ée]|brocante/.test(text)) return "Marché";
+  if (/brocante|vide-grenier|vide grenier/.test(text)) return "Brocante";
+  if (/march[ée]/.test(text)) return "Marché";
   if (/sport/.test(text)) return "Sport";
   if (/soir[ée]e|bal/.test(text)) return "Soirée";
   return "Festival";
 }
-
 async function fetchParisEvents(){
   const pageSize = 100;
     const pagesToFetch = 8; // 8 x 100 = jusqu'à 800 événements
