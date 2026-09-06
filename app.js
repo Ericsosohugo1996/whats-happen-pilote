@@ -2684,8 +2684,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
    // Récupération des événements OpenAgenda + Paris Data en arrière-plan, sans bloquer l'affichage
   // initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
-  Promise.all([fetchAllOpenAgendaEvents(), fetchParisEvents()]).then(([oaEvents, parisEvents]) => {
+   Promise.all([fetchAllOpenAgendaEvents(), fetchParisEvents()]).then(([oaEvents, parisEvents]) => {
     state.openAgendaEvents = [...oaEvents, ...parisEvents];
+    renderDiscover();
+  });
+
+  fetchAllBrocantes().then(brocantes => {
+    state.brocanteEvents = brocantes;
     renderDiscover();
   });
 
