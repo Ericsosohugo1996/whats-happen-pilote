@@ -1991,10 +1991,8 @@ const OPENAGENDA_SOURCES = [
          { agendaId: 21769447, cityName: "Marseille",        cityKey: "marseille", search: null, size: 100 },
      { agendaId: 2119473,  cityName: "Marseille",         cityKey: "marseille", search: null },
      { agendaId: 46688663, cityName: "Marseille",         cityKey: "marseille", search: null },
-     { agendaId: 78167052, cityName: "Dijon",             cityKey: "dijon", search: null, size: 500 },
-];                             
-];
-
+      { agendaId: 78167052, cityName: "Dijon",             cityKey: "dijon", search: null, size: 500 },
+];    
 function sceneForOpenAgendaEvent(title, description){ 
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "expo";
