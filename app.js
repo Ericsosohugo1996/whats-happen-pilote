@@ -942,7 +942,7 @@ const SEED_EVENTS = [
   },
 ]; 
 
-const CATEGORIES = ["Musique", "Marché", "Festival", "Sport", "Soirée", "Expo"];
+const CATEGORIES = ["Musique", "Marché", "Brocante", "Festival", "Sport", "Soirée", "Expo"];
 
 // Scène illustrée par défaut selon la catégorie (utilisée pour les événements publiés par les
 // utilisateurs, qui n'ont pas de scène assignée manuellement).
