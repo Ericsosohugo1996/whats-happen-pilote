@@ -1,0 +1,17 @@
+{
+  "name": "Whazup",
+  "short_name": "Whazup",
+  "description": "Découvrez les événements près de vous, partout en France.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14213D",
+  "theme_color": "#14213D",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
