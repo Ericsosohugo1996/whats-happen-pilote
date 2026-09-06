@@ -2539,8 +2539,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderDiscover();
   applyTranslation();
 
-      const langBtn = document.getElementById("btn-lang-toggle");
-  if (langBtn) langBtn.onclick = toggleLang;
+   document.querySelectorAll(".flag-btn[data-lang]").forEach(btn => {
+    btn.onclick = () => setLang(btn.dataset.lang);
+  });   
 
   const brandHome = document.getElementById("brand-home");
   if (brandHome) brandHome.onclick = () => {
