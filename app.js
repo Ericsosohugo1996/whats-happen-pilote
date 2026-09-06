@@ -1747,7 +1747,7 @@ const CITY_INFO = {
       { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, avec plusieurs universités et grandes écoles." },
     ],
   },
-  marseille: {
+   marseille: {
     population: "873 076 habitants (2023)",
     desc: "Fondée par des marins grecs vers 600 av. J.-C. sous le nom de Massalia, Marseille est la plus ancienne ville de France et la deuxième plus peuplée. Ville portuaire méditerranéenne au caractère affirmé, elle domine la baie depuis la basilique Notre-Dame-de-la-Garde.",
     tags: [],
@@ -1757,7 +1757,17 @@ const CITY_INFO = {
       { ico: "🎨", text: "Capitale européenne de la culture en 2013, avec un musée MuCEM devenu emblématique du renouveau du front de mer." },
     ],
   },
-}; 
+  dijon: {
+    population: "161 830 habitants (2023)",
+    desc: "Ancienne capitale du duché de Bourgogne, Dijon a conservé un centre historique remarquable, classé au patrimoine mondial de l'UNESCO. Ville gastronomique réputée pour sa moutarde, elle est aussi une porte d'entrée vers les grands vignobles bourguignons.",
+    tags: [],
+    facts: [
+      { ico: "🏰", text: "Le Palais des ducs et des États de Bourgogne, au cœur de la ville, témoigne de la puissance passée du duché." },
+      { ico: "🦉", text: "La célèbre chouette sculptée sur l'église Notre-Dame porte chance à qui la touche de la main gauche." },
+      { ico: "🍷", text: "Porte d'entrée de la route des vins de Bourgogne, classée à l'UNESCO en 2015." },
+    ],
+  },
+};
 // ---- traduction anglaise des fiches villes ----
 const CITY_INFO_EN = {
   aix: {
