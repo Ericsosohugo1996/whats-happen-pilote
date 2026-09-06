@@ -2240,6 +2240,7 @@ const state = {
   selectedCategories: new Set(),
   selectedArrondissement: null,
   selectedPeriod: null,
+  brocanteEvents: [],
   radiusKm: 20,
   userPos: null, // {lat, lng}
   currentEventId: null,
