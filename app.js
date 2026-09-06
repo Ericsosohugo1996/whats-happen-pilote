@@ -1942,7 +1942,8 @@ function categoryForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "Expo";
   if (/concert|musique|jazz|chorale/.test(text)) return "Musique";
-  if (/march[ée]|brocante|vide-grenier/.test(text)) return "Marché";
+  if (/brocante|vide-grenier|vide grenier/.test(text)) return "Brocante";
+  if (/march[ée]/.test(text)) return "Marché";
   if (/sport|p[ée]tanque|padel|tournoi|basket/.test(text)) return "Sport";
   if (/soir[ée]e|bal/.test(text)) return "Soirée";
   return "Festival";
