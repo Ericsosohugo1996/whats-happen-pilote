@@ -2252,7 +2252,7 @@ const state = {
 }; 
 
 function allEvents(){
-  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents];
+  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.brocanteEvents];
 }
 
 // ---- geo helpers ----
