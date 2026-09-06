@@ -1941,7 +1941,6 @@ async function fetchBrocantesForCity(cityKey){
     const cityName = CITIES[cityKey].name;
     return data
       .filter(e => /brocante|vide-greniers/i.test(e.categorie))
-      .filter(e => e.ville.toLowerCase().startsWith(cityName.toLowerCase().split("-")[0].split(" ")[0]))
       .map(e => ({
         id: "vg-" + e.id + "-" + e.date,
         scene: "marche",
