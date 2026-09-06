@@ -231,15 +231,16 @@ function applyTranslation(){
   const dict = TRANSLATIONS[lang] || {};
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n;
-    el.textContent = lang === "en" && dict[key] ? dict[key] : key;
+    el.textContent = lang !== "fr" && dict[key] ? dict[key] : key;
   });
-  const toggleBtn = document.getElementById("btn-lang-toggle");
-  if (toggleBtn) toggleBtn.textContent = lang === "en" ? "FR" : "EN";
+  document.querySelectorAll(".flag-btn[data-lang]").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
 }
 
-function toggleLang(){
-  currentLang.value = currentLang.value === "fr" ? "en" : "fr";
-  localStorage.setItem("wh_lang", currentLang.value);
+function setLang(lang){
+  currentLang.value = lang;
+  localStorage.setItem("wh_lang", lang);
   applyTranslation();
   renderDiscover();
 }
