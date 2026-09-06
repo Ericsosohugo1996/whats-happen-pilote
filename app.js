@@ -2014,8 +2014,15 @@ async function fetchOpenAgendaCityEvents(source){
     const res = await fetch(url);
     const data = await res.json();
     if (!data.events) return [];
+    const strictCities = ["Aix-en-Provence", "Marseille"];
     return data.events
-      .filter(ev => ev.location && ev.location.city === source.cityName && ev.nextTiming)
+      .filter(ev => {
+        if (!ev.location || !ev.nextTiming) return false;
+        if (strictCities.includes(source.cityName)) {
+          return ev.location.city === source.cityName;
+        }
+        return true;
+      })
       .map(ev => {
                const title = (ev.title && ev.title.fr) || ("Événement à " + source.cityName);
         const description = (ev.description && ev.description.fr) || "";
