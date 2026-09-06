@@ -949,12 +949,12 @@ const CATEGORIES = ["Musique", "Marché", "Brocante", "Festival", "Sport", "Soir
 const CATEGORY_SCENE = {
   Musique: "musique",
   Marché: "marche",
+  Brocante: "marche",
   Festival: "festival",
   Sport: "sport",
   Soirée: "village",
   Expo: "expo",
 };
-
 // ---- illustrations de scène (SVG faits maison, sans photo, pour éviter tout souci de droits) ----
 const SCENES = {
   port: `
