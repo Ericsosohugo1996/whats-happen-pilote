@@ -1911,6 +1911,62 @@ const CITY_INFO_EN = {
 // (l'agenda métropole couvre 92 communes, on ne garde que les événements dont l'adresse est
 // bien à Aix-en-Provence).
 // Les événements sont récupérés en direct depuis le navigateur au chargement de l'appli, puis
+// ---- intégration brocantes/vide-greniers (via Worker Cloudflare + vide-greniers.org) ----
+const BROCANTE_WORKER_URL = "https://tight-hill-1359.ericbrunebarbe.workers.dev/";
+const BROCANTE_CITY_SLUGS = {
+  aix: "Aix-en-Provence-13",
+  st: "Saint-Tropez-83",
+  ram: "Ramatuelle-83",
+  ste: "Sainte-Maxime-83",
+  lcv: "La-Croix-Valmer-83",
+  sens: "Sens-89",
+  drag: "Draguignan-83",
+  moug: "Mougins-06",
+  mart: "Martigues-13",
+  paris: "Paris-75",
+  nantes: "Nantes-44",
+  rennes: "Rennes-35",
+  brest: "Brest-29",
+  bordeaux: "Bordeaux-33",
+  toulouse: "Toulouse-31",
+  marseille: "Marseille-13",
+};
+
+async function fetchBrocantesForCity(cityKey){
+  const slug = BROCANTE_CITY_SLUGS[cityKey];
+  if (!slug) return [];
+  try {
+    const res = await fetch(BROCANTE_WORKER_URL + "?city=" + encodeURIComponent(slug));
+    const data = await res.json();
+    const cityName = CITIES[cityKey].name;
+    return data
+      .filter(e => /brocante|vide-greniers/i.test(e.categorie))
+      .filter(e => e.ville.toLowerCase().startsWith(cityName.toLowerCase().split("-")[0].split(" ")[0]))
+      .map(e => ({
+        id: "vg-" + e.id + "-" + e.date,
+        scene: "marche",
+        city: cityKey,
+        category: "Brocante",
+        title: e.titre,
+        date: e.date,
+        time: "08:00",
+        place: e.ville + ", " + cityName,
+        lat: CITIES[cityKey].lat + (Math.random() - 0.5) * 0.01,
+        lng: CITIES[cityKey].lng + (Math.random() - 0.5) * 0.01,
+        price: "Voir sur place",
+        thumb: "",
+        description: "Brocante / vide-greniers importé depuis vide-greniers.org. Voir la fiche complète : " + e.url,
+      }));
+  } catch (err) {
+    console.error("Erreur lors de la récupération des brocantes (" + cityKey + ") :", err);
+    return [];
+  }
+}
+
+async function fetchAllBrocantes(){
+  const results = await Promise.allSettled(Object.keys(BROCANTE_CITY_SLUGS).map(fetchBrocantesForCity));
+  return results.filter(r => r.status === "fulfilled").map(r => r.value).flat();
+}
 // fusionnés avec les événements saisis à la main (SEED_EVENTS).
 const OPENAGENDA_KEY = "oa_pk_ZHdDDGNRqTdKzUHsYWAFIigmNoaityfVcVlbNYhWrQxhxPfzpeDDsjVFvWtoDioi";
 const OPENAGENDA_SOURCES = [
