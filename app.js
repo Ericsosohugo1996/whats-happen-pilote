@@ -48,6 +48,15 @@ function initChoiceScreen(){
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
 
+// ---- activation du service worker (PWA) ----
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js").catch(err => {
+      console.error("Erreur d'enregistrement du service worker :", err);
+    });
+  });
+}
+
 // ---- écran de démarrage animé ----
 (function(){
   const colors = ["#E8604C","#F2C879","#7FA8D9","#ffffff","#C64A38"];
