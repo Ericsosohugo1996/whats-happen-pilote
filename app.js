@@ -2675,7 +2675,10 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.onclick = () => btn.closest(".region-block").classList.toggle("open");
   });
 
-  auth.onAuthStateChanged(user => renderAccountState(user));
+  auth.onAuthStateChanged(user => {
+  renderAccountState(user);
+  if (user) loadFromCloud(user);
+});
 
   const accountModal = document.getElementById("account-modal");
   document.getElementById("btn-account").onclick = () => accountModal.classList.remove("hidden");
