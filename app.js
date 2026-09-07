@@ -282,8 +282,7 @@ const CITIES = {
   lcv:  { name: "La Croix-Valmer", lat: 43.2076, lng: 6.5729 },
   sens: { name: "Sens",            lat: 48.1975, lng: 3.2823 },
    drag: { name: "Draguignan",      lat: 43.5375, lng: 6.4627 },
-   moug: { name: "Mougins",         lat: 43.6008, lng: 6.9956 },
-   mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
+id: "marseille-ete-marseillais"   mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
    paris: { name: "Paris",          lat: 48.8566, lng: 2.3522 },
   nantes: { name: "Nantes",        lat: 47.2184, lng: -1.5536 },
   rennes: { name: "Rennes",        lat: 48.1173, lng: -1.6778 },
@@ -291,7 +290,7 @@ const CITIES = {
   bordeaux: { name: "Bordeaux",    lat: 44.8378, lng: -0.5792 },
      toulouse: { name: "Toulouse",    lat: 43.6047, lng: 1.4442 },
  marseille: { name: "Marseille", lat: 43.2965, lng: 5.3698 },
-lille: { name: "Lille", lat: 50.6292, lng: 3.0573 }, dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415 },
+montgeron: { name: "Montgeron", lat: 48.7039, lng: 2.4605 }, lille: { name: "Lille", lat: 50.6292, lng: 3.0573 }, dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415 },
 };
 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
@@ -1788,7 +1787,7 @@ const CITY_INFO = {
       { ico: "🎨", text: "Capitale européenne de la culture en 2013, avec un musée MuCEM devenu emblématique du renouveau du front de mer." },
     ],
   },
-  lille: { population: "236 234 habitants (2023)", desc: "Capitale des Flandres françaises et cœur de la Métropole Européenne de Lille, réputée pour son architecture flamande, sa Grand Place animée et sa braderie annuelle, l'une des plus grandes brocantes d'Europe.", tags: [], facts: [ { ico: "🏛️", text: "La Grand Place et le Vieux-Lille rassemblent une architecture typique flamande et espagnole." }, { ico: "🛒", text: "La braderie de Lille, chaque premier week-end de septembre, est l'une des plus grandes brocantes d'Europe." }, { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, entourée de nombreuses universités et grandes écoles." }, ], }, dijon: {
+  montgeron: { population: "24 022 habitants (2023)", desc: "Commune de l'Essonne dans la banlieue sud-est de Paris, Montgeron est célèbre pour avoir accueilli le départ du tout premier Tour de France en 1903, au café Au Réveil Matin. La ville conserve un cadre de vie verdoyant, entre parcs et bords de l'Yerres.", tags: [], facts: [ { ico: "🚲", text: "Le café Au Réveil Matin fut le point de départ du premier Tour de France, le 1er juillet 1903." }, { ico: "🌳", text: "La ville compte de nombreux espaces verts, dont l'Arboretum et les bords de l'Yerres." }, { ico: "🍄", text: "La Société Mycologique de Montgeron organise chaque automne une exposition de champignons très suivie." }, ], }, lille: { population: "236 234 habitants (2023)", desc: "Capitale des Flandres françaises et cœur de la Métropole Européenne de Lille, réputée pour son architecture flamande, sa Grand Place animée et sa braderie annuelle, l'une des plus grandes brocantes d'Europe.", tags: [], facts: [ { ico: "🏛️", text: "La Grand Place et le Vieux-Lille rassemblent une architecture typique flamande et espagnole." }, { ico: "🛒", text: "La braderie de Lille, chaque premier week-end de septembre, est l'une des plus grandes brocantes d'Europe." }, { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, entourée de nombreuses universités et grandes écoles." }, ], }, dijon: {
     population: "161 830 habitants (2023)",
     desc: "Ancienne capitale du duché de Bourgogne, Dijon a conservé un centre historique remarquable, classé au patrimoine mondial de l'UNESCO. Ville gastronomique réputée pour sa moutarde, elle est aussi une porte d'entrée vers les grands vignobles bourguignons.",
     tags: [],
