@@ -273,7 +273,7 @@ function setLang(lang){
   localStorage.setItem("wh_lang", lang);
   applyTranslation();
   renderDiscover();
-}
+}161 830 habitants
 const CITIES = {
   aix:  { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
   st:   { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407 },
@@ -291,7 +291,7 @@ const CITIES = {
   bordeaux: { name: "Bordeaux",    lat: 44.8378, lng: -0.5792 },
      toulouse: { name: "Toulouse",    lat: 43.6047, lng: 1.4442 },
  marseille: { name: "Marseille", lat: 43.2965, lng: 5.3698 },
-dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415 },
+lille: { name: "Lille", lat: 50.6292, lng: 3.0573 }, dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415 },
 };
 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
@@ -1788,7 +1788,7 @@ const CITY_INFO = {
       { ico: "🎨", text: "Capitale européenne de la culture en 2013, avec un musée MuCEM devenu emblématique du renouveau du front de mer." },
     ],
   },
-  dijon: {
+  lille: { population: "236 234 habitants (2023)", desc: "Capitale des Flandres françaises et cœur de la Métropole Européenne de Lille, réputée pour son architecture flamande, sa Grand Place animée et sa braderie annuelle, l'une des plus grandes brocantes d'Europe.", tags: [], facts: [ { ico: "🏛️", text: "La Grand Place et le Vieux-Lille rassemblent une architecture typique flamande et espagnole." }, { ico: "🛒", text: "La braderie de Lille, chaque premier week-end de septembre, est l'une des plus grandes brocantes d'Europe." }, { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, entourée de nombreuses universités et grandes écoles." }, ], }, dijon: {
     population: "161 830 habitants (2023)",
     desc: "Ancienne capitale du duché de Bourgogne, Dijon a conservé un centre historique remarquable, classé au patrimoine mondial de l'UNESCO. Ville gastronomique réputée pour sa moutarde, elle est aussi une porte d'entrée vers les grands vignobles bourguignons.",
     tags: [],
@@ -2022,7 +2022,7 @@ const OPENAGENDA_SOURCES = [
          { agendaId: 21769447, cityName: "Marseille",        cityKey: "marseille", search: null, size: 100 },
      { agendaId: 2119473,  cityName: "Marseille",         cityKey: "marseille", search: null },
      { agendaId: 46688663, cityName: "Marseille",         cityKey: "marseille", search: null },
-      { agendaId: 78167052, cityName: "Dijon",             cityKey: "dijon", search: null, size: 300 },
+      { agendaId: 89904399, cityName: "Lille", cityKey: "lille", search: null, size: 300 }, { agendaId: 78167052, cityName: "Dijon",             cityKey: "dijon", search: null, size: 300 },
 ];    
 function sceneForOpenAgendaEvent(title, description){ 
   const text = (title + " " + description).toLowerCase();
