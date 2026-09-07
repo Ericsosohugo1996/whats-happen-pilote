@@ -1,4 +1,4 @@
-const CACHE_NAME = "whazup-cache-v3";
+const CACHE_NAME = "whazup-cache-v4";
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
