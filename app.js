@@ -273,7 +273,7 @@ function setLang(lang){
   localStorage.setItem("wh_lang", lang);
   applyTranslation();
   renderDiscover();
-}161 830 habitants
+}
 const CITIES = {
   aix:  { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
   st:   { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407 },
