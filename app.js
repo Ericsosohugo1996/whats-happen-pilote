@@ -2014,15 +2014,15 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 21769447, cityName: "Aix-en-Provence",  cityKey: "aix",  search: "Aix-en-Provence" },
   { agendaId: 11035708, cityName: "Mougins",          cityKey: "moug", search: null },
   { agendaId: 65630513, cityName: "Martigues",        cityKey: "mart", search: null },
-    { agendaId: 82470621, cityName: "Nantes",           cityKey: "nantes", search: null, size: 2000 },
-  { agendaId: 20500020, cityName: "Rennes",           cityKey: "rennes", search: null, size: 2000 },
+    { agendaId: 82470621, cityName: "Nantes",           cityKey: "nantes", search: null, size: 300 },
+  { agendaId: 20500020, cityName: "Rennes",           cityKey: "rennes", search: null, size: 300 },
    { agendaId: 2404802,  cityName: "Brest",            cityKey: "brest", search: null },
-  { agendaId: 83392987, cityName: "Bordeaux",         cityKey: "bordeaux", search: null, size: 1500 },
-    { agendaId: 42448083, cityName: "Toulouse",         cityKey: "toulouse", search: null, size: 2000 },
+  { agendaId: 83392987, cityName: "Bordeaux",         cityKey: "bordeaux", search: null, size: 300 },
+    { agendaId: 42448083, cityName: "Toulouse",         cityKey: "toulouse", search: null, size: 300 },
          { agendaId: 21769447, cityName: "Marseille",        cityKey: "marseille", search: null, size: 100 },
      { agendaId: 2119473,  cityName: "Marseille",         cityKey: "marseille", search: null },
      { agendaId: 46688663, cityName: "Marseille",         cityKey: "marseille", search: null },
-      { agendaId: 78167052, cityName: "Dijon",             cityKey: "dijon", search: null, size: 500 },
+      { agendaId: 78167052, cityName: "Dijon",             cityKey: "dijon", search: null, size: 300 },
 ];    
 function sceneForOpenAgendaEvent(title, description){ 
   const text = (title + " " + description).toLowerCase();
