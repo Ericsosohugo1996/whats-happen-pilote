@@ -2198,8 +2198,8 @@ function loadLoyalty(){
 
 function saveLoyalty(){
   localStorage.setItem("wh_loyalty", JSON.stringify(state.loyalty));
+  syncToCloud();
 }
-
 // Attribue les points de la journée si l'appli n'a pas déjà été ouverte aujourd'hui.
 function awardDailyLoyaltyPoints(){
   const today = new Date().toISOString().slice(0, 10);
