@@ -117,12 +117,13 @@ function renderAccountState(user){
     loggedIn.classList.remove("hidden");
     document.getElementById("account-user-email").textContent = user.email;
     if (accountBtn) accountBtn.textContent = "👤✓";
-  } else {
+   } else {
     loggedOut.classList.remove("hidden");
     loggedIn.classList.add("hidden");
     if (accountBtn) accountBtn.textContent = "👤";
   }
-  // ---- synchronisation avec le compte (Firestore) ----
+}
+// ---- synchronisation avec le compte (Firestore) ----
 function syncToCloud(){
   const user = auth.currentUser;
   if (!user) return;
