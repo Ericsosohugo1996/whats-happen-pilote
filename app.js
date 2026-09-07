@@ -2229,6 +2229,7 @@ function loadVisitedEvents(){
 }
 function saveVisitedEvents(){
   localStorage.setItem("wh_been_there", JSON.stringify([...state.visitedEvents]));
+  syncToCloud();
 }
 
 function markBeenThere(){
