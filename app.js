@@ -2342,6 +2342,7 @@ function loadFavorites(){
 }
 function saveFavorites(){
   localStorage.setItem("wh_favorites", JSON.stringify([...state.favorites]));
+  syncToCloud();
 }
 function loadLocalEvents(){
   try { return JSON.parse(localStorage.getItem("wh_local_events") || "[]"); }
