@@ -122,6 +122,35 @@ function renderAccountState(user){
     loggedIn.classList.add("hidden");
     if (accountBtn) accountBtn.textContent = "👤";
   }
+  // ---- synchronisation avec le compte (Firestore) ----
+function syncToCloud(){
+  const user = auth.currentUser;
+  if (!user) return;
+  db.collection("users").doc(user.uid).set({
+    favorites: [...state.favorites],
+    loyalty: state.loyalty,
+    visitedEvents: [...state.visitedEvents],
+  }, { merge: true }).catch(err => console.error("Erreur de synchronisation :", err));
+}
+
+function loadFromCloud(user){
+  db.collection("users").doc(user.uid).get().then(doc => {
+    if (doc.exists){
+      const data = doc.data();
+      if (Array.isArray(data.favorites)) state.favorites = new Set(data.favorites);
+      if (Array.isArray(data.visitedEvents)) state.visitedEvents = new Set(data.visitedEvents);
+      if (data.loyalty && typeof data.loyalty.points === "number") state.loyalty = data.loyalty;
+      saveFavorites();
+      saveVisitedEvents();
+      saveLoyalty();
+    } else {
+      syncToCloud();
+    }
+    renderDiscover();
+    renderLoyalty();
+    if (!document.getElementById("view-favorites").classList.contains("hidden")) renderFavorites();
+  }).catch(err => console.error("Erreur de chargement cloud :", err));
+}
 }
 // ---- traduction FR/EN de l'interface (pas du contenu des événements) ----
 const TRANSLATIONS = {
