@@ -97,7 +97,7 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
-
+const analytics = firebase.analytics();
 function showAccountError(message){
   const el = document.getElementById("account-error");
   el.textContent = message;
