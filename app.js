@@ -150,8 +150,7 @@ function loadFromCloud(user){
     renderDiscover();
     renderLoyalty();
     if (!document.getElementById("view-favorites").classList.contains("hidden")) renderFavorites();
-  }).catch(err => console.error("Erreur de chargement cloud :", err));
-}
+   }).catch(err => console.error("Erreur de chargement cloud :", err));
 }
 // ---- traduction FR/EN de l'interface (pas du contenu des événements) ----
 const TRANSLATIONS = {
