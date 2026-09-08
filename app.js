@@ -1505,10 +1505,30 @@ const LANDMARK_INFO = {
     photo: "",
     caption: "Plus de 600 m² d'exposition consacrés à la vie quotidienne dracénoise des XIXe et XXe siècles, entre agriculture et artisanat.",
   },
-  "Dolmen de la Pierre de la Fée": {
+   "Dolmen de la Pierre de la Fée": {
     scene: "nature",
     photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Draguignan_Pierre_de_la_fee.JPG",
     caption: "Daté d'environ 2 500 av. J.-C., ce mégalithe de 60 tonnes est le plus ancien témoin d'occupation humaine à Draguignan, entouré de légendes de fées.",
+  },
+  "Vieux Village": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Mougins_01_(cropped).jpg",
+    caption: "Bâti en spirale autour de son sommet, le village médiéval de Mougins se découvre au fil de ruelles pavées, galeries d'art et fontaines anciennes.",
+  },
+  "Chapelle Notre-Dame-de-Vie": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle_Notre-Dame-de-Vie_de_Mougins_-_Vue_d%27ensemble_1.jpg",
+    caption: "Chapelle du XVIe siècle entourée de cyprès, tout près de la dernière demeure de Picasso — le lieu a aussi accueilli Chaplin, Cocteau et Churchill.",
+  },
+  "Musée FAMM": {
+    scene: "expo",
+    photo: "",
+    caption: "Premier musée d'Europe entièrement consacré aux femmes artistes, avec une centaine d'œuvres de l'impressionnisme à l'art contemporain.",
+  },
+  "Porte Sarrazine": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Mougins_-_Porte_Sarrazine_-1.JPG",
+    caption: "Seul vestige des fortifications médiévales de Mougins, cette porte marque l'entrée historique du vieux village.",
   },
 };
 
