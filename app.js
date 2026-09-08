@@ -1747,10 +1747,7 @@ const CITY_INFO = {
       { ico: "🖼️", text: "Le Centre d'art de Mougins accueille des expositions temporaires toute l'année." },
     ],
   },
-  mart: {
-    population: "49 455 habitants (2023)",
-    desc: "Quatrième ville des Bouches-du-Rhône, construite au bord de l'eau entre mer et étang de Berre, ce qui lui vaut le surnom de « Venise Provençale ». Ses canaux, son port et son quartier de l'Île en font une destination prisée sur la Côte Bleue.",
-    tags: [],
+      tags: ["Miroir aux Oiseaux", "Église Sainte-Marie-Madeleine", "Chapelle de l'Annonciade", "Fort de Bouc"],
     facts: [
       { ico: "🚤", text: "Surnommée la « Venise Provençale » pour ses canaux traversant le quartier de l'Île." },
       { ico: "🏰", text: "Le Fort de Bouc, aussi appelé Fort Vauban, garde l'entrée du port depuis des siècles." },
