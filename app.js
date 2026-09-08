@@ -1708,10 +1708,7 @@ const CITY_INFO = {
     ],
   },
        tags: ["Tour de l'Horloge", "Musée des Beaux-Arts", "Musée des Arts et Traditions Populaires", "Dolmen de la Pierre de la Fée"],
-   moug: {
-    population: "19 782 habitants (2023)",
-    desc: "Village médiéval perché des Alpes-Maritimes, entre Cannes et Grasse. Réputé pour sa gastronomie étoilée et son marché d'art, Mougins fut aussi le dernier lieu de résidence de Pablo Picasso, qui y vécut ses douze dernières années.",
-    tags: [],
+      tags: ["Vieux Village", "Chapelle Notre-Dame-de-Vie", "Musée FAMM", "Porte Sarrazine"],
     facts: [
       { ico: "🎨", text: "Pablo Picasso a vécu ses douze dernières années à Mougins, jusqu'à sa mort en 1973." },
       { ico: "🍽️", text: "Un village réputé pour sa gastronomie, avec plusieurs tables étoilées au guide Michelin." },
