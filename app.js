@@ -2424,7 +2424,7 @@ const CITY_PHOTOS = {
     marseille: "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame_de_la_Garde_aerial_view_2020_(cropped).jpeg",
     sens: "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale_Saint-%C3%89tienne,_Sens-6998.jpg",
    brest: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Brest_et_Tour_Tanguy.jpg",
-  lille: "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Place_de_Lille.jpg",
+   lille: "https://commons.wikimedia.org/wiki/Special:FilePath/Lille_Grand_Place.JPG",
    dijon: "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_ducs_et_des_%C3%A9tats_de_Bourgogne_Dijon.jpg",
 };
 function renderLocateBar(){
