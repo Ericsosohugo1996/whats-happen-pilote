@@ -1688,16 +1688,7 @@ const CITY_INFO = {
       { ico: "📜", text: "L'archevêché de Sens a longtemps eu la primatie sur une grande partie de la France, jusqu'au XVIIe siècle." },
     ],
   },
-    drag: {
-    population: "40 826 habitants (2023)",
-    desc: "Sous-préfecture du Var et cœur de la Dracénie, la ville doit une partie de sa notoriété à son passé militaire ainsi qu'à son riche patrimoine culturel, entre musées, chapelle historique et hôtel départemental des expositions.",
-    tags: [],
-    facts: [
-      { ico: "🖼️", text: "Le Musée des Beaux-Arts et le Musée des Arts et Traditions populaires font vivre le patrimoine culturel dracénois." },
-      { ico: "🏛️", text: "L'Hôtel départemental des expositions du Var accueille de grandes expositions temporaires." },
-      { ico: "🌿", text: "Ville-préfecture entourée de collines, porte d'entrée vers la Provence Verte et les gorges du Verdon." },
-    ],
-  },
+       tags: ["Tour de l'Horloge", "Musée des Beaux-Arts", "Musée des Arts et Traditions Populaires", "Dolmen de la Pierre de la Fée"],
    moug: {
     population: "19 782 habitants (2023)",
     desc: "Village médiéval perché des Alpes-Maritimes, entre Cannes et Grasse. Réputé pour sa gastronomie étoilée et son marché d'art, Mougins fut aussi le dernier lieu de résidence de Pablo Picasso, qui y vécut ses douze dernières années.",
