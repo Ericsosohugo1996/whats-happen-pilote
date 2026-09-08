@@ -2422,7 +2422,9 @@ const CITY_PHOTOS = {
   toulouse: "https://commons.wikimedia.org/wiki/Special:FilePath/Toulouse_Capitole_Night_Wikimedia_Commons.jpg",
     marseille: "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame_de_la_Garde_aerial_view_2020_(cropped).jpeg",
     sens: "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale_Saint-%C3%89tienne,_Sens-6998.jpg",
-  brest: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Brest_et_Tour_Tanguy.jpg",
+   brest: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Brest_et_Tour_Tanguy.jpg",
+  lille: "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Place_de_Lille.jpg",
+  dijon: "https://commons.wikimedia.org/wiki/Special:FilePath/Dijon_Palais_des_Ducs.jpg",
 };
 function renderLocateBar(){
   document.getElementById("locate-label").textContent = state.userPos ? "Position détectée" : "Ville sélectionnée";
