@@ -1726,7 +1726,7 @@ const CITY_INFO = {
       { ico: "🏛️", text: "Sens fut la capitale du peuple gaulois des Sénons, à l'origine de la cité gallo-romaine d'Agedincum." },
       { ico: "📜", text: "L'archevêché de Sens a longtemps eu la primatie sur une grande partie de la France, jusqu'au XVIIe siècle." },
     ],
-   },
+  },
   drag: {
     population: "40 826 habitants (2023)",
     desc: "Sous-préfecture du Var et cœur de la Dracénie, la ville doit une partie de sa notoriété à son passé militaire ainsi qu'à son riche patrimoine culturel, entre musées, chapelle historique et hôtel départemental des expositions.",
@@ -1747,8 +1747,7 @@ const CITY_INFO = {
       { ico: "🖼️", text: "Le Centre d'art de Mougins accueille des expositions temporaires toute l'année." },
     ],
   },
-   mart: {
-  
+  mart: {
     population: "49 455 habitants (2023)",
     desc: "Quatrième ville des Bouches-du-Rhône, construite au bord de l'eau entre mer et étang de Berre, ce qui lui vaut le surnom de « Venise Provençale ». Ses canaux, son port et son quartier de l'Île en font une destination prisée sur la Côte Bleue.",
     tags: [],
@@ -1758,7 +1757,7 @@ const CITY_INFO = {
       { ico: "🫒", text: "Un terroir oléicole réputé, avec plusieurs domaines producteurs d'huile d'olive autour de la ville." },
     ],
   },
-   paris: {
+  paris: {
     population: "2 103 778 habitants (2023)",
     desc: "Capitale de la France et quatrième ville de l'Union européenne, Paris rassemble musées, théâtres, salles de concert et une vie associative foisonnante. Ses événements sont ici récupérés depuis « Que Faire à Paris », l'agenda participatif officiel de la Ville de Paris.",
     tags: [],
@@ -1788,7 +1787,7 @@ const CITY_INFO = {
       { ico: "🎉", text: "Les Tombées de la Nuit, festival des arts de la rue, animent la ville chaque été." },
     ],
   },
-   brest: {
+  brest: {
     population: "139 456 habitants (2023)",
     desc: "Grande ville portuaire de la pointe bretonne, Brest est tournée vers la mer et abrite l'un des plus grands ports militaires d'Europe. Reconstruite après la Seconde Guerre mondiale, elle est aussi connue pour Océanopolis, son parc de découverte des océans.",
     tags: [],
@@ -1818,7 +1817,7 @@ const CITY_INFO = {
       { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, avec plusieurs universités et grandes écoles." },
     ],
   },
-   marseille: {
+  marseille: {
     population: "873 076 habitants (2023)",
     desc: "Fondée par des marins grecs vers 600 av. J.-C. sous le nom de Massalia, Marseille est la plus ancienne ville de France et la deuxième plus peuplée. Ville portuaire méditerranéenne au caractère affirmé, elle domine la baie depuis la basilique Notre-Dame-de-la-Garde.",
     tags: [],
@@ -1828,7 +1827,27 @@ const CITY_INFO = {
       { ico: "🎨", text: "Capitale européenne de la culture en 2013, avec un musée MuCEM devenu emblématique du renouveau du front de mer." },
     ],
   },
-  montgeron: { population: "24 022 habitants (2023)", desc: "Commune de l'Essonne dans la banlieue sud-est de Paris, Montgeron est célèbre pour avoir accueilli le départ du tout premier Tour de France en 1903, au café Au Réveil Matin. La ville conserve un cadre de vie verdoyant, entre parcs et bords de l'Yerres.", tags: [], facts: [ { ico: "🚲", text: "Le café Au Réveil Matin fut le point de départ du premier Tour de France, le 1er juillet 1903." }, { ico: "🌳", text: "La ville compte de nombreux espaces verts, dont l'Arboretum et les bords de l'Yerres." }, { ico: "🍄", text: "La Société Mycologique de Montgeron organise chaque automne une exposition de champignons très suivie." }, ], }, lille: { population: "236 234 habitants (2023)", desc: "Capitale des Flandres françaises et cœur de la Métropole Européenne de Lille, réputée pour son architecture flamande, sa Grand Place animée et sa braderie annuelle, l'une des plus grandes brocantes d'Europe.", tags: [], facts: [ { ico: "🏛️", text: "La Grand Place et le Vieux-Lille rassemblent une architecture typique flamande et espagnole." }, { ico: "🛒", text: "La braderie de Lille, chaque premier week-end de septembre, est l'une des plus grandes brocantes d'Europe." }, { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, entourée de nombreuses universités et grandes écoles." }, ], }, dijon: {
+  montgeron: {
+    population: "24 022 habitants (2023)",
+    desc: "Commune de l'Essonne dans la banlieue sud-est de Paris, Montgeron est célèbre pour avoir accueilli le départ du tout premier Tour de France en 1903, au café Au Réveil Matin. La ville conserve un cadre de vie verdoyant, entre parcs et bords de l'Yerres.",
+    tags: [],
+    facts: [
+      { ico: "🚲", text: "Le café Au Réveil Matin fut le point de départ du premier Tour de France, le 1er juillet 1903." },
+      { ico: "🌳", text: "La ville compte de nombreux espaces verts, dont l'Arboretum et les bords de l'Yerres." },
+      { ico: "🍄", text: "La Société Mycologique de Montgeron organise chaque automne une exposition de champignons très suivie." },
+    ],
+  },
+  lille: {
+    population: "236 234 habitants (2023)",
+    desc: "Capitale des Flandres françaises et cœur de la Métropole Européenne de Lille, réputée pour son architecture flamande, sa Grand Place animée et sa braderie annuelle, l'une des plus grandes brocantes d'Europe.",
+    tags: [],
+    facts: [
+      { ico: "🏛️", text: "La Grand Place et le Vieux-Lille rassemblent une architecture typique flamande et espagnole." },
+      { ico: "🛒", text: "La braderie de Lille, chaque premier week-end de septembre, est l'une des plus grandes brocantes d'Europe." },
+      { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, entourée de nombreuses universités et grandes écoles." },
+    ],
+  },
+  dijon: {
     population: "161 830 habitants (2023)",
     desc: "Ancienne capitale du duché de Bourgogne, Dijon a conservé un centre historique remarquable, classé au patrimoine mondial de l'UNESCO. Ville gastronomique réputée pour sa moutarde, elle est aussi une porte d'entrée vers les grands vignobles bourguignons.",
     tags: [],
