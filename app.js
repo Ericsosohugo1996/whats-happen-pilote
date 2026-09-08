@@ -1515,9 +1515,8 @@ const LANDMARK_INFO = {
 function openLandmark(tag){
   const info = LANDMARK_INFO[tag] || { scene: "village", caption: "" };
   const imgWrap = document.getElementById("landmark-modal-img");
-  // On essaie d'abord d'afficher une vraie photo (photo-<scene>.jpg, à ajouter par Eric dans le
-  // dépôt GitHub). Si le fichier n'existe pas encore, on retombe automatiquement sur l'illustration.
-  imgWrap.innerHTML = `<img src="photo-${info.scene}.jpg" alt="${tag}">`;
+  const photoUrl = info.photo || ("photo-" + info.scene + ".jpg");
+  imgWrap.innerHTML = `<img src="${photoUrl}" alt="${tag}">`;
   imgWrap.querySelector("img").onerror = function(){
     imgWrap.innerHTML = landmarkSVG(info.scene);
   };
