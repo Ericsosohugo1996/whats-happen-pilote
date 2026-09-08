@@ -282,7 +282,7 @@ const CITIES = {
   lcv:  { name: "La Croix-Valmer", lat: 43.2076, lng: 6.5729 },
   sens: { name: "Sens",            lat: 48.1975, lng: 3.2823 },
    drag: { name: "Draguignan",      lat: 43.5375, lng: 6.4627 },
-id: "marseille-ete-marseillais"   mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
+mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
    paris: { name: "Paris",          lat: 48.8566, lng: 2.3522 },
   nantes: { name: "Nantes",        lat: 47.2184, lng: -1.5536 },
   rennes: { name: "Rennes",        lat: 48.1173, lng: -1.6778 },
