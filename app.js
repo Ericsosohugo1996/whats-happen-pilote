@@ -1525,10 +1525,30 @@ const LANDMARK_INFO = {
     photo: "",
     caption: "Premier musée d'Europe entièrement consacré aux femmes artistes, avec une centaine d'œuvres de l'impressionnisme à l'art contemporain.",
   },
-  "Porte Sarrazine": {
+   "Porte Sarrazine": {
     scene: "village",
     photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Mougins_-_Porte_Sarrazine_-1.JPG",
     caption: "Seul vestige des fortifications médiévales de Mougins, cette porte marque l'entrée historique du vieux village.",
+  },
+  "Miroir aux Oiseaux": {
+    scene: "port",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Martigues_-_Miroir_aux_Oiseaux.jpg",
+    caption: "Site classé depuis 1942, ce plan d'eau calme reflète les façades colorées des maisons de pêcheurs — un lieu qui a inspiré Corot, Ziem et Dufy.",
+  },
+  "Église Sainte-Marie-Madeleine": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise_Sainte-Madeleine-de-l%27%C3%8Ele_1.JPG",
+    caption: "Bâtie entre 1670 et 1688 dans le quartier de l'Île, cette église baroque surplombe le Miroir aux Oiseaux et fut longtemps surnommée « la Cathédrale » par les Martégaux.",
+  },
+  "Chapelle de l'Annonciade": {
+    scene: "expo",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Martigues_20181020_23.jpg",
+    caption: "Chapelle baroque du XVIIe siècle bâtie pour la confrérie des pénitents blancs, restaurée pendant 22 ans et couverte de fresques en trompe-l'œil.",
+  },
+  "Fort de Bouc": {
+    scene: "chateau",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_Bouc_in_Martigues,_France.jpg",
+    caption: "Construit au XIIIe siècle pour garder l'entrée du chenal de Caronte, ce fort surmonté d'un phare a longtemps protégé Martigues des attaques maritimes.",
   },
 };
 
