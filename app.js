@@ -1486,9 +1486,29 @@ const LANDMARK_INFO = {
     scene: "basilique-saint-savinien",
     caption: "Une des nombreuses églises historiques de Sens, témoin de son riche passé religieux.",
   },
-  "Vestiges gallo-romains": {
+   "Vestiges gallo-romains": {
     scene: "vestiges-gallo-romains",
     caption: "Sens fut la capitale gallo-romaine d'Agedincum : on trouve encore des vestiges de remparts, thermes et amphithéâtre.",
+  },
+  "Tour de l'Horloge": {
+    scene: "village",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Draguignan-tour-horloge-hiver.jpg/960px-Draguignan-tour-horloge-hiver.jpg",
+    caption: "Symbole culturel de la ville, cette tour du XVe siècle haute de 24 mètres domine la vieille ville et son théâtre de verdure.",
+  },
+  "Musée des Beaux-Arts": {
+    scene: "expo",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Vue_salle_mus%C3%A9e_Draguignan.jpg",
+    caption: "Installé dans l'ancien palais d'été de l'évêque de Fréjus, ce musée labellisé « Musée de France » présente des collections de peinture du XVIIe au XXe siècle.",
+  },
+  "Musée des Arts et Traditions Populaires": {
+    scene: "expo",
+    photo: "",
+    caption: "Plus de 600 m² d'exposition consacrés à la vie quotidienne dracénoise des XIXe et XXe siècles, entre agriculture et artisanat.",
+  },
+  "Dolmen de la Pierre de la Fée": {
+    scene: "nature",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Draguignan_Pierre_de_la_fee.JPG",
+    caption: "Daté d'environ 2 500 av. J.-C., ce mégalithe de 60 tonnes est le plus ancien témoin d'occupation humaine à Draguignan, entouré de légendes de fées.",
   },
 };
 
