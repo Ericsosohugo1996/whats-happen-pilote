@@ -2425,7 +2425,7 @@ const CITY_PHOTOS = {
     sens: "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale_Saint-%C3%89tienne,_Sens-6998.jpg",
    brest: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Brest_et_Tour_Tanguy.jpg",
   lille: "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Place_de_Lille.jpg",
-  dijon: "https://commons.wikimedia.org/wiki/Special:FilePath/Dijon_Palais_des_Ducs.jpg",
+   dijon: "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_ducs_et_des_%C3%A9tats_de_Bourgogne_Dijon.jpg",
 };
 function renderLocateBar(){
   document.getElementById("locate-label").textContent = state.userPos ? "Position détectée" : "Ville sélectionnée";
