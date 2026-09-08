@@ -1726,9 +1726,21 @@ const CITY_INFO = {
       { ico: "🏛️", text: "Sens fut la capitale du peuple gaulois des Sénons, à l'origine de la cité gallo-romaine d'Agedincum." },
       { ico: "📜", text: "L'archevêché de Sens a longtemps eu la primatie sur une grande partie de la France, jusqu'au XVIIe siècle." },
     ],
+   },
+  drag: {
+    population: "40 826 habitants (2023)",
+    desc: "Sous-préfecture du Var et cœur de la Dracénie, la ville doit une partie de sa notoriété à son passé militaire ainsi qu'à son riche patrimoine culturel, entre musées, chapelle historique et hôtel départemental des expositions.",
+    tags: ["Tour de l'Horloge", "Musée des Beaux-Arts", "Musée des Arts et Traditions Populaires", "Dolmen de la Pierre de la Fée"],
+    facts: [
+      { ico: "🖼️", text: "Le Musée des Beaux-Arts et le Musée des Arts et Traditions populaires font vivre le patrimoine culturel dracénois." },
+      { ico: "🏛️", text: "L'Hôtel départemental des expositions du Var accueille de grandes expositions temporaires." },
+      { ico: "🌿", text: "Ville-préfecture entourée de collines, porte d'entrée vers la Provence Verte et les gorges du Verdon." },
+    ],
   },
-       tags: ["Tour de l'Horloge", "Musée des Beaux-Arts", "Musée des Arts et Traditions Populaires", "Dolmen de la Pierre de la Fée"],
-      tags: ["Vieux Village", "Chapelle Notre-Dame-de-Vie", "Musée FAMM", "Porte Sarrazine"],
+  moug: {
+    population: "19 782 habitants (2023)",
+    desc: "Village médiéval perché des Alpes-Maritimes, entre Cannes et Grasse. Réputé pour sa gastronomie étoilée et son marché d'art, Mougins fut aussi le dernier lieu de résidence de Pablo Picasso, qui y vécut ses douze dernières années.",
+    tags: ["Vieux Village", "Chapelle Notre-Dame-de-Vie", "Musée FAMM", "Porte Sarrazine"],
     facts: [
       { ico: "🎨", text: "Pablo Picasso a vécu ses douze dernières années à Mougins, jusqu'à sa mort en 1973." },
       { ico: "🍽️", text: "Un village réputé pour sa gastronomie, avec plusieurs tables étoilées au guide Michelin." },
@@ -1736,6 +1748,7 @@ const CITY_INFO = {
     ],
   },
    mart: {
+  
     population: "49 455 habitants (2023)",
     desc: "Quatrième ville des Bouches-du-Rhône, construite au bord de l'eau entre mer et étang de Berre, ce qui lui vaut le surnom de « Venise Provençale ». Ses canaux, son port et son quartier de l'Île en font une destination prisée sur la Côte Bleue.",
     tags: [],
