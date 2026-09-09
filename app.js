@@ -1833,10 +1833,7 @@ const CITY_INFO = {
       { ico: "🎓", text: "Une des plus grandes villes étudiantes de France, avec plusieurs universités et grandes écoles." },
     ],
   },
-  marseille: {
-    population: "873 076 habitants (2023)",
-    desc: "Fondée par des marins grecs vers 600 av. J.-C. sous le nom de Massalia, Marseille est la plus ancienne ville de France et la deuxième plus peuplée. Ville portuaire méditerranéenne au caractère affirmé, elle domine la baie depuis la basilique Notre-Dame-de-la-Garde.",
-    tags: [],
+     tags: ["Notre-Dame de la Garde", "Vieux-Port", "MuCEM", "Calanques"],
     facts: [
       { ico: "⛵", text: "Le Vieux-Port, cœur historique de la ville, existe depuis sa fondation il y a environ 2 600 ans." },
       { ico: "🏔️", text: "Les Calanques, entre falaises et eaux turquoise, s'étendent sur des kilomètres au sud de la ville." },
