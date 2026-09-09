@@ -1757,6 +1757,7 @@ const CITY_INFO = {
     ],
   },
   moug: {
+    moug: {
     population: "19 782 habitants (2023)",
     desc: "Village médiéval perché des Alpes-Maritimes, entre Cannes et Grasse. Réputé pour sa gastronomie étoilée et son marché d'art, Mougins fut aussi le dernier lieu de résidence de Pablo Picasso, qui y vécut ses douze dernières années.",
     tags: ["Vieux Village", "Chapelle Notre-Dame-de-Vie", "Musée FAMM", "Porte Sarrazine"],
@@ -1766,14 +1767,17 @@ const CITY_INFO = {
       { ico: "🖼️", text: "Le Centre d'art de Mougins accueille des expositions temporaires toute l'année." },
     ],
   },
-      tags: ["Miroir aux Oiseaux", "Église Sainte-Marie-Madeleine", "Chapelle de l'Annonciade", "Fort de Bouc"],
+  mart: {
+    population: "49 455 habitants (2023)",
+    desc: "Quatrième ville des Bouches-du-Rhône, construite au bord de l'eau entre mer et étang de Berre, ce qui lui vaut le surnom de « Venise Provençale ». Ses canaux, son port et son quartier de l'Île en font une destination prisée sur la Côte Bleue.",
+    tags: ["Miroir aux Oiseaux", "Église Sainte-Marie-Madeleine", "Chapelle de l'Annonciade", "Fort de Bouc"],
     facts: [
       { ico: "🚤", text: "Surnommée la « Venise Provençale » pour ses canaux traversant le quartier de l'Île." },
       { ico: "🏰", text: "Le Fort de Bouc, aussi appelé Fort Vauban, garde l'entrée du port depuis des siècles." },
       { ico: "🫒", text: "Un terroir oléicole réputé, avec plusieurs domaines producteurs d'huile d'olive autour de la ville." },
     ],
   },
-  paris: {
+  paris: {  
     population: "2 103 778 habitants (2023)",
     desc: "Capitale de la France et quatrième ville de l'Union européenne, Paris rassemble musées, théâtres, salles de concert et une vie associative foisonnante. Ses événements sont ici récupérés depuis « Que Faire à Paris », l'agenda participatif officiel de la Ville de Paris.",
     tags: [],
