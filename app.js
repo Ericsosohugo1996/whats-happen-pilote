@@ -1756,8 +1756,7 @@ const CITY_INFO = {
       { ico: "🌿", text: "Ville-préfecture entourée de collines, porte d'entrée vers la Provence Verte et les gorges du Verdon." },
     ],
   },
-  moug: {
-    moug: {
+   moug: {
     population: "19 782 habitants (2023)",
     desc: "Village médiéval perché des Alpes-Maritimes, entre Cannes et Grasse. Réputé pour sa gastronomie étoilée et son marché d'art, Mougins fut aussi le dernier lieu de résidence de Pablo Picasso, qui y vécut ses douze dernières années.",
     tags: ["Vieux Village", "Chapelle Notre-Dame-de-Vie", "Musée FAMM", "Porte Sarrazine"],
