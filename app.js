@@ -1545,10 +1545,50 @@ const LANDMARK_INFO = {
     photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Martigues_20181020_23.jpg",
     caption: "Chapelle baroque du XVIIe siècle bâtie pour la confrérie des pénitents blancs, restaurée pendant 22 ans et couverte de fresques en trompe-l'œil.",
   },
-  "Fort de Bouc": {
+   "Fort de Bouc": {
     scene: "chateau",
     photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Fort_de_Bouc_in_Martigues,_France.jpg",
     caption: "Construit au XIIIe siècle pour garder l'entrée du chenal de Caronte, ce fort surmonté d'un phare a longtemps protégé Martigues des attaques maritimes.",
+  },
+  "Tour Eiffel": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Eiffel_Tower_in_2022_02.jpg",
+    caption: "Construite par Gustave Eiffel pour l'Exposition universelle de 1889, la tour est devenue le symbole le plus reconnaissable de Paris et de la France.",
+  },
+  "Arc de Triomphe": {
+    scene: "chateau",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_Arc_de_Triomphe.jpg",
+    caption: "Commandé par Napoléon en 1806 pour célébrer ses victoires, l'arc abrite depuis 1921 la tombe du Soldat inconnu et sa flamme éternelle.",
+  },
+  "Notre-Dame de Paris": {
+    scene: "cathedrale-saint-etienne",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Facade_of_Notre-Dame_de_Paris.jpg",
+    caption: "Chef-d'œuvre gothique commencé en 1163 sur l'Île de la Cité, ravagée par un incendie en 2019 et rouverte au public fin 2024 après restauration.",
+  },
+  "Musée du Louvre": {
+    scene: "expo",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_Museum_Wikimedia_Commons.jpg",
+    caption: "Ancien palais royal devenu le musée le plus visité au monde, abritant entre autres La Joconde et la Vénus de Milo.",
+  },
+  "Notre-Dame de la Garde": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/1027_Basilique_Notre-Dame-de-la-Garde_in_Marseille_at_sunset_Photo_by_Giles_Laurent.jpg",
+    caption: "Surnommée « la Bonne Mère », cette basilique du XIXe siècle domine la ville à 154 mètres d'altitude et veille sur les marins depuis sa statue dorée.",
+  },
+  "Vieux-Port": {
+    scene: "port",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux-Port_de_Marseille,_France.jpg",
+    caption: "Le port historique de Marseille depuis sa fondation il y a environ 2 600 ans, aujourd'hui bordé de terrasses et de bateaux de pêche traditionnels.",
+  },
+  "MuCEM": {
+    scene: "expo",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Mucem_Marseille_02.jpg",
+    caption: "Le Musée des Civilisations de l'Europe et de la Méditerranée, ouvert en 2013, est devenu le symbole architectural du renouveau du front de mer marseillais.",
+  },
+  "Calanques": {
+    scene: "nature",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Calanques_de_Marseille_20120922_90.jpg",
+    caption: "Ces criques aux falaises calcaires et eaux turquoise s'étendent entre Marseille et Cassis, classées en parc national depuis 2012.",
   },
 };
 function openLandmark(tag){
