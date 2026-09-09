@@ -1813,10 +1813,13 @@ const CITY_INFO = {
     facts: [
       { ico: "🚤", text: "Surnommée la « Venise Provençale » pour ses canaux traversant le quartier de l'Île." },
       { ico: "🏰", text: "Le Fort de Bouc, aussi appelé Fort Vauban, garde l'entrée du port depuis des siècles." },
-      { ico: "🫒", text: "Un terroir oléicole réputé, avec plusieurs domaines producteurs d'huile d'olive autour de la ville." },
+           { ico: "🫒", text: "Un terroir oléicole réputé, avec plusieurs domaines producteurs d'huile d'olive autour de la ville." },
     ],
   },
-     tags: ["Tour Eiffel", "Arc de Triomphe", "Notre-Dame de Paris", "Musée du Louvre"],
+  paris: {
+    population: "2 103 778 habitants (2023)",
+    desc: "Capitale de la France et quatrième ville de l'Union européenne, Paris rassemble musées, théâtres, salles de concert et une vie associative foisonnante. Ses événements sont ici récupérés depuis « Que Faire à Paris », l'agenda participatif officiel de la Ville de Paris.",
+    tags: ["Tour Eiffel", "Arc de Triomphe", "Notre-Dame de Paris", "Musée du Louvre"],
     facts: [
       { ico: "🗼", text: "La ville la plus visitée au monde, avec des dizaines de millions de touristes chaque année." },
       { ico: "🎭", text: "Des milliers de lieux culturels : théâtres, salles de concert, musées, bibliothèques..." },
