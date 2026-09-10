@@ -2417,8 +2417,42 @@ const state = {
   visitedEvents: loadVisitedEvents(),
 }; 
 
+// ---- lieux emblématiques transformés en "événements toujours ouverts" ----
+function buildPlaceEvents(){
+  const results = [];
+  Object.keys(CITY_INFO).forEach(cityKey => {
+    const info = CITY_INFO[cityKey];
+    const cityCoords = CITIES[cityKey];
+    if (!info.tags || !cityCoords) return;
+    info.tags.forEach((tag, i) => {
+      const landmark = LANDMARK_INFO[tag];
+      if (!landmark) return;
+      const angle = (i / info.tags.length) * Math.PI * 2;
+      results.push({
+        id: "place-" + cityKey + "-" + i,
+        isPlace: true,
+        scene: landmark.scene,
+        photo: landmark.photo || "",
+        city: cityKey,
+        category: "À voir",
+        title: tag,
+        date: null,
+        time: "",
+        place: tag + ", " + cityCoords.name,
+        lat: cityCoords.lat + Math.cos(angle) * 0.006,
+        lng: cityCoords.lng + Math.sin(angle) * 0.006,
+        price: "Gratuit / accès libre",
+        thumb: "",
+        description: landmark.caption,
+      });
+    });
+  });
+  return results;
+}
+const PLACE_EVENTS = buildPlaceEvents();
+
 function allEvents(){
-  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.brocanteEvents];
+  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.brocanteEvents, ...PLACE_EVENTS];
 }
 
 // ---- geo helpers ----
