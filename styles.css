@@ -564,3 +564,6 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
   0%{ opacity:1; transform:translate(-50%,-50%) rotate(0deg) scale(1); }
   100%{ opacity:0; transform:translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.6); }
 }
+/* ---- cartes "lieux à voir" (toujours ouverts) ---- */
+.event-card--place{ border-left: 3px solid #7fa36b; }
+.event-card--place .cat{ color: #4f6e42; }
