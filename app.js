@@ -2781,7 +2781,7 @@ function openDetail(id){
 }
 
 function iconFor(cat){
-  return { Musique:"🎷", Marché:"🛍️", Brocante:"🧺", Festival:"🎪", Sport:"🏁", Soirée:"🎧", Expo:"🖼️" }[cat] || "📌";
+  return { Musique:"🎷", Marché:"🛍️", Brocante:"🧺", Festival:"🎪", Sport:"🏁", Soirée:"🎧", Expo:"🖼️", "À voir":"🏛️" }[cat] || "📌";
 }
 
 // ---- view switching ----
