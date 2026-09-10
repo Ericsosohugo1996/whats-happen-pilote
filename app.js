@@ -2508,6 +2508,7 @@ function saveLocalEvents(){
 // ---- filtering ----
 function matchesPeriod(ev, period){
   if (!period) return true;
+  if (ev.isPlace) return true;
   const todayIso = new Date().toISOString().slice(0, 10);
   const tomorrowIso = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
   const weekLimit = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
@@ -2517,7 +2518,6 @@ function matchesPeriod(ev, period){
   if (period === "later") return ev.date > weekLimit;
   return true;
 }
-
 
 function baseVisibleEvents(){
   const ref = referencePoint();
