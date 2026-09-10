@@ -1,57 +1,16 @@
 <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bgWarm" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2b1955"/>
-      <stop offset="45%" stop-color="#a8336b"/>
-      <stop offset="75%" stop-color="#f4713f"/>
-      <stop offset="100%" stop-color="#ffbd4e"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="42%" r="55%">
-      <stop offset="0%" stop-color="#ffe6b0" stop-opacity="0.95"/>
-      <stop offset="55%" stop-color="#ffb15e" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#ffb15e" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="ringWarm" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#ffd9a0"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="400" height="400" rx="88" fill="url(#bgWarm)"/>
-
-  <circle cx="200" cy="180" r="150" fill="url(#glow)"/>
-
-  <g fill="#ffe6b0" opacity="0.9">
-    <circle cx="88" cy="110" r="4"/>
-    <circle cx="320" cy="95" r="3"/>
-    <circle cx="335" cy="230" r="4"/>
-    <circle cx="70" cy="255" r="3"/>
-    <path d="M110 300 l5 12 l12 5 l-12 5 l-5 12 l-5 -12 l-12 -5 l12 -5 z" opacity="0.85"/>
-  </g>
-
-  <circle cx="200" cy="175" r="98" fill="none" stroke="url(#ringWarm)" stroke-width="5" opacity="0.4"/>
-  <circle cx="200" cy="175" r="78" fill="none" stroke="url(#ringWarm)" stroke-width="5" opacity="0.7"/>
-
-  <defs>
-    <linearGradient id="wGradRelief" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#e07fab"/>
-      <stop offset="45%" stop-color="#a8336b"/>
-      <stop offset="100%" stop-color="#6e1f47"/>
-    </linearGradient>
-    <filter id="wShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#3a0f28" flood-opacity="0.45"/>
-    </filter>
-  </defs>
-
-  <g filter="url(#wShadow)">
-    <path d="M158 129 L184 209 L200 160 L216 209 L242 129"
-          fill="none" stroke="url(#wGradRelief)" stroke-width="30"
-          stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-
-  <path d="M107 307 L119 345 L127 322 L135 345 L147 307"
-        fill="none" stroke="#ffffff" stroke-width="13"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="155" y="345" font-family="Arial, Helvetica, sans-serif" font-weight="800"
-        font-size="52" fill="#ffffff">ha<tspan fill="#ffd27a">zup</tspan></text>
+<defs>
+<linearGradient id="bgSober" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#14213D"/>
+<stop offset="100%" stop-color="#0B1526"/>
+</linearGradient>
+</defs>
+<rect width="400" height="400" rx="88" fill="url(#bgSober)"/>
+<g transform="translate(200,180)">
+<path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#ffffff"/>
+<circle cx="-26" cy="-18" r="10" fill="#14213D"/>
+<circle cx="26" cy="-18" r="10" fill="#14213D"/>
+<path d="M-28 14 C -16 32, 16 32, 28 14" fill="none" stroke="#14213D" stroke-width="7" stroke-linecap="round"/>
+</g>
+<circle cx="323" cy="86" r="15" fill="#E8604C"/>
 </svg>
