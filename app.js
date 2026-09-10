@@ -2662,13 +2662,17 @@ function renderMap(events){
 
 function eventCardHTML(ev){
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
+  const metaTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
+  const thumbHTML = ev.photo
+    ? `<img src="${ev.photo}" alt="${ev.title}" onerror="this.parentElement.innerHTML = ${JSON.stringify(sceneSVG(ev.scene))};">`
+    : sceneSVG(ev.scene);
   return `
-    <button class="event-card" data-id="${ev.id}" data-cat="${ev.category}">
-      <div class="thumb">${sceneSVG(ev.scene)}</div>
+    <button class="event-card${ev.isPlace ? " event-card--place" : ""}" data-id="${ev.id}" data-cat="${ev.category}">
+      <div class="thumb">${thumbHTML}</div>
       <div class="info">
-        <div class="cat">${ev.category}</div>
+        <div class="cat">${ev.isPlace ? "🏛️ À VOIR" : ev.category}</div>
         <div class="title">${ev.title}</div>
-        <div class="meta">${formatDate(ev.date)} · ${ev.time}</div>
+        <div class="meta">${metaTxt}</div>
       </div>
       <div class="dist">${distTxt}</div>
     </button>`;
