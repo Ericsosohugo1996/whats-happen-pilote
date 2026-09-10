@@ -2518,6 +2518,7 @@ function matchesPeriod(ev, period){
   return true;
 }
 
+
 function baseVisibleEvents(){
   const ref = referencePoint();
   const preFiltered = state.userPos ? allEvents() : allEvents().filter(ev => ev.city === state.city);
