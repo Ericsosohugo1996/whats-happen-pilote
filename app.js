@@ -2014,6 +2014,16 @@ const CITY_INFO = {
       { ico: "🍷", text: "Porte d'entrée de la route des vins de Bourgogne, classée à l'UNESCO en 2015." },
     ],
   },
+    chambery: {
+    population: "59 964 habitants (2023)",
+    desc: "Ancienne capitale des ducs de Savoie du XIIIᵉ au XVIᵉ siècle, Chambéry est aujourd'hui préfecture de la Savoie, nichée entre les massifs des Bauges et de la Chartreuse. Son château, sa vieille ville et sa célèbre fontaine des Éléphants en font une étape incontournable entre lac et montagnes.",
+    tags: ["Château des Ducs de Savoie", "Vieille ville", "Fontaine des Éléphants", "Les Halles"],
+    facts: [
+      { ico: "🏰", text: "Capitale des États de Savoie du XIIIᵉ au XVIᵉ siècle, avant que la cour ne s'installe à Turin." },
+      { ico: "🐘", text: "La fontaine des Éléphants, symbole de la ville, rend hommage au général Benoît de Boigne." },
+      { ico: "⛰️", text: "Nichée entre les massifs des Bauges et de la Chartreuse, à deux pas des lacs d'Annecy et du Bourget." },
+    ],
+  },
 };
 // ---- traduction anglaise des fiches villes ----
 const CITY_INFO_EN = {
