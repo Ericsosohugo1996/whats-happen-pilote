@@ -291,7 +291,7 @@ mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
   bordeaux: { name: "Bordeaux",    lat: 44.8378, lng: -0.5792 },
      toulouse: { name: "Toulouse",    lat: 43.6047, lng: 1.4442 },
  marseille: { name: "Marseille", lat: 43.2965, lng: 5.3698 },
-montgeron: { name: "Montgeron", lat: 48.7039, lng: 2.4605 }, lille: { name: "Lille", lat: 50.6292, lng: 3.0573 }, dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415 },
+montgeron: { name: "Montgeron", lat: 48.7039, lng: 2.4605 }, lille: { name: "Lille", lat: 50.6292, lng: 3.0573 }, dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415 },  chambery: { name: "Chambéry", lat: 45.5646, lng: 5.9178 },
 };
 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
