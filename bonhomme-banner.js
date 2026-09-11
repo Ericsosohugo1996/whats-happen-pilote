@@ -21,6 +21,16 @@ function __ensureBonhomme() {
   return wrap;
 }
 
+function __togglePage4Content(show) {
+  const ids = ["stats-banner", "city-info", "map-mock", "btn-see-list", "event-list", "empty-state", "filters-panel"];
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = show ? "" : "none";
+  });
+  const toolbar = document.querySelector(".toolbar");
+  if (toolbar) toolbar.style.display = show ? "" : "none";
+}
+
 const __renderLocateBarBase = renderLocateBar;
 renderLocateBar = function () {
   const bonhomme = __ensureBonhomme();
@@ -28,10 +38,12 @@ renderLocateBar = function () {
   if (!__hasPickedCity) {
     if (bonhomme) bonhomme.style.opacity = "1";
     if (info) info.style.display = "none";
+    __togglePage4Content(false);
     return;
   }
   if (bonhomme) bonhomme.style.opacity = "0";
   if (info) info.style.display = "";
+  __togglePage4Content(true);
   __renderLocateBarBase();
 };
 
