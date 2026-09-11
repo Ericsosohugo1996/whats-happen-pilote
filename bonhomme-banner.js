@@ -76,7 +76,7 @@ renderCategoryChips = function () {
   if (!el) return;
   const btn = document.createElement("button");
   btn.type = "button";
-  btn.className = "chip-btn" + (state.selectedCategories.size === 0 ? " active" : "");
+   btn.className = "chip-btn";
   btn.textContent = "Tout voir";
   btn.onclick = () => {
     state.selectedCategories.clear();
