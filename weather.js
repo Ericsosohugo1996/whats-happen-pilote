@@ -40,6 +40,7 @@ async function loadWeather() {
     const data = await res.json();
     const temp = Math.round(data.current.temperature_2m);
     const info = weatherCodeToInfo(data.current.weather_code);
+        window.__weatherOutdoor = info.outdoor;
     let text = " " + info.icon + " " + temp + "°C";
     if (!state.userPos && WEATHER_COASTAL_CITIES.includes(state.city)) {
       const seaTemp = await loadSeaTemperature(coords);
