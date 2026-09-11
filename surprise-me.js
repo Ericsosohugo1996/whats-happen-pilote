@@ -86,12 +86,18 @@ function __ensureSurpriseUI() {
           '<div style="background:#fff; border-radius:12px; padding:14px; border:0.5px solid rgba(0,0,0,0.08); font-size:13px; color:#666;">Aucun événement trouvé pour l\'instant dans ce rayon. Essayez un temps plus large.</div>';
       } else {
         const ev = outcome.pick;
+               const photoUrl = (typeof CITY_PHOTOS !== "undefined" && CITY_PHOTOS[ev.city]) || "";
         result.innerHTML =
-          '<div style="background:#fff; border-radius:12px; padding:14px; border:0.5px solid rgba(0,0,0,0.08); cursor:pointer;" id="surprise-card">' +
-            '<span style="font-size:10.5px; font-weight:600; color:#E8604C; text-transform:uppercase;">' + ev.category + '</span>' +
-            '<div style="font-weight:600; font-size:14.5px; margin:4px 0;">' + ev.title + '</div>' +
-            '<div style="font-size:12px; color:#777; margin-bottom:8px;">' + formatDate(ev.date) + (ev.time ? " · " + ev.time : "") + " · " + (Math.round(ev.distance * 10) / 10) + ' km</div>' +
-            '<div style="font-size:11.5px; color:#E8604C; background:rgba(232,96,76,0.08); border-radius:8px; padding:6px 8px;">' + outcome.reason + '</div>' +
+          '<div style="background:#fff; border-radius:12px; overflow:hidden; border:0.5px solid rgba(0,0,0,0.08); cursor:pointer;" id="surprise-card">' +
+            (photoUrl
+              ? '<div style="height:120px; background-image:url(\'' + photoUrl + '\'); background-size:cover; background-position:center;"></div>'
+              : "") +
+            '<div style="padding:14px;">' +
+              '<span style="font-size:10.5px; font-weight:600; color:#E8604C; text-transform:uppercase;">' + ev.category + '</span>' +
+              '<div style="font-weight:600; font-size:14.5px; margin:4px 0;">' + ev.title + '</div>' +
+              '<div style="font-size:12px; color:#777; margin-bottom:8px;">' + formatDate(ev.date) + (ev.time ? " · " + ev.time : "") + " · " + (Math.round(ev.distance * 10) / 10) + ' km</div>' +
+              '<div style="font-size:11.5px; color:#E8604C; background:rgba(232,96,76,0.08); border-radius:8px; padding:6px 8px;">' + outcome.reason + '</div>' +
+            '</div>' +
           '</div>';
         result.querySelector("#surprise-card").onclick = () => openDetail(ev.id);
       }
