@@ -50,9 +50,11 @@ const __renderLocateBarBase = renderLocateBar;
 renderLocateBar = function () {
   const bonhomme = __ensureBonhomme();
   const info = document.querySelector(".locate-info");
+  const photo = document.getElementById("locate-bar-photo");
   if (!__hasPickedCity) {
     if (bonhomme) bonhomme.style.display = "flex";
     if (info) info.style.display = "none";
+    if (photo) photo.style.display = "none";
     __toggleCityContent(false);
     __toggleResultsContent(false);
     __toggleLocateBody(true);
@@ -60,6 +62,7 @@ renderLocateBar = function () {
   }
   if (bonhomme) bonhomme.style.display = "none";
   if (info) info.style.display = "";
+  if (photo) photo.style.display = "";
   __toggleCityContent(true);
   __toggleResultsContent(__hasPickedFilter);
   __toggleLocateBody(false);
