@@ -2578,7 +2578,7 @@ const CITY_PHOTOS = {
     sens: "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale_Saint-%C3%89tienne,_Sens-6998.jpg",
     brest: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Brest_et_Tour_Tanguy.jpg",
   lille: "https://commons.wikimedia.org/wiki/Special:FilePath/Lille_Grand_Place.JPG",
-  dijon: "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_ducs_et_des_%C3%A9tats_de_Bourgogne_Dijon.jpg",  chambery: { name: "Chambéry", lat: 45.5646, lng: 5.9178 },
+  dijon: "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_ducs_et_des_%C3%A9tats_de_Bourgogne_Dijon.jpg",   chambery: "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_des_Ducs_de_Savoie_-_Chamb%C3%A9ry.JPG",
   nantes: "https://commons.wikimedia.org/wiki/Special:FilePath/Marit%C3%A9.jpg",
 };
 function renderLocateBar(){
