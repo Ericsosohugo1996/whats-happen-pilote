@@ -40,6 +40,11 @@ function __toggleResultsContent(show) {
   });
 }
 
+function __toggleLocateBody(show) {
+  const body = document.querySelector(".locate-body");
+  if (body) body.style.display = show ? "" : "none";
+}
+
 const __renderLocateBarBase = renderLocateBar;
 renderLocateBar = function () {
   const bonhomme = __ensureBonhomme();
@@ -49,12 +54,14 @@ renderLocateBar = function () {
     if (info) info.style.display = "none";
     __toggleCityContent(false);
     __toggleResultsContent(false);
+    __toggleLocateBody(true);
     return;
   }
   if (bonhomme) bonhomme.style.opacity = "0";
   if (info) info.style.display = "";
   __toggleCityContent(true);
   __toggleResultsContent(__hasPickedFilter);
+  __toggleLocateBody(false);
   __renderLocateBarBase();
 };
 
