@@ -1,5 +1,6 @@
 // ---- bonhomme sur le bandeau "ville sélectionnée" avant tout choix ----
 let __hasPickedCity = false;
+let __hasPickedFilter = false;
 
 function __ensureBonhomme() {
   if (document.getElementById("bonhomme-banner")) return document.getElementById("bonhomme-banner");
@@ -21,14 +22,22 @@ function __ensureBonhomme() {
   return wrap;
 }
 
-function __togglePage4Content(show) {
-  const ids = ["stats-banner", "city-info", "map-mock", "btn-see-list", "event-list", "empty-state", "filters-panel"];
+function __toggleCityContent(show) {
+  const ids = ["stats-banner", "city-info", "filters-panel"];
   ids.forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.style.display = show ? "" : "none";
   });
   const toolbar = document.querySelector(".toolbar");
   if (toolbar) toolbar.style.display = show ? "" : "none";
+}
+
+function __toggleResultsContent(show) {
+  const ids = ["map-mock", "btn-see-list", "event-list", "empty-state"];
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = show ? "" : "none";
+  });
 }
 
 const __renderLocateBarBase = renderLocateBar;
@@ -38,17 +47,47 @@ renderLocateBar = function () {
   if (!__hasPickedCity) {
     if (bonhomme) bonhomme.style.opacity = "1";
     if (info) info.style.display = "none";
-    __togglePage4Content(false);
+    __toggleCityContent(false);
+    __toggleResultsContent(false);
     return;
   }
   if (bonhomme) bonhomme.style.opacity = "0";
   if (info) info.style.display = "";
-  __togglePage4Content(true);
+  __toggleCityContent(true);
+  __toggleResultsContent(__hasPickedFilter);
   __renderLocateBarBase();
+};
+
+const __renderCategoryChipsBase = renderCategoryChips;
+renderCategoryChips = function () {
+  __renderCategoryChipsBase();
+  const el = document.getElementById("category-chips");
+  if (!el) return;
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "chip-btn" + (state.selectedCategories.size === 0 ? " active" : "");
+  btn.textContent = "Tout voir";
+  btn.onclick = () => {
+    state.selectedCategories.clear();
+    renderCategoryChips();
+    renderDiscover();
+    __hasPickedFilter = true;
+    __toggleResultsContent(true);
+  };
+  el.insertBefore(btn, el.firstChild);
 };
 
 document.addEventListener("click", (e) => {
   if (e.target.closest(".chip-btn[data-city]") || e.target.closest("#btn-geoloc")) {
     __hasPickedCity = true;
+    __hasPickedFilter = false;
+  }
+  if (
+    e.target.closest("#category-chips .chip-btn") ||
+    e.target.closest("#radius-presets .chip-btn") ||
+    e.target.closest("#time-presets .chip-btn")
+  ) {
+    __hasPickedFilter = true;
+    __toggleResultsContent(true);
   }
 }, true);
