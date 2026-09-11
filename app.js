@@ -1496,6 +1496,25 @@ function landmarkSVG(key){
 
 // Fiche descriptive de chaque lieu emblématique cité dans les tags des fiches villes.
 const LANDMARK_INFO = {
+    "Château des Ducs de Savoie": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_des_Ducs_de_Savoie_-_Chamb%C3%A9ry.JPG",
+    caption: "Résidence des comtes puis ducs de Savoie du XIIIᵉ au XVIᵉ siècle, aujourd'hui siège de la préfecture et du conseil départemental.",
+  },
+  "Vieille ville": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Chamb%C3%A9ry_Rue_Croix_d%27or_1.JPG",
+    caption: "Ruelles, traboules et façades colorées autour de la rue de Boigne et de la rue Croix-d'Or, cœur historique de Chambéry.",
+  },
+  "Fontaine des Éléphants": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine_des_El%C3%A9phants_(Chamb%C3%A9ry).JPG",
+    caption: "Édifiée en 1838 en l'honneur du général Benoît de Boigne, ses quatre éléphants sont surnommés affectueusement « les quatre sans culs ».",
+  },
+  "Les Halles": {
+    scene: "marche",
+    caption: "Marché couvert du centre-ville depuis le XIᵉ siècle : boucherie, fromagerie, maraîchers et fleuriste, du mardi au samedi.",
+  },
   "Cours Mirabeau": {
     scene: "cours-mirabeau",
     caption: "La grande avenue plantée de platanes centenaires, ponctuée de fontaines, qui traverse le cœur d'Aix-en-Provence.",
