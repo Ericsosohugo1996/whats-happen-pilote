@@ -2088,6 +2088,36 @@ const CITY_INFO = {
       { ico: "⛰️", text: "Nichée entre les massifs des Bauges et de la Chartreuse, à deux pas des lacs d'Annecy et du Bourget." },
     ],
   },
+   rouen: {
+    population: "117 662 habitants (2023)",
+    desc: "Capitale historique de la Normandie, Rouen déploie son riche patrimoine médiéval entre sa cathédrale gothique immortalisée par Monet et les maisons à colombages de sa vieille ville. Traversée par la Seine, la ville allie centre historique préservé et dynamisme universitaire et culturel.",
+    tags: ["Cathédrale Notre-Dame de Rouen", "Gros-Horloge", "Place du Vieux-Marché"],
+    facts: [
+      { ico: "🎨", text: "Claude Monet a peint plus de 30 tableaux de la cathédrale de Rouen sous différentes lumières." },
+      { ico: "⏰", text: "Le Gros-Horloge, horloge astronomique du XIVᵉ siècle, est l'un des plus vieux mécanismes de France." },
+      { ico: "🔥", text: "Jeanne d'Arc fut brûlée vive place du Vieux-Marché en 1431." },
+    ],
+  },
+  reims: {
+    population: "177 674 habitants (2023)",
+    desc: "Capitale historique du sacre des rois de France et cœur de la Champagne, Reims marie prestige patrimonial et art de vivre pétillant. Sa cathédrale gothique, classée à l'UNESCO, a vu le sacre de 29 rois, tandis que les grandes maisons de champagne veillent sur ses caves centenaires.",
+    tags: ["Cathédrale Notre-Dame de Reims", "Palais du Tau", "Basilique Saint-Remi"],
+    facts: [
+      { ico: "👑", text: "29 rois de France ont été sacrés dans la cathédrale de Reims, dont Charles VII en 1429 aux côtés de Jeanne d'Arc." },
+      { ico: "🍾", text: "Les caves des maisons de champagne, creusées dans la craie, s'étendent sur des kilomètres sous la ville." },
+      { ico: "🏛️", text: "La cathédrale, le Palais du Tau et la basilique Saint-Remi sont classés au patrimoine mondial de l'UNESCO." },
+    ],
+  },
+  montpellier: {
+    population: "302 454 habitants (2023)",
+    desc: "Ville universitaire et étudiante depuis le Moyen Âge, Montpellier déploie son élégante place de la Comédie et ses hôtels particuliers du XVIIᵉ siècle. Portée par un dynamisme démographique parmi les plus forts de France, elle mêle patrimoine historique et effervescence contemporaine sous le soleil du Languedoc.",
+    tags: ["Place de la Comédie", "Arc de Triomphe", "Promenade du Peyrou"],
+    facts: [
+      { ico: "🎓", text: "Sa faculté de médecine, fondée au XIIᵉ siècle, est la plus ancienne du monde encore en activité." },
+      { ico: "🏛️", text: "La place de la Comédie, surnommée « l'Œuf » par les habitants, est l'une des plus grandes places piétonnes d'Europe." },
+      { ico: "💧", text: "L'aqueduc Saint-Clément alimente encore aujourd'hui les bassins de la promenade du Peyrou." },
+    ],
+  }, 
 };
 // ---- traduction anglaise des fiches villes ----
 const CITY_INFO_EN = {
