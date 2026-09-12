@@ -2361,7 +2361,14 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 6006589, cityName: "Rouen", cityKey: "rouen", search: null },
   { agendaId: 12802953, cityName: "Reims", cityKey: "reims", search: null },
   { agendaId: 85455387, cityName: "Reims", cityKey: "reims", search: null },
-  { agendaId: 1359184, cityName: "Montpellier", cityKey: "montpellier", search: null, size: 300 }, cityName: "Chambéry", cityKey: "chambery", search: null },
+  { agendaId: 1359184, cityName: "Montpellier", cityKey: "montpellier", search: null, size: 300 }, 
+   { agendaId: 19009844, cityName: "Angers", cityKey: "angers", search: null },
+  { agendaId: 15841399, cityName: "Angers", cityKey: "angers", search: null },
+  { agendaId: 79839448, cityName: "Avignon", cityKey: "avignon", search: null, size: 300 },
+  { agendaId: 49310329, cityName: "Strasbourg", cityKey: "strasbourg", search: null },
+  { agendaId: 97272582, cityName: "Strasbourg", cityKey: "strasbourg", search: null },
+  { agendaId: 36691733, cityName: "Paris", cityKey: "paris", search: null },
+  { agendaId: 4898229, cityName: "Bordeaux", cityKey: "bordeaux", search: null }, cityName: "Chambéry", cityKey: "chambery", search: null },
 ];
 
 function sceneForOpenAgendaEvent(title, description){ 
