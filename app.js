@@ -2193,6 +2193,26 @@ const CITY_INFO = {
       { ico: "🎄", text: "Strasbourg s'autoproclame « capitale de Noël » avec son marché de Noël, l'un des plus anciens de France (depuis 1570)." },
     ],
   }, 
+    metz: {
+    population: "122 572 habitants (2023)",
+    desc: "Ville d'art et d'histoire au confluent de la Moselle et de la Seille, Metz marie sa cathédrale gothique aux vitraux de Chagall à l'architecture audacieuse du Centre Pompidou-Metz, antenne messine du grand musée parisien. Ancienne capitale impériale, elle cultive un patrimoine architectural allemand et français unique en France.",
+    tags: ["Centre Pompidou-Metz", "Cathédrale Saint-Étienne", "Place Saint-Louis"],
+    facts: [
+      { ico: "🏛️", text: "Le Centre Pompidou-Metz, ouvert en 2010, est le plus grand espace d'exposition temporaire de France en dehors de Paris." },
+      { ico: "⛪", text: "La cathédrale Saint-Étienne possède la plus grande surface de vitraux de France, dont certains signés Marc Chagall." },
+      { ico: "🏰", text: "Capitale impériale allemande de 1871 à 1918, Metz conserve un quartier entier d'architecture wilhelmienne." },
+    ],
+  },
+  caen: {
+    population: "109 400 habitants (2023)",
+    desc: "Capitale historique de la Normandie ducale, Caen fut la ville de cœur de Guillaume le Conquérant, qui y fonda deux abbayes jumelles. Largement reconstruite après les bombardements de 1944, elle mêle aujourd'hui patrimoine médiéval préservé et urbanisme moderne, entre château et mémorial pour la paix.",
+    tags: ["Château de Caen", "Abbaye aux Hommes", "Mémorial de Caen"],
+    facts: [
+      { ico: "👑", text: "Guillaume le Conquérant fit de Caen sa ville favorite et y fut inhumé dans l'abbaye aux Hommes qu'il avait fondée." },
+      { ico: "🏰", text: "Le château de Caen, fondé vers 1060, est l'une des plus vastes enceintes fortifiées d'Europe." },
+      { ico: "🕊️", text: "Le Mémorial de Caen, ouvert en 1988, retrace l'histoire du XXᵉ siècle et la bataille de Normandie." },
+    ],
+  },
 };
 // ---- traduction anglaise des fiches villes ----
 const CITY_INFO_EN = {
