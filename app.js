@@ -2888,6 +2888,8 @@ const CITY_PHOTOS = {
   strasbourg: "https://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg_Cathedral_Exterior_-_Diliff.jpg", 
   nantes: "https://commons.wikimedia.org/wiki/Special:FilePath/Marit%C3%A9.jpg",
 };
+  metz: "https://commons.wikimedia.org/wiki/Special:FilePath/Centre_Pompidou-Metz_02.jpg",
+  caen: "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG",
 function renderLocateBar(){
   document.getElementById("locate-label").textContent = state.userPos ? "Position détectée" : "Ville sélectionnée";
   document.getElementById("locate-value").textContent = state.userPos
