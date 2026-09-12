@@ -294,7 +294,9 @@ mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
 montgeron: { name: "Montgeron", lat: 48.7039, lng: 2.4605 }, lille: { name: "Lille", lat: 50.6292, lng: 3.0573 }, dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415 },  chambery: { name: "Chambéry",
                                                                                                                                                                                      rouen: { name: "Rouen", lat: 49.4432, lng: 1.0999 },
   reims: { name: "Reims", lat: 49.2583, lng: 4.0317 },
-  montpellier: { name: "Montpellier", lat: 43.6108, lng: 3.8767 },
+  montpellier: { name: "Montpellier",  angers: { name: "Angers", lat: 47.4784, lng: -0.5632 },
+  avignon: { name: "Avignon", lat: 43.9493, lng: 4.8055 },
+  strasbourg: { name: "Strasbourg", lat: 48.5734, lng: 7.7521 }, lat: 43.6108, lng: 3.8767 },
                                                                                                                                                                       
   reims: { name: "Reims", lat: 49.2583, lng: 4.0317 },lat: 45.5646, lng: 5.9178 },
 };
