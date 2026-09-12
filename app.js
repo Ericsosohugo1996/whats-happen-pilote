@@ -1562,6 +1562,45 @@ const LANDMARK_INFO = {
     scene: "village",
     caption: "Vaste esplanade du XVIIIᵉ siècle offrant une vue dégagée sur les Cévennes, avec son château d'eau et son aqueduc.",
   },
+    "Château d'Angers": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_d%27Angers%2C_South_view_20170611_1.jpg",
+    caption: "Forteresse du XIIIᵉ siècle aux dix-sept tours, elle abrite la tenture de l'Apocalypse, chef-d'œuvre de la tapisserie médiévale.",
+  },
+  "Cathédrale Saint-Maurice": {
+    scene: "village",
+    caption: "Cathédrale gothique angevine du XIIᵉ siècle, célèbre pour ses vitraux et sa nef parmi les plus larges de France.",
+  },
+  "Place du Ralliement": {
+    scene: "village",
+    caption: "Place centrale d'Angers, bordée par le Grand Théâtre, cœur animé de la vie commerçante et culturelle de la ville.",
+  },
+  "Palais des Papes": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_Papes%2CAvignon.JPG",
+    caption: "Plus grand palais gothique du monde, résidence des papes au XIVᵉ siècle, aujourd'hui classé au patrimoine mondial de l'UNESCO.",
+  },
+  "Pont Saint-Bénézet": {
+    scene: "village",
+    caption: "Le fameux « pont d'Avignon », construit au XIIᵉ siècle, dont il ne reste que 4 arches sur le Rhône.",
+  },
+  "Rocher des Doms": {
+    scene: "nature",
+    caption: "Jardin surplombant le Rhône, offrant une vue panoramique sur le pont Saint-Bénézet et les Alpilles.",
+  },
+  "Cathédrale Notre-Dame de Strasbourg": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg_Cathedral_Exterior_-_Diliff.jpg",
+    caption: "Chef-d'œuvre gothique achevé en 1439, elle fut l'édifice le plus haut du monde pendant plus de deux siècles.",
+  },
+  "La Petite France": {
+    scene: "village",
+    caption: "Ancien quartier des tanneurs et meuniers, aux maisons à colombages et canaux, l'un des plus photographiés d'Europe.",
+  },
+  "Palais Rohan": {
+    scene: "village",
+    caption: "Résidence des princes-évêques de Strasbourg au XVIIIᵉ siècle, il abrite aujourd'hui trois musées.",
+  },
   "Cours Mirabeau": {
     scene: "cours-mirabeau",
     caption: "La grande avenue plantée de platanes centenaires, ponctuée de fontaines, qui traverse le cœur d'Aix-en-Provence.",
