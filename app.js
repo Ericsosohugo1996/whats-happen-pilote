@@ -2284,7 +2284,12 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 58870826, cityName: "Paris", cityKey: "paris", search: null },  { agendaId: 19881363, cityName: "Paris", cityKey: "paris", search: null },
   { agendaId: 39942705, cityName: "Paris", cityKey: "paris", search: null },
   { agendaId: 51110696, cityName: "Paris", cityKey: "paris", search: null },
-  { agendaId: 95134708, cityName: "Paris", cityKey: "paris", search: null },  { agendaId: 40184650, cityName: "Chambéry", cityKey: "chambery", search: null },
+  { agendaId: 95134708, cityName: "Paris", cityKey: "paris", search: null },  { agendaId: 40184650,
+                                                                                { agendaId: 11174431, cityName: "Rouen", cityKey: "rouen", search: null, size: 300 },
+  { agendaId: 6006589, cityName: "Rouen", cityKey: "rouen", search: null },
+  { agendaId: 12802953, cityName: "Reims", cityKey: "reims", search: null },
+  { agendaId: 85455387, cityName: "Reims", cityKey: "reims", search: null },
+  { agendaId: 1359184, cityName: "Montpellier", cityKey: "montpellier", search: null, size: 300 }, cityName: "Chambéry", cityKey: "chambery", search: null },
 ];
 
 function sceneForOpenAgendaEvent(title, description){ 
