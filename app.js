@@ -1519,6 +1519,46 @@ const LANDMARK_INFO = {
   "Les Halles": {
     scene: "marche",
     caption: "Marché couvert du centre-ville depuis le XIᵉ siècle : boucherie, fromagerie, maraîchers et fleuriste, du mardi au samedi.",
+  },  "Cathédrale Notre-Dame de Rouen": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale_de_Rouen.jpg",
+    caption: "Chef-d'œuvre gothique immortalisé par Claude Monet dans sa célèbre série de tableaux peints sous différentes lumières.",
+  },
+  "Gros-Horloge": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Rouen,_Gros-Horloge.jpg",
+    caption: "Horloge astronomique du XIVᵉ siècle installée dans une arche Renaissance, l'un des symboles de Rouen.",
+  },
+  "Place du Vieux-Marché": {
+    scene: "village",
+    caption: "Sur cette place, Jeanne d'Arc fut brûlée vive en 1431. Aujourd'hui bordée de maisons à colombages et de restaurants.",
+  },
+  "Cathédrale Notre-Dame de Reims": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale_Notre-Dame_de_Reims_(fa%C3%A7ade).jpg",
+    caption: "Chef-d'œuvre gothique où furent sacrés 29 rois de France, classée au patrimoine mondial de l'UNESCO.",
+  },
+  "Palais du Tau": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_du_Tau_et_cath%C3%A9drale.jpg",
+    caption: "Ancien palais des archevêques, il accueillait les cérémonies liées au sacre des rois juste à côté de la cathédrale.",
+  },
+  "Basilique Saint-Remi": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Reims_SRemi1_tango7174.jpg",
+    caption: "Abritant le tombeau de saint Remi, qui baptisa Clovis, cette basilique romane et gothique rivalise en taille avec la cathédrale.",
+  },
+  "Place de la Comédie": {
+    scene: "village",
+    caption: "Surnommée « l'Œuf » par les Montpelliérains, cette place du XVIIIᵉ siècle est le cœur battant de la ville, bordée de cafés.",
+  },
+  "Arc de Triomphe": {
+    scene: "village",
+    caption: "Édifié à la gloire de Louis XIV à la fin du XVIIᵉ siècle, il marque l'entrée de la promenade du Peyrou.",
+  },
+  "Promenade du Peyrou": {
+    scene: "village",
+    caption: "Vaste esplanade du XVIIIᵉ siècle offrant une vue dégagée sur les Cévennes, avec son château d'eau et son aqueduc.",
   },
   "Cours Mirabeau": {
     scene: "cours-mirabeau",
