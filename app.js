@@ -2278,7 +2278,7 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 58870826, cityName: "Paris", cityKey: "paris", search: null },  { agendaId: 19881363, cityName: "Paris", cityKey: "paris", search: null },
   { agendaId: 39942705, cityName: "Paris", cityKey: "paris", search: null },
   { agendaId: 51110696, cityName: "Paris", cityKey: "paris", search: null },
-  { agendaId: 95134708, cityName: "Paris", cityKey: "paris", search: null },
+  { agendaId: 95134708, cityName: "Paris", cityKey: "paris", search: null },  { agendaId: 40184650, cityName: "Chambéry", cityKey: "chambery", search: null },
 ];
 
 function sceneForOpenAgendaEvent(title, description){ 
