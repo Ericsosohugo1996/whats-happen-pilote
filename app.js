@@ -2442,6 +2442,11 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 97272582, cityName: "Strasbourg", cityKey: "strasbourg", search: null },
   { agendaId: 36691733, cityName: "Paris", cityKey: "paris", search: null },
   { agendaId: 4898229, cityName: "Bordeaux", cityKey: "bordeaux", search: null }, cityName: "Chambéry", cityKey: "chambery", search: null },
+  { agendaId: 57155146, cityName: "Metz", cityKey: "metz", search: null },
+  { agendaId: 15421838, cityName: "Metz", cityKey: "metz", search: null },
+  { agendaId: 95730275, cityName: "Metz", cityKey: "metz", search: null, size: 300 },
+  { agendaId: 3415568, cityName: "Caen", cityKey: "caen", search: null, size: 300 },
+  { agendaId: 73640344, cityName: "Caen", cityKey: "caen", search: null },
 ];
 
 function sceneForOpenAgendaEvent(title, description){ 
