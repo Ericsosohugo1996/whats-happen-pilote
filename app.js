@@ -1797,6 +1797,32 @@ const LANDMARK_INFO = {
     photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Calanques_de_Marseille_20120922_90.jpg",
     caption: "Ces criques aux falaises calcaires et eaux turquoise s'étendent entre Marseille et Cassis, classées en parc national depuis 2012.",
   },
+    "Centre Pompidou-Metz": {
+    scene: "expo",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Centre_Pompidou-Metz_02.jpg",
+    caption: "Antenne messine du musée parisien, sa toiture ondulante en forme de chapeau chinois abrite le plus grand espace d'exposition temporaire hors Paris.",
+  },
+  "Cathédrale Saint-Étienne": {
+    scene: "village",
+    caption: "Surnommée « la Lanterne du Bon Dieu » pour l'immensité de ses vitraux, elle abrite des œuvres de Marc Chagall.",
+  },
+  "Place Saint-Louis": {
+    scene: "village",
+    caption: "Place médiévale bordée d'arcades gothiques et Renaissance, ancien cœur du quartier des marchands lombards.",
+  },
+  "Château de Caen": {
+    scene: "village",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG",
+    caption: "Fondé vers 1060 par Guillaume le Conquérant, ce château domine la ville depuis l'une des plus vastes enceintes fortifiées d'Europe.",
+  },
+  "Abbaye aux Hommes": {
+    scene: "village",
+    caption: "Fondée par Guillaume le Conquérant, qui y fut inhumé, cette abbaye romane abrite aujourd'hui l'hôtel de ville de Caen.",
+  },
+  "Mémorial de Caen": {
+    scene: "expo",
+    caption: "Musée pour la paix retraçant le XXᵉ siècle et la bataille de Normandie, installé sur un ancien poste de commandement allemand.",
+  },
 };
 function openLandmark(tag){
   const info = LANDMARK_INFO[tag] || { scene: "village", caption: "" };
