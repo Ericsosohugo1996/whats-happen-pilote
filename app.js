@@ -2120,6 +2120,36 @@ const CITY_INFO = {
       { ico: "💧", text: "L'aqueduc Saint-Clément alimente encore aujourd'hui les bassins de la promenade du Peyrou." },
     ],
   }, 
+   angers: {
+    population: "159 022 habitants (2023)",
+    desc: "Ancienne capitale de l'Anjou, Angers déploie son château médiéval aux dix-sept tours de schiste et de calcaire, qui abrite la légendaire tapisserie de l'Apocalypse. Ville fleurie et étudiante au bord de la Maine, elle allie patrimoine préservé et dynamisme culturel.",
+    tags: ["Château d'Angers", "Cathédrale Saint-Maurice", "Place du Ralliement"],
+    facts: [
+      { ico: "🏰", text: "Le château abrite la tapisserie de l'Apocalypse, la plus grande tenture médiévale conservée au monde (103 mètres à l'origine)." },
+      { ico: "🌷", text: "Surnommée « la ville la plus verte de France », Angers multiplie les parcs et jardins depuis le XIXᵉ siècle." },
+      { ico: "🎓", text: "Ville étudiante historique, elle accueille aujourd'hui plus de 40 000 étudiants." },
+    ],
+  },
+  avignon: {
+    population: "92 188 habitants (2023)",
+    desc: "Ancienne résidence des papes au XIVᵉ siècle, Avignon a conservé ses remparts intacts et son majestueux Palais des Papes, plus grand édifice gothique du monde. Classée au patrimoine mondial de l'UNESCO, la ville vit chaque été au rythme de son célèbre festival de théâtre.",
+    tags: ["Palais des Papes", "Pont Saint-Bénézet", "Rocher des Doms"],
+    facts: [
+      { ico: "👑", text: "Sept papes se sont succédé à Avignon entre 1309 et 1377, faisant de la ville la capitale de la chrétienté." },
+      { ico: "🎭", text: "Le Festival d'Avignon, créé en 1947, est aujourd'hui l'un des plus grands rendez-vous mondiaux du théâtre." },
+      { ico: "🌉", text: "Le pont Saint-Bénézet, immortalisé par la chanson « Sur le pont d'Avignon », ne compte plus que 4 de ses 22 arches d'origine." },
+    ],
+  },
+  strasbourg: {
+    population: "293 771 habitants (2023)",
+    desc: "Capitale européenne et carrefour franco-allemand, Strasbourg marie son centre historique classé à l'UNESCO — la Grande Île et le quartier de la Petite France — à son rôle de siège du Parlement européen. Sa cathédrale gothique et ses maisons à colombages en font l'une des villes les plus photogéniques de France.",
+    tags: ["Cathédrale Notre-Dame de Strasbourg", "La Petite France", "Palais Rohan"],
+    facts: [
+      { ico: "🏛️", text: "Strasbourg est le siège du Parlement européen, symbole de la réconciliation franco-allemande." },
+      { ico: "⛪", text: "Sa cathédrale, achevée en 1439, fut le plus haut édifice du monde pendant plus de 200 ans." },
+      { ico: "🎄", text: "Strasbourg s'autoproclame « capitale de Noël » avec son marché de Noël, l'un des plus anciens de France (depuis 1570)." },
+    ],
+  }, 
 };
 // ---- traduction anglaise des fiches villes ----
 const CITY_INFO_EN = {
