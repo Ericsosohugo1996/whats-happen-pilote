@@ -2267,8 +2267,9 @@ const OPENAGENDA_SOURCES = [
          { agendaId: 21769447, cityName: "Marseille",        cityKey: "marseille", search: null, size: 100 },
      { agendaId: 2119473,  cityName: "Marseille",         cityKey: "marseille", search: null },
      { agendaId: 46688663, cityName: "Marseille",         cityKey: "marseille", search: null },
-      { agendaId: 89904399, cityName: "Lille", cityKey: "lille", search: null, size: 300 }, { agendaId: 78167052, cityName: "Dijon",             cityKey: "dijon", search: null, size: 300 },
-];    
+      { agendaId: 89904399, cityName: "Lille", cityKey: "lille", search: null, size: 300 }, { agendaId: 78167052, cityName: "Dijon",             cityKey: "dijon", search: null, size: 300 },  { agendaId: 58870826, cityName: "Paris", cityKey: "paris", search: null },
+];
+
 function sceneForOpenAgendaEvent(title, description){ 
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "expo";
