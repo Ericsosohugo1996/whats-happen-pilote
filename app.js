@@ -2266,6 +2266,7 @@ const OPENAGENDA_SOURCES = [
    { agendaId: 2404802,  cityName: "Brest",            cityKey: "brest", search: null },
   { agendaId: 83392987, cityName: "Bordeaux",         cityKey: "bordeaux", search: null, size: 300 },
     { agendaId: 94573624, cityName: "Bordeaux", cityKey: "bordeaux", search: null },
+    { agendaId: 19327333, cityName: "Bordeaux", cityKey: "bordeaux", search: null },
     { agendaId: 42448083, cityName: "Toulouse",         cityKey: "toulouse", search: null, size: 300 },
     { agendaId: 96398684, cityName: "Toulouse", cityKey: "toulouse", search: null },
          { agendaId: 21769447, cityName: "Marseille",        cityKey: "marseille", search: null, size: 100 },
