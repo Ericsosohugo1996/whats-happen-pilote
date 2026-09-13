@@ -2524,6 +2524,7 @@ async function fetchOpenAgendaCityEvents(source){
   let url = "https://api.openagenda.com/v2/agendas/" + source.agendaId +
     "/events?key=" + OPENAGENDA_KEY + "&size=" + size;
   if (source.search) url += "&search=" + encodeURIComponent(source.search);
+    if (source.apiCity) url += "&city=" + encodeURIComponent(source.apiCity);
   try {
     const res = await fetch(url);
     const data = await res.json();
