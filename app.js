@@ -1156,6 +1156,18 @@ const SCENES = {
     <circle cx="146" cy="90" r="8" fill="#ffffff"/>
     <text x="36" y="58" font-size="36" fill="#ffffff">♪</text>
     <text x="68" y="84" font-size="28" fill="#f2c869">♫</text>
+      bar: `
+    <rect width="200" height="120" fill="#2b1d14"/>
+    <rect y="70" width="200" height="50" fill="#4a2f1c"/>
+    <rect y="66" width="200" height="6" fill="#6b4226"/>
+    <rect x="20" y="20" width="10" height="42" fill="#7a1f1f"/>
+    <rect x="40" y="14" width="10" height="48" fill="#3a5f3a"/>
+    <rect x="60" y="24" width="10" height="38" fill="#8a6d1f"/>
+    <path d="M138 38 L162 38 L152 56 L148 56 Z" fill="#e8c07d"/>
+    <line x1="150" y1="56" x2="150" y2="64" stroke="#e8c07d" stroke-width="3"/>
+    <line x1="142" y1="64" x2="158" y2="64" stroke="#e8c07d" stroke-width="3"/>
+    <text x="30" y="102" font-size="30" fill="#f2c869">🍸</text>
+  `,
   `,
   festival: `
     <rect width="200" height="120" fill="#faf0df"/>
