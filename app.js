@@ -2495,6 +2495,20 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 95730275, cityName: "Metz", cityKey: "metz", search: null, size: 300 },
   { agendaId: 3415568, cityName: "Caen", cityKey: "caen", search: null, size: 300 },
   { agendaId: 73640344, cityName: "Caen", cityKey: "caen", search: null },
+    { agendaId: 74583765, cityName: "Nantes", cityKey: "nantes", search: null, apiCity: "Nantes", size: 20, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Toulouse", cityKey: "toulouse", search: null, apiCity: "Toulouse", size: 20, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Lille", cityKey: "lille", search: null, apiCity: "Lille", size: 20, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Rennes", cityKey: "rennes", search: null, apiCity: "Rennes", size: 20, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Paris", cityKey: "paris", search: null, apiCity: "Paris", size: 15, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Angers", cityKey: "angers", search: null, apiCity: "Angers", size: 15, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Metz", cityKey: "metz", search: null, apiCity: "Metz", size: 15, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Marseille", cityKey: "marseille", search: null, apiCity: "Marseille", size: 15, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Brest", cityKey: "brest", search: null, apiCity: "Brest", size: 15, forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Montpellier", cityKey: "montpellier", search: null, apiCity: "Montpellier", forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Bordeaux", cityKey: "bordeaux", search: null, apiCity: "Bordeaux", forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Aix-en-Provence", cityKey: "aix", search: null, apiCity: "Aix-en-Provence", forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Rouen", cityKey: "rouen", search: null, apiCity: "Rouen", forceCategory: "Bar" },
+  { agendaId: 74583765, cityName: "Dijon", cityKey: "dijon", search: null, apiCity: "Dijon", forceCategory: "Bar" },
 ];
 
 function sceneForOpenAgendaEvent(title, description){ 
