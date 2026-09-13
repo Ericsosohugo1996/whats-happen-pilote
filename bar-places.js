@@ -38,6 +38,7 @@ const CURATED_BARS = [
   { id: "bar-bordeaux-18", isPlace: true, scene: "bar", city: "bordeaux", category: "Bar", title: "Calle Ocho", date: null, time: "", place: "24 Rue des Piliers de Tutelle, Bordeaux", lat: 44.8405, lng: -0.5715, price: "€€", thumb: "", description: "Bar latino avec ambiance salsa et cours de danse, cocktails cubains et piste de danse endiablée." },
   { id: "bar-bordeaux-19", isPlace: true, scene: "bar", city: "bordeaux", category: "Bar", title: "Au Toucan Fringant", date: null, time: "", place: "6 Quai de la Monnaie, Bordeaux", lat: 44.8330, lng: -0.5670, price: "€€", thumb: "", description: "Bar tropical avec soirées latino et concerts, ambiance vacances et mojitos qui coulent à flots." },
   { id: "bar-bordeaux-20", isPlace: true, scene: "bar", city: "bordeaux", category: "Bar", title: "L'Empire", date: null, time: "", place: "14 Rue de la Devise, Bordeaux", lat: 44.8395, lng: -0.5715, price: "€€", thumb: "", description: "Bar-cabaret avec shows et performances, ambiance décalée pour une soirée qui sort de l'ordinaire." },
+  ];
 
 const __allEventsBaseBars = allEvents;
 allEvents = function () {
