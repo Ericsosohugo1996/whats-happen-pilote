@@ -1168,7 +1168,6 @@ const SCENES = {
     <line x1="142" y1="64" x2="158" y2="64" stroke="#e8c07d" stroke-width="3"/>
     <text x="30" y="102" font-size="30" fill="#f2c869">🍸</text>
   `,
-  `,
   festival: `
     <rect width="200" height="120" fill="#faf0df"/>
     <line x1="0" y1="18" x2="200" y2="18" stroke="#8f330a" stroke-width="2"/>
