@@ -59,7 +59,6 @@ const CURATED_BARS = [
   { id: "bar-toulouse-19", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", title: "L'Arrosoir", date: null, time: "", place: "Rue de Metz, Toulouse", lat: 43.5990, lng: 1.4430, price: "€€", thumb: "", description: "Adresse insolite où l'on se sert soi-même avec un arrosoir, déco végétale et 12 cocktails de saison." },
   { id: "bar-toulouse-20", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", title: "Billy Brandy", date: null, time: "", place: "Toulouse", lat: 43.6018, lng: 1.4410, price: "€€", thumb: "", description: "Bar à cocktails prisé du centre historique toulousain, référencé parmi les meilleures adresses de la ville." },
 ];
-  ];
 
 const __allEventsBaseBars = allEvents;
 allEvents = function () {
