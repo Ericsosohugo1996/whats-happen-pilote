@@ -40,4 +40,117 @@ const CURATED_BARS = [
   { id: "bar-bordeaux-20", isPlace: true, scene: "bar", city: "bordeaux", category: "Bar", style: "dansant", title: "L'Empire", date: null, time: "", place: "14 Rue de la Devise, Bordeaux", lat: 44.8395, lng: -0.5715, price: "€€", thumb: "", description: "Bar-cabaret avec shows et performances, ambiance décalée pour une soirée qui sort de l'ordinaire." },
   { id: "bar-toulouse-1", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "rooftop", title: "Ma Biche sur le Toit", date: null, time: "", place: "4-8 Rue du Lieutenant Colonel Pélissier, Toulouse", lat: 43.6013, lng: 1.4442, price: "€€", thumb: "", description: "Le rooftop le plus connu de Toulouse, perché au 6ᵉ étage des Galeries Lafayette, vue à 360° sur la Ville Rose." },
   { id: "bar-toulouse-2", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "rooftop", title: "Mama Shelter Toulouse", date: null, time: "", place: "Toulouse", lat: 43.6070, lng: 1.4380, price: "€€", thumb: "", description: "Le rooftop de l'hôtel tendance, terrasse panoramique pour siroter des cocktails créatifs au coucher du soleil." },
-  { id: "bar-toulouse-3", isPlace: true, scene:
+  { id: "bar-toulouse-3", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "rooftop", title: "Le Perchoir", date: null, time: "", place: "Hôtel des Beaux-Arts, Toulouse", lat: 43.6000, lng: 1.4400, price: "€€", thumb: "", description: "Le concept parisien du rooftop signature s'installe à Toulouse, jardin lush au sommet de l'hôtel." },
+  { id: "bar-toulouse-4", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "rooftop", title: "Le Sky Lounge", date: null, time: "", place: "Hôtel Pullman, 9ᵉ étage, Toulouse", lat: 43.6100, lng: 1.4350, price: "€€€", thumb: "", description: "Vue à couper le souffle sur la Garonne depuis le 9ᵉ étage, décor sophistiqué et carte de cocktails étendue." },
+  { id: "bar-toulouse-5", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "rooftop", title: "Le Point de Vue", date: null, time: "", place: "Quartier Saint-Cyprien, Toulouse", lat: 43.6000, lng: 1.4350, price: "€€", thumb: "", description: "Perspective imprenable sur le centre historique et la Garonne depuis le quartier Saint-Cyprien." },
+  { id: "bar-toulouse-6", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "cocktail", title: "L'Apoticaire", date: null, time: "", place: "10 Impasse Didier Daurat, Toulouse", lat: 43.6040, lng: 1.4470, price: "€€", thumb: "", description: "Ambiance feutrée façon speakeasy des années 20, mixologistes talentueux et créations uniques." },
+  { id: "bar-toulouse-7", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "biere", title: "Le Père Louis", date: null, time: "", place: "Toulouse", lat: 43.6020, lng: 1.4425, price: "€", thumb: "", description: "Institution toulousaine depuis 1889, ce bar-brasserie a traversé les époques sans prendre une ride." },
+  { id: "bar-toulouse-8", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "cocktail", title: "L'Agence", date: null, time: "", place: "26 Rue du Languedoc, Toulouse", lat: 43.5985, lng: 1.4420, price: "€€", thumb: "", description: "Voyage dans les années 20 entre Peaky Blinders et Boardwalk Empire, cocktails signatures et ambiance jazzy." },
+  { id: "bar-toulouse-9", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "cocktail", title: "La Maison", date: null, time: "", place: "Toulouse", lat: 43.6010, lng: 1.4415, price: "€€", thumb: "", description: "Cocktail bar chaleureux avec tapas et cheminée, blind-tests et soirées à thème régulières." },
+  { id: "bar-toulouse-10", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "dansant", title: "Fat Cat", date: null, time: "", place: "Rue Gabriel-Péri, Toulouse", lat: 43.6035, lng: 1.4420, price: "€", thumb: "", description: "Référence incontournable des soirées toulousaines dans la très animée rue Gabriel-Péri." },
+  { id: "bar-toulouse-11", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "biere", title: "La Distillerie", date: null, time: "", place: "Toulouse", lat: 43.6045, lng: 1.4400, price: "€", thumb: "", description: "Ambiance festive été comme hiver sur une belle et gigantesque terrasse." },
+  { id: "bar-toulouse-12", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "dansant", title: "Chez Tempête", date: null, time: "", place: "Toulouse", lat: 43.6025, lng: 1.4435, price: "€€", thumb: "", description: "On y voit la vie en rose, décor haut en couleur et ambiance festive assurée." },
+  { id: "bar-toulouse-13", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "cocktail", title: "Le Loup Blanc", date: null, time: "", place: "Toulouse", lat: 43.6015, lng: 1.4455, price: "€€", thumb: "", description: "Bar à cocktails créatifs, dont le fameux « Wow », dans une ambiance conviviale." },
+  { id: "bar-toulouse-14", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "rooftop", title: "Mahogany Club", date: null, time: "", place: "Toulouse", lat: 43.6005, lng: 1.4445, price: "€€€", thumb: "", description: "Vue panoramique sur la skyline toulousaine, ambiance élégante et cocktails élaborés par des mixologistes chevronnés." },
+  { id: "bar-toulouse-15", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "biere", title: "Le Biergarten Saint-Michel", date: null, time: "", place: "60 Grande Rue Saint-Michel, Toulouse", lat: 43.5885, lng: 1.4460, price: "€€", thumb: "", description: "Jardin à bières bavarois de 500 m², près d'une centaine de bières et charcuterie venue de Munich." },
+  { id: "bar-toulouse-16", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "jeux", title: "George and Dragon", date: null, time: "", place: "Près de la Place du Capitole, Toulouse", lat: 43.6045, lng: 1.4440, price: "€€", thumb: "", description: "Pub anglais authentique et intime ouvert depuis 2007, beerpong, quiz et open mic selon les soirs." },
+  { id: "bar-toulouse-17", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "biere", title: "Le Delicatessen", date: null, time: "", place: "Quartier Saint-Aubin, Toulouse", lat: 43.6070, lng: 1.4520, price: "€€", thumb: "", description: "Ambiance steampunk atypique, carte de bières variée et tapas maison renouvelées régulièrement." },
+  { id: "bar-toulouse-18", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "biere", title: "La Voile Blanche", date: null, time: "", place: "Bord de Garonne, Toulouse", lat: 43.5960, lng: 1.4380, price: "€€", thumb: "", description: "Au bord de l'eau, panorama et tapas dans une ambiance détente très appréciée aux beaux jours." },
+  { id: "bar-toulouse-19", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "cocktail", title: "L'Arrosoir", date: null, time: "", place: "Rue de Metz, Toulouse", lat: 43.5990, lng: 1.4430, price: "€€", thumb: "", description: "Adresse insolite où l'on se sert soi-même avec un arrosoir, déco végétale et 12 cocktails de saison." },
+  { id: "bar-toulouse-20", isPlace: true, scene: "bar", city: "toulouse", category: "Bar", style: "cocktail", title: "Billy Brandy", date: null, time: "", place: "Toulouse", lat: 43.6018, lng: 1.4410, price: "€€", thumb: "", description: "Bar à cocktails prisé du centre historique toulousain, référencé parmi les meilleures adresses de la ville." },
+  { id: "bar-lille-1", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "La Capsule", date: null, time: "", place: "25 Rue des Trois Mollettes, Lille", lat: 50.6370, lng: 3.0625, price: "€€", thumb: "", description: "Le temple lillois de la bière artisanale, sélection impressionnante de craft beers dans une cave voûtée intimiste." },
+  { id: "bar-lille-2", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "cocktail", title: "Le Joker Cocktails & Bar", date: null, time: "", place: "32 Place Louise de Bettignies, Lille", lat: 50.6395, lng: 3.0645, price: "€€€", thumb: "", description: "Bar à cocktails haut de gamme réputé pour ses créations sur-mesure, cadre élégant et service attentionné." },
+  { id: "bar-lille-3", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "L'Illustration", date: null, time: "", place: "18 Rue Royale, Lille", lat: 50.6400, lng: 3.0615, price: "€€", thumb: "", description: "Café-bar historique à l'ambiance bohème, entre vieilles affiches et esprit arty, fréquenté jour et soir." },
+  { id: "bar-lille-4", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "jeux", title: "La Luck", date: null, time: "", place: "1 bis Rue de la Princesse, Lille", lat: 50.6405, lng: 3.0605, price: "€€", thumb: "", description: "Bar à jeux de société où l'on joue des heures en dégustant bières, cocktails et poutines à la québécoise." },
+  { id: "bar-lille-5", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "Bierbuik", date: null, time: "", place: "19 Rue Royale, Lille", lat: 50.6398, lng: 3.0618, price: "€€", thumb: "", description: "Estaminet moderne et brewpub signé Florent Ladeyn, bières brassées maison et cuisine de comptoir inventive." },
+  { id: "bar-lille-6", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "Les BerThoM", date: null, time: "", place: "2 Rue de la Soif, Lille", lat: 50.6280, lng: 3.0575, price: "€", thumb: "", description: "Large choix de bières à la pression dans un cadre soigné, boisé et convivial, styles variés à tester entre amis." },
+  { id: "bar-lille-7", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "dansant", title: "Atomic Cat", date: null, time: "", place: "6 Cours Saint-Thiébault, Lille", lat: 50.6370, lng: 3.0650, price: "€", thumb: "", description: "Bar alternatif à la déco industrielle et à l'ambiance rock, souvent rythmé par une bande-son énergique." },
+  { id: "bar-lille-8", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "cocktail", title: "Le Dernier Bar avant la Fin du Monde", date: null, time: "", place: "12 Rue de Pas, Lille", lat: 50.6360, lng: 3.0610, price: "€€", thumb: "", description: "Bar culte pour les fans de culture geek, science-fiction et fantastique, déco immersive et cocktails thématisés." },
+  { id: "bar-lille-9", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "Camden Bar", date: null, time: "", place: "106 Rue de Saint-André, Lille", lat: 50.6420, lng: 3.0590, price: "€", thumb: "", description: "Ambiance d'un pub londonien, entre rock, bières pression et déco inspirée du Royaume-Uni." },
+  { id: "bar-lille-10", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "cocktail", title: "Le Quai des Bananes", date: null, time: "", place: "84 Rue Royale, Lille", lat: 50.6402, lng: 3.0612, price: "€€", thumb: "", description: "Spécialiste des cocktails avec une carte immense : rhum, tiki, classiques revisités, décor coloré et festif." },
+  { id: "bar-lille-11", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "dansant", title: "Mother", date: null, time: "", place: "29 Boulevard Jean-Baptiste Lebas, Lille", lat: 50.6280, lng: 3.0645, price: "€€", thumb: "", description: "Bar moderne combinant food, bières, cocktails et DJ sets, brunchs et afterworks pour une clientèle jeune." },
+  { id: "bar-lille-12", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "cocktail", title: "L'Imposture", date: null, time: "", place: "99 Rue de l'Hôpital Militaire, Lille", lat: 50.6335, lng: 3.0555, price: "€€", thumb: "", description: "Bar à cocktails et tapas convivial, planches et petites assiettes autour de verres bien dosés." },
+  { id: "bar-lille-13", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "dansant", title: "La Plage", date: null, time: "", place: "122 Rue Solférino, Lille", lat: 50.6275, lng: 3.0525, price: "€", thumb: "", description: "Bar dansant très prisé des étudiants, ambiance festive jusque tard dans la nuit à Solfé." },
+  { id: "bar-lille-14", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "The Queen Victoria", date: null, time: "", place: "161 Rue du Molinel, Lille", lat: 50.6260, lng: 3.0560, price: "€€", thumb: "", description: "Pub anglais traditionnel, bois sombre, tireuses et écrans pour le sport, bières britanniques et plats de pub." },
+  { id: "bar-lille-15", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "Le Tir Na Nog", date: null, time: "", place: "30 Place Philippe Lebon, Lille", lat: 50.6330, lng: 3.0510, price: "€€", thumb: "", description: "Pub irlandais authentique, bières pression, whiskies et musique live occasionnelle autour d'une Guinness." },
+  { id: "bar-lille-16", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "Le Base Camp", date: null, time: "", place: "10 Rue de la Collégiale, Lille", lat: 50.6345, lng: 3.0600, price: "€€", thumb: "", description: "Ambiance montagne et après-ski, raclettes et montagnardises liquides, esprit chalet très cocooning en hiver." },
+  { id: "bar-lille-17", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "rooftop", title: "Moxy Lille (Bar)", date: null, time: "", place: "3 Rue Jean Bart, Lille", lat: 50.6370, lng: 3.0755, price: "€€", thumb: "", description: "Bar d'hôtel design à l'atmosphère branchée, rooftop prisé aux beaux jours, décor contemporain pour l'afterwork." },
+  { id: "bar-lille-18", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "dansant", title: "Le Magazine Club", date: null, time: "", place: "84 Rue de Trévise, Lille", lat: 50.6320, lng: 3.0620, price: "€€", thumb: "", description: "Bar de nuit orienté électro, référence locale pour la musique électronique, DJs et sound system puissant." },
+  { id: "bar-lille-19", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "biere", title: "La Chicorée", date: null, time: "", place: "15 Place Rihour, Lille", lat: 50.6357, lng: 3.0627, price: "€€", thumb: "", description: "Brasserie iconique de Lille ouverte toute la nuit, le rendez-vous classique des fins de soirée en hyper-centre." },
+  { id: "bar-lille-20", isPlace: true, scene: "bar", city: "lille", category: "Bar", style: "dansant", title: "Network", date: null, time: "", place: "15 Rue du Faisan, Lille", lat: 50.6345, lng: 3.0640, price: "€€", thumb: "", description: "Institution de la nuit lilloise, orientée danse et ambiance club, piste animée et clientèle festive." },
+];
+
+const __allEventsBaseBars = allEvents;
+allEvents = function () {
+  return [...__allEventsBaseBars(), ...CURATED_BARS];
+};
+
+// ---- filtre par style de bar ----
+const BAR_STYLES = [
+  { key: "cocktail", label: "🍸 Cocktails" },
+  { key: "biere", label: "🍺 Bière/Pub" },
+  { key: "rooftop", label: "🌆 Rooftop" },
+  { key: "dansant", label: "💃 Dansant" },
+  { key: "vin", label: "🍷 Vin" },
+  { key: "jeux", label: "🎮 Jeux" },
+  { key: "live", label: "🎵 Musique live" },
+];
+let __selectedBarStyle = null;
+
+const __baseVisibleEventsBarStyle = baseVisibleEvents;
+baseVisibleEvents = function () {
+  let events = __baseVisibleEventsBarStyle();
+  if (__selectedBarStyle) {
+    events = events.filter(function (ev) {
+      return ev.category !== "Bar" || ev.style === __selectedBarStyle;
+    });
+  }
+  return events;
+};
+
+function __ensureBarStyleChips() {
+  const filtersPanel = document.getElementById("category-chips");
+  if (!filtersPanel || !filtersPanel.parentNode) return;
+  const isBarActive = state.selectedCategories && state.selectedCategories.has("Bar");
+  let wrap = document.getElementById("bar-style-chips");
+  if (!isBarActive) {
+    if (wrap) wrap.remove();
+    __selectedBarStyle = null;
+    return;
+  }
+  if (!wrap) {
+    wrap = document.createElement("div");
+    wrap.id = "bar-style-chips";
+    wrap.style.cssText = "display:flex; gap:6px; overflow-x:auto; margin-top:8px; padding-bottom:2px;";
+    filtersPanel.parentNode.insertBefore(wrap, filtersPanel.nextSibling);
+  }
+  wrap.innerHTML = BAR_STYLES.map(function (s) {
+    const active = __selectedBarStyle === s.key;
+    return (
+      '<button type="button" class="bar-style-chip" data-style="' +
+      s.key +
+      '" style="flex:0 0 auto; padding:7px 12px; border-radius:999px; border:1px solid ' +
+      (active ? "#14213D" : "rgba(0,0,0,0.15)") +
+      "; background:" +
+      (active ? "#14213D" : "#fff") +
+      "; color:" +
+      (active ? "#fff" : "inherit") +
+      '; font-size:11.5px; white-space:nowrap; cursor:pointer;">' +
+      s.label +
+      "</button>"
+    );
+  }).join("");
+  wrap.querySelectorAll(".bar-style-chip").forEach(function (btn) {
+    btn.onclick = function () {
+      const key = btn.dataset.style;
+      __selectedBarStyle = __selectedBarStyle === key ? null : key;
+      renderDiscover();
+    };
+  });
+}
+
+const __renderDiscoverBaseBarStyle = renderDiscover;
+renderDiscover = function () {
+  __renderDiscoverBaseBarStyle();
+  __ensureBarStyleChips();
+}
