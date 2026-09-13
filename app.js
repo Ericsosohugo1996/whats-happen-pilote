@@ -1156,6 +1156,7 @@ const SCENES = {
     <circle cx="146" cy="90" r="8" fill="#ffffff"/>
     <text x="36" y="58" font-size="36" fill="#ffffff">♪</text>
     <text x="68" y="84" font-size="28" fill="#f2c869">♫</text>
+      `,
       bar: `
     <rect width="200" height="120" fill="#2b1d14"/>
     <rect y="70" width="200" height="50" fill="#4a2f1c"/>
