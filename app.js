@@ -2551,7 +2551,7 @@ async function fetchOpenAgendaCityEvents(source){
           id: "oa-" + ev.uid,
           scene: sceneForOpenAgendaEvent(title, description),
           city: source.cityKey,
-          category: categoryForOpenAgendaEvent(title, description),
+                    category: source.forceCategory || categoryForOpenAgendaEvent(title, description),
           title,
           date: dateIso,
           time,
