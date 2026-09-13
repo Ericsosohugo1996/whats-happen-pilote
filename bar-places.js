@@ -79,7 +79,7 @@ const CURATED_BARS = [
   { id: "bar-lille-19", isPlace: true, scene: "bar", city: "lille", category: "Bar", title: "La Chicorée", date: null, time: "", place: "15 Place Rihour, Lille", lat: 50.6357, lng: 3.0627, price: "€€", thumb: "", description: "Brasserie iconique de Lille ouverte toute la nuit, le rendez-vous classique des fins de soirée en hyper-centre." },
   { id: "bar-lille-20", isPlace: true, scene: "bar", city: "lille", category: "Bar", title: "Network", date: null, time: "", place: "15 Rue du Faisan, Lille", lat: 50.6345, lng: 3.0640, price: "€€", thumb: "", description: "Institution de la nuit lilloise, orientée danse et ambiance club, piste animée et clientèle festive." },
 ];
-];
+
 
 const __allEventsBaseBars = allEvents;
 allEvents = function () {
