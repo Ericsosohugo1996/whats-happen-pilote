@@ -3059,7 +3059,7 @@ function eventCardHTML(ev){
     <button class="event-card${ev.isPlace ? " event-card--place" : ""}" data-id="${ev.id}" data-cat="${ev.category}">
       <div class="thumb">${thumbHTML}</div>
       <div class="info">
-        <div class="cat">${ev.isPlace ? "🏛️ À VOIR" : ev.category}</div>
+                <div class="cat">${ev.isPlace ? "🏛️ À VOIR" : ev.category}</div>
         <div class="title">${ev.title}</div>
         <div class="meta">${metaTxt}</div>
       </div>
