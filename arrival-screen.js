@@ -225,7 +225,7 @@ function __arrivalOpenMood() {
       });
       backRow.parentElement.appendChild(back);
     }
-  }, 150);
+ }, 400);
 }
 
 // ---- Bonhomme 3 : vue "ville" avec la ville détectée ----
