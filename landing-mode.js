@@ -72,7 +72,7 @@ function __landingModeOpen() {
     const activeCityKey = state.userPos ? nearestCityKey() : state.city;
   const cityName = CITIES[activeCityKey] ? CITIES[activeCityKey].name : "";
   const picks = __landingModePicks(slot);
-    const info = CITY_INFO[state.city];
+  const info = CITY_INFO[state.city]; 
   const contextLine = info ? info.desc.split(". ")[0] + "." : "";
 
   const overlay = document.createElement("div");
