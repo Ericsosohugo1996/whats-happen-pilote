@@ -136,7 +136,30 @@ function __layoverOpen() {
   overlay.addEventListener("click", function (e) {
     if (e.target === overlay || e.target.id === "layover-close") overlay.remove();
   });
-
+  document.getElementById("layover-not-convinced").addEventListener("click", function () {
+    const chipsWrap = document.getElementById("layover-pref-chips");
+    chipsWrap.style.display = "flex";
+    const prefs = [
+      { key: "Bar", label: "🍸 Un bar" },
+      { key: "À voir", label: "🏛️ Une visite" },
+      { key: "Musique", label: "🎵 De la musique" },
+      { key: "Marché", label: "🛍️ Un marché" },
+    ];
+    chipsWrap.innerHTML = prefs
+      .map(function (p) {
+        return '<button class="layover-pref-chip" data-cat="' + p.key + '" style="padding:7px 12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:11.5px; cursor:pointer;">' + p.label + "</button>";
+      })
+      .join("");
+    chipsWrap.querySelectorAll(".layover-pref-chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        __layoverPreferredCategory = chip.dataset.cat;
+        const activeBtn = Array.from(document.querySelectorAll("#layover-duration-btns button")).find(function (b) {
+          return b.style.background === "rgb(255, 255, 255)";
+        });
+        __layoverRenderResult(activeBtn ? (activeBtn.textContent === "30 min" ? 30 : activeBtn.textContent === "1h" ? 60 : activeBtn.textContent === "1h30" ? 90 : activeBtn.textContent === "2h" ? 120 : 180) : 60);
+      });
+    });
+  });
   const durations = [
     { label: "30 min", value: 30 },
     { label: "1h", value: 60 },
