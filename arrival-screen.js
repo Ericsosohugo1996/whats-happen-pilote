@@ -155,7 +155,9 @@ function __exploreOpen() {
   __exploreShowAll = false;
   __exploreSortMode = "distance";
   __exploreCurrentCategory = "Bar";
-
+  const cityKey = state.userPos ? nearestCityKey() : state.city;
+  const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+  const cityPhoto = CITY_PHOTOS[cityKey] || "";
   const overlay = document.createElement("div");
   overlay.id = "explore-overlay";
   overlay.style.cssText =
