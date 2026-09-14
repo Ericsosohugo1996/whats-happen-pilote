@@ -271,8 +271,8 @@ function __exploreOpen() {
           document.getElementById("explore-result").style.padding = "0 14px";
       const closeBtn2 = document.getElementById("explore-close");
       closeBtn2.textContent = "Fermer";
-      closeBtn2.onclick = null;
-      __exploreRender();
+          closeBtn2.onclick = null;
+      setTimeout(__exploreRender, 100); 
     }
   });
   document.getElementById("explore-more-btn").addEventListener("click", function () {
