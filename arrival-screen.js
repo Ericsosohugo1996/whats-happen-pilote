@@ -5,7 +5,7 @@ const MASCOT_NEUTRAL_SVG =
   '<path d="M100 20 C 62 20 34 50 34 88 C 34 116 60 142 82 162 L100 178 L118 162 C 140 142 166 116 166 88 C 166 50 138 20 100 20 Z" fill="#fff"></path>' +
   '<circle class="eye-l" cx="78" cy="92" r="9" fill="#14213D"></circle>' +
   '<circle class="eye-r" cx="122" cy="92" r="9" fill="#14213D"></circle>' +
-  '<path class="mouth" d="M76 118 Q100 122 124 118" fill="none" stroke="#14213D" stroke-width="6" stroke-linecap="round"></path>' +
+  '<path class="mouth" d="M74 116 Q100 138 126 116" fill="none" stroke="#14213D" stroke-width="6" stroke-linecap="round"></path>' +
   "</svg>";
 
 function __arrivalWink(svgEl) {
