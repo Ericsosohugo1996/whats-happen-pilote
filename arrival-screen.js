@@ -160,8 +160,8 @@ function __exploreOpen() {
   const cityPhoto = CITY_PHOTOS[cityKey] || "";
   const overlay = document.createElement("div");
   overlay.id = "explore-overlay";
-  overlay.style.cssText =
-    "position:fixed; inset:0; background:rgba(20,33,61,0.6); z-index:9999; display:flex; align-items:flex-end; justify-content:center;";
+   overlay.style.cssText =
+    "position:fixed; inset:0; background:#14213D; z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
 
   overlay.innerHTML =
     '<div style="background:#14213D; border-radius:28px 28px 0 0; padding:24px 20px 28px; width:100%; max-width:420px; box-sizing:border-box; max-height:85vh; overflow-y:auto;">' +
