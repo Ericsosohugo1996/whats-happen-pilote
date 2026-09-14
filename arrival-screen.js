@@ -163,8 +163,21 @@ function __exploreOpen() {
    overlay.style.cssText =
     "position:fixed; inset:0; background:#14213D; z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
 
-  overlay.innerHTML =
-    '<div style="background:#14213D; border-radius:28px 28px 0 0; padding:24px 20px 28px; width:100%; max-width:420px; box-sizing:border-box; max-height:85vh; overflow-y:auto;">' +
+   overlay.innerHTML =
+    '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
+    (cityPhoto
+      ? '<div style="position:relative; height:180px; border-radius:20px; overflow:hidden; margin-bottom:16px; background-image:url(\'' +
+        cityPhoto +
+        '\'); background-size:cover; background-position:center;">' +
+        '<div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,33,61,0) 40%, rgba(20,33,61,0.85) 100%);"></div>' +
+        '<div style="position:absolute; bottom:12px; left:14px; color:#fff;">' +
+        '<div style="font-size:10px; font-weight:700; letter-spacing:0.5px; opacity:0.85;">📍 POSITION DÉTECTÉE</div>' +
+        '<div style="font-size:18px; font-weight:700;">' +
+        cityName +
+        "</div>" +
+        "</div>" +
+        "</div>"
+      : "") +
     '<button id="explore-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
     '<div id="explore-cats" style="display:flex; gap:6px; overflow-x:auto; margin-bottom:12px; padding-bottom:2px;"></div>' +
     '<div style="display:flex; gap:8px; margin-bottom:14px;">' +
