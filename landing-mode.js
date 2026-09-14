@@ -49,20 +49,19 @@ function __landingModePicks(slot) {
     return !ev.isPlace && ev.date === today && ["Soirée", "Musique", "Festival", "Marché"].includes(ev.category);
   });
 
-  const picks = [];
-    if (__landingPreferredCategory) {
-    const preferred = __landingModeNearest(
-      events.filter(function (ev) { return ev.category === __landingPreferredCategory; }),
-      ref
-    );
-    return preferred ? [{ label: "SELON VOTRE ENVIE", emoji: __landingPreferredCategory === "Bar" ? "🍸" : "🎉", pick: preferred }] : [];
-  }
-    if (__landingPreferredCategory) {
-    const preferred = __landingModeNearest(
-      events.filter(function (ev) { return ev.category === __landingPreferredCategory; }),
-      ref
-    );
-    return preferred ? [{ label: "SELON VOTRE ENVIE", emoji: __landingPreferredCategory === "Bar" ? "🍸" : "🎉", pick: preferred }] : [];
+   const picks = [];
+  if (__landingPreferredCategory) {
+    const matching = events
+      .filter(function (ev) { return ev.category === __landingPreferredCategory; })
+      .map(function (ev) {
+        return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) };
+      })
+      .sort(function (a, b) { return a.dist - b.dist; })
+      .slice(0, 3);
+    const emoji = __landingPreferredCategory === "Bar" ? "🍸" : __landingPreferredCategory === "À voir" ? "🏛️" : __landingPreferredCategory === "Marché" ? "🛍️" : "🎉";
+    return matching.map(function (m, i) {
+      return { label: i === 0 ? "SELON VOTRE ENVIE" : "AUTRE OPTION", emoji: emoji, pick: m };
+    });
   }
   if (slot === "morning" || slot === "afternoon") {
     const liveNow = __landingModeNearest(liveEvents, ref);
