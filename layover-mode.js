@@ -127,6 +127,8 @@ function __layoverOpen() {
     '<div style="color:#fff; font-size:13px; font-weight:500; margin-bottom:10px; opacity:0.8;">⏱️ Combien de temps devant vous ?</div>' +
     '<div id="layover-duration-btns" style="display:flex; gap:6px; margin-bottom:20px;"></div>' +
     '<div id="layover-result" style="background:#fff; border-radius:18px; padding:16px; min-height:20px;"></div>' +
+        '<div style="text-align:center; margin-top:12px;"><button id="layover-not-convinced" style="background:none; border:none; color:rgba(255,255,255,0.7); font-size:12px; text-decoration:underline; cursor:pointer;">Pas convaincu ? Dites-nous ce que vous voulez</button></div>' +
+    '<div id="layover-pref-chips" style="display:none; gap:6px; margin-top:10px; flex-wrap:wrap; justify-content:center;"></div>' +
     '<button id="layover-close" style="width:100%; margin-top:16px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">Fermer</button>' +
     "</div>";
 
