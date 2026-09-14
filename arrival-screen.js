@@ -353,4 +353,3 @@ if (__choiceLocateBase) {
     }, 200);
   });
 }
-}
