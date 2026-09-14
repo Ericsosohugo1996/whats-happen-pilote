@@ -317,16 +317,40 @@ function __arrivalShow() {
   });
 }
 
+function __arrivalShowSearching() {
+  const overlay = document.createElement("div");
+  overlay.id = "arrival-searching-overlay";
+  overlay.style.cssText =
+    "position:fixed; inset:0; background:#14213D; z-index:9998; display:flex; flex-direction:column; align-items:center; justify-content:center;";
+  overlay.innerHTML =
+    '<div id="arrival-searching-wrap" style="display:flex; flex-direction:column; align-items:center; gap:12px; animation:arrivalBounce 1s ease-in-out infinite;">' +
+    '<svg width="56" height="56" viewBox="0 0 200 220"><path d="M100 20 C 62 20 34 50 34 88 C 34 116 60 142 82 162 L100 178 L118 162 C 140 142 166 116 166 88 C 166 50 138 20 100 20 Z" fill="#fff"></path><circle cx="78" cy="92" r="9" fill="#14213D"></circle><circle cx="122" cy="92" r="9" fill="#14213D"></circle><path d="M76 118 Q100 122 124 118" fill="none" stroke="#14213D" stroke-width="6" stroke-linecap="round"></path></svg>' +
+    '<span style="color:#fff; font-size:13px; font-weight:600;">📍 Recherche de votre position...</span>' +
+    "</div>";
+  document.body.appendChild(overlay);
+  if (!document.getElementById("arrival-searching-style")) {
+    const styleTag = document.createElement("style");
+    styleTag.id = "arrival-searching-style";
+    styleTag.textContent =
+      "@keyframes arrivalBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}";
+    document.head.appendChild(styleTag);
+  }
+}
+
 const __choiceLocateBase = document.getElementById("choice-locate");
 if (__choiceLocateBase) {
   __choiceLocateBase.addEventListener("click", function () {
+    __arrivalShowSearching();
     let __arrivalWaited = 0;
     const __arrivalWaitInterval = setInterval(function () {
       __arrivalWaited += 200;
       if (state.userPos || __arrivalWaited >= 8000) {
         clearInterval(__arrivalWaitInterval);
+        const searchingOv = document.getElementById("arrival-searching-overlay");
+        if (searchingOv) searchingOv.remove();
         __arrivalShow();
       }
     }, 200);
   });
+}
 }
