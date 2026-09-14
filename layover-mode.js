@@ -113,7 +113,7 @@ function __layoverRenderResult(totalMinutes) {
     });
   });
 }
-
+let __layoverPreferredCategory = null;
 function __layoverOpen() {
   const overlay = document.createElement("div");
   overlay.id = "layover-overlay";
