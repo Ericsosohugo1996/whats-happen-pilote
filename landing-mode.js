@@ -109,8 +109,11 @@ function __landingModeOpen() {
 
   overlay.innerHTML =
     '<div style="background:#14213D; border-radius:28px 28px 0 0; padding:24px 20px 28px; width:100%; max-width:420px; box-sizing:border-box;">' +
-    '<div style="color:#fff; font-size:19px; font-weight:700; line-height:1.35; margin-bottom:16px;">' +
+       '<div style="color:#fff; font-size:19px; font-weight:700; line-height:1.35; margin-bottom:6px;">' +
     __landingModeHeadline(slot, now.getHours(), now.getMinutes(), cityName) +
+    "</div>" +
+    '<div style="color:rgba(255,255,255,0.65); font-size:12px; line-height:1.4; margin-bottom:16px;">' +
+    contextLine +
     "</div>" +
     '<div style="color:rgba(255,255,255,0.65); font-size:12.5px; line-height:1.4; margin-top:-10px; margin-bottom:16px;">' +
     contextLine +
