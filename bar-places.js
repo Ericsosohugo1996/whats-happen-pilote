@@ -263,7 +263,6 @@ const CURATED_BARS = [
   { id: "bar-brest-19", isPlace: true, scene: "bar", city: "brest", category: "Bar", style: "biere", rating: 4.1, title: "La Famille", date: null, time: "", place: "Rue de Lyon, Brest", lat: 48.3850, lng: -4.4790, price: "€€", thumb: "", description: "Bar familial alliant ambiance décontractée et cuisine généreuse, burgers et bières pour un repas convivial entre amis." },
   { id: "bar-brest-20", isPlace: true, scene: "bar", city: "brest", category: "Bar", style: "dansant", rating: 4.0, title: "L'Aventure Brest", date: null, time: "", place: "Quai de la Douane, Brest", lat: 48.3826, lng: -4.4892, price: "€€", thumb: "", description: "Grande terrasse sur le port avec vue sur les bateaux, soirées animées et atmosphère détendue au bord de l'eau." },
 ];
-];
 
 const __allEventsBaseBars = allEvents;
 allEvents = function () {
