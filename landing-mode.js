@@ -129,7 +129,13 @@ function __landingModeOpen() {
 }
 
 function __ensureLandingModeButton() {
-  if (document.getElementById("landing-mode-btn")) return;
+  const choiceScreen = document.getElementById("choice-screen");
+  const existing = document.getElementById("landing-mode-btn");
+  if (choiceScreen && !choiceScreen.classList.contains("hidden")) {
+    if (existing) existing.remove();
+    return;
+  }
+  if (existing) return;
   const topbar = document.querySelector(".topbar");
   if (!topbar) return;
   const btn = document.createElement("button");
