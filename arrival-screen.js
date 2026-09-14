@@ -242,7 +242,29 @@ function __exploreOpen() {
     });
     sortsWrap.appendChild(btn);
   });
-
+  let __exploreOnMap = false;
+  document.getElementById("explore-map-toggle").addEventListener("click", function () {
+    __exploreOnMap = !__exploreOnMap;
+    const toggleBtn = document.getElementById("explore-map-toggle");
+    if (__exploreOnMap) {
+      toggleBtn.textContent = "☰ Liste";
+      toggleBtn.style.background = "#fff";
+      toggleBtn.style.color = "#14213D";
+      document.getElementById("explore-cats").style.display = "none";
+      document.getElementById("explore-sorts").style.display = "none";
+      document.getElementById("explore-result").style.background = "transparent";
+      __exploreShowMap();
+    } else {
+      toggleBtn.textContent = "🗺️ Carte";
+      toggleBtn.style.background = "transparent";
+      toggleBtn.style.color = "#fff";
+      document.getElementById("explore-cats").style.display = "flex";
+      document.getElementById("explore-sorts").style.display = "flex";
+      document.getElementById("explore-result").style.background = "#fff";
+      document.getElementById("explore-result").style.padding = "0 14px";
+      __exploreRender();
+    }
+  });
   document.getElementById("explore-more-btn").addEventListener("click", function () {
     __exploreShowAll = true;
     __exploreRender();
