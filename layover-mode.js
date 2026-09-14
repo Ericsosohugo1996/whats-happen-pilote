@@ -15,7 +15,7 @@ function __layoverWalkMinutes(km) {
 
 function __layoverBuildItinerary(totalMinutes) {
   const ref = referencePoint();
-  const cityKey = state.city;
+   const cityKey = state.userPos ? nearestCityKey() : state.city;
   const returnBuffer = Math.max(5, Math.round(totalMinutes * 0.15));
   let budget = totalMinutes - returnBuffer;
 
