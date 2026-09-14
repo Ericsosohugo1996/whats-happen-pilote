@@ -148,6 +148,28 @@ function __landingModeOpen() {
       overlay.remove();
       openDetail(btn.dataset.id);
     });
+     document.getElementById("landing-not-convinced").addEventListener("click", function () {
+    const chipsWrap = document.getElementById("landing-pref-chips");
+    chipsWrap.style.display = "flex";
+    const prefs = [
+      { key: "Bar", label: "🍸 Un bar" },
+      { key: "À voir", label: "🏛️ Une visite" },
+      { key: "Musique", label: "🎵 De la musique" },
+      { key: "Marché", label: "🛍️ Un marché" },
+    ];
+    chipsWrap.innerHTML = prefs
+      .map(function (p) {
+        return '<button class="landing-pref-chip" data-cat="' + p.key + '" style="padding:7px 12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:11.5px; cursor:pointer;">' + p.label + "</button>";
+      })
+      .join("");
+    chipsWrap.querySelectorAll(".landing-pref-chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        __landingPreferredCategory = chip.dataset.cat;
+        overlay.remove();
+        __landingModeOpen();
+      });
+    });
+  }); 
   });
 }
 
