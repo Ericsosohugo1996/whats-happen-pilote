@@ -18,10 +18,11 @@ function __layoverBuildItinerary(totalMinutes) {
    const cityKey = state.userPos ? nearestCityKey() : state.city;
   const returnBuffer = Math.max(5, Math.round(totalMinutes * 0.15));
   let budget = totalMinutes - returnBuffer;
-
   const candidates = allEvents()
     .filter(function (ev) {
-      return ev.city === cityKey && ev.lat && ev.lng;
+      const cityMatch = ev.city === cityKey && ev.lat && ev.lng;
+      if (__layoverPreferredCategory) return cityMatch && ev.category === __layoverPreferredCategory;
+      return cityMatch;
     })
     .map(function (ev) {
       return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) };
@@ -29,6 +30,7 @@ function __layoverBuildItinerary(totalMinutes) {
     .sort(function (a, b) {
       return a.dist - b.dist;
     });
+ 
 
   const steps = [];
   let cursor = ref;
