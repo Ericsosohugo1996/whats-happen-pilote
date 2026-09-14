@@ -193,3 +193,4 @@ renderDiscover = function () {
   __renderDiscoverBaseLayover();
   __ensureLayoverButton();
 };
+setTimeout(__ensureLayoverButton, 300);
