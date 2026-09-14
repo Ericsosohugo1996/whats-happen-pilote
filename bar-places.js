@@ -243,7 +243,6 @@ const CURATED_BARS = [
   { id: "bar-reims-19", isPlace: true, scene: "bar", city: "reims", category: "Bar", style: "biere", rating: 4.2, title: "Edgar Quinet", date: null, time: "", place: "23 Rue Edgar Quinet, Reims", lat: 49.2510, lng: 4.0270, price: "€", thumb: "", description: "Bar de quartier authentique et chaleureux, fréquenté par une clientèle d'habitués, atmosphère sans chichi." },
   { id: "bar-reims-20", isPlace: true, scene: "bar", city: "reims", category: "Bar", style: "vin", rating: 4.1, title: "L'Elysée", date: null, time: "", place: "38 Place Drouet d'Erlon, Reims", lat: 49.2583, lng: 4.0352, price: "€€", thumb: "", description: "Véritable institution de la place Drouet d'Erlon mêlant bar et brasserie, service continu pour un café, un apéro ou un dernier verre." },
 ];
-];
 
 const __allEventsBaseBars = allEvents;
 allEvents = function () {
