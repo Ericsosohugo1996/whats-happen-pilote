@@ -69,7 +69,8 @@ function __landingModePicks(slot) {
 function __landingModeOpen() {
   const now = new Date();
   const slot = __landingModeGetSlot(now.getHours());
-  const cityName = CITIES[state.city] ? CITIES[state.city].name : "";
+    const activeCityKey = state.userPos ? nearestCityKey() : state.city;
+  const cityName = CITIES[activeCityKey] ? CITIES[activeCityKey].name : "";
   const picks = __landingModePicks(slot);
     const info = CITY_INFO[state.city];
   const contextLine = info ? info.desc.split(". ")[0] + "." : "";
