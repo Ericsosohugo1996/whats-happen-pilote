@@ -1,3 +1,20 @@
+@media (min-width: 600px) {
+  body {
+    background: #e5e5e0;
+  }
+  #view-discover,
+  #view-detail,
+  #view-publish,
+  #view-confirm,
+  #view-favorites,
+  #view-photos,
+  #choice-screen {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    min-height: 100vh;
+  }
+}
 :root{
   --ink:#1A1A1A;
   --ink-soft:#6B7280;
