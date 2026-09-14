@@ -34,7 +34,7 @@ function __landingModeNearest(events, ref) {
 
 function __landingModePicks(slot) {
   const ref = referencePoint();
-  
+    const cityKey = state.userPos ? nearestCityKey() : state.city;
   const events = allEvents().filter(function (ev) {
     return ev.city === cityKey;
   });
