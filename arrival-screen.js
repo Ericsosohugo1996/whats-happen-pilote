@@ -266,7 +266,10 @@ function __exploreOpen() {
       document.getElementById("explore-cats").style.display = "flex";
       document.getElementById("explore-sorts").style.display = "flex";
       document.getElementById("explore-result").style.background = "#fff";
-      document.getElementById("explore-result").style.padding = "0 14px";
+          document.getElementById("explore-result").style.padding = "0 14px";
+      const closeBtn2 = document.getElementById("explore-close");
+      closeBtn2.textContent = "Fermer";
+      closeBtn2.onclick = null;
       __exploreRender();
     }
   });
