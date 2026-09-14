@@ -256,7 +256,8 @@ function __exploreOpen() {
       document.getElementById("explore-result").style.background = "transparent";
       const closeBtn = document.getElementById("explore-close");
       closeBtn.textContent = "☰ Retour à la liste";
-      closeBtn.onclick = function () {
+            closeBtn.onclick = function (e) {
+        e.stopPropagation();
         toggleBtn.click();
       };
       __exploreShowMap();
