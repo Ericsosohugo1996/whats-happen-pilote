@@ -260,7 +260,6 @@ function __exploreOpen() {
       };
       __exploreShowMap();
     } else {
-    } else {
       toggleBtn.textContent = "🗺️ Carte";
       toggleBtn.style.background = "transparent";
       toggleBtn.style.color = "#fff";
