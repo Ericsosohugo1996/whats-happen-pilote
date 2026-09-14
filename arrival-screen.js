@@ -246,14 +246,20 @@ function __exploreOpen() {
   document.getElementById("explore-map-toggle").addEventListener("click", function () {
     __exploreOnMap = !__exploreOnMap;
     const toggleBtn = document.getElementById("explore-map-toggle");
-    if (__exploreOnMap) {
+       if (__exploreOnMap) {
       toggleBtn.textContent = "☰ Liste";
       toggleBtn.style.background = "#fff";
       toggleBtn.style.color = "#14213D";
       document.getElementById("explore-cats").style.display = "none";
       document.getElementById("explore-sorts").style.display = "none";
       document.getElementById("explore-result").style.background = "transparent";
+      const closeBtn = document.getElementById("explore-close");
+      closeBtn.textContent = "☰ Retour à la liste";
+      closeBtn.onclick = function () {
+        toggleBtn.click();
+      };
       __exploreShowMap();
+    } else {
     } else {
       toggleBtn.textContent = "🗺️ Carte";
       toggleBtn.style.background = "transparent";
