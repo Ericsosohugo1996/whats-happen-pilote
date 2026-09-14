@@ -127,6 +127,8 @@ function __landingModeOpen() {
     '<div style="background:#fff; border-radius:18px; padding:0 16px;">' +
     cardsHTML +
     "</div>" +
+        '<div style="text-align:center; margin-top:12px;"><button id="landing-not-convinced" style="background:none; border:none; color:rgba(255,255,255,0.7); font-size:12px; text-decoration:underline; cursor:pointer;">Pas convaincu ? Dites-nous ce que vous voulez</button></div>' +
+    '<div id="landing-pref-chips" style="display:none; gap:6px; margin-top:10px; flex-wrap:wrap; justify-content:center;"></div>' +
     '<button id="landing-mode-close" style="width:100%; margin-top:16px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">Fermer</button>' +
     "</div>";
 
