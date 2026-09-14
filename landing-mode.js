@@ -115,9 +115,7 @@ function __landingModeOpen() {
     '<div style="color:rgba(255,255,255,0.65); font-size:12px; line-height:1.4; margin-bottom:16px;">' +
     contextLine +
     "</div>" +
-    '<div style="color:rgba(255,255,255,0.65); font-size:12.5px; line-height:1.4; margin-top:-10px; margin-bottom:16px;">' +
-    contextLine +
-    "</div>" +
+    
     '<div style="background:#fff; border-radius:18px; padding:0 16px;">' +
     cardsHTML +
     "</div>" +
