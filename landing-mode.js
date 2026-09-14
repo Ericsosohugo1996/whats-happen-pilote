@@ -50,6 +50,13 @@ function __landingModePicks(slot) {
   });
 
   const picks = [];
+    if (__landingPreferredCategory) {
+    const preferred = __landingModeNearest(
+      events.filter(function (ev) { return ev.category === __landingPreferredCategory; }),
+      ref
+    );
+    return preferred ? [{ label: "SELON VOTRE ENVIE", emoji: __landingPreferredCategory === "Bar" ? "🍸" : "🎉", pick: preferred }] : [];
+  }
   if (slot === "morning" || slot === "afternoon") {
     const liveNow = __landingModeNearest(liveEvents, ref);
     if (liveNow) picks.push({ label: slot === "afternoon" ? "AUJOURD'HUI" : "À VOIR EN PASSANT", emoji: liveNow.ev.category === "Marché" ? "🛍️" : "🎉", pick: liveNow });
