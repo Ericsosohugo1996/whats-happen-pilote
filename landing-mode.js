@@ -71,6 +71,8 @@ function __landingModeOpen() {
   const slot = __landingModeGetSlot(now.getHours());
   const cityName = CITIES[state.city] ? CITIES[state.city].name : "";
   const picks = __landingModePicks(slot);
+    const info = CITY_INFO[state.city];
+  const contextLine = info ? info.desc.split(". ")[0] + "." : "";
 
   const overlay = document.createElement("div");
   overlay.id = "landing-mode-overlay";
