@@ -176,7 +176,8 @@ function __exploreOpen() {
 
   document.body.appendChild(overlay);
   overlay.addEventListener("click", function (e) {
-    if (e.target === overlay || e.target.id === "explore-close") overlay.remove();
+      if (e.target === overlay) overlay.remove();
+    if (e.target.id === "explore-close" && !__exploreOnMap) overlay.remove();
   });
   document.getElementById("explore-back").addEventListener("click", function () {
     overlay.remove();
