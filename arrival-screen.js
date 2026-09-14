@@ -109,6 +109,7 @@ function __exploreRender() {
 }
 
 function __exploreOpen() {
+  __exploreMapMode = false;  
   __exploreShowAll = false;
   __exploreSortMode = "distance";
   __exploreCurrentCategory = "Bar";
