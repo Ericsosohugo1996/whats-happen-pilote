@@ -228,4 +228,98 @@ function __arrivalOpenMood() {
   }, 150);
 }
 
-//
+// ---- Bonhomme 3 : vue "ville" avec la ville détectée ----
+
+function __arrivalShowCityView() {
+  if (state.userPos) state.city = nearestCityKey();
+  renderDiscover();
+  __ensureArrivalBackButton();
+}
+
+function __ensureArrivalBackButton() {
+  if (document.getElementById("arrival-back-floating")) return;
+  const btn = document.createElement("button");
+  btn.id = "arrival-back-floating";
+  btn.textContent = "🛬";
+  btn.title = "Revenir à l'écran d'arrivée";
+  btn.style.cssText =
+    "position:fixed; bottom:20px; right:20px; width:52px; height:52px; border-radius:50%; border:none; background:#14213D; color:#fff; font-size:22px; box-shadow:0 4px 12px rgba(0,0,0,0.25); z-index:9000; cursor:pointer;";
+  btn.addEventListener("click", function () {
+    btn.remove();
+    __arrivalShow();
+  });
+  document.body.appendChild(btn);
+}
+
+// ---- écran principal des 3 bonhommes ----
+
+function __arrivalShow() {
+  const existing = document.getElementById("arrival-screen-overlay");
+  if (existing) existing.remove();
+  const floating = document.getElementById("arrival-back-floating");
+  if (floating) floating.remove();
+
+  const now = new Date();
+  const cityKey = state.userPos ? nearestCityKey() : state.city;
+  const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+  const time = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
+  const weatherText = __arrivalWeatherText();
+
+  const overlay = document.createElement("div");
+  overlay.id = "arrival-screen-overlay";
+  overlay.style.cssText =
+    "position:fixed; inset:0; background:#14213D; z-index:9998; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
+
+  overlay.innerHTML =
+    '<div style="text-align:center; color:#fff; margin-bottom:32px; font-size:17px; line-height:1.5;">' +
+    "Vous êtes à <b>" +
+    cityName +
+    "</b>, il est <b>" +
+    time +
+    "</b>" +
+    (weatherText ? "<br>et il fait " + weatherText.replace(/^\s*/, "") : "") +
+    "</div>" +
+    '<div style="display:flex; gap:24px; justify-content:center;">' +
+    '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
+    '<div class="arrival-svg-wrap">' +
+    MASCOT_NEUTRAL_SVG +
+    "</div>" +
+    '<div style="color:#fff; font-size:12.5px; margin-top:8px; font-weight:600;">Autour de moi</div>' +
+    "</div>" +
+    '<div class="arrival-opt" data-key="other" style="text-align:center; cursor:pointer;">' +
+    '<div class="arrival-svg-wrap">' +
+    MASCOT_NEUTRAL_SVG +
+    "</div>" +
+    '<div style="color:#fff; font-size:12.5px; margin-top:8px; font-weight:600;">Une autre idée</div>' +
+    "</div>" +
+    '<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
+    '<div class="arrival-svg-wrap">' +
+    MASCOT_NEUTRAL_SVG +
+    "</div>" +
+    '<div style="color:#fff; font-size:12.5px; margin-top:8px; font-weight:600;">Tout voir</div>' +
+    "</div>" +
+    "</div>";
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
+    opt.addEventListener("click", function () {
+      const svg = opt.querySelector("svg");
+      __arrivalWink(svg);
+      const key = opt.dataset.key;
+      setTimeout(function () {
+        overlay.remove();
+        if (key === "near") __exploreOpen();
+        else if (key === "other") __arrivalOpenMood();
+        else if (key === "all") __arrivalShowCityView();
+      }, 320);
+    });
+  });
+}
+
+const __choiceLocateBase = document.getElementById("choice-locate");
+if (__choiceLocateBase) {
+  __choiceLocateBase.addEventListener("click", function () {
+    setTimeout(__arrivalShow, 900);
+  });
+}
