@@ -153,3 +153,4 @@ renderDiscover = function () {
   __renderDiscoverBaseLanding();
   __ensureLandingModeButton();
 };
+setTimeout(__ensureLandingModeButton, 300);
