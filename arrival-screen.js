@@ -320,6 +320,13 @@ function __arrivalShow() {
 const __choiceLocateBase = document.getElementById("choice-locate");
 if (__choiceLocateBase) {
   __choiceLocateBase.addEventListener("click", function () {
-    setTimeout(__arrivalShow, 900);
+    let __arrivalWaited = 0;
+    const __arrivalWaitInterval = setInterval(function () {
+      __arrivalWaited += 200;
+      if (state.userPos || __arrivalWaited >= 8000) {
+        clearInterval(__arrivalWaitInterval);
+        __arrivalShow();
+      }
+    }, 200);
   });
 }
