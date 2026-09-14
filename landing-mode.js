@@ -31,7 +31,7 @@ function __landingModeNearest(events, ref) {
   });
   return best ? { ev: best, dist: bestDist } : null;
 }
-
+let __landingPreferredCategory = null;
 function __landingModePicks(slot) {
   const ref = referencePoint();
     const cityKey = state.userPos ? nearestCityKey() : state.city;
