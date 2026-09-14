@@ -49,7 +49,49 @@ function __exploreGetCandidates(category) {
       return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) };
     });
 }
+function __exploreShowMap() {
+  const ref = referencePoint();
+  const cityKey = state.userPos ? nearestCityKey() : state.city;
+  const allNearby = allEvents().filter(function (ev) {
+    return ev.city === cityKey && ev.lat && ev.lng;
+  });
 
+  const resultEl = document.getElementById("explore-result");
+  const moreBtn = document.getElementById("explore-more-btn");
+  moreBtn.style.display = "none";
+  resultEl.style.padding = "0";
+  resultEl.innerHTML = '<div id="explore-leaflet-map" style="width:100%; height:340px; border-radius:16px; overflow:hidden;"></div>';
+
+  setTimeout(function () {
+    const map = L.map("explore-leaflet-map").setView([ref.lat, ref.lng], 15);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap",
+      maxZoom: 19,
+    }).addTo(map);
+
+    L.circle([ref.lat, ref.lng], { radius: 1000, color: "#c1440e", fillOpacity: 0.08, weight: 1.5, dashArray: "4 4" }).addTo(map);
+    L.circleMarker([ref.lat, ref.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#14213D", fillOpacity: 1 }).addTo(map);
+
+    const catEmoji = { Bar: "🍸", "À voir": "🏛️", Musique: "🎵", Marché: "🛍️", Festival: "🎉", Brocante: "📦" };
+    allNearby.forEach(function (ev) {
+      const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
+      if (dist > 1.2) return;
+      const emoji = catEmoji[ev.category] || "📍";
+      const icon = L.divIcon({
+        html: '<div style="background:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:14px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">' + emoji + "</div>",
+        className: "",
+        iconSize: [28, 28],
+      });
+      L.marker([ev.lat, ev.lng], { icon: icon })
+        .addTo(map)
+        .on("click", function () {
+          const exploreOv = document.getElementById("explore-overlay");
+          if (exploreOv) exploreOv.remove();
+          openDetail(ev.id);
+        });
+    });
+  }, 50);
+}
 function __exploreRender() {
   let list = __exploreGetCandidates(__exploreCurrentCategory);
   if (__exploreSortMode === "rating") {
