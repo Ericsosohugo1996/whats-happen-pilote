@@ -225,7 +225,20 @@
 
   window.__openAddSouvenirModal = openAddSouvenirModal;
   window.__renderSouvenirsScreen = renderSouvenirsScreen;
-
+  function ensureDetailLink() {
+    const btn = document.getElementById("btn-add-souvenir-detail");
+    if (btn && !btn.dataset.bound) {
+      btn.dataset.bound = "1";
+      btn.addEventListener("click", function () {
+        const ev = window.allEvents ? allEvents().find(function (e) { return e.id === state.currentEventId; }) : null;
+        if (ev) {
+          openAddSouvenirModal({ placeName: ev.title, placeId: ev.id, lat: ev.lat, lng: ev.lng });
+        } else {
+          openAddSouvenirModal({});
+        }
+      });
+    }
+  }
    function ensureAccountLink() {
     const link = document.getElementById("btn-open-souvenirs");
     if (link && !link.dataset.bound) {
