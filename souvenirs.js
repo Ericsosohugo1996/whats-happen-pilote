@@ -60,7 +60,8 @@
     overlay.innerHTML = `
       <div style="background:#fff;border-radius:24px 24px 0 0;padding:20px;width:100%;max-width:420px;max-height:85vh;overflow-y:auto;">
         <div style="font-size:16px;font-weight:800;color:#14213D;margin-bottom:12px;">📸 Ajouter un souvenir${prefill.placeName ? " — " + prefill.placeName : ""}</div>
-        <input type="file" id="souvenir-photo-input" accept="image/*" capture="environment" style="margin-bottom:12px;width:100%;" />
+       <input type="file" id="souvenir-photo-input" accept="image/*" capture="environment" style="display:none;" />
+        <button type="button" id="souvenir-photo-trigger" style="width:100%;padding:14px;border-radius:14px;border:2px dashed #ddd;background:#fafafa;color:#888;font-size:13px;margin-bottom:12px;cursor:pointer;">📷 Ajouter une photo (optionnel)</button>
         <div id="souvenir-photo-preview" style="margin-bottom:12px;"></div>
         <textarea id="souvenir-text-input" placeholder="Écris ta pensée du moment..." style="width:100%;min-height:90px;border:1px solid #ddd;border-radius:12px;padding:10px;font-family:inherit;font-size:14px;margin-bottom:14px;"></textarea>
         <div style="display:flex;gap:10px;">
