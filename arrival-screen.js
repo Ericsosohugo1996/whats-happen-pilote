@@ -383,7 +383,7 @@ function __arrivalShow() {
     '<div class="arrival-svg-wrap">' +
     MASCOT_NEUTRAL_SVG +
     "</div>" +
-    '<div style="color:#fff; font-size:12.5px; margin-top:8px; font-weight:600;">Une autre idée</div>' +
+   '<div style="color:#fff; font-size:12.5px; margin-top:8px; font-weight:600;">✨ Surprends-moi</div>' +
     "</div>" +
     '<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
     '<div class="arrival-svg-wrap">' +
