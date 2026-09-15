@@ -56,8 +56,7 @@ function __exploreGetCandidates(category) {
       return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng), datePriority: ev.date === todayIso ? 0 : 1 };
     });
 }
-    .map(function (ev) {
-      return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) };
+    
     });
 }
 function __exploreShowMap() {
