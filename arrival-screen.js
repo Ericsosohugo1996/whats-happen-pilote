@@ -31,7 +31,8 @@ const EXPLORE_CATEGORIES = [
   { key: "Musique", label: "🎵 Musique" },
   { key: "Marché", label: "🛍️ Marché" },
   { key: "Festival", label: "🎉 Festival" },
-  { key: "Brocante", label: "📦 Brocante" },
+    { key: "Brocante", label: "📦 Brocante" },
+  { key: "Théâtre", label: "🎭 Théâtre" },
 ];
 
 let __exploreSortMode = "distance";
