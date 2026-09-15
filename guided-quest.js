@@ -48,14 +48,10 @@
       return { ev: ev, dist: dist, boost: boost };
     });
 
-    if (questAmbiance === "originale") {
+        if (questAmbiance === "originale") {
+      list = list.filter(function (item) { return item.dist <= 3; });
       list = list.sort(function () { return Math.random() - 0.5; });
     } else {
-      list = list.sort(function (a, b) {
-        if (a.boost !== b.boost) return b.boost - a.boost;
-        return a.dist - b.dist;
-      });
-    }
 
     // dédoublonner par catégorie pour varier le parcours
     const seenCats = {};
