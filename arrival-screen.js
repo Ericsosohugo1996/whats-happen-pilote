@@ -26,13 +26,13 @@ function __arrivalWeatherText() {
 // ---- Bonhomme 1 : explorer par catégorie, triable distance/note ----
 
 const EXPLORE_CATEGORIES = [
-  { key: "Bar", label: "🍸 Bar" },
-  { key: "À voir", label: "🏛️ Visite" },
+  { key: "", label: "Tout" },
   { key: "Musique", label: "🎵 Musique" },
   { key: "Marché", label: "🛍️ Marché" },
   { key: "Festival", label: "🎉 Festival" },
-    { key: "Brocante", label: "📦 Brocante" },
-  { key: "Théâtre", label: "🎭 Théâtre" },
+  { key: "Soirée", label: "🎊 Soirée" },
+  { key: "Sport", label: "⚽ Sport" },
+  { key: "Expo", label: "🖼️ Expo" },
 ];
 
 let __exploreSortMode = "distance";
