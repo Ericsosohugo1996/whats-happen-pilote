@@ -250,12 +250,16 @@
     }
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+   function initSouvenirs() {
     ensureFloatingButton();
-       ensureAccountLink();
+    ensureAccountLink();
     setInterval(ensureAccountLink, 800);
     ensureDetailLink();
     setInterval(ensureDetailLink, 800);
-  });
-  if (document.readyState !== "loading") ensureFloatingButton();
+  }
+  if (document.readyState !== "loading") {
+    initSouvenirs();
+  } else {
+    document.addEventListener("DOMContentLoaded", initSouvenirs);
+  } 
 })();
