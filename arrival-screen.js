@@ -42,10 +42,20 @@ let __exploreCurrentCategory = "Bar";
 function __exploreGetCandidates(category) {
   const ref = referencePoint();
   const cityKey = state.userPos ? nearestCityKey() : state.city;
+  const today = new Date();
+  const todayIso = today.toISOString().slice(0, 10);
   return allEvents()
     .filter(function (ev) {
-      return ev.city === cityKey && ev.category === category && ev.lat && ev.lng;
+      if (ev.city !== cityKey || !ev.lat || !ev.lng) return false;
+      if (ev.isPlace) return false;
+      if (category && ev.category !== category) return false;
+      if (!ev.date) return false;
+      return ev.date >= todayIso;
     })
+    .map(function (ev) {
+      return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng), datePriority: ev.date === todayIso ? 0 : 1 };
+    });
+}
     .map(function (ev) {
       return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) };
     });
