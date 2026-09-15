@@ -43,7 +43,7 @@ function updateStatsBanner(events) {
           d.iso +
           '" style="flex:0 0 50px; display:flex; flex-direction:column; align-items:center; gap:2px; padding:8px 3px; border-radius:11px; cursor:pointer; ' +
           (active
-            ? "border:1px solid #14213D; background:#14213D; color:#fff;"
+            ? "border:1px solid #14213D; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); color:#fff;"
             : "border:1px solid rgba(0,0,0,0.1); background:#fff; color:inherit;") +
           '"><span style="font-size:9.5px; text-transform:uppercase; opacity:0.6;">' +
           d.label +
