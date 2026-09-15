@@ -37,7 +37,7 @@ const EXPLORE_CATEGORIES = [
 
 let __exploreSortMode = "distance";
 let __exploreShowAll = false;
-let __exploreCurrentCategory = "Bar";
+let __exploreCurrentCategory = "";
 
 function __exploreGetCandidates(category) {
   const ref = referencePoint();
@@ -156,7 +156,7 @@ function __exploreOpen() {
   __exploreMapMode = false;  
   __exploreShowAll = false;
   __exploreSortMode = "distance";
-  __exploreCurrentCategory = "Bar";
+ __exploreCurrentCategory = "";
   const cityKey = state.userPos ? nearestCityKey() : state.city;
   const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
   const cityPhoto = CITY_PHOTOS[cityKey] || "";
