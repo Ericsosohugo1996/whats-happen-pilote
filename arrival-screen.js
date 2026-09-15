@@ -105,15 +105,10 @@ function __exploreShowMap() {
 }
 function __exploreRender() {
   let list = __exploreGetCandidates(__exploreCurrentCategory);
-  if (__exploreSortMode === "rating") {
     list = list.slice().sort(function (a, b) {
-      return (b.ev.rating || 0) - (a.ev.rating || 0);
-    });
-  } else {
-    list = list.slice().sort(function (a, b) {
-      return a.dist - b.dist;
-    });
-  }
+    if (a.datePriority !== b.datePriority) return a.datePriority - b.datePriority;
+    return a.dist - b.dist;
+  });
   const shown = __exploreShowAll ? list : list.slice(0, 3);
   const resultEl = document.getElementById("explore-result");
   const moreBtn = document.getElementById("explore-more-btn");
