@@ -312,6 +312,8 @@
     setInterval(ensureAccountLink, 800);
     ensureDetailLink();
     setInterval(ensureDetailLink, 800);
+    updateSouvenirsCount();
+    setInterval(updateSouvenirsCount, 3000);
   }
   if (document.readyState !== "loading") {
     initSouvenirs();
