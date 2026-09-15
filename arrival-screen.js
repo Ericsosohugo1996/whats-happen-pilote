@@ -404,9 +404,8 @@ function __arrivalShow() {
       const key = opt.dataset.key;
       setTimeout(function () {
         overlay.remove();
-        if (key === "near") __exploreOpen();
-        else if (key === "other") __arrivalOpenMood();
-        else if (key === "all") __arrivalShowCityView();
+                 if (key === "near") __exploreOpen();
+          else if (key === "other") { if (window.__questOpen) __questOpen(); else __arrivalOpenMood(); }
       }, 320);
     });
   });
