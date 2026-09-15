@@ -161,6 +161,21 @@
   window.__openAddSouvenirModal = openAddSouvenirModal;
   window.__renderSouvenirsScreen = renderSouvenirsScreen;
 
-  document.addEventListener("DOMContentLoaded", ensureFloatingButton);
+   function ensureAccountLink() {
+    const link = document.getElementById("btn-open-souvenirs");
+    if (link && !link.dataset.bound) {
+      link.dataset.bound = "1";
+      link.addEventListener("click", function () {
+        document.getElementById("btn-account-close")?.click();
+        renderSouvenirsScreen();
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    ensureFloatingButton();
+    ensureAccountLink();
+    setInterval(ensureAccountLink, 800);
+  });
   if (document.readyState !== "loading") ensureFloatingButton();
 })();
