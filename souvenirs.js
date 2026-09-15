@@ -127,6 +127,49 @@
     document.body.appendChild(btn);
   }
 
+    const GRADIENTS = [
+    "linear-gradient(135deg,#F4A261,#E85D3D)",
+    "linear-gradient(135deg,#457B9D,#1D3557)",
+    "linear-gradient(135deg,#2f8a90,#1c5f66)",
+    "linear-gradient(135deg,#9D4EDD,#5A189A)",
+    "linear-gradient(135deg,#E76F51,#BC6C25)",
+  ];
+
+  function gradientFor(id) {
+    let hash = 0;
+    for (let i = 0; i < id.length; i++) hash = (hash * 31 + id.charCodeAt(i)) >>> 0;
+    return GRADIENTS[hash % GRADIENTS.length];
+  }
+
+  function groupByMonth(list) {
+    const groups = {};
+    list.forEach(function (s) {
+      const d = new Date(s.createdAt);
+      const key = d.toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(s);
+    });
+    return groups;
+  }
+
+  function openSouvenirDetail(s) {
+    const existing = document.getElementById("souvenir-detail-modal");
+    if (existing) existing.remove();
+    const dateStr = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+    const overlay = document.createElement("div");
+    overlay.id = "souvenir-detail-modal";
+    overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;";
+    overlay.innerHTML = '<div style="background:#fff;border-radius:20px;padding:20px;max-width:380px;width:100%;max-height:80vh;overflow-y:auto;">' +
+      (s.photoUrl ? '<img src="' + s.photoUrl + '" style="width:100%;border-radius:14px;margin-bottom:12px;max-height:260px;object-fit:cover;" />' : '<div style="width:100%;height:140px;border-radius:14px;margin-bottom:12px;background:' + gradientFor(s.id) + ';"></div>') +
+      '<div style="font-size:11px;color:#aaa;margin-bottom:6px;">' + dateStr + (s.placeName ? " · " + s.placeName : "") + '</div>' +
+      (s.text ? '<div style="font-size:14px;color:#333;font-style:italic;line-height:1.5;">"' + s.text + '"</div>' : '') +
+      '<button id="souvenir-detail-close" style="margin-top:16px;width:100%;padding:11px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Fermer</button>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    document.getElementById("souvenir-detail-close").addEventListener("click", function () { overlay.remove(); });
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) overlay.remove(); });
+  }
+
   async function renderSouvenirsScreen() {
     const existing = document.getElementById("souvenirs-screen");
     if (existing) existing.remove();
@@ -147,15 +190,36 @@
       listEl.innerHTML = '<div style="text-align:center;color:#888;padding:40px 0;">Aucun souvenir pour l\'instant.<br>Appuie sur 📸 pour en ajouter un !</div>';
       return;
     }
-    listEl.innerHTML = list.map(function (s) {
-      const dateStr = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
-      return '<div style="margin-bottom:18px;border-radius:16px;overflow:hidden;border:1px solid #eee;">' +
-        (s.photoUrl ? '<img src="' + s.photoUrl + '" style="width:100%;height:200px;object-fit:cover;" />' : '') +
-        '<div style="padding:12px;">' +
-        '<div style="font-size:11px;color:#aaa;margin-bottom:4px;">' + dateStr + (s.placeName ? ' · ' + s.placeName : '') + '</div>' +
-        (s.text ? '<div style="font-size:13px;color:#333;font-style:italic;">"' + s.text + '"</div>' : '') +
-        '</div></div>';
-    }).join('');
+
+    const groups = groupByMonth(list);
+    let html = "";
+    Object.keys(groups).forEach(function (monthKey) {
+      const items = groups[monthKey];
+      html += '<div style="font-size:10px;color:#aaa;font-weight:700;margin:18px 0 8px;text-transform:uppercase;">' + monthKey + ' · ' + items.length + ' souvenir' + (items.length > 1 ? 's' : '') + '</div>';
+      html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+      items.forEach(function (s) {
+        const dateShort = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
+        if (s.photoUrl) {
+          html += '<div class="souvenir-card" data-id="' + s.id + '" style="border-radius:14px;overflow:hidden;position:relative;height:130px;cursor:pointer;background-image:url(\'' + s.photoUrl + '\');background-size:cover;background-position:center;">' +
+            '<div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.6), transparent 60%);"></div>' +
+            '<div style="position:absolute;bottom:6px;left:8px;right:8px;"><div style="color:#fff;font-size:10px;font-weight:700;">' + (s.placeName || "Souvenir libre") + '</div><div style="color:rgba(255,255,255,0.8);font-size:8.5px;">' + dateShort + '</div></div></div>';
+        } else {
+          html += '<div class="souvenir-card" data-id="' + s.id + '" style="border-radius:14px;overflow:hidden;position:relative;height:130px;cursor:pointer;background:' + gradientFor(s.id) + ';">' +
+            '<div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.35), transparent 60%);"></div>' +
+            '<div style="position:absolute;bottom:6px;left:8px;right:8px;"><div style="color:#fff;font-size:10px;font-weight:700;">' + (s.placeName || "Souvenir libre") + '</div><div style="color:rgba(255,255,255,0.8);font-size:8.5px;">' + dateShort + '</div></div></div>';
+        }
+      });
+      html += '</div>';
+    });
+    listEl.innerHTML = html;
+
+    listEl.querySelectorAll(".souvenir-card").forEach(function (card) {
+      card.addEventListener("click", function () {
+        const id = card.getAttribute("data-id");
+        const s = list.find(function (x) { return x.id === id; });
+        if (s) openSouvenirDetail(s);
+      });
+    });
   }
 
   window.__openAddSouvenirModal = openAddSouvenirModal;
