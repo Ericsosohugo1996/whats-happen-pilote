@@ -72,14 +72,22 @@
     `;
     document.body.appendChild(overlay);
 
-    const photoInput = document.getElementById("souvenir-photo-input");
+      const photoInput = document.getElementById("souvenir-photo-input");
+    const photoTrigger = document.getElementById("souvenir-photo-trigger");
     const preview = document.getElementById("souvenir-photo-preview");
     let selectedFile = null;
+    photoTrigger.addEventListener("click", function () {
+      photoInput.click();
+    });
     photoInput.addEventListener("change", function () {
       selectedFile = photoInput.files[0] || null;
       if (selectedFile) {
         const url = URL.createObjectURL(selectedFile);
         preview.innerHTML = '<img src="' + url + '" style="width:100%;border-radius:12px;max-height:220px;object-fit:cover;" />';
+        photoTrigger.textContent = "📷 Changer la photo";
+        photoTrigger.style.borderStyle = "solid";
+        photoTrigger.style.borderColor = "#14213D";
+        photoTrigger.style.color = "#14213D";
       }
     });
 
