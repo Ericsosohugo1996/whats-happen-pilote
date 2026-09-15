@@ -1,5 +1,10 @@
 // ---- unifie les 4 anciens boutons en un seul point d'entrée "Explorer" ----
-
+if (typeof __ensureLayoverButton === "function") {
+  __ensureLayoverButton = function () {};
+}
+if (typeof __ensureLandingModeButton === "function") {
+  __ensureLandingModeButton = function () {};
+}
 function __unifiedHideOldButtons() {
   ["landing-mode-btn", "layover-mode-btn", "surprise-btn", "itinerary-btn"].forEach(function (id) {
     const el = document.getElementById(id);
