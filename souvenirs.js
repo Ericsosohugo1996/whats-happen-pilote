@@ -252,8 +252,10 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     ensureFloatingButton();
-    ensureAccountLink();
+       ensureAccountLink();
     setInterval(ensureAccountLink, 800);
+    ensureDetailLink();
+    setInterval(ensureDetailLink, 800);
   });
   if (document.readyState !== "loading") ensureFloatingButton();
 })();
