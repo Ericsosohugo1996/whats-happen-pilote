@@ -355,62 +355,66 @@ function __arrivalShow() {
   if (floating) floating.remove();
 
   const now = new Date();
+  const hour = now.getHours();
   const cityKey = state.userPos ? nearestCityKey() : state.city;
   const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
-  const time = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
+  const time = hour + "h" + String(now.getMinutes()).padStart(2, "0");
   const weatherText = __arrivalWeatherText();
+
+  let greeting;
+  if (hour >= 5 && hour < 12) {
+    greeting = "Une nouvelle journée commence à " + cityName + ". Par quoi on démarre\u00a0?";
+  } else if (hour >= 12 && hour < 17) {
+    greeting = "Il est " + time + " à " + cityName + ". Qu'est-ce qu'on fait de cet après-midi\u00a0?";
+  } else if (hour >= 17 && hour < 20) {
+    greeting = "Le soleil décline sur " + cityName + ". Qu'est-ce qu'on fait de cette soirée\u00a0?";
+  } else {
+    greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente\u00a0?";
+  }
 
   const overlay = document.createElement("div");
   overlay.id = "arrival-screen-overlay";
   overlay.style.cssText =
-    "position:fixed; inset:0; background:#14213D; z-index:9998; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
+    "position:fixed; inset:0; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); z-index:9998; display:flex; flex-direction:column; align-items:center; padding:60px 24px 20px; overflow-y:auto;";
 
   overlay.innerHTML =
-    '<div style="text-align:center; color:#fff; margin-bottom:32px; font-size:17px; line-height:1.5;">' +
-    "Vous êtes à <b>" +
-    cityName +
-    "</b>, il est <b>" +
-    time +
-    "</b>" +
-    (weatherText ? "<br>et il fait " + weatherText.replace(/^\s*/, "") : "") +
+    '<div style="text-align:center; margin-bottom:38px; max-width:340px;">' +
+    '<div style="color:rgba(255,255,255,0.55); font-size:12px; margin-bottom:8px; font-weight:500;">' + cityName + " · " + time + "</div>" +
+    '<div style="color:#fff; font-family:Georgia, \'Times New Roman\', serif; font-size:24px; font-weight:400; line-height:1.4;">' + greeting + "</div>" +
     "</div>" +
-    '<div style="display:flex; gap:24px; justify-content:center;">' +
+    '<div style="display:flex; gap:14px; justify-content:center;">' +
     '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
-    '<div class="arrival-svg-wrap">' +
-    MASCOT_NEUTRAL_SVG +
-    "</div>" +
-    '<div style="color:#fff; font-size:12.5px; margin-top:8px; font-weight:600;">Autour de moi</div>' +
+    '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
+    '<div style="color:rgba(255,255,255,0.85); font-size:11.5px; margin-top:9px; font-weight:500;">Autour de moi</div>' +
     "</div>" +
     '<div class="arrival-opt" data-key="other" style="text-align:center; cursor:pointer;">' +
-    '<div class="arrival-svg-wrap">' +
-    MASCOT_NEUTRAL_SVG +
-    "</div>" +
-   '<div style="color:#fff; font-size:12.5px; margin-top:8px; font-weight:600;">✨ Surprends-moi</div>' +
+    '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #E85D3D, #c1440e); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(232,93,61,0.35);">✨</div>' +
+    '<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Surprends-moi</div>' +
     "</div>" +
     '<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
-    '<div class="arrival-svg-wrap">' +
-    MASCOT_NEUTRAL_SVG +
+    '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:26px;">🗺️</div>' +
+    '<div style="color:rgba(255,255,255,0.85); font-size:11.5px; margin-top:9px; font-weight:500;">Tout voir</div>' +
     "</div>" +
-    '<div style="color:#fff; font-size:12.5px; margin-top:8px; font-weight:600;">Tout voir</div>' +
     "</div>" +
-    "</div>";
+    (weatherText
+      ? '<div style="margin-top:34px; text-align:center;"><div style="display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.6); font-size:11px;">' + weatherText + "</div></div>"
+      : "");
 
   document.body.appendChild(overlay);
 
   overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
     opt.addEventListener("click", function () {
-      const svg = opt.querySelector("svg");
-      __arrivalWink(svg);
+      opt.style.transform = "scale(0.94)";
       const key = opt.dataset.key;
       setTimeout(function () {
         overlay.remove();
-                 if (key === "near") __exploreOpen();
-          else if (key === "other") { if (window.__questOpen) __questOpen(); else __arrivalOpenMood(); }
-      }, 320);
+        if (key === "near") __exploreOpen();
+        else if (key === "other") { if (window.__questOpen) __questOpen(); else __arrivalOpenMood(); }
+        else if (key === "all") __arrivalShowCityView();
+      }, 180);
     });
   });
 }
-
 function __arrivalShowSearching() {
   const overlay = document.createElement("div");
   overlay.id = "arrival-searching-overlay";
