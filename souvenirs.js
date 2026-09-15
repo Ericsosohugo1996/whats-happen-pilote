@@ -279,6 +279,22 @@
       });
     }
   }
+    async function updateSouvenirsCount() {
+    const btn = document.getElementById("btn-open-souvenirs");
+    if (!btn) return;
+    const user = auth.currentUser;
+    if (!user) {
+      btn.textContent = "📖 Mes souvenirs";
+      return;
+    }
+    try {
+      const col = souvenirsCollection();
+      const snap = await col.get();
+      btn.textContent = snap.size > 0 ? "📖 Mes souvenirs (" + snap.size + ")" : "📖 Mes souvenirs";
+    } catch (e) {
+      btn.textContent = "📖 Mes souvenirs";
+    }
+  }
    function ensureAccountLink() {
     const link = document.getElementById("btn-open-souvenirs");
     if (link && !link.dataset.bound) {
