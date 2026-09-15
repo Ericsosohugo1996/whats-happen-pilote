@@ -135,7 +135,8 @@
     "linear-gradient(135deg,#E76F51,#BC6C25)",
   ];
 
-  function gradientFor(id) {
+    function gradientFor(id) {
+    id = id || "x";
     let hash = 0;
     for (let i = 0; i < id.length; i++) hash = (hash * 31 + id.charCodeAt(i)) >>> 0;
     return GRADIENTS[hash % GRADIENTS.length];
