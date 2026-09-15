@@ -37,4 +37,5 @@ renderDiscover = function () {
   __renderDiscoverBaseUnified();
   __ensureUnifiedExploreButton();
 };
-setTimeout(__ensureUnifiedExploreButton, 600);
+setInterval(__unifiedHideOldButtons, 500);
+setTimeout(__ensureUnifiedExploreButton, 300);
