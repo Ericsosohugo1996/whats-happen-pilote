@@ -153,6 +153,19 @@
     return groups;
   }
 
+   async function deleteSouvenir(s) {
+    const user = auth.currentUser;
+    if (!user) return;
+    await db.collection("users").doc(user.uid).collection("souvenirs").doc(s.id).delete();
+    if (s.photoUrl) {
+      try {
+        await storage.refFromURL(s.photoUrl).delete();
+      } catch (e) {
+        console.error("Erreur suppression photo:", e);
+      }
+    }
+  }
+
   function openSouvenirDetail(s) {
     const existing = document.getElementById("souvenir-detail-modal");
     if (existing) existing.remove();
@@ -164,11 +177,29 @@
       (s.photoUrl ? '<img src="' + s.photoUrl + '" style="width:100%;border-radius:14px;margin-bottom:12px;max-height:260px;object-fit:cover;" />' : '<div style="width:100%;height:140px;border-radius:14px;margin-bottom:12px;background:' + gradientFor(s.id) + ';"></div>') +
       '<div style="font-size:11px;color:#aaa;margin-bottom:6px;">' + dateStr + (s.placeName ? " · " + s.placeName : "") + '</div>' +
       (s.text ? '<div style="font-size:14px;color:#333;font-style:italic;line-height:1.5;">"' + s.text + '"</div>' : '') +
-      '<button id="souvenir-detail-close" style="margin-top:16px;width:100%;padding:11px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Fermer</button>' +
-      '</div>';
+      '<div style="display:flex;gap:10px;margin-top:16px;">' +
+      '<button id="souvenir-detail-delete" style="flex:1;padding:11px;border-radius:999px;border:1px solid #e07a5f;background:#fff;color:#c0392b;font-size:13px;">🗑️ Supprimer</button>' +
+      '<button id="souvenir-detail-close" style="flex:1;padding:11px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Fermer</button>' +
+      '</div></div>';
     document.body.appendChild(overlay);
     document.getElementById("souvenir-detail-close").addEventListener("click", function () { overlay.remove(); });
     overlay.addEventListener("click", function (e) { if (e.target === overlay) overlay.remove(); });
+    document.getElementById("souvenir-detail-delete").addEventListener("click", async function () {
+      if (!confirm("Supprimer ce souvenir définitivement ?")) return;
+      const btn = document.getElementById("souvenir-detail-delete");
+      btn.textContent = "Suppression...";
+      btn.disabled = true;
+      try {
+        await deleteSouvenir(s);
+        overlay.remove();
+        renderSouvenirsScreen();
+      } catch (err) {
+        console.error("Erreur suppression:", err);
+        alert("Erreur lors de la suppression, réessaie.");
+        btn.textContent = "🗑️ Supprimer";
+        btn.disabled = false;
+      }
+    });
   }
 
   async function renderSouvenirsScreen() {
