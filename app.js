@@ -2726,9 +2726,9 @@ function renderBeenThereButton(){
   if (!btn) return;
   const done = state.visitedEvents.has(state.currentEventId);
   btn.disabled = done;
-  const key = done ? "✅ Confirmé — merci !" : "✅ J'y étais (+3 pts)";
-  const dict = TRANSLATIONS[currentLang.value] || {};
-  btn.textContent = currentLang.value === "en" && dict[key] ? dict[key] : key;
+  btn.classList.toggle("active", done);
+  const label = document.getElementById("been-there-label");
+  if (label) label.textContent = done ? "Confirmé !" : "J'y étais";
 }
 // Bonus de bienvenue pour un ami arrivé via un lien de parrainage (?ref=1 dans l'URL).
 function awardReferralWelcomeBonus(){
