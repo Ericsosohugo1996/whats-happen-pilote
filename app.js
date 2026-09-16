@@ -3141,7 +3141,7 @@ function openDetail(id){
   document.getElementById("detail-cat").textContent = iconFor(ev.category) + " " + ev.category;
   document.getElementById("detail-title").textContent = ev.title;
   document.getElementById("detail-date").textContent = formatDate(ev.date);
-  document.getElementById("detail-time").textContent = ev.time;
+ document.getElementById("detail-time").textContent = "à " + ev.time;
   document.getElementById("detail-place").textContent = ev.place;
   document.getElementById("detail-distance").textContent = "à " + distanceToEvent(ev).toFixed(1).replace(".", ",") + " km de la référence choisie";
   document.getElementById("detail-price").textContent = ev.price;
