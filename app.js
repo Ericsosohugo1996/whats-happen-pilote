@@ -2761,7 +2761,7 @@ async function inviteFriend(){
 // ---- state ----
 const state = {
   city: "aix",
-  mode: "carte",
+mode: "liste", 
   selectedCategories: new Set(),
   selectedArrondissement: null,
   selectedPeriod: null,
