@@ -138,9 +138,8 @@ function __exploreRender() {
         '<div style="font-size:13.5px; font-weight:700; color:#14213D; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + item.ev.title + '</div>' +
         (dateLabel ? '<div style="font-size:11px; color:#888; margin-top:2px;">' + dateLabel + '</div>' : '') +
         '</div>' +
-        '<div style="font-size:11px; color:#E85D3D; font-weight:600; flex-shrink:0;">🚶 ' + walkMin + ' min</div>'
-        "</span>" +
-        "</button>"
+              '<div style="font-size:11px; color:#E85D3D; font-weight:600; flex-shrink:0;">🚶 ' + walkMin + ' min</div>' +
+        "</button>" 
       );
     })
     .join("");
