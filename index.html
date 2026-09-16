@@ -317,11 +317,14 @@
     <button class="back-btn" id="btn-back-detail">← Retour</button>
     <div class="detail-hero" id="detail-hero"></div>
     <div class="detail-body">
-      <span class="pill" id="detail-cat"></span>
+     <span class="pill" id="detail-cat"></span>
       <h1 id="detail-title"></h1>
-      <div class="info-row"><span class="ico">🗓️</span><div><span id="detail-date"></span><br><span class="sub" id="detail-time"></span></div></div>
-      <div class="info-row"><span class="ico">📍</span><div><span id="detail-place"></span><br><span class="sub" id="detail-distance"></span></div></div>
-      <div class="info-row"><span class="ico">🎟️</span><div><span id="detail-price"></span></div></div>
+      <div class="info-card">
+        <div class="info-row-new"><span class="ico">🗓️</span><div><div class="info-main" id="detail-date"></div><div class="info-sub accent" id="detail-time"></div></div></div>
+        <div class="info-divider"></div>
+        <div class="info-row-new"><span class="ico">📍</span><div><div class="info-main" id="detail-place"></div><div class="info-sub" id="detail-distance"></div></div></div>
+      </div>
+      <span class="price-badge" id="detail-price"></span>
       <p class="detail-desc" id="detail-desc"></p>
             <div class="cta-row">
         <button class="btn-primary" id="btn-interested" data-i18n="Je suis intéressé(e)">Je suis intéressé(e)</button>
