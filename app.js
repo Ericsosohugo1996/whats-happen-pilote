@@ -3301,9 +3301,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.textContent = "📍 Localisation…";
     navigator.geolocation.getCurrentPosition(
            pos => {
-        state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
         btn.textContent = "📍 Ma position";
-        document.getElementById("filters-panel").classList.remove("hidden");
         renderDiscover();
       },
       err => {
