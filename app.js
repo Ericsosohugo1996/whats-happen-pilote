@@ -3129,7 +3129,12 @@ function openDetail(id){
     const heroEl = document.getElementById("detail-hero");
   heroEl.className = "detail-hero";
   if (ev.photo) {
-    heroEl.innerHTML = `<img src="${ev.photo}" alt="${ev.title}" onerror="this.parentElement.innerHTML = ${JSON.stringify(sceneSVG(ev.scene))};">`;
+    const heroImg = document.createElement("img");
+    heroImg.src = ev.photo;
+    heroImg.alt = ev.title;
+    heroImg.onerror = function () { heroEl.innerHTML = sceneSVG(ev.scene); };
+    heroEl.innerHTML = "";
+    heroEl.appendChild(heroImg);
   } else {
     heroEl.innerHTML = sceneSVG(ev.scene);
   }
