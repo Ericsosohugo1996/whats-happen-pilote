@@ -3036,8 +3036,8 @@ function renderMap(events){
 function eventCardHTML(ev){
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
   const metaTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
-  const thumbHTML = ev.photo
-    ? `<img src="${ev.photo}" alt="${ev.title}" onerror="this.parentElement.innerHTML = ${JSON.stringify(sceneSVG(ev.scene))};">`
+   const thumbHTML = ev.photo
+    ? `<img src="${ev.photo}" alt="${ev.title}" data-scene="${ev.scene}" onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
     : sceneSVG(ev.scene);
   return `
     <button class="event-card${ev.isPlace ? " event-card--place" : ""}" data-id="${ev.id}" data-cat="${ev.category}">
