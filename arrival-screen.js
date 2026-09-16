@@ -114,23 +114,31 @@ function __exploreRender() {
     moreBtn.style.display = "none";
     return;
   }
-  resultEl.innerHTML = shown
+   resultEl.innerHTML = shown
     .map(function (item, i) {
-      const metaTxt =
-        __exploreSortMode === "rating" && item.ev.rating
-          ? "⭐ " + item.ev.rating
-          : item.dist.toFixed(1).replace(".", ",") + " km";
+      const walkMin = Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5);
+      const today = new Date().toISOString().slice(0, 10);
+      let dateLabel = "";
+      if (item.ev.date) {
+        const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+        if (item.ev.date === today) dateLabel = "Aujourd'hui";
+        else if (item.ev.date === tomorrow) dateLabel = "Demain";
+        else dateLabel = formatDate(item.ev.date);
+        if (item.ev.time) dateLabel += " · " + item.ev.time;
+      }
+      const icon = typeof iconFor === "function" ? iconFor(item.ev.category) : "📌";
       return (
         '<button class="explore-pick" data-id="' +
         item.ev.id +
-        '" style="display:flex; justify-content:space-between; align-items:center; width:100%; text-align:left; background:none; border:none; padding:10px 0; cursor:pointer;' +
+        '" style="display:flex; align-items:center; gap:12px; width:100%; text-align:left; background:none; border:none; padding:12px 0; cursor:pointer;' +
         (i > 0 ? "border-top:1px solid #eee;" : "") +
         '">' +
-        '<span style="font-size:13px; font-weight:600; color:#14213D;">' +
-        item.ev.title +
-        "</span>" +
-        '<span style="font-size:11px; color:#c0392b; font-weight:600;">' +
-        metaTxt +
+        '<div style="font-size:20px; flex-shrink:0;">' + icon + '</div>' +
+        '<div style="flex:1; min-width:0;">' +
+        '<div style="font-size:13.5px; font-weight:700; color:#14213D; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + item.ev.title + '</div>' +
+        (dateLabel ? '<div style="font-size:11px; color:#888; margin-top:2px;">' + dateLabel + '</div>' : '') +
+        '</div>' +
+        '<div style="font-size:11px; color:#E85D3D; font-weight:600; flex-shrink:0;">🚶 ' + walkMin + ' min</div>'
         "</span>" +
         "</button>"
       );
