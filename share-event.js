@@ -47,15 +47,15 @@ async function shareCurrentEvent() {
 
 function __ensureShareButton() {
   if (document.getElementById("btn-share")) return;
-  const ctaRow = document.querySelector(".cta-row");
-  if (!ctaRow) return;
+  const tiles = document.querySelector(".action-tiles");
+  if (!tiles) return;
   const btn = document.createElement("button");
   btn.type = "button";
-  btn.className = "btn-outline";
+  btn.className = "action-tile";
   btn.id = "btn-share";
-  btn.textContent = "📤";
+  btn.innerHTML = '<span class="tile-icon">📤</span><span class="tile-label">Partager</span>';
   btn.onclick = shareCurrentEvent;
-  ctaRow.appendChild(btn);
+  tiles.appendChild(btn);
 }
 
 document.addEventListener("DOMContentLoaded", __ensureShareButton);
