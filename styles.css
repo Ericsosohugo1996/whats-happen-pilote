@@ -263,6 +263,14 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .pill{ display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--accent); padding:6px 13px; border-radius:999px; margin-bottom:12px; }
 .detail-body h1{ font-family:var(--font-display); font-weight:600; font-size:24px; margin:0 0 16px; line-height:1.22; letter-spacing:-.01em; }
 .info-row{ display:flex; gap:12px; font-size:13.5px; margin-bottom:13px; }
+.info-card{ background:#f7f5f2; border-radius:14px; padding:14px 16px; margin-bottom:16px; }
+.info-row-new{ display:flex; gap:12px; align-items:baseline; }
+.info-row-new .ico{ width:20px; text-align:center; font-size:15px; }
+.info-main{ font-size:14.5px; font-weight:700; color:var(--primary); }
+.info-sub{ font-size:12px; color:#888; margin-top:2px; }
+.info-sub.accent{ color:var(--accent); font-weight:600; }
+.info-divider{ height:1px; background:#e5e0d8; margin:11px 0; }
+.price-badge{ display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:#eafaf0; color:#2a9d5c; font-size:12px; font-weight:700; margin-bottom:14px; }
 .info-row .ico{ width:22px; text-align:center; color:var(--primary); }
 /* ---- fiche détail, style sobre : marine + accent corail réservé aux états confirmés ---- */
 .cta-row{ display:flex; gap:10px; margin:20px 0 12px; }
