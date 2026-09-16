@@ -2888,9 +2888,16 @@ function baseVisibleEvents(){
     .filter(ev => !state.selectedArrondissement || ev.arrondissement === state.selectedArrondissement);
 }
 function visibleEvents(){
+  const today = new Date().toISOString().slice(0, 10);
   return baseVisibleEvents()
-    .filter(ev => matchesPeriod(ev, state.selectedPeriod))
-    .sort((a, b) => a.distance - b.distance);
+    .filter((ev) => matchesPeriod(ev, state.selectedPeriod))
+    .filter((ev) => ev.isPlace || !ev.date || ev.date >= today)
+    .sort((a, b) => {
+      const aDate = !a.isPlace && a.date ? a.date : "9999-99-99";
+      const bDate = !b.isPlace && b.date ? b.date : "9999-99-99";
+      if (aDate !== bDate) return aDate < bDate ? -1 : 1;
+      return a.distance - b.distance;
+    });
 }
 // Affiche le rayon en mètres si < 1 km, sinon en km.
 function formatRadius(km){
