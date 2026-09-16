@@ -531,7 +531,7 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .stat .label{ font-size:11px; color:var(--ink-soft); font-weight:600; text-transform:uppercase; letter-spacing:.03em; margin-top:2px; }
 /* ---- écran de choix : localiser ou visiter une ville ---- */
 .choice-screen{
-  position:fixed; inset:0; z-index:100; background:var(--paper);
+  position:fixed; inset:0; z-index:100; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%);
   display:flex; flex-direction:column; padding:32px 20px 20px;
   overflow-y:auto;
 }
