@@ -3149,7 +3149,7 @@ document.getElementById("detail-distance").textContent = "🚶 " + Math.max(2, M
 
    const favBtn = document.getElementById("btn-favorite");
   favBtn.classList.toggle("active", state.favorites.has(id));
-  favBtn.textContent = state.favorites.has(id) ? "❤️" : "🤍";
+ document.getElementById("favorite-icon").textContent = state.favorites.has(id) ? "❤️" : "🤍";
   renderBeenThereButton();
 
   showView("detail");
