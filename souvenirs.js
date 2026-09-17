@@ -14,7 +14,7 @@
     return Math.random().toString(36).slice(2, 10);
   }
 
-   function nearestCityForCoords(lat, lng) {
+    function nearestCityForCoords(lat, lng) {
     let closest = null;
     let closestDist = Infinity;
     Object.keys(CITIES).forEach(function (key) {
@@ -25,6 +25,7 @@
     return closest;
   }
 
+  async function saveSouvenir({ file, text, placeName, placeId, lat, lng }) {
     const user = auth.currentUser;
     if (!user) {
       alert("Connecte-toi pour enregistrer un souvenir.");
