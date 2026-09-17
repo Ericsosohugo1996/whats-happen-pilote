@@ -14,7 +14,17 @@
     return Math.random().toString(36).slice(2, 10);
   }
 
-  async function saveSouvenir({ file, text, placeName, placeId, lat, lng }) {
+   function nearestCityForCoords(lat, lng) {
+    let closest = null;
+    let closestDist = Infinity;
+    Object.keys(CITIES).forEach(function (key) {
+      const c = CITIES[key];
+      const d = haversineKm(lat, lng, c.lat, c.lng);
+      if (d < closestDist) { closestDist = d; closest = key; }
+    });
+    return closest;
+  }
+
     const user = auth.currentUser;
     if (!user) {
       alert("Connecte-toi pour enregistrer un souvenir.");
