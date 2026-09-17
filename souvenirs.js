@@ -38,13 +38,14 @@
       await ref.put(file);
       photoUrl = await ref.getDownloadURL();
     }
-    const data = {
+      const data = {
       id: id,
       text: text || "",
       placeName: placeName || "",
       placeId: placeId || "",
       lat: lat || null,
       lng: lng || null,
+      city: (lat && lng) ? nearestCityForCoords(lat, lng) : null,
       photoUrl: photoUrl,
       createdAt: Date.now(),
     };
