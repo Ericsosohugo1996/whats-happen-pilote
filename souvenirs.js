@@ -22,12 +22,9 @@
       const d = haversineKm(lat, lng, c.lat, c.lng);
       if (d < closestDist) { closestDist = d; closest = key; }
     });
-      return closest;
+          return closest;
   }
 
-    async function saveSouvenir({ file, text, placeName, placeId, lat, lng }) {
-
-    const user = auth.currentUser;
   async function saveSouvenir({ file, text, placeName, placeId, lat, lng }) {
     const user = auth.currentUser;
     if (!user) {
