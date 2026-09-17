@@ -118,6 +118,8 @@
       '<div style="font-size:11px; color:#888; margin-bottom:16px;">' + catLabel + " · " + (ambianceDef ? ambianceDef.label : "") + "</div>" +
       stepsHtml +
       "</div>" +
+          '<button id="quest-ai-btn" style="width:100%; margin-top:14px; padding:13px; border-radius:999px; border:none; background:linear-gradient(135deg, #E85D3D, #c1440e); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">✨ Enrichir Whazup</button>' +
+      '<div id="quest-ai-result" style="display:none; margin-top:14px; background:#fff; border-radius:16px; padding:16px;"></div>' +
       '<button id="quest-redo" style="width:100%; margin-top:14px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">🔄 Refaire un parcours</button>' +
       "</div>";
 
@@ -125,6 +127,50 @@
       overlay.remove();
       __arrivalShow();
     });
+
+    document.getElementById("quest-ai-btn").addEventListener("click", function () {
+      const btn = document.getElementById("quest-ai-btn");
+      const resultBox = document.getElementById("quest-ai-result");
+      btn.textContent = "✨ Rédaction en cours...";
+      btn.disabled = true;
+      const cityKey = state.userPos ? nearestCityKey() : state.city;
+      const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+      const now = new Date();
+      const timeLabel = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
+      const items = picked.map(function (item) {
+        return {
+          title: item.ev.title,
+          category: item.ev.category,
+          date: item.ev.isPlace ? null : item.ev.date,
+          time: item.ev.time || null,
+          place: item.ev.place,
+          distanceMin: walkingTimeLabel(item.dist).replace(" min à pied", ""),
+        };
+      });
+      fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: items,
+          question: catLabel,
+          context: { cityName: cityName, time: timeLabel },
+        }),
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          resultBox.style.display = "block";
+          resultBox.innerHTML =
+            '<div style="font-size:10.5px; color:#E85D3D; font-weight:700; margin-bottom:8px;">✨ WHAZUP ENRICHI</div>' +
+            '<div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;">' + (data.text || "Une erreur est survenue, réessaie.") + "</div>";
+          btn.remove();
+        })
+        .catch(function () {
+          resultBox.style.display = "block";
+          resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
+          btn.textContent = "✨ Enrichir Whazup";
+          btn.disabled = false;
+        });
+    });  
     document.getElementById("quest-redo").addEventListener("click", questShowStep1);
     overlay.querySelectorAll(".quest-step-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
