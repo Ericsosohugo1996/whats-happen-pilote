@@ -133,7 +133,7 @@ function __exploreRender() {
         '" style="display:flex; align-items:center; gap:12px; width:100%; text-align:left; background:none; border:none; padding:12px 0; cursor:pointer;' +
         (i > 0 ? "border-top:1px solid #eee;" : "") +
         '">' +
-        '<div style="font-size:20px; flex-shrink:0;">' + icon + '</div>' +
+               '<div style="width:38px; height:38px; border-radius:12px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:18px; background:' + categoryColor(item.ev.category) + ';">' + icon + '</div>' +
         '<div style="flex:1; min-width:0;">' +
         '<div style="font-size:13.5px; font-weight:700; color:#14213D; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + item.ev.title + '</div>' +
         (dateLabel ? '<div style="font-size:11px; color:#888; margin-top:2px;">' + dateLabel + '</div>' : '') +
