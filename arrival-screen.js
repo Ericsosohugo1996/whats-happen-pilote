@@ -54,7 +54,6 @@ function categoryColor(cat) {
 }
 
 function __exploreGetCandidates(category) {
-function __exploreGetCandidates(category) {
   const ref = referencePoint();
   const cityKey = state.userPos ? nearestCityKey() : state.city;
   const today = new Date();
