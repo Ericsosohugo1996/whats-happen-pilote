@@ -41,7 +41,7 @@
 html,body{margin:0;padding:0;}
 body{
   font-family:var(--font-body);
-  background:var(--paper);
+  background:linear-gradient(180deg, #fdfaf5 0%, #f7f1e8 100%); 
   color:var(--ink);
   padding-bottom:108px;
   -webkit-font-smoothing:antialiased;
