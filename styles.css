@@ -100,7 +100,14 @@ button:active{ transform:scale(.97); }
 }
 .locate-info{ display:flex; flex-direction:column; margin-bottom:14px; position:relative; z-index:2; }
 .locate-label{ font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.72); font-weight:700; }
-.locate-value{ font-family:var(--font-display); font-size:21px; font-weight:600; margin-top:2px; color:#fff; }
+.locate-bar{
+  position:relative; overflow:hidden;
+  background:var(--primary);
+  border-radius:var(--radius);
+  box-shadow:0 12px 26px -14px rgba(20,33,61,.4);
+  padding:18px 18px 16px; margin-bottom:16px;
+  color:#fff;
+}
 .locate-actions{ display:flex; flex-wrap:wrap; gap:8px; position:relative; }
 .locate-hint{ margin:14px 0 0; font-size:11.5px; color:rgba(255,255,255,.72); line-height:1.55; padding-top:12px; border-top:1px solid rgba(255,255,255,.22); position:relative; }
 
