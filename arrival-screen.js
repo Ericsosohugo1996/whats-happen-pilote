@@ -541,15 +541,7 @@ function __arrivalShow() {
 
    (function () {
     const cityKey2 = state.userPos ? nearestCityKey() : state.city;
-    const cacheKey = "whazupGreetingCache_" + cityKey2;
-    try {
-      const cached = JSON.parse(localStorage.getItem(cacheKey) || "null");
-      if (cached && Date.now() - cached.ts < 4 * 60 * 60 * 1000) {
-        const greetElCached = overlay.querySelector('div[style*="Georgia"]');
-        if (greetElCached) greetElCached.textContent = cached.text;
-        return;
-      }
-    } catch (e) {}
+  
     const ref2 = referencePoint();
     const today2 = new Date().toISOString().slice(0, 10);
     const nearby2 = allEvents()
