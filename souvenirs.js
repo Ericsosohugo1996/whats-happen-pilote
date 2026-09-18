@@ -454,7 +454,6 @@
   }
 
   function initSouvenirs() {
-  function initSouvenirs() {
     ensureFloatingButton();
     ensureAccountLink();
     setInterval(ensureAccountLink, 800);
