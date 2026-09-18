@@ -322,7 +322,50 @@
 
     renderCityMemories();
   }
+  function renderTripMap(cityKey, items) {
+    const withCoords = items.filter(function (s) { return s.lat && s.lng; }).sort(function (a, b) { return a.createdAt - b.createdAt; });
+    if (!withCoords.length) return;
 
+    const overlay = document.createElement("div");
+    overlay.id = "souvenirs-map-overlay";
+    overlay.style.cssText = "position:fixed;inset:0;background:#fff;z-index:10001;display:flex;flex-direction:column;";
+    const cityName = (cityKey !== "autre" && CITIES[cityKey]) ? CITIES[cityKey].name : "Autre";
+    overlay.innerHTML =
+      '<div style="display:flex;align-items:center;gap:10px;padding:16px;border-bottom:1px solid #eee;">' +
+      '<button id="trip-map-close" style="border:none;background:#f0f0f0;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button>' +
+      '<div style="font-size:15px;font-weight:800;color:#14213D;">🗺️ Mon voyage à ' + cityName + '</div>' +
+      '</div>' +
+      '<div id="trip-map-canvas" style="flex:1;"></div>' +
+      '<div id="trip-map-list" style="max-height:160px;overflow-y:auto;padding:12px 16px;border-top:1px solid #eee;"></div>';
+    document.body.appendChild(overlay);
+
+    document.getElementById("trip-map-close").addEventListener("click", function () {
+      overlay.remove();
+    });
+
+    const map = L.map("trip-map-canvas").setView([withCoords[0].lat, withCoords[0].lng], 13);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "© OpenStreetMap" }).addTo(map);
+
+    const latlngs = [];
+    withCoords.forEach(function (s, i) {
+      const marker = L.circleMarker([s.lat, s.lng], { radius: 10, fillColor: "#E85D3D", color: "#fff", weight: 2, fillOpacity: 1 }).addTo(map);
+      marker.bindPopup("<b>" + (s.placeName || "Souvenir") + "</b>");
+      latlngs.push([s.lat, s.lng]);
+    });
+    if (latlngs.length > 1) {
+      L.polyline(latlngs, { color: "#E85D3D", weight: 2, dashArray: "6,6" }).addTo(map);
+      map.fitBounds(latlngs, { padding: [40, 40] });
+    }
+
+    const listEl = document.getElementById("trip-map-list");
+    listEl.innerHTML = withCoords.map(function (s) {
+      const dateStr = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
+      return '<div style="display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #f5f5f5;">' +
+        '<div style="width:8px;height:8px;border-radius:999px;background:#E85D3D;flex-shrink:0;"></div>' +
+        '<div><div style="font-size:12px;font-weight:700;color:#14213D;">' + (s.placeName || "Souvenir libre") + '</div><div style="font-size:10px;color:#888;">' + dateStr + '</div></div>' +
+        '</div>';
+    }).join("");
+  }
   async function updateSouvenirsCount() {
     const btn = document.getElementById("btn-open-souvenirs");
     if (!btn) return;
