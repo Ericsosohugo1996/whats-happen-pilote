@@ -460,8 +460,9 @@
     setInterval(ensureAccountLink, 800);
     ensureDetailLink();
     setInterval(ensureDetailLink, 800);
-    updateSouvenirsCount();
+       updateSouvenirsCount();
     setInterval(updateSouvenirsCount, 3000);
+    checkSharedSouvenirLink();
   }
   if (document.readyState !== "loading") {
     initSouvenirs();
