@@ -515,6 +515,10 @@ function __arrivalShow() {
     '<div style="color:rgba(255,255,255,0.55); font-size:12px; margin-bottom:8px; font-weight:500;">' + cityName + " · " + time + "</div>" +
     '<div style="color:#fff; font-family:Georgia, \'Times New Roman\', serif; font-size:24px; font-weight:400; line-height:1.4;">' + greeting + "</div>" +
     "</div>" +
+      '<div style="display:flex; gap:8px; margin-bottom:18px;">' +
+    '<input id="arrival-free-input" type="text" placeholder="Ou pose ta question directement..." style="flex:1; border:none; border-radius:999px; padding:13px 16px; font-size:13px; font-family:inherit; background:rgba(255,255,255,0.1); color:#fff;">' +
+    '<button id="arrival-free-btn" style="padding:13px 18px; border-radius:999px; border:none; background:linear-gradient(135deg, #E85D3D, #c1440e); color:#fff; font-size:15px; cursor:pointer;">➤</button>' +
+    '</div>' +
     '<div style="display:flex; gap:14px; justify-content:center;">' +
     '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
     '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
