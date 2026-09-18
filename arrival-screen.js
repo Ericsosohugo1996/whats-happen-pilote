@@ -584,7 +584,37 @@ function __arrivalShow() {
       .catch(function () {});
   })();
 
-  overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
+   const freeBtn = document.getElementById("arrival-free-btn");
+  const freeInput = document.getElementById("arrival-free-input");
+  function sendFreeQuestion() {
+    const q = freeInput.value.trim();
+    if (!q) return;
+    overlay.remove();
+    if (window.__questOpen) {
+      __questOpen();
+      setTimeout(function () {
+        const surpriseBtn = Array.from(document.querySelectorAll("#quest-cats-list button")).find(function (b) { return b.textContent.includes("Surprends"); });
+        if (surpriseBtn) surpriseBtn.click();
+        setTimeout(function () {
+          const festiveBtn = Array.from(document.querySelectorAll("#quest-ambiance-list button")).find(function (b) { return b.textContent.includes("Festive"); });
+          if (festiveBtn) festiveBtn.click();
+          const seeResultBtn = document.getElementById("quest-see-result");
+          if (seeResultBtn) seeResultBtn.click();
+          setTimeout(function () {
+            const aiBtn = document.getElementById("quest-ai-btn");
+            if (aiBtn) {
+              window.__pendingFreeQuestion = q;
+              aiBtn.click();
+            }
+          }, 400);
+        }, 200);
+      }, 200);
+    }
+  }
+  freeBtn.addEventListener("click", sendFreeQuestion);
+  freeInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") sendFreeQuestion();
+  });
     opt.addEventListener("click", function () {
       opt.style.transform = "scale(0.94)";
       const key = opt.dataset.key;
