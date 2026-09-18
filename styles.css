@@ -227,11 +227,13 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .event-list{ display:flex; flex-direction:column; gap:11px; }
 .event-card{
   display:flex; gap:14px; align-items:center;
-  background:var(--card); border-radius:var(--radius-sm); padding:11px;
+  background:var(--card); border-radius:16px; padding:13px;
   text-align:left; width:100%; border:none;
-  box-shadow:var(--shadow-sm);
+  box-shadow:0 2px 10px rgba(20,33,61,0.06);
   border-left:3px solid transparent;
+  transition:box-shadow .2s ease, transform .15s ease;
 }
+.event-card:hover{ box-shadow:0 6px 18px rgba(20,33,61,0.12); transform:translateY(-1px); }
 .event-card:active{ box-shadow:var(--shadow-sm); background:#fdfbf8; }
 .event-card[data-cat="Musique"]{ border-left-color:#FF6F61; }
 .event-card[data-cat="Marché"]{ border-left-color:#FDCB6E; }
