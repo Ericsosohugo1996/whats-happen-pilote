@@ -297,8 +297,12 @@
         html += '</div>';
       });
 
-      const totalVisits = items.length;
-      html += '<div style="display:flex;gap:8px;margin-top:18px;"><div style="flex:1;background:#f7f5f2;border-radius:12px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#14213D;">' + totalVisits + '</div><div style="font-size:9px;color:#888;">SOUVENIRS</div></div></div>';
+          const totalVisits = items.length;
+      const hasCoords = items.some(function (s) { return s.lat && s.lng; });
+      html += '<div style="display:flex;gap:8px;margin-top:18px;">' +
+        '<div style="flex:1;background:#f7f5f2;border-radius:12px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#14213D;">' + totalVisits + '</div><div style="font-size:9px;color:#888;">SOUVENIRS</div></div>' +
+        (hasCoords ? '<button id="souvenirs-map-btn" style="flex:1;background:#14213D;border:none;border-radius:12px;padding:12px;text-align:center;color:#fff;cursor:pointer;"><div style="font-size:18px;">🗺️</div><div style="font-size:9px;">VOIR LA CARTE</div></button>' : '') +
+        '</div>';
 
       listEl.innerHTML = html;
       listEl.querySelectorAll(".souvenir-card").forEach(function (card) {
@@ -308,7 +312,13 @@
           if (s) openSouvenirDetail(s);
         });
       });
-    }
+      const mapBtn = document.getElementById("souvenirs-map-btn");
+      if (mapBtn) {
+        mapBtn.addEventListener("click", function () {
+          renderTripMap(souvenirsCurrentCity, items);
+        });
+      }
+    } 
 
     renderCityMemories();
   }
