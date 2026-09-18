@@ -207,6 +207,8 @@ button:active{ transform:scale(.97); }
 input[type="range"]{ width:100%; accent-color:var(--primary); }
 
 /* ---- map mock ---- */
+.locate-bar-photo, #locate-bar-photo{ border-radius:20px !important; overflow:hidden; }
+.chip-btn{ transition:background .2s ease, color .2s ease, border-color .2s ease; }
 .map-mock{
   height:190px; border-radius:var(--radius); margin-bottom:16px;
   background:
