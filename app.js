@@ -36,13 +36,11 @@ document.getElementById("choice-locate").onclick = function(){
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-          if (window.__arrivalShow) __arrivalShow();
-          else document.getElementById("btn-geoloc").click();
         },
-        () => {
-          document.getElementById("btn-geoloc").click();
-        }
+        () => {}
       );
+      if (window.__arrivalShow) __arrivalShow();
+      else document.getElementById("btn-geoloc").click();
     });
   };
   document.getElementById("choice-visit").onclick = function(){
