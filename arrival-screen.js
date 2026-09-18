@@ -315,14 +315,61 @@ function __exploreOpen() {
       setTimeout(__exploreRender, 100); 
     }
   });
-  document.getElementById("explore-more-btn").addEventListener("click", function () {
+   document.getElementById("explore-more-btn").addEventListener("click", function () {
     __exploreShowAll = true;
     __exploreRender();
   });
 
-  __exploreRender();
-}
+  document.getElementById("explore-ai-btn").addEventListener("click", function () {
+    const btn = document.getElementById("explore-ai-btn");
+    const resultBox = document.getElementById("explore-ai-result");
+    btn.textContent = "✨ Rédaction en cours...";
+    btn.disabled = true;
+    let list = __exploreGetCandidates(__exploreCurrentCategory);
+    list = list.slice().sort(function (a, b) {
+      if (a.datePriority !== b.datePriority) return a.datePriority - b.datePriority;
+      return a.dist - b.dist;
+    });
+    const picked = list.slice(0, 5);
+    const now = new Date();
+    const timeLabel = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
+    const items = picked.map(function (item) {
+      return {
+        title: item.ev.title,
+        category: item.ev.category,
+        date: item.ev.isPlace ? null : item.ev.date,
+        time: item.ev.time || null,
+        place: item.ev.place,
+        distanceMin: Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5),
+      };
+    });
+    fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        items: items,
+        question: __exploreCurrentCategory || "",
+        context: { cityName: cityName, time: timeLabel },
+      }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        resultBox.style.display = "block";
+        resultBox.innerHTML =
+          '<div style="font-size:10.5px; color:#E85D3D; font-weight:700; margin-bottom:8px;">✨ WHAZUP ENRICHI</div>' +
+          '<div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;">' + (data.text || "Une erreur est survenue, réessaie.") + "</div>";
+        btn.remove();
+      })
+      .catch(function () {
+        resultBox.style.display = "block";
+        resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
+        btn.textContent = "✨ Enrichir Whazup";
+        btn.disabled = false;
+      });
+  });
 
+  __exploreRender();
+} 
 // ---- Bonhomme 2 : ambiance puis idées multiples (réutilise le Mode Escale) ----
 
 function __arrivalOpenMood() {
