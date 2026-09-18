@@ -203,6 +203,19 @@
       '</div></div>';
     document.body.appendChild(overlay);
     document.getElementById("souvenir-detail-close").addEventListener("click", function () { overlay.remove(); });
+        document.getElementById("souvenir-detail-share").addEventListener("click", async function () {
+      const link = "https://whazup.fr/index.html?souvenir=" + auth.currentUser.uid + "_" + s.id;
+      if (navigator.share) {
+        try { await navigator.share({ title: "Un souvenir Whazup", text: s.placeName || "Souvenir", url: link }); } catch (e) {}
+      } else {
+        try {
+          await navigator.clipboard.writeText(link);
+          alert("Lien copié ! Colle-le où tu veux le partager.");
+        } catch (e) {
+          prompt("Copie ce lien :", link);
+        }
+      }
+    });
     overlay.addEventListener("click", function (e) { if (e.target === overlay) overlay.remove(); });
     document.getElementById("souvenir-detail-delete").addEventListener("click", async function () {
       if (!confirm("Supprimer ce souvenir définitivement ?")) return;
