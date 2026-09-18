@@ -31,9 +31,18 @@ function initChoiceScreen(){
     }, 550);
   }
 
-  document.getElementById("choice-locate").onclick = function(){
+document.getElementById("choice-locate").onclick = function(){
     proceedAfterClick(this, () => {
-      document.getElementById("btn-geoloc").click();
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+          if (window.__arrivalShow) __arrivalShow();
+          else document.getElementById("btn-geoloc").click();
+        },
+        () => {
+          document.getElementById("btn-geoloc").click();
+        }
+      );
     });
   };
   document.getElementById("choice-visit").onclick = function(){
