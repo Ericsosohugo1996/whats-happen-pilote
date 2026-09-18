@@ -2922,8 +2922,14 @@ function renderCategoryChips(){
   el.innerHTML = "";
   CATEGORIES.forEach(cat => {
     const b = document.createElement("button");
-    b.className = "chip-btn" + (state.selectedCategories.has(cat) ? " active" : "");
+       b.className = "chip-btn" + (state.selectedCategories.has(cat) ? " active" : "");
     b.textContent = cat;
+    const chipColors = {"Musique":"#9D4EDD","Théâtre":"#E85D3D","Soirée":"#E63980","Festival":"#F4A261","Expo":"#2A9D8F","Sport":"#2A9D5C","Marché":"#3498DB","À voir":"#457B9D","Bar":"#C1440E"};
+    if (state.selectedCategories.has(cat)) {
+      b.style.background = chipColors[cat] || "#6C757D";
+      b.style.borderColor = chipColors[cat] || "#6C757D";
+      b.style.color = "#fff";
+    }
     b.onclick = () => {
       if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
       else state.selectedCategories.add(cat);
