@@ -375,6 +375,50 @@
           renderTripMap(souvenirsCurrentCity, items);
         });
       }
+      const aiBtn = document.getElementById("souvenirs-ai-btn");
+      if (aiBtn) {
+        aiBtn.addEventListener("click", function () {
+          aiBtn.textContent = "✨ Rédaction en cours...";
+          aiBtn.disabled = true;
+          const resultBox = document.getElementById("souvenirs-ai-result");
+          const cityName = (souvenirsCurrentCity !== "autre" && CITIES[souvenirsCurrentCity]) ? CITIES[souvenirsCurrentCity].name : "cette ville";
+          const sortedItems = items.slice().sort(function (a, b) { return a.createdAt - b.createdAt; });
+          const aiItems = sortedItems.slice(0, 10).map(function (s) {
+            const d = new Date(s.createdAt);
+            return {
+              title: (s.placeName || "Souvenir libre") + (s.text ? " — " + s.text : ""),
+              category: "Souvenir",
+              date: d.toISOString().slice(0, 10),
+              time: null,
+              place: cityName,
+              distanceMin: 0,
+            };
+          });
+          fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              items: aiItems,
+              question: "résume mes souvenirs et visites à " + cityName + " de façon chaleureuse, comme un petit récapitulatif de voyage",
+              context: { cityName: cityName, time: "" },
+            }),
+          })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              resultBox.style.display = "block";
+              resultBox.innerHTML =
+                '<div style="font-size:10.5px; color:#E85D3D; font-weight:700; margin-bottom:8px;">✨ WHAZUP ENRICHI</div>' +
+                '<div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;">' + (data.text || "Une erreur est survenue, réessaie.") + "</div>";
+              aiBtn.remove();
+            })
+            .catch(function () {
+              resultBox.style.display = "block";
+              resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
+              aiBtn.textContent = "✨ Enrichir Whazup";
+              aiBtn.disabled = false;
+            });
+        });
+      }
     }
 
     renderCityMemories();
