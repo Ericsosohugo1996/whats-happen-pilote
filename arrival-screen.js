@@ -209,6 +209,8 @@ function __exploreOpen() {
     "</div>" +
     '<div id="explore-result" style="background:#fff; border-radius:16px; padding:0 14px;"></div>' +
     '<button id="explore-more-btn" style="display:none; margin-top:10px; width:100%; padding:10px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;"></button>' +
+    '<button id="explore-ai-btn" style="margin-top:14px; width:100%; padding:13px; border-radius:999px; border:none; background:linear-gradient(135deg, #E85D3D, #c1440e); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">✨ Enrichir Whazup</button>' +
+    '<div id="explore-ai-result" style="display:none; margin-top:12px; background:#fff; border-radius:16px; padding:16px;"></div>' +
     '<button id="explore-close" style="width:100%; margin-top:16px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">Fermer</button>' +
     "</div>";
 
