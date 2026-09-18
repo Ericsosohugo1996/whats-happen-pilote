@@ -535,6 +535,51 @@ function __arrivalShow() {
 
   document.body.appendChild(overlay);
 
+  (function () {
+    const cityKey2 = state.userPos ? nearestCityKey() : state.city;
+    const ref2 = referencePoint();
+    const today2 = new Date().toISOString().slice(0, 10);
+    const nearby2 = allEvents()
+      .filter(function (ev) { return ev.city === cityKey2 && ev.lat && ev.lng && (ev.isPlace || ev.date === today2); })
+      .map(function (ev) { return { ev: ev, dist: haversineKm(ref2.lat, ref2.lng, ev.lat, ev.lng) }; })
+      .sort(function (a, b) { return a.dist - b.dist; })
+      .slice(0, 4);
+    if (!nearby2.length) return;
+    const greetingItems = nearby2.map(function (item) {
+      return {
+        title: item.ev.title,
+        category: item.ev.category,
+        date: item.ev.isPlace ? null : item.ev.date,
+        time: item.ev.time || null,
+        place: item.ev.place,
+        distanceMin: Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5),
+      };
+    });
+    fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        items: greetingItems,
+        question: "Rédige uniquement une phrase d'accueil courte (20 mots maximum), chaleureuse et intrigante, qui donne envie d'explorer, sans liste, sans markdown, juste une phrase.",
+        context: { cityName: cityName, time: time },
+      }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!data.text) return;
+        const greetEl = overlay.querySelector('div[style*="Georgia"]');
+        if (greetEl) {
+          greetEl.style.transition = "opacity .3s ease";
+          greetEl.style.opacity = "0";
+          setTimeout(function () {
+            greetEl.textContent = data.text;
+            greetEl.style.opacity = "1";
+          }, 300);
+        }
+      })
+      .catch(function () {});
+  })();
+
   overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
     opt.addEventListener("click", function () {
       opt.style.transform = "scale(0.94)";
