@@ -3050,7 +3050,7 @@ function eventCardHTML(ev){
     <button class="event-card${ev.isPlace ? " event-card--place" : ""}" data-id="${ev.id}" data-cat="${ev.category}">
       <div class="thumb">${thumbHTML}</div>
       <div class="info">
-    <div class="cat" style="display:inline-block;padding:2px 9px;border-radius:999px;background:${typeof categoryColor === "function" ? categoryColor(ev.category) : "#6C757D"};color:#fff;font-size:10px;font-weight:700;">${ev.isPlace ? (ev.category === "Bar" ? "🍸 BAR" : "🏛️ À VOIR") : ev.category}</div>
+      <div class="cat">${ev.isPlace ? (ev.category === "Bar" ? "🍸 BAR" : "🏛️ À VOIR") : ev.category}</div>
         <div class="title">${ev.title}</div>
         <div class="meta">${metaTxt}</div>
       </div>
