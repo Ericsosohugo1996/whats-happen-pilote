@@ -156,14 +156,25 @@
           context: { cityName: cityName, time: timeLabel },
         }),
       })
-        .then(function (r) { return r.json(); })
+              .then(function (r) { return r.json(); })
         .then(function (data) {
           resultBox.style.display = "block";
           resultBox.innerHTML =
             '<div style="font-size:10.5px; color:#E85D3D; font-weight:700; margin-bottom:8px;">✨ WHAZUP ENRICHI</div>' +
-            '<div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;">' + (data.text || "Une erreur est survenue, réessaie.") + "</div>";
+            '<div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;" id="quest-ai-text"></div>';
           btn.remove();
-        })
+          const target = document.getElementById("quest-ai-text");
+          const fullText = data.text || "Une erreur est survenue, réessaie.";
+          let i = 0;
+          function typeStep() {
+            if (i < fullText.length) {
+              target.textContent += fullText[i];
+              i++;
+              setTimeout(typeStep, 12);
+            }
+          }
+          typeStep();
+        }) 
         .catch(function () {
           resultBox.style.display = "block";
           resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
