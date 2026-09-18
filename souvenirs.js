@@ -422,7 +422,38 @@
       });
     }
   }
+  async function checkSharedSouvenirLink() {
+    const params = new URLSearchParams(window.location.search);
+    const shareParam = params.get("souvenir");
+    if (!shareParam) return;
+    const parts = shareParam.split("_");
+    const ownerUid = parts[0];
+    const souvenirId = parts.slice(1).join("_");
+    try {
+      const doc = await db.collection("users").doc(ownerUid).collection("souvenirs").doc(souvenirId).get();
+      if (!doc.exists) return;
+      const s = doc.data();
+      const dateStr = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+      const overlay = document.createElement("div");
+      overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;";
+      overlay.innerHTML = '<div style="background:#fff;border-radius:20px;padding:20px;max-width:380px;width:100%;">' +
+        '<div style="font-size:10px;color:#E85D3D;font-weight:700;margin-bottom:10px;">✨ SOUVENIR PARTAGÉ SUR WHAZUP</div>' +
+        (s.photoUrl ? '<img src="' + s.photoUrl + '" style="width:100%;border-radius:14px;margin-bottom:12px;max-height:260px;object-fit:cover;" />' : '<div style="width:100%;height:140px;border-radius:14px;margin-bottom:12px;background:' + gradientFor(s.id) + ';"></div>') +
+        '<div style="font-size:11px;color:#aaa;margin-bottom:6px;">' + dateStr + (s.placeName ? " · " + s.placeName : "") + '</div>' +
+        (s.text ? '<div style="font-size:14px;color:#333;font-style:italic;line-height:1.5;">"' + s.text + '"</div>' : '') +
+        '<button id="shared-souvenir-close" style="width:100%;margin-top:16px;padding:12px;border-radius:999px;border:none;background:#14213D;color:#fff;font-size:13px;font-weight:600;">Découvrir Whazup</button>' +
+        '</div>';
+      document.body.appendChild(overlay);
+      document.getElementById("shared-souvenir-close").addEventListener("click", function () {
+        overlay.remove();
+        history.replaceState({}, "", window.location.pathname);
+      });
+    } catch (e) {
+      console.error("Erreur souvenir partagé:", e);
+    }
+  }
 
+  function initSouvenirs() {
   function initSouvenirs() {
     ensureFloatingButton();
     ensureAccountLink();
