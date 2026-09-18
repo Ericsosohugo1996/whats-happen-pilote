@@ -242,7 +242,8 @@
     QUEST_CATEGORIES.forEach(function (c) {
       const btn = document.createElement("button");
       btn.textContent = c.label;
-      btn.style.cssText = "padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#fff;font-size:12px;cursor:pointer;";
+      const catColor = (typeof categoryColor === "function") ? categoryColor(c.key) : "rgba(255,255,255,0.1)";
+      btn.style.cssText = "padding:9px 14px;border-radius:999px;border:none;background:" + catColor + ";color:#fff;font-size:12px;font-weight:600;cursor:pointer;";
       btn.addEventListener("click", function () {
         const idx = questSelectedCats.indexOf(c.key);
         if (idx === -1) {
