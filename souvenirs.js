@@ -197,7 +197,8 @@
       '<div style="font-size:11px;color:#aaa;margin-bottom:6px;">' + dateStr + (s.placeName ? " · " + s.placeName : "") + '</div>' +
       (s.text ? '<div style="font-size:14px;color:#333;font-style:italic;line-height:1.5;">"' + s.text + '"</div>' : '') +
       '<div style="display:flex;gap:10px;margin-top:16px;">' +
-      '<button id="souvenir-detail-delete" style="flex:1;padding:11px;border-radius:999px;border:1px solid #e07a5f;background:#fff;color:#c0392b;font-size:13px;">🗑️ Supprimer</button>' +
+           '<button id="souvenir-detail-share" style="flex:1;padding:11px;border-radius:999px;border:1px solid #14213D;background:#fff;color:#14213D;font-size:13px;">🔗 Partager</button>' +
+      '<button id="souvenir-detail-delete" style="flex:1;padding:11px;border-radius:999px;border:1px solid #e07a5f;background:#fff;color:#c0392b;font-size:13px;">🗑️</button>' +
       '<button id="souvenir-detail-close" style="flex:1;padding:11px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Fermer</button>' +
       '</div></div>';
     document.body.appendChild(overlay);
