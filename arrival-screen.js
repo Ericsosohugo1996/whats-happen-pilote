@@ -572,9 +572,7 @@ function __arrivalShow() {
            .then(function (r) { return r.json(); })
       .then(function (data) {
         if (!data.text) return;
-        try {
-          localStorage.setItem(cacheKey, JSON.stringify({ text: data.text, ts: Date.now() }));
-        } catch (e) {}
+       
         const greetEl = overlay.querySelector('div[style*="Georgia"]');
         if (greetEl) {
           greetEl.style.transition = "opacity .3s ease";
