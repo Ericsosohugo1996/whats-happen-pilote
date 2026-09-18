@@ -206,3 +206,171 @@
     document.getElementById("souvenir-detail-close").addEventListener("click", function () { overlay.remove(); });
     overlay.addEventListener("click", function (e) { if (e.target === overlay) overlay.remove(); });
     document.getElementById("souvenir-detail-delete").addEventListener
+    document.getElementById("souvenir-detail-delete").addEventListener("click", async function () {
+      if (!confirm("Supprimer ce souvenir définitivement ?")) return;
+      const btn = document.getElementById("souvenir-detail-delete");
+      btn.textContent = "Suppression...";
+      btn.disabled = true;
+      try {
+        await deleteSouvenir(s);
+        overlay.remove();
+        renderSouvenirsScreen();
+      } catch (err) {
+        console.error("Erreur suppression:", err);
+        alert("Erreur lors de la suppression, réessaie.");
+        btn.textContent = "🗑️ Supprimer";
+        btn.disabled = false;
+      }
+    });
+  }
+
+  let souvenirsCurrentCity = "";
+
+  async function renderSouvenirsScreen() {
+    const existing = document.getElementById("souvenirs-screen");
+    if (existing) existing.remove();
+
+    const screen = document.createElement("div");
+    screen.id = "souvenirs-screen";
+    screen.style.cssText = "position:fixed;inset:0;background:#fff;z-index:9998;overflow-y:auto;padding:16px;";
+    screen.innerHTML = '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;"><button id="souvenirs-close-btn" style="border:none;background:#f0f0f0;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button><div style="font-size:16px;font-weight:800;color:#14213D;">📖 Mon carnet</div></div><div id="souvenirs-city-tabs" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;"></div><div id="souvenirs-list">Chargement...</div>';
+    document.body.appendChild(screen);
+
+    document.getElementById("souvenirs-close-btn").addEventListener("click", function () {
+      screen.remove();
+    });
+
+    const list = await loadSouvenirs();
+    const listEl = document.getElementById("souvenirs-list");
+    const tabsEl = document.getElementById("souvenirs-city-tabs");
+
+    if (!list.length) {
+      tabsEl.style.display = "none";
+      listEl.innerHTML = '<div style="text-align:center;color:#888;padding:40px 0;">Aucun souvenir pour l\'instant.<br>Appuie sur 📸 pour en ajouter un !</div>';
+      return;
+    }
+
+    const cityGroups = {};
+    list.forEach(function (s) {
+      const key = s.city || "autre";
+      if (!cityGroups[key]) cityGroups[key] = [];
+      cityGroups[key].push(s);
+    });
+    const cityKeys = Object.keys(cityGroups).sort(function (a, b) { return cityGroups[b].length - cityGroups[a].length; });
+    if (!souvenirsCurrentCity || !cityGroups[souvenirsCurrentCity]) souvenirsCurrentCity = cityKeys[0];
+
+    tabsEl.innerHTML = "";
+    cityKeys.forEach(function (key) {
+      const cityName = (key !== "autre" && CITIES[key]) ? CITIES[key].name : "Autre";
+      const tab = document.createElement("button");
+      tab.textContent = cityName;
+      const active = key === souvenirsCurrentCity;
+      tab.style.cssText = "padding:7px 14px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap;border:none;cursor:pointer;" + (active ? "background:#14213D;color:#fff;" : "background:#fff;color:#888;border:1px solid #eee;");
+      tab.addEventListener("click", function () {
+        souvenirsCurrentCity = key;
+        renderCityMemories();
+      });
+      tabsEl.appendChild(tab);
+    });
+
+    function renderCityMemories() {
+      const items = cityGroups[souvenirsCurrentCity] || [];
+      Array.from(tabsEl.children).forEach(function (tab, i) {
+        const active = cityKeys[i] === souvenirsCurrentCity;
+        tab.style.background = active ? "#14213D" : "#fff";
+        tab.style.color = active ? "#fff" : "#888";
+      });
+
+      const groups = groupByMonth(items);
+      let html = "";
+      Object.keys(groups).forEach(function (monthKey) {
+        const monthItems = groups[monthKey];
+        html += '<div style="font-size:10px;color:#aaa;font-weight:700;margin:18px 0 8px;text-transform:uppercase;">' + monthKey + ' · ' + monthItems.length + ' souvenir' + (monthItems.length > 1 ? 's' : '') + '</div>';
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+        monthItems.forEach(function (s) {
+          const dateShort = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
+          const bg = s.photoUrl ? "background-image:url('" + s.photoUrl + "');background-size:cover;background-position:center;" : "background:" + gradientFor(s.id) + ";";
+          html += '<div class="souvenir-card" data-id="' + s.id + '" style="border-radius:14px;overflow:hidden;position:relative;height:130px;cursor:pointer;' + bg + '">' +
+            '<div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.55), transparent 60%);"></div>' +
+            '<div style="position:absolute;bottom:6px;left:8px;right:8px;"><div style="color:#fff;font-size:10px;font-weight:700;">' + (s.placeName || "Souvenir libre") + '</div><div style="color:rgba(255,255,255,0.8);font-size:8.5px;">' + dateShort + '</div></div></div>';
+        });
+        html += '</div>';
+      });
+
+      const totalVisits = items.length;
+      html += '<div style="display:flex;gap:8px;margin-top:18px;"><div style="flex:1;background:#f7f5f2;border-radius:12px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#14213D;">' + totalVisits + '</div><div style="font-size:9px;color:#888;">SOUVENIRS</div></div></div>';
+
+      listEl.innerHTML = html;
+      listEl.querySelectorAll(".souvenir-card").forEach(function (card) {
+        card.addEventListener("click", function () {
+          const id = card.getAttribute("data-id");
+          const s = items.find(function (x) { return x.id === id; });
+          if (s) openSouvenirDetail(s);
+        });
+      });
+    }
+
+    renderCityMemories();
+  }
+
+  async function updateSouvenirsCount() {
+    const btn = document.getElementById("btn-open-souvenirs");
+    if (!btn) return;
+    const user = auth.currentUser;
+    if (!user) {
+      btn.textContent = "📖 Mes souvenirs";
+      return;
+    }
+    try {
+      const col = souvenirsCollection();
+      const snap = await col.get();
+      btn.textContent = snap.size > 0 ? "📖 Mes souvenirs (" + snap.size + ")" : "📖 Mes souvenirs";
+    } catch (e) {
+      btn.textContent = "📖 Mes souvenirs";
+    }
+  }
+
+  function ensureDetailLink() {
+    const btn = document.getElementById("btn-add-souvenir-detail");
+    if (btn && !btn.dataset.bound) {
+      btn.dataset.bound = "1";
+      btn.addEventListener("click", function () {
+        const ev = window.allEvents ? allEvents().find(function (e) { return e.id === state.currentEventId; }) : null;
+        if (ev) {
+          openAddSouvenirModal({ placeName: ev.title, placeId: ev.id, lat: ev.lat, lng: ev.lng });
+        } else {
+          openAddSouvenirModal({});
+        }
+      });
+    }
+  }
+
+  function ensureAccountLink() {
+    const link = document.getElementById("btn-open-souvenirs");
+    if (link && !link.dataset.bound) {
+      link.dataset.bound = "1";
+      link.addEventListener("click", function () {
+        document.getElementById("btn-account-close")?.click();
+        renderSouvenirsScreen();
+      });
+    }
+  }
+
+  function initSouvenirs() {
+    ensureFloatingButton();
+    ensureAccountLink();
+    setInterval(ensureAccountLink, 800);
+    ensureDetailLink();
+    setInterval(ensureDetailLink, 800);
+    updateSouvenirsCount();
+    setInterval(updateSouvenirsCount, 3000);
+  }
+  if (document.readyState !== "loading") {
+    initSouvenirs();
+  } else {
+    document.addEventListener("DOMContentLoaded", initSouvenirs);
+  }
+
+  window.__openAddSouvenirModal = openAddSouvenirModal;
+  window.__renderSouvenirsScreen = renderSouvenirsScreen;
+})();
