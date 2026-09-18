@@ -88,7 +88,7 @@ button:active{ transform:scale(.97); }
   color:#fff;
 }
 .locate-bar-photo{
-  position:absolute; top:0; left:0; right:0; height:150px;
+  position:absolute; top:0; left:0; right:0; height:220px;
   background-size:cover; background-position:center;
   opacity:0; transition:opacity .3s ease;
   border-radius:var(--radius) var(--radius) 0 0;
