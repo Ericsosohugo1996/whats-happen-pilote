@@ -82,10 +82,14 @@ button:active{ transform:scale(.97); }
 .locate-bar{
   position:relative; overflow:hidden;
   background:var(--primary);
-  border-radius:var(--radius);
-  box-shadow:0 12px 26px -14px rgba(20,33,61,.4);
-  padding:18px 18px 16px; margin-bottom:16px;
+  border-radius:22px;
+  box-shadow:0 16px 32px -16px rgba(20,33,61,.5);
+  padding:18px 20px 18px; margin-bottom:18px;
   color:#fff;
+  min-height:230px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
 }
 .locate-bar-photo{
   position:absolute; top:0; left:0; right:0; height:220px;
