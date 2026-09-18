@@ -353,13 +353,14 @@
         html += '</div>';
       });
 
-      const totalVisits = items.length;
+           const totalVisits = items.length;
       const hasCoords = items.some(function (s) { return s.lat && s.lng; });
-      html += '<div style="display:flex;gap:8px;margin-top:18px;">' +
-        '<div style="flex:1;background:#f7f5f2;border-radius:12px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#14213D;">' + totalVisits + '</div><div style="font-size:9px;color:#888;">SOUVENIRS</div></div>' +
-        (hasCoords ? '<button id="souvenirs-map-btn" style="flex:1;background:#14213D;border:none;border-radius:12px;padding:12px;text-align:center;color:#fff;cursor:pointer;"><div style="font-size:18px;">🗺️</div><div style="font-size:9px;">VOIR LA CARTE</div></button>' : '') +
-        '</div>';
-
+      html += '<div style="display:flex; gap:8px; margin-top:18px;">' +
+        '<div style="flex:1; background:#f7f5f2; border-radius:12px; padding:12px; text-align:center;"><div style="font-size:18px; font-weight:800; color:#14213D;">' + totalVisits + '</div><div style="font-size:9px; color:#888;">SOUVENIRS</div></div>' +
+        (hasCoords ? '<button id="souvenirs-map-btn" style="flex:1; background:#14213D; border:none; border-radius:12px; padding:12px; text-align:center; color:#fff; cursor:pointer;"><div style="font-size:18px;">🗺️</div><div style="font-size:9px;">VOIR LA CARTE</div></button>' : '') +
+        '</div>' +
+        '<button id="souvenirs-ai-btn" style="width:100%; margin-top:10px; padding:13px; border-radius:999px; border:none; background:linear-gradient(135deg, #E85D3D, #c1440e); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">✨ Enrichir Whazup</button>' +
+        '<div id="souvenirs-ai-result" style="display:none; margin-top:12px; background:#f7f5f2; border-radius:16px; padding:16px;"></div>';
       listEl.innerHTML = html;
       listEl.querySelectorAll(".souvenir-card").forEach(function (card) {
         card.addEventListener("click", function () {
