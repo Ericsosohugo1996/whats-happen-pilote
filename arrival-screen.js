@@ -334,6 +334,8 @@ function __arrivalOpenMood() {
 
 function __arrivalShowCityView() {
   if (state.userPos) state.city = nearestCityKey();
+  if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true;
+  if (typeof __hasPickedFilter !== "undefined") __hasPickedFilter = true;
   renderDiscover();
   __ensureArrivalBackButton();
 }
