@@ -61,6 +61,19 @@
     return snap.docs.map(function (d) { return d.data(); });
   }
 
+  async function deleteSouvenir(s) {
+    const user = auth.currentUser;
+    if (!user) return;
+    await db.collection("users").doc(user.uid).collection("souvenirs").doc(s.id).delete();
+    if (s.photoUrl) {
+      try {
+        await storage.refFromURL(s.photoUrl).delete();
+      } catch (e) {
+        console.error("Erreur suppression photo:", e);
+      }
+    }
+  }
+
   function openAddSouvenirModal(prefill) {
     prefill = prefill || {};
     const existing = document.getElementById("souvenir-modal");
@@ -69,19 +82,17 @@
     const overlay = document.createElement("div");
     overlay.id = "souvenir-modal";
     overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:flex-end;justify-content:center;";
-    overlay.innerHTML = `
-      <div style="background:#fff;border-radius:24px 24px 0 0;padding:20px;width:100%;max-width:420px;max-height:85vh;overflow-y:auto;">
-        <div style="font-size:16px;font-weight:800;color:#14213D;margin-bottom:12px;">📸 Ajouter un souvenir${prefill.placeName ? " — " + prefill.placeName : ""}</div>
-        <input type="file" id="souvenir-photo-input" accept="image/*" capture="environment" style="display:none;" />
-        <button type="button" id="souvenir-photo-trigger" style="width:100%;padding:14px;border-radius:14px;border:2px dashed #ddd;background:#fafafa;color:#888;font-size:13px;margin-bottom:12px;cursor:pointer;">📷 Ajouter une photo (optionnel)</button>
-        <div id="souvenir-photo-preview" style="margin-bottom:12px;"></div>
-        <textarea id="souvenir-text-input" placeholder="Écris ta pensée du moment..." style="width:100%;min-height:90px;border:1px solid #ddd;border-radius:12px;padding:10px;font-family:inherit;font-size:14px;margin-bottom:14px;"></textarea>
-        <div style="display:flex;gap:10px;">
-          <button id="souvenir-cancel-btn" style="flex:1;padding:12px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Annuler</button>
-          <button id="souvenir-save-btn" style="flex:1;padding:12px;border-radius:999px;border:none;background:#14213D;color:#fff;font-size:13px;font-weight:600;">Enregistrer</button>
-        </div>
-      </div>
-    `;
+    overlay.innerHTML =
+      '<div style="background:#fff;border-radius:24px 24px 0 0;padding:20px;width:100%;max-width:420px;max-height:85vh;overflow-y:auto;">' +
+      '<div style="font-size:16px;font-weight:800;color:#14213D;margin-bottom:12px;">📸 Ajouter un souvenir' + (prefill.placeName ? " — " + prefill.placeName : "") + '</div>' +
+      '<input type="file" id="souvenir-photo-input" accept="image/*" capture="environment" style="display:none;" />' +
+      '<button type="button" id="souvenir-photo-trigger" style="width:100%;padding:14px;border-radius:14px;border:2px dashed #ddd;background:#fafafa;color:#888;font-size:13px;margin-bottom:12px;cursor:pointer;">📷 Ajouter une photo (optionnel)</button>' +
+      '<div id="souvenir-photo-preview" style="margin-bottom:12px;"></div>' +
+      '<textarea id="souvenir-text-input" placeholder="Écris ta pensée du moment..." style="width:100%;min-height:90px;border:1px solid #ddd;border-radius:12px;padding:10px;font-family:inherit;font-size:14px;margin-bottom:14px;"></textarea>' +
+      '<div style="display:flex;gap:10px;">' +
+      '<button id="souvenir-cancel-btn" style="flex:1;padding:12px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Annuler</button>' +
+      '<button id="souvenir-save-btn" style="flex:1;padding:12px;border-radius:999px;border:none;background:#14213D;color:#fff;font-size:13px;font-weight:600;">Enregistrer</button>' +
+      '</div></div>';
     document.body.appendChild(overlay);
 
     const photoInput = document.getElementById("souvenir-photo-input");
@@ -174,19 +185,6 @@
     return groups;
   }
 
-  async function deleteSouvenir(s) {
-    const user = auth.currentUser;
-    if (!user) return;
-    await db.collection("users").doc(user.uid).collection("souvenirs").doc(s.id).delete();
-    if (s.photoUrl) {
-      try {
-        await storage.refFromURL(s.photoUrl).delete();
-      } catch (e) {
-        console.error("Erreur suppression photo:", e);
-      }
-    }
-  }
-
   function openSouvenirDetail(s) {
     const existing = document.getElementById("souvenir-detail-modal");
     if (existing) existing.remove();
@@ -205,7 +203,6 @@
     document.body.appendChild(overlay);
     document.getElementById("souvenir-detail-close").addEventListener("click", function () { overlay.remove(); });
     overlay.addEventListener("click", function (e) { if (e.target === overlay) overlay.remove(); });
-    document.getElementById("souvenir-detail-delete").addEventListener
     document.getElementById("souvenir-detail-delete").addEventListener("click", async function () {
       if (!confirm("Supprimer ce souvenir définitivement ?")) return;
       const btn = document.getElementById("souvenir-detail-delete");
@@ -222,6 +219,51 @@
         btn.disabled = false;
       }
     });
+  }
+  
+  function renderTripMap(cityKey, items) {
+    const withCoords = items.filter(function (s) { return s.lat && s.lng; }).sort(function (a, b) { return a.createdAt - b.createdAt; });
+    if (!withCoords.length) return;
+
+    const overlay = document.createElement("div");
+    overlay.id = "souvenirs-map-overlay";
+    overlay.style.cssText = "position:fixed;inset:0;background:#fff;z-index:10001;display:flex;flex-direction:column;";
+    const cityName = (cityKey !== "autre" && CITIES[cityKey]) ? CITIES[cityKey].name : "Autre";
+    overlay.innerHTML =
+      '<div style="display:flex;align-items:center;gap:10px;padding:16px;border-bottom:1px solid #eee;">' +
+      '<button id="trip-map-close" style="border:none;background:#f0f0f0;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button>' +
+      '<div style="font-size:15px;font-weight:800;color:#14213D;">🗺️ Mon voyage à ' + cityName + '</div>' +
+      '</div>' +
+      '<div id="trip-map-canvas" style="flex:1;"></div>' +
+      '<div id="trip-map-list" style="max-height:160px;overflow-y:auto;padding:12px 16px;border-top:1px solid #eee;"></div>';
+    document.body.appendChild(overlay);
+
+    document.getElementById("trip-map-close").addEventListener("click", function () {
+      overlay.remove();
+    });
+
+    const map = L.map("trip-map-canvas").setView([withCoords[0].lat, withCoords[0].lng], 13);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "© OpenStreetMap" }).addTo(map);
+
+    const latlngs = [];
+    withCoords.forEach(function (s) {
+      const marker = L.circleMarker([s.lat, s.lng], { radius: 10, fillColor: "#E85D3D", color: "#fff", weight: 2, fillOpacity: 1 }).addTo(map);
+      marker.bindPopup("<b>" + (s.placeName || "Souvenir") + "</b>");
+      latlngs.push([s.lat, s.lng]);
+    });
+    if (latlngs.length > 1) {
+      L.polyline(latlngs, { color: "#E85D3D", weight: 2, dashArray: "6,6" }).addTo(map);
+      map.fitBounds(latlngs, { padding: [40, 40] });
+    }
+
+    const listEl = document.getElementById("trip-map-list");
+    listEl.innerHTML = withCoords.map(function (s) {
+      const dateStr = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
+      return '<div style="display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #f5f5f5;">' +
+        '<div style="width:8px;height:8px;border-radius:999px;background:#E85D3D;flex-shrink:0;"></div>' +
+        '<div><div style="font-size:12px;font-weight:700;color:#14213D;">' + (s.placeName || "Souvenir libre") + '</div><div style="font-size:10px;color:#888;">' + dateStr + '</div></div>' +
+        '</div>';
+    }).join("");
   }
 
   let souvenirsCurrentCity = "";
@@ -297,7 +339,7 @@
         html += '</div>';
       });
 
-          const totalVisits = items.length;
+      const totalVisits = items.length;
       const hasCoords = items.some(function (s) { return s.lat && s.lng; });
       html += '<div style="display:flex;gap:8px;margin-top:18px;">' +
         '<div style="flex:1;background:#f7f5f2;border-radius:12px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#14213D;">' + totalVisits + '</div><div style="font-size:9px;color:#888;">SOUVENIRS</div></div>' +
@@ -318,54 +360,11 @@
           renderTripMap(souvenirsCurrentCity, items);
         });
       }
-    } 
+    }
 
     renderCityMemories();
   }
-  function renderTripMap(cityKey, items) {
-    const withCoords = items.filter(function (s) { return s.lat && s.lng; }).sort(function (a, b) { return a.createdAt - b.createdAt; });
-    if (!withCoords.length) return;
 
-    const overlay = document.createElement("div");
-    overlay.id = "souvenirs-map-overlay";
-    overlay.style.cssText = "position:fixed;inset:0;background:#fff;z-index:10001;display:flex;flex-direction:column;";
-    const cityName = (cityKey !== "autre" && CITIES[cityKey]) ? CITIES[cityKey].name : "Autre";
-    overlay.innerHTML =
-      '<div style="display:flex;align-items:center;gap:10px;padding:16px;border-bottom:1px solid #eee;">' +
-      '<button id="trip-map-close" style="border:none;background:#f0f0f0;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button>' +
-      '<div style="font-size:15px;font-weight:800;color:#14213D;">🗺️ Mon voyage à ' + cityName + '</div>' +
-      '</div>' +
-      '<div id="trip-map-canvas" style="flex:1;"></div>' +
-      '<div id="trip-map-list" style="max-height:160px;overflow-y:auto;padding:12px 16px;border-top:1px solid #eee;"></div>';
-    document.body.appendChild(overlay);
-
-    document.getElementById("trip-map-close").addEventListener("click", function () {
-      overlay.remove();
-    });
-
-    const map = L.map("trip-map-canvas").setView([withCoords[0].lat, withCoords[0].lng], 13);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "© OpenStreetMap" }).addTo(map);
-
-    const latlngs = [];
-    withCoords.forEach(function (s, i) {
-      const marker = L.circleMarker([s.lat, s.lng], { radius: 10, fillColor: "#E85D3D", color: "#fff", weight: 2, fillOpacity: 1 }).addTo(map);
-      marker.bindPopup("<b>" + (s.placeName || "Souvenir") + "</b>");
-      latlngs.push([s.lat, s.lng]);
-    });
-    if (latlngs.length > 1) {
-      L.polyline(latlngs, { color: "#E85D3D", weight: 2, dashArray: "6,6" }).addTo(map);
-      map.fitBounds(latlngs, { padding: [40, 40] });
-    }
-
-    const listEl = document.getElementById("trip-map-list");
-    listEl.innerHTML = withCoords.map(function (s) {
-      const dateStr = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
-      return '<div style="display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #f5f5f5;">' +
-        '<div style="width:8px;height:8px;border-radius:999px;background:#E85D3D;flex-shrink:0;"></div>' +
-        '<div><div style="font-size:12px;font-weight:700;color:#14213D;">' + (s.placeName || "Souvenir libre") + '</div><div style="font-size:10px;color:#888;">' + dateStr + '</div></div>' +
-        '</div>';
-    }).join("");
-  }
   async function updateSouvenirsCount() {
     const btn = document.getElementById("btn-open-souvenirs");
     if (!btn) return;
@@ -403,7 +402,8 @@
     if (link && !link.dataset.bound) {
       link.dataset.bound = "1";
       link.addEventListener("click", function () {
-        document.getElementById("btn-account-close")?.click();
+        const closeBtn = document.getElementById("btn-account-close");
+        if (closeBtn) closeBtn.click();
         renderSouvenirsScreen();
       });
     }
