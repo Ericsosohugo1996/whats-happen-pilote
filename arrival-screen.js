@@ -38,20 +38,6 @@ const EXPLORE_CATEGORIES = [
 let __exploreSortMode = "distance";
 let __exploreShowAll = false;
 let __exploreCurrentCategory = "";
-function categoryColor(cat) {
-  const colors = {
-    "Musique": "#9D4EDD",
-    "Théâtre": "#E85D3D",
-    "Soirée": "#E63980",
-    "Festival": "#F4A261",
-    "Expo": "#2A9D8F",
-    "Sport": "#2A9D5C",
-    "Marché": "#3498DB",
-    "À voir": "#457B9D",
-    "Bar": "#C1440E",
-  };
-  return colors[cat] || "#6C757D";
-}
 
 function __exploreGetCandidates(category) {
   const ref = referencePoint();
@@ -147,7 +133,7 @@ function __exploreRender() {
         '" style="display:flex; align-items:center; gap:12px; width:100%; text-align:left; background:none; border:none; padding:12px 0; cursor:pointer;' +
         (i > 0 ? "border-top:1px solid #eee;" : "") +
         '">' +
-               '<div style="width:38px; height:38px; border-radius:12px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:18px; background:' + categoryColor(item.ev.category) + ';">' + icon + '</div>' +
+        '<div style="font-size:20px; flex-shrink:0;">' + icon + '</div>' +
         '<div style="flex:1; min-width:0;">' +
         '<div style="font-size:13.5px; font-weight:700; color:#14213D; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + item.ev.title + '</div>' +
         (dateLabel ? '<div style="font-size:11px; color:#888; margin-top:2px;">' + dateLabel + '</div>' : '') +
@@ -209,8 +195,6 @@ function __exploreOpen() {
     "</div>" +
     '<div id="explore-result" style="background:#fff; border-radius:16px; padding:0 14px;"></div>' +
     '<button id="explore-more-btn" style="display:none; margin-top:10px; width:100%; padding:10px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;"></button>' +
-    '<button id="explore-ai-btn" style="margin-top:14px; width:100%; padding:13px; border-radius:999px; border:none; background:linear-gradient(135deg, #E85D3D, #c1440e); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">✨ Enrichir Whazup</button>' +
-    '<div id="explore-ai-result" style="display:none; margin-top:12px; background:#fff; border-radius:16px; padding:16px;"></div>' +
     '<button id="explore-close" style="width:100%; margin-top:16px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">Fermer</button>' +
     "</div>";
 
@@ -315,122 +299,14 @@ function __exploreOpen() {
       setTimeout(__exploreRender, 100); 
     }
   });
-   document.getElementById("explore-more-btn").addEventListener("click", function () {
+  document.getElementById("explore-more-btn").addEventListener("click", function () {
     __exploreShowAll = true;
     __exploreRender();
   });
 
-  document.getElementById("explore-ai-btn").addEventListener("click", function () {
-    const btn = document.getElementById("explore-ai-btn");
-    const resultBox = document.getElementById("explore-ai-result");
-    btn.textContent = "✨ Rédaction en cours...";
-    btn.disabled = true;
-    let list = __exploreGetCandidates(__exploreCurrentCategory);
-    list = list.slice().sort(function (a, b) {
-      if (a.datePriority !== b.datePriority) return a.datePriority - b.datePriority;
-      return a.dist - b.dist;
-    });
-    const picked = list.slice(0, 5);
-    const now = new Date();
-    const timeLabel = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
-    const items = picked.map(function (item) {
-      return {
-        title: item.ev.title,
-        category: item.ev.category,
-        date: item.ev.isPlace ? null : item.ev.date,
-        time: item.ev.time || null,
-        place: item.ev.place,
-        distanceMin: Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5),
-      };
-    });
-    fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        items: items,
-        question: __exploreCurrentCategory || "",
-        context: { cityName: cityName, time: timeLabel },
-      }),
-    })
-     .then(function (r) { return r.json(); })
-      .then(function (data) {
-        resultBox.style.display = "block";
-        resultBox.innerHTML =
-          '<div style="font-size:10.5px; color:#E85D3D; font-weight:700; margin-bottom:8px;">✨ WHAZUP ENRICHI</div>' +
-          '<div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;" id="explore-ai-text"></div>';
-        btn.remove();
-             const target = document.getElementById("explore-ai-text");
-        const fullText = data.text || "Une erreur est survenue, réessaie.";
-        let i = 0;
-        function typeStep() {
-          if (i < fullText.length) {
-            target.textContent += fullText[i];
-            i++;
-            setTimeout(typeStep, 12);
-          } else {
-            const followWrap = document.createElement("div");
-            followWrap.style.cssText = "display:flex; gap:8px; margin-top:14px;";
-            followWrap.innerHTML =
-              '<input id="explore-ai-followup" type="text" placeholder="Réponds-lui..." style="flex:1; border:1px solid #eee; border-radius:999px; padding:10px 14px; font-size:13px; font-family:inherit;">' +
-              '<button id="explore-ai-followup-btn" style="padding:10px 16px; border-radius:999px; border:none; background:#14213D; color:#fff; font-size:13px; cursor:pointer;">➤</button>';
-            resultBox.appendChild(followWrap);
-            document.getElementById("explore-ai-followup-btn").addEventListener("click", sendFollowup);
-            document.getElementById("explore-ai-followup").addEventListener("keydown", function (e) {
-              if (e.key === "Enter") sendFollowup();
-            });
-          }
-        }
-        typeStep();
-
-        function sendFollowup() {
-          const input = document.getElementById("explore-ai-followup");
-          const question = input.value.trim();
-          if (!question) return;
-          followWrapRemove();
-          const newBlock = document.createElement("div");
-          newBlock.style.cssText = "margin-top:14px; padding-top:14px; border-top:1px solid #eee;";
-          newBlock.innerHTML = '<div style="font-size:12px; color:#888; font-style:italic; margin-bottom:8px;">Toi : ' + question + '</div><div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;" id="explore-ai-text2">✨</div>';
-          resultBox.appendChild(newBlock);
-          fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              items: items,
-              question: question,
-              context: { cityName: cityName, time: timeLabel },
-            }),
-          })
-            .then(function (r) { return r.json(); })
-            .then(function (d2) {
-              const target2 = document.getElementById("explore-ai-text2");
-              target2.textContent = "";
-              const text2 = d2.text || "Une erreur est survenue.";
-              let j = 0;
-              function typeStep2() {
-                if (j < text2.length) {
-                  target2.textContent += text2[j];
-                  j++;
-                  setTimeout(typeStep2, 12);
-                }
-              }
-              typeStep2();
-            });
-          function followWrapRemove() {
-            const w = document.getElementById("explore-ai-followup");
-            if (w && w.parentElement) w.parentElement.remove();
-          }
-        }
-      })
-      .catch(function () {
-        resultBox.style.display = "block";
-        resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
-        btn.textContent = "✨ Enrichir Whazup";
-        btn.disabled = false;
-      });
-  });
-
   __exploreRender();
-} 
+}
+
 // ---- Bonhomme 2 : ambiance puis idées multiples (réutilise le Mode Escale) ----
 
 function __arrivalOpenMood() {
@@ -458,8 +334,6 @@ function __arrivalOpenMood() {
 
 function __arrivalShowCityView() {
   if (state.userPos) state.city = nearestCityKey();
-  if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true;
-  if (typeof __hasPickedFilter !== "undefined") __hasPickedFilter = true;
   renderDiscover();
   __ensureArrivalBackButton();
 }
@@ -515,10 +389,6 @@ function __arrivalShow() {
     '<div style="color:rgba(255,255,255,0.55); font-size:12px; margin-bottom:8px; font-weight:500;">' + cityName + " · " + time + "</div>" +
     '<div style="color:#fff; font-family:Georgia, \'Times New Roman\', serif; font-size:24px; font-weight:400; line-height:1.4;">' + greeting + "</div>" +
     "</div>" +
-      '<div style="display:flex; gap:8px; margin-bottom:18px;">' +
-    '<input id="arrival-free-input" type="text" placeholder="Ou pose ta question directement..." style="flex:1; border:none; border-radius:999px; padding:13px 16px; font-size:13px; font-family:inherit; background:rgba(255,255,255,0.1); color:#fff;">' +
-    '<button id="arrival-free-btn" style="padding:13px 18px; border-radius:999px; border:none; background:linear-gradient(135deg, #E85D3D, #c1440e); color:#fff; font-size:15px; cursor:pointer;">➤</button>' +
-    '</div>' +
     '<div style="display:flex; gap:14px; justify-content:center;">' +
     '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
     '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
@@ -539,84 +409,7 @@ function __arrivalShow() {
 
   document.body.appendChild(overlay);
 
-   (function () {
-    const cityKey2 = state.userPos ? nearestCityKey() : state.city;
-  
-    const ref2 = referencePoint();
-    const today2 = new Date().toISOString().slice(0, 10);
-    const nearby2 = allEvents()
-      .filter(function (ev) { return ev.city === cityKey2 && ev.lat && ev.lng && (ev.isPlace || ev.date === today2); })
-      .map(function (ev) { return { ev: ev, dist: haversineKm(ref2.lat, ref2.lng, ev.lat, ev.lng) }; })
-      .sort(function (a, b) { return a.dist - b.dist; })
-      .slice(0, 4);
-    if (!nearby2.length) return;
-    const greetingItems = nearby2.map(function (item) {
-      return {
-        title: item.ev.title,
-        category: item.ev.category,
-        date: item.ev.isPlace ? null : item.ev.date,
-        time: item.ev.time || null,
-        place: item.ev.place,
-        distanceMin: Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5),
-      };
-    });
-    fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        items: greetingItems,
-        question: "Rédige uniquement une phrase d'accueil courte (20 mots maximum), chaleureuse et intrigante, qui donne envie d'explorer, sans liste, sans markdown, juste une phrase.",
-        context: { cityName: cityName, time: time },
-      }),
-    })
-           .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (!data.text) return;
-       
-        const greetEl = overlay.querySelector('div[style*="Georgia"]');
-        if (greetEl) {
-          greetEl.style.transition = "opacity .3s ease";
-          greetEl.style.opacity = "0";
-          setTimeout(function () {
-            greetEl.textContent = data.text;
-            greetEl.style.opacity = "1";
-          }, 300);
-        }
-      })
-      .catch(function () {});
-  })();
-
-   const freeBtn = document.getElementById("arrival-free-btn");
-  const freeInput = document.getElementById("arrival-free-input");
-  function sendFreeQuestion() {
-    const q = freeInput.value.trim();
-    if (!q) return;
-    overlay.remove();
-    if (window.__questOpen) {
-      __questOpen();
-      setTimeout(function () {
-        const surpriseBtn = Array.from(document.querySelectorAll("#quest-cats-list button")).find(function (b) { return b.textContent.includes("Surprends"); });
-        if (surpriseBtn) surpriseBtn.click();
-        setTimeout(function () {
-          const festiveBtn = Array.from(document.querySelectorAll("#quest-ambiance-list button")).find(function (b) { return b.textContent.includes("Festive"); });
-          if (festiveBtn) festiveBtn.click();
-          const seeResultBtn = document.getElementById("quest-see-result");
-          if (seeResultBtn) seeResultBtn.click();
-          setTimeout(function () {
-            const aiBtn = document.getElementById("quest-ai-btn");
-            if (aiBtn) {
-              window.__pendingFreeQuestion = q;
-              aiBtn.click();
-            }
-          }, 400);
-        }, 200);
-      }, 200);
-    }
-  }
-  freeBtn.addEventListener("click", sendFreeQuestion);
-  freeInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") sendFreeQuestion();
-  });
+  overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
     opt.addEventListener("click", function () {
       opt.style.transform = "scale(0.94)";
       const key = opt.dataset.key;
