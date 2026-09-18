@@ -38,7 +38,22 @@ const EXPLORE_CATEGORIES = [
 let __exploreSortMode = "distance";
 let __exploreShowAll = false;
 let __exploreCurrentCategory = "";
+function categoryColor(cat) {
+  const colors = {
+    "Musique": "#9D4EDD",
+    "Théâtre": "#E85D3D",
+    "Soirée": "#E63980",
+    "Festival": "#F4A261",
+    "Expo": "#2A9D8F",
+    "Sport": "#2A9D5C",
+    "Marché": "#3498DB",
+    "À voir": "#457B9D",
+    "Bar": "#C1440E",
+  };
+  return colors[cat] || "#6C757D";
+}
 
+function __exploreGetCandidates(category) {
 function __exploreGetCandidates(category) {
   const ref = referencePoint();
   const cityKey = state.userPos ? nearestCityKey() : state.city;
