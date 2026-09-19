@@ -292,7 +292,7 @@
     const screen = document.createElement("div");
     screen.id = "souvenirs-screen";
     screen.style.cssText = "position:fixed;inset:0;background:#fff;z-index:9998;overflow-y:auto;padding:16px;";
-       screen.innerHTML = '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;"><button id="souvenirs-close-btn" style="border:none;background:#f0f0f0;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button><div style="font-size:16px;font-weight:800;color:#14213D;flex:1;">📖 Mon carnet</div><button id="souvenirs-recap-btn" style="border:none;background:linear-gradient(135deg,#E85D3D,#c1440e);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;">✨ Récap</button></div><div id="souvenirs-city-tabs" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;"></div><div id="souvenirs-list">Chargement...</div>';
+       screen.innerHTML = '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;"><button id="souvenirs-close-btn" style="border:none;background:#f0f0f0;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button><div style="font-size:16px;font-weight:800;color:#14213D;flex:1;">📖 Mon carnet</div><button id="souvenirs-passport-btn" style="border:none;background:#14213D;color:#fff;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;">🛂</button><button id="souvenirs-recap-btn" style="border:none;background:linear-gradient(135deg,#E85D3D,#c1440e);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;">✨ Récap</button></div><div id="souvenirs-city-tabs" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;"></div><div id="souvenirs-list">Chargement...</div>';
     document.body.appendChild(screen); 
 
       document.getElementById("souvenirs-close-btn").addEventListener("click", function () {
@@ -300,6 +300,9 @@
     });
     document.getElementById("souvenirs-recap-btn").addEventListener("click", function () {
       if (window.__openRecap) __openRecap();
+    });
+    document.getElementById("souvenirs-passport-btn").addEventListener("click", function () {
+      renderPassportScreen();
     });
 
     const list = await loadSouvenirs();
