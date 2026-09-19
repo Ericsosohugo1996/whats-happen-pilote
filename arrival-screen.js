@@ -126,14 +126,15 @@ function __exploreRender() {
         else dateLabel = formatDate(item.ev.date);
         if (item.ev.time) dateLabel += " · " + item.ev.time;
       }
-      const icon = typeof iconFor === "function" ? iconFor(item.ev.category) : "📌";
+          const icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || (typeof iconFor === "function" ? iconFor(item.ev.category) : "📌");
+      const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#6C757D";
       return (
         '<button class="explore-pick" data-id="' +
         item.ev.id +
         '" style="display:flex; align-items:center; gap:12px; width:100%; text-align:left; background:none; border:none; padding:12px 0; cursor:pointer;' +
         (i > 0 ? "border-top:1px solid #eee;" : "") +
         '">' +
-        '<div style="font-size:20px; flex-shrink:0;">' + icon + '</div>' +
+        '<div style="width:34px; height:34px; border-radius:50%; background:' + catColor + '; display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; box-shadow:0 3px 8px -3px rgba(0,0,0,0.3);">' + icon + '</div>' +
         '<div style="flex:1; min-width:0;">' +
         '<div style="font-size:13.5px; font-weight:700; color:#14213D; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + item.ev.title + '</div>' +
         (dateLabel ? '<div style="font-size:11px; color:#888; margin-top:2px;">' + dateLabel + '</div>' : '') +
