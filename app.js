@@ -1,3 +1,24 @@
+
+Claude Desktop (Windows), Connecté
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+App · JS
 // ---- écran de choix (localiser ou visiter une ville) ----
 function initChoiceScreen(){
   const screen = document.getElementById("choice-screen");
@@ -3119,8 +3140,15 @@ function renderCityInfo(){
     el.classList.add("hidden");
     return;
   }
-  el.classList.remove("hidden");
   const baseInfo = CITY_INFO[state.city];
+  if (!baseInfo) {
+    // Pas encore de fiche descriptive préparée pour cette ville (une des nouvelles villes
+    // ajoutées) : on masque simplement la carte plutôt que de planter sur des champs manquants.
+    el.classList.add("hidden");
+    el.innerHTML = "";
+    return;
+  }
+  el.classList.remove("hidden");
   const enInfo = CITY_INFO_EN[state.city];
   const info = (currentLang.value === "en" && enInfo)
     ? { ...baseInfo, population: enInfo.population, desc: enInfo.desc, facts: enInfo.facts }
