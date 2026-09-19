@@ -1,28 +1,3 @@
-
-Claude Desktop (Windows), Connecté
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-App · JS
 // ---- écran de choix (localiser ou visiter une ville) ----
 function initChoiceScreen(){
   const screen = document.getElementById("choice-screen");
