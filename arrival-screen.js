@@ -208,9 +208,10 @@ function __exploreOpen() {
     __arrivalShow();
   });
 
-  const catsWrap = document.getElementById("explore-cats");
+    const catsWrap = document.getElementById("explore-cats");
   EXPLORE_CATEGORIES.forEach(function (c, i) {
     const btn = document.createElement("button");
+    const activeColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[c.key]) || "#fff";
     btn.textContent = c.label;
     btn.style.cssText =
       "flex:0 0 auto; padding:8px 12px; border-radius:999px; border:1px solid " +
@@ -228,14 +229,13 @@ function __exploreOpen() {
         b.style.color = "#fff";
         b.style.border = "1px solid rgba(255,255,255,0.3)";
       });
-      btn.style.background = "#fff";
-      btn.style.color = "#14213D";
-      btn.style.border = "1px solid #fff";
+      btn.style.background = c.key ? activeColor : "#fff";
+      btn.style.color = c.key ? "#fff" : "#14213D";
+      btn.style.border = "1px solid " + (c.key ? activeColor : "#fff");
       __exploreRender();
     });
     catsWrap.appendChild(btn);
   });
-
   const sortsWrap = document.getElementById("explore-sorts");
   const sortOptions = [
     { key: "distance", label: "📍 Plus proche" },
