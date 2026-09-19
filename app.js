@@ -1,9 +1,35 @@
+
+Claude Desktop (Windows), Connecté
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+App · JS
 // ---- écran de choix (localiser ou visiter une ville) ----
 function initChoiceScreen(){
   const screen = document.getElementById("choice-screen");
   if (!screen) return;
   screen.classList.remove("hidden");
-
+ 
   const colors = ["#E8604C","#F2C879","#7FA8D9","#ffffff","#C64A38"];
   function makeConfetti(burstEl){
     if (burstEl.children.length > 0) return;
@@ -22,7 +48,7 @@ function initChoiceScreen(){
   }
   makeConfetti(document.getElementById("choiceBurst1"));
   makeConfetti(document.getElementById("choiceBurst2"));
-
+ 
   function proceedAfterClick(card, callback){
     card.classList.add("clicked");
     setTimeout(() => {
@@ -30,7 +56,7 @@ function initChoiceScreen(){
       callback();
     }, 550);
   }
-
+ 
 document.getElementById("choice-locate").onclick = function(){
     proceedAfterClick(this, () => {
       navigator.geolocation.getCurrentPosition(
@@ -61,7 +87,7 @@ document.getElementById("choice-locate").onclick = function(){
 // Aucune dépendance externe : tout est en JavaScript natif.
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
-
+ 
 // ---- activation du service worker (PWA) ----
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -70,7 +96,7 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
-
+ 
 // ---- écran de démarrage animé ----
 (function(){
   const colors = ["#E8604C","#F2C879","#7FA8D9","#ffffff","#C64A38"];
@@ -98,7 +124,7 @@ if ("serviceWorker" in navigator) {
     }, 350);
   }, 3400);
 })();
-
+ 
 // ---- écran intro (souvenirs ou découvrir) ----
 function initIntroScreen(){
   const intro = document.getElementById("intro-screen");
@@ -120,7 +146,7 @@ function initIntroScreen(){
     };
   }
 }
-
+ 
 // ---- Firebase Authentication ----
 // ---- Firebase Authentication ----
 const firebaseConfig = {
@@ -143,7 +169,7 @@ function showAccountError(message){
 function hideAccountError(){
   document.getElementById("account-error").style.display = "none";
 }
-
+ 
 function renderAccountState(user){
   const loggedOut = document.getElementById("account-logged-out");
   const loggedIn = document.getElementById("account-logged-in");
@@ -169,7 +195,7 @@ function syncToCloud(){
     visitedEvents: [...state.visitedEvents],
   }, { merge: true }).catch(err => console.error("Erreur de synchronisation :", err));
 }
-
+ 
 function loadFromCloud(user){
   db.collection("users").doc(user.uid).get().then(doc => {
     if (doc.exists){
@@ -291,7 +317,7 @@ const TRANSLATIONS = {
   },
 };
 const currentLang = { value: localStorage.getItem("wh_lang") || "fr" };
-
+ 
 function applyTranslation(){
   const lang = currentLang.value;
   const dict = TRANSLATIONS[lang] || {};
@@ -303,44 +329,139 @@ function applyTranslation(){
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
 }
-
+ 
 function setLang(lang){
   currentLang.value = lang;
   localStorage.setItem("wh_lang", lang);
   applyTranslation();
   renderDiscover();
 }
+const R_PACA = "Provence-Alpes-Côte d'Azur", R_IDF = "Île-de-France", R_BFC = "Bourgogne-Franche-Comté",
+  R_BRE = "Bretagne", R_NAQ = "Nouvelle-Aquitaine", R_OCC = "Occitanie", R_PDL = "Pays de la Loire",
+  R_HDF = "Hauts-de-France", R_ARA = "Auvergne-Rhône-Alpes", R_NOR = "Normandie", R_GES = "Grand Est",
+  R_CVL = "Centre-Val de Loire", R_COR = "Corse", R_GUA = "Guadeloupe", R_MTQ = "Martinique",
+  R_GUY = "Guyane", R_REU = "La Réunion", R_MAY = "Mayotte";
+const CITY_REGIONS_ORDER = [R_PACA, R_IDF, R_ARA, R_NAQ, R_OCC, R_BRE, R_PDL, R_GES, R_HDF, R_NOR, R_BFC, R_CVL, R_COR, R_GUA, R_MTQ, R_GUY, R_REU, R_MAY];
 const CITIES = {
-  aix:  { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474 },
-  st:   { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407 },
-  ram:  { name: "Ramatuelle",      lat: 43.2135, lng: 6.6155 },
-  ste:  { name: "Sainte-Maxime",   lat: 43.3097, lng: 6.6390 },
-  lcv:  { name: "La Croix-Valmer", lat: 43.2076, lng: 6.5729 },
-  sens: { name: "Sens",            lat: 48.1975, lng: 3.2823 },
-  drag: { name: "Draguignan",      lat: 43.5375, lng: 6.4627 },
-  moug: { name: "Mougins",         lat: 43.6008, lng: 6.9956 },
-  mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487 },
-  paris: { name: "Paris",          lat: 48.8566, lng: 2.3522 },
-  nantes: { name: "Nantes",        lat: 47.2184, lng: -1.5536 },
-  rennes: { name: "Rennes",        lat: 48.1173, lng: -1.6778 },
-  brest: { name: "Brest",          lat: 48.3904, lng: -4.4861 },
-  bordeaux: { name: "Bordeaux",    lat: 44.8378, lng: -0.5792 },
-  toulouse: { name: "Toulouse",    lat: 43.6047, lng: 1.4442 },
-  marseille: { name: "Marseille", lat: 43.2965, lng: 5.3698 },
-  montgeron: { name: "Montgeron", lat: 48.7039, lng: 2.4605 },
-  lille: { name: "Lille", lat: 50.6292, lng: 3.0573 },
-  dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415 },
-  chambery: { name: "Chambéry", lat: 45.5646, lng: 5.9178 },
-  rouen: { name: "Rouen", lat: 49.4432, lng: 1.0999 },
-  reims: { name: "Reims", lat: 49.2583, lng: 4.0317 },
-  montpellier: { name: "Montpellier", lat: 43.6108, lng: 3.8767 },
-  angers: { name: "Angers", lat: 47.4784, lng: -0.5632 },
-  avignon: { name: "Avignon", lat: 43.9493, lng: 4.8055 },
-  strasbourg: { name: "Strasbourg", lat: 48.5734, lng: 7.7521 },
-  metz: { name: "Metz", lat: 49.1193, lng: 6.1757 },
-  caen: { name: "Caen", lat: 49.1829, lng: -0.3707 },
+  // ---- villes pilotes historiques (contenu déjà saisi à la main) ----
+  aix:  { name: "Aix-en-Provence", lat: 43.5297, lng: 5.4474, region: R_PACA },
+  st:   { name: "Saint-Tropez",    lat: 43.2677, lng: 6.6407, region: R_PACA },
+  ram:  { name: "Ramatuelle",      lat: 43.2135, lng: 6.6155, region: R_PACA },
+  ste:  { name: "Sainte-Maxime",   lat: 43.3097, lng: 6.6390, region: R_PACA },
+  lcv:  { name: "La Croix-Valmer", lat: 43.2076, lng: 6.5729, region: R_PACA },
+  sens: { name: "Sens",            lat: 48.1975, lng: 3.2823, region: R_BFC },
+  drag: { name: "Draguignan",      lat: 43.5375, lng: 6.4627, region: R_PACA },
+  moug: { name: "Mougins",         lat: 43.6008, lng: 6.9956, region: R_PACA },
+  mart: { name: "Martigues",       lat: 43.4056, lng: 5.0487, region: R_PACA },
+  paris: { name: "Paris",          lat: 48.8566, lng: 2.3522, region: R_IDF },
+  nantes: { name: "Nantes",        lat: 47.2184, lng: -1.5536, region: R_PDL },
+  rennes: { name: "Rennes",        lat: 48.1173, lng: -1.6778, region: R_BRE },
+  brest: { name: "Brest",          lat: 48.3904, lng: -4.4861, region: R_BRE },
+  bordeaux: { name: "Bordeaux",    lat: 44.8378, lng: -0.5792, region: R_NAQ },
+  toulouse: { name: "Toulouse",    lat: 43.6047, lng: 1.4442, region: R_OCC },
+  marseille: { name: "Marseille", lat: 43.2965, lng: 5.3698, region: R_PACA },
+  montgeron: { name: "Montgeron", lat: 48.7039, lng: 2.4605, region: R_IDF },
+  lille: { name: "Lille", lat: 50.6292, lng: 3.0573, region: R_HDF },
+  dijon: { name: "Dijon", lat: 47.3220, lng: 5.0415, region: R_BFC },
+  chambery: { name: "Chambéry", lat: 45.5646, lng: 5.9178, region: R_ARA },
+  rouen: { name: "Rouen", lat: 49.4432, lng: 1.0999, region: R_NOR },
+  reims: { name: "Reims", lat: 49.2583, lng: 4.0317, region: R_GES },
+  montpellier: { name: "Montpellier", lat: 43.6108, lng: 3.8767, region: R_OCC },
+  angers: { name: "Angers", lat: 47.4784, lng: -0.5632, region: R_PDL },
+  avignon: { name: "Avignon", lat: 43.9493, lng: 4.8055, region: R_PACA },
+  strasbourg: { name: "Strasbourg", lat: 48.5734, lng: 7.7521, region: R_GES },
+  metz: { name: "Metz", lat: 49.1193, lng: 6.1757, region: R_GES },
+  caen: { name: "Caen", lat: 49.1829, lng: -0.3707, region: R_NOR },
+  // ---- extension : une ville au moins par département français (préfectures), pour couvrir
+  // progressivement toute la France. Le contenu événementiel de ces villes se remplit au fur et
+  // à mesure (voir OPENAGENDA_SOURCES) — en attendant, elles s'affichent avec un état "bientôt". ----
+  bourgenbresse: { name: "Bourg-en-Bresse", lat: 46.2059, lng: 5.2265, region: R_ARA },
+  laon: { name: "Laon", lat: 49.5642, lng: 3.6222, region: R_HDF },
+  moulins: { name: "Moulins", lat: 46.5654, lng: 3.3328, region: R_ARA },
+  digne: { name: "Digne-les-Bains", lat: 44.0916, lng: 6.2354, region: R_PACA },
+  gap: { name: "Gap", lat: 44.5594, lng: 6.0679, region: R_PACA },
+  nice: { name: "Nice", lat: 43.7102, lng: 7.2620, region: R_PACA },
+  privas: { name: "Privas", lat: 44.7355, lng: 4.5987, region: R_ARA },
+  charleville: { name: "Charleville-Mézières", lat: 49.7739, lng: 4.7196, region: R_GES },
+  foix: { name: "Foix", lat: 42.9647, lng: 1.6053, region: R_OCC },
+  troyes: { name: "Troyes", lat: 48.2973, lng: 4.0744, region: R_GES },
+  carcassonne: { name: "Carcassonne", lat: 43.2130, lng: 2.3491, region: R_OCC },
+  rodez: { name: "Rodez", lat: 44.3506, lng: 2.5730, region: R_OCC },
+  aurillac: { name: "Aurillac", lat: 44.9276, lng: 2.4434, region: R_ARA },
+  angouleme: { name: "Angoulême", lat: 45.6484, lng: 0.1560, region: R_NAQ },
+  larochelle: { name: "La Rochelle", lat: 46.1603, lng: -1.1511, region: R_NAQ },
+  bourges: { name: "Bourges", lat: 47.0833, lng: 2.3986, region: R_CVL },
+  tulle: { name: "Tulle", lat: 45.2667, lng: 1.7714, region: R_NAQ },
+  ajaccio: { name: "Ajaccio", lat: 41.9272, lng: 8.7369, region: R_COR },
+  bastia: { name: "Bastia", lat: 42.7028, lng: 9.4500, region: R_COR },
+  stbrieuc: { name: "Saint-Brieuc", lat: 48.5142, lng: -2.7652, region: R_BRE },
+  gueret: { name: "Guéret", lat: 46.1667, lng: 1.8667, region: R_NAQ },
+  perigueux: { name: "Périgueux", lat: 45.1848, lng: 0.7218, region: R_NAQ },
+  besancon: { name: "Besançon", lat: 47.2380, lng: 6.0243, region: R_BFC },
+  valence: { name: "Valence", lat: 44.9334, lng: 4.8924, region: R_ARA },
+  evreux: { name: "Évreux", lat: 49.0270, lng: 1.1511, region: R_NOR },
+  chartres: { name: "Chartres", lat: 48.4439, lng: 1.4894, region: R_CVL },
+  quimper: { name: "Quimper", lat: 47.9960, lng: -4.0972, region: R_BRE },
+  nimes: { name: "Nîmes", lat: 43.8367, lng: 4.3601, region: R_OCC },
+  auch: { name: "Auch", lat: 43.6459, lng: 0.5860, region: R_OCC },
+  chateauroux: { name: "Châteauroux", lat: 46.8106, lng: 1.6947, region: R_CVL },
+  tours: { name: "Tours", lat: 47.3941, lng: 0.6848, region: R_CVL },
+  grenoble: { name: "Grenoble", lat: 45.1885, lng: 5.7245, region: R_ARA },
+  lons: { name: "Lons-le-Saunier", lat: 46.6739, lng: 5.5500, region: R_BFC },
+  montdemarsan: { name: "Mont-de-Marsan", lat: 43.8905, lng: -0.4995, region: R_NAQ },
+  blois: { name: "Blois", lat: 47.5861, lng: 1.3359, region: R_CVL },
+  stetienne: { name: "Saint-Étienne", lat: 45.4397, lng: 4.3872, region: R_ARA },
+  lepuy: { name: "Le Puy-en-Velay", lat: 45.0430, lng: 3.8850, region: R_ARA },
+  orleans: { name: "Orléans", lat: 47.9029, lng: 1.9093, region: R_CVL },
+  cahors: { name: "Cahors", lat: 44.4478, lng: 1.4370, region: R_OCC },
+  agen: { name: "Agen", lat: 44.2049, lng: 0.6212, region: R_NAQ },
+  mende: { name: "Mende", lat: 44.5183, lng: 3.5003, region: R_OCC },
+  stlo: { name: "Saint-Lô", lat: 49.1147, lng: -1.0900, region: R_NOR },
+  chalons: { name: "Châlons-en-Champagne", lat: 48.9566, lng: 4.3634, region: R_GES },
+  chaumont: { name: "Chaumont", lat: 48.1113, lng: 5.1394, region: R_GES },
+  laval: { name: "Laval", lat: 48.0698, lng: -0.7700, region: R_PDL },
+  nancy: { name: "Nancy", lat: 48.6921, lng: 6.1844, region: R_GES },
+  barleduc: { name: "Bar-le-Duc", lat: 48.7706, lng: 5.1613, region: R_GES },
+  vannes: { name: "Vannes", lat: 47.6582, lng: -2.7602, region: R_BRE },
+  nevers: { name: "Nevers", lat: 46.9896, lng: 3.1590, region: R_BFC },
+  beauvais: { name: "Beauvais", lat: 49.4295, lng: 2.0807, region: R_HDF },
+  alencon: { name: "Alençon", lat: 48.4322, lng: 0.0925, region: R_NOR },
+  arras: { name: "Arras", lat: 50.2916, lng: 2.7773, region: R_HDF },
+  clermont: { name: "Clermont-Ferrand", lat: 45.7772, lng: 3.0870, region: R_ARA },
+  pau: { name: "Pau", lat: 43.2951, lng: -0.3708, region: R_NAQ },
+  tarbes: { name: "Tarbes", lat: 43.2328, lng: 0.0781, region: R_OCC },
+  perpignan: { name: "Perpignan", lat: 42.6886, lng: 2.8948, region: R_OCC },
+  colmar: { name: "Colmar", lat: 48.0794, lng: 7.3585, region: R_GES },
+  lyon: { name: "Lyon", lat: 45.7640, lng: 4.8357, region: R_ARA },
+  vesoul: { name: "Vesoul", lat: 47.6167, lng: 6.1500, region: R_BFC },
+  macon: { name: "Mâcon", lat: 46.3067, lng: 4.8283, region: R_BFC },
+  lemans: { name: "Le Mans", lat: 48.0061, lng: 0.1996, region: R_PDL },
+  annecy: { name: "Annecy", lat: 45.8992, lng: 6.1294, region: R_ARA },
+  melun: { name: "Melun", lat: 48.5399, lng: 2.6597, region: R_IDF },
+  versailles: { name: "Versailles", lat: 48.8049, lng: 2.1204, region: R_IDF },
+  niort: { name: "Niort", lat: 46.3239, lng: -0.4587, region: R_NAQ },
+  amiens: { name: "Amiens", lat: 49.8942, lng: 2.2957, region: R_HDF },
+  albi: { name: "Albi", lat: 43.9298, lng: 2.1480, region: R_OCC },
+  montauban: { name: "Montauban", lat: 44.0181, lng: 1.3550, region: R_OCC },
+  toulon: { name: "Toulon", lat: 43.1242, lng: 5.9280, region: R_PACA },
+  laroche: { name: "La Roche-sur-Yon", lat: 46.6705, lng: -1.4266, region: R_PDL },
+  poitiers: { name: "Poitiers", lat: 46.5802, lng: 0.3404, region: R_NAQ },
+  limoges: { name: "Limoges", lat: 45.8336, lng: 1.2611, region: R_NAQ },
+  epinal: { name: "Épinal", lat: 48.1742, lng: 6.4460, region: R_GES },
+  auxerre: { name: "Auxerre", lat: 47.7982, lng: 3.5730, region: R_BFC },
+  belfort: { name: "Belfort", lat: 47.6386, lng: 6.8631, region: R_BFC },
+  evry: { name: "Évry-Courcouronnes", lat: 48.6300, lng: 2.4400, region: R_IDF },
+  nanterre: { name: "Nanterre", lat: 48.8924, lng: 2.2065, region: R_IDF },
+  bobigny: { name: "Bobigny", lat: 48.9075, lng: 2.4392, region: R_IDF },
+  creteil: { name: "Créteil", lat: 48.7904, lng: 2.4556, region: R_IDF },
+  cergy: { name: "Cergy", lat: 49.0367, lng: 2.0761, region: R_IDF },
+  basseterre: { name: "Basse-Terre", lat: 15.9958, lng: -61.7296, region: R_GUA },
+  fortdefrance: { name: "Fort-de-France", lat: 14.6161, lng: -61.0588, region: R_MTQ },
+  cayenne: { name: "Cayenne", lat: 4.9333, lng: -52.3333, region: R_GUY },
+  stdenisreunion: { name: "Saint-Denis (La Réunion)", lat: -20.8823, lng: 55.4504, region: R_REU },
+  mamoudzou: { name: "Mamoudzou", lat: -12.7806, lng: 45.2278, region: R_MAY },
 };
-
+ 
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
 // tourisme d'Aix-en-Provence, de Saint-Tropez, de Ramatuelle, de Sainte-Maxime et de La Croix-Valmer)
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
@@ -1094,9 +1215,9 @@ const SEED_EVENTS = [
     description: "Grand rendez-vous populaire et gratuit dans toute la ville : concerts, ciné plein-air, activités nautiques et animations.",
   },
 ]; 
-
+ 
 const CATEGORIES = ["Musique", "Marché", "Brocante", "Festival", "Sport", "Soirée", "Bar", "Expo", "À voir"];
-
+ 
 // Scène illustrée par défaut selon la catégorie (utilisée pour les événements publiés par les
 // utilisateurs, qui n'ont pas de scène assignée manuellement).
 const CATEGORY_SCENE = {
@@ -1259,12 +1380,12 @@ const SCENES = {
     <path d="M60,120 C70,100 90,100 100,120" fill="none" stroke="#e8cd9a" stroke-width="4"/>
   `,
 };
-
+ 
 function sceneSVG(key){
   const inner = SCENES[key] || SCENES.village;
   return `<svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 }
-
+ 
 // ---- illustrations des lieux emblématiques (tags de la fiche ville) ----
 const LANDMARK_SCENES = {
   "cours-mirabeau": `
@@ -1524,12 +1645,12 @@ const LANDMARK_SCENES = {
     <ellipse cx="100" cy="100" rx="70" ry="8" fill="#6b8f5a" opacity="0.5"/>
   `,
 };
-
+ 
 function landmarkSVG(key){
   const inner = LANDMARK_SCENES[key] || SCENES.village;
   return `<svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
 }
-
+ 
 // Fiche descriptive de chaque lieu emblématique cité dans les tags des fiches villes.
 const LANDMARK_INFO = {
     "Château des Ducs de Savoie": {
@@ -1861,16 +1982,16 @@ function openLandmark(tag){
   document.getElementById("landmark-modal-caption").textContent = info.caption;
   document.getElementById("landmark-modal").classList.remove("hidden");
 }
-
+ 
 function closeLandmark(){
   document.getElementById("landmark-modal").classList.add("hidden");
 }
-
+ 
 // ---- souvenirs photo par ville (stockage local à l'appareil, via IndexedDB) ----
 const PHOTOS_DB_NAME = "wh_photos_db";
 const PHOTOS_STORE = "photos";
 let photosCurrentCity = null;
-
+ 
 function openPhotosDB(){
   return new Promise((resolve, reject) => {
     if (!window.indexedDB){ reject(new Error("IndexedDB indisponible")); return; }
@@ -1886,7 +2007,7 @@ function openPhotosDB(){
     req.onerror = () => reject(req.error);
   });
 }
-
+ 
 async function addPhoto(city, dataUrl){
   const db = await openPhotosDB();
   return new Promise((resolve, reject) => {
@@ -1896,7 +2017,7 @@ async function addPhoto(city, dataUrl){
     tx.onerror = () => reject(tx.error);
   });
 }
-
+ 
 async function getPhotosForCity(city){
   const db = await openPhotosDB();
   return new Promise((resolve, reject) => {
@@ -1906,7 +2027,7 @@ async function getPhotosForCity(city){
     req.onerror = () => reject(req.error);
   });
 }
-
+ 
 async function deletePhotoById(id){
   const db = await openPhotosDB();
   return new Promise((resolve, reject) => {
@@ -1916,7 +2037,7 @@ async function deletePhotoById(id){
     tx.onerror = () => reject(tx.error);
   });
 }
-
+ 
 // Redimensionne et compresse une photo côté navigateur avant stockage, pour que le téléphone
 // puisse en garder un maximum sans ralentir l'appli.
 function resizePhoto(file, maxDim, quality){
@@ -1944,21 +2065,21 @@ function resizePhoto(file, maxDim, quality){
     reader.readAsDataURL(file);
   });
 }
-
+ 
 async function openPhotosView(city){
   photosCurrentCity = city;
   document.getElementById("photos-title").textContent = "📸 Mes photos — " + CITIES[city].name;
   showView("photos");
   await renderPhotosGrid(city);
 }
-
+ 
 async function renderPhotosGrid(city){
   const grid = document.getElementById("photos-grid");
   const empty = document.getElementById("photos-empty");
   let photos = [];
   try { photos = await getPhotosForCity(city); }
   catch(e){ photos = []; }
-
+ 
   if (photos.length === 0){
     grid.innerHTML = "";
     empty.classList.remove("hidden");
@@ -1970,17 +2091,17 @@ async function renderPhotosGrid(city){
     });
   }
 }
-
+ 
 function openLightbox(id, src){
   document.getElementById("lightbox-img").src = src;
   document.getElementById("photo-lightbox").dataset.photoId = id;
   document.getElementById("photo-lightbox").classList.remove("hidden");
 }
-
+ 
 function closeLightbox(){
   document.getElementById("photo-lightbox").classList.add("hidden");
 }
-
+ 
 // Informations pratiques sur les villes pilotes (sources : offices de tourisme, INSEE,
 // Wikipédia — chiffres 2022-2023, reformulés).
 const CITY_INFO = {
@@ -2438,7 +2559,7 @@ const BROCANTE_CITY_SLUGS = {
   toulouse: "Toulouse-31",
   marseille: "Marseille-13",
 };
-
+ 
 async function fetchBrocantesForCity(cityKey){
   const slug = BROCANTE_CITY_SLUGS[cityKey];
   if (!slug) return [];
@@ -2468,7 +2589,7 @@ async function fetchBrocantesForCity(cityKey){
     return [];
   }
 }
-
+ 
 async function fetchAllBrocantes(){
   const results = await Promise.allSettled(Object.keys(BROCANTE_CITY_SLUGS).map(fetchBrocantesForCity));
   return results.filter(r => r.status === "fulfilled").map(r => r.value).flat();
@@ -2535,7 +2656,7 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 74583765, cityName: "Rouen", cityKey: "rouen", search: null, apiCity: "Rouen", forceCategory: "Bar" },
   { agendaId: 74583765, cityName: "Dijon", cityKey: "dijon", search: null, apiCity: "Dijon", forceCategory: "Bar" },
 ];
-
+ 
 function sceneForOpenAgendaEvent(title, description){ 
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "expo";
@@ -2545,7 +2666,7 @@ function sceneForOpenAgendaEvent(title, description){
   if (/soir[ée]e|bal|f[êe]te/.test(text)) return "village";
   return "festival";
 }
-
+ 
 function categoryForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "Expo";
@@ -2556,7 +2677,7 @@ function categoryForOpenAgendaEvent(title, description){
   if (/soir[ée]e|bal/.test(text)) return "Soirée";
   return "Festival";
 }
-
+ 
 // Récupère et convertit les événements d'un agenda OpenAgenda pour une ville donnée.
 async function fetchOpenAgendaCityEvents(source){
   const size = source.size || 100;
@@ -2609,7 +2730,7 @@ async function fetchOpenAgendaCityEvents(source){
     return [];
   }
 }
-
+ 
 // Récupère les événements de toutes les sources OpenAgenda configurées, en parallèle.
 async function fetchAllOpenAgendaEvents(){
   const results = await Promise.allSettled(OPENAGENDA_SOURCES.map(fetchOpenAgendaCityEvents));
@@ -2618,11 +2739,11 @@ async function fetchAllOpenAgendaEvents(){
     .map(r => r.value)
     .flat();
 }
-
+ 
 // ---- intégration Paris Data (« Que Faire à Paris », agenda officiel de la Ville de Paris) ----
 // Format différent d'OpenAgenda : cette source est gérée séparément avec ses propres champs.
 const PARIS_DATA_URL = "https://opendata.paris.fr/api/records/1.0/search/?dataset=que-faire-a-paris-&rows=500";
-
+ 
 function sceneForParisEvent(tags){
   const text = tags.toLowerCase();
   if (/photo|histoire|expo/.test(text)) return "expo";
@@ -2632,7 +2753,7 @@ function sceneForParisEvent(tags){
   if (/soir[ée]e|bal|f[êe]te/.test(text)) return "village";
   return "festival";
 }
-
+ 
 function categoryForParisEvent(tags){
   const text = tags.toLowerCase();
   if (/photo|histoire|expo/.test(text)) return "Expo";
@@ -2655,7 +2776,7 @@ async function fetchParisEvents(){
     }
     const pages = await Promise.all(requests);
     const allRecords = pages.flatMap(p => p.records || []);
-
+ 
     return allRecords
       .filter(r => r.fields && r.fields.lat_lon && r.fields.title)
       .map(r => {
@@ -2701,7 +2822,7 @@ const LOYALTY_TIERS = [
   { min: 20, label: "Habitué" },
   { min: 60, label: "Ambassadeur" },
 ];
-
+ 
 function loadLoyalty(){
   try {
     const saved = JSON.parse(localStorage.getItem("wh_loyalty") || "null");
@@ -2709,7 +2830,7 @@ function loadLoyalty(){
   } catch(e){ /* ignore */ }
   return { points: 0, lastVisit: null };
 }
-
+ 
 function saveLoyalty(){
   localStorage.setItem("wh_loyalty", JSON.stringify(state.loyalty));
   syncToCloud();
@@ -2723,19 +2844,19 @@ function awardDailyLoyaltyPoints(){
     saveLoyalty();
   }
 }
-
+ 
 function loyaltyTierLabel(points){
   let label = LOYALTY_TIERS[0].label;
   LOYALTY_TIERS.forEach(t => { if (points >= t.min) label = t.label; });
   return label;
 }
-
+ 
 function renderLoyalty(){
   const el = document.getElementById("loyalty-badge");
   if (!el) return;
   el.textContent = "⭐ " + state.loyalty.points + " pts · " + loyaltyTierLabel(state.loyalty.points);
 }
-
+ 
 // ---- confirmation "J'y étais" et parrainage ----
 function loadVisitedEvents(){
   try { return new Set(JSON.parse(localStorage.getItem("wh_been_there") || "[]")); }
@@ -2745,7 +2866,7 @@ function saveVisitedEvents(){
   localStorage.setItem("wh_been_there", JSON.stringify([...state.visitedEvents]));
   syncToCloud();
 }
-
+ 
 function markBeenThere(){
   const id = state.currentEventId;
   if (!id || state.visitedEvents.has(id)) return;
@@ -2756,7 +2877,7 @@ function markBeenThere(){
   renderLoyalty();
   renderBeenThereButton();
 }
-
+ 
 function renderBeenThereButton(){
   const btn = document.getElementById("btn-been-there");
   if (!btn) return;
@@ -2775,7 +2896,7 @@ function awardReferralWelcomeBonus(){
   saveLoyalty();
   localStorage.setItem("wh_referral_bonus_claimed", "1");
 }
-
+ 
 // Copie le lien de parrainage dans le presse-papiers (ou propose le partage natif si disponible).
 async function inviteFriend(){
   const url = window.location.origin + window.location.pathname + "?ref=1";
@@ -2790,9 +2911,9 @@ async function inviteFriend(){
     prompt("Copie ce lien et envoie-le à un ami :", url);
   }
 }
-
+ 
 // ---- state ----
-
+ 
 // ---- state ----
 // ---- state ----
 const state = {
@@ -2811,7 +2932,7 @@ mode: "liste",
   loyalty: loadLoyalty(),
   visitedEvents: loadVisitedEvents(),
 }; 
-
+ 
 // ---- lieux emblématiques transformés en "événements toujours ouverts" ----
 function buildPlaceEvents(){
   const results = [];
@@ -2845,11 +2966,11 @@ function buildPlaceEvents(){
   return results;
 }
 const PLACE_EVENTS = buildPlaceEvents();
-
+ 
 function allEvents(){
   return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.brocanteEvents, ...PLACE_EVENTS];
 }
-
+ 
 // ---- geo helpers ----
 function haversineKm(lat1, lng1, lat2, lng2){
   const R = 6371;
@@ -2877,12 +2998,12 @@ function nearestCityKey(){
   });
   return closest;
 }
-
+ 
 function distanceToEvent(ev){
   const ref = referencePoint();
   return haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
 }
-
+ 
 // ---- local persistence (this browser only, no server yet) ----
 function loadFavorites(){
   try { return new Set(JSON.parse(localStorage.getItem("wh_favorites") || "[]")); }
@@ -2899,7 +3020,7 @@ function loadLocalEvents(){
 function saveLocalEvents(){
   localStorage.setItem("wh_local_events", JSON.stringify(state.localEvents));
 }
-
+ 
 // ---- filtering ----
 function matchesPeriod(ev, period){
   if (!period) return true;
@@ -2913,7 +3034,7 @@ function matchesPeriod(ev, period){
   if (period === "later") return ev.date > weekLimit;
   return true;
 }
-
+ 
 function baseVisibleEvents(){
   const ref = referencePoint();
   const preFiltered = state.userPos ? allEvents() : allEvents().filter(ev => ev.city === state.city);
@@ -2944,11 +3065,11 @@ function formatDate(iso){
   const d = new Date(iso + "T00:00:00");
   return d.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
 }
-
+ 
 // ---- rendering ----
 const CATEGORY_COLORS = {"Musique":"#9D4EDD","Théâtre":"#E85D3D","Soirée":"#E63980","Festival":"#F4A261","Expo":"#2A9D8F","Sport":"#2A9D5C","Marché":"#3498DB","À voir":"#457B9D","Bar":"#C1440E","Brocante":"#8B5E3C"};
 const CATEGORY_ICONS = {"Musique":"🎵","Théâtre":"🎭","Soirée":"🥂","Festival":"🎪","Expo":"🖼️","Sport":"⚽","Marché":"🛍️","À voir":"👀","Bar":"🍸","Brocante":"🧺"};
-
+ 
 function renderCategoryChips(){
   const el = document.getElementById("category-chips");
   el.innerHTML = "";
@@ -2969,7 +3090,7 @@ function renderCategoryChips(){
     el.appendChild(b);
   });
 }
-
+ 
 const CITY_PHOTOS = {
   aix: "photo-cours-mirabeau.jpg",
   st: "photo-le-port.jpg",
@@ -3049,13 +3170,13 @@ function renderCityInfo(){
   });
   el.querySelector("#btn-city-photos").onclick = () => openPhotosView(state.city);
 }
-
+ 
 function renderMap(events){
   const pinsEl = document.getElementById("map-pins");
   pinsEl.innerHTML = "";
   const ref = referencePoint();
   const spanKm = Math.max(state.radiusKm, 3) * 1.3;
-
+ 
   events.slice(0, 8).forEach(ev => {
     const dxKm = (ev.lng - ref.lng) * 111 * Math.cos(ref.lat * Math.PI / 180);
     const dyKm = (ev.lat - ref.lat) * 111;
@@ -3071,11 +3192,11 @@ function renderMap(events){
     pin.onclick = () => openDetail(ev.id);
     pinsEl.appendChild(pin);
   });
-
+ 
   document.getElementById("map-radius-label").textContent = state.userPos ? state.radiusKm : "";
   document.getElementById("map-radius-tag").classList.toggle("hidden", !state.userPos);
 }
-
+ 
 function eventCardHTML(ev){
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
   const metaTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
@@ -3099,16 +3220,16 @@ function eventCardHTML(ev){
       <div class="dist">${distTxt}</div>
     </button>`;
 }
-
+ 
 function renderArrondissementFilter(){
   const row = document.getElementById("arrondissement-row");
   const select = document.getElementById("arrondissement-select");
   if (!row || !select) return;
-
+ 
   const isParis = !state.userPos && state.city === "paris";
   row.classList.toggle("hidden", !isParis);
   if (!isParis) return;
-
+ 
   const present = new Set(
     allEvents().filter(ev => ev.city === "paris" && ev.arrondissement).map(ev => ev.arrondissement)
   );
@@ -3118,7 +3239,7 @@ function renderArrondissementFilter(){
     sorted.map(n => `<option value="${n}">${n}ᵉ arrondissement</option>`).join("");
   select.value = sorted.includes(Number(current)) ? current : "";
 }
-
+ 
 function updateStatsBanner(events){
   const todayIso = new Date().toISOString().slice(0, 10);
   const tomorrowIso = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
@@ -3144,6 +3265,7 @@ function renderDiscover(){
   if (events.length === 0){
     listEl.innerHTML = "";
     emptyEl.classList.remove("hidden");
+    renderEmptyStateContent(emptyEl);
   } else {
     emptyEl.classList.add("hidden");
     listEl.innerHTML = events.map(eventCardHTML).join("");
@@ -3151,13 +3273,112 @@ function renderDiscover(){
       card.onclick = () => openDetail(card.dataset.id);
     });
   }
-
+ 
   renderMap(events);
   renderLocateBar();
   renderCityInfo();
   renderArrondissementFilter();
 }
-
+ 
+// ---- villes de France : quelles ont déjà du contenu (SEED_EVENTS / OpenAgenda / lieux) ----
+function curatedCityKeys(){
+  const keys = new Set();
+  SEED_EVENTS.forEach(ev => keys.add(ev.city));
+  if (typeof OPENAGENDA_SOURCES !== "undefined") OPENAGENDA_SOURCES.forEach(s => keys.add(s.cityKey));
+  if (typeof PLACE_EVENTS !== "undefined") PLACE_EVENTS.forEach(ev => keys.add(ev.city));
+  return keys;
+}
+ 
+function cityChipHTML(key, curated){
+  if (!CITIES[key]) return "";
+  return '<button type="button" class="chip-btn' + (curated ? " chip-btn--curated" : "") + '" data-city="' + key + '">' +
+    (curated ? '<span class="city-dot"></span>' : "") + CITIES[key].name + "</button>";
+}
+ 
+// Construit l'accordéon par région à partir de CITIES (au lieu d'une liste figée en HTML),
+// pour pouvoir grandir facilement vers toutes les villes de France.
+function renderRegionAccordion(){
+  const el = document.getElementById("region-accordion");
+  if (!el) return;
+  const curated = curatedCityKeys();
+  const byRegion = {};
+  Object.keys(CITIES).forEach(key => {
+    const region = CITIES[key].region || "Autres";
+    (byRegion[region] = byRegion[region] || []).push(key);
+  });
+  const orderedRegions = [
+    ...CITY_REGIONS_ORDER.filter(r => byRegion[r]),
+    ...Object.keys(byRegion).filter(r => !CITY_REGIONS_ORDER.includes(r)),
+  ];
+  el.innerHTML = orderedRegions.map((region, i) => {
+    const keys = byRegion[region].sort((a, b) => CITIES[a].name.localeCompare(CITIES[b].name, "fr"));
+    const chips = keys.map(k => cityChipHTML(k, curated.has(k))).join("");
+    return '<div class="region-block"><button type="button" class="region-toggle" data-region="r' + i + '">' +
+      region + ' <span class="chevron">›</span></button>' +
+      '<div class="region-panel" data-panel="r' + i + '"><div class="locate-actions">' + chips + "</div></div></div>";
+  }).join("");
+}
+ 
+function normalizeForSearch(s){
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+}
+ 
+// Recherche libre parmi toutes les villes de CITIES (pas seulement les villes actives).
+function initCitySearch(){
+  const input = document.getElementById("city-search-input");
+  const resultsEl = document.getElementById("city-search-results");
+  const accordionEl = document.getElementById("region-accordion");
+  if (!input || !resultsEl || !accordionEl) return;
+  input.addEventListener("input", () => {
+    const q = normalizeForSearch(input.value.trim());
+    if (!q) {
+      resultsEl.classList.add("hidden");
+      resultsEl.innerHTML = "";
+      accordionEl.classList.remove("hidden");
+      return;
+    }
+    accordionEl.classList.add("hidden");
+    const curated = curatedCityKeys();
+    const matches = Object.keys(CITIES)
+      .filter(k => normalizeForSearch(CITIES[k].name).includes(q))
+      .sort((a, b) => {
+        const aCur = curated.has(a) ? 0 : 1, bCur = curated.has(b) ? 0 : 1;
+        if (aCur !== bCur) return aCur - bCur;
+        return CITIES[a].name.localeCompare(CITIES[b].name, "fr");
+      })
+      .slice(0, 30);
+    resultsEl.classList.remove("hidden");
+    resultsEl.innerHTML = matches.length
+      ? matches.map(k => cityChipHTML(k, curated.has(k))).join("")
+      : '<p class="city-search-empty">Aucune ville trouvée.</p>';
+  });
+}
+ 
+// Quand la ville choisie n'a pas encore d'événements saisis, on le dit clairement et on propose
+// la ville active la plus proche plutôt que de laisser un écran vide.
+function renderEmptyStateContent(emptyEl){
+  const curated = curatedCityKeys();
+  if (!state.userPos && state.city && CITIES[state.city] && !curated.has(state.city)) {
+    const ref = CITIES[state.city];
+    let bestKey = null, bestDist = Infinity;
+    curated.forEach(k => {
+      if (!CITIES[k]) return;
+      const d = haversineKm(ref.lat, ref.lng, CITIES[k].lat, CITIES[k].lng);
+      if (d < bestDist) { bestDist = d; bestKey = k; }
+    });
+    emptyEl.innerHTML =
+      '<div class="empty-city-card">' +
+        '<div class="t">🚧 ' + CITIES[state.city].name + ' — en cours d\'intégration</div>' +
+        "<div class=\"d\">On n'a pas encore d'événements pour cette ville, mais elle arrivera bientôt. En attendant, découvre ceux de la ville active la plus proche :</div>" +
+        (bestKey
+          ? '<button type="button" class="chip-btn chip-btn--primary nearest-city-btn" data-city="' + bestKey + '">→ Voir ' + CITIES[bestKey].name + " (" + Math.round(bestDist) + " km)</button>"
+          : "") +
+      "</div>";
+  } else {
+    emptyEl.textContent = "Aucun événement ne correspond à ces filtres pour le moment. Essayez d'élargir le rayon ou les catégories.";
+  }
+}
+ 
 function renderFavorites(){
   const events = allEvents()
     .filter(ev => state.favorites.has(ev.id))
@@ -3175,13 +3396,13 @@ function renderFavorites(){
     });
   }
 }
-
+ 
 // ---- detail view ----
 function openDetail(id){
   const ev = allEvents().find(e => e.id === id);
   if (!ev) return;
   state.currentEventId = id;
-
+ 
     const heroEl = document.getElementById("detail-hero");
   heroEl.className = "detail-hero";
   if (ev.photo) {
@@ -3202,19 +3423,19 @@ function openDetail(id){
 document.getElementById("detail-distance").textContent = "🚶 " + Math.max(2, Math.round((distanceToEvent(ev) * 12) / 5 / 5) * 5) + " min à pied";
   document.getElementById("detail-price").textContent = ev.price;
   document.getElementById("detail-desc").textContent = ev.description;
-
+ 
    const favBtn = document.getElementById("btn-favorite");
   favBtn.classList.toggle("active", state.favorites.has(id));
  document.getElementById("favorite-icon").textContent = state.favorites.has(id) ? "❤️" : "🤍";
   renderBeenThereButton();
-
+ 
   showView("detail");
 }
-
+ 
 function iconFor(cat){
   return { Musique:"🎷", Marché:"🛍️", Brocante:"🧺", Festival:"🎪", Sport:"🏁", Soirée:"🎧", Expo:"🖼️", "À voir":"🏛️" }[cat] || "📌";
 }
-
+ 
 // ---- view switching ----
 function showView(name){
   ["discover","detail","publish","confirm","favorites","photos"].forEach(v => {
@@ -3226,17 +3447,19 @@ function showView(name){
   window.scrollTo(0, 0);
   if (name === "favorites") renderFavorites();
 }
-
+ 
 // ---- wiring ----
 document.addEventListener("DOMContentLoaded", () => {
   renderCategoryChips();
+  renderRegionAccordion();
+  initCitySearch();
   renderDiscover();
   applyTranslation();
-
+ 
    document.querySelectorAll(".flag-btn[data-lang]").forEach(btn => {
     btn.onclick = () => setLang(btn.dataset.lang);
   });   
-
+ 
   const brandHome = document.getElementById("brand-home");
   if (brandHome) brandHome.onclick = () => {
     const screen = document.getElementById("choice-screen");
@@ -3245,7 +3468,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".choice-card").forEach(c => c.classList.remove("clicked"));
     }
   };
-
+ 
   document.querySelectorAll(".stat[data-filter]").forEach(btn => {
     btn.onclick = () => {
       const filter = btn.dataset.filter;
@@ -3260,23 +3483,35 @@ document.addEventListener("DOMContentLoaded", () => {
       renderDiscover();
     };
   }); 
-
-  document.querySelectorAll(".region-toggle").forEach(btn => {
-    btn.onclick = () => btn.closest(".region-block").classList.toggle("open");
+ 
+  // Accordéon + boutons de ville : construits dynamiquement (toutes les villes de France),
+  // donc on écoute en délégation plutôt que de wirer des boutons figés.
+  document.addEventListener("click", (e) => {
+    const cityBtn = e.target.closest(".chip-btn[data-city]");
+    if (cityBtn) {
+      state.city = cityBtn.dataset.city;
+      state.userPos = null;
+      renderDiscover();
+      return;
+    }
+    const regionToggle = e.target.closest(".region-toggle");
+    if (regionToggle) {
+      regionToggle.closest(".region-block").classList.toggle("open");
+    }
   });
-
+ 
   auth.onAuthStateChanged(user => {
   renderAccountState(user);
   if (user) loadFromCloud(user);
 });
-
+ 
   const accountModal = document.getElementById("account-modal");
   document.getElementById("btn-account").onclick = () => accountModal.classList.remove("hidden");
   document.getElementById("btn-account-close").onclick = () => accountModal.classList.add("hidden");
   accountModal.onclick = (e) => {
     if (e.target.id === "account-modal") accountModal.classList.add("hidden");
   };
-
+ 
   document.getElementById("btn-account-login").onclick = () => {
     hideAccountError();
     const email = document.getElementById("account-email").value;
@@ -3285,7 +3520,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(() => accountModal.classList.add("hidden"))
       .catch(err => showAccountError(err.message));
   };
-
+ 
   document.getElementById("btn-account-signup").onclick = () => {
     hideAccountError();
     const email = document.getElementById("account-email").value;
@@ -3294,22 +3529,22 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(() => accountModal.classList.add("hidden"))
       .catch(err => showAccountError(err.message));
   };
-
+ 
   document.getElementById("btn-account-logout").onclick = () => {
     auth.signOut();
   };
-
+ 
    // Points de fidélité : on attribue les points du jour (si pas déjà fait) et on affiche le badge.
   awardDailyLoyaltyPoints();
   awardReferralWelcomeBonus();
   renderLoyalty();
-
+ 
    const beenThereBtn = document.getElementById("btn-been-there");
   if (beenThereBtn) beenThereBtn.onclick = markBeenThere;
-
+ 
     const inviteBtn = document.getElementById("btn-invite-friend");
   if (inviteBtn) inviteBtn.onclick = inviteFriend;
-
+ 
   const newsletterBtn = document.getElementById("btn-newsletter");
   const newsletterModal = document.getElementById("newsletter-modal");
   const newsletterCloseBtn = document.getElementById("btn-newsletter-close");
@@ -3320,27 +3555,19 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target.id === "newsletter-modal") newsletterModal.classList.add("hidden");
     };
   }
-
+ 
    // Récupération des événements OpenAgenda + Paris Data en arrière-plan, sans bloquer l'affichage
   // initial : dès qu'ils arrivent, on les fusionne et on rafraîchit l'écran.
    Promise.all([fetchAllOpenAgendaEvents(), fetchParisEvents()]).then(([oaEvents, parisEvents]) => {
     state.openAgendaEvents = [...oaEvents, ...parisEvents];
     renderDiscover();
   });
-
+ 
   fetchAllBrocantes().then(brocantes => {
     state.brocanteEvents = brocantes;
     renderDiscover();
   });
-
-  document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
-    b.onclick = () => {
-      state.city = b.dataset.city;
-      state.userPos = null;
-      renderDiscover();
-    };
-  });
-
+ 
   document.getElementById("btn-geoloc").onclick = () => {
     if (!navigator.geolocation){
       alert("La géolocalisation n'est pas disponible sur ce navigateur.");
@@ -3376,7 +3603,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("map-mock").classList.toggle("hidden", state.mode !== "carte");
     };
   });
-
+ 
    document.getElementById("btn-filters").onclick = () => {
     document.getElementById("filters-panel").classList.toggle("hidden");
   };
@@ -3392,7 +3619,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("radius-value").textContent = formatRadius(state.radiusKm);
     renderDiscover();
   };
-
+ 
   document.querySelectorAll("#radius-presets .chip-btn").forEach(b => {
     b.onclick = () => {
       state.radiusKm = Number(b.dataset.radius);
@@ -3403,7 +3630,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderDiscover();
     };
   });
-
+ 
   document.getElementById("btn-back-detail").onclick = () => showView("discover");
  document.getElementById("btn-interested").onclick = (e) => {
     const isInterested = e.target.classList.toggle("active");
@@ -3418,19 +3645,19 @@ document.addEventListener("DOMContentLoaded", () => {
     saveFavorites();
     openDetail(id);
   };
-
+ 
   document.getElementById("btn-publish-header").onclick = () => showView("publish");
   document.querySelectorAll(".nav-item").forEach(b => {
     b.onclick = () => showView(b.dataset.view);
   });
   document.getElementById("btn-back-publish").onclick = () => showView("discover");
   document.getElementById("btn-confirm-back").onclick = () => showView("discover");
-
+ 
   document.getElementById("btn-landmark-close").onclick = closeLandmark;
   document.getElementById("landmark-modal").onclick = (e) => {
     if (e.target.id === "landmark-modal") closeLandmark();
   };
-
+ 
   document.getElementById("btn-back-photos").onclick = () => showView("discover");
   document.getElementById("btn-add-photo").onclick = () => document.getElementById("photo-input").click();
   document.getElementById("photo-input").onchange = async (e) => {
@@ -3456,7 +3683,7 @@ document.addEventListener("DOMContentLoaded", () => {
     closeLightbox();
     await renderPhotosGrid(photosCurrentCity);
   };
-
+ 
   document.getElementById("publish-form").onsubmit = (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
@@ -3485,3 +3712,4 @@ document.addEventListener("DOMContentLoaded", () => {
     showView("confirm");
   };
 });
+ 
