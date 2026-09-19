@@ -513,8 +513,10 @@
 
   function initSouvenirs() {
     ensureFloatingButton();
-    ensureAccountLink();
+      ensureAccountLink();
     setInterval(ensureAccountLink, 800);
+    ensureNavCarnetLink();
+    setInterval(ensureNavCarnetLink, 800);
     ensureDetailLink();
     setInterval(ensureDetailLink, 800);
        updateSouvenirsCount();
