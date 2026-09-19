@@ -1,7 +1,7 @@
 // ---- bonhomme sur le bandeau "ville sélectionnée" avant tout choix ----
 let __hasPickedCity = false;
 let __hasPickedFilter = false;
-
+ 
 function __ensureBonhomme() {
   if (document.getElementById("bonhomme-banner")) return document.getElementById("bonhomme-banner");
   const bar = document.querySelector(".locate-bar");
@@ -22,7 +22,7 @@ function __ensureBonhomme() {
   bar.insertBefore(wrap, body);
   return wrap;
 }
-
+ 
 function __toggleCityContent(show) {
   const ids = ["stats-banner", "city-info", "filters-panel"];
   ids.forEach((id) => {
@@ -32,7 +32,7 @@ function __toggleCityContent(show) {
   const toolbar = document.querySelector(".toolbar");
   if (toolbar) toolbar.style.display = show ? "" : "none";
 }
-
+ 
 function __toggleResultsContent(show) {
   const ids = ["map-mock", "btn-see-list", "event-list", "empty-state"];
   ids.forEach((id) => {
@@ -40,12 +40,12 @@ function __toggleResultsContent(show) {
     if (el) el.style.display = show ? "" : "none";
   });
 }
-
+ 
 function __toggleLocateBody(show) {
   const body = document.querySelector(".locate-body");
   if (body) body.style.display = show ? "" : "none";
 }
-
+ 
 const __renderLocateBarBase = renderLocateBar;
 renderLocateBar = function () {
   const bonhomme = __ensureBonhomme();
@@ -68,7 +68,7 @@ renderLocateBar = function () {
   __toggleLocateBody(false);
   __renderLocateBarBase();
 };
-
+ 
 const __renderCategoryChipsBase = renderCategoryChips;
 renderCategoryChips = function () {
   __renderCategoryChipsBase();
@@ -87,11 +87,13 @@ renderCategoryChips = function () {
   };
   el.insertBefore(btn, el.firstChild);
 };
-
+ 
 document.addEventListener("click", (e) => {
   if (e.target.closest(".chip-btn[data-city]") || e.target.closest("#btn-geoloc")) {
     __hasPickedCity = true;
-    __hasPickedFilter = false;
+    // On affiche directement les résultats dès qu'une ville est choisie, sans obliger à
+    // ouvrir les filtres et cliquer "Tout voir" en plus.
+    __hasPickedFilter = true;
   }
   if (
     e.target.closest("#category-chips .chip-btn") ||
@@ -102,3 +104,4 @@ document.addEventListener("click", (e) => {
     __toggleResultsContent(true);
   }
 }, true);
+ 
