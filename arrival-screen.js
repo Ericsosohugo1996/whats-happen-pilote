@@ -424,6 +424,7 @@ function __arrivalShow() {
         if (key === "near") __exploreOpen();
         else if (key === "other") { if (window.__questOpen) __questOpen(); else __arrivalOpenMood(); }
         else if (key === "all") __arrivalShowCityView();
+               else if (key === "carnet") { if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); } 
       }, 180);
     });
   });
