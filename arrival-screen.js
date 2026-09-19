@@ -391,7 +391,7 @@ function __arrivalShow() {
     '<div style="color:rgba(255,255,255,0.55); font-size:12px; margin-bottom:8px; font-weight:500;">' + cityName + " · " + time + "</div>" +
     '<div style="color:#fff; font-family:Georgia, \'Times New Roman\', serif; font-size:24px; font-weight:400; line-height:1.4;">' + greeting + "</div>" +
     "</div>" +
-    '<div style="display:flex; gap:14px; justify-content:center;">' +
+'<div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:300px;">' +
     '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
     '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
     '<div style="color:rgba(255,255,255,0.85); font-size:11.5px; margin-top:9px; font-weight:500;">Autour de moi</div>' +
