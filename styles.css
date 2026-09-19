@@ -544,6 +544,28 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .stat.active{ background:var(--accent-soft); }
 .stat .num{ font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--accent); }
 .stat .label{ font-size:11px; color:var(--ink-soft); font-weight:600; text-transform:uppercase; letter-spacing:.03em; margin-top:2px; }
+/* ---- écran intro : souvenirs ou découvrir ---- */
+.intro-screen{
+  position:fixed; inset:0; z-index:101;
+  background:linear-gradient(165deg, #cdeaf9 0%, #eaf6fd 45%, #fdfaf5 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+  padding:32px 24px 40px;
+}
+.intro-screen.hidden{ display:none; }
+.intro-bubble{
+  background:rgba(20,33,61,0.92); color:#fff; border-radius:18px; padding:16px 18px;
+  font-size:15px; text-align:center; line-height:1.45; font-weight:600; max-width:340px;
+  margin-bottom:auto; margin-top:60px;
+}
+.intro-pills{ width:100%; max-width:340px; display:flex; flex-direction:column; gap:12px; }
+.intro-pill{
+  border:none; border-radius:999px; padding:15px; text-align:center; font-size:14px; font-weight:800;
+  cursor:pointer; font-family:inherit;
+}
+.intro-pill.primary{ background:linear-gradient(135deg,#F2C879,#E85D3D); color:#fff; box-shadow:0 8px 18px -6px rgba(242,167,68,0.55); }
+.intro-pill.ghost{ background:rgba(242,167,68,0.12); border:1px solid rgba(242,167,68,0.4); color:#14213D; }
+.intro-tagline{ text-align:center; color:rgba(20,33,61,0.55); font-size:12px; margin-top:6px; font-style:italic; }
+
 /* ---- écran de choix : localiser ou visiter une ville ---- */
 .choice-screen{
   position:fixed; inset:0; z-index:100; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%);
