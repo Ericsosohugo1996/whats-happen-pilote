@@ -248,26 +248,24 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 }
 .event-card:hover{ box-shadow:0 6px 18px rgba(20,33,61,0.12); transform:translateY(-1px); }
 .event-card:active{ box-shadow:var(--shadow-sm); background:#fdfbf8; }
-.event-card[data-cat="Musique"]{ border-left-color:#FF6F61; }
-.event-card[data-cat="Marché"]{ border-left-color:#FDCB6E; }
-.event-card[data-cat="Festival"]{ border-left-color:#A29BFE; }
-.event-card[data-cat="Sport"]{ border-left-color:#00B894; }
-.event-card[data-cat="Soirée"]{ border-left-color:#6C5CE7; }
-.event-card[data-cat="Expo"]{ border-left-color:#0984E3; }
-
-.event-card[data-cat="Musique"] .cat{ color:#FF6F61; }
-.event-card[data-cat="Marché"] .cat{ color:#c9960a; }
-.event-card[data-cat="Festival"] .cat{ color:#6c5ce7; }
-.event-card[data-cat="Sport"] .cat{ color:#00905f; }
-.event-card[data-cat="Soirée"] .cat{ color:#6C5CE7; }
-.event-card[data-cat="Expo"] .cat{ color:#0984E3; }
-.event-card .thumb{ width:68px;height:68px;border-radius:15px; flex:0 0 auto; overflow:hidden; background:var(--line); box-shadow:0 4px 10px -4px rgba(33,31,27,.22); }
+.event-card .thumb-wrap{ position:relative; flex:0 0 auto; }
+.event-card .thumb{ width:78px;height:78px;border-radius:16px; overflow:hidden; background:var(--line); box-shadow:0 4px 10px -4px rgba(33,31,27,.22); }
+.event-card .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 .event-card .thumb svg{ display:block; width:100%; height:100%; }
+.event-card .thumb-badge{ position:absolute; bottom:-6px; left:-6px; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; border:2.5px solid var(--card); box-shadow:0 2px 6px rgba(0,0,0,0.25); }
 .event-card .info{ flex:1; min-width:0; }
-.event-card .cat{ font-size:10px; font-weight:800; color:var(--primary); text-transform:uppercase; letter-spacing:.05em; }
+.event-card .cat{ font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
 .event-card .title{ font-family:var(--font-display); font-size:15.5px; font-weight:600; margin:4px 0 4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .event-card .meta{ font-size:12px; color:var(--ink-soft); }
 .event-card .dist{ font-size:11px; font-weight:700; color:var(--accent-dark); background:var(--accent-soft); padding:6px 11px; border-radius:999px; flex:0 0 auto; }
+
+/* ---- catégories en icônes rondes ---- */
+#category-chips{ display:flex; gap:14px; overflow-x:auto; padding:4px 2px 10px; }
+#category-chips .cat-chip{ display:flex; flex-direction:column; align-items:center; gap:5px; flex:0 0 auto; background:none; border:none; cursor:pointer; padding:0; }
+#category-chips .cat-chip-circle{ width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; box-shadow:0 6px 14px -6px rgba(20,33,61,0.35); transition:opacity .2s ease, transform .15s ease; }
+#category-chips .cat-chip.active .cat-chip-circle{ transform:scale(1.08); box-shadow:0 8px 18px -6px rgba(20,33,61,0.5); }
+#category-chips .cat-chip-label{ font-size:9.5px; font-weight:700; color:var(--ink-soft); white-space:nowrap; }
+#category-chips .cat-chip.active .cat-chip-label{ color:var(--ink); }
 
 .empty-state{ text-align:center; color:var(--ink-soft); font-size:13px; padding:28px 10px; }
 
