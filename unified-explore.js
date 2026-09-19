@@ -1,3 +1,24 @@
+
+Claude Desktop (Windows), Connecté
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Unified explore · JS
 // ---- unifie les 4 anciens boutons en un seul point d'entrée "Explorer" ----
 if (typeof __ensureLayoverButton === "function") {
   __ensureLayoverButton = function () {};
@@ -11,7 +32,7 @@ function __unifiedHideOldButtons() {
     if (el) el.style.display = "none";
   });
 }
-
+ 
 function __ensureUnifiedExploreButton() {
   const choiceScreen = document.getElementById("choice-screen");
   const existing = document.getElementById("unified-explore-btn");
@@ -20,11 +41,14 @@ function __ensureUnifiedExploreButton() {
     return;
   }
   __unifiedHideOldButtons();
-  if (existing) return;
-  const topbar = document.querySelector(".topbar");
-  if (!topbar) return;
   const cityKey = state.userPos ? nearestCityKey() : state.city;
   const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+  if (existing) {
+    existing.textContent = "🔍 Explorer " + cityName;
+    return;
+  }
+  const topbar = document.querySelector(".topbar");
+  if (!topbar) return;
   const btn = document.createElement("button");
   btn.id = "unified-explore-btn";
   btn.type = "button";
@@ -36,7 +60,7 @@ function __ensureUnifiedExploreButton() {
   });
   topbar.insertAdjacentElement("afterend", btn);
 }
-
+ 
 const __renderDiscoverBaseUnified = renderDiscover;
 renderDiscover = function () {
   __renderDiscoverBaseUnified();
@@ -44,3 +68,4 @@ renderDiscover = function () {
 };
 setInterval(__unifiedHideOldButtons, 500);
 setTimeout(__ensureUnifiedExploreButton, 300);
+ 
