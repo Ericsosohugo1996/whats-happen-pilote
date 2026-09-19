@@ -601,6 +601,7 @@
     document.addEventListener("DOMContentLoaded", initSouvenirs);
   }
 
-  window.__openAddSouvenirModal = openAddSouvenirModal;
+    window.__openAddSouvenirModal = openAddSouvenirModal;
   window.__renderSouvenirsScreen = renderSouvenirsScreen;
+  window.__renderPassportScreen = renderPassportScreen;
 })();
