@@ -427,7 +427,73 @@
       }
     }
 
-    renderCityMemories();
+     renderCityMemories();
+  }
+
+  function stampRotation(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) hash = (hash * 31 + key.charCodeAt(i)) >>> 0;
+    return (hash % 13) - 6;
+  }
+
+  async function renderPassportScreen() {
+    const existing = document.getElementById("passport-screen");
+    if (existing) existing.remove();
+
+    const screen = document.createElement("div");
+    screen.id = "passport-screen";
+    screen.style.cssText = "position:fixed;inset:0;z-index:9998;overflow-y:auto;background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%);padding:20px 16px 40px;";
+    screen.innerHTML =
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">' +
+      '<button id="passport-close-btn" style="border:none;background:rgba(255,255,255,0.1);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button>' +
+      '<div style="font-size:16px;font-weight:800;color:#fff;flex:1;">🛂 Mon passeport Whazup</div>' +
+      '</div>' +
+      '<div id="passport-progress" style="color:rgba(255,255,255,0.6);font-size:12px;margin:4px 0 18px;"></div>' +
+      '<div id="passport-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">Chargement...</div>';
+    document.body.appendChild(screen);
+
+    document.getElementById("passport-close-btn").addEventListener("click", function () {
+      screen.remove();
+    });
+
+    const list = await loadSouvenirs();
+    const cityGroups = {};
+    list.forEach(function (s) {
+      const key = s.city;
+      if (!key) return;
+      if (!cityGroups[key]) cityGroups[key] = [];
+      cityGroups[key].push(s);
+    });
+
+    const visitedKeys = Object.keys(cityGroups).filter(function (k) { return CITIES[k]; });
+    document.getElementById("passport-progress").textContent =
+      visitedKeys.length + " ville" + (visitedKeys.length > 1 ? "s" : "") + " découverte" + (visitedKeys.length > 1 ? "s" : "");
+
+    const sortedKeys = visitedKeys.slice().sort(function (a, b) {
+      const aFirst = Math.min.apply(null, cityGroups[a].map(function (s) { return s.createdAt; }));
+      const bFirst = Math.min.apply(null, cityGroups[b].map(function (s) { return s.createdAt; }));
+      return aFirst - bFirst;
+    });
+
+    const gridEl = document.getElementById("passport-grid");
+    if (!sortedKeys.length) {
+      gridEl.style.display = "block";
+      gridEl.innerHTML = '<div style="text-align:center;color:rgba(255,255,255,0.6);padding:40px 0;">Ton passeport est encore vide.<br>Ajoute un souvenir pour obtenir ton premier tampon !</div>';
+      return;
+    }
+    gridEl.innerHTML = sortedKeys.map(function (key) {
+      const cityName = CITIES[key].name;
+      const items = cityGroups[key];
+      const rot = stampRotation(key);
+      const firstDate = new Date(Math.min.apply(null, items.map(function (s) { return s.createdAt; })));
+      const dateStr = firstDate.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+      return '<div style="background:' + gradientFor(key) + ';border-radius:16px;padding:16px 10px;text-align:center;transform:rotate(' + rot + 'deg);border:3px dashed rgba(255,255,255,0.5);box-shadow:0 8px 18px -8px rgba(0,0,0,0.4);">' +
+        '<div style="font-size:10px;color:rgba(255,255,255,0.8);font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Visité</div>' +
+        '<div style="font-size:14px;color:#fff;font-weight:800;margin:4px 0 2px;font-family:Georgia,serif;">' + cityName + '</div>' +
+        '<div style="font-size:10px;color:rgba(255,255,255,0.85);">' + items.length + ' souvenir' + (items.length > 1 ? 's' : '') + '</div>' +
+        '<div style="font-size:9px;color:rgba(255,255,255,0.65);margin-top:2px;">depuis le ' + dateStr + '</div>' +
+        '</div>';
+    }).join("");
   }
 
   async function updateSouvenirsCount() {
