@@ -92,12 +92,34 @@ if ("serviceWorker" in navigator) {
     const splash = document.getElementById("splash-screen");
     if (!splash) return;
     splash.classList.add("hide");
-    setTimeout(() => {
+      setTimeout(() => {
       splash.remove();
-      initChoiceScreen();
+      initIntroScreen();
     }, 350);
   }, 3400);
 })();
+
+// ---- écran intro (souvenirs ou découvrir) ----
+function initIntroScreen(){
+  const intro = document.getElementById("intro-screen");
+  if (!intro) { initChoiceScreen(); return; }
+  intro.classList.remove("hidden");
+  const btnSouvenirs = document.getElementById("intro-btn-souvenirs");
+  const btnDiscover = document.getElementById("intro-btn-discover");
+  if (btnSouvenirs) {
+    btnSouvenirs.onclick = function(){
+      intro.classList.add("hidden");
+      if (window.__renderSouvenirsScreen) __renderSouvenirsScreen();
+      else initChoiceScreen();
+    };
+  }
+  if (btnDiscover) {
+    btnDiscover.onclick = function(){
+      intro.classList.add("hidden");
+      initChoiceScreen();
+    };
+  }
+}
 
 // ---- Firebase Authentication ----
 // ---- Firebase Authentication ----
