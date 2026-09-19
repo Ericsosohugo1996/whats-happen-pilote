@@ -1,647 +1,440 @@
-@media (min-width: 600px) {
-  body {
-    background: #e5e5e0;
-  }
-  #view-discover,
-  #view-detail,
-  #view-publish,
-  #view-confirm,
-  #view-favorites,
-  #view-photos,
-  #choice-screen {
-    max-width: 480px;
-    margin: 0 auto;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
-    min-height: 100vh;
-  }
-}
-:root{
-  --ink:#1A1A1A;
-  --ink-soft:#6B7280;
-  --paper:#FAFAFA;
-  --card:#ffffff;
-  --line:#E5E7EB;
-  --primary:#14213D;
-  --primary-dark:#0B1526;
-  --primary-soft:#EEF0F4;
-  --primary-ink:#ffffff;
-  --accent:#E8604C;
-  --accent-dark:#C64A38;
-  --accent-soft:#FCEAE7;
-  --sun:#E8604C;
-  --radius:16px;
-  --radius-sm:10px;
-  --shadow-sm:0 1px 2px rgba(20,33,61,.05), 0 1px 1px rgba(20,33,61,.04);
-  --shadow-md:0 10px 26px -12px rgba(20,33,61,.15), 0 2px 8px -2px rgba(20,33,61,.06);
-  --shadow-lift:0 18px 38px -14px rgba(20,33,61,.22);
-  --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
-body{
-  font-family:var(--font-body);
-  background:linear-gradient(180deg, #fdfaf5 0%, #f7f1e8 100%); 
-  color:var(--ink);
-  padding-bottom:108px;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%;}
-button,input,select,textarea{font-family:inherit;}
-button{ cursor:pointer; transition:transform .12s ease, background-color .15s ease, box-shadow .15s ease, opacity .15s ease; }
-button:active{ transform:scale(.97); }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whazup — Événements près de vous, partout en France</title>
+<meta name="description" content="Découvrez les événements, brocantes et lieux à visiter près de vous dans 18 villes en France, ou publiez le vôtre.">
+<link rel="icon" href="logo.svg">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#14213D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+<body>
+<div id="splash-screen" class="splash-screen">
+    <svg class="splash-logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgSober" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#14213D"/>
+          <stop offset="100%" stop-color="#0B1526"/>
+        </linearGradient>
+      </defs>
+      <path d="M200 30 C 292 26, 372 74, 372 166 C 376 254, 328 336, 236 368 C 152 384, 52 358, 30 264 C 10 180, 52 78, 136 42 C 155 33, 178 31, 200 30 Z" fill="url(#bgSober)"/>
+      <g transform="translate(200,170)">
+        <path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#ffffff"/>
+        <circle cx="-26" cy="-18" r="10" fill="#14213D"/>
+        <circle cx="26" cy="-18" r="10" fill="#14213D"/>
+        <ellipse class="splash-eyelid" cx="26" cy="-18" rx="12" ry="11" fill="#ffffff"/>
+        <path d="M20 -18 Q26 -12 32 -18" fill="none" stroke="#14213D" stroke-width="2.5" stroke-linecap="round" class="splash-eyelid-line"/>
+        <path d="M-28 14 C -16 32, 16 32, 28 14" fill="none" stroke="#14213D" stroke-width="7" stroke-linecap="round"/>
+      </g>
+      <text x="200" y="345" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="54" text-anchor="middle" fill="#ffffff">Wha<tspan fill="#E8604C">zup</tspan></text>
+    </svg>
+        <div class="splash-confetti-burst" id="splashConfettiBurst"></div>
+ </div>
 
-/* ---- view transition ---- */
-.view{ animation:view-in .24s cubic-bezier(.22,.61,.36,1) both; }
-@keyframes view-in{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:translateY(0); } }
+  <div id="intro-screen" class="intro-screen hidden">
+    <div class="intro-bubble">Tu veux revoir tes souvenirs, ou découvrir de nouveaux lieux autour de toi&nbsp;?</div>
+     <div class="intro-logo">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(100,90)">
+          <path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#F2A340"/>
+          <circle cx="-26" cy="-18" r="10" fill="#14213D"/>
+          <circle cx="26" cy="-18" r="10" fill="#14213D"/>
+          <path d="M-28 14 C -16 32, 16 32, 28 14" fill="none" stroke="#14213D" stroke-width="7" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+    <div class="intro-pills">
+      <button type="button" class="intro-pill primary" id="intro-btn-souvenirs">📖 Voir mes souvenirs</button>
+      <button type="button" class="intro-pill ghost" id="intro-btn-discover">📍 Découvrir des événements</button>
+      <div class="intro-tagline">Parce que chaque lieu peut devenir un souvenir…</div>
+    </div>
+  </div>
 
-/* ---- layout shell ---- */
-.topbar{
-  position:sticky; top:0; z-index:30;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 18px;
-  background:linear-gradient(135deg, #14213D, #1a2550);
-  box-shadow:0 6px 20px -10px rgba(20,33,61,.5);
-}
-.brand{ display:flex; align-items:center; gap:10px; }
-.brand img{ width:32px;height:32px;border-radius:24%; background:#fff; padding:2px; box-shadow:0 2px 8px rgba(0,0,0,.25); }
-.brand-word{ font-family:var(--font-display); font-weight:600; font-size:18px; letter-spacing:-.01em; color:#fff; }
-.brand-word .accent{ color:var(--sun); }
+  <div id="choice-screen" class="choice-screen hidden">
+    <div class="choice-header">
+      <div class="brand">
+        <span class="brand-word">Wha<span class="accent">zup</span></span>
+      </div>
+      <h1>Bonjour !</h1>
+      <p>Comment veux-tu découvrir les événements ?</p>
+    </div>
+    <div class="choice-cards">
+      <button type="button" class="choice-card locate" id="choice-locate">
+        <span class="choice-badge">Recommandé</span>
+        <svg class="scene" viewBox="0 0 350 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="30" r="1.6" fill="#fff" opacity=".6"/>
+          <circle cx="90" cy="18" r="1.2" fill="#fff" opacity=".5"/>
+          <circle cx="290" cy="26" r="1.6" fill="#fff" opacity=".6"/>
+          <circle cx="250" cy="50" r="1.2" fill="#fff" opacity=".4"/>
+          <circle cx="175" cy="150" r="90" fill="none" stroke="#E8604C" stroke-width="1.5" opacity=".25"/>
+          <circle cx="175" cy="150" r="60" fill="none" stroke="#E8604C" stroke-width="1.5" opacity=".4"/>
+          <circle cx="90" cy="120" r="6" fill="#F2C879"/>
+          <circle cx="260" cy="110" r="6" fill="#7FA8D9"/>
+          <circle cx="230" cy="200" r="6" fill="#F2C879"/>
+          <circle cx="100" cy="210" r="6" fill="#7FA8D9"/>
+          <rect x="0" y="255" width="350" height="65" fill="#0B1526"/>
+          <rect x="20" y="225" width="30" height="60" fill="#16213f"/>
+          <rect x="60" y="200" width="26" height="85" fill="#16213f"/>
+          <rect x="270" y="215" width="34" height="70" fill="#16213f"/>
+          <rect x="230" y="235" width="24" height="50" fill="#16213f"/>
+          <g transform="translate(175,150) scale(1.15)">
+            <path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#E8604C"/>
+            <circle cx="-24" cy="-18" r="9" fill="#fff"/>
+            <circle cx="24" cy="-18" r="9" fill="#fff"/>
+            <ellipse class="choice-eyelid" cx="24" cy="-18" rx="11" ry="10" fill="#E8604C"/>
+            <path d="M-26 12 C -14 28, 14 28, 26 12" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="choice-confetti-burst" id="choiceBurst1"></div>
+        <div class="choice-content">
+          <h2>📍 Je me localise</h2>
+          <p>Voir les événements près de moi, où que je sois</p>
+        </div>
+      </button>
+      <button type="button" class="choice-card visit" id="choice-visit">
+        <svg class="scene" viewBox="0 0 350 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="290" cy="45" r="26" fill="#F2C879" opacity=".8"/>
+          <rect x="0" y="245" width="350" height="75" fill="#E8604C" opacity=".12"/>
+          <rect x="10" y="200" width="34" height="60" fill="#14213D" opacity=".8"/>
+          <polygon points="10,200 27,178 44,200" fill="#14213D" opacity=".8"/>
+          <rect x="60" y="215" width="28" height="45" fill="#14213D" opacity=".65"/>
+          <rect x="240" y="190" width="30" height="70" fill="#14213D" opacity=".8"/>
+          <circle cx="255" cy="175" r="10" fill="#14213D" opacity=".8"/>
+          <rect x="290" y="210" width="34" height="50" fill="#14213D" opacity=".65"/>
+          <circle cx="120" cy="150" r="5" fill="#E8604C"/>
+          <circle cx="200" cy="130" r="5" fill="#14213D"/>
+          <circle cx="160" cy="185" r="5" fill="#E8604C"/>
+          <g transform="translate(175,150) scale(1.15)">
+            <path d="M0 -78 C -50 -78 -82 -42 -82 -2 C -82 38 -35 70 -10 90 L0 98 L10 90 C 35 70 82 38 82 -2 C 82 -42 50 -78 0 -78 Z" fill="#14213D"/>
+            <circle cx="-24" cy="-18" r="9" fill="#fff"/>
+            <circle cx="24" cy="-18" r="9" fill="#fff"/>
+            <ellipse class="choice-eyelid" cx="24" cy="-18" rx="11" ry="10" fill="#14213D"/>
+            <path d="M-26 12 C -14 28, 14 28, 26 12" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="choice-confetti-burst" id="choiceBurst2"></div>
+        <div class="choice-content">
+          <h2>🗺️ Je visite une ville</h2>
+          <p>Choisir une ville parmi celles disponibles sur Whazup</p>
+        </div>
+         </button>
+    </div>
+       
+  </div>
 
-.btn-ghost{
-  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.38); border-radius:999px;
-  padding:9px 15px; font-size:13px; font-weight:700; color:#fff;
-  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-}
-.btn-ghost:active{ background:rgba(255,255,255,.3); }
+ <header class="topbar">  
+ <div class="brand" id="brand-home" style="cursor:pointer;"> 
+  <img src="logo.svg" alt="Whazup">
+  <span class="brand-word">Wha<span class="accent">zup</span></span>
+</div> 
+<span id="loyalty-badge" class="loyalty-badge" style="display:none;"></span>
+<div class="flags-row" style="margin-right:6px;">
+  <button class="flag-btn active" id="flag-fr" data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" alt="Français"></button>
+  <button class="flag-btn" id="flag-en" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="English"></button>
+  <button class="flag-btn" id="flag-es" data-lang="es"><img src="https://flagcdn.com/w40/es.png" alt="Español"></button>
+  <button class="flag-btn" id="flag-de" data-lang="de"><img src="https://flagcdn.com/w40/de.png" alt="Deutsch"></button>
+</div>    
+    <button class="btn-ghost" id="btn-account" style="margin-right:6px;">👤</button>
+    <button class="btn-ghost" id="btn-publish-header">＋ Publier</button>
+  </header>
+  <div id="account-modal" class="modal hidden">
+    <div class="modal-content">
+      <button type="button" id="btn-account-close" class="modal-close">✕</button>
+      <div id="account-logged-out">
+        <h2 style="margin-top:0;">Mon compte</h2>
+        <p style="font-size:13px; color:#666;">Connecte-toi pour synchroniser tes points et favoris entre tes appareils. L'appli reste utilisable sans compte.</p>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" id="account-email" placeholder="ton@email.com">
+        </label>
+        <label class="field">
+          <span>Mot de passe</span>
+          <input type="password" id="account-password" placeholder="••••••••">
+        </label>
+        <p id="account-error" style="color:#c0392b; font-size:12px; display:none;"></p>
+        <button type="button" class="btn-primary btn-block" id="btn-account-login">Se connecter</button>
+        <button type="button" class="btn-outline btn-block" id="btn-account-signup" style="margin-top:8px;">Créer un compte</button>
+      </div>
+      <div id="account-logged-in" class="hidden">
+        <h2 style="margin-top:0;">Mon compte</h2>
+        <p id="account-user-email" style="font-size:14px;"></p>
+       <button type="button" class="btn-primary btn-block" id="btn-open-souvenirs" style="margin-bottom:8px;">📖 Mes souvenirs</button>
+<button type="button" class="btn-outline btn-block" id="btn-account-logout">Se déconnecter</button>
+      </div>
+    </div>
+  </div>
+  <!-- ===================== VUE : DÉCOUVERTE ===================== -->
+  <main id="view-discover" class="view">
+<button type="button" id="btn-newsletter" data-i18n="📩 Recevoir les nouveaux événements par email" style="display:block; width: calc(100% - 32px); box-sizing: border-box; margin: 14px 16px; padding: 14px 20px; background: linear-gradient(135deg, #2f8a90, #1c5f66); color: #ffffff; border: none; border-radius: 14px; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer;">📩 Recevoir les nouveaux événements par email</button>
+<div id="newsletter-modal" class="modal hidden">
+  <div class="modal-content">
+    <button type="button" id="btn-newsletter-close" class="modal-close">✕</button>
+    <iframe width="540" height="305" src="https://ffb7b4de.sibforms.com/v2/serve/MUIFAM-q6uel32oM6JFMBmaC-pTnIwyyYUNSTYP4OSm2zbvL9fnj3So5YrQiQFe4yHz0aSp_ZY58yVfBiht1xw7f02dirqSB1z--70y7KNY8bPQTfwwyFq_oNRajFsM_JVQz7ikX1Pjzp04FFoArIX4i2CtGhACC6wuCT9Teeb3KotfSPbS7J2sGQKmUDyp8jJHsWzW7d7fbvhICaQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+  </div>
+</div>
+       <section class="locate-bar">
+      <div class="locate-bar-photo" id="locate-bar-photo">
+        <div class="locate-info">
+         <span class="locate-label" id="locate-label" data-i18n="Ville sélectionnée">Ville sélectionnée</span> 
+          <span class="locate-value" id="locate-value">📍 Aix-en-Provence</span>
+         <span id="weather-mini" style="margin-left:6px; font-weight:600;"></span>
+        </div>
+      </div>
+      <div class="locate-body">
+        <input type="text" class="city-search-input" id="city-search-input" placeholder="🔍 Chercher une ville en France…" autocomplete="off">
+        <div class="city-search-results hidden" id="city-search-results"></div>
+        <div class="region-accordion" id="region-accordion"></div>
+<div class="locate-actions" style="margin-top:12px;">
+         <button class="chip-btn chip-btn--primary" id="btn-geoloc" data-i18n="📍 Ma position">📍 Ma position</button>
+ <button class="chip-btn" id="btn-notif-follow">🔕 Suivre cette ville</button>
 
-.view{ max-width:720px; margin:0 auto; padding:18px 16px 22px; }
-.hidden{ display:none !important; }
-
-/* ---- locate bar (hero) ---- */
-.locate-bar{
-  position:relative; overflow:hidden;
-  background:var(--primary);
-  border-radius:22px;
-  box-shadow:0 16px 32px -16px rgba(20,33,61,.5);
-  padding:18px 20px 18px; margin-bottom:18px;
-  color:#fff;
-  min-height:230px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-}
-.locate-bar-photo{
-  position:absolute; top:0; left:0; right:0; height:220px;
-  background-size:cover; background-position:center;
-  opacity:0; transition:opacity .3s ease;
-  border-radius:var(--radius) var(--radius) 0 0;
-}
-.locate-bar-photo.visible{ opacity:1; }
-.locate-bar-photo.visible::after{
-  content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(20,33,61,0) 30%, rgba(11,21,38,.92) 100%);
-}
-.locate-info{ display:flex; flex-direction:column; margin-bottom:14px; position:relative; z-index:2; }
-.locate-label{ font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.72); font-weight:700; }
-.locate-value{ font-family:var(--font-display); font-size:30px; font-weight:600; margin-top:4px; color:#fff; letter-spacing:-0.01em; }
-.locate-bar{
-  position:relative; overflow:hidden;
-  background:var(--primary);
-  border-radius:var(--radius);
-  box-shadow:0 12px 26px -14px rgba(20,33,61,.4);
-  padding:18px 18px 16px; margin-bottom:16px;
-  color:#fff;
-}
-.locate-actions{ display:flex; flex-wrap:wrap; gap:8px; position:relative; }
-.locate-hint{ margin:14px 0 0; font-size:11.5px; color:rgba(255,255,255,.72); line-height:1.55; padding-top:12px; border-top:1px solid rgba(255,255,255,.22); position:relative; }
-
-.chip-btn{
-  background:var(--paper); border:1px solid var(--line); border-radius:999px;
-  padding:9px 14px; font-size:12.5px; font-weight:700; color:var(--ink-soft);
-}
-.chip-btn.active{ background:var(--primary); border-color:var(--primary); color:#fff; box-shadow:0 4px 12px -4px rgba(41,171,226,.5); }
-.chip-btn--primary{ background:var(--accent); border-color:var(--accent); color:#fff; box-shadow:0 4px 12px -4px rgba(31,111,120,.5); }
-
-.locate-actions .chip-btn{
-  background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.32); color:#fff;
-  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-}
-.locate-actions .chip-btn.active{ background:#fff; border-color:#fff; color:var(--primary-dark); box-shadow:0 6px 16px -8px rgba(0,0,0,.4); }
-.locate-actions .chip-btn--primary{ background:rgba(255,255,255,.2); border-color:rgba(255,255,255,.46); color:#fff; box-shadow:none; }
-.locate-actions .chip-btn--primary:active{ background:rgba(255,255,255,.32); }
-/* ---- groupes de villes par région ---- */
-.region-group{ margin-bottom:14px; }
-.region-label{
-  display:block; font-size:10px; text-transform:uppercase; letter-spacing:.08em;
-  color:rgba(255,255,255,.6); font-weight:700; margin-bottom:6px;
-}
-
-/* ---- villes : style neutre uniforme (plus de couleur par ville) ---- */
-.locate-actions .chip-city-1, .locate-actions .chip-city-2, .locate-actions .chip-city-3,
-.locate-actions .chip-city-4, .locate-actions .chip-city-5, .locate-actions .chip-city-6,
-.locate-actions .chip-city-7, .locate-actions .chip-city-8, .locate-actions .chip-city-9,
-.locate-actions .chip-city-10{
-  background:rgba(255,255,255,.14) !important; border-color:rgba(255,255,255,.32) !important; color:#fff !important;
-}
-
-.locate-actions .chip-city-1.active, .locate-actions .chip-city-2.active,
-.locate-actions .chip-city-3.active, .locate-actions .chip-city-4.active,
-.locate-actions .chip-city-5.active, .locate-actions .chip-city-6.active,
-.locate-actions .chip-city-7.active, .locate-actions .chip-city-8.active,
-.locate-actions .chip-city-9.active, .locate-actions .chip-city-10.active{
-  outline:3px solid #fff !important; outline-offset:1px;
-}
-/* ---- city info card ---- */
-.city-info{
-  background:var(--card); border-radius:var(--radius);
-  box-shadow:var(--shadow-md);
-  padding:20px; margin-bottom:16px;
-}
-.city-info.hidden{ display:none; }
-.city-info .ci-head{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:10px; }
-.city-info .ci-name{ font-family:var(--font-display); font-size:19px; font-weight:600; }
-.city-info .ci-pop{ font-size:11.5px; color:var(--ink-soft); white-space:nowrap; font-weight:600; }
-.city-info .ci-desc{ font-size:13px; color:var(--ink-soft); line-height:1.65; margin:0 0 14px; }
-.city-info .ci-tags{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px; }
-.city-info .ci-tag{ font-size:11px; font-weight:700; color:var(--accent); background:var(--accent-soft); padding:6px 12px; border-radius:999px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:5px; }
-
-/* ---- couleurs des tags de lieux emblématiques, façon mockup ---- */
-.city-info .ci-tags .ci-tag:nth-child(4n+1){ background:#FFE0DB; color:#c0392b; }
-.city-info .ci-tags .ci-tag:nth-child(4n+2){ background:#EDE7FF; color:#6c5ce7; }
-.city-info .ci-tags .ci-tag:nth-child(4n+3){ background:#D9F7EC; color:#00905f; }
-.city-info .ci-tags .ci-tag:nth-child(4n+4){ background:#DBEEFF; color:#0984E3; }
-
-/* ---- couleurs des icônes de "facts" (infos pratiques) ---- */
-.city-info .ci-facts .ci-fact:nth-child(3n+1) .ico{ color:#FF6F61; }
-.city-info .ci-facts .ci-fact:nth-child(3n+2) .ico{ color:#6C5CE7; }
-.city-info .ci-facts .ci-fact:nth-child(3n+3) .ico{ color:#0984E3; }
-.city-info .ci-tag:active{ background:#d5e9e7; }
-.city-info .ci-tag .ci-tag-ico{ font-size:10px; }
-.city-info .ci-facts{ display:flex; flex-direction:column; gap:9px; padding-top:14px; border-top:1px solid var(--line); }
-.city-info .ci-fact{ font-size:12px; color:var(--ink); display:flex; gap:9px; line-height:1.5; }
-.city-info .ci-fact .ico{ color:var(--primary); flex:0 0 auto; }
-.city-info .ci-source{ margin-top:12px; font-size:10px; color:#a39c92; }
-.city-info .btn-photos{
-  width:100%; margin-top:16px;
-  background:var(--accent-soft); border:none; color:var(--accent-dark);
-  font-weight:700; font-size:13.5px; padding:13px; border-radius:var(--radius-sm);
-}
-.city-info .btn-photos:active{ background:#d5e9e7; }
-
-/* ---- toolbar / segmented ---- */
-.toolbar{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }
-.segmented{ flex:1; background:var(--card); box-shadow:var(--shadow-sm); border-radius:999px; display:flex; padding:4px; max-width:260px; }
-.segmented .seg{ flex:1; text-align:center; padding:9px 0; font-size:13px; font-weight:700; color:var(--ink-soft); border-radius:999px; background:transparent; border:none; }
-.segmented .seg.active{ background:var(--primary); color:#fff; box-shadow:0 4px 10px -4px rgba(41,171,226,.5); }
-#btn-filters{ background:var(--card); box-shadow:var(--shadow-sm); border:none; }
-
-/* ---- filters ---- */
-.filters-panel{
-  background:var(--card); border-radius:var(--radius);
-  box-shadow:var(--shadow-md);
-  padding:16px 18px; margin-bottom:16px;
-  border-top:4px solid #6C5CE7;
-}
-
-/* ---- couleurs des boutons de rayon rapide ---- */
-#radius-presets .chip-btn{ background:#EDE7FF; border-color:#EDE7FF; color:#6c5ce7; }
-#radius-presets .chip-btn.active{ background:#6C5CE7; border-color:#6C5CE7; color:#fff; }
-.filters-row{ margin-bottom:14px; }
-.filters-row:last-child{ margin-bottom:0; }
-.filters-label{ display:block; font-size:11px; font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em; margin-bottom:9px; }
-.chips-row{ display:flex; flex-wrap:wrap; gap:7px; }
-
-input[type="range"]{ width:100%; accent-color:var(--primary); }
-
-/* ---- map mock ---- */
-.locate-bar-photo, #locate-bar-photo{ border-radius:20px !important; overflow:hidden; }
-.chip-btn{ transition:background .2s ease, color .2s ease, border-color .2s ease; }
-.map-mock{
-  height:190px; border-radius:var(--radius); margin-bottom:16px;
-  background:
-    radial-gradient(circle at 28% 26%, #d6ebe4 0%, transparent 48%),
-    radial-gradient(circle at 78% 64%, #e2ecd2 0%, transparent 42%), #eef1e9;
-  position:relative; overflow:hidden;
-  box-shadow:var(--shadow-md);
-}
-.map-mock .ring{ position:absolute; top:50%;left:50%; width:150px;height:150px; border:2px dashed var(--accent); border-radius:50%; transform:translate(-50%,-50%); opacity:.5; }
-.map-mock .me{ position:absolute; top:50%;left:50%; width:14px;height:14px; background:var(--accent); border:2px solid #fff; border-radius:50%; transform:translate(-50%,-50%); box-shadow:0 0 0 6px rgba(31,111,120,.18); }
-.map-pin{ position:absolute; width:18px;height:18px; background:var(--primary); border:2px solid #fff; border-radius:50% 50% 50% 0; transform:translate(-50%,-100%) rotate(-45deg); box-shadow:0 3px 6px rgba(0,0,0,.22); cursor:pointer; }
-
-/* ---- pins : couleur unique, cohérente avec l'identité de marque ---- */
-.map-pin{ background:var(--primary) !important; }
-.map-tag{ position:absolute; bottom:12px; right:12px; background:rgba(255,255,255,.94); font-size:11px; font-weight:700; padding:5px 11px; border-radius:999px; color:var(--accent); box-shadow:var(--shadow-sm); }
-
-/* ---- event list ---- */
-.event-list{ display:flex; flex-direction:column; gap:11px; }
-.event-card{
-  display:flex; gap:14px; align-items:center;
-  background:var(--card); border-radius:16px; padding:13px;
-  text-align:left; width:100%; border:none;
-  box-shadow:0 2px 10px rgba(20,33,61,0.06);
-  border-left:3px solid transparent;
-  transition:box-shadow .2s ease, transform .15s ease;
-}
-.event-card:hover{ box-shadow:0 6px 18px rgba(20,33,61,0.12); transform:translateY(-1px); }
-.event-card:active{ box-shadow:var(--shadow-sm); background:#fdfbf8; }
-.event-card .thumb-wrap{ position:relative; flex:0 0 auto; }
-.event-card .thumb{ width:78px;height:78px;border-radius:16px; overflow:hidden; background:var(--line); box-shadow:0 4px 10px -4px rgba(33,31,27,.22); }
-.event-card .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-.event-card .thumb svg{ display:block; width:100%; height:100%; }
-.event-card .thumb-badge{ position:absolute; bottom:-6px; left:-6px; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; border:2.5px solid var(--card); box-shadow:0 2px 6px rgba(0,0,0,0.25); }
-.event-card .info{ flex:1; min-width:0; }
-.event-card .cat{ font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
-.event-card .title{ font-family:var(--font-display); font-size:15.5px; font-weight:600; margin:4px 0 4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.event-card .meta{ font-size:12px; color:var(--ink-soft); }
-.event-card .dist{ font-size:11px; font-weight:700; color:var(--accent-dark); background:var(--accent-soft); padding:6px 11px; border-radius:999px; flex:0 0 auto; }
-
-/* ---- catégories en icônes rondes ---- */
-#category-chips{ display:flex; gap:14px; overflow-x:auto; padding:4px 2px 10px; }
-#category-chips .cat-chip{ display:flex; flex-direction:column; align-items:center; gap:5px; flex:0 0 auto; background:none; border:none; cursor:pointer; padding:0; }
-#category-chips .cat-chip-circle{ width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; box-shadow:0 6px 14px -6px rgba(20,33,61,0.35); transition:opacity .2s ease, transform .15s ease; }
-#category-chips .cat-chip.active .cat-chip-circle{ transform:scale(1.08); box-shadow:0 8px 18px -6px rgba(20,33,61,0.5); }
-#category-chips .cat-chip-label{ font-size:9.5px; font-weight:700; color:var(--ink-soft); white-space:nowrap; }
-#category-chips .cat-chip.active .cat-chip-label{ color:var(--ink); }
-
-.empty-state{ text-align:center; color:var(--ink-soft); font-size:13px; padding:28px 10px; }
-
-/* ---- detail view ---- */
-.back-btn{ background:none; border:none; font-weight:700; color:var(--ink); font-size:14px; padding:6px 0 16px; }
-.detail-hero{ height:210px; border-radius:var(--radius); overflow:hidden; background:var(--line); margin-bottom:18px; box-shadow:var(--shadow-md); }
-.detail-hero svg{ display:block; width:100%; height:100%; }
-.pill{ display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--accent); padding:6px 13px; border-radius:999px; margin-bottom:12px; }
-.detail-body h1{ font-family:var(--font-display); font-weight:600; font-size:24px; margin:0 0 16px; line-height:1.22; letter-spacing:-.01em; }
-.info-row{ display:flex; gap:12px; font-size:13.5px; margin-bottom:13px; }
-.info-card{ background:#f7f5f2; border-radius:14px; padding:14px 16px; margin-bottom:16px; }
-.info-row-new{ display:flex; gap:12px; align-items:baseline; }
-.info-row-new .ico{ width:20px; text-align:center; font-size:15px; }
-.info-main{ font-size:14.5px; font-weight:700; color:var(--primary); }
-.info-sub{ font-size:12px; color:#888; margin-top:2px; }
-.info-sub.accent{ color:var(--accent); font-weight:600; }
-.info-divider{ height:1px; background:#e5e0d8; margin:11px 0; }
-.price-badge{ display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:#eafaf0; color:#2a9d5c; font-size:12px; font-weight:700; margin-bottom:14px; }
-.info-row .ico{ width:22px; text-align:center; color:var(--primary); }
-/* ---- fiche détail, style sobre : marine + accent corail réservé aux états confirmés ---- */
-.cta-row{ display:flex; gap:10px; margin:20px 0 12px; }
-#btn-interested{
-  flex:1; padding:14px 18px; border:none; border-radius:var(--radius-sm);
-  background:var(--primary); color:#fff;
-  font-weight:700; font-size:14.5px; cursor:pointer;
-}
-#btn-interested.active{
-  background:var(--accent);
-}
-.action-tiles{ display:flex; gap:8px; margin-bottom:14px; }
-.action-tile{ flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; padding:12px 4px; border-radius:12px; border:none; background:#f7f5f2; cursor:pointer; }
-.action-tile .tile-icon{ font-size:18px; }
-.action-tile .tile-label{ font-size:9.5px; color:#666; font-weight:600; }
-.action-tile.active{ background:var(--accent-soft); }
-.btn-primary.active{ background:linear-gradient(155deg, var(--accent) 0%, var(--accent-dark) 100%); box-shadow:0 10px 22px -10px rgba(31,111,120,.55); }
-.btn-block{ width:100%; }
-.btn-outline{ width:52px; background:var(--card); border:none; border-radius:var(--radius-sm); font-size:19px; box-shadow:var(--shadow-sm); }
-.btn-outline.active{ background:#fde7e7; }
-.cta-row .btn-primary{ flex:1; }
-
-/* ---- publish form ---- */
-.form-title{ font-family:var(--font-display); font-weight:600; font-size:22px; margin:6px 0 8px; letter-spacing:-.01em; }
-.form-sub{ font-size:13px; color:var(--ink-soft); margin:0 0 20px; line-height:1.55; }
-.publish-form{ display:flex; flex-direction:column; gap:15px; }
-.field{ display:flex; flex-direction:column; gap:7px; font-size:11.5px; font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.04em; }
-.field input, .field select, .field textarea{
-  border:1px solid var(--line); border-radius:var(--radius-sm); padding:12px 13px; font-size:14.5px;
-  color:var(--ink); background:var(--card); text-transform:none; font-weight:400;
-}
-.field input:focus, .field select:focus, .field textarea:focus{ outline:2px solid #6C5CE7; outline-offset:1px; border-color:#6C5CE7; }
-
-/* ---- bouton de publication coloré, façon mockup ---- */
-.publish-form button[type="submit"]{
-  background:linear-gradient(135deg, #6C5CE7, #4834b0) !important;
-  border:none !important;
-  box-shadow:0 6px 16px -6px rgba(108,92,231,.5);
-}
-
-/* ---- titre du formulaire avec petit accent coloré ---- */
-.form-title{ position:relative; padding-left:14px; }
-.form-title::before{
-  content:""; position:absolute; left:0; top:4px; bottom:4px; width:4px;
-  background:linear-gradient(180deg, #6C5CE7, #0984E3); border-radius:2px;
-}
-.field-row{ display:flex; gap:12px; }
-.field-row .field{ flex:1; }
-
-/* ---- confirm ---- */
-.confirm-box{ text-align:center; padding:48px 10px; }
-.confirm-icon{ width:64px;height:64px;border-radius:50%; background:var(--primary); color:#fff; font-size:28px; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; }
-.confetti{ display:none; }
-.confirm-box h1{ font-family:var(--font-display); font-weight:600; font-size:22px; margin:0 0 9px; }
-.confirm-box p{ font-size:13.5px; color:var(--ink-soft); margin:0 0 24px; line-height:1.5; }
-
-/* ---- bottom nav (floating) ---- */
-.bottomnav{
-  position:fixed; left:14px; right:14px; bottom:14px; z-index:40;
-  max-width:392px; margin:0 auto;
-  display:flex; background:rgba(255,255,255,.9);
-  backdrop-filter:blur(14px) saturate(1.5);
-  -webkit-backdrop-filter:blur(14px) saturate(1.5);
-  border-radius:22px;
-  box-shadow:0 16px 34px -12px rgba(33,31,27,.32), 0 2px 8px rgba(33,31,27,.06);
-  padding:7px;
-}
-.nav-item{
-  flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;
-  background:none; border:none; font-size:10.5px; font-weight:700; color:var(--ink-soft);
-  padding:8px 0 7px; border-radius:16px;
-}
-.nav-item.active{
-  color:#fff;
-  background:linear-gradient(155deg, var(--primary) 0%, var(--primary-dark) 100%);
-  box-shadow:0 8px 16px -6px rgba(41,171,226,.55);
-}
-.nav-item .dot{ font-size:26px; }
-.nav-item .nav-label{
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-}
-
-/* ---- navigation : couleur unique et cohérente pour l'onglet actif ---- */
-.nav-item.active{ background:var(--primary); color:#fff; }
-@media (min-width:760px){ .bottomnav{ max-width:460px; } }
-
-/* ---- mes photos (souvenirs), accent doré ---- */
-.photos-title::before{
-  background:linear-gradient(180deg, #FDCB6E, #e3a72e) !important;
-}
-#btn-add-photo{
-  margin-bottom:18px;
-  background:linear-gradient(135deg, #FDCB6E, #e3a72e) !important;
-  border:none !important;
-  color:#3a2e00 !important;
-  box-shadow:0 6px 16px -6px rgba(253,203,110,.6);
-}
-.photos-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:9px; }
-.photos-grid .photo-thumb{ transition:transform .15s ease; }
-.photos-grid .photo-thumb:active{ transform:scale(.96); }
-.photos-grid .photo-thumb{
-  aspect-ratio:1; border-radius:var(--radius-sm); overflow:hidden; border:none; padding:0;
-  background:var(--line); cursor:pointer; box-shadow:var(--shadow-sm);
-}
-.photos-grid .photo-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-
-.photo-lightbox{
-  position:fixed; inset:0; z-index:70;
-  background:rgba(18,16,14,.94);
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px;
-  padding:20px;
-}
-.photo-lightbox.hidden{ display:none; }
-.photo-lightbox img{ max-width:92vw; max-height:68vh; border-radius:16px; object-fit:contain; box-shadow:var(--shadow-lift); }
-.lightbox-delete{
-  background:#fff; color:var(--primary); border:none; border-radius:999px;
-  padding:12px 24px; font-weight:700; font-size:13px; box-shadow:var(--shadow-md);
-}
-
-/* ---- landmark modal ---- */
-.landmark-modal{
-  position:fixed; inset:0; z-index:60;
-  background:rgba(24,22,19,.6);
-  backdrop-filter:blur(2px);
-  display:flex; align-items:flex-end; justify-content:center;
-}
-.landmark-modal.hidden{ display:none; }
-.landmark-modal-card{
-  background:var(--card); width:100%; max-width:480px;
-  border-radius:24px 24px 0 0; overflow:hidden;
-  max-height:88vh; overflow-y:auto;
-  box-shadow:var(--shadow-lift);
-  animation:landmark-up .2s cubic-bezier(.22,.61,.36,1);
-}
-@keyframes landmark-up{ from{ transform:translateY(28px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
-.landmark-modal-img{ position:relative; height:210px; background:var(--line); }
-.landmark-modal-img svg, .landmark-modal-img img{ display:block; width:100%; height:100%; object-fit:cover; }
-.modal-close{
-  position:absolute; top:14px; right:14px; z-index:2;
-  width:34px; height:34px; border-radius:50%; border:none;
-  background:rgba(24,22,19,.5); color:#fff; font-size:15px;
-  display:flex; align-items:center; justify-content:center;
-  backdrop-filter:blur(4px);
-}
-.landmark-modal-body{ padding:20px 22px 26px; }
-.landmark-modal-body h2{ font-family:var(--font-display); font-weight:600; font-size:19px; margin:0 0 9px; }
-.landmark-modal-body p{ font-size:13.5px; color:var(--ink-soft); line-height:1.65; margin:0; }
-/* ---- bouton "Voir la liste" sous la carte ---- */
-.btn-see-list{
-  display:block; width:calc(100% - 32px); margin:12px 16px 4px;
-  padding:14px 20px; border:none; border-radius:14px;
-  background:linear-gradient(135deg, #E85D3D, #c1440e); color:#fff;
-  font-weight:700; font-size:14.5px; cursor:pointer;
-  box-shadow:0 4px 12px -4px rgba(232,93,61,.5);
-}
-/* ---- responsive : desktop ---- */
-@media (min-width:760px){
-  .view{ padding-top:26px; }
-  .event-list{ display:grid; grid-template-columns:1fr 1fr; }
-  .cta-row{ max-width:360px; }
-}
-/* ---- badge de points, harmonisé avec le nouvel en-tête ---- */
-.loyalty-badge{
-  background:rgba(255,255,255,.22) !important;
-  border:1px solid rgba(255,255,255,.4) !important;
-  color:#fff !important;
-  padding:6px 14px !important;
-  border-radius:999px !important;
-  font-weight:700 !important;
-  font-size:12.5px !important;
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
-}
-/* ---- titre de l'écran Favoris, accent corail plutôt que violet ---- */
-.favorites-title::before{
-  background:linear-gradient(180deg, #FF6F61, #c0392b) !important;
-}
-/* ---- écran de démarrage animé ---- */
-.splash-screen{
-  position:fixed; inset:0; z-index:200;
-  display:flex; align-items:center; justify-content:center;
-  background:linear-gradient(165deg, #14213D 0%, #2b3f66 45%, #7ba9c9 78%, #cdeaf9 100%);
-}
-.splash-logo{
-  width:min(420px, 100vw); height:min(420px, 100vw);
-  opacity:0; animation:splash-logo-in .7s ease-out .15s forwards, splash-inflate .5s ease-in 2.5s forwards;
-}
-@keyframes splash-logo-in{
-  from{ opacity:0; transform:scale(.7); }
-  to{ opacity:1; transform:scale(1); }
-}
-@keyframes splash-inflate{
-  from{ transform:scale(1); }
-  to{ transform:scale(1.35); opacity:0; }
-}
-.splash-eyelid{
-  transform-box:fill-box; transform-origin:center; transform:scaleY(0);
-  animation:splash-wink 0.5s ease-in-out 1.6s;
-}
-.splash-eyelid-line{ opacity:0; animation:splash-wink-line 0.5s ease-in-out 1.6s; }
-@keyframes splash-wink{
-  0%, 100%{ transform:scaleY(0); }
-  50%{ transform:scaleY(1); }
-}
-@keyframes splash-wink-line{
-  0%, 100%{ opacity:0; }
-  50%{ opacity:1; }
-}
-.splash-confetti-burst{ position:absolute; top:50%; left:50%; width:0; height:0; }
-.splash-confetti{
-  position:absolute; width:14px; height:14px; opacity:0;
-  animation:splash-burst 1s cubic-bezier(.2,.8,.4,1) 2.95s forwards;
-}
-@keyframes splash-burst{
-  0%{ opacity:1; transform:translate(-50%,-50%) rotate(0deg) scale(1); }
-  100%{ opacity:0; transform:translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.6); }
-}
-.splash-screen.hide{ transition:opacity .35s ease; opacity:0; pointer-events:none; }
-/* ---- accordéon de sélection de ville par région ---- */
-.locate-bar{ padding:0; overflow:hidden; }
-.locate-bar-photo{
-  position:relative; height:220px;
-  background-size:cover; background-position:center;
-  display:flex; align-items:flex-end; padding:16px;
-}
-.locate-bar-photo::after{
-  content:""; position:absolute; inset:0; z-index:0;
-  background:linear-gradient(180deg, rgba(20,33,61,0) 40%, rgba(11,21,38,.9) 100%);
-}
-.locate-bar-photo .locate-info{ position:relative; z-index:1; margin-bottom:0; }
-.locate-body{ padding:16px; }
-.region-block{ border-bottom:1px solid rgba(255,255,255,.12); }
-.region-block:last-child{ border-bottom:none; }
-.region-toggle{
-  width:100%; background:none; border:none; color:#fff; text-align:left;
-  padding:13px 2px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
-  display:flex; justify-content:space-between; align-items:center; cursor:pointer;
-  font-family:var(--font-body);
-}
-.chevron{ transition:transform .2s ease; font-size:16px; color:rgba(255,255,255,.6); }
-.region-block.open .chevron{ transform:rotate(90deg); }
-.region-panel{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
-.region-block.open .region-panel{ max-height:600px; }
-.region-body .locate-actions{ padding:2px 2px 14px; }
-
-/* ---- recherche de ville (toutes les villes de France) ---- */
-.city-search-input{
-  width:100%; box-sizing:border-box; padding:12px 14px; margin-bottom:12px;
-  background:rgba(255,255,255,.12); border:1.5px solid rgba(255,255,255,.28); border-radius:12px;
-  color:#fff; font-size:14px; font-family:var(--font-body);
-}
-.city-search-input::placeholder{ color:rgba(255,255,255,.6); }
-.city-search-results{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
-.city-search-results.hidden{ display:none; }
-.city-search-empty{ color:rgba(255,255,255,.65); font-size:12.5px; margin:4px 2px; }
-.chip-btn--curated{ display:inline-flex; align-items:center; gap:6px; }
-.city-dot{ width:7px; height:7px; border-radius:50%; background:#4CD07A; box-shadow:0 0 0 2px rgba(76,208,122,.25); flex-shrink:0; }
-#region-accordion.hidden{ display:none; }
-
-/* ---- état vide : ville pas encore couverte ---- */
-.empty-city-card{
-  background:linear-gradient(135deg,#eaf6fd,#fdfaf5); border:1px dashed #cdeaf9; border-radius:16px;
-  padding:18px; text-align:left; color:#14213D;
-}
-.empty-city-card .t{ font-weight:800; font-size:14px; margin-bottom:6px; }
-.empty-city-card .d{ font-size:12.5px; color:#6b6458; line-height:1.5; margin-bottom:12px; }
-.nearest-city-btn{ display:inline-block; }
-/* ---- bannière statistiques (aujourd'hui / demain / cette semaine) ---- */
-.stats-banner{
-  margin:0 0 16px; padding:8px; box-sizing:border-box;
-  background:#fff; border:1.5px solid var(--line); border-radius:var(--radius-sm);
-  display:flex; justify-content:space-between;
-}
-.stat{
-  text-align:center; flex:1; background:none; border:none; cursor:pointer;
-  padding:8px 6px; border-radius:8px; font-family:var(--font-body);
-}
-.stat.active{ background:var(--accent-soft); }
-.stat .num{ font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--accent); }
-.stat .label{ font-size:11px; color:var(--ink-soft); font-weight:600; text-transform:uppercase; letter-spacing:.03em; margin-top:2px; }
-/* ---- écran intro : souvenirs ou découvrir ---- */
-.intro-screen{
-  position:fixed; inset:0; z-index:101;
-  background:linear-gradient(165deg, #cdeaf9 0%, #eaf6fd 45%, #fdfaf5 100%);
-  display:flex; flex-direction:column; align-items:center; justify-content:space-between;
-  padding:60px 24px 40px;
-}
-.intro-screen.hidden{ display:none; }
-.intro-bubble{
-  background:rgba(20,33,61,0.92); color:#fff; border-radius:18px; padding:16px 18px;
-  font-size:15px; text-align:center; line-height:1.45; font-weight:600; max-width:340px;
-}
-.intro-logo{ display:flex; align-items:center; justify-content:center; flex:1; }
-.intro-logo svg{ width:min(300px, 78vw); height:auto; }
-.intro-pills{ width:100%; max-width:340px; display:flex; flex-direction:column; gap:12px; }
-.intro-pill{
-  border:none; border-radius:999px; padding:15px; text-align:center; font-size:14px; font-weight:800;
-  cursor:pointer; font-family:inherit;
-}
-.intro-pill.primary{ background:linear-gradient(135deg,#F2C879,#E85D3D); color:#fff; box-shadow:0 8px 18px -6px rgba(242,167,68,0.55); }
-.intro-pill.ghost{ background:rgba(242,167,68,0.12); border:1px solid rgba(242,167,68,0.4); color:#14213D; }
-.intro-tagline{ text-align:center; color:rgba(20,33,61,0.55); font-size:12px; margin-top:6px; font-style:italic; }
-
-/* ---- écran de choix : localiser ou visiter une ville ---- */
-.choice-screen{
-  position:fixed; inset:0; z-index:100; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%);
-  display:flex; flex-direction:column; padding:32px 20px 20px;
-  overflow-y:auto;
-}
-.choice-screen.hidden{ display:none; }
-.choice-header{ text-align:center; margin-bottom:8px; }
-.choice-header .brand-word{ font-family:var(--font-display); font-weight:700; font-size:20px; color:#fff; }
-.choice-header .accent{ color:var(--accent); }
-.choice-header h1{ font-family:var(--font-display); font-size:22px; color:#fff; margin:20px 0 4px; }
-.choice-header p{ font-size:13px; color:rgba(255,255,255,0.65); margin:0; }
-.choice-cards{ flex:1; display:flex; flex-direction:column; gap:16px; margin-top:20px; min-height:0; }
-.choice-card{
-  flex:1; min-height:220px; border-radius:20px; position:relative; overflow:hidden;
-  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
-  padding:20px; cursor:pointer; border:none;
-  isolation:isolate; transform:translateZ(0); clip-path:inset(0 round 20px);
-}
-.choice-card.carnet{ flex:none; min-height:150px; }
-.choice-card.locate{ background:linear-gradient(155deg,#1a2d52,#0B1526); color:#fff; }
-.choice-card.visit{ background:linear-gradient(155deg,#fdf3ee,#f7e4da); color:var(--ink); }
-.choice-card .scene{ position:absolute; inset:0; width:100%; height:100%; }
-.choice-content{ position:relative; z-index:1; text-align:center; }
-.choice-content h2{ font-family:var(--font-display); font-size:19px; margin:0 0 6px; }
-.choice-content p{ font-size:13px; margin:0; max-width:260px; }
-.choice-card.locate .choice-content p{ color:rgba(255,255,255,.8); }
-.choice-card.visit .choice-content p{ color:var(--ink-soft); }
-.choice-badge{
-  position:absolute; top:14px; right:14px; background:var(--accent); color:#fff;
-  font-size:10px; font-weight:700; padding:4px 9px; border-radius:999px; text-transform:uppercase; z-index:2;
-}
-
-.choice-eyelid{ transform-box:fill-box; transform-origin:center; transform:scaleY(0); }
-.choice-card.clicked .choice-eyelid{ animation:choice-wink .4s ease-in-out; }
-@keyframes choice-wink{
-  0%, 100%{ transform:scaleY(0); }
-  50%{ transform:scaleY(1); }
-}
-.choice-confetti-burst{ position:absolute; top:50%; left:50%; width:0; height:0; z-index:3; }
-.choice-confetti{ position:absolute; width:9px; height:9px; opacity:0; }
-.choice-card.clicked .choice-confetti{ animation:choice-burst .7s cubic-bezier(.2,.8,.4,1) .35s forwards; }
-@keyframes choice-burst{
-  0%{ opacity:1; transform:translate(-50%,-50%) rotate(0deg) scale(1); }
-  100%{ opacity:0; transform:translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.6); }
-}
-/* ---- cartes "lieux à voir" (toujours ouverts) ---- */
-.event-card--place{ border-left: 3px solid #7fa36b; }
-.event-card--place .cat{ color: #4f6e42; }
-.flags-row{ display:flex; gap:6px; flex-shrink:0; }
-.flag-btn{
-  background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3); border-radius:999px;
-  width:30px; height:30px; cursor:pointer; display:flex; align-items:center; justify-content:center;
-  padding:0; flex-shrink:0;
-}
-.flag-btn.active{ background:var(--accent); border-color:var(--accent); }
-.flag-btn img{ width:18px; height:13px; border-radius:2px; object-fit:cover; display:block; }
-@media (max-width: 480px){
-  .topbar{ flex-wrap:wrap; row-gap:8px; }
-}
+        </div>
+        <p class="locate-hint" id="locate-hint">Toutes les villes de France sont accessibles via la recherche ci-dessus. Les villes avec un <span class="city-dot" style="display:inline-block; vertical-align:middle;"></span> point vert ont déjà des événements actifs ; les autres arrivent progressivement. Le bouton « Ma position » utilise votre géolocalisation réelle et calcule la distance jusqu'à chaque événement dans un rayon de 20 km.</p>
+      </div>
+    </section>
+ <div class="stats-banner" id="stats-banner">
+  <button type="button" class="stat" data-filter="today"><div class="num" id="stat-today">0</div><div class="label">Aujourd'hui</div></button>
+  <button type="button" class="stat" data-filter="tomorrow"><div class="num" id="stat-tomorrow">0</div><div class="label">Demain</div></button>
+  <button type="button" class="stat" data-filter="week"><div class="num" id="stat-week">0</div><div class="label">Cette semaine</div></button>
+  <button type="button" class="stat" data-filter="later"><div class="num" id="stat-later">0</div><div class="label">Plus tard</div></button>
+</div>
+<section id="city-info" class="city-info"></section>
+    <section class="toolbar">
+   <div class="segmented">
+        <button class="seg" data-mode="carte">🗺️ Carte</button>
+        <button class="seg active" data-mode="liste">☰ Liste</button>
+      </div>  
+      <button class="chip-btn" id="btn-filters" data-i18n="⚙️ Filtres">⚙️ Filtres</button>
+    </section>
+    <section id="filters-panel" class="filters-panel hidden">
+      <div class="filters-row">
+        <span class="filters-label" data-i18n="Catégories :">Catégories :</span>
+        <div class="chips-row" id="category-chips"></div>
+      </div>
+      <div class="filters-row hidden" id="arrondissement-row">
+       <label for="arrondissement-select" class="filters-label" data-i18n="Arrondissement :">Arrondissement :</label>
+        <select id="arrondissement-select">
+          <option value="" data-i18n="Tous">Tous</option>
+        </select> 
+      </div>
+     <div class="filters-row">
+  <span class="filters-label" data-i18n="Rayon rapide :">Rayon rapide :</span>
+  <div class="chips-row" id="radius-presets">
+    <button type="button" class="chip-btn" data-radius="0.5">500 m</button>
+    <button type="button" class="chip-btn" data-radius="1">1 km</button>
+    <button type="button" class="chip-btn" data-radius="5">5 km</button>
+    <button type="button" class="chip-btn" data-radius="20">20 km</button>
+  </div>
+</div>
+  <div class="filters-row">
+  <span class="filters-label">⏱️ Temps disponible :</span>
+  <div class="chips-row" id="time-presets">
+    <button type="button" class="chip-btn" data-time-radius="2">1h</button>
+    <button type="button" class="chip-btn" data-time-radius="10">Demi-journée</button>
+    <button type="button" class="chip-btn" data-time-radius="20">Journée</button>
+  </div>
+</div>    
+<div class="filters-row">
+  <label for="radius-range" class="filters-label"><span data-i18n="Rayon précis :">Rayon précis :</span> <strong id="radius-value">20</strong> km</label>
+  <input type="range" id="radius-range" min="0" max="50" step="0.1" value="20">
+</div>
+    </section>
+    <section id="map-mock" class="map-mock hidden"> 
+      <div class="ring"></div>
+      <div class="me"></div>
+      <div id="map-pins"></div>
+      <div id="map-radius-tag" class="map-tag">rayon <span id="map-radius-label">20</span> km</div>
+    </section>
+    <button type="button" id="btn-see-list" class="btn-see-list" data-i18n="☰ Voir la liste">☰ Voir la liste</button>
+    <section id="event-list" class="event-list"></section>
+    <div id="empty-state" class="empty-state hidden">Aucun événement ne correspond à ces filtres pour le moment. Essayez d'élargir le rayon ou les catégories.</div>
+  </main>
+  <!-- ===================== VUE : FICHE ÉVÉNEMENT ===================== -->
+  <main id="view-detail" class="view hidden">
+    <button class="back-btn" id="btn-back-detail">← Retour</button>
+    <div class="detail-hero" id="detail-hero"></div>
+    <div class="detail-body">
+     <span class="pill" id="detail-cat"></span>
+      <h1 id="detail-title"></h1>
+      <div class="info-card">
+        <div class="info-row-new"><span class="ico">🗓️</span><div><div class="info-main" id="detail-date"></div><div class="info-sub accent" id="detail-time"></div></div></div>
+        <div class="info-divider"></div>
+        <div class="info-row-new"><span class="ico">📍</span><div><div class="info-main" id="detail-place"></div><div class="info-sub" id="detail-distance"></div></div></div>
+      </div>
+      <span class="price-badge" id="detail-price"></span>
+      <p class="detail-desc" id="detail-desc"></p>
+    <div class="cta-row">
+        <button class="btn-primary" id="btn-interested" data-i18n="Je suis intéressé(e)">Je suis intéressé(e)</button>
+      </div>
+      <div class="action-tiles">
+        <button class="action-tile" id="btn-favorite"><span class="tile-icon" id="favorite-icon">🤍</span><span class="tile-label">Favori</span></button>
+        <button class="action-tile" id="btn-been-there"><span class="tile-icon">✅</span><span class="tile-label" id="been-there-label">J'y étais</span></button>
+        <button class="action-tile" id="btn-add-souvenir-detail"><span class="tile-icon">📸</span><span class="tile-label">Souvenir</span></button>
+      </div>       
+    </div>
+  </main>
+  <!-- ===================== VUE : PUBLICATION ===================== -->
+  <main id="view-publish" class="view hidden">
+    <button class="back-btn" id="btn-back-publish">← Retour</button>
+    <h1 class="form-title" data-i18n="Nouvel événement">Nouvel événement</h1>
+    <p class="form-sub">Ce pilote enregistre votre événement localement dans votre navigateur (démonstration). La publication en ligne partagée arrivera à l'étape suivante du projet.</p>
+    <form id="publish-form" class="publish-form">
+      <label class="field">
+        <span>Titre</span>
+        <input type="text" name="title" placeholder="Ex. Marché nocturne provençal" required>
+      </label>
+      <label class="field">
+        <span>Catégorie</span>
+       <label class="field">
+        <span>Catégorie</span>
+        <select name="category" required>
+  <option value="Musique">Musique</option>
+  <option value="Marché">Marché</option>
+  <option value="Brocante">Brocante</option>
+  <option value="Festival">Festival</option>
+  <option value="Sport">Sport</option>
+  <option value="Soirée">Soirée</option>
+  <option value="Expo">Expo</option>
+</select>   
+      </label> 
+      <div class="field-row">
+        <label class="field">
+          <span>Date</span>
+          <input type="date" name="date" required>
+        </label>
+        <label class="field">
+          <span>Heure</span>
+          <input type="time" name="time" required>
+        </label>
+      </div>
+      <label class="field">
+        <span>Ville</span>
+        <select name="city" required>
+          <option value="aix">Aix-en-Provence</option>
+          <option value="st">Saint-Tropez</option>
+          <option value="ram">Ramatuelle</option>
+          <option value="ste">Sainte-Maxime</option>
+          <option value="lcv">La Croix-Valmer</option>
+          <option value="sens">Sens</option>
+          <option value="drag">Draguignan</option>
+         <option value="moug">Mougins</option> 
+          <option value="mart">Martigues</option>
+          <option value="paris">Paris</option>
+          <option value="nantes">Nantes</option>
+<option value="rennes">Rennes</option>
+<option value="brest">Brest</option>
+          <option value="bordeaux">Bordeaux</option>
+<option value="toulouse">Toulouse</option>
+<option value="dijon">Dijon</option>
+<option value="lille">Lille</option>
+<option value="marseille">Marseille</option>
+   <option value="chambery">Chambéry</option> 
+     <option value="rouen">Rouen</option>
+<option value="reims">Reims</option>
+<option value="montpellier">Montpellier</option> <option value="angers">Angers</option>
+<option value="avignon">Avignon</option>
+<option value="strasbourg">Strasbourg</option><option value="metz">Metz</option>
+<option value="caen">Caen</option>
+         
+        </select>
+      </label>
+      <label class="field">
+        <span>Lieu précis</span>
+        <input type="text" name="place" placeholder="Adresse ou nom du lieu" required>
+      </label>
+      <label class="field">
+        <span>Description</span>
+        <textarea name="description" rows="3" placeholder="Quelques mots sur l'événement…"></textarea>
+      </label>
+     <button type="submit" class="btn-primary btn-block" data-i18n="Publier l'événement">Publier l'événement</button>
+    </form>
+  </main>
+  <!-- ===================== VUE : CONFIRMATION ===================== -->
+  <main id="view-confirm" class="view hidden">
+   <div class="confirm-box">
+  <span class="confetti confetti-1"></span>
+  <span class="confetti confetti-2"></span>
+  <span class="confetti confetti-3"></span>
+  <span class="confetti confetti-4"></span>
+  <div class="confirm-icon">✓</div>
+ <h1 data-i18n="Événement publié !">Événement publié !</h1>
+  <p>Il apparaît maintenant dans la liste de sa ville (démonstration locale à votre navigateur).</p>
+  <button class="btn-primary" id="btn-confirm-back" data-i18n="Retour à l'accueil">Retour à l'accueil</button>
+</div>
+  </main>
+ <nav class="bottomnav">
+    <button class="nav-item active" data-view="discover"><span class="dot">🗺️</span><span class="nav-label" data-i18n="Explorer">Explorer</span></button>
+    <button class="nav-item" data-view="publish"><span class="dot">➕</span><span class="nav-label" data-i18n="Publier">Publier</span></button>
+  <button class="nav-item" data-view="favorites"><span class="dot">❤️</span><span class="nav-label" data-i18n="Favoris">Favoris</span></button>
+<button class="nav-item" id="nav-carnet-btn"><span class="dot">📖</span><span class="nav-label" style="font-weight:800;">Souvenirs</span></button>
+  </nav>
+  <!-- ===================== VUE : FAVORIS ===================== -->
+    <main id="view-favorites" class="view hidden">
+    <h1 class="form-title favorites-title" data-i18n="❤️ Mes favoris">❤️ Mes favoris</h1>
+    <button type="button" id="btn-invite-friend" style="display:block; width: calc(100% - 32px); box-sizing: border-box; margin: 14px 16px; padding: 14px 20px; background: linear-gradient(135deg, #6C5CE7, #4834b0); color: #ffffff; border: none; border-radius: 14px; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer;">📤 Inviter un ami (il reçoit 10 pts de bienvenue)</button>
+    <section id="favorites-list" class="event-list"></section>
+    <p id="favorites-empty" class="empty-state hidden" data-i18n="Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.">Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.</p>
+  </main>
+  <!-- ===================== VUE : MES PHOTOS (souvenirs par ville) ===================== -->
+  <main id="view-photos" class="view hidden">
+    <button class="back-btn" id="btn-back-photos">← Retour</button>
+    
+  <h1 class="form-title photos-title" id="photos-title">📸 Mes photos</h1>
+    <p class="form-sub">Ces photos restent sur cet appareil, dans ce navigateur — elles ne sont pas partagées avec les autres utilisateurs pour le moment.</p>
+    <input type="file" id="photo-input" accept="image/*" multiple class="hidden">
+    <button type="button" class="btn-primary btn-block" id="btn-add-photo">＋ Ajouter une photo</button>
+    <div id="photos-grid" class="photos-grid"></div>
+    <p id="photos-empty" class="empty-state hidden">Pas encore de souvenir ici. Ajoute une photo pour commencer !</p>
+  </main>
+  <!-- ===================== LIGHTBOX : PHOTO EN GRAND ===================== -->
+  <div id="photo-lightbox" class="photo-lightbox hidden">
+    <button class="modal-close" id="btn-lightbox-close" aria-label="Fermer">✕</button>
+    <img id="lightbox-img" alt="">
+    <button type="button" class="lightbox-delete" id="btn-lightbox-delete">🗑️ Supprimer cette photo</button>
+  </div>
+  <!-- ===================== MODALE : LIEU EMBLÉMATIQUE ===================== -->
+  <div id="landmark-modal" class="landmark-modal hidden">
+    <div class="landmark-modal-card">
+      <button class="modal-close" id="btn-landmark-close" aria-label="Fermer">✕</button>
+      <div id="landmark-modal-img" class="landmark-modal-img"></div>
+      <div class="landmark-modal-body">
+        <h2 id="landmark-modal-title"></h2>
+        <p id="landmark-modal-caption"></p>
+      </div>
+    </div>
+  </div>
+<script defer src="app.js"></script>
+ <script defer src="weather.js"></script>
+ <script defer src="notifications.js"></script>
+ <script defer src="time-filter.js"></script>
+ <script defer src="surprise-me.js"></script>
+ <script defer src="itinerary-me.js"></script>
+ <script defer src="share-event.js"></script>
+ <script defer src="propose-city.js"></script>
+ <script defer src="week-view.js"></script>
+ <script defer src="free-search.js"></script>
+ <script defer src="loading-mascot.js"></script>
+ <script defer src="bar-places.js"></script>
+ <script defer src="landing-mode.js"></script>
+ <script defer src="arrival-screen.js"></script>
+ <script defer src="unified-explore.js"></script>
+ <script defer src="layover-mode.js"></script>
+ <script defer src="bonhomme-banner.js"></script>
+ <script defer src="change-city-button.js"></script>
+<script defer src="souvenirs.js"></script>
+<script defer src="recap.js"></script>
+ <script defer src="guided-quest.js"></script>
+</body>
+</html>
