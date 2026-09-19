@@ -156,20 +156,10 @@
           openAddSouvenirModal({});
         }
       });
-      document.body.appendChild(btn);
+          document.body.appendChild(btn);
     }
-
-    if (!document.getElementById("souvenir-carnet-fab")) {
-      const cbtn = document.createElement("button");
-      cbtn.id = "souvenir-carnet-fab";
-      cbtn.textContent = "📖";
-      cbtn.title = "Mon carnet";
-      cbtn.style.cssText = "position:fixed;right:18px;bottom:154px;width:46px;height:46px;border-radius:999px;background:linear-gradient(135deg,#2A9D8F,#1f7a6f);color:#fff;font-size:19px;border:none;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:500;";
-      cbtn.addEventListener("click", function () {
-        if (window.__renderSouvenirsScreen) window.__renderSouvenirsScreen();
-      });
-      document.body.appendChild(cbtn);
-    }
+    const oldCarnetFab = document.getElementById("souvenir-carnet-fab");
+    if (oldCarnetFab) oldCarnetFab.remove();
   }
 
   const GRADIENTS = [
