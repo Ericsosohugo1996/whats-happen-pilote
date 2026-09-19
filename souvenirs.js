@@ -459,6 +459,16 @@
     }
   }
 
+    function ensureNavCarnetLink() {
+    const btn = document.getElementById("nav-carnet-btn");
+    if (btn && !btn.dataset.bound) {
+      btn.dataset.bound = "1";
+      btn.addEventListener("click", function () {
+        renderSouvenirsScreen();
+      });
+    }
+  }
+
   function ensureAccountLink() {
     const link = document.getElementById("btn-open-souvenirs");
     if (link && !link.dataset.bound) {
