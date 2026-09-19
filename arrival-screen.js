@@ -400,9 +400,13 @@ function __arrivalShow() {
     '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #E85D3D, #c1440e); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(232,93,61,0.35);">✨</div>' +
     '<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Surprends-moi</div>' +
     "</div>" +
-    '<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
+       '<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
     '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:26px;">🗺️</div>' +
     '<div style="color:rgba(255,255,255,0.85); font-size:11.5px; margin-top:9px; font-weight:500;">Tout voir</div>' +
+    "</div>" +
+    '<div class="arrival-opt" data-key="carnet" style="text-align:center; cursor:pointer;">' +
+    '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #2A9D8F, #1f7a6f); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(42,157,143,0.35);">📖</div>' +
+    '<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Mon carnet</div>' +
     "</div>" +
     "</div>" +
     (weatherText
