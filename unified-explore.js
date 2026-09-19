@@ -1,24 +1,3 @@
-
-Claude Desktop (Windows), Connecté
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Unified explore · JS
 // ---- unifie les 4 anciens boutons en un seul point d'entrée "Explorer" ----
 if (typeof __ensureLayoverButton === "function") {
   __ensureLayoverButton = function () {};
