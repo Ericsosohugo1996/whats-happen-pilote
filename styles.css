@@ -468,7 +468,7 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .splash-screen{
   position:fixed; inset:0; z-index:200;
   display:flex; align-items:center; justify-content:center;
-  background:linear-gradient(160deg,#14213D,#0B1526);
+  background:linear-gradient(165deg, #14213D 0%, #2b3f66 45%, #7ba9c9 78%, #cdeaf9 100%);
 }
 .splash-logo{
   width:min(420px, 100vw); height:min(420px, 100vw);
