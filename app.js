@@ -2946,19 +2946,20 @@ function formatDate(iso){
 }
 
 // ---- rendering ----
+const CATEGORY_COLORS = {"Musique":"#9D4EDD","Théâtre":"#E85D3D","Soirée":"#E63980","Festival":"#F4A261","Expo":"#2A9D8F","Sport":"#2A9D5C","Marché":"#3498DB","À voir":"#457B9D","Bar":"#C1440E","Brocante":"#8B5E3C"};
+const CATEGORY_ICONS = {"Musique":"🎵","Théâtre":"🎭","Soirée":"🥂","Festival":"🎪","Expo":"🖼️","Sport":"⚽","Marché":"🛍️","À voir":"👀","Bar":"🍸","Brocante":"🧺"};
+
 function renderCategoryChips(){
   const el = document.getElementById("category-chips");
   el.innerHTML = "";
   CATEGORIES.forEach(cat => {
     const b = document.createElement("button");
-       b.className = "chip-btn" + (state.selectedCategories.has(cat) ? " active" : "");
-    b.textContent = cat;
-    const chipColors = {"Musique":"#9D4EDD","Théâtre":"#E85D3D","Soirée":"#E63980","Festival":"#F4A261","Expo":"#2A9D8F","Sport":"#2A9D5C","Marché":"#3498DB","À voir":"#457B9D","Bar":"#C1440E"};
-    if (state.selectedCategories.has(cat)) {
-      b.style.background = chipColors[cat] || "#6C757D";
-      b.style.borderColor = chipColors[cat] || "#6C757D";
-      b.style.color = "#fff";
-    }
+    const active = state.selectedCategories.has(cat);
+    b.className = "cat-chip" + (active ? " active" : "");
+    const color = CATEGORY_COLORS[cat] || "#6C757D";
+    b.innerHTML =
+      '<span class="cat-chip-circle" style="background:' + color + ';' + (active ? '' : 'opacity:0.55;') + '">' + (CATEGORY_ICONS[cat] || "📍") + '</span>' +
+      '<span class="cat-chip-label">' + cat + '</span>';
     b.onclick = () => {
       if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
       else state.selectedCategories.add(cat);
