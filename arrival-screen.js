@@ -416,12 +416,12 @@ function __arrivalShow() {
     (weatherText
       ? '<div style="margin-top:34px; text-align:center;"><div style="display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,0.06); color:#9BA5C2; font-size:11px;">' + weatherText + "</div></div>"
       : "") +
-    '<div style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
-    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#F2864B;"><span style="font-size:16px;">🧭</span><span style="font-size:9.5px; font-weight:700;">Découvre</span></div>' +
-    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690;"><span style="font-size:16px;">🗺️</span><span style="font-size:9.5px; font-weight:600;">Explore</span></div>' +
-    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690;"><span style="font-size:16px;">🏙️</span><span style="font-size:9.5px; font-weight:600;">Visite</span></div>' +
-    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690;"><span style="font-size:16px;">📖</span><span style="font-size:9.5px; font-weight:600;">Mémorise</span></div>' +
-    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690;"><span style="font-size:16px;">🔗</span><span style="font-size:9.5px; font-weight:600;">Partage</span></div>' +
+    '<div class="wz-navbar" style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
+    '<div class="wz-navbar-item" data-nav="decouvre" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#F2864B; cursor:pointer;"><span style="font-size:16px;">🧭</span><span style="font-size:9.5px; font-weight:700;">Découvre</span></div>' +
+    '<div class="wz-navbar-item" data-nav="explore" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🗺️</span><span style="font-size:9.5px; font-weight:600;">Explore</span></div>' +
+    '<div class="wz-navbar-item" data-nav="visite" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🏙️</span><span style="font-size:9.5px; font-weight:600;">Visite</span></div>' +
+    '<div class="wz-navbar-item" data-nav="memorise" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">📖</span><span style="font-size:9.5px; font-weight:600;">Mémorise</span></div>' +
+    '<div class="wz-navbar-item" data-nav="partage" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🔗</span><span style="font-size:9.5px; font-weight:600;">Partage</span></div>' +
     "</div>";
 
   document.body.appendChild(overlay); 
@@ -439,7 +439,31 @@ function __arrivalShow() {
       }, 180);
     });
   });
+
+  overlay.querySelectorAll(".wz-navbar-item").forEach(function (item) {
+    item.addEventListener("click", function () {
+      const nav = item.dataset.nav;
+      if (nav === "decouvre") { overlay.remove(); __arrivalShow(); }
+      else if (nav === "explore") { overlay.remove(); __exploreOpen(); }
+      else if (nav === "visite") { overlay.remove(); __arrivalShowCityView(); }
+      else if (nav === "memorise") { overlay.remove(); if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
+      else if (nav === "partage") { __arrivalShareCity(); }
+    });
+  });
 }
+
+function __arrivalShareCity() {
+  const cityKey = state.userPos ? nearestCityKey() : state.city;
+  const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+  const text = "Découvre les événements, musées et bonnes adresses de " + cityName + " sur Whazup : https://whazup.fr";
+  if (navigator.share) {
+    navigator.share({ title: "Whazup", text: text }).catch(function () {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function () {
+      if (typeof showShareToast === "function") showShareToast("✓ Lien copié ! Collez-le dans votre message.");
+    }).catch(function () {});
+  }
+}   
 function __arrivalShowSearching() {
   const overlay = document.createElement("div");
   overlay.id = "arrival-searching-overlay";
