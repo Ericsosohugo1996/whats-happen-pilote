@@ -330,7 +330,7 @@
       const tab = document.createElement("button");
       tab.textContent = cityName;
       const active = key === souvenirsCurrentCity;
-      tab.style.cssText = "padding:7px 14px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap;border:none;cursor:pointer;" + (active ? "background:#14213D;color:#fff;" : "background:#fff;color:#888;border:1px solid #eee;");
+          tab.style.cssText = "padding:7px 14px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap;cursor:pointer;" + (active ? "background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border:none;" : "background:rgba(255,255,255,0.06);color:#9BA5C2;border:1px solid rgba(255,255,255,0.1);");
       tab.addEventListener("click", function () {
         souvenirsCurrentCity = key;
         renderCityMemories();
