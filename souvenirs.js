@@ -416,8 +416,8 @@
             .then(function (data) {
               resultBox.style.display = "block";
               resultBox.innerHTML =
-                '<div style="font-size:10.5px; color:#E85D3D; font-weight:700; margin-bottom:8px;">✨ WHAZUP ENRICHI</div>' +
-                '<div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;">' + (data.text || "Une erreur est survenue, réessaie.") + "</div>";
+                       '<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Whazup enrichi</div>' +
+                '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;">' + (data.text || "Une erreur est survenue, réessaie.") + "</div>";
               aiBtn.remove();
             })
             .catch(function () {
