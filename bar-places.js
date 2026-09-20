@@ -879,8 +879,131 @@ const CURATED_BARS = [
   { id: "bar-chambery-6", isPlace: true, scene: "bar", city: "chambery", category: "Bar", style: "vin", title: "Un Envol des Papilles", date: null, time: "", place: "Chambéry", lat: 45.5650, lng: 5.9160, price: "€€", thumb: "", description: "Belle alliance entre bons vins français et planches gourmandes, ambiance sympathique et chaleureuse." },
   { id: "bar-chambery-7", isPlace: true, scene: "bar", city: "chambery", category: "Bar", style: "biere", title: "Terrasse Place Métropole", date: null, time: "", place: "Place Métropole, Chambéry", lat: 45.5660, lng: 5.9180, price: "€€", thumb: "", description: "Terrasse très prisée au cœur du vieux Chambéry et de la zone piétonne, parfaite pour observer la vie du centre." },
   { id: "bar-chambery-8", isPlace: true, scene: "bar", city: "chambery", category: "Bar", style: "vin", title: "Bar à Vins Carré Curial", date: null, time: "", place: "215 Carré Curial, Chambéry", lat: 45.5663, lng: 5.9143, price: "€€", thumb: "", description: "Bar à vins et tapas convivial, bonne musique autour d'un verre dans le cadre du Carré Curial." },
-   // ---- musées en Île-de-France, hors Paris intra-muros ----
+  // ---- musées en Île-de-France, hors Paris intra-muros ----
   { id: "musee-versailles-1", isPlace: true, scene: "expo", city: "versailles", category: "À voir", title: "Château de Versailles", date: null, time: "", place: "Place d'Armes, 78000 Versailles", lat: 48.8049, lng: 2.1204, price: "Payant", thumb: "", description: "Ancienne résidence des rois de France, Galerie des Glaces et jardins à la française dessinés par Le Nôtre." },
   { id: "musee-versailles-2", isPlace: true, scene: "expo", city: "versailles", category: "À voir", title: "Musée Lambinet", date: null, time: "", place: "54 Boulevard de la Reine, 78000 Versailles", lat: 48.8021, lng: 2.1275, price: "Payant", thumb: "", description: "Histoire de la ville de Versailles dans un hôtel particulier du XVIIIᵉ siècle, mobilier et collections révolutionnaires." },
   { id: "musee-melun-1", isPlace: true, scene: "expo", city: "melun", category: "À voir", title: "Musée d'Art et d'Histoire de Melun", date: null, time: "", place: "5 Rue du Franc Mûrier, 77000 Melun", lat: 48.5390, lng: 2.6600, price: "Payant", thumb: "", description: "Dans un hôtel particulier du XVIIᵉ siècle sur l'Île Saint-Étienne, collections d'antiquité, du Moyen Âge à la Révolution et art du XIXᵉ siècle." },
   { id: "musee-evry-1", isPlace: true, scene: "expo", city: "evry", category: "À voir", title: "Musée Paul Delouvrier", date: null, time: "", place: "12 Clos de la Cathédrale, 91000 Évry", lat: 48.6280, lng: 2.4420, price: "Payant", thumb: "", description: "Musée d'art sacré niché dans la cathédrale de la Résurrection, œuvres contemporaines et pièces d'art africain, dont deux toiles monumentales de Vasarely." },
+];
+
+const __allEventsBaseBars = allEvents;
+allEvents = function () {
+  return [...__allEventsBaseBars(), ...CURATED_BARS];
+};
+
+// ---- tri par distance ou par note pour les bars ----
+let __barSortMode = "distance";
+
+const __visibleEventsBaseBarSort = visibleEvents;
+visibleEvents = function () {
+  let events = __visibleEventsBaseBarSort();
+  if (state.selectedCategories && state.selectedCategories.has("Bar") && __barSortMode === "rating") {
+    events = events.slice().sort(function (a, b) {
+      const ra = a.category === "Bar" ? a.rating || 0 : -1;
+      const rb = b.category === "Bar" ? b.rating || 0 : -1;
+      return rb - ra;
+    });
+  }
+  return events;
+};
+
+// ---- filtre par style de bar ----
+const BAR_STYLES = [
+  { key: "cocktail", label: "🍸 Cocktails" },
+  { key: "biere", label: "🍺 Bière/Pub" },
+  { key: "rooftop", label: "🌆 Rooftop" },
+  { key: "dansant", label: "💃 Dansant" },
+  { key: "vin", label: "🍷 Vin" },
+  { key: "jeux", label: "🎮 Jeux" },
+  { key: "live", label: "🎵 Musique live" },
+];
+let __selectedBarStyle = null;
+
+const __baseVisibleEventsBarStyle = baseVisibleEvents;
+baseVisibleEvents = function () {
+  let events = __baseVisibleEventsBarStyle();
+  if (__selectedBarStyle) {
+    events = events.filter(function (ev) {
+      return ev.category !== "Bar" || ev.style === __selectedBarStyle;
+    });
+  }
+  return events;
+};
+
+function __ensureBarStyleChips() {
+  const filtersPanel = document.getElementById("category-chips");
+  if (!filtersPanel || !filtersPanel.parentNode) return;
+  const isBarActive = state.selectedCategories && state.selectedCategories.has("Bar");
+  let wrap = document.getElementById("bar-style-chips");
+  let sortWrap = document.getElementById("bar-sort-buttons");
+  if (!isBarActive) {
+    if (wrap) wrap.remove();
+    if (sortWrap) sortWrap.remove();
+    __selectedBarStyle = null;
+    __barSortMode = "distance";
+    return;
+  }
+  if (!sortWrap) {
+    sortWrap = document.createElement("div");
+    sortWrap.id = "bar-sort-buttons";
+    sortWrap.style.cssText = "display:flex; gap:6px; margin-top:8px;";
+    filtersPanel.parentNode.insertBefore(sortWrap, filtersPanel.nextSibling);
+  }
+  sortWrap.innerHTML =
+    '<button type="button" class="bar-sort-btn" data-sort="distance" style="flex:1; padding:8px 4px; border-radius:10px; border:1px solid ' +
+    (__barSortMode === "distance" ? "#14213D" : "rgba(0,0,0,0.15)") +
+    "; background:" +
+    (__barSortMode === "distance" ? "#14213D" : "#fff") +
+    "; color:" +
+    (__barSortMode === "distance" ? "#fff" : "inherit") +
+    '; font-size:12px; font-weight:600; cursor:pointer;">📍 Plus proche</button>' +
+    '<button type="button" class="bar-sort-btn" data-sort="rating" style="flex:1; padding:8px 4px; border-radius:10px; border:1px solid ' +
+    (__barSortMode === "rating" ? "#14213D" : "rgba(0,0,0,0.15)") +
+    "; background:" +
+    (__barSortMode === "rating" ? "#14213D" : "#fff") +
+    "; color:" +
+    (__barSortMode === "rating" ? "#fff" : "inherit") +
+    '; font-size:12px; font-weight:600; cursor:pointer;">⭐ Mieux notés</button>';
+  sortWrap.querySelectorAll(".bar-sort-btn").forEach(function (btn) {
+    btn.onclick = function () {
+      __barSortMode = btn.dataset.sort;
+      renderDiscover();
+    };
+  });
+
+  if (!wrap) {
+    wrap = document.createElement("div");
+    wrap.id = "bar-style-chips";
+    wrap.style.cssText = "display:flex; gap:6px; overflow-x:auto; margin-top:8px; padding-bottom:2px;";
+    sortWrap.parentNode.insertBefore(wrap, sortWrap.nextSibling);
+  }
+  wrap.innerHTML = BAR_STYLES.map(function (s) {
+    const active = __selectedBarStyle === s.key;
+    return (
+      '<button type="button" class="bar-style-chip" data-style="' +
+      s.key +
+      '" style="flex:0 0 auto; padding:7px 12px; border-radius:999px; border:1px solid ' +
+      (active ? "#14213D" : "rgba(0,0,0,0.15)") +
+      "; background:" +
+      (active ? "#14213D" : "#fff") +
+      "; color:" +
+      (active ? "#fff" : "inherit") +
+      '; font-size:11.5px; white-space:nowrap; cursor:pointer;">' +
+      s.label +
+      "</button>"
+    );
+  }).join("");
+  wrap.querySelectorAll(".bar-style-chip").forEach(function (btn) {
+    btn.onclick = function () {
+      const key = btn.dataset.style;
+      __selectedBarStyle = __selectedBarStyle === key ? null : key;
+      renderDiscover();
+    };
+  });
+}
+
+const __renderDiscoverBaseBarStyle = renderDiscover;
+renderDiscover = function () {
+  __renderDiscoverBaseBarStyle();
+  __ensureBarStyleChips();
+}
