@@ -3146,7 +3146,7 @@ function renderCategoryChips(){
     const color = CATEGORY_COLORS[cat] || "#6C757D";
     b.innerHTML =
       '<span class="cat-chip-circle" style="background:' + color + ';' + (active ? '' : 'opacity:0.55;') + '">' + (CATEGORY_ICONS[cat] || "📍") + '</span>' +
-      '<span class="cat-chip-label">' + cat + '</span>';
+         '<span class="cat-chip-label">' + (CATEGORY_LABELS[cat] || cat) + '</span>';  
     b.onclick = () => {
       if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
       else state.selectedCategories.add(cat);
