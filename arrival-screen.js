@@ -385,39 +385,46 @@ function __arrivalShow() {
     greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente\u00a0?";
   }
 
-  const overlay = document.createElement("div");
+   const overlay = document.createElement("div");
   overlay.id = "arrival-screen-overlay";
   overlay.style.cssText =
-    "position:fixed; inset:0; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); z-index:9998; display:flex; flex-direction:column; align-items:center; padding:60px 24px 20px; overflow-y:auto;";
+    "position:fixed; inset:0; background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%); z-index:9998; display:flex; flex-direction:column; align-items:center; padding:60px 24px 84px; overflow-y:auto;";
 
   overlay.innerHTML =
     '<div style="text-align:center; margin-bottom:38px; max-width:340px;">' +
-    '<div style="color:rgba(255,255,255,0.55); font-size:12px; margin-bottom:8px; font-weight:500;">' + cityName + " · " + time + "</div>" +
-    '<div style="color:#fff; font-family:Georgia, \'Times New Roman\', serif; font-size:24px; font-weight:400; line-height:1.4;">' + greeting + "</div>" +
+    '<div style="color:#9BA5C2; font-size:12px; margin-bottom:8px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">' + cityName + " · " + time + "</div>" +
+    '<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:24px; font-weight:500; line-height:1.4;">' + greeting + "</div>" +
     "</div>" +
 '<div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:300px;">' +
     '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
-    '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
-    '<div style="color:rgba(255,255,255,0.85); font-size:11.5px; margin-top:9px; font-weight:500;">Autour de moi</div>' +
+    '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
+    '<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">Autour de moi</div>' +
     "</div>" +
     '<div class="arrival-opt" data-key="other" style="text-align:center; cursor:pointer;">' +
-    '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #E85D3D, #c1440e); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(232,93,61,0.35);">✨</div>' +
+    '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #F2864B, #E85D3D); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(242,134,75,0.35);">✨</div>' +
     '<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Surprends-moi</div>' +
     "</div>" +
        '<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
-    '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:26px;">🗺️</div>' +
-    '<div style="color:rgba(255,255,255,0.85); font-size:11.5px; margin-top:9px; font-weight:500;">Tout voir</div>' +
+    '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">🗺️</div>' +
+    '<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">Tout voir</div>' +
     "</div>" +
     '<div class="arrival-opt" data-key="carnet" style="text-align:center; cursor:pointer;">' +
-    '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #2A9D8F, #1f7a6f); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(42,157,143,0.35);">📖</div>' +
+    '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #A57CF7, #8B6CF2); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(139,108,242,0.35);">📖</div>' +
     '<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Mon carnet</div>' +
     "</div>" +
     "</div>" +
     (weatherText
-      ? '<div style="margin-top:34px; text-align:center;"><div style="display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.6); font-size:11px;">' + weatherText + "</div></div>"
-      : "");
+      ? '<div style="margin-top:34px; text-align:center;"><div style="display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,0.06); color:#9BA5C2; font-size:11px;">' + weatherText + "</div></div>"
+      : "") +
+    '<div style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
+    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#F2864B;"><span style="font-size:16px;">🧭</span><span style="font-size:9.5px; font-weight:700;">Découvre</span></div>' +
+    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690;"><span style="font-size:16px;">🗺️</span><span style="font-size:9.5px; font-weight:600;">Explore</span></div>' +
+    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690;"><span style="font-size:16px;">🏙️</span><span style="font-size:9.5px; font-weight:600;">Visite</span></div>' +
+    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690;"><span style="font-size:16px;">📖</span><span style="font-size:9.5px; font-weight:600;">Mémorise</span></div>' +
+    '<div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690;"><span style="font-size:16px;">🔗</span><span style="font-size:9.5px; font-weight:600;">Partage</span></div>' +
+    "</div>";
 
-  document.body.appendChild(overlay);
+  document.body.appendChild(overlay); 
 
   overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
     opt.addEventListener("click", function () {
