@@ -445,8 +445,7 @@
 
     const screen = document.createElement("div");
     screen.id = "passport-screen";
-    screen.style.cssText = "position:fixed;inset:0;z-index:9998;overflow-y:auto;background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%);padding:20px 16px 40px;";
-    screen.innerHTML =
+    screen.style.cssText = "position:fixed;inset:0;z-index:9998;overflow-y:auto;background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%);padding:20px 16px 40px;";
       '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">' +
       '<button id="passport-close-btn" style="border:none;background:rgba(255,255,255,0.1);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button>' +
       '<div style="font-size:16px;font-weight:800;color:#fff;flex:1;">🛂 Mon passeport Whazup</div>' +
