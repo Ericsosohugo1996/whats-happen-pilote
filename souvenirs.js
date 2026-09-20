@@ -342,8 +342,8 @@
       const items = cityGroups[souvenirsCurrentCity] || [];
       Array.from(tabsEl.children).forEach(function (tab, i) {
         const active = cityKeys[i] === souvenirsCurrentCity;
-        tab.style.background = active ? "#14213D" : "#fff";
-        tab.style.color = active ? "#fff" : "#888";
+             tab.style.background = active ? "linear-gradient(90deg,#F2864B,#E85D3D)" : "rgba(255,255,255,0.06)";
+        tab.style.color = active ? "#fff" : "#9BA5C2";  
       });
 
       const groups = groupByMonth(items);
