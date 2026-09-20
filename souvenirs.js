@@ -291,12 +291,29 @@
 
     const screen = document.createElement("div");
     screen.id = "souvenirs-screen";
-    screen.style.cssText = "position:fixed;inset:0;background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%);z-index:9998;overflow-y:auto;padding:16px;";
-       screen.innerHTML = '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;"><button id="souvenirs-close-btn" style="border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button><div style="font-family:\'Fraunces\', Georgia, serif; font-size:17px;font-weight:600;color:#fff;flex:1;">📖 Mon carnet</div><button id="souvenirs-passport-btn" style="border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;">🛂</button><button id="souvenirs-recap-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;">✨ Récap</button></div><div id="souvenirs-city-tabs" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;"></div><div id="souvenirs-list">Chargement...</div>';
+       screen.style.cssText = "position:fixed;inset:0;background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%);z-index:9998;overflow-y:auto;padding:16px 16px 84px;";
+       screen.innerHTML = '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;"><button id="souvenirs-close-btn" style="border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button><div style="font-family:\'Fraunces\', Georgia, serif; font-size:17px;font-weight:600;color:#fff;flex:1;">📖 Mon carnet</div><button id="souvenirs-passport-btn" style="border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;">🛂</button><button id="souvenirs-recap-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;">✨ Récap</button></div><div id="souvenirs-city-tabs" style="display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;"></div><div id="souvenirs-list">Chargement...</div>' +
+      '<div class="wz-navbar" style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
+      '<div class="wz-navbar-item" data-nav="decouvre" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🧭</span><span style="font-size:9.5px; font-weight:600;">Découvre</span></div>' +
+      '<div class="wz-navbar-item" data-nav="explore" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🗺️</span><span style="font-size:9.5px; font-weight:600;">Explore</span></div>' +
+      '<div class="wz-navbar-item" data-nav="visite" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🏙️</span><span style="font-size:9.5px; font-weight:600;">Visite</span></div>' +
+      '<div class="wz-navbar-item" data-nav="memorise" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#F2864B; cursor:pointer;"><span style="font-size:16px;">📖</span><span style="font-size:9.5px; font-weight:700;">Mémorise</span></div>' +
+      '<div class="wz-navbar-item" data-nav="partage" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🔗</span><span style="font-size:9.5px; font-weight:600;">Partage</span></div>' +
+      "</div>";
     document.body.appendChild(screen); 
 
       document.getElementById("souvenirs-close-btn").addEventListener("click", function () {
       screen.remove();
+    });
+
+    screen.querySelectorAll(".wz-navbar-item").forEach(function (item) {
+      item.addEventListener("click", function () {
+        const nav = item.dataset.nav;
+        if (nav === "decouvre") { screen.remove(); if (window.__arrivalShow) __arrivalShow(); }
+        else if (nav === "explore") { screen.remove(); if (window.__exploreOpen) __exploreOpen(); }
+        else if (nav === "visite") { screen.remove(); if (window.__arrivalShowCityView) __arrivalShowCityView(); }
+        else if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(); }
+      });
     });
     document.getElementById("souvenirs-recap-btn").addEventListener("click", function () {
       if (window.__openRecap) __openRecap();
