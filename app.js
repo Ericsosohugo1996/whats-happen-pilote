@@ -2622,8 +2622,7 @@ const BROCANTE_CITY_SLUGS = {
   evry: "Évry-91",
   nanterre: "Nanterre-92",
   bobigny: "Bobigny-93",
-  creteil:
-};
+ 
  
 async function fetchBrocantesForCity(cityKey){
   const slug = BROCANTE_CITY_SLUGS[cityKey];
