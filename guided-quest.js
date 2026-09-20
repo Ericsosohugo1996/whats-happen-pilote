@@ -86,24 +86,26 @@
 
     let stepsHtml = "";
     if (!picked.length) {
-      stepsHtml = '<p style="color:#888; font-size:13px; text-align:center; padding:20px 0;">Rien trouvé pour ce parcours pour le moment.</p>';
+      stepsHtml = '<p style="color:#9BA5C2; font-size:13px; text-align:center; padding:20px 0;">Rien trouvé pour ce parcours pour le moment.</p>';
     } else {
       const intros = ["Commence par", "Puis direction", "Pour finir"];
       stepsHtml = picked
         .map(function (item, i) {
           const intro = intros[i] || "Ensuite";
+          const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#8B6CF2";
+          const catIcon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || "📍";
           return (
-            '<div style="display:flex; gap:12px; margin-bottom:' + (i < picked.length - 1 ? "16px" : "0") + ';">' +
+            '<div style="display:flex; gap:12px; margin-bottom:' + (i < picked.length - 1 ? "14px" : "0") + ';">' +
             '<div style="display:flex; flex-direction:column; align-items:center;">' +
-            '<div style="width:30px; height:30px; border-radius:999px; background:#E85D3D; color:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">' + (i + 1) + "</div>" +
-            (i < picked.length - 1 ? '<div style="width:2px; flex:1; background:#eee; margin:4px 0;"></div>' : "") +
+            '<div style="width:38px; height:38px; border-radius:999px; background:' + catColor + '; box-shadow:0 4px 12px -4px ' + catColor + '99; color:#fff; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">' + catIcon + "</div>" +
+            (i < picked.length - 1 ? '<div style="width:2px; flex:1; background:repeating-linear-gradient(180deg, rgba(255,255,255,0.18) 0 5px, transparent 5px 10px); margin:4px 0;"></div>' : "") +
             "</div>" +
-            '<div style="padding-bottom:4px;">' +
-            '<button class="quest-step-btn" data-id="' + item.ev.id + '" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;">' +
-            '<div style="font-size:13px; font-weight:700; color:#14213D;">' + intro + " " + item.ev.title + "</div>" +
+            '<div style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:11px 14px; padding-bottom:' + (i < picked.length - 1 ? "11px" : "11px") + ';">' +
+            '<div style="font-size:10px; font-weight:700; color:' + catColor + '; text-transform:uppercase; letter-spacing:0.3px;">' + intro + "</div>" +
+            '<button class="quest-step-btn" data-id="' + item.ev.id + '" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;display:block;margin-top:2px;">' +
+            '<div style="font-size:14px; font-weight:700; color:#fff;">' + item.ev.title + "</div>" +
             "</button>" +
-            '<div style="font-size:11px; color:#E85D3D; font-weight:600; margin-top:2px;">🚶 ' + walkingTimeLabel(item.dist) + "</div>" +
-            '<div style="font-size:11px; color:#666; margin-top:2px;">' + (item.ev.place || "") + "</div>" +
+            '<div style="font-size:11px; color:#9BA5C2; margin-top:4px;">🚶 ' + walkingTimeLabel(item.dist) + (item.ev.place ? " · " + item.ev.place : "") + "</div>" +
             "</div></div>"
           );
         })
@@ -112,15 +114,15 @@
 
     overlay.innerHTML =
       '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
-      '<button id="quest-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
-      '<div style="background:#fff; border-radius:20px; padding:20px;">' +
-      '<div style="font-size:16px; font-weight:800; color:#14213D; margin-bottom:2px;">🗺️ Ton parcours</div>' +
-      '<div style="font-size:11px; color:#888; margin-bottom:16px;">' + catLabel + " · " + (ambianceDef ? ambianceDef.label : "") + "</div>" +
+      '<button id="quest-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
+      '<div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:20px;">' +
+      '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:19px; font-weight:600; color:#fff; margin-bottom:2px;">Ton parcours</div>' +
+      '<div style="font-size:11px; color:#9BA5C2; margin-bottom:16px;">' + catLabel + " · " + (ambianceDef ? ambianceDef.label : "") + "</div>" +
       stepsHtml +
       "</div>" +
-          '<button id="quest-ai-btn" style="width:100%; margin-top:14px; padding:13px; border-radius:999px; border:none; background:linear-gradient(135deg, #E85D3D, #c1440e); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">✨ Enrichir Whazup</button>' +
-      '<div id="quest-ai-result" style="display:none; margin-top:14px; background:#fff; border-radius:16px; padding:16px;"></div>' +
-      '<button id="quest-redo" style="width:100%; margin-top:14px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">🔄 Refaire un parcours</button>' +
+          '<button id="quest-ai-btn" style="width:100%; margin-top:14px; padding:13px; border-radius:999px; border:none; background:linear-gradient(90deg, #F2864B, #E85D3D); color:#fff; font-size:13px; font-weight:700; box-shadow:0 8px 18px -8px rgba(242,134,75,0.5); cursor:pointer;">✨ Enrichir Whazup</button>' +
+      '<div id="quest-ai-result" style="display:none; margin-top:14px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px;"></div>' +
+      '<button id="quest-redo" style="width:100%; margin-top:14px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#9BA5C2; font-size:13px; cursor:pointer;">🔄 Refaire un parcours</button>' +
       "</div>";
 
     document.getElementById("quest-back").addEventListener("click", function () {
