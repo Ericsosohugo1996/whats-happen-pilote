@@ -311,7 +311,7 @@
 
     if (!list.length) {
       tabsEl.style.display = "none";
-      listEl.innerHTML = '<div style="text-align:center;color:#888;padding:40px 0;">Aucun souvenir pour l\'instant.<br>Appuie sur 📸 pour en ajouter un !</div>';
+      listEl.innerHTML = '<div style="text-align:center;color:#9BA5C2;padding:40px 0;">Aucun souvenir pour l\'instant.<br>Appuie sur 📸 pour en ajouter un !</div>';
       return;
     }
 
