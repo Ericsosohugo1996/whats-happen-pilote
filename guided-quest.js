@@ -195,8 +195,8 @@
             const w = document.getElementById("quest-ai-followup");
             if (w && w.parentElement) w.parentElement.remove();
             const newBlock = document.createElement("div");
-            newBlock.style.cssText = "margin-top:14px; padding-top:14px; border-top:1px solid #eee;";
-            newBlock.innerHTML = '<div style="font-size:12px; color:#888; font-style:italic; margin-bottom:8px;">Toi : ' + question + '</div><div style="font-family:Georgia, serif; font-size:13.5px; line-height:1.6; color:#14213D; white-space:pre-wrap;" id="quest-ai-text2">✨</div>';
+                      newBlock.style.cssText = "margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.1);";
+            newBlock.innerHTML = '<div style="font-size:12px; color:#9BA5C2; font-style:italic; margin-bottom:8px;">Toi : ' + question + '</div><div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text2">✨</div>';
             resultBox.appendChild(newBlock);
             fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
               method: "POST",
