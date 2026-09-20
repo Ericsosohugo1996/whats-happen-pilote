@@ -283,7 +283,7 @@
     if (!overlay) {
       overlay = document.createElement("div");
       overlay.id = "quest-overlay";
-          overlay.style.cssText = "position:fixed; inset:0; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
+              overlay.style.cssText = "position:fixed; inset:0; background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%); z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
       document.body.appendChild(overlay);
     }
 
