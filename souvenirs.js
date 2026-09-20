@@ -350,7 +350,7 @@
       let html = "";
       Object.keys(groups).forEach(function (monthKey) {
         const monthItems = groups[monthKey];
-        html += '<div style="font-size:10px;color:#aaa;font-weight:700;margin:18px 0 8px;text-transform:uppercase;">' + monthKey + ' · ' + monthItems.length + ' souvenir' + (monthItems.length > 1 ? 's' : '') + '</div>';
+          html += '<div style="font-size:10px;color:#9BA5C2;font-weight:700;margin:18px 0 8px;text-transform:uppercase;letter-spacing:0.3px;">' + monthKey + ' · ' + monthItems.length + ' souvenir' + (monthItems.length > 1 ? 's' : '') + '</div>';
         html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
         monthItems.forEach(function (s) {
           const dateShort = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
