@@ -362,95 +362,99 @@ function __ensureArrivalBackButton() {
 // ---- écran principal des 3 bonhommes ----
 
 function __arrivalShow() {
-  const existing = document.getElementById("arrival-screen-overlay");
-  if (existing) existing.remove();
-  const floating = document.getElementById("arrival-back-floating");
-  if (floating) floating.remove();
+const existing = document.getElementById("arrival-screen-overlay");
+if (existing) existing.remove();
+const floating = document.getElementById("arrival-back-floating");
+if (floating) floating.remove();
 
-  const now = new Date();
-  const hour = now.getHours();
-  const cityKey = state.userPos ? nearestCityKey() : state.city;
-  const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
-  const time = hour + "h" + String(now.getMinutes()).padStart(2, "0");
-  const weatherText = __arrivalWeatherText();
+const now = new Date();
+const hour = now.getHours();
+const cityKey = state.userPos ? nearestCityKey() : state.city;
+const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+const time = hour + "h" + String(now.getMinutes()).padStart(2, "0");
+const weatherText = __arrivalWeatherText();
 
-  let greeting;
-  if (hour >= 5 && hour < 12) {
-    greeting = "Une nouvelle journée commence à " + cityName + ". Par quoi on démarre\u00a0?";
-  } else if (hour >= 12 && hour < 17) {
-    greeting = "Il est " + time + " à " + cityName + ". Qu'est-ce qu'on fait de cet après-midi\u00a0?";
-  } else if (hour >= 17 && hour < 20) {
-    greeting = "Le soleil décline sur " + cityName + ". Qu'est-ce qu'on fait de cette soirée\u00a0?";
-  } else {
-    greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente\u00a0?";
-  }
-
-   const overlay = document.createElement("div");
-  overlay.id = "arrival-screen-overlay";
-  overlay.style.cssText =
-    "position:fixed; inset:0; background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%); z-index:9998; display:flex; flex-direction:column; align-items:center; padding:60px 24px 84px; overflow-y:auto;";
-
-  overlay.innerHTML =
-    '<div style="text-align:center; margin-bottom:38px; max-width:340px;">' +
-    '<div style="color:#9BA5C2; font-size:12px; margin-bottom:8px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">' + cityName + " · " + time + "</div>" +
-    '<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:24px; font-weight:500; line-height:1.4;">' + greeting + "</div>" +
-    "</div>" +
-'<div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:300px;">' +
-    '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
-    '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
-    '<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">Autour de moi</div>' +
-    "</div>" +
-    '<div class="arrival-opt" data-key="other" style="text-align:center; cursor:pointer;">' +
-    '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #F2864B, #E85D3D); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(242,134,75,0.35);">✨</div>' +
-    '<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Surprends-moi</div>' +
-    "</div>" +
-       '<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
-    '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">🗺️</div>' +
-    '<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">Tout voir</div>' +
-    "</div>" +
-    '<div class="arrival-opt" data-key="carnet" style="text-align:center; cursor:pointer;">' +
-    '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #A57CF7, #8B6CF2); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(139,108,242,0.35);">📖</div>' +
-    '<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Mon carnet</div>' +
-    "</div>" +
-    "</div>" +
-    (weatherText
-      ? '<div style="margin-top:34px; text-align:center;"><div style="display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,0.06); color:#9BA5C2; font-size:11px;">' + weatherText + "</div></div>"
-      : "") +
-    '<div class="wz-navbar" style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
-    '<div class="wz-navbar-item" data-nav="decouvre" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#F2864B; cursor:pointer;"><span style="font-size:16px;">🧭</span><span style="font-size:9.5px; font-weight:700;">Découvre</span></div>' +
-    '<div class="wz-navbar-item" data-nav="explore" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🗺️</span><span style="font-size:9.5px; font-weight:600;">Explore</span></div>' +
-    '<div class="wz-navbar-item" data-nav="visite" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🏙️</span><span style="font-size:9.5px; font-weight:600;">Visite</span></div>' +
-    '<div class="wz-navbar-item" data-nav="memorise" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">📖</span><span style="font-size:9.5px; font-weight:600;">Mémorise</span></div>' +
-    '<div class="wz-navbar-item" data-nav="partage" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🔗</span><span style="font-size:9.5px; font-weight:600;">Partage</span></div>' +
-    "</div>";
-
-  document.body.appendChild(overlay); 
-
-  overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
-    opt.addEventListener("click", function () {
-      opt.style.transform = "scale(0.94)";
-      const key = opt.dataset.key;
-      setTimeout(function () {
-        overlay.remove();
-        if (key === "near") __exploreOpen();
-        else if (key === "other") { if (window.__questOpen) __questOpen(); else __arrivalOpenMood(); }
-        else if (key === "all") __arrivalShowCityView();
-               else if (key === "carnet") { if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); } 
-      }, 180);
-    });
-  });
-
-  overlay.querySelectorAll(".wz-navbar-item").forEach(function (item) {
-    item.addEventListener("click", function () {
-      const nav = item.dataset.nav;
-      if (nav === "decouvre") { overlay.remove(); __arrivalShow(); }
-      else if (nav === "explore") { overlay.remove(); __exploreOpen(); }
-      else if (nav === "visite") { overlay.remove(); __arrivalShowCityView(); }
-      else if (nav === "memorise") { overlay.remove(); if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
-      else if (nav === "partage") { __arrivalShareCity(); }
-    });
-  });
+let greeting;
+if (hour >= 5 && hour < 12) {
+greeting = "Une nouvelle journée commence à " + cityName + ". Par quoi on démarre ?";
+} else if (hour >= 12 && hour < 17) {
+greeting = "Il est " + time + " à " + cityName + ". Qu'est-ce qu'on fait de cet après-midi ?";
+} else if (hour >= 17 && hour < 20) {
+greeting = "Le soleil décline sur " + cityName + ". Qu'est-ce qu'on fait de cette soirée ?";
+} else {
+greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente ?";
 }
+
+const overlay = document.createElement("div");
+overlay.id = "arrival-screen-overlay";
+overlay.style.cssText =
+"position:fixed; inset:0; background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%); z-index:9998; display:flex; flex-direction:column; align-items:center; padding:60px 24px 84px; overflow-y:auto;";
+
+overlay.innerHTML =
+'<style>@keyframes wzOrbFloat1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(18px,-26px) scale(1.08);}}@keyframes wzOrbFloat2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-22px,22px) scale(1.05);}}</style>' +
+'<div style="position:absolute; top:-60px; right:-40px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(242,134,75,0.55), transparent 70%); filter:blur(50px); pointer-events:none; z-index:0; animation:wzOrbFloat1 9s ease-in-out infinite;"></div>' +
+'<div style="position:absolute; bottom:60px; left:-50px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(139,108,242,0.5), transparent 70%); filter:blur(50px); pointer-events:none; z-index:0; animation:wzOrbFloat2 11s ease-in-out infinite;"></div>' +
+'<div style="text-align:center; margin-bottom:38px; max-width:340px; position:relative; z-index:1;">' +
+'<div style="color:#9BA5C2; font-size:12px; margin-bottom:8px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">' + cityName + " · " + time + "</div>" +
+'<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:24px; font-weight:500; line-height:1.4;">' + greeting + "</div>" +
+"</div>" +
+'<div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:300px; position:relative; z-index:1;">' +
+'<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
+'<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
+'<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">Autour de moi</div>' +
+"</div>" +
+'<div class="arrival-opt" data-key="other" style="text-align:center; cursor:pointer;">' +
+'<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #F2864B, #E85D3D); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(242,134,75,0.35);">✨</div>' +
+'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Surprends-moi</div>' +
+"</div>" +
+'<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
+'<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">🗺️</div>' +
+'<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">Tout voir</div>' +
+"</div>" +
+'<div class="arrival-opt" data-key="carnet" style="text-align:center; cursor:pointer;">' +
+'<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #A57CF7, #8B6CF2); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(139,108,242,0.35);">📖</div>' +
+'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Mon carnet</div>' +
+"</div>" +
+"</div>" +
+(weatherText
+? '<div style="margin-top:34px; text-align:center; position:relative; z-index:1;"><div style="display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,0.06); color:#9BA5C2; font-size:11px;">' + weatherText + "</div></div>"
+: "") +
+'<div class="wz-navbar" style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
+'<div class="wz-navbar-item" data-nav="decouvre" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#F2864B; cursor:pointer;"><span style="font-size:16px;">🧭</span><span style="font-size:9.5px; font-weight:700;">Découvre</span></div>' +
+'<div class="wz-navbar-item" data-nav="explore" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🗺️</span><span style="font-size:9.5px; font-weight:600;">Explore</span></div>' +
+'<div class="wz-navbar-item" data-nav="visite" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🏙️</span><span style="font-size:9.5px; font-weight:600;">Visite</span></div>' +
+'<div class="wz-navbar-item" data-nav="memorise" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">📖</span><span style="font-size:9.5px; font-weight:600;">Mémorise</span></div>' +
+'<div class="wz-navbar-item" data-nav="partage" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🔗</span><span style="font-size:9.5px; font-weight:600;">Partage</span></div>' +
+"</div>";
+
+document.body.appendChild(overlay);
+
+overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
+opt.addEventListener("click", function () {
+opt.style.transform = "scale(0.94)";
+const key = opt.dataset.key;
+setTimeout(function () {
+overlay.remove();
+if (key === "near") __exploreOpen();
+else if (key === "other") { if (window.__questOpen) __questOpen(); else __arrivalOpenMood(); }
+else if (key === "all") __arrivalShowCityView();
+else if (key === "carnet") { if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
+}, 180);
+});
+});
+
+overlay.querySelectorAll(".wz-navbar-item").forEach(function (item) {
+item.addEventListener("click", function () {
+const nav = item.dataset.nav;
+if (nav === "decouvre") { overlay.remove(); __arrivalShow(); }
+else if (nav === "explore") { overlay.remove(); __exploreOpen(); }
+else if (nav === "visite") { overlay.remove(); __arrivalShowCityView(); }
+else if (nav === "memorise") { overlay.remove(); if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
+else if (nav === "partage") { __arrivalShareCity(); }
+});
+});
+}
+
 
 function __arrivalShareCity() {
   const cityKey = state.userPos ? nearestCityKey() : state.city;
