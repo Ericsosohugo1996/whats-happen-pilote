@@ -33,6 +33,9 @@ const EXPLORE_CATEGORIES = [
   { key: "Soirée", label: "🎊 Soirée" },
   { key: "Sport", label: "⚽ Sport" },
   { key: "Expo", label: "🖼️ Expo" },
+  { key: "À voir", label: "🏛️ Musées" },
+  { key: "Bar", label: "🍸 Bars" },
+  { key: "Brocante", label: "📦 Brocante" },
 ];
 
 let __exploreSortMode = "distance";
@@ -47,13 +50,13 @@ function __exploreGetCandidates(category) {
   return allEvents()
     .filter(function (ev) {
       if (ev.city !== cityKey || !ev.lat || !ev.lng) return false;
-      if (ev.isPlace) return false;
       if (category && ev.category !== category) return false;
+      if (ev.isPlace) return true;
       if (!ev.date) return false;
       return ev.date >= todayIso;
     })
     .map(function (ev) {
-      return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng), datePriority: ev.date === todayIso ? 0 : 1 };
+      return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng), datePriority: ev.isPlace ? 1 : (ev.date === todayIso ? 0 : 1) };
     });
 }
 function __exploreShowMap() {
