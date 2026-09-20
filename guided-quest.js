@@ -77,168 +77,187 @@
   }
 
   function questRenderResult() {
-    const overlay = document.getElementById("quest-overlay");
-    const catLabel = questSelectedCats.length
-      ? questSelectedCats.join(", ")
-      : "Surprends-moi";
-    const ambianceDef = AMBIANCES.find(function (a) { return a.key === questAmbiance; });
-    const picked = questGetCandidates();
+const overlay = document.getElementById("quest-overlay");
+const catLabel = questSelectedCats.length
+? questSelectedCats.join(", ")
+: "Surprends-moi";
+const ambianceDef = AMBIANCES.find(function (a) { return a.key === questAmbiance; });
+const picked = questGetCandidates();
 
-    let stepsHtml = "";
-    if (!picked.length) {
-      stepsHtml = '<p style="color:#9BA5C2; font-size:13px; text-align:center; padding:20px 0;">Rien trouvé pour ce parcours pour le moment.</p>';
-    } else {
-      const intros = ["Commence par", "Puis direction", "Pour finir"];
-      stepsHtml = picked
-        .map(function (item, i) {
-          const intro = intros[i] || "Ensuite";
-          const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#8B6CF2";
-          const catIcon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || "📍";
-          return (
-            '<div style="display:flex; gap:12px; margin-bottom:' + (i < picked.length - 1 ? "14px" : "0") + ';">' +
-            '<div style="display:flex; flex-direction:column; align-items:center;">' +
-            '<div style="width:38px; height:38px; border-radius:999px; background:' + catColor + '; box-shadow:0 4px 12px -4px ' + catColor + '99; color:#fff; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">' + catIcon + "</div>" +
-            (i < picked.length - 1 ? '<div style="width:2px; flex:1; background:repeating-linear-gradient(180deg, rgba(255,255,255,0.18) 0 5px, transparent 5px 10px); margin:4px 0;"></div>' : "") +
-            "</div>" +
-            '<div style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:11px 14px; padding-bottom:' + (i < picked.length - 1 ? "11px" : "11px") + ';">' +
-            '<div style="font-size:10px; font-weight:700; color:' + catColor + '; text-transform:uppercase; letter-spacing:0.3px;">' + intro + "</div>" +
-            '<button class="quest-step-btn" data-id="' + item.ev.id + '" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;display:block;margin-top:2px;">' +
-            '<div style="font-size:14px; font-weight:700; color:#fff;">' + item.ev.title + "</div>" +
-            "</button>" +
-            '<div style="font-size:11px; color:#9BA5C2; margin-top:4px;">🚶 ' + walkingTimeLabel(item.dist) + (item.ev.place ? " · " + item.ev.place : "") + "</div>" +
-            "</div></div>"
-          );
-        })
-        .join("");
-    }
+let stepsHtml = "";
+if (!picked.length) {
+stepsHtml = '<p style="color:#9BA5C2; font-size:13px; text-align:center; padding:20px 0;">Rien trouvé pour ce parcours pour le moment.</p>';
+} else {
+const intros = ["Commence par", "Puis direction", "Pour finir"];
+stepsHtml = picked
+.map(function (item, i) {
+const intro = intros[i] || "Ensuite";
+const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#8B6CF2";
+const catIcon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || "📍";
+return (
+'<div style="display:flex; gap:12px; margin-bottom:' + (i < picked.length - 1 ? "14px" : "0") + ';">' +
+'<div style="display:flex; flex-direction:column; align-items:center;">' +
+'<div style="width:38px; height:38px; border-radius:999px; background:' + catColor + '; box-shadow:0 4px 12px -4px ' + catColor + '99; color:#fff; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">' + catIcon + "</div>" +
+(i < picked.length - 1 ? '<div style="width:2px; flex:1; background:repeating-linear-gradient(180deg, rgba(255,255,255,0.18) 0 5px, transparent 5px 10px); margin:4px 0;"></div>' : "") +
+"</div>" +
+'<div style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:11px 14px; padding-bottom:' + (i < picked.length - 1 ? "11px" : "11px") + ';">' +
+'<div style="font-size:10px; font-weight:700; color:' + catColor + '; text-transform:uppercase; letter-spacing:0.3px;">' + intro + "</div>" +
+'<button class="quest-step-btn" data-id="' + item.ev.id + '" style="background:none;border:none;padding:0;text-align:left;cursor:pointer;display:block;margin-top:2px;">' +
+'<div style="font-size:14px; font-weight:700; color:#fff;">' + item.ev.title + "</div>" +
+"</button>" +
+'<div style="font-size:11px; color:#9BA5C2; margin-top:4px;">🚶 ' + walkingTimeLabel(item.dist) + (item.ev.place ? " · " + item.ev.place : "") + "</div>" +
+"</div></div>"
+);
+})
+.join("");
+}
 
-    overlay.innerHTML =
-      '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
-      '<button id="quest-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
-      '<div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:20px;">' +
-      '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:19px; font-weight:600; color:#fff; margin-bottom:2px;">Ton parcours</div>' +
-      '<div style="font-size:11px; color:#9BA5C2; margin-bottom:16px;">' + catLabel + " · " + (ambianceDef ? ambianceDef.label : "") + "</div>" +
-      stepsHtml +
-      "</div>" +
-          '<button id="quest-ai-btn" style="width:100%; margin-top:14px; padding:13px; border-radius:999px; border:none; background:linear-gradient(90deg, #F2864B, #E85D3D); color:#fff; font-size:13px; font-weight:700; box-shadow:0 8px 18px -8px rgba(242,134,75,0.5); cursor:pointer;">✨ Enrichir Whazup</button>' +
-      '<div id="quest-ai-result" style="display:none; margin-top:14px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px;"></div>' +
-      '<button id="quest-redo" style="width:100%; margin-top:14px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#9BA5C2; font-size:13px; cursor:pointer;">🔄 Refaire un parcours</button>' +
-      "</div>";
+overlay.innerHTML =
+'<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
+'<button id="quest-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
+'<div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:20px;">' +
+'<div style="font-family:\'Fraunces\', Georgia, serif; font-size:19px; font-weight:600; color:#fff; margin-bottom:2px;">Ton parcours</div>' +
+'<div style="font-size:11px; color:#9BA5C2; margin-bottom:16px;">' + catLabel + " · " + (ambianceDef ? ambianceDef.label : "") + "</div>" +
+stepsHtml +
+"</div>" +
+'<button id="quest-ai-btn" style="width:100%; margin-top:14px; padding:13px; border-radius:999px; border:none; background:linear-gradient(90deg, #F2864B, #E85D3D); color:#fff; font-size:13px; font-weight:700; box-shadow:0 8px 18px -8px rgba(242,134,75,0.5); cursor:pointer;">✨ Enrichir Whazup</button>' +
+'<div id="quest-ai-result" style="display:none; margin-top:14px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px;"></div>' +
+'<button id="quest-redo" style="width:100%; margin-top:14px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#9BA5C2; font-size:13px; cursor:pointer;">🔄 Refaire un parcours</button>' +
+"</div>" +
+'<div class="wz-navbar" style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
+'<div class="wz-navbar-item" data-nav="decouvre" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#F2864B; cursor:pointer;"><span style="font-size:16px;">🧭</span><span style="font-size:9.5px; font-weight:700;">Découvre</span></div>' +
+'<div class="wz-navbar-item" data-nav="explore" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🗺️</span><span style="font-size:9.5px; font-weight:600;">Explore</span></div>' +
+'<div class="wz-navbar-item" data-nav="visite" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🏙️</span><span style="font-size:9.5px; font-weight:600;">Visite</span></div>' +
+'<div class="wz-navbar-item" data-nav="memorise" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">📖</span><span style="font-size:9.5px; font-weight:600;">Mémorise</span></div>' +
+'<div class="wz-navbar-item" data-nav="partage" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🔗</span><span style="font-size:9.5px; font-weight:600;">Partage</span></div>' +
+"</div>";
 
-    document.getElementById("quest-back").addEventListener("click", function () {
-      overlay.remove();
-      __arrivalShow();
-    });
+overlay.style.paddingBottom = "84px";
 
-    document.getElementById("quest-ai-btn").addEventListener("click", function () {
-      const btn = document.getElementById("quest-ai-btn");
-      const resultBox = document.getElementById("quest-ai-result");
-      btn.textContent = "✨ Rédaction en cours...";
-      btn.disabled = true;
-      const cityKey = state.userPos ? nearestCityKey() : state.city;
-      const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
-      const now = new Date();
-      const timeLabel = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
-      const items = picked.map(function (item) {
-        return {
-          title: item.ev.title,
-          category: item.ev.category,
-          date: item.ev.isPlace ? null : item.ev.date,
-          time: item.ev.time || null,
-          place: item.ev.place,
-          distanceMin: walkingTimeLabel(item.dist).replace(" min à pied", ""),
-        };
-      });
-      fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: items,
-          question: catLabel,
-          context: { cityName: cityName, time: timeLabel },
-        }),
-      })
-              .then(function (r) { return r.json(); })
-        .then(function (data) {
-          resultBox.style.display = "block";
-          resultBox.innerHTML =
-                      '<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Whazup enrichi</div>' +
-            '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text"></div>'; 
-          btn.remove();
-                 const target = document.getElementById("quest-ai-text");
-          const fullText = data.text || "Une erreur est survenue, réessaie.";
-          let i = 0;
-          function typeStep() {
-            if (i < fullText.length) {
-              target.textContent += fullText[i];
-              i++;
-              setTimeout(typeStep, 12);
-            } else {
-              const followWrap = document.createElement("div");
-              followWrap.style.cssText = "display:flex; gap:8px; margin-top:14px;";
-              followWrap.innerHTML =
-                '<input id="quest-ai-followup" type="text" placeholder="Réponds-lui..." style="flex:1; border:1px solid #eee; border-radius:999px; padding:10px 14px; font-size:13px; font-family:inherit;">' +
-                '<button id="quest-ai-followup-btn" style="padding:10px 16px; border-radius:999px; border:none; background:#14213D; color:#fff; font-size:13px; cursor:pointer;">➤</button>';
-              resultBox.appendChild(followWrap);
-              document.getElementById("quest-ai-followup-btn").addEventListener("click", sendFollowup);
-              document.getElementById("quest-ai-followup").addEventListener("keydown", function (e) {
-                if (e.key === "Enter") sendFollowup();
-              });
-            }
-          }
-          typeStep();
+document.getElementById("quest-back").addEventListener("click", function () {
+overlay.remove();
+__arrivalShow();
+});
 
-          function sendFollowup() {
-            const input = document.getElementById("quest-ai-followup");
-            const question = input.value.trim();
-            if (!question) return;
-            const w = document.getElementById("quest-ai-followup");
-            if (w && w.parentElement) w.parentElement.remove();
-            const newBlock = document.createElement("div");
-                      newBlock.style.cssText = "margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.1);";
-            newBlock.innerHTML = '<div style="font-size:12px; color:#9BA5C2; font-style:italic; margin-bottom:8px;">Toi : ' + question + '</div><div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text2">✨</div>';
-            resultBox.appendChild(newBlock);
-            fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                items: items,
-                question: question,
-                context: { cityName: cityName, time: timeLabel },
-              }),
-            })
-              .then(function (r) { return r.json(); })
-              .then(function (d2) {
-                const target2 = document.getElementById("quest-ai-text2");
-                target2.textContent = "";
-                const text2 = d2.text || "Une erreur est survenue.";
-                let j = 0;
-                function typeStep2() {
-                  if (j < text2.length) {
-                    target2.textContent += text2[j];
-                    j++;
-                    setTimeout(typeStep2, 12);
-                  }
-                }
-                typeStep2();
-              });
-          }
-        })
-        .catch(function () {
-          resultBox.style.display = "block";
-          resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
-          btn.textContent = "✨ Enrichir Whazup";
-          btn.disabled = false;
-        });
-    });  
-    document.getElementById("quest-redo").addEventListener("click", questShowStep1);
-    overlay.querySelectorAll(".quest-step-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        overlay.remove();
-        openDetail(btn.dataset.id);
-      });
-    });
-  }
+document.getElementById("quest-ai-btn").addEventListener("click", function () {
+const btn = document.getElementById("quest-ai-btn");
+const resultBox = document.getElementById("quest-ai-result");
+btn.textContent = "✨ Rédaction en cours...";
+btn.disabled = true;
+const cityKey = state.userPos ? nearestCityKey() : state.city;
+const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+const now = new Date();
+const timeLabel = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
+const items = picked.map(function (item) {
+return {
+title: item.ev.title,
+category: item.ev.category,
+date: item.ev.isPlace ? null : item.ev.date,
+time: item.ev.time || null,
+place: item.ev.place,
+distanceMin: walkingTimeLabel(item.dist).replace(" min à pied", ""),
+};
+});
+fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+items: items,
+question: catLabel,
+context: { cityName: cityName, time: timeLabel },
+}),
+})
+.then(function (r) { return r.json(); })
+.then(function (data) {
+resultBox.style.display = "block";
+resultBox.innerHTML =
+'<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Whazup enrichi</div>' +
+'<div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text"></div>';
+btn.remove();
+const target = document.getElementById("quest-ai-text");
+const fullText = data.text || "Une erreur est survenue, réessaie.";
+let i = 0;
+function typeStep() {
+if (i < fullText.length) {
+target.textContent += fullText[i];
+i++;
+setTimeout(typeStep, 12);
+} else {
+const followWrap = document.createElement("div");
+followWrap.style.cssText = "display:flex; gap:8px; margin-top:14px;";
+followWrap.innerHTML =
+'<input id="quest-ai-followup" type="text" placeholder="Réponds-lui..." style="flex:1; border:1px solid #eee; border-radius:999px; padding:10px 14px; font-size:13px; font-family:inherit;">' +
+'<button id="quest-ai-followup-btn" style="padding:10px 16px; border-radius:999px; border:none; background:#14213D; color:#fff; font-size:13px; cursor:pointer;">➤</button>';
+resultBox.appendChild(followWrap);
+document.getElementById("quest-ai-followup-btn").addEventListener("click", sendFollowup);
+document.getElementById("quest-ai-followup").addEventListener("keydown", function (e) {
+if (e.key === "Enter") sendFollowup();
+});
+}
+}
+typeStep();
+
+function sendFollowup() {
+const input = document.getElementById("quest-ai-followup");
+const question = input.value.trim();
+if (!question) return;
+const w = document.getElementById("quest-ai-followup");
+if (w && w.parentElement) w.parentElement.remove();
+const newBlock = document.createElement("div");
+newBlock.style.cssText = "margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.1);";
+newBlock.innerHTML = '<div style="font-size:12px; color:#9BA5C2; font-style:italic; margin-bottom:8px;">Toi : ' + question + '</div><div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text2">✨</div>';
+resultBox.appendChild(newBlock);
+fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+items: items,
+question: question,
+context: { cityName: cityName, time: timeLabel },
+}),
+})
+.then(function (r) { return r.json(); })
+.then(function (d2) {
+const target2 = document.getElementById("quest-ai-text2");
+target2.textContent = "";
+const text2 = d2.text || "Une erreur est survenue.";
+let j = 0;
+function typeStep2() {
+if (j < text2.length) {
+target2.textContent += text2[j];
+j++;
+setTimeout(typeStep2, 12);
+}
+}
+typeStep2();
+});
+}
+})
+.catch(function () {
+resultBox.style.display = "block";
+resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
+btn.textContent = "✨ Enrichir Whazup";
+btn.disabled = false;
+});
+});
+document.getElementById("quest-redo").addEventListener("click", questShowStep1);
+overlay.querySelectorAll(".quest-step-btn").forEach(function (btn) {
+btn.addEventListener("click", function () {
+overlay.remove();
+openDetail(btn.dataset.id);
+});
+});
+overlay.querySelectorAll(".wz-navbar-item").forEach(function (item) {
+item.addEventListener("click", function () {
+const nav = item.dataset.nav;
+if (nav === "decouvre") { overlay.remove(); if (window.__arrivalShow) __arrivalShow(); }
+else if (nav === "explore") { overlay.remove(); if (window.__exploreOpen) __exploreOpen(); }
+else if (nav === "visite") { overlay.remove(); if (window.__arrivalShowCityView) __arrivalShowCityView(); }
+else if (nav === "memorise") { overlay.remove(); if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
+else if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(); }
+});
+});
+}
 
   function questShowStep2() {
     const overlay = document.getElementById("quest-overlay");
