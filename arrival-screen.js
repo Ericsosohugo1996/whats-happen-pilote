@@ -94,7 +94,9 @@ function __moodScoreForEvent(ev, query) {
   }
 
   return score;
+  return score;
 }
+      item.moodScore = __moodScoreForEvent(item.ev, moodQuery);
       item.moodScore = __moodScoreForEvent(item.ev, moodQuery);
     });
     list = list.filter(function (item) { return item.moodScore > 0; });
