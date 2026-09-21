@@ -127,7 +127,6 @@ function showBrandIntroScreen(){
 
 // ---- écran intro (souvenirs ou découvrir) ----
 function initIntroScreen(){
-  const intro = document.getElementById("intro-screen");    
   const intro = document.getElementById("intro-screen");
   if (!intro) { initChoiceScreen(); return; }
   intro.classList.remove("hidden");
