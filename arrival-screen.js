@@ -684,6 +684,13 @@ overlay.innerHTML =
 
 document.body.appendChild(overlay);
 
+overlay.querySelectorAll(".flag-btn[data-lang]").forEach(function (btn) {
+btn.addEventListener("click", function () {
+if (typeof setLang === "function") setLang(btn.dataset.lang);
+});
+});
+if (typeof applyTranslation === "function") applyTranslation();
+
 overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
 opt.addEventListener("click", function () {
 opt.style.transform = "scale(0.94)";
