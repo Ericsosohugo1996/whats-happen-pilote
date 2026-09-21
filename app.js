@@ -3190,8 +3190,8 @@ function formatDate(iso){
  
 // ---- rendering ----
 const CATEGORY_COLORS = {"Musique":"#9D4EDD","Théâtre":"#E85D3D","Soirée":"#E63980","Festival":"#F4A261","Expo":"#2A9D8F","Sport":"#2A9D5C","Marché":"#3498DB","À voir":"#457B9D","Bar":"#C1440E","Brocante":"#8B5E3C"};
-const CATEGORY_ICONS = {"Musique":"🎵","Théâtre":"🎭","Soirée":"🥂","Festival":"🎪","Expo":"🖼️","Sport":"⚽","Marché":"🛍️","À voir":"🏛️","Bar":"🍸","Brocante":"🧺"};
-const CATEGORY_LABELS = {"À voir":"Musées"};
+const CATEGORY_ICONS = {"Musique":"🎵","Théâtre":"🎭","Soirée":"🎟️","Festival":"🎪","Expo":"🖼️","Sport":"⚽","Marché":"🛍️","À voir":"🏛️","Bar":"🍸","Brocante":"🧺"};
+const CATEGORY_LABELS = {"À voir":"Musées", "Soirée":"Culture"};
 function renderCategoryChips(){
   const el = document.getElementById("category-chips");
   el.innerHTML = "";
