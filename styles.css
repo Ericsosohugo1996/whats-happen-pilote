@@ -696,9 +696,9 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
   box-sizing:border-box;
 }
 .brand-intro-top{ display:flex; flex-direction:column; align-items:center; gap:6px; margin-top:10px; }
-.brand-intro-logo-icon{ width:56px; height:56px; }
-.brand-intro-wordmark{ font-family:var(--font-display); font-weight:700; font-size:30px; color:#fff; letter-spacing:-.01em; }
-.brand-intro-tagline{ font-family:var(--font-display); font-style:italic; font-size:14px; color:rgba(255,255,255,.85); }
+.brand-intro-logo-icon{ width:112px; height:112px; }
+.brand-intro-wordmark{ font-family:var(--font-display); font-weight:700; font-size:60px; color:#fff; letter-spacing:-.01em; }
+.brand-intro-tagline{ font-family:var(--font-display); font-style:italic; font-size:28px; color:rgba(255,255,255,.85); }
 .brand-intro-bottom{ display:flex; flex-direction:column; gap:8px; max-width:320px; }
 .brand-intro-pitch{ font-family:var(--font-display); font-size:22px; font-weight:600; line-height:1.3; color:#fff; }
 .brand-intro-today{ font-family:var(--font-body); font-size:13px; font-weight:700; color:#F2C879; text-transform:uppercase; letter-spacing:.03em; position:relative; display:inline-block; padding-bottom:6px; }
