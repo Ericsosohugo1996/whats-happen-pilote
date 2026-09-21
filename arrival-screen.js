@@ -178,10 +178,13 @@ const icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.ca
 const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#6C757D";
 const thumbSvg = (typeof sceneSVG === "function") ? sceneSVG(item.ev.scene) : "";
 const priceRaw = item.ev.price || "";
-const isFree = /gratuit|libre/i.test(priceRaw);
-const priceLabel = priceRaw ? (isFree ? "Gratuit" : (priceRaw.length > 14 ? "Payant" : priceRaw)) : "";
-const priceColor = isFree ? "#2f8a55" : "#E85D3D";
-const priceBg = isFree ? "rgba(47,138,85,0.12)" : "rgba(232,93,61,0.12)";
+let priceLabel = "", priceBg = "";
+if (priceRaw) {
+  const p = priceRaw.toLowerCase();
+  if (p.indexOf("gratuit") !== -1 || p.indexOf("libre") !== -1) { priceLabel = "Gratuit"; priceBg = "#28C76F"; }
+  else if (p.indexOf("inscription") !== -1) { priceLabel = "Inscription"; priceBg = "linear-gradient(135deg,#A57CF7,#8B6CF2)"; }
+  else { priceLabel = "Payant"; priceBg = "linear-gradient(135deg,#F2C879,#E85D3D)"; }
+}
 return (
 '<button class="explore-pick" data-id="' +
 item.ev.id +
@@ -190,12 +193,12 @@ item.ev.id +
 '">' +
 '<div style="position:relative; width:56px; height:56px; flex-shrink:0;">' +
 '<div style="width:56px; height:56px; border-radius:14px; overflow:hidden; background:#f0f0f0;">' + thumbSvg + '</div>' +
-'<div style="position:absolute; bottom:-4px; right:-4px; width:22px; height:22px; border-radius:50%; background:' + catColor + '; display:flex; align-items:center; justify-content:center; font-size:11px; border:2px solid #fff; box-shadow:0 2px 4px rgba(0,0,0,0.2);">' + icon + '</div>' +
+'<div style="position:absolute; top:-4px; left:-4px; width:22px; height:22px; border-radius:50%; background:' + catColor + '; display:flex; align-items:center; justify-content:center; font-size:11px; border:2px solid #fff; box-shadow:0 2px 4px rgba(0,0,0,0.2);">' + icon + '</div>' +
 '</div>' +
 '<div style="flex:1; min-width:0;">' +
 '<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px;">' +
-'<div style="font-size:13.5px; font-weight:700; color:#14213D; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + item.ev.title + '</div>' +
-(priceLabel ? '<div style="font-size:10px; font-weight:700; color:' + priceColor + '; background:' + priceBg + '; padding:3px 8px; border-radius:999px; white-space:nowrap; flex-shrink:0;">' + priceLabel + '</div>' : '') +
+'<div style="font-family:var(--font-display); font-size:13.5px; font-weight:600; color:#14213D; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + item.ev.title + '</div>' +
+(priceLabel ? '<div style="font-size:10px; font-weight:800; color:#fff; background:' + priceBg + '; padding:4px 9px; border-radius:999px; white-space:nowrap; flex-shrink:0;">' + priceLabel + '</div>' : '') +
 '</div>' +
 (item.ev.place ? '<div style="font-size:11px; color:#999; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + item.ev.place + '</div>' : '') +
 '<div style="display:flex; align-items:center; gap:8px; margin-top:4px;">' +
@@ -222,7 +225,6 @@ moreBtn.textContent = "Voir plus (" + remaining + " autres)";
 moreBtn.style.display = "none";
 }
 }
-
 
 function __exploreOpen() {
 __exploreMapMode = false;
