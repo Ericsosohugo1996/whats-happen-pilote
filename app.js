@@ -114,8 +114,7 @@ function showBrandIntroScreen(){
 function hideBrandIntroScreen(){
   const screen = document.getElementById("brand-intro-screen");
   if (!screen) return;
-  screen.classList.add("hide");
-  setTimeout(() => { screen.remove(); }, 350);
+  screen.remove();
 }
 
 // ---- boutons de choix directement sur l'écran de bienvenue ----
