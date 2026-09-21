@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("btn-landmark-close");
     const btn2 = __createChangeCityButton();
     btn2.style.margin = "8px 0 0 12px";
-    if (closeBtn) closeBtn.insertAdjacentElement("afterend", btn2);
+      if (closeBtn) closeBtn.insertAdjacentElement("afterend", btn2);
     else landmarkCard.insertBefore(btn2, landmarkCard.firstChild);
   }
-});
+
+  if (typeof applyTranslation === "function") applyTranslation();
+}); 
