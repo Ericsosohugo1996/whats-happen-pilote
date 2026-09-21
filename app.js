@@ -94,7 +94,7 @@ if ("serviceWorker" in navigator) {
     splash.classList.add("hide");
       setTimeout(() => {
       splash.remove();
-      initIntroScreen();
+          showBrandIntroScreen(); 
     }, 350);
   }, 3400);
 })();
