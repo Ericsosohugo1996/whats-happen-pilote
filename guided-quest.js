@@ -183,6 +183,7 @@ target.textContent += fullText[i];
 i++;
 setTimeout(typeStep, 12);
 } else {
+target.innerHTML = whazupEnrichiToHtml(fullText);
 const followWrap = document.createElement("div");
 followWrap.style.cssText = "display:flex; gap:8px; margin-top:14px;";
 followWrap.innerHTML =
