@@ -58,8 +58,8 @@ function updateStatsBanner(events) {
   const selected =
     state.selectedPeriod && /^\d{4}-\d{2}-\d{2}$/.test(state.selectedPeriod) ? state.selectedPeriod : null;
 
-  banner.innerHTML =
-    '<div class="week-strip-hint">← glissez pour voir plus loin →</div>' +
+   banner.innerHTML =
+    '<div class="week-strip-hint">' + (typeof t === "function" ? t("← glissez pour voir plus loin →") : "← glissez pour voir plus loin →") + '</div>' +
     '<div class="week-strip">' +
     days
       .map(function (d) {
