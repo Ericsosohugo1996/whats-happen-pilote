@@ -3260,7 +3260,7 @@ const CITY_PHOTOS = {
 function renderLocateBar(){
     document.getElementById("locate-label").textContent = "📍 Vous êtes à";
   document.getElementById("locate-value").textContent = state.userPos
-    ? "Votre position actuelle"
+    ? "Votre position actuelle (" + CITIES[nearestCityKey()].name + ")"
     : CITIES[state.city].name;
   document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
     b.classList.toggle("active", !state.userPos && b.dataset.city === state.city);
