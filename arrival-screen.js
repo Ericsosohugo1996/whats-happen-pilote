@@ -43,8 +43,8 @@ const EXPLORE_CATEGORIES = [
 let __exploreShowAll = false;
 let __exploreCurrentCategory = "";
 let __exploreTimeMode = "now";
-// ---- recherche par état d'esprit (bars, soirées, festivals) ----
-// ---- recherche par état d'esprit (bars, soirées, festivals) ----
+
+// ---- recherche par état d'esprit (bars) ----
 let __exploreMoodQuery = "";
 
 const __MOOD_SYNONYMS = {
@@ -94,9 +94,117 @@ function __moodScoreForEvent(ev, query) {
   }
 
   return score;
-  return score;
 }
-      item.moodScore = __moodScoreForEvent(item.ev, moodQuery);
+
+function __exploreGetCandidates(category) {
+const ref = referencePoint();
+const cityKey = state.userPos ? nearestCityKey() : state.city;
+const now = new Date();
+const todayIso = now.toISOString().slice(0, 10);
+const tomorrowIso = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+const timeMode = (typeof __exploreTimeMode !== "undefined") ? __exploreTimeMode : "now";
+return allEvents()
+.filter(function (ev) {
+if (ev.city !== cityKey || !ev.lat || !ev.lng) return false;
+if (category && ev.category !== category) return false;
+if (ev.isPlace) return true;
+if (!ev.date) return false;
+if (ev.date < todayIso) return false;
+if (timeMode === "now") {
+if (ev.date !== todayIso) return false;
+} else if (timeMode === "tonight") {
+if (ev.date !== todayIso) return false;
+if (ev.time) {
+const h = parseInt(ev.time.split(":")[0], 10);
+if (!(h >= 18 || h < 4)) return false;
+}
+} else if (timeMode === "tomorrow") {
+if (ev.date !== tomorrowIso) return false;
+}
+return true;
+})
+.map(function (ev) {
+return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng), datePriority: ev.isPlace ? 1 : (ev.date === todayIso ? 0 : 1) };
+});
+}
+function __exploreShowMap() {
+const ref = referencePoint();
+const cityKey = state.userPos ? nearestCityKey() : state.city;
+let allNearby = allEvents().filter(function (ev) {
+return ev.city === cityKey && ev.lat && ev.lng;
+});
+if (__exploreCurrentCategory) {
+allNearby = allNearby.filter(function (ev) { return ev.category === __exploreCurrentCategory; });
+}
+
+const resultEl = document.getElementById("explore-result");
+const moreBtn = document.getElementById("explore-more-btn");
+moreBtn.style.display = "none";
+resultEl.style.padding = "0";
+resultEl.innerHTML =
+'<div id="explore-leaflet-map" style="width:100%; height:300px; border-radius:16px; overflow:hidden;"></div>' +
+'<div id="explore-map-cats" style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; padding:16px 10px 8px;"></div>';
+
+const catsWrap = document.getElementById("explore-map-cats");
+EXPLORE_CATEGORIES.filter(function (c) { return c.key; }).forEach(function (c) {
+const btn = document.createElement("button");
+const color = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[c.key]) || "#6C757D";
+const emoji = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[c.key]) || "📍";
+const active = __exploreCurrentCategory === c.key;
+const labelText = c.label.replace(/^\S+\s*/, "");
+btn.style.cssText = "background:none; border:none; display:flex; flex-direction:column; align-items:center; gap:5px; cursor:pointer; width:56px;";
+btn.innerHTML =
+'<span style="width:46px; height:46px; border-radius:50%; background:' + color + '; display:flex; align-items:center; justify-content:center; font-size:20px;' + (active ? " box-shadow:0 0 0 3px rgba(20,33,61,0.5);" : "") + '">' + emoji + '</span>' +
+'<span style="font-size:10px; color:#333; font-weight:600; text-align:center;">' + labelText + '</span>';
+btn.addEventListener("click", function () {
+__exploreCurrentCategory = active ? "" : c.key;
+__exploreShowAll = false;
+__exploreShowMap();
+});
+catsWrap.appendChild(btn);
+});
+
+setTimeout(function () {
+const map = L.map("explore-leaflet-map").setView([ref.lat, ref.lng], 15);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+attribution: "© OpenStreetMap",
+maxZoom: 19,
+}).addTo(map);
+
+L.circle([ref.lat, ref.lng], { radius: 1000, color: "#c1440e", fillOpacity: 0.08, weight: 1.5, dashArray: "4 4" }).addTo(map);
+L.circleMarker([ref.lat, ref.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#14213D", fillOpacity: 1 }).addTo(map);
+
+allNearby.forEach(function (ev) {
+const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
+if (dist > 1.2) return;
+const emoji = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[ev.category]) || "📍";
+const pinColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[ev.category]) || "#6C757D";
+const icon = L.divIcon({
+html:
+'<div style="position:relative; width:32px; height:40px;">' +
+'<div style="width:30px; height:30px; border-radius:50% 50% 50% 0; background:' + pinColor + '; transform:rotate(-45deg); border:2.5px solid #fff; box-shadow:0 3px 6px rgba(0,0,0,0.4); position:absolute; top:0; left:1px;"></div>' +
+'<div style="position:absolute; top:0; left:1px; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:14px;">' + emoji + '</div>' +
+"</div>",
+className: "",
+iconSize: [32, 40],
+iconAnchor: [16, 40],
+});
+L.marker([ev.lat, ev.lng], { icon: icon })
+.addTo(map)
+.on("click", function () {
+const exploreOv = document.getElementById("explore-overlay");
+if (exploreOv) exploreOv.remove();
+openDetail(ev.id);
+});
+});
+}, 50);
+}
+function __exploreRender() {
+  let list = __exploreGetCandidates(__exploreCurrentCategory);
+  const moodEligible = __exploreCurrentCategory === "Bar";
+  const moodQuery = (typeof __exploreMoodQuery !== "undefined") ? __exploreMoodQuery.trim() : "";
+  if (moodEligible && moodQuery) {
+    list.forEach(function (item) {
       item.moodScore = __moodScoreForEvent(item.ev, moodQuery);
     });
     list = list.filter(function (item) { return item.moodScore > 0; });
@@ -184,6 +292,7 @@ function __moodScoreForEvent(ev, query) {
     moreBtn.style.display = "none";
   }
 }
+
 function __exploreOpen() {
 __exploreMapMode = false;
 __exploreShowAll = false;
@@ -273,7 +382,7 @@ __exploreRender();
 });
 });
 
-// ---- recherche par ambiance (bars, soirées, festivals) ----
+// ---- recherche par ambiance (bars) ----
 const moodRow = document.getElementById("explore-mood-row");
 const moodInput = document.getElementById("explore-mood-search");
 const moodChipsWrap = document.getElementById("explore-mood-chips");
@@ -516,13 +625,13 @@ const weatherText = __arrivalWeatherText();
 
 let greeting;
 if (hour >= 5 && hour < 12) {
-greeting = "Une nouvelle journée commence à " + cityName + ". Par quoi on démarre ?";
+greeting = "Une nouvelle journée commence à " + cityName + ". Par quoi on démarre ?";
 } else if (hour >= 12 && hour < 17) {
-greeting = "Il est " + time + " à " + cityName + ". Qu'est-ce qu'on fait de cet après-midi ?";
+greeting = "Il est " + time + " à " + cityName + ". Qu'est-ce qu'on fait de cet après-midi ?";
 } else if (hour >= 17 && hour < 20) {
-greeting = "Le soleil décline sur " + cityName + ". Qu'est-ce qu'on fait de cette soirée ?";
+greeting = "Le soleil décline sur " + cityName + ". Qu'est-ce qu'on fait de cette soirée ?";
 } else {
-greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente ?";
+greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente ?";
 }
 
 const overlay = document.createElement("div");
@@ -607,7 +716,7 @@ function __arrivalShareCity() {
       if (typeof showShareToast === "function") showShareToast("✓ Lien copié ! Collez-le dans votre message.");
     }).catch(function () {});
   }
-}   
+}
 function __arrivalShowSearching() {
   const overlay = document.createElement("div");
   overlay.id = "arrival-searching-overlay";
