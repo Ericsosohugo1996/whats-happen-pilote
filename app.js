@@ -200,6 +200,20 @@ function hideAccountError(){
   document.getElementById("account-error").style.display = "none";
 }
 
+// ---- met en forme le texte renvoyé par "✨ Whazup enrichi" (qui contient du Markdown simple) ----
+// pour affichage HTML sûr : échappe le HTML puis convertit gras/titres/listes en vraies balises.
+function whazupEnrichiToHtml(text){
+  if (!text) return "";
+  let out = String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  out = out.replace(/^#{1,3}\s+(.+)$/gm, '<div style="font-weight:800; font-size:1.08em; margin:6px 0 2px;">$1</div>');
+  out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  out = out.replace(/^[-•]\s+(.+)$/gm, "• $1");
+  out = out.replace(/\n/g, "<br>");
+  return out;
+}
 function renderAccountState(user){
   const loggedOut = document.getElementById("account-logged-out");
   const loggedIn = document.getElementById("account-logged-in");
