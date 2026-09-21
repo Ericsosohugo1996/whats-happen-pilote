@@ -641,6 +641,12 @@ overlay.style.cssText =
 
 overlay.innerHTML =
 '<style>@keyframes wzOrbFloat1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(18px,-26px) scale(1.08);}}@keyframes wzOrbFloat2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-22px,22px) scale(1.05);}}</style>' +
+'<div class="flags-row" style="position:absolute; top:16px; right:16px; z-index:2;">' +
+'<button class="flag-btn" id="flag-fr-arrival" data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" alt="Français"></button>' +
+'<button class="flag-btn" id="flag-en-arrival" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="English"></button>' +
+'<button class="flag-btn" id="flag-es-arrival" data-lang="es"><img src="https://flagcdn.com/w40/es.png" alt="Español"></button>' +
+'<button class="flag-btn" id="flag-de-arrival" data-lang="de"><img src="https://flagcdn.com/w40/de.png" alt="Deutsch"></button>' +
+'</div>' +
 '<div style="position:absolute; top:-60px; right:-40px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(242,134,75,0.55), transparent 70%); filter:blur(50px); pointer-events:none; z-index:0; animation:wzOrbFloat1 9s ease-in-out infinite;"></div>' +
 '<div style="position:absolute; bottom:60px; left:-50px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(139,108,242,0.5), transparent 70%); filter:blur(50px); pointer-events:none; z-index:0; animation:wzOrbFloat2 11s ease-in-out infinite;"></div>' +
 '<div style="text-align:center; margin-bottom:38px; max-width:340px; position:relative; z-index:1;">' +
