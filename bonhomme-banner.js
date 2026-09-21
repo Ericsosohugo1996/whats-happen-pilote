@@ -1,5 +1,5 @@
 // ---- bonhomme sur le bandeau "ville sélectionnée" avant tout choix ----
-let __hasPickedCity = false;
+let __hasPickedCity = true;
 let __hasPickedFilter = false;
  
 function __ensureBonhomme() {
