@@ -246,6 +246,7 @@ __exploreShowAll = false;
 __exploreSortMode = "distance";
 __exploreCurrentCategory = "";
 __exploreTimeMode = "now";
+__exploreMoodQuery = "";
 const cityKey = state.userPos ? nearestCityKey() : state.city;
 const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
 const overlay = document.createElement("div");
@@ -271,6 +272,10 @@ overlay.innerHTML =
 '<button class="explore-time-btn" data-time="tomorrow" style="flex:1; padding:9px 4px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer;">Demain</button>' +
 '</div>' +
 '<div id="explore-cats" style="display:flex; gap:6px; overflow-x:auto; margin-bottom:12px; padding-bottom:2px;"></div>' +
+'<div id="explore-mood-row" style="display:none; margin:-4px 0 12px;">' +
+'<input id="explore-mood-search" placeholder="Calme pour discuter, festif, rencontre..." style="width:100%; box-sizing:border-box; padding:10px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; outline:none;" />' +
+'<div id="explore-mood-chips" style="display:flex; gap:6px; margin-top:8px; flex-wrap:wrap;"></div>' +
+'</div>' +
 '<div style="display:flex; gap:8px; margin-bottom:14px;">' +
 '<div id="explore-sorts" style="display:flex; gap:6px; flex:1;"></div>' +
 '<button id="explore-map-toggle" style="padding:9px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer; white-space:nowrap;">🗺️ Carte</button>' +
@@ -324,6 +329,76 @@ __exploreRender();
 });
 });
 
+// ---- recherche par ambiance (bars, soirées, festivals) ----
+const moodRow = document.getElementById("explore-mood-row");
+const moodInput = document.getElementById("explore-mood-search");
+const moodChipsWrap = document.getElementById("explore-mood-chips");
+let __moodActiveChip = "";
+const MOOD_CHIPS = [
+{ key: "calme", label: "🤫 Calme" },
+{ key: "festif", label: "🎉 Festif" },
+{ key: "rencontre", label: "💬 Rencontre" },
+];
+
+function __exploreUpdateMoodVisibility() {
+const eligible = ["Bar", "Soirée", "Festival"].indexOf(__exploreCurrentCategory) !== -1;
+moodRow.style.display = eligible ? "block" : "none";
+if (!eligible) {
+__exploreMoodQuery = "";
+__moodActiveChip = "";
+moodInput.value = "";
+Array.from(moodChipsWrap.children).forEach(function (c) {
+c.style.background = "transparent";
+c.style.border = "1px solid rgba(255,255,255,0.3)";
+c.style.fontWeight = "400";
+});
+}
+}
+
+MOOD_CHIPS.forEach(function (m) {
+const chip = document.createElement("button");
+chip.type = "button";
+chip.textContent = m.label;
+chip.dataset.mood = m.key;
+chip.style.cssText = "padding:6px 12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;";
+chip.addEventListener("click", function () {
+if (__moodActiveChip === m.key) {
+__moodActiveChip = "";
+__exploreMoodQuery = "";
+chip.style.background = "transparent";
+chip.style.border = "1px solid rgba(255,255,255,0.3)";
+chip.style.fontWeight = "400";
+} else {
+Array.from(moodChipsWrap.children).forEach(function (c) {
+c.style.background = "transparent";
+c.style.border = "1px solid rgba(255,255,255,0.3)";
+c.style.fontWeight = "400";
+});
+__moodActiveChip = m.key;
+__exploreMoodQuery = m.key;
+chip.style.background = "#E85D3D";
+chip.style.border = "1px solid #E85D3D";
+chip.style.fontWeight = "700";
+}
+moodInput.value = "";
+__exploreShowAll = false;
+__exploreRender();
+});
+moodChipsWrap.appendChild(chip);
+});
+
+moodInput.addEventListener("input", function () {
+__exploreMoodQuery = moodInput.value;
+__moodActiveChip = "";
+Array.from(moodChipsWrap.children).forEach(function (c) {
+c.style.background = "transparent";
+c.style.border = "1px solid rgba(255,255,255,0.3)";
+c.style.fontWeight = "400";
+});
+__exploreShowAll = false;
+__exploreRender();
+});
+
 const catsWrap = document.getElementById("explore-cats");
 EXPLORE_CATEGORIES.forEach(function (c, i) {
 const btn = document.createElement("button");
@@ -348,10 +423,12 @@ b.style.border = "1px solid rgba(255,255,255,0.3)";
 btn.style.background = c.key ? activeColor : "#fff";
 btn.style.color = c.key ? "#fff" : "#14213D";
 btn.style.border = "1px solid " + (c.key ? activeColor : "#fff");
+__exploreUpdateMoodVisibility();
 __exploreRender();
 });
 catsWrap.appendChild(btn);
 });
+__exploreUpdateMoodVisibility();
 const sortsWrap = document.getElementById("explore-sorts");
 const sortOptions = [
 { key: "distance", label: "📍 Plus proche" },
@@ -391,6 +468,7 @@ toggleBtn.textContent = "☰ Liste";
 toggleBtn.style.background = "#fff";
 toggleBtn.style.color = "#14213D";
 document.getElementById("explore-cats").style.display = "none";
+moodRow.style.display = "none";
 document.getElementById("explore-sorts").style.display = "none";
 document.getElementById("explore-time-tabs").style.display = "none";
 document.getElementById("explore-result").style.background = "transparent";
@@ -406,6 +484,7 @@ toggleBtn.textContent = "🗺️ Carte";
 toggleBtn.style.background = "transparent";
 toggleBtn.style.color = "#fff";
 document.getElementById("explore-cats").style.display = "flex";
+__exploreUpdateMoodVisibility();
 document.getElementById("explore-sorts").style.display = "flex";
 document.getElementById("explore-time-tabs").style.display = "flex";
 document.getElementById("explore-result").style.background = "#fff";
