@@ -209,6 +209,8 @@ function renderAccountState(user){
     loggedIn.classList.remove("hidden");
     document.getElementById("account-user-email").textContent = user.email;
     if (accountBtn) accountBtn.textContent = "👤✓";
+    const modBtn = document.getElementById("btn-open-moderation");
+    if (modBtn) modBtn.classList.toggle("hidden", user.email !== "ericbrunebarbe@gmail.com");
    } else {
     loggedOut.classList.remove("hidden");
     loggedIn.classList.add("hidden");
@@ -265,7 +267,7 @@ const TRANSLATIONS = {
     "Nouvel événement": "New event",
     "Publier l'événement": "Publish event",
     "📩 Recevoir les nouveaux événements par email": "📩 Get new events by email",
-    "Événement publié !": "Event published!",
+    "Événement envoyé !": "Event submitted!",
     "Retour à l'accueil": "Back to home",
     "⚙️ Filtres": "⚙️ Filters",
     "Catégories :": "Categories:",
@@ -298,7 +300,7 @@ const TRANSLATIONS = {
     "Nouvel événement": "Nuevo evento",
     "Publier l'événement": "Publicar el evento",
     "📩 Recevoir les nouveaux événements par email": "📩 Recibir nuevos eventos por email",
-    "Événement publié !": "¡Evento publicado!",
+    "Événement envoyé !": "¡Evento enviado!",
     "Retour à l'accueil": "Volver al inicio",
     "⚙️ Filtres": "⚙️ Filtros",
     "Catégories :": "Categorías:",
@@ -331,7 +333,7 @@ const TRANSLATIONS = {
     "Nouvel événement": "Neues Event",
     "Publier l'événement": "Event veröffentlichen",
     "📩 Recevoir les nouveaux événements par email": "📩 Neue Events per E-Mail erhalten",
-    "Événement publié !": "Event veröffentlicht!",
+    "Événement envoyé !": "Event gesendet!",
     "Retour à l'accueil": "Zurück zur Startseite",
     "⚙️ Filtres": "⚙️ Filter",
     "Catégories :": "Kategorien:",
@@ -3051,6 +3053,7 @@ mode: "liste",
   favorites: loadFavorites(),
   localEvents: loadLocalEvents(),
  openAgendaEvents: [],
+  communityEvents: [],
   loyalty: loadLoyalty(),
   visitedEvents: loadVisitedEvents(),
 }; 
@@ -3090,7 +3093,7 @@ function buildPlaceEvents(){
 const PLACE_EVENTS = buildPlaceEvents();
  
 function allEvents(){
-  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.brocanteEvents, ...PLACE_EVENTS];
+  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.communityEvents, ...state.brocanteEvents, ...PLACE_EVENTS];
 }
  
 // ---- geo helpers ----
@@ -3704,6 +3707,62 @@ document.addEventListener("DOMContentLoaded", () => {
     auth.signOut();
   };
 
+  // ---- Modération des événements publiés par les utilisateurs (réservé à l'administrateur) ----
+  const ADMIN_EMAIL = "ericbrunebarbe@gmail.com";
+  const moderationModal = document.getElementById("moderation-modal");
+  const moderationListEl = document.getElementById("moderation-list");
+  const btnOpenModeration = document.getElementById("btn-open-moderation");
+
+  function renderModerationList(){
+    moderationListEl.innerHTML = "<p style='font-size:13px;color:#666;'>Chargement…</p>";
+    db.collection("communityEvents").where("status", "==", "pending").get().then(snap => {
+      if (snap.empty){
+        moderationListEl.innerHTML = "<p style='font-size:13px;color:#666;'>Rien à valider pour le moment.</p>";
+        return;
+      }
+      const docs = snap.docs.sort((a, b) => (b.data().createdAt || 0) - (a.data().createdAt || 0));
+      moderationListEl.innerHTML = "";
+      docs.forEach(doc => {
+        const ev = doc.data();
+        const card = document.createElement("div");
+        card.style.cssText = "border:1px solid #e0e0e0; border-radius:12px; padding:12px; margin-bottom:10px;";
+        card.innerHTML =
+          '<div style="font-weight:700; font-size:14px;">' + ev.title + "</div>" +
+          '<div style="font-size:12px; color:#666; margin:4px 0;">' + ev.category + " · " + ev.city + " · " + ev.date + " " + (ev.time || "") + "</div>" +
+          '<div style="font-size:13px; margin-bottom:8px;">' + ev.description + "</div>" +
+          '<div style="font-size:11px; color:#999; margin-bottom:8px;">Par : ' + (ev.authorEmail || "utilisateur anonyme") + "</div>" +
+          '<div style="display:flex; gap:8px;">' +
+          '<button type="button" class="btn-primary" data-approve="' + doc.id + '" style="flex:1; padding:8px;">✅ Valider</button>' +
+          '<button type="button" class="btn-outline" data-reject="' + doc.id + '" style="flex:1; padding:8px;">❌ Rejeter</button>' +
+          "</div>";
+        moderationListEl.appendChild(card);
+      });
+    }).catch(err => {
+      moderationListEl.innerHTML = "<p style='color:#c0392b; font-size:13px;'>Erreur de chargement : " + err.message + "</p>";
+    });
+  }
+
+  if (btnOpenModeration) {
+    btnOpenModeration.onclick = () => {
+      accountModal.classList.add("hidden");
+      moderationModal.classList.remove("hidden");
+      renderModerationList();
+    };
+  }
+  document.getElementById("btn-moderation-close").onclick = () => moderationModal.classList.add("hidden");
+  moderationModal.onclick = (e) => {
+    if (e.target.id === "moderation-modal") moderationModal.classList.add("hidden");
+  };
+  moderationListEl.addEventListener("click", (e) => {
+    const approveId = e.target.dataset.approve;
+    const rejectId = e.target.dataset.reject;
+    if (approveId) {
+      db.collection("communityEvents").doc(approveId).update({ status: "approved" }).then(renderModerationList);
+    } else if (rejectId) {
+      db.collection("communityEvents").doc(rejectId).update({ status: "rejected" }).then(renderModerationList);
+    }
+  });
+
    // Points de fidélité : on attribue les points du jour (si pas déjà fait) et on affiche le badge.
   awardDailyLoyaltyPoints();
   awardReferralWelcomeBonus();
@@ -3737,6 +3796,12 @@ document.addEventListener("DOMContentLoaded", () => {
     state.brocanteEvents = brocantes;
     renderDiscover();
   });
+
+  // Événements publiés par les utilisateurs et déjà validés : visibles par tout le monde.
+  db.collection("communityEvents").where("status", "==", "approved").get().then(snap => {
+    state.communityEvents = snap.docs.map(d => d.data());
+    renderDiscover();
+  }).catch(err => console.error("Erreur de chargement des événements publiés :", err));
  
   document.getElementById("btn-geoloc").onclick = () => {
     if (!navigator.geolocation){
@@ -3856,10 +3921,12 @@ document.addEventListener("DOMContentLoaded", () => {
  
   document.getElementById("publish-form").onsubmit = (e) => {
     e.preventDefault();
+    const submitBtn = e.target.querySelector("button[type=submit], .btn-primary");
     const fd = new FormData(e.target);
     const city = fd.get("city");
+    const user = auth.currentUser;
     const newEvent = {
-      id: "local-" + Date.now(),
+      id: "community-" + Date.now(),
       city,
       category: fd.get("category"),
       scene: CATEGORY_SCENE[fd.get("category")] || "village",
@@ -3872,14 +3939,30 @@ document.addEventListener("DOMContentLoaded", () => {
       price: "Non précisé",
       thumb: "alt",
       description: fd.get("description") || "Événement publié par un utilisateur.",
+      status: "pending",
+      authorId: user ? user.uid : null,
+      authorEmail: (user && user.email) ? user.email : null,
+      createdAt: Date.now(),
     };
-    state.localEvents.push(newEvent);
-    saveLocalEvents();
-    state.loyalty.points += 20;
-    saveLoyalty();
-    renderLoyalty();
-    e.target.reset();
-    showView("confirm");
+    if (!user) {
+      alert("Un instant, la connexion n'est pas encore prête — réessaie dans quelques secondes.");
+      return;
+    }
+    if (submitBtn) submitBtn.disabled = true;
+    db.collection("communityEvents").doc(newEvent.id).set(newEvent)
+      .then(() => {
+        state.loyalty.points += 20;
+        saveLoyalty();
+        renderLoyalty();
+        e.target.reset();
+        showView("confirm");
+      })
+      .catch(err => {
+        alert("La publication a échoué : " + err.message);
+      })
+      .finally(() => {
+        if (submitBtn) submitBtn.disabled = false;
+      });
   };
 });
  
