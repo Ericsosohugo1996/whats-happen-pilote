@@ -199,28 +199,13 @@ function showAccountError(message){
 function hideAccountError(){
   document.getElementById("account-error").style.display = "none";
 }
- 
-  document.getElementById("btn-account-login").onclick = () => {
-    hideAccountError();
-    const email = document.getElementById("account-email").value;
-    const password = document.getElementById("account-password").value;
-    auth.signInWithEmailAndPassword(email, password)
-      .then(() => accountModal.classList.add("hidden"))
-      .catch(err => showAccountError(err.message));
-  };
- 
-  document.getElementById("btn-account-signup").onclick = () => {
-    hideAccountError();
-    const email = document.getElementById("account-email").value;
-    const password = document.getElementById("account-password").value;
-    auth.createUserWithEmailAndPassword(email, password)
-      .then(() => accountModal.classList.add("hidden"))
-      .catch(err => showAccountError(err.message));
-  };
- 
-  document.getElementById("btn-account-logout").onclick = () => {
-    auth.signOut();
-  };
+
+function renderAccountState(user){
+  const loggedOut = document.getElementById("account-logged-out");
+  const loggedIn = document.getElementById("account-logged-in");
+  const accountBtn = document.getElementById("btn-account");
+  if (user && !user.isAnonymous){
+    loggedOut.classList.add("hidden");
     loggedIn.classList.remove("hidden");
     document.getElementById("account-user-email").textContent = user.email;
     if (accountBtn) accountBtn.textContent = "👤✓";
@@ -3672,20 +3657,53 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(() => accountModal.classList.add("hidden"))
       .catch(err => showAccountError(err.message));
   };
- 
+
   document.getElementById("btn-account-signup").onclick = () => {
     hideAccountError();
     const email = document.getElementById("account-email").value;
     const password = document.getElementById("account-password").value;
-    auth.createUserWithEmailAndPassword(email, password)
+    const credential = firebase.auth.EmailAuthProvider.credential(email, password);
+    const current = auth.currentUser;
+    const doSignup = (current && current.isAnonymous)
+      ? current.linkWithCredential(credential)
+      : auth.createUserWithEmailAndPassword(email, password);
+    doSignup
       .then(() => accountModal.classList.add("hidden"))
-      .catch(err => showAccountError(err.message));
+      .catch(err => {
+        if (err.code === "auth/email-already-in-use" || err.code === "auth/credential-already-in-use") {
+          auth.signInWithEmailAndPassword(email, password)
+            .then(() => accountModal.classList.add("hidden"))
+            .catch(err2 => showAccountError(err2.message));
+        } else {
+          showAccountError(err.message);
+        }
+      });
   };
- 
+
+  document.getElementById("btn-account-google").onclick = () => {
+    hideAccountError();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const current = auth.currentUser;
+    const doGoogle = (current && current.isAnonymous)
+      ? current.linkWithPopup(provider)
+      : auth.signInWithPopup(provider);
+    doGoogle
+      .then(() => accountModal.classList.add("hidden"))
+      .catch(err => {
+        if (err.code === "auth/credential-already-in-use") {
+          auth.signInWithCredential(err.credential)
+            .then(() => accountModal.classList.add("hidden"))
+            .catch(err2 => showAccountError(err2.message));
+        } else if (err.code !== "auth/popup-closed-by-user" && err.code !== "auth/cancelled-popup-request") {
+          showAccountError(err.message);
+        }
+      });
+  };
+
   document.getElementById("btn-account-logout").onclick = () => {
     auth.signOut();
   };
- 
+
    // Points de fidélité : on attribue les points du jour (si pas déjà fait) et on affiche le badge.
   awardDailyLoyaltyPoints();
   awardReferralWelcomeBonus();
