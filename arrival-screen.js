@@ -104,9 +104,14 @@ if (dist > 1.2) return;
 const emoji = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[ev.category]) || "📍";
 const pinColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[ev.category]) || "#6C757D";
 const icon = L.divIcon({
-html: '<div style="background:' + pinColor + '; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:14px; border:2.5px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,0.35);">' + emoji + "</div>",
+html:
+'<div style="position:relative; width:32px; height:40px;">' +
+'<div style="width:30px; height:30px; border-radius:50% 50% 50% 0; background:' + pinColor + '; transform:rotate(-45deg); border:2.5px solid #fff; box-shadow:0 3px 6px rgba(0,0,0,0.4); position:absolute; top:0; left:1px;"></div>' +
+'<div style="position:absolute; top:0; left:1px; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:14px;">' + emoji + '</div>' +
+"</div>",
 className: "",
-iconSize: [30, 30],
+iconSize: [32, 40],
+iconAnchor: [16, 40],
 });
 L.marker([ev.lat, ev.lng], { icon: icon })
 .addTo(map)
@@ -118,6 +123,7 @@ openDetail(ev.id);
 });
 }, 50);
 }
+
 function __exploreRender() {
 let list = __exploreGetCandidates(__exploreCurrentCategory);
 list = list.slice().sort(function (a, b) {
