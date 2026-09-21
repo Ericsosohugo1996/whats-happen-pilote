@@ -43,7 +43,43 @@ const EXPLORE_CATEGORIES = [
 let __exploreShowAll = false;
 let __exploreCurrentCategory = "";
 let __exploreTimeMode = "now";
+// ---- recherche par état d'esprit (bars, soirées, festivals) ----
+let __exploreMoodQuery = "";
 
+const __MOOD_SYNONYMS = {
+  calme: ["calme", "tranquille", "discuter", "discussion", "cosy", "intimiste", "feutré", "feutree", "tamisée", "tamisee", "détente", "detente", "chill", "zen", "posé", "pose"],
+  festif: ["festif", "festive", "ambiance", "fête", "fete", "danser", "dansant", "musique", "live", "dj", "energique", "énergique", "party", "rooftop", "convivial"],
+  rencontre: ["rencontre", "rencontrer", "célibataire", "celibataire", "sociable", "convivial", "nouvelles têtes", "nouvelles tetes", "échanger", "echanger", "ouvert", "afterwork"],
+};
+
+function __moodScoreForEvent(ev, query) {
+  if (!query) return 0;
+  const text = [ev.title, ev.description, ev.style, ev.category, ev.scene]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  const q = query.toLowerCase().trim();
+  if (!q) return 0;
+
+  let score = 0;
+  const qWords = q.split(/\s+/).filter(Boolean);
+
+  qWords.forEach(function (w) {
+    if (text.indexOf(w) !== -1) score += 3;
+  });
+
+  Object.keys(__MOOD_SYNONYMS).forEach(function (moodKey) {
+    const synonyms = __MOOD_SYNONYMS[moodKey];
+    const queryMatchesMood = synonyms.some(function (s) { return q.indexOf(s) !== -1; });
+    if (queryMatchesMood) {
+      synonyms.forEach(function (s) {
+        if (text.indexOf(s) !== -1) score += 2;
+      });
+    }
+  });
+
+  return score;
+}
 function __exploreGetCandidates(category) {
 const ref = referencePoint();
 const cityKey = state.userPos ? nearestCityKey() : state.city;
