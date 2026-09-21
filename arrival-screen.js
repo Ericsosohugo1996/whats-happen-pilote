@@ -234,7 +234,6 @@ __exploreCurrentCategory = "";
 __exploreTimeMode = "now";
 const cityKey = state.userPos ? nearestCityKey() : state.city;
 const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
-const cityPhoto = CITY_PHOTOS[cityKey] || "";
 const overlay = document.createElement("div");
 overlay.id = "explore-overlay";
 overlay.style.cssText =
@@ -242,22 +241,18 @@ overlay.style.cssText =
 
 overlay.innerHTML =
 '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
-(cityPhoto
-? '<div style="position:relative; height:180px; border-radius:20px; overflow:hidden; margin-bottom:16px; background-image:url(\'' +
-cityPhoto +
-'\'); background-size:cover; background-position:center;">' +
-'<div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,33,61,0) 40%, rgba(20,33,61,0.85) 100%);"></div>' +
-'<div style="position:absolute; bottom:12px; left:14px; color:#fff;">' +
-'<div style="font-size:10px; font-weight:700; letter-spacing:0.5px; opacity:0.85;">📍 À PROXIMITÉ DE VOUS</div>' +
-'<div style="font-size:18px; font-weight:700;">' +
-cityName +
-"</div>" +
-"</div>" +
-"</div>"
-: "") +
+'<div style="position:relative; padding:16px 18px 14px; border-radius:18px; margin-bottom:12px; overflow:hidden; text-align:center; background:linear-gradient(135deg, rgba(242,134,75,0.16), rgba(139,108,242,0.16)); border:1px solid rgba(255,255,255,0.14);">' +
+'<div style="position:absolute; top:-30px; right:-20px; width:90px; height:90px; border-radius:50%; background:radial-gradient(circle, rgba(242,134,75,0.4), transparent 70%); filter:blur(24px); pointer-events:none;"></div>' +
+'<div style="position:absolute; bottom:-30px; left:-20px; width:80px; height:80px; border-radius:50%; background:radial-gradient(circle, rgba(139,108,242,0.35), transparent 70%); filter:blur(24px); pointer-events:none;"></div>' +
+'<div style="position:relative;">' +
+'<div style="font-size:10px; font-weight:700; letter-spacing:0.6px; color:rgba(255,255,255,0.6); text-transform:uppercase;">📍 Vous êtes à</div>' +
+'<div style="font-family:var(--font-display); font-size:23px; font-weight:700; color:#fff; margin-top:2px; line-height:1.1;">' + cityName + '</div>' +
+'<div id="explore-weather-badge" style="font-family:var(--font-display); font-style:italic; font-size:12.5px; font-weight:500; color:rgba(255,255,255,0.78); margin-top:3px;">…</div>' +
+'</div>' +
+'</div>' +
 '<button id="explore-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
 '<div id="explore-time-tabs" style="display:flex; gap:6px; margin-bottom:12px;">' +
-'<button class="explore-time-btn" data-time="now" style="flex:1; padding:9px 4px; border-radius:10px; border:none; background:#fff; color:#14213D; font-size:12px; font-weight:700; cursor:pointer;">Maintenant</button>' +
+'<button class="explore-time-btn" data-time="now" style="flex:1; padding:9px 4px; border-radius:10px; border:none; background:linear-gradient(135deg,#F2C879,#E85D3D); color:#fff; font-size:12px; font-weight:700; cursor:pointer;">Maintenant</button>' +
 '<button class="explore-time-btn" data-time="tonight" style="flex:1; padding:9px 4px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer;">Ce soir</button>' +
 '<button class="explore-time-btn" data-time="tomorrow" style="flex:1; padding:9px 4px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer;">Demain</button>' +
 '</div>' +
@@ -272,6 +267,22 @@ cityName +
 "</div>";
 
 document.body.appendChild(overlay);
+(async function () {
+const badge = document.getElementById("explore-weather-badge");
+if (!badge || typeof weatherCurrentCoords !== "function") return;
+const coords = weatherCurrentCoords();
+if (!coords) { badge.remove(); return; }
+try {
+const url = "https://api.open-meteo.com/v1/forecast?latitude=" + coords.lat + "&longitude=" + coords.lng + "&current=temperature_2m,weather_code&timezone=auto";
+const res = await fetch(url);
+const data = await res.json();
+const temp = Math.round(data.current.temperature_2m);
+const info = weatherCodeToInfo(data.current.weather_code);
+badge.textContent = info.icon + " Il fait " + temp + "°C";
+} catch (e) {
+badge.remove();
+}
+})();
 overlay.addEventListener("click", function (e) {
 if (e.target === overlay) overlay.remove();
 if (e.target.id === "explore-close" && !__exploreOnMap) overlay.remove();
@@ -291,8 +302,8 @@ b.style.color = "#fff";
 b.style.border = "1px solid rgba(255,255,255,0.3)";
 b.style.fontWeight = "600";
 });
-btn.style.background = "#fff";
-btn.style.color = "#14213D";
+btn.style.background = "linear-gradient(135deg,#F2C879,#E85D3D)";
+btn.style.color = "#fff";
 btn.style.border = "none";
 btn.style.fontWeight = "700";
 __exploreRender();
@@ -403,7 +414,6 @@ __exploreRender();
 __exploreOnMap = true;
 __exploreApplyMapToggleUI();
 }
-
 // ---- Bonhomme 2 : ambiance puis idées multiples (réutilise le Mode Escale) ----
 
 function __arrivalOpenMood() {
