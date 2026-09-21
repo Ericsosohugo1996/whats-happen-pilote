@@ -711,3 +711,111 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 }
 .brand-choice-btn.primary{ background:linear-gradient(135deg,#F2C879,#E85D3D); color:#fff; box-shadow:0 8px 18px -6px rgba(242,167,68,0.55); }
 .brand-choice-btn.ghost{ background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.35); color:#fff; }
+
+/* ==========================================================================
+   REDESIGN "TOUT VOIR" — thème sombre dynamique, cartes blanches contrastées
+   ========================================================================== */
+#view-discover{
+  background:linear-gradient(180deg, #0E1526 0%, #141C36 55%, #14213D 100%);
+  min-height:100vh;
+  padding-bottom:30px;
+}
+#view-discover .locate-value{ font-size:26px; }
+
+/* ---- bande de jours défilable (30 jours), pastilles dynamiques ---- */
+#view-discover .stats-banner{ background:transparent; border:none; padding:0; margin:0 0 18px; }
+#view-discover .week-strip-hint{
+  font-size:10.5px; color:rgba(255,255,255,.5); padding:0 2px 8px;
+  text-transform:uppercase; letter-spacing:.05em; font-weight:700;
+}
+#view-discover .week-strip{ display:flex; gap:8px; overflow-x:auto; padding:2px 2px 6px; scrollbar-width:none; }
+#view-discover .week-strip::-webkit-scrollbar{ display:none; }
+#view-discover .week-day-btn{
+  flex:0 0 54px; display:flex; flex-direction:column; align-items:center; gap:3px;
+  padding:10px 4px; border-radius:14px; cursor:pointer;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); color:#fff;
+  transition:background .2s ease, border-color .2s ease, transform .15s ease;
+}
+#view-discover .week-day-btn .week-day-label{
+  font-size:9.5px; text-transform:uppercase; letter-spacing:.04em; font-weight:700; color:rgba(255,255,255,.55);
+}
+#view-discover .week-day-btn .week-day-date{ font-size:10px; color:rgba(255,255,255,.5); }
+#view-discover .week-day-btn .week-day-count{ font-size:16px; font-weight:800; color:#F2A98C; font-family:var(--font-display); }
+#view-discover .week-day-btn.active{
+  background:linear-gradient(150deg,#F2C879,#E85D3D); border-color:transparent;
+  transform:translateY(-1px); box-shadow:0 8px 18px -8px rgba(232,93,61,.65);
+}
+#view-discover .week-day-btn.active .week-day-label,
+#view-discover .week-day-btn.active .week-day-date{ color:rgba(255,255,255,.85); }
+#view-discover .week-day-btn.active .week-day-count{ color:#fff; }
+
+/* ---- fiche ville ---- */
+#view-discover .city-info{
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+  border-radius:20px; padding:18px 20px; margin-bottom:18px; backdrop-filter:blur(6px);
+}
+#view-discover .city-info .ci-name{ color:#fff; }
+#view-discover .city-info .ci-pop{ color:rgba(255,255,255,.65); }
+#view-discover .city-info .ci-desc{ color:rgba(255,255,255,.72); }
+#view-discover .city-info .ci-facts{ border-top-color:rgba(255,255,255,.14); }
+#view-discover .city-info .ci-fact{ color:rgba(255,255,255,.85); }
+#view-discover .city-info .ci-source{ color:rgba(255,255,255,.4); }
+#view-discover .city-info .ci-tags .ci-tag{ background:rgba(255,255,255,.1); color:#F2C879; }
+#view-discover .city-info .ci-tags .ci-tag:nth-child(4n+1){ background:rgba(232,93,61,.18); color:#F2A98C; }
+#view-discover .city-info .ci-tags .ci-tag:nth-child(4n+2){ background:rgba(165,124,247,.18); color:#C6ACFA; }
+#view-discover .city-info .ci-tags .ci-tag:nth-child(4n+3){ background:rgba(76,208,122,.16); color:#7FE0A6; }
+#view-discover .city-info .ci-tags .ci-tag:nth-child(4n+4){ background:rgba(41,171,226,.16); color:#7FCBF2; }
+#view-discover .city-info .btn-photos{ background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2); }
+
+/* ---- barre carte/liste + filtres ---- */
+#view-discover .toolbar{ margin-bottom:16px; }
+#view-discover .segmented{ background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); box-shadow:none; }
+#view-discover .segmented .seg{ color:rgba(255,255,255,.65); }
+#view-discover .segmented .seg.active{
+  background:linear-gradient(135deg,#A57CF7,#8B6CF2); color:#fff; box-shadow:0 4px 12px -4px rgba(139,108,242,.6);
+}
+#view-discover .toolbar .chip-btn{ background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); color:#fff; }
+#view-discover .filters-panel{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:18px; }
+#view-discover .filters-label{ color:rgba(255,255,255,.6); }
+#view-discover .filters-panel .chip-btn{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); color:rgba(255,255,255,.85); }
+#view-discover .filters-panel .chip-btn.active{ background:linear-gradient(135deg,#F2C879,#E85D3D); border-color:transparent; color:#fff; }
+#view-discover .filters-panel select{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); color:#fff; }
+#view-discover .filters-panel input[type="range"]{ accent-color:#E85D3D; }
+
+/* ---- cartes d'événements : blanches et colorées sur fond sombre ---- */
+#view-discover .event-card{
+  background:#fff; border:none; padding:12px; gap:13px; align-items:stretch;
+  box-shadow:0 10px 24px -12px rgba(0,0,0,.45);
+  transition:box-shadow .2s ease, transform .15s ease, background .2s ease;
+}
+#view-discover .event-card:hover{ box-shadow:0 14px 28px -12px rgba(0,0,0,.55); transform:translateY(-1px); }
+#view-discover .event-card:active{ background:#faf9f7; }
+#view-discover .event-card .thumb-wrap{ align-self:center; }
+#view-discover .event-card .thumb{ width:92px; height:92px; border-radius:18px; box-shadow:0 4px 10px -4px rgba(20,33,61,.25); }
+#view-discover .event-card .thumb-badge{
+  top:-6px; left:-6px; bottom:auto; width:28px; height:28px; font-size:13px;
+  border-color:#fff; box-shadow:0 3px 8px rgba(0,0,0,.25);
+}
+#view-discover .event-card .info{ display:flex; flex-direction:column; justify-content:center; }
+#view-discover .event-card .cat{ display:none; }
+#view-discover .event-card .title{
+  color:#14213D; -webkit-line-clamp:2; display:-webkit-box; -webkit-box-orient:vertical;
+  white-space:normal; overflow:hidden; line-height:1.25; margin:0 0 3px;
+}
+#view-discover .event-card .venue{
+  font-size:12.5px; color:#8891A6; margin:0 0 4px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+#view-discover .event-card .meta{ font-size:11.5px; color:#8891A6; }
+#view-discover .event-card .dist{
+  align-self:center; font-size:11px; font-weight:800; color:#fff;
+  padding:7px 12px; border-radius:999px; flex:0 0 auto; white-space:nowrap;
+}
+#view-discover .event-card .dist.free{ background:#28C76F; }
+#view-discover .event-card .dist.inscr{ background:linear-gradient(135deg,#A57CF7,#8B6CF2); }
+#view-discover .event-card .dist.paid{ background:linear-gradient(135deg,#F2C879,#E85D3D); }
+#view-discover .event-card--place{ border-left:3px solid #22C55E; }
+
+#view-discover .empty-state{ color:rgba(255,255,255,.6); }
+#view-discover .map-mock{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); }
+#view-discover .map-tag{ background:rgba(20,33,61,.85); color:#fff; border:1px solid rgba(255,255,255,.2); }
