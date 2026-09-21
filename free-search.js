@@ -23,9 +23,10 @@ function __ensureSearchBox() {
   const wrap = document.createElement("div");
   wrap.id = "free-search-wrap";
   wrap.style.cssText = "margin: 0 16px 12px;";
-  wrap.innerHTML =
-    '<input type="text" id="free-search-box" placeholder="🔍 Rechercher un événement..." style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid rgba(0,0,0,0.15); font-size:14px; box-sizing:border-box;">';
+    wrap.innerHTML =
+    '<input type="text" id="free-search-box" data-i18n-placeholder="🔍 Rechercher un événement..." placeholder="🔍 Rechercher un événement..." style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid rgba(0,0,0,0.15); font-size:14px; box-sizing:border-box;">';
   toolbar.parentNode.insertBefore(wrap, toolbar);
+  if (typeof applyTranslation === "function") applyTranslation();
   document.getElementById("free-search-box").oninput = function (e) {
     __searchQuery = e.target.value.trim();
     if (__searchQuery && typeof __toggleResultsContent === "function") {
