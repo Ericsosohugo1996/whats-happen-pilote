@@ -53,11 +53,12 @@ document.getElementById("choice-locate").onclick = function(){
   if (carnetLink) {
     carnetLink.onclick = function(){
       screen.classList.add("hidden");
-      if (window.__renderSouvenirsScreen) __renderSouvenirsScreen();
+       if (window.__renderSouvenirsScreen) __renderSouvenirsScreen();
     };
   }
 }
-// What's happen — pilote web (Phase 1)
+initChoiceScreen(false);
+// What's happen — pilote web (Phase 1)    
 // Aucune dépendance externe : tout est en JavaScript natif.
 // What's happen — pilote web (Phase 1)
 // Aucune dépendance externe : tout est en JavaScript natif.
