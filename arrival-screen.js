@@ -103,65 +103,81 @@ function __exploreShowMap() {
   }, 50);
 }
 function __exploreRender() {
-  let list = __exploreGetCandidates(__exploreCurrentCategory);
-    list = list.slice().sort(function (a, b) {
-    if (a.datePriority !== b.datePriority) return a.datePriority - b.datePriority;
-    return a.dist - b.dist;
-  });
-  const shown = __exploreShowAll ? list : list.slice(0, 3);
-  const resultEl = document.getElementById("explore-result");
-  const moreBtn = document.getElementById("explore-more-btn");
-  if (!list.length) {
-    resultEl.innerHTML =
-      '<p style="padding:16px 0; color:#888; font-size:13px;">Rien trouvé dans cette catégorie pour le moment.</p>';
-    moreBtn.style.display = "none";
-    return;
-  }
-   resultEl.innerHTML = shown
-    .map(function (item, i) {
-      const walkMin = Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5);
-      const today = new Date().toISOString().slice(0, 10);
-      let dateLabel = "";
-      if (item.ev.date) {
-        const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
-        if (item.ev.date === today) dateLabel = "Aujourd'hui";
-        else if (item.ev.date === tomorrow) dateLabel = "Demain";
-        else dateLabel = formatDate(item.ev.date);
-        if (item.ev.time) dateLabel += " · " + item.ev.time;
-      }
-          const icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || (typeof iconFor === "function" ? iconFor(item.ev.category) : "📌");
-      const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#6C757D";
-      return (
-        '<button class="explore-pick" data-id="' +
-        item.ev.id +
-        '" style="display:flex; align-items:center; gap:12px; width:100%; text-align:left; background:none; border:none; padding:12px 0; cursor:pointer;' +
-        (i > 0 ? "border-top:1px solid #eee;" : "") +
-        '">' +
-        '<div style="width:34px; height:34px; border-radius:50%; background:' + catColor + '; display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; box-shadow:0 3px 8px -3px rgba(0,0,0,0.3);">' + icon + '</div>' +
-        '<div style="flex:1; min-width:0;">' +
-        '<div style="font-size:13.5px; font-weight:700; color:#14213D; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + item.ev.title + '</div>' +
-        (dateLabel ? '<div style="font-size:11px; color:#888; margin-top:2px;">' + dateLabel + '</div>' : '') +
-        '</div>' +
-              '<div style="font-size:11px; color:#E85D3D; font-weight:600; flex-shrink:0;">🚶 ' + walkMin + ' min</div>' +
-        "</button>" 
-      );
-    })
-    .join("");
-  resultEl.querySelectorAll(".explore-pick").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      const exploreOv = document.getElementById("explore-overlay");
-      if (exploreOv) exploreOv.remove();
-      openDetail(btn.dataset.id);
-    });
-  });
-  const remaining = list.length - shown.length;
-  if (remaining > 0 && !__exploreShowAll) {
-    moreBtn.style.display = "block";
-    moreBtn.textContent = "Voir plus (" + remaining + " autres)";
-  } else {
-    moreBtn.style.display = "none";
-  }
+let list = __exploreGetCandidates(__exploreCurrentCategory);
+list = list.slice().sort(function (a, b) {
+if (a.datePriority !== b.datePriority) return a.datePriority - b.datePriority;
+return a.dist - b.dist;
+});
+const shown = __exploreShowAll ? list : list.slice(0, 3);
+const resultEl = document.getElementById("explore-result");
+const moreBtn = document.getElementById("explore-more-btn");
+if (!list.length) {
+resultEl.innerHTML =
+'<p style="padding:16px 0; color:#888; font-size:13px;">Rien trouvé dans cette catégorie pour le moment.</p>';
+moreBtn.style.display = "none";
+return;
 }
+resultEl.innerHTML = shown
+.map(function (item, i) {
+const walkMin = Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5);
+const today = new Date().toISOString().slice(0, 10);
+let dateLabel = "";
+if (item.ev.date) {
+const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+if (item.ev.date === today) dateLabel = "Aujourd'hui";
+else if (item.ev.date === tomorrow) dateLabel = "Demain";
+else dateLabel = formatDate(item.ev.date);
+if (item.ev.time) dateLabel += " · " + item.ev.time;
+}
+const icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || (typeof iconFor === "function" ? iconFor(item.ev.category) : "📌");
+const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#6C757D";
+const thumbSvg = (typeof sceneSVG === "function") ? sceneSVG(item.ev.scene) : "";
+const priceRaw = item.ev.price || "";
+const isFree = /gratuit|libre/i.test(priceRaw);
+const priceLabel = priceRaw ? (isFree ? "Gratuit" : (priceRaw.length > 14 ? "Payant" : priceRaw)) : "";
+const priceColor = isFree ? "#2f8a55" : "#E85D3D";
+const priceBg = isFree ? "rgba(47,138,85,0.12)" : "rgba(232,93,61,0.12)";
+return (
+'<button class="explore-pick" data-id="' +
+item.ev.id +
+'" style="display:flex; align-items:flex-start; gap:12px; width:100%; text-align:left; background:none; border:none; padding:14px 0; cursor:pointer;' +
+(i > 0 ? "border-top:1px solid #eee;" : "") +
+'">' +
+'<div style="position:relative; width:56px; height:56px; flex-shrink:0;">' +
+'<div style="width:56px; height:56px; border-radius:14px; overflow:hidden; background:#f0f0f0;">' + thumbSvg + '</div>' +
+'<div style="position:absolute; bottom:-4px; right:-4px; width:22px; height:22px; border-radius:50%; background:' + catColor + '; display:flex; align-items:center; justify-content:center; font-size:11px; border:2px solid #fff; box-shadow:0 2px 4px rgba(0,0,0,0.2);">' + icon + '</div>' +
+'</div>' +
+'<div style="flex:1; min-width:0;">' +
+'<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px;">' +
+'<div style="font-size:13.5px; font-weight:700; color:#14213D; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + item.ev.title + '</div>' +
+(priceLabel ? '<div style="font-size:10px; font-weight:700; color:' + priceColor + '; background:' + priceBg + '; padding:3px 8px; border-radius:999px; white-space:nowrap; flex-shrink:0;">' + priceLabel + '</div>' : '') +
+'</div>' +
+(item.ev.place ? '<div style="font-size:11px; color:#999; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + item.ev.place + '</div>' : '') +
+'<div style="display:flex; align-items:center; gap:8px; margin-top:4px;">' +
+'<span style="font-size:11px; color:#E85D3D; font-weight:600;">🚶 ' + walkMin + ' min</span>' +
+(dateLabel ? '<span style="font-size:11px; color:#888;">· ' + dateLabel + '</span>' : '') +
+'</div>' +
+'</div>' +
+"</button>"
+);
+})
+.join("");
+resultEl.querySelectorAll(".explore-pick").forEach(function (btn) {
+btn.addEventListener("click", function () {
+const exploreOv = document.getElementById("explore-overlay");
+if (exploreOv) exploreOv.remove();
+openDetail(btn.dataset.id);
+});
+});
+const remaining = list.length - shown.length;
+if (remaining > 0 && !__exploreShowAll) {
+moreBtn.style.display = "block";
+moreBtn.textContent = "Voir plus (" + remaining + " autres)";
+} else {
+moreBtn.style.display = "none";
+}
+}
+
 
 function __exploreOpen() {
   __exploreMapMode = false;  
