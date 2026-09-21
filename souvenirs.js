@@ -15,6 +15,19 @@
   }
 
   // ---- détecte automatiquement le lieu où l'on se trouve (bar, salle, événement à proximité) ----
+  // ---- ville la plus proche de coordonnées données ----
+  function nearestCityForCoords(lat, lng) {
+    let closest = null;
+    let closestDist = Infinity;
+    Object.keys(CITIES).forEach(function (key) {
+      const c = CITIES[key];
+      const d = haversineKm(lat, lng, c.lat, c.lng);
+      if (d < closestDist) { closestDist = d; closest = key; }
+    });
+    return closest;
+  }
+
+  // ---- détecte automatiquement le lieu où l'on se trouve (bar, salle, événement à proximité) ----
   function findNearestPlace(lat, lng) {
     if (!window.allEvents || typeof haversineKm !== "function") return null;
     let closest = null;
