@@ -100,10 +100,10 @@ if ("serviceWorker" in navigator) {
   }, 3400);
 })();
  
-// ---- écran de bienvenue (photo de ville + accroche) ----
+// ---- écran de bienvenue (photo de ville + accroche + choix) ----
 function showBrandIntroScreen(){
   const screen = document.getElementById("brand-intro-screen");
-  if (!screen) { initIntroScreen(); return; }
+  if (!screen) { initChoiceScreen(); return; }
   const photoEl = document.getElementById("brand-intro-photo");
   const photoUrl = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[state.city] : null;
   if (photoEl && photoUrl) photoEl.style.backgroundImage = "url('" + photoUrl + "')";
@@ -112,19 +112,54 @@ function showBrandIntroScreen(){
     todayEl.textContent = "Aujourd'hui, à " + CITIES[state.city].name + "…";
   }
   screen.classList.remove("hidden");
-  let advanced = false;
-  function advance(){
-    if (advanced) return;
-    advanced = true;
-    screen.classList.add("hide");
-    setTimeout(() => {
-      screen.remove();
-      initIntroScreen();
-    }, 350);
-  }
-  screen.addEventListener("click", advance);
-  setTimeout(advance, 2500);
 }
+
+function hideBrandIntroScreen(){
+  const screen = document.getElementById("brand-intro-screen");
+  if (!screen) return;
+  screen.classList.add("hide");
+  setTimeout(() => { screen.remove(); }, 350);
+}
+
+// ---- boutons de choix directement sur l'écran de bienvenue ----
+function initBrandChoice(){
+  const locBtn = document.getElementById("brand-choice-locate");
+  const visitBtn = document.getElementById("brand-choice-visit");
+  if (locBtn) {
+    locBtn.onclick = function(){
+      hideBrandIntroScreen();
+      navigator.geolocation.getCurrentPosition(
+        (pos) => { state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude }; },
+        () => {}
+      );
+      setTimeout(function(){
+        if (window.__arrivalShowSearching) {
+          __arrivalShowSearching();
+          let waited = 0;
+          const iv = setInterval(function(){
+            waited += 200;
+            if (state.userPos || waited >= 8000) {
+              clearInterval(iv);
+              const ov = document.getElementById("arrival-searching-overlay");
+              if (ov) ov.remove();
+              if (window.__arrivalShow) __arrivalShow();
+            }
+          }, 200);
+        } else if (window.__arrivalShow) {
+          __arrivalShow();
+        }
+      }, 350);
+    };
+  }
+  if (visitBtn) {
+    visitBtn.onclick = function(){
+      hideBrandIntroScreen();
+      state.userPos = null;
+      setTimeout(function(){ renderDiscover(); }, 350);
+    };
+  }
+}
+initBrandChoice();
 
 // ---- écran intro (souvenirs ou découvrir) ----
 function initIntroScreen(){
