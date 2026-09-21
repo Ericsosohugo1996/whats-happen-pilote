@@ -14,17 +14,21 @@
     return Math.random().toString(36).slice(2, 10);
   }
 
-  function nearestCityForCoords(lat, lng) {
+  // ---- détecte automatiquement le lieu où l'on se trouve (bar, salle, événement à proximité) ----
+  function findNearestPlace(lat, lng) {
+    if (!window.allEvents || typeof haversineKm !== "function") return null;
     let closest = null;
-    let closestDist = Infinity;
-    Object.keys(CITIES).forEach(function (key) {
-      const c = CITIES[key];
-      const d = haversineKm(lat, lng, c.lat, c.lng);
-      if (d < closestDist) { closestDist = d; closest = key; }
+    let closestKm = Infinity;
+    allEvents().forEach(function (ev) {
+      if (!ev.lat || !ev.lng) return;
+      const d = haversineKm(lat, lng, ev.lat, ev.lng);
+      if (d < closestKm) { closestKm = d; closest = ev; }
     });
-    return closest;
+    if (closest && closestKm <= 0.12) {
+      return { placeName: closest.title, placeId: closest.id };
+    }
+    return null;
   }
-
   async function saveSouvenir({ file, text, placeName, placeId, lat, lng, category }) {
     const user = auth.currentUser;
     if (!user) {
