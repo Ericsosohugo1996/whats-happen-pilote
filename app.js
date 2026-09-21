@@ -200,12 +200,27 @@ function hideAccountError(){
   document.getElementById("account-error").style.display = "none";
 }
  
-function renderAccountState(user){
-  const loggedOut = document.getElementById("account-logged-out");
-  const loggedIn = document.getElementById("account-logged-in");
-  const accountBtn = document.getElementById("btn-account");
-  if (user){
-    loggedOut.classList.add("hidden");
+  document.getElementById("btn-account-login").onclick = () => {
+    hideAccountError();
+    const email = document.getElementById("account-email").value;
+    const password = document.getElementById("account-password").value;
+    auth.signInWithEmailAndPassword(email, password)
+      .then(() => accountModal.classList.add("hidden"))
+      .catch(err => showAccountError(err.message));
+  };
+ 
+  document.getElementById("btn-account-signup").onclick = () => {
+    hideAccountError();
+    const email = document.getElementById("account-email").value;
+    const password = document.getElementById("account-password").value;
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(() => accountModal.classList.add("hidden"))
+      .catch(err => showAccountError(err.message));
+  };
+ 
+  document.getElementById("btn-account-logout").onclick = () => {
+    auth.signOut();
+  };
     loggedIn.classList.remove("hidden");
     document.getElementById("account-user-email").textContent = user.email;
     if (accountBtn) accountBtn.textContent = "👤✓";
