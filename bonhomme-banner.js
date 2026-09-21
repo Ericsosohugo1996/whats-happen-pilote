@@ -151,9 +151,9 @@ function __applyDiscoverMoodFilter() {
   }
 }
 
-const __renderDiscoverBase = renderDiscover;
+const __renderDiscoverBaseMood = renderDiscover;
 renderDiscover = function () {
-  __renderDiscoverBase();
+  __renderDiscoverBaseMood();
   __applyDiscoverMoodFilter();
 };
 
