@@ -819,3 +819,33 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 #view-discover .empty-state{ color:rgba(255,255,255,.6); }
 #view-discover .map-mock{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); }
 #view-discover .map-tag{ background:rgba(20,33,61,.85); color:#fff; border:1px solid rgba(255,255,255,.2); }
+
+/* ---- compacte le bandeau "Tout voir" comme celui d'"Autour de moi" ---- */
+#view-discover .locate-bar{
+  background:linear-gradient(135deg, rgba(242,134,75,0.16), rgba(139,108,242,0.16)) !important;
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:18px !important;
+  padding:16px 18px 14px !important;
+  min-height:0 !important;
+  display:block !important;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+}
+#view-discover .locate-bar::before{
+  content:""; position:absolute; top:-30px; right:-20px; width:90px; height:90px; border-radius:50%;
+  background:radial-gradient(circle, rgba(242,134,75,0.4), transparent 70%); filter:blur(24px); pointer-events:none;
+}
+#view-discover .locate-bar::after{
+  content:""; position:absolute; bottom:-30px; left:-20px; width:80px; height:80px; border-radius:50%;
+  background:radial-gradient(circle, rgba(139,108,242,0.35), transparent 70%); filter:blur(24px); pointer-events:none;
+}
+#view-discover .locate-bar-photo{
+  position:relative !important; height:auto !important; background-image:none !important; opacity:1 !important;
+  border-radius:0 !important; text-align:center;
+}
+#view-discover .locate-bar-photo::after{ content:none !important; }
+#view-discover .locate-info{ position:relative; margin-bottom:0 !important; }
+#view-discover .locate-label{ font-size:10px; }
+#view-discover .locate-value{ display:block; font-size:22px; font-weight:700; margin-top:2px; }
+#view-discover #weather-mini{ display:block; font-style:italic; font-weight:500; font-size:12.5px; color:rgba(255,255,255,.78); margin:3px 0 0 !important; }
