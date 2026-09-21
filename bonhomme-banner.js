@@ -106,7 +106,7 @@ document.addEventListener("click", (e) => {
 }, true);
 // ---- recherche par ambiance dans "Tout voir" ----
 let __discoverMoodQuery = "";
-const __DISCOVER_MOOD_CATEGORIES = ["Bar", "Soirée", "Festival"];
+const __DISCOVER_MOOD_CATEGORIES = ["Bar"];
 
 function __discoverMoodEligible() {
   if (!state.selectedCategories || state.selectedCategories.size === 0) return false;
