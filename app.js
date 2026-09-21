@@ -3613,8 +3613,12 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.onclick = () => setLang(btn.dataset.lang);
   });   
  
-  const brandHome = document.getElementById("brand-home");
+   const brandHome = document.getElementById("brand-home");
   if (brandHome) brandHome.onclick = () => {
+    if (typeof __arrivalShow === "function") {
+      __arrivalShow();
+      return;
+    }
     const screen = document.getElementById("choice-screen");
     if (screen) {
       screen.classList.remove("hidden");
