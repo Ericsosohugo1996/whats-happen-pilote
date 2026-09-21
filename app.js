@@ -3241,10 +3241,10 @@ const CITY_PHOTOS = {
   caen: "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG",
 }; 
 function renderLocateBar(){
-  document.getElementById("locate-label").textContent = state.userPos ? "Position détectée" : "Ville sélectionnée";
+    document.getElementById("locate-label").textContent = "📍 Vous êtes à";
   document.getElementById("locate-value").textContent = state.userPos
-    ? "📍 Votre position actuelle"
-    : "📍 " + CITIES[state.city].name;
+    ? "Votre position actuelle"
+    : CITIES[state.city].name;
   document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
     b.classList.toggle("active", !state.userPos && b.dataset.city === state.city);
   });
