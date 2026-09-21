@@ -33,25 +33,21 @@ function updateStatsBanner(events) {
     state.selectedPeriod && /^\d{4}-\d{2}-\d{2}$/.test(state.selectedPeriod) ? state.selectedPeriod : null;
 
   banner.innerHTML =
-    '<div style="font-size:10.5px; color:#999; padding:10px 12px 0;">← glissez pour voir plus loin →</div>' +
-    '<div style="display:flex; gap:6px; overflow-x:auto; padding:8px 12px 14px;">' +
+    '<div class="week-strip-hint">← glissez pour voir plus loin →</div>' +
+    '<div class="week-strip">' +
     days
       .map(function (d) {
         const active = d.iso === selected;
         return (
-          '<button type="button" class="week-day-btn" data-date="' +
+          '<button type="button" class="week-day-btn' +
+          (active ? " active" : "") +
+          '" data-date="' +
           d.iso +
-          '" style="flex:0 0 50px; display:flex; flex-direction:column; align-items:center; gap:2px; padding:8px 3px; border-radius:11px; cursor:pointer; ' +
-          (active
-            ? "border:1px solid #14213D; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); color:#fff;"
-            : "border:1px solid rgba(0,0,0,0.1); background:#fff; color:inherit;") +
-          '"><span style="font-size:9.5px; text-transform:uppercase; opacity:0.6;">' +
+          '"><span class="week-day-label">' +
           d.label +
-          '</span><span style="font-size:10px; opacity:0.55;">' +
+          '</span><span class="week-day-date">' +
           d.dateLabel +
-          '</span><span style="font-size:15px; font-weight:700; color:' +
-          (active ? "#fff" : "#c0392b") +
-          ';">' +
+          '</span><span class="week-day-count">' +
           d.count +
           "</span></button>"
         );
