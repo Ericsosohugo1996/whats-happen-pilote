@@ -1,8 +1,8 @@
 // ---- écran de choix (localiser ou visiter une ville) ----
-function initChoiceScreen(){
+function initChoiceScreen(show){
   const screen = document.getElementById("choice-screen");
   if (!screen) return;
-  screen.classList.remove("hidden");
+  if (show !== false) screen.classList.remove("hidden");
  
   const colors = ["#E8604C","#F2C879","#7FA8D9","#ffffff","#C64A38"];
   function makeConfetti(burstEl){
