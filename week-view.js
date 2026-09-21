@@ -39,6 +39,8 @@ matchesPeriod = function (ev, period) {
 function updateStatsBanner(events) {
   const banner = document.getElementById("stats-banner");
   if (!banner) return;
+   const weekdayLabels = __weekdayLabels();
+  const monthLabels = __monthLabels();
   const days = [];
   for (let i = 0; i < WEEK_VIEW_DAYS; i++) {
     const d = new Date(Date.now() + i * 86400000);
@@ -48,8 +50,8 @@ function updateStatsBanner(events) {
     }).length;
     days.push({
       iso: iso,
-      label: WEEKDAY_LABELS_SHORT[d.getDay()],
-      dateLabel: d.getDate() + " " + MONTH_LABELS_SHORT[d.getMonth()],
+      label: weekdayLabels[d.getDay()],
+      dateLabel: d.getDate() + " " + monthLabels[d.getMonth()],
       count: count,
     });
   }
