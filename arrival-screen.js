@@ -646,6 +646,9 @@ overlay.innerHTML =
 '<button class="flag-btn" id="flag-en-arrival" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="English"></button>' +
 '<button class="flag-btn" id="flag-es-arrival" data-lang="es"><img src="https://flagcdn.com/w40/es.png" alt="Español"></button>' +
 '<button class="flag-btn" id="flag-de-arrival" data-lang="de"><img src="https://flagcdn.com/w40/de.png" alt="Deutsch"></button>' +
+'<button class="flag-btn" id="flag-it-arrival" data-lang="it"><img src="https://flagcdn.com/w40/it.png" alt="Italiano"></button>' +
+'<button class="flag-btn" id="flag-ja-arrival" data-lang="ja"><img src="https://flagcdn.com/w40/jp.png" alt="日本語"></button>' +
+'<button class="flag-btn" id="flag-zh-arrival" data-lang="zh"><img src="https://flagcdn.com/w40/cn.png" alt="中文"></button>' +
 '</div>' +
 '<div style="position:absolute; top:-60px; right:-40px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(242,134,75,0.55), transparent 70%); filter:blur(50px); pointer-events:none; z-index:0; animation:wzOrbFloat1 9s ease-in-out infinite;"></div>' +
 '<div style="position:absolute; bottom:60px; left:-50px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(139,108,242,0.5), transparent 70%); filter:blur(50px); pointer-events:none; z-index:0; animation:wzOrbFloat2 11s ease-in-out infinite;"></div>' +
