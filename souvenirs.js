@@ -195,10 +195,27 @@
       btn.textContent = "📸";
       btn.style.cssText = "position:fixed;right:18px;bottom:90px;width:54px;height:54px;border-radius:999px;background:#E85D3D;color:#fff;font-size:22px;border:none;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:500;";
       btn.addEventListener("click", function () {
+        btn.disabled = true;
+        const originalText = btn.textContent;
+        btn.textContent = "…";
+        function openWithCoords(lat, lng) {
+          const place = findNearestPlace(lat, lng) || {};
+          openAddSouvenirModal({ lat: lat, lng: lng, placeName: place.placeName, placeId: place.placeId });
+          btn.disabled = false;
+          btn.textContent = originalText;
+        }
         if (window.state && state.userPos) {
-          openAddSouvenirModal({ lat: state.userPos.lat, lng: state.userPos.lng });
+          openWithCoords(state.userPos.lat, state.userPos.lng);
+        } else if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            function (pos) { openWithCoords(pos.coords.latitude, pos.coords.longitude); },
+            function () { openAddSouvenirModal({}); btn.disabled = false; btn.textContent = originalText; },
+            { enableHighAccuracy: true, timeout: 8000 }
+          );
         } else {
           openAddSouvenirModal({});
+          btn.disabled = false;
+          btn.textContent = originalText;
         }
       });
           document.body.appendChild(btn);
@@ -206,7 +223,6 @@
     const oldCarnetFab = document.getElementById("souvenir-carnet-fab");
     if (oldCarnetFab) oldCarnetFab.remove();
   }
-
   const GRADIENTS = [
     "linear-gradient(135deg,#F4A261,#E85D3D)",
     "linear-gradient(135deg,#457B9D,#1D3557)",
