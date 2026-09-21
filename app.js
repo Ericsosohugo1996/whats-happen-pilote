@@ -89,14 +89,11 @@ if ("serviceWorker" in navigator) {
     el.style.borderRadius = ["50%","2px","0"][i % 3];
     burst.appendChild(el);
   }
-   setTimeout(() => {
+    setTimeout(() => {
     const splash = document.getElementById("splash-screen");
     if (!splash) return;
-    splash.classList.add("hide");
-      setTimeout(() => {
-        splash.remove();
-      showBrandIntroScreen();
-    }, 350);
+    splash.remove();
+    showBrandIntroScreen();
   }, 3400);
 })();
  
