@@ -672,7 +672,7 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .brand-intro-screen{
   position:fixed; inset:0; z-index:150;
   display:flex; flex-direction:column; justify-content:space-between;
-  overflow:hidden; cursor:pointer;
+  overflow:hidden;
   animation:brandIntroIn .5s ease-out;
 }
 .brand-intro-screen.hidden{ display:none; }
