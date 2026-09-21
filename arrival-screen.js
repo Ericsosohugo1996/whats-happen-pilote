@@ -33,7 +33,7 @@ const EXPLORE_CATEGORIES = [
 { key: "Musique", label: "🎵 Musique" },
 { key: "Marché", label: "🛍️ Marché" },
 { key: "Festival", label: "🎉 Festival" },
-{ key: "Soirée", label: "🎊 Soirée" },
+{ key: "Soirée", label: "🎟️ Culture" },
 { key: "Sport", label: "⚽ Sport" },
 { key: "Expo", label: "🖼️ Expo" },
 { key: "À voir", label: "🏛️ Musées" },
