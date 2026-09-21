@@ -606,4 +606,10 @@ if (__choiceLocateBase) {
       }
     }, 200);
   });
-}
+
+// ---- bouton retour sur "Tout voir" -> revient aux 3 choix ----
+document.addEventListener("click", function (e) {
+  if (e.target && e.target.id === "btn-discover-back") {
+    __arrivalShow();
+  }
+});
