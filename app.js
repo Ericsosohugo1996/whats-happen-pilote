@@ -93,15 +93,13 @@ if ("serviceWorker" in navigator) {
     if (!splash) return;
     splash.classList.add("hide");
       setTimeout(() => {
-      splash.remove();
-          showBrandIntroScreen(); 
+        splash.remove();
+      showBrandIntroScreen();
     }, 350);
   }, 3400);
 })();
  
-// ---- écran intro (souvenirs ou découvrir) ----
-function initIntroScreen(){
- // ---- écran de bienvenue (photo de ville + accroche) ----
+// ---- écran de bienvenue (photo de ville + accroche) ----
 function showBrandIntroScreen(){
   const screen = document.getElementById("brand-intro-screen");
   if (!screen) { initIntroScreen(); return; }
@@ -125,7 +123,11 @@ function showBrandIntroScreen(){
   }
   screen.addEventListener("click", advance);
   setTimeout(advance, 2500);
-} 
+}
+
+// ---- écran intro (souvenirs ou découvrir) ----
+function initIntroScreen(){
+  const intro = document.getElementById("intro-screen");    
   const intro = document.getElementById("intro-screen");
   if (!intro) { initChoiceScreen(); return; }
   intro.classList.remove("hidden");
