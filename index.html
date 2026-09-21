@@ -171,9 +171,18 @@
           <span>Mot de passe</span>
           <input type="password" id="account-password" placeholder="••••••••">
         </label>
-        <p id="account-error" style="color:#c0392b; font-size:12px; display:none;"></p>
+               <p id="account-error" style="color:#c0392b; font-size:12px; display:none;"></p>
         <button type="button" class="btn-primary btn-block" id="btn-account-login">Se connecter</button>
         <button type="button" class="btn-outline btn-block" id="btn-account-signup" style="margin-top:8px;">Créer un compte</button>
+        <div style="display:flex; align-items:center; gap:10px; margin:14px 0; color:#999; font-size:12px;">
+          <div style="flex:1; height:1px; background:#e0e0e0;"></div>
+          ou
+          <div style="flex:1; height:1px; background:#e0e0e0;"></div>
+        </div>
+        <button type="button" class="btn-outline btn-block" id="btn-account-google" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="" style="width:18px; height:18px;">
+          Continuer avec Google
+        </button>
       </div>
       <div id="account-logged-in" class="hidden">
         <h2 style="margin-top:0;">Mon compte</h2>
