@@ -294,6 +294,14 @@ const TRANSLATIONS = {
     "＋ Ajouter une photo": "＋ Add a photo",
     "Pas encore de souvenir ici. Ajoute une photo pour commencer !": "No memories here yet. Add a photo to get started!",
     "☰ Voir la liste": "☰ See the list",
+    "Changer de ville": "Change city",
+    "🗺️ Carte": "🗺️ Map",
+    "☰ Liste": "☰ List",
+    "← Retour aux choix": "← Back to choices",
+    "🔍 Rechercher un événement...": "🔍 Search for an event...",
+    "📍 Vous êtes à": "📍 You are in",
+    "Votre position actuelle": "Your current location",
+    "← glissez pour voir plus loin →": "← swipe to see further →",
   },
   es: {
     "＋ Publier": "＋ Publicar",
@@ -327,6 +335,14 @@ const TRANSLATIONS = {
     "＋ Ajouter une photo": "＋ Añadir una foto",
     "Pas encore de souvenir ici. Ajoute une photo pour commencer !": "Aún no hay recuerdos aquí. ¡Añade una foto para empezar!",
     "☰ Voir la liste": "☰ Ver la lista",
+    "Changer de ville": "Cambiar de ciudad",
+    "🗺️ Carte": "🗺️ Mapa",
+    "☰ Liste": "☰ Lista",
+    "← Retour aux choix": "← Volver a las opciones",
+    "🔍 Rechercher un événement...": "🔍 Buscar un evento...",
+    "📍 Vous êtes à": "📍 Estás en",
+    "Votre position actuelle": "Tu ubicación actual",
+    "← glissez pour voir plus loin →": "← desliza para ver más →",
   },
   de: {
     "＋ Publier": "＋ Veröffentlichen",
@@ -360,6 +376,14 @@ const TRANSLATIONS = {
     "＋ Ajouter une photo": "＋ Foto hinzufügen",
      "Pas encore de souvenir ici. Ajoute une photo pour commencer !": "Noch keine Erinnerungen hier. Füge ein Foto hinzu, um zu starten!",
     "☰ Voir la liste": "☰ Liste anzeigen",
+    "Changer de ville": "Stadt wechseln",
+    "🗺️ Carte": "🗺️ Karte",
+    "☰ Liste": "☰ Liste",
+    "← Retour aux choix": "← Zurück zur Auswahl",
+    "🔍 Rechercher un événement...": "🔍 Nach einem Event suchen...",
+    "📍 Vous êtes à": "📍 Du bist in",
+    "Votre position actuelle": "Dein aktueller Standort",
+    "← glissez pour voir plus loin →": "← wischen, um mehr zu sehen →",
   },
   it: {
     "＋ Publier": "＋ Pubblica",
@@ -393,6 +417,14 @@ const TRANSLATIONS = {
     "＋ Ajouter une photo": "＋ Aggiungi una foto",
     "Pas encore de souvenir ici. Ajoute une photo pour commencer !": "Ancora nessun ricordo qui. Aggiungi una foto per iniziare!",
     "☰ Voir la liste": "☰ Vedi la lista",
+    "Changer de ville": "Cambia città",
+    "🗺️ Carte": "🗺️ Mappa",
+    "☰ Liste": "☰ Lista",
+    "← Retour aux choix": "← Torna alle scelte",
+    "🔍 Rechercher un événement...": "🔍 Cerca un evento...",
+    "📍 Vous êtes à": "📍 Ti trovi a",
+    "Votre position actuelle": "La tua posizione attuale",
+    "← glissez pour voir plus loin →": "← scorri per vedere di più →",
   },
   ja: {
     "＋ Publier": "＋ 投稿",
@@ -426,6 +458,14 @@ const TRANSLATIONS = {
     "＋ Ajouter une photo": "＋ 写真を追加",
     "Pas encore de souvenir ici. Ajoute une photo pour commencer !": "まだ思い出がありません。写真を追加して始めましょう！",
     "☰ Voir la liste": "☰ リストを見る",
+    "Changer de ville": "都市を変更",
+    "🗺️ Carte": "🗺️ 地図",
+    "☰ Liste": "☰ リスト",
+    "← Retour aux choix": "← 選択に戻る",
+    "🔍 Rechercher un événement...": "🔍 イベントを検索...",
+    "📍 Vous êtes à": "📍 現在地：",
+    "Votre position actuelle": "現在の位置",
+    "← glissez pour voir plus loin →": "← スワイプしてもっと見る →",
   },
   zh: {
     "＋ Publier": "＋ 发布",
@@ -459,6 +499,14 @@ const TRANSLATIONS = {
     "＋ Ajouter une photo": "＋ 添加照片",
     "Pas encore de souvenir ici. Ajoute une photo pour commencer !": "这里还没有回忆。添加一张照片开始吧！",
     "☰ Voir la liste": "☰ 查看列表",
+    "Changer de ville": "更改城市",
+    "🗺️ Carte": "🗺️ 地图",
+    "☰ Liste": "☰ 列表",
+    "← Retour aux choix": "← 返回选择",
+    "🔍 Rechercher un événement...": "🔍 搜索活动...",
+    "📍 Vous êtes à": "📍 您在：",
+    "Votre position actuelle": "您当前的位置",
+    "← glissez pour voir plus loin →": "← 滑动查看更多 →",
   },
 };  
 const currentLang = { value: localStorage.getItem("wh_lang") || "fr" };
@@ -470,11 +518,21 @@ function applyTranslation(){
     const key = el.dataset.i18n;
     el.textContent = lang !== "fr" && dict[key] ? dict[key] : key;
   });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    el.placeholder = lang !== "fr" && dict[key] ? dict[key] : key;
+  });
   document.querySelectorAll(".flag-btn[data-lang]").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
 }
- 
+
+function t(key){
+  const lang = currentLang.value;
+  const dict = TRANSLATIONS[lang] || {};
+  return (lang !== "fr" && dict[key]) ? dict[key] : key;
+}
+
 function setLang(lang){
   currentLang.value = lang;
   localStorage.setItem("wh_lang", lang);
@@ -3357,9 +3415,9 @@ const CITY_PHOTOS = {
   caen: "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG",
 }; 
 function renderLocateBar(){
-    document.getElementById("locate-label").textContent = "📍 Vous êtes à";
+    document.getElementById("locate-label").textContent = t("📍 Vous êtes à");
   document.getElementById("locate-value").textContent = state.userPos
-    ? "Votre position actuelle (" + CITIES[nearestCityKey()].name + ")"
+    ? t("Votre position actuelle") + " (" + CITIES[nearestCityKey()].name + ")"
     : CITIES[state.city].name;
   document.querySelectorAll(".chip-btn[data-city]").forEach(b => {
     b.classList.toggle("active", !state.userPos && b.dataset.city === state.city);
