@@ -3328,13 +3328,19 @@ function renderMap(events){
  
 function eventCardHTML(ev){
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
-  const metaTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
-   const thumbHTML = ev.photo
+  const dateTimeTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
+  const metaTxt = distTxt ? ("📍 " + distTxt + "  ·  🕐 " + dateTimeTxt) : ("🕐 " + dateTimeTxt);
+  const thumbHTML = ev.photo
     ? `<img src="${ev.photo}" alt="${ev.title}" data-scene="${ev.scene}" onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
     : sceneSVG(ev.scene);
   const catColor = CATEGORY_COLORS[ev.category] || "#6C757D";
   const catIcon = CATEGORY_ICONS[ev.category] || "📍";
   const catLabel = ev.isPlace ? (ev.category === "Bar" ? "BAR" : "À VOIR") : ev.category;
+  const venueTxt = ev.place ? ev.place.split(",")[0] : "";
+  const priceRaw = (ev.price || "").toLowerCase();
+  let priceCls = "paid", priceLabel = "Payant";
+  if (priceRaw.includes("gratuit") || priceRaw.includes("libre")) { priceCls = "free"; priceLabel = "Gratuit"; }
+  else if (priceRaw.includes("inscription")) { priceCls = "inscr"; priceLabel = "Inscription"; }
   return `
     <button class="event-card${ev.isPlace ? " event-card--place" : ""}" data-id="${ev.id}" data-cat="${ev.category}">
       <div class="thumb-wrap">
@@ -3344,9 +3350,10 @@ function eventCardHTML(ev){
       <div class="info">
       <div class="cat" style="color:${catColor};">${catLabel}</div>
         <div class="title">${ev.title}</div>
+        ${venueTxt ? `<div class="venue">${venueTxt}</div>` : ""}
         <div class="meta">${metaTxt}</div>
       </div>
-      <div class="dist">${distTxt}</div>
+      <div class="dist ${priceCls}">${priceLabel}</div>
     </button>`;
 }
  
