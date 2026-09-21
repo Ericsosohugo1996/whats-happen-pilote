@@ -101,6 +101,31 @@ if ("serviceWorker" in navigator) {
  
 // ---- écran intro (souvenirs ou découvrir) ----
 function initIntroScreen(){
+ // ---- écran de bienvenue (photo de ville + accroche) ----
+function showBrandIntroScreen(){
+  const screen = document.getElementById("brand-intro-screen");
+  if (!screen) { initIntroScreen(); return; }
+  const photoEl = document.getElementById("brand-intro-photo");
+  const photoUrl = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[state.city] : null;
+  if (photoEl && photoUrl) photoEl.style.backgroundImage = "url('" + photoUrl + "')";
+  const todayEl = document.getElementById("brand-intro-today");
+  if (todayEl && typeof CITIES !== "undefined" && CITIES[state.city]) {
+    todayEl.textContent = "Aujourd'hui, à " + CITIES[state.city].name + "…";
+  }
+  screen.classList.remove("hidden");
+  let advanced = false;
+  function advance(){
+    if (advanced) return;
+    advanced = true;
+    screen.classList.add("hide");
+    setTimeout(() => {
+      screen.remove();
+      initIntroScreen();
+    }, 350);
+  }
+  screen.addEventListener("click", advance);
+  setTimeout(advance, 2500);
+} 
   const intro = document.getElementById("intro-screen");
   if (!intro) { initChoiceScreen(); return; }
   intro.classList.remove("hidden");
