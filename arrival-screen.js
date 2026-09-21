@@ -641,7 +641,7 @@ overlay.style.cssText =
 
 overlay.innerHTML =
 '<style>@keyframes wzOrbFloat1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(18px,-26px) scale(1.08);}}@keyframes wzOrbFloat2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-22px,22px) scale(1.05);}}</style>' +
-'<div class="flags-row" style="position:absolute; top:16px; right:16px; z-index:2;">' +
+'<div class="flags-row" style="position:absolute; top:16px; right:16px; z-index:2; max-width:150px; flex-wrap:wrap; justify-content:flex-end;">' +
 '<button class="flag-btn" id="flag-fr-arrival" data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" alt="Français"></button>' +
 '<button class="flag-btn" id="flag-en-arrival" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="English"></button>' +
 '<button class="flag-btn" id="flag-es-arrival" data-lang="es"><img src="https://flagcdn.com/w40/es.png" alt="Español"></button>' +
