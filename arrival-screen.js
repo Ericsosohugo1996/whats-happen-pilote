@@ -377,7 +377,7 @@ const MOOD_CHIPS = [
 ];
 
 function __exploreUpdateMoodVisibility() {
-const eligible = ["Bar", "Soirée", "Festival"].indexOf(__exploreCurrentCategory) !== -1;
+const eligible = __exploreCurrentCategory === "Bar";
 moodRow.style.display = eligible ? "block" : "none";
 if (!eligible) {
 __exploreMoodQuery = "";
