@@ -3639,7 +3639,8 @@ document.addEventListener("DOMContentLoaded", () => {
   auth.onAuthStateChanged(user => {
   renderAccountState(user);
   if (user) loadFromCloud(user);
-});
+  else auth.signInAnonymously().catch(function(e){ console.error("Connexion anonyme impossible:", e); });
+});  
  
   const accountModal = document.getElementById("account-modal");
   document.getElementById("btn-account").onclick = () => accountModal.classList.remove("hidden");
