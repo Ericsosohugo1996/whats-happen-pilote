@@ -228,6 +228,8 @@ if (j < text2.length) {
 target2.textContent += text2[j];
 j++;
 setTimeout(typeStep2, 12);
+} else {
+target2.innerHTML = whazupEnrichiToHtml(text2);
 }
 }
 typeStep2();
