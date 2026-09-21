@@ -25,82 +25,84 @@ function __arrivalWeatherText() {
 
 // ---- Bonhomme 1 : explorer par catégorie, triable distance/note ----
 
-const EXPLORE_CATEGORIES = [
-  { key: "", label: "Tout" },
-  { key: "Musique", label: "🎵 Musique" },
-  { key: "Marché", label: "🛍️ Marché" },
-  { key: "Festival", label: "🎉 Festival" },
-  { key: "Soirée", label: "🎊 Soirée" },
-  { key: "Sport", label: "⚽ Sport" },
-  { key: "Expo", label: "🖼️ Expo" },
-  { key: "À voir", label: "🏛️ Musées" },
-  { key: "Bar", label: "🍸 Bars" },
-  { key: "Brocante", label: "📦 Brocante" },
-];
-
 let __exploreSortMode = "distance";
 let __exploreShowAll = false;
 let __exploreCurrentCategory = "";
+let __exploreTimeMode = "now";
 
 function __exploreGetCandidates(category) {
-  const ref = referencePoint();
-  const cityKey = state.userPos ? nearestCityKey() : state.city;
-  const today = new Date();
-  const todayIso = today.toISOString().slice(0, 10);
-  return allEvents()
-    .filter(function (ev) {
-      if (ev.city !== cityKey || !ev.lat || !ev.lng) return false;
-      if (category && ev.category !== category) return false;
-      if (ev.isPlace) return true;
-      if (!ev.date) return false;
-      return ev.date >= todayIso;
-    })
-    .map(function (ev) {
-      return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng), datePriority: ev.isPlace ? 1 : (ev.date === todayIso ? 0 : 1) };
-    });
+const ref = referencePoint();
+const cityKey = state.userPos ? nearestCityKey() : state.city;
+const now = new Date();
+const todayIso = now.toISOString().slice(0, 10);
+const tomorrowIso = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+const timeMode = (typeof __exploreTimeMode !== "undefined") ? __exploreTimeMode : "now";
+return allEvents()
+.filter(function (ev) {
+if (ev.city !== cityKey || !ev.lat || !ev.lng) return false;
+if (category && ev.category !== category) return false;
+if (ev.isPlace) return true;
+if (!ev.date) return false;
+if (ev.date < todayIso) return false;
+if (timeMode === "now") {
+if (ev.date !== todayIso) return false;
+} else if (timeMode === "tonight") {
+if (ev.date !== todayIso) return false;
+if (ev.time) {
+const h = parseInt(ev.time.split(":")[0], 10);
+if (!(h >= 18 || h < 4)) return false;
+}
+} else if (timeMode === "tomorrow") {
+if (ev.date !== tomorrowIso) return false;
+}
+return true;
+})
+.map(function (ev) {
+return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng), datePriority: ev.isPlace ? 1 : (ev.date === todayIso ? 0 : 1) };
+});
 }
 function __exploreShowMap() {
-  const ref = referencePoint();
-  const cityKey = state.userPos ? nearestCityKey() : state.city;
-  const allNearby = allEvents().filter(function (ev) {
-    return ev.city === cityKey && ev.lat && ev.lng;
-  });
+const ref = referencePoint();
+const cityKey = state.userPos ? nearestCityKey() : state.city;
+const allNearby = allEvents().filter(function (ev) {
+return ev.city === cityKey && ev.lat && ev.lng;
+});
 
-  const resultEl = document.getElementById("explore-result");
-  const moreBtn = document.getElementById("explore-more-btn");
-  moreBtn.style.display = "none";
-  resultEl.style.padding = "0";
-  resultEl.innerHTML = '<div id="explore-leaflet-map" style="width:100%; height:340px; border-radius:16px; overflow:hidden;"></div>';
+const resultEl = document.getElementById("explore-result");
+const moreBtn = document.getElementById("explore-more-btn");
+moreBtn.style.display = "none";
+resultEl.style.padding = "0";
+resultEl.innerHTML = '<div id="explore-leaflet-map" style="width:100%; height:340px; border-radius:16px; overflow:hidden;"></div>';
 
-  setTimeout(function () {
-    const map = L.map("explore-leaflet-map").setView([ref.lat, ref.lng], 15);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "© OpenStreetMap",
-      maxZoom: 19,
-    }).addTo(map);
+setTimeout(function () {
+const map = L.map("explore-leaflet-map").setView([ref.lat, ref.lng], 15);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+attribution: "© OpenStreetMap",
+maxZoom: 19,
+}).addTo(map);
 
-    L.circle([ref.lat, ref.lng], { radius: 1000, color: "#c1440e", fillOpacity: 0.08, weight: 1.5, dashArray: "4 4" }).addTo(map);
-    L.circleMarker([ref.lat, ref.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#14213D", fillOpacity: 1 }).addTo(map);
+L.circle([ref.lat, ref.lng], { radius: 1000, color: "#c1440e", fillOpacity: 0.08, weight: 1.5, dashArray: "4 4" }).addTo(map);
+L.circleMarker([ref.lat, ref.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#14213D", fillOpacity: 1 }).addTo(map);
 
-    const catEmoji = { Bar: "🍸", "À voir": "🏛️", Musique: "🎵", Marché: "🛍️", Festival: "🎉", Brocante: "📦" };
-    allNearby.forEach(function (ev) {
-      const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
-      if (dist > 1.2) return;
-      const emoji = catEmoji[ev.category] || "📍";
-      const icon = L.divIcon({
-        html: '<div style="background:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:14px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">' + emoji + "</div>",
-        className: "",
-        iconSize: [28, 28],
-      });
-      L.marker([ev.lat, ev.lng], { icon: icon })
-        .addTo(map)
-        .on("click", function () {
-          const exploreOv = document.getElementById("explore-overlay");
-          if (exploreOv) exploreOv.remove();
-          openDetail(ev.id);
-        });
-    });
-  }, 50);
+allNearby.forEach(function (ev) {
+const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
+if (dist > 1.2) return;
+const emoji = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[ev.category]) || "📍";
+const pinColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[ev.category]) || "#6C757D";
+const icon = L.divIcon({
+html: '<div style="background:' + pinColor + '; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:14px; border:2.5px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,0.35);">' + emoji + "</div>",
+className: "",
+iconSize: [30, 30],
+});
+L.marker([ev.lat, ev.lng], { icon: icon })
+.addTo(map)
+.on("click", function () {
+const exploreOv = document.getElementById("explore-overlay");
+if (exploreOv) exploreOv.remove();
+openDetail(ev.id);
+});
+});
+}, 50);
 }
 function __exploreRender() {
 let list = __exploreGetCandidates(__exploreCurrentCategory);
@@ -180,152 +182,179 @@ moreBtn.style.display = "none";
 
 
 function __exploreOpen() {
-  __exploreMapMode = false;  
-  __exploreShowAll = false;
-  __exploreSortMode = "distance";
- __exploreCurrentCategory = "";
-  const cityKey = state.userPos ? nearestCityKey() : state.city;
-  const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
-  const cityPhoto = CITY_PHOTOS[cityKey] || "";
-  const overlay = document.createElement("div");
-  overlay.id = "explore-overlay";
-   overlay.style.cssText =
-      "position:fixed; inset:0; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
+__exploreMapMode = false;
+__exploreShowAll = false;
+__exploreSortMode = "distance";
+__exploreCurrentCategory = "";
+__exploreTimeMode = "now";
+const cityKey = state.userPos ? nearestCityKey() : state.city;
+const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+const cityPhoto = CITY_PHOTOS[cityKey] || "";
+const overlay = document.createElement("div");
+overlay.id = "explore-overlay";
+overlay.style.cssText =
+"position:fixed; inset:0; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
 
-   overlay.innerHTML =
-    '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
-    (cityPhoto
-      ? '<div style="position:relative; height:180px; border-radius:20px; overflow:hidden; margin-bottom:16px; background-image:url(\'' +
-        cityPhoto +
-        '\'); background-size:cover; background-position:center;">' +
-        '<div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,33,61,0) 40%, rgba(20,33,61,0.85) 100%);"></div>' +
-        '<div style="position:absolute; bottom:12px; left:14px; color:#fff;">' +
-        '<div style="font-size:10px; font-weight:700; letter-spacing:0.5px; opacity:0.85;">📍 POSITION DÉTECTÉE</div>' +
-        '<div style="font-size:18px; font-weight:700;">' +
-        cityName +
-        "</div>" +
-        "</div>" +
-        "</div>"
-      : "") +
-    '<button id="explore-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
-    '<div id="explore-cats" style="display:flex; gap:6px; overflow-x:auto; margin-bottom:12px; padding-bottom:2px;"></div>' +
-    '<div style="display:flex; gap:8px; margin-bottom:14px;">' +
-    '<div id="explore-sorts" style="display:flex; gap:6px; flex:1;"></div>' +
-    '<button id="explore-map-toggle" style="padding:9px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer; white-space:nowrap;">🗺️ Carte</button>' +
-    "</div>" +
-    '<div id="explore-result" style="background:#fff; border-radius:16px; padding:0 14px;"></div>' +
-    '<button id="explore-more-btn" style="display:none; margin-top:10px; width:100%; padding:10px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;"></button>' +
-    '<button id="explore-close" style="width:100%; margin-top:16px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">Fermer</button>' +
-    "</div>";
+overlay.innerHTML =
+'<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
+(cityPhoto
+? '<div style="position:relative; height:180px; border-radius:20px; overflow:hidden; margin-bottom:16px; background-image:url(\'' +
+cityPhoto +
+'\'); background-size:cover; background-position:center;">' +
+'<div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,33,61,0) 40%, rgba(20,33,61,0.85) 100%);"></div>' +
+'<div style="position:absolute; bottom:12px; left:14px; color:#fff;">' +
+'<div style="font-size:10px; font-weight:700; letter-spacing:0.5px; opacity:0.85;">📍 POSITION DÉTECTÉE</div>' +
+'<div style="font-size:18px; font-weight:700;">' +
+cityName +
+"</div>" +
+"</div>" +
+"</div>"
+: "") +
+'<button id="explore-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
+'<div id="explore-time-tabs" style="display:flex; gap:6px; margin-bottom:12px;">' +
+'<button class="explore-time-btn" data-time="now" style="flex:1; padding:9px 4px; border-radius:10px; border:none; background:#fff; color:#14213D; font-size:12px; font-weight:700; cursor:pointer;">Maintenant</button>' +
+'<button class="explore-time-btn" data-time="tonight" style="flex:1; padding:9px 4px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer;">Ce soir</button>' +
+'<button class="explore-time-btn" data-time="tomorrow" style="flex:1; padding:9px 4px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer;">Demain</button>' +
+'</div>' +
+'<div id="explore-cats" style="display:flex; gap:6px; overflow-x:auto; margin-bottom:12px; padding-bottom:2px;"></div>' +
+'<div style="display:flex; gap:8px; margin-bottom:14px;">' +
+'<div id="explore-sorts" style="display:flex; gap:6px; flex:1;"></div>' +
+'<button id="explore-map-toggle" style="padding:9px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer; white-space:nowrap;">🗺️ Carte</button>' +
+"</div>" +
+'<div id="explore-result" style="background:#fff; border-radius:16px; padding:0 14px;"></div>' +
+'<button id="explore-more-btn" style="display:none; margin-top:10px; width:100%; padding:10px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;"></button>' +
+'<button id="explore-close" style="width:100%; margin-top:16px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">Fermer</button>' +
+"</div>";
 
-  document.body.appendChild(overlay);
-  overlay.addEventListener("click", function (e) {
-      if (e.target === overlay) overlay.remove();
-    if (e.target.id === "explore-close" && !__exploreOnMap) overlay.remove();
-  });
-  document.getElementById("explore-back").addEventListener("click", function () {
-    overlay.remove();
-    __arrivalShow();
-  });
+document.body.appendChild(overlay);
+overlay.addEventListener("click", function (e) {
+if (e.target === overlay) overlay.remove();
+if (e.target.id === "explore-close" && !__exploreOnMap) overlay.remove();
+});
+document.getElementById("explore-back").addEventListener("click", function () {
+overlay.remove();
+__arrivalShow();
+});
 
-    const catsWrap = document.getElementById("explore-cats");
-  EXPLORE_CATEGORIES.forEach(function (c, i) {
-    const btn = document.createElement("button");
-    const activeColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[c.key]) || "#fff";
-    btn.textContent = c.label;
-    btn.style.cssText =
-      "flex:0 0 auto; padding:8px 12px; border-radius:999px; border:1px solid " +
-      (i === 0 ? "#fff" : "rgba(255,255,255,0.3)") +
-      "; background:" +
-      (i === 0 ? "#fff" : "transparent") +
-      "; color:" +
-      (i === 0 ? "#14213D" : "#fff") +
-      "; font-size:11.5px; font-weight:600; white-space:nowrap; cursor:pointer;";
-    btn.addEventListener("click", function () {
-      __exploreCurrentCategory = c.key;
-      __exploreShowAll = false;
-      Array.from(catsWrap.children).forEach(function (b) {
-        b.style.background = "transparent";
-        b.style.color = "#fff";
-        b.style.border = "1px solid rgba(255,255,255,0.3)";
-      });
-      btn.style.background = c.key ? activeColor : "#fff";
-      btn.style.color = c.key ? "#fff" : "#14213D";
-      btn.style.border = "1px solid " + (c.key ? activeColor : "#fff");
-      __exploreRender();
-    });
-    catsWrap.appendChild(btn);
-  });
-  const sortsWrap = document.getElementById("explore-sorts");
-  const sortOptions = [
-    { key: "distance", label: "📍 Plus proche" },
-    { key: "rating", label: "⭐ Mieux notés" },
-  ];
-  sortOptions.forEach(function (s, i) {
-    const btn = document.createElement("button");
-    btn.textContent = s.label;
-    btn.style.cssText =
-      "flex:1; padding:9px 4px; border-radius:10px; border:" +
-      (i === 0 ? "none" : "1px solid rgba(255,255,255,0.3)") +
-      "; background:" +
-      (i === 0 ? "#fff" : "transparent") +
-      "; color:" +
-      (i === 0 ? "#14213D" : "#fff") +
-      "; font-size:12px; font-weight:600; cursor:pointer;";
-    btn.addEventListener("click", function () {
-      __exploreSortMode = s.key;
-      __exploreShowAll = false;
-      Array.from(sortsWrap.children).forEach(function (b) {
-        b.style.background = "transparent";
-        b.style.color = "#fff";
-        b.style.border = "1px solid rgba(255,255,255,0.3)";
-      });
-      btn.style.background = "#fff";
-      btn.style.color = "#14213D";
-      btn.style.border = "none";
-      __exploreRender();
-    });
-    sortsWrap.appendChild(btn);
-  });
-  let __exploreOnMap = false;
-  document.getElementById("explore-map-toggle").addEventListener("click", function () {
-    __exploreOnMap = !__exploreOnMap;
-    const toggleBtn = document.getElementById("explore-map-toggle");
-       if (__exploreOnMap) {
-      toggleBtn.textContent = "☰ Liste";
-      toggleBtn.style.background = "#fff";
-      toggleBtn.style.color = "#14213D";
-      document.getElementById("explore-cats").style.display = "none";
-      document.getElementById("explore-sorts").style.display = "none";
-      document.getElementById("explore-result").style.background = "transparent";
-      const closeBtn = document.getElementById("explore-close");
-      closeBtn.textContent = "☰ Retour à la liste";
-            closeBtn.onclick = function (e) {
-        e.stopPropagation();
-        toggleBtn.click();
-      };
-      __exploreShowMap();
-    } else {
-      toggleBtn.textContent = "🗺️ Carte";
-      toggleBtn.style.background = "transparent";
-      toggleBtn.style.color = "#fff";
-      document.getElementById("explore-cats").style.display = "flex";
-      document.getElementById("explore-sorts").style.display = "flex";
-      document.getElementById("explore-result").style.background = "#fff";
-          document.getElementById("explore-result").style.padding = "0 14px";
-      const closeBtn2 = document.getElementById("explore-close");
-      closeBtn2.textContent = "Fermer";
-          closeBtn2.onclick = null;
-      setTimeout(__exploreRender, 100); 
-    }
-  });
-  document.getElementById("explore-more-btn").addEventListener("click", function () {
-    __exploreShowAll = true;
-    __exploreRender();
-  });
+overlay.querySelectorAll(".explore-time-btn").forEach(function (btn) {
+btn.addEventListener("click", function () {
+__exploreTimeMode = btn.dataset.time;
+__exploreShowAll = false;
+overlay.querySelectorAll(".explore-time-btn").forEach(function (b) {
+b.style.background = "transparent";
+b.style.color = "#fff";
+b.style.border = "1px solid rgba(255,255,255,0.3)";
+b.style.fontWeight = "600";
+});
+btn.style.background = "#fff";
+btn.style.color = "#14213D";
+btn.style.border = "none";
+btn.style.fontWeight = "700";
+__exploreRender();
+});
+});
 
-  __exploreRender();
+const catsWrap = document.getElementById("explore-cats");
+EXPLORE_CATEGORIES.forEach(function (c, i) {
+const btn = document.createElement("button");
+const activeColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[c.key]) || "#fff";
+btn.textContent = c.label;
+btn.style.cssText =
+"flex:0 0 auto; padding:8px 12px; border-radius:999px; border:1px solid " +
+(i === 0 ? "#fff" : "rgba(255,255,255,0.3)") +
+"; background:" +
+(i === 0 ? "#fff" : "transparent") +
+"; color:" +
+(i === 0 ? "#14213D" : "#fff") +
+"; font-size:11.5px; font-weight:600; white-space:nowrap; cursor:pointer;";
+btn.addEventListener("click", function () {
+__exploreCurrentCategory = c.key;
+__exploreShowAll = false;
+Array.from(catsWrap.children).forEach(function (b) {
+b.style.background = "transparent";
+b.style.color = "#fff";
+b.style.border = "1px solid rgba(255,255,255,0.3)";
+});
+btn.style.background = c.key ? activeColor : "#fff";
+btn.style.color = c.key ? "#fff" : "#14213D";
+btn.style.border = "1px solid " + (c.key ? activeColor : "#fff");
+__exploreRender();
+});
+catsWrap.appendChild(btn);
+});
+const sortsWrap = document.getElementById("explore-sorts");
+const sortOptions = [
+{ key: "distance", label: "📍 Plus proche" },
+{ key: "rating", label: "⭐ Mieux notés" },
+];
+sortOptions.forEach(function (s, i) {
+const btn = document.createElement("button");
+btn.textContent = s.label;
+btn.style.cssText =
+"flex:1; padding:9px 4px; border-radius:10px; border:" +
+(i === 0 ? "none" : "1px solid rgba(255,255,255,0.3)") +
+"; background:" +
+(i === 0 ? "#fff" : "transparent") +
+"; color:" +
+(i === 0 ? "#14213D" : "#fff") +
+"; font-size:12px; font-weight:600; cursor:pointer;";
+btn.addEventListener("click", function () {
+__exploreSortMode = s.key;
+__exploreShowAll = false;
+Array.from(sortsWrap.children).forEach(function (b) {
+b.style.background = "transparent";
+b.style.color = "#fff";
+b.style.border = "1px solid rgba(255,255,255,0.3)";
+});
+btn.style.background = "#fff";
+btn.style.color = "#14213D";
+btn.style.border = "none";
+__exploreRender();
+});
+sortsWrap.appendChild(btn);
+});
+let __exploreOnMap = false;
+document.getElementById("explore-map-toggle").addEventListener("click", function () {
+__exploreOnMap = !__exploreOnMap;
+const toggleBtn = document.getElementById("explore-map-toggle");
+if (__exploreOnMap) {
+toggleBtn.textContent = "☰ Liste";
+toggleBtn.style.background = "#fff";
+toggleBtn.style.color = "#14213D";
+document.getElementById("explore-cats").style.display = "none";
+document.getElementById("explore-sorts").style.display = "none";
+document.getElementById("explore-time-tabs").style.display = "none";
+document.getElementById("explore-result").style.background = "transparent";
+const closeBtn = document.getElementById("explore-close");
+closeBtn.textContent = "☰ Retour à la liste";
+closeBtn.onclick = function (e) {
+e.stopPropagation();
+toggleBtn.click();
+};
+__exploreShowMap();
+} else {
+toggleBtn.textContent = "🗺️ Carte";
+toggleBtn.style.background = "transparent";
+toggleBtn.style.color = "#fff";
+document.getElementById("explore-cats").style.display = "flex";
+document.getElementById("explore-sorts").style.display = "flex";
+document.getElementById("explore-time-tabs").style.display = "flex";
+document.getElementById("explore-result").style.background = "#fff";
+document.getElementById("explore-result").style.padding = "0 14px";
+const closeBtn2 = document.getElementById("explore-close");
+closeBtn2.textContent = "Fermer";
+closeBtn2.onclick = null;
+setTimeout(__exploreRender, 100);
 }
+});
+document.getElementById("explore-more-btn").addEventListener("click", function () {
+__exploreShowAll = true;
+__exploreRender();
+});
+
+__exploreRender();
+}
+
 
 // ---- Bonhomme 2 : ambiance puis idées multiples (réutilise le Mode Escale) ----
 
