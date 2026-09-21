@@ -79,55 +79,7 @@ function __exploreShowMap() {
 const ref = referencePoint();
 const cityKey = state.userPos ? nearestCityKey() : state.city;
 let allNearby = allEvents().filter(function (ev) {
-return ev.city === cityKey && ev.lat && ev.lng;function __exploreShowMap() {
-const ref = referencePoint();
-const cityKey = state.userPos ? nearestCityKey() : state.city;
-const allNearby = allEvents().filter(function (ev) {
 return ev.city === cityKey && ev.lat && ev.lng;
-});
-
-const resultEl = document.getElementById("explore-result");
-const moreBtn = document.getElementById("explore-more-btn");
-moreBtn.style.display = "none";
-resultEl.style.padding = "0";
-resultEl.innerHTML = '<div id="explore-leaflet-map" style="width:100%; height:340px; border-radius:16px; overflow:hidden;"></div>';
-
-setTimeout(function () {
-const map = L.map("explore-leaflet-map").setView([ref.lat, ref.lng], 15);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-attribution: "© OpenStreetMap",
-maxZoom: 19,
-}).addTo(map);
-
-L.circle([ref.lat, ref.lng], { radius: 1000, color: "#c1440e", fillOpacity: 0.08, weight: 1.5, dashArray: "4 4" }).addTo(map);
-L.circleMarker([ref.lat, ref.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#14213D", fillOpacity: 1 }).addTo(map);
-
-allNearby.forEach(function (ev) {
-const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
-if (dist > 1.2) return;
-const emoji = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[ev.category]) || "📍";
-const pinColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[ev.category]) || "#6C757D";
-const icon = L.divIcon({
-html:
-'<div style="position:relative; width:32px; height:40px;">' +
-'<div style="width:30px; height:30px; border-radius:50% 50% 50% 0; background:' + pinColor + '; transform:rotate(-45deg); border:2.5px solid #fff; box-shadow:0 3px 6px rgba(0,0,0,0.4); position:absolute; top:0; left:1px;"></div>' +
-'<div style="position:absolute; top:0; left:1px; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:14px;">' + emoji + '</div>' +
-"</div>",
-className: "",
-iconSize: [32, 40],
-iconAnchor: [16, 40],
-});
-L.marker([ev.lat, ev.lng], { icon: icon })
-.addTo(map)
-.on("click", function () {
-const exploreOv = document.getElementById("explore-overlay");
-if (exploreOv) exploreOv.remove();
-openDetail(ev.id);
-});
-});
-}, 50);
-}
-
 });
 if (__exploreCurrentCategory) {
 allNearby = allNearby.filter(function (ev) { return ev.category === __exploreCurrentCategory; });
