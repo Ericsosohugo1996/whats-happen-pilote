@@ -185,7 +185,7 @@ openDetail(ev.id);
 }
 function __exploreRender() {
   let list = __exploreGetCandidates(__exploreCurrentCategory);
-  const moodEligible = ["Bar", "Soirée", "Festival"].indexOf(__exploreCurrentCategory) !== -1;
+  const moodEligible = __exploreCurrentCategory === "Bar";
   const moodQuery = (typeof __exploreMoodQuery !== "undefined") ? __exploreMoodQuery.trim() : "";
   if (moodEligible && moodQuery) {
     list.forEach(function (item) {
