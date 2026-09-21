@@ -25,7 +25,7 @@
     return closest;
   }
 
-  async function saveSouvenir({ file, text, placeName, placeId, lat, lng }) {
+  async function saveSouvenir({ file, text, placeName, placeId, lat, lng, category }) {
     const user = auth.currentUser;
     if (!user) {
       alert("Connecte-toi pour enregistrer un souvenir.");
@@ -48,6 +48,7 @@
       lng: lng || null,
       city: (lat && lng) ? nearestCityForCoords(lat, lng) : null,
       photoUrl: photoUrl,
+      category: category || "",
       createdAt: Date.now(),
     };
     await col.doc(id).set(data);
@@ -74,46 +75,84 @@
     }
   }
 
+  const SOUVENIR_CATEGORIES = [
+    { key: "Visite / Monument", label: "🏛️ Visite / Monument" },
+    { key: "Restaurant / Bar", label: "🍸 Restaurant / Bar" },
+    { key: "Plage", label: "🏖️ Plage" },
+    { key: "Soirée", label: "🎉 Soirée" },
+    { key: "Culture", label: "🎭 Culture" },
+    { key: "Autre", label: "📍 Autre" },
+  ];
+
   function openAddSouvenirModal(prefill) {
     prefill = prefill || {};
     const existing = document.getElementById("souvenir-modal");
     if (existing) existing.remove();
 
+    const cityKey = prefill.lat && prefill.lng ? nearestCityForCoords(prefill.lat, prefill.lng) : (window.state && state.userPos ? nearestCityKey() : (window.state ? state.city : null));
+    const cityName = (cityKey && typeof CITIES !== "undefined" && CITIES[cityKey]) ? CITIES[cityKey].name : "";
+    const nowStr = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+
     const overlay = document.createElement("div");
     overlay.id = "souvenir-modal";
     overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:flex-end;justify-content:center;";
     overlay.innerHTML =
-      '<div style="background:#fff;border-radius:24px 24px 0 0;padding:20px;width:100%;max-width:420px;max-height:85vh;overflow-y:auto;">' +
-      '<div style="font-size:16px;font-weight:800;color:#14213D;margin-bottom:12px;">📸 Ajouter un souvenir' + (prefill.placeName ? " — " + prefill.placeName : "") + '</div>' +
+      '<div style="background:#fff;border-radius:24px 24px 0 0;padding:20px;width:100%;max-width:420px;max-height:88vh;overflow-y:auto;">' +
+      '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">' +
+      '<div style="font-size:16px;font-weight:800;color:#14213D;">Ajouter un souvenir</div>' +
+      '<button id="souvenir-modal-close" style="width:28px;height:28px;border-radius:50%;border:none;background:#f0f0f0;color:#666;font-size:14px;cursor:pointer;">✕</button>' +
+      '</div>' +
       '<input type="file" id="souvenir-photo-input" accept="image/*" capture="environment" style="display:none;" />' +
-      '<button type="button" id="souvenir-photo-trigger" style="width:100%;padding:14px;border-radius:14px;border:2px dashed #ddd;background:#fafafa;color:#888;font-size:13px;margin-bottom:12px;cursor:pointer;">📷 Ajouter une photo (optionnel)</button>' +
-      '<div id="souvenir-photo-preview" style="margin-bottom:12px;"></div>' +
-      '<textarea id="souvenir-text-input" placeholder="Écris ta pensée du moment..." style="width:100%;min-height:90px;border:1px solid #ddd;border-radius:12px;padding:10px;font-family:inherit;font-size:14px;margin-bottom:14px;"></textarea>' +
+      '<div id="souvenir-photo-preview" style="position:relative;width:100%;height:200px;border-radius:16px;overflow:hidden;background:#fafafa;border:2px dashed #ddd;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:14px;">' +
+      '<div id="souvenir-photo-placeholder" style="text-align:center;color:#999;">' +
+      '<div style="font-size:28px;margin-bottom:4px;">📷</div>' +
+      '<div style="font-size:12px;">Ajouter une photo</div>' +
+      '</div>' +
+      '</div>' +
+      '<div style="display:flex;flex-direction:column;gap:6px;padding:10px 12px;background:#f7f7f9;border-radius:12px;margin-bottom:14px;">' +
+      '<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#333;">📍 ' + (prefill.placeName || "Souvenir libre") + '</div>' +
+      (cityName ? '<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#888;">📍 ' + cityName + '</div>' : '') +
+      '<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#888;">📅 ' + nowStr + '</div>' +
+      '</div>' +
+      '<textarea id="souvenir-text-input" placeholder="Écris ta pensée du moment..." style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:12px;padding:10px;font-family:inherit;font-size:14px;margin-bottom:12px;box-sizing:border-box;"></textarea>' +
+      '<div style="font-size:11px;color:#888;font-weight:700;margin-bottom:6px;">CATÉGORIE</div>' +
+      '<select id="souvenir-category-input" style="width:100%;padding:11px;border-radius:12px;border:1px solid #ddd;font-size:13px;color:#333;margin-bottom:16px;background:#fff;">' +
+      SOUVENIR_CATEGORIES.map(function (c) { return '<option value="' + c.key + '">' + c.label + '</option>'; }).join("") +
+      '</select>' +
       '<div style="display:flex;gap:10px;">' +
       '<button id="souvenir-cancel-btn" style="flex:1;padding:12px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Annuler</button>' +
-      '<button id="souvenir-save-btn" style="flex:1;padding:12px;border-radius:999px;border:none;background:#14213D;color:#fff;font-size:13px;font-weight:600;">Enregistrer</button>' +
+      '<button id="souvenir-save-btn" style="flex:2;padding:12px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:13px;font-weight:700;">Enregistrer</button>' +
       '</div></div>';
     document.body.appendChild(overlay);
 
     const photoInput = document.getElementById("souvenir-photo-input");
-    const photoTrigger = document.getElementById("souvenir-photo-trigger");
-    const preview = document.getElementById("souvenir-photo-preview");
+    const photoPreview = document.getElementById("souvenir-photo-preview");
     let selectedFile = null;
-    photoTrigger.addEventListener("click", function () {
+    photoPreview.addEventListener("click", function () {
       photoInput.click();
     });
     photoInput.addEventListener("change", function () {
       selectedFile = photoInput.files[0] || null;
       if (selectedFile) {
         const url = URL.createObjectURL(selectedFile);
-        preview.innerHTML = '<img src="' + url + '" style="width:100%;border-radius:12px;max-height:220px;object-fit:cover;" />';
-        photoTrigger.textContent = "📷 Changer la photo";
-        photoTrigger.style.borderStyle = "solid";
-        photoTrigger.style.borderColor = "#14213D";
-        photoTrigger.style.color = "#14213D";
+        photoPreview.style.border = "none";
+        photoPreview.innerHTML =
+          '<img src="' + url + '" style="width:100%;height:100%;object-fit:cover;" />' +
+          '<button id="souvenir-photo-remove" type="button" style="position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;border:none;background:rgba(0,0,0,0.55);color:#fff;font-size:13px;cursor:pointer;">✕</button>';
+        document.getElementById("souvenir-photo-remove").addEventListener("click", function (e) {
+          e.stopPropagation();
+          selectedFile = null;
+          photoInput.value = "";
+          photoPreview.style.border = "2px dashed #ddd";
+          photoPreview.innerHTML =
+            '<div id="souvenir-photo-placeholder" style="text-align:center;color:#999;"><div style="font-size:28px;margin-bottom:4px;">📷</div><div style="font-size:12px;">Ajouter une photo</div></div>';
+        });
       }
     });
 
+    document.getElementById("souvenir-modal-close").addEventListener("click", function () {
+      overlay.remove();
+    });
     document.getElementById("souvenir-cancel-btn").addEventListener("click", function () {
       overlay.remove();
     });
@@ -123,6 +162,7 @@
       btn.textContent = "Enregistrement...";
       btn.disabled = true;
       const text = document.getElementById("souvenir-text-input").value;
+      const category = document.getElementById("souvenir-category-input").value;
       try {
         await saveSouvenir({
           file: selectedFile,
@@ -131,6 +171,7 @@
           placeId: prefill.placeId,
           lat: prefill.lat,
           lng: prefill.lng,
+          category: category,
         });
         overlay.remove();
         if (window.__renderSouvenirsScreen) window.__renderSouvenirsScreen();
@@ -192,34 +233,71 @@
     const existing = document.getElementById("souvenir-detail-modal");
     if (existing) existing.remove();
     const dateStr = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+    const shareLink = "https://whazup.fr/index.html?souvenir=" + (auth.currentUser ? auth.currentUser.uid : "") + "_" + s.id;
+    const shareText = (s.placeName || "Un souvenir") + " sur Whazup";
     const overlay = document.createElement("div");
     overlay.id = "souvenir-detail-modal";
-    overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;";
-    overlay.innerHTML = '<div style="background:#fff;border-radius:20px;padding:20px;max-width:380px;width:100%;max-height:80vh;overflow-y:auto;">' +
-      (s.photoUrl ? '<img src="' + s.photoUrl + '" style="width:100%;border-radius:14px;margin-bottom:12px;max-height:260px;object-fit:cover;" />' : '<div style="width:100%;height:140px;border-radius:14px;margin-bottom:12px;background:' + gradientFor(s.id) + ';"></div>') +
-      '<div style="font-size:11px;color:#aaa;margin-bottom:6px;">' + dateStr + (s.placeName ? " · " + s.placeName : "") + '</div>' +
-      (s.text ? '<div style="font-size:14px;color:#333;font-style:italic;line-height:1.5;">"' + s.text + '"</div>' : '') +
-      '<div style="display:flex;gap:10px;margin-top:16px;">' +
-           '<button id="souvenir-detail-share" style="flex:1;padding:11px;border-radius:999px;border:1px solid #14213D;background:#fff;color:#14213D;font-size:13px;">🔗 Partager</button>' +
-      '<button id="souvenir-detail-delete" style="flex:1;padding:11px;border-radius:999px;border:1px solid #e07a5f;background:#fff;color:#c0392b;font-size:13px;">🗑️</button>' +
-      '<button id="souvenir-detail-close" style="flex:1;padding:11px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Fermer</button>' +
-      '</div></div>';
+    overlay.style.cssText = "position:fixed;inset:0;background:rgba(10,14,26,0.85);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;";
+    overlay.innerHTML =
+      '<div style="width:100%;max-width:380px;max-height:88vh;overflow-y:auto;">' +
+      '<div style="display:flex;justify-content:flex-end;margin-bottom:8px;">' +
+      '<button id="souvenir-detail-close" style="width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,0.15);color:#fff;font-size:14px;cursor:pointer;">✕</button>' +
+      '</div>' +
+      '<div style="background:#fff;border-radius:16px;padding:14px 14px 18px;box-shadow:0 20px 40px -12px rgba(0,0,0,0.5);">' +
+      (s.photoUrl ? '<img src="' + s.photoUrl + '" style="width:100%;border-radius:10px;max-height:280px;object-fit:cover;display:block;" />' : '<div style="width:100%;height:180px;border-radius:10px;background:' + gradientFor(s.id) + ';"></div>') +
+      (s.text ? '<div style="font-family:\'Fraunces\', Georgia, serif; font-style:italic; font-size:14.5px; color:#333; margin-top:14px; line-height:1.5;">' + s.text + (/[❤️😊🎉✨👍🙂😍]/.test(s.text) ? "" : " ❤️") + '</div>' : '') +
+      '<div style="display:flex;align-items:center;gap:6px;margin-top:10px;font-size:11.5px;color:#999;">' + (s.placeName ? '📍 ' + s.placeName + ' · ' : '') + dateStr + '</div>' +
+      '</div>' +
+      '<div style="display:flex;justify-content:space-around;margin-top:20px;">' +
+      '<button class="souvenir-share-opt" data-net="whatsapp" style="background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;"><span style="width:46px;height:46px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:20px;">💬</span><span style="font-size:10px;">WhatsApp</span></button>' +
+      '<button class="souvenir-share-opt" data-net="instagram" style="background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;"><span style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);display:flex;align-items:center;justify-content:center;font-size:20px;">📷</span><span style="font-size:10px;">Instagram</span></button>' +
+      '<button class="souvenir-share-opt" data-net="facebook" style="background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;"><span style="width:46px;height:46px;border-radius:50%;background:#1877F2;display:flex;align-items:center;justify-content:center;font-size:20px;">f</span><span style="font-size:10px;">Facebook</span></button>' +
+      '<button class="souvenir-share-opt" data-net="link" style="background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;">🔗</span><span style="font-size:10px;">Lien</span></button>' +
+      '</div>' +
+      '<button id="souvenir-detail-share" style="width:100%;margin-top:18px;padding:13px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">Partager</button>' +
+      '<button id="souvenir-detail-delete" style="width:100%;margin-top:10px;padding:10px;border-radius:999px;border:none;background:none;color:rgba(255,255,255,0.6);font-size:12px;cursor:pointer;">🗑️ Supprimer ce souvenir</button>' +
+      '</div>';
     document.body.appendChild(overlay);
     document.getElementById("souvenir-detail-close").addEventListener("click", function () { overlay.remove(); });
-        document.getElementById("souvenir-detail-share").addEventListener("click", async function () {
-      const link = "https://whazup.fr/index.html?souvenir=" + auth.currentUser.uid + "_" + s.id;
-      if (navigator.share) {
-        try { await navigator.share({ title: "Un souvenir Whazup", text: s.placeName || "Souvenir", url: link }); } catch (e) {}
-      } else {
-        try {
-          await navigator.clipboard.writeText(link);
-          alert("Lien copié ! Colle-le où tu veux le partager.");
-        } catch (e) {
-          prompt("Copie ce lien :", link);
-        }
-      }
-    });
     overlay.addEventListener("click", function (e) { if (e.target === overlay) overlay.remove(); });
+
+    async function doShare() {
+      if (navigator.share) {
+        try { await navigator.share({ title: "Un souvenir Whazup", text: shareText, url: shareLink }); return; } catch (e) {}
+      }
+      try {
+        await navigator.clipboard.writeText(shareLink);
+        if (typeof showShareToast === "function") showShareToast("✓ Lien copié ! Colle-le où tu veux.");
+        else alert("Lien copié ! Colle-le où tu veux le partager.");
+      } catch (e) {
+        prompt("Copie ce lien :", shareLink);
+      }
+    }
+
+    document.getElementById("souvenir-detail-share").addEventListener("click", doShare);
+    overlay.querySelectorAll(".souvenir-share-opt").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        const net = btn.dataset.net;
+        if (net === "whatsapp") {
+          window.open("https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareLink), "_blank");
+        } else if (net === "facebook") {
+          window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareLink), "_blank");
+        } else if (net === "instagram") {
+          try {
+            await navigator.clipboard.writeText(shareLink);
+            if (typeof showShareToast === "function") showShareToast("✓ Lien copié ! Colle-le dans ta story Instagram.");
+            else alert("Lien copié ! Colle-le dans ta story Instagram.");
+          } catch (e) {}
+        } else if (net === "link") {
+          try {
+            await navigator.clipboard.writeText(shareLink);
+            if (typeof showShareToast === "function") showShareToast("✓ Lien copié !");
+            else alert("Lien copié !");
+          } catch (e) {}
+        }
+      });
+    });
+
     document.getElementById("souvenir-detail-delete").addEventListener("click", async function () {
       if (!confirm("Supprimer ce souvenir définitivement ?")) return;
       const btn = document.getElementById("souvenir-detail-delete");
@@ -232,12 +310,12 @@
       } catch (err) {
         console.error("Erreur suppression:", err);
         alert("Erreur lors de la suppression, réessaie.");
-        btn.textContent = "🗑️ Supprimer";
+        btn.textContent = "🗑️ Supprimer ce souvenir";
         btn.disabled = false;
       }
     });
   }
-  
+
   function renderTripMap(cityKey, items) {
     const withCoords = items.filter(function (s) { return s.lat && s.lng; }).sort(function (a, b) { return a.createdAt - b.createdAt; });
     if (!withCoords.length) return;
