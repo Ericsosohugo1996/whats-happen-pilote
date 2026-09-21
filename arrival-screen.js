@@ -590,7 +590,6 @@ function __arrivalShowSearching() {
     document.head.appendChild(styleTag);
   }
 }
-
 const __choiceLocateBase = document.getElementById("choice-locate");
 if (__choiceLocateBase) {
   __choiceLocateBase.addEventListener("click", function () {
@@ -606,6 +605,7 @@ if (__choiceLocateBase) {
       }
     }, 200);
   });
+}
 
 // ---- bouton retour sur "Tout voir" -> revient aux 3 choix ----
 document.addEventListener("click", function (e) {
