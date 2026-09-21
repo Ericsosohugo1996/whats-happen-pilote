@@ -128,32 +128,30 @@ function initBrandChoice(){
         (pos) => { state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude }; },
         () => {}
       );
-      setTimeout(function(){
-        if (window.__arrivalShowSearching) {
-          __arrivalShowSearching();
-          let waited = 0;
-          const iv = setInterval(function(){
-            waited += 200;
-            if (state.userPos || waited >= 8000) {
-              clearInterval(iv);
-              const ov = document.getElementById("arrival-searching-overlay");
-              if (ov) ov.remove();
-              if (window.__arrivalShow) __arrivalShow();
-            }
-          }, 200);
-        } else if (window.__arrivalShow) {
-          __arrivalShow();
-        }
-      }, 350);
+      if (window.__arrivalShowSearching) {
+        __arrivalShowSearching();
+        let waited = 0;
+        const iv = setInterval(function(){
+          waited += 200;
+          if (state.userPos || waited >= 8000) {
+            clearInterval(iv);
+            const ov = document.getElementById("arrival-searching-overlay");
+            if (ov) ov.remove();
+            if (window.__arrivalShow) __arrivalShow();
+          }
+        }, 200);
+      } else if (window.__arrivalShow) {
+        __arrivalShow();
+      }
     };
   }
   if (visitBtn) {
     visitBtn.onclick = function(){
       hideBrandIntroScreen();
       state.userPos = null;
-      setTimeout(function(){ renderDiscover(); }, 350);
+      renderDiscover();
     };
-  }
+  } 
 }
 initBrandChoice();
 
