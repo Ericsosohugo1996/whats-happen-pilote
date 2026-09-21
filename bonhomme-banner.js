@@ -104,4 +104,94 @@ document.addEventListener("click", (e) => {
     __toggleResultsContent(true);
   }
 }, true);
- 
+// ---- recherche par ambiance dans "Tout voir" ----
+let __discoverMoodQuery = "";
+const __DISCOVER_MOOD_CATEGORIES = ["Bar", "Soirée", "Festival"];
+
+function __discoverMoodEligible() {
+  if (!state.selectedCategories || state.selectedCategories.size === 0) return false;
+  let eligible = true;
+  state.selectedCategories.forEach(function (c) {
+    if (__DISCOVER_MOOD_CATEGORIES.indexOf(c) === -1) eligible = false;
+  });
+  return eligible;
+}
+
+function __applyDiscoverMoodFilter() {
+  const moodRow = document.getElementById("discover-mood-row");
+  if (!moodRow) return;
+  const eligible = __discoverMoodEligible();
+  moodRow.style.display = eligible ? "block" : "none";
+  if (!eligible) return;
+  const query = (typeof __discoverMoodQuery !== "undefined") ? __discoverMoodQuery.trim() : "";
+  if (!query || typeof __moodScoreForEvent !== "function") return;
+  const listEl = document.getElementById("event-list");
+  const emptyEl = document.getElementById("empty-state");
+  if (!listEl) return;
+  const all = allEvents();
+  const cards = listEl.querySelectorAll(".event-card");
+  let visibleCount = 0;
+  cards.forEach(function (card) {
+    const ev = all.find(function (e) { return String(e.id) === card.dataset.id; });
+    const score = ev ? __moodScoreForEvent(ev, query) : 0;
+    if (score > 0) {
+      card.style.display = "";
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+  if (emptyEl) {
+    if (visibleCount === 0) {
+      emptyEl.classList.remove("hidden");
+      emptyEl.textContent = "Aucun résultat pour cette ambiance, essayez une autre recherche.";
+    } else {
+      emptyEl.classList.add("hidden");
+    }
+  }
+}
+
+const __renderDiscoverBase = renderDiscover;
+renderDiscover = function () {
+  __renderDiscoverBase();
+  __applyDiscoverMoodFilter();
+};
+
+(function () {
+  const chipsWrap = document.getElementById("discover-mood-chips");
+  const moodInput = document.getElementById("discover-mood-search");
+  if (!chipsWrap || !moodInput) return;
+  const MOOD_CHIPS = [
+    { key: "calme", label: "🤫 Calme" },
+    { key: "festif", label: "🎉 Festif" },
+    { key: "rencontre", label: "💬 Rencontre" },
+  ];
+  let __discoverActiveChip = "";
+  MOOD_CHIPS.forEach(function (m) {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "chip-btn";
+    chip.textContent = m.label;
+    chip.addEventListener("click", function () {
+      if (__discoverActiveChip === m.key) {
+        __discoverActiveChip = "";
+        __discoverMoodQuery = "";
+        chip.classList.remove("active");
+      } else {
+        Array.from(chipsWrap.children).forEach(function (c) { c.classList.remove("active"); });
+        __discoverActiveChip = m.key;
+        __discoverMoodQuery = m.key;
+        chip.classList.add("active");
+      }
+      moodInput.value = "";
+      __applyDiscoverMoodFilter();
+    });
+    chipsWrap.appendChild(chip);
+  });
+  moodInput.addEventListener("input", function () {
+    __discoverMoodQuery = moodInput.value;
+    __discoverActiveChip = "";
+    Array.from(chipsWrap.children).forEach(function (c) { c.classList.remove("active"); });
+    __applyDiscoverMoodFilter();
+  });
+})(); 
