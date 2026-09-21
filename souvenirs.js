@@ -413,8 +413,12 @@
       "</div>";
     document.body.appendChild(screen); 
 
-      document.getElementById("souvenirs-close-btn").addEventListener("click", function () {
+          document.getElementById("souvenirs-close-btn").addEventListener("click", function () {
       screen.remove();
+      if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true;
+      if (typeof __hasPickedFilter !== "undefined") __hasPickedFilter = true;
+      if (typeof renderDiscover === "function") renderDiscover();
+      if (typeof renderLocateBar === "function") renderLocateBar();
     });
 
     screen.querySelectorAll(".wz-navbar-item").forEach(function (item) {
