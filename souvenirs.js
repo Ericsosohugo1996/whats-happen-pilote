@@ -668,6 +668,7 @@
     '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">' +
       '<button id="passport-close-btn" style="border:none;background:rgba(255,255,255,0.1);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button>' +
       '<div style="font-size:16px;font-weight:800;color:#fff;flex:1;">🛂 Mon passeport Whazup</div>' +
+      '<button id="passport-share-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;">🔗 Partager</button>' +
       '</div>' +
       '<div id="passport-progress" style="color:rgba(255,255,255,0.6);font-size:12px;margin:4px 0 18px;"></div>' +
       '<div id="passport-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">Chargement...</div>';
@@ -689,6 +690,26 @@
     const visitedKeys = Object.keys(cityGroups).filter(function (k) { return CITIES[k]; });
     document.getElementById("passport-progress").textContent =
       visitedKeys.length + " ville" + (visitedKeys.length > 1 ? "s" : "") + " découverte" + (visitedKeys.length > 1 ? "s" : "");
+
+    document.getElementById("passport-share-btn").addEventListener("click", function () {
+      const cityNames = visitedKeys.map(function (k) { return CITIES[k] ? CITIES[k].name : null; }).filter(Boolean);
+      const totalSouvenirs = list.length;
+      let text;
+      if (!visitedKeys.length) {
+        text = "Je découvre plein d'événements et de bonnes adresses avec Whazup ! ✨ https://whazup.fr";
+      } else {
+        text = "🛂 Mon passeport Whazup : " + visitedKeys.length + " ville" + (visitedKeys.length > 1 ? "s" : "") +
+          " découverte" + (visitedKeys.length > 1 ? "s" : "") + " (" + cityNames.join(", ") + ") et " +
+          totalSouvenirs + " souvenir" + (totalSouvenirs > 1 ? "s" : "") + " ! ✨ https://whazup.fr";
+      }
+      if (navigator.share) {
+        navigator.share({ title: "Whazup", text: text }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function () {
+          if (typeof showShareToast === "function") showShareToast("✓ Lien copié ! Collez-le dans votre message.");
+        }).catch(function () {});
+      }
+    });
 
     const sortedKeys = visitedKeys.slice().sort(function (a, b) {
       const aFirst = Math.min.apply(null, cityGroups[a].map(function (s) { return s.createdAt; }));
