@@ -208,6 +208,43 @@
 <button type="button" class="btn-outline btn-block hidden" id="btn-open-moderation" style="margin-bottom:8px;">🛡️ Modération</button>
 <button type="button" class="btn-outline btn-block" id="btn-account-logout">Se déconnecter</button>
       </div>
+      <div id="propose-place-block" style="margin-top:16px; padding-top:16px; border-top:1px solid #e0e0e0;">
+        <button type="button" id="propose-place-btn" style="width:100%; padding:12px; border-radius:12px; border:1px dashed #ccc; background:transparent; color:#333; font-size:13px; font-weight:600; cursor:pointer;">🏪 Vous gérez un bar, un lieu ou une association ? Proposez-le</button>
+        <div id="propose-place-form" style="display:none; margin-top:10px;">
+          <label class="field">
+            <span>Nom du lieu</span>
+            <input type="text" id="propose-place-name" placeholder="Ex. Le Comptoir du Port">
+          </label>
+          <label class="field">
+            <span>Catégorie</span>
+            <select id="propose-place-category">
+              <option value="Bar">🍸 Bar / Restaurant</option>
+              <option value="À voir">🏛️ Visite / Monument</option>
+              <option value="Culture">🎭 Culture / Association</option>
+              <option value="Autre">📍 Autre</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Ville</span>
+            <input type="text" id="propose-place-city" placeholder="Ex. Nantes">
+          </label>
+          <label class="field">
+            <span>Adresse</span>
+            <input type="text" id="propose-place-address" placeholder="Numéro et rue">
+          </label>
+          <label class="field">
+            <span>Description courte</span>
+            <textarea id="propose-place-description" rows="3" placeholder="Quelques mots pour présenter votre établissement"></textarea>
+          </label>
+          <label class="field">
+            <span>Votre email de contact</span>
+            <input type="email" id="propose-place-email" placeholder="ton@email.com">
+          </label>
+          <p id="propose-place-error" style="display:none; color:#c0392b; font-size:12px; margin:0 0 8px;"></p>
+          <button type="button" class="btn-primary btn-block" id="propose-place-submit">Envoyer ma proposition</button>
+        </div>
+        <div id="propose-place-confirm" style="display:none; margin-top:10px; background:rgba(46,204,113,0.15); border-radius:12px; padding:12px 14px; font-size:12.5px; color:#1c5f3a;">✓ Merci ! Votre proposition a bien été reçue, elle sera étudiée sous quelques jours.</div>
+      </div>
     </div>
   </div>
   <div id="moderation-modal" class="modal hidden">
@@ -474,6 +511,7 @@
  <script defer src="itinerary-me.js"></script>
  <script defer src="share-event.js"></script>
  <script defer src="propose-city.js"></script>
+ <script defer src="propose-place.js"></script>
  <script defer src="week-view.js"></script>
  <script defer src="free-search.js"></script>
  <script defer src="loading-mascot.js"></script>
