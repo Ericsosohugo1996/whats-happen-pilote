@@ -3108,6 +3108,12 @@ function categoryForOpenAgendaEvent(title, description){
 }
  
 // Récupère et convertit les événements d'un agenda OpenAgenda pour une ville donnée.
+// Certains agendas OpenAgenda (notamment les agendas de métropole, qui couvrent aussi les
+// annonces institutionnelles) mélangent de vraies sorties avec des permanences d'agences
+// d'intérim, du recrutement ou des forums de l'emploi. On les exclut : ce ne sont pas des
+// événements à "sortir" au sens de Whazup.
+const OPENAGENDA_EXCLUDE_RE = /int[ée]rim|recrutement|recruter|cirfa|p[ôo]le emploi|place de l'emploi|forum de l'emploi|offre d'emploi|job dating|mission locale/i;
+
 async function fetchOpenAgendaCityEvents(source){
   const size = source.size || 100;
   let url = "https://api.openagenda.com/v2/agendas/" + source.agendaId +
@@ -3122,6 +3128,8 @@ async function fetchOpenAgendaCityEvents(source){
     return data.events
       .filter(ev => {
         if (!ev.location || !ev.nextTiming) return false;
+        const title = (ev.title && ev.title.fr) || "";
+        if (OPENAGENDA_EXCLUDE_RE.test(title)) return false;
         if (strictCities.includes(source.cityName)) {
           return ev.location.city === source.cityName;
         }
