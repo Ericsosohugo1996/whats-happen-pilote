@@ -149,9 +149,11 @@ function initBrandChoice(){
     visitBtn.onclick = function(){
       hideBrandIntroScreen();
       state.userPos = null;
+      if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true;
+      if (typeof __hasPickedFilter !== "undefined") __hasPickedFilter = true;
       renderDiscover();
     };
-  } 
+  }
 }
 initBrandChoice();
 
