@@ -208,10 +208,29 @@
       btn.textContent = "📸";
       btn.style.cssText = "position:fixed;right:18px;bottom:90px;width:54px;height:54px;border-radius:999px;background:#E85D3D;color:#fff;font-size:22px;border:none;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:500;";
       btn.addEventListener("click", function () {
+        if (btn.disabled) return;
         btn.disabled = true;
         const originalText = btn.textContent;
         btn.textContent = "…";
+        let settled = false;
+        // Filet de sécurité : si la géolocalisation ne répond jamais (popup
+        // ignorée, permission bloquée silencieusement, etc.), on ne laisse
+        // pas le bouton bloqué indéfiniment sur "…".
+        const safetyTimer = setTimeout(function () {
+          if (settled) return;
+          settled = true;
+          openAddSouvenirModal({});
+          btn.disabled = false;
+          btn.textContent = originalText;
+        }, 6000);
+        function finish() {
+          if (settled) return true;
+          settled = true;
+          clearTimeout(safetyTimer);
+          return false;
+        }
         function openWithCoords(lat, lng) {
+          if (finish()) return;
           const place = findNearestPlace(lat, lng) || {};
           openAddSouvenirModal({ lat: lat, lng: lng, placeName: place.placeName, placeId: place.placeId });
           btn.disabled = false;
@@ -222,13 +241,20 @@
         } else if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
             function (pos) { openWithCoords(pos.coords.latitude, pos.coords.longitude); },
-            function () { openAddSouvenirModal({}); btn.disabled = false; btn.textContent = originalText; },
-            { enableHighAccuracy: true, timeout: 8000 }
+            function () {
+              if (finish()) return;
+              openAddSouvenirModal({});
+              btn.disabled = false;
+              btn.textContent = originalText;
+            },
+            { enableHighAccuracy: true, timeout: 5000 }
           );
         } else {
-          openAddSouvenirModal({});
-          btn.disabled = false;
-          btn.textContent = originalText;
+          if (!finish()) {
+            openAddSouvenirModal({});
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }
         }
       });
           document.body.appendChild(btn);
