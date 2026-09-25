@@ -297,7 +297,7 @@
   </main>
   <!-- ===================== VUE : FICHE ÉVÉNEMENT ===================== -->
   <main id="view-detail" class="view hidden">
-    <button class="back-btn" id="btn-back-detail">← Retour</button>
+    <button class="back-btn" id="btn-back-detail" data-i18n="← Retour">← Retour</button>
     <div class="detail-hero" id="detail-hero"></div>
     <div class="detail-body">
      <span class="pill" id="detail-cat"></span>
@@ -313,26 +313,26 @@
         <button class="btn-primary" id="btn-interested" data-i18n="Je suis intéressé(e)">Je suis intéressé(e)</button>
       </div>
       <div class="action-tiles">
-        <button class="action-tile" id="btn-favorite"><span class="tile-icon" id="favorite-icon">🤍</span><span class="tile-label">Favori</span></button>
+        <button class="action-tile" id="btn-favorite"><span class="tile-icon" id="favorite-icon">🤍</span><span class="tile-label" data-i18n="Favori">Favori</span></button>
         <button class="action-tile" id="btn-been-there"><span class="tile-icon">✅</span><span class="tile-label" id="been-there-label">J'y étais</span></button>
-        <button class="action-tile" id="btn-add-souvenir-detail"><span class="tile-icon">📸</span><span class="tile-label">Souvenir</span></button>
+        <button class="action-tile" id="btn-add-souvenir-detail"><span class="tile-icon">📸</span><span class="tile-label" data-i18n="Souvenir">Souvenir</span></button>
       </div>       
     </div>
   </main>
   <!-- ===================== VUE : PUBLICATION ===================== -->
   <main id="view-publish" class="view hidden">
-    <button class="back-btn" id="btn-back-publish">← Retour</button>
+    <button class="back-btn" id="btn-back-publish" data-i18n="← Retour">← Retour</button>
     <h1 class="form-title" data-i18n="Nouvel événement">Nouvel événement</h1>
-    <p class="form-sub">Votre événement sera visible par tous les utilisateurs de Whazup après une validation rapide (généralement sous 24h).</p>
+    <p class="form-sub" data-i18n="Votre événement sera visible par tous les utilisateurs de Whazup après une validation rapide (généralement sous 24h).">Votre événement sera visible par tous les utilisateurs de Whazup après une validation rapide (généralement sous 24h).</p>
     <form id="publish-form" class="publish-form">
       <label class="field">
-        <span>Titre</span>
-        <input type="text" name="title" placeholder="Ex. Marché nocturne provençal" required>
+        <span data-i18n="Titre">Titre</span>
+        <input type="text" name="title" data-i18n-placeholder="Ex. Marché nocturne provençal" placeholder="Ex. Marché nocturne provençal" required>
       </label>
       <label class="field">
-        <span>Catégorie</span>
+        <span data-i18n="Catégorie">Catégorie</span>
        <label class="field">
-        <span>Catégorie</span>
+        <span data-i18n="Catégorie">Catégorie</span>
         <select name="category" required>
   <option value="Musique">Musique</option>
   <option value="Marché">Marché</option>
@@ -345,16 +345,16 @@
       </label> 
       <div class="field-row">
         <label class="field">
-          <span>Date</span>
+          <span data-i18n="Date">Date</span>
           <input type="date" name="date" required>
         </label>
         <label class="field">
-          <span>Heure</span>
+          <span data-i18n="Heure">Heure</span>
           <input type="time" name="time" required>
         </label>
       </div>
       <label class="field">
-        <span>Ville</span>
+        <span data-i18n="Ville">Ville</span>
         <select name="city" required>
           <option value="aix">Aix-en-Provence</option>
           <option value="st">Saint-Tropez</option>
@@ -385,12 +385,12 @@
         </select>
       </label>
       <label class="field">
-        <span>Lieu précis</span>
-        <input type="text" name="place" placeholder="Adresse ou nom du lieu" required>
+        <span data-i18n="Lieu précis">Lieu précis</span>
+        <input type="text" name="place" data-i18n-placeholder="Adresse ou nom du lieu" placeholder="Adresse ou nom du lieu" required>
       </label>
       <label class="field">
-        <span>Description</span>
-        <textarea name="description" rows="3" placeholder="Quelques mots sur l'événement…"></textarea>
+        <span data-i18n="Description">Description</span>
+        <textarea name="description" rows="3" data-i18n-placeholder="Quelques mots sur l'événement…" placeholder="Quelques mots sur l'événement…"></textarea>
       </label>
      <button type="submit" class="btn-primary btn-block" data-i18n="Publier l'événement">Publier l'événement</button>
     </form>
@@ -404,7 +404,7 @@
   <span class="confetti confetti-4"></span>
   <div class="confirm-icon">✓</div>
  <h1 data-i18n="Événement envoyé !">Événement envoyé !</h1>
-  <p>Il sera visible par tous après validation (généralement sous 24h). Merci pour votre contribution !</p>
+  <p data-i18n="Il sera visible par tous après validation (généralement sous 24h). Merci pour votre contribution !">Il sera visible par tous après validation (généralement sous 24h). Merci pour votre contribution !</p>
   <button class="btn-primary" id="btn-confirm-back" data-i18n="Retour à l'accueil">Retour à l'accueil</button>
 </div>
   </main>
@@ -412,31 +412,31 @@
     <button class="nav-item active" data-view="discover"><span class="dot">🗺️</span><span class="nav-label" data-i18n="Explorer">Explorer</span></button>
     <button class="nav-item" data-view="publish"><span class="dot">➕</span><span class="nav-label" data-i18n="Publier">Publier</span></button>
   <button class="nav-item" data-view="favorites"><span class="dot">❤️</span><span class="nav-label" data-i18n="Favoris">Favoris</span></button>
-<button class="nav-item" id="nav-carnet-btn"><span class="dot">📖</span><span class="nav-label" style="font-weight:800;">Souvenirs</span></button>
+<button class="nav-item" id="nav-carnet-btn"><span class="dot">📖</span><span class="nav-label" style="font-weight:800;" data-i18n="Souvenirs">Souvenirs</span></button>
   </nav>
   <!-- ===================== VUE : FAVORIS ===================== -->
     <main id="view-favorites" class="view hidden">
     <h1 class="form-title favorites-title" data-i18n="❤️ Mes favoris">❤️ Mes favoris</h1>
-    <button type="button" id="btn-invite-friend" style="display:block; width: calc(100% - 32px); box-sizing: border-box; margin: 14px 16px; padding: 14px 20px; background: linear-gradient(135deg, #6C5CE7, #4834b0); color: #ffffff; border: none; border-radius: 14px; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer;">📤 Inviter un ami (il reçoit 10 pts de bienvenue)</button>
+    <button type="button" id="btn-invite-friend" data-i18n="📤 Inviter un ami (il reçoit 10 pts de bienvenue)" style="display:block; width: calc(100% - 32px); box-sizing: border-box; margin: 14px 16px; padding: 14px 20px; background: linear-gradient(135deg, #6C5CE7, #4834b0); color: #ffffff; border: none; border-radius: 14px; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer;">📤 Inviter un ami (il reçoit 10 pts de bienvenue)</button>
     <section id="favorites-list" class="event-list"></section>
     <p id="favorites-empty" class="empty-state hidden" data-i18n="Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.">Vous n'avez pas encore de favoris. Ouvrez un événement et appuyez sur le cœur pour l'ajouter ici.</p>
   </main>
   <!-- ===================== VUE : MES PHOTOS (souvenirs par ville) ===================== -->
   <main id="view-photos" class="view hidden">
-    <button class="back-btn" id="btn-back-photos">← Retour</button>
-    
+    <button class="back-btn" id="btn-back-photos" data-i18n="← Retour">← Retour</button>
+
   <h1 class="form-title photos-title" id="photos-title">📸 Mes photos</h1>
-    <p class="form-sub">Ces photos restent sur cet appareil, dans ce navigateur — elles ne sont pas partagées avec les autres utilisateurs pour le moment.</p>
+    <p class="form-sub" data-i18n="Ces photos restent sur cet appareil, dans ce navigateur — elles ne sont pas partagées avec les autres utilisateurs pour le moment.">Ces photos restent sur cet appareil, dans ce navigateur — elles ne sont pas partagées avec les autres utilisateurs pour le moment.</p>
     <input type="file" id="photo-input" accept="image/*" multiple class="hidden">
-    <button type="button" class="btn-primary btn-block" id="btn-add-photo">＋ Ajouter une photo</button>
+    <button type="button" class="btn-primary btn-block" id="btn-add-photo" data-i18n="＋ Ajouter une photo">＋ Ajouter une photo</button>
     <div id="photos-grid" class="photos-grid"></div>
-    <p id="photos-empty" class="empty-state hidden">Pas encore de souvenir ici. Ajoute une photo pour commencer !</p>
+    <p id="photos-empty" class="empty-state hidden" data-i18n="Pas encore de souvenir ici. Ajoute une photo pour commencer !">Pas encore de souvenir ici. Ajoute une photo pour commencer !</p>
   </main>
   <!-- ===================== LIGHTBOX : PHOTO EN GRAND ===================== -->
   <div id="photo-lightbox" class="photo-lightbox hidden">
     <button class="modal-close" id="btn-lightbox-close" aria-label="Fermer">✕</button>
     <img id="lightbox-img" alt="">
-    <button type="button" class="lightbox-delete" id="btn-lightbox-delete">🗑️ Supprimer cette photo</button>
+    <button type="button" class="lightbox-delete" id="btn-lightbox-delete" data-i18n="🗑️ Supprimer cette photo">🗑️ Supprimer cette photo</button>
   </div>
   <!-- ===================== MODALE : LIEU EMBLÉMATIQUE ===================== -->
   <div id="landmark-modal" class="landmark-modal hidden">
