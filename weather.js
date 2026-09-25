@@ -52,6 +52,25 @@ async function loadWeather() {
   }
 }
 
+// ---- petit instantané météo (icône + température) pour une coordonnée donnée, utilisé pour ----
+// enrichir automatiquement un souvenir au moment où il est enregistré (sans dépendre de l'affichage
+// météo de l'écran courant, qui peut être pour une autre ville).
+async function fetchWeatherSnapshot(lat, lng) {
+  if (lat == null || lng == null) return null;
+  try {
+    const url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lng + "&current=temperature_2m,weather_code&timezone=auto";
+    const res = await fetch(url);
+    const data = await res.json();
+    if (!data.current) return null;
+    const temp = Math.round(data.current.temperature_2m);
+    const info = weatherCodeToInfo(data.current.weather_code);
+    return { icon: info.icon, temp: temp };
+  } catch (e) {
+    console.error("Erreur instantané météo :", e);
+    return null;
+  }
+}
+
 let __lastWeatherKey = null;
 function maybeReloadWeather() {
   const coords = weatherCurrentCoords();
