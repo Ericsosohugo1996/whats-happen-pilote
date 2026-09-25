@@ -201,29 +201,7 @@ function __layoverOpen() {
   __layoverRenderResult(60);
 }
 
-function __ensureLayoverButton() {
-  const choiceScreen = document.getElementById("choice-screen");
-  const existing = document.getElementById("layover-mode-btn");
-  if (choiceScreen && !choiceScreen.classList.contains("hidden")) {
-    if (existing) existing.remove();
-    return;
-  }
-  if (existing) return;
-  const landingBtn = document.getElementById("landing-mode-btn");
-  if (!landingBtn) return;
-  const btn = document.createElement("button");
-  btn.id = "layover-mode-btn";
-  btn.type = "button";
-  btn.textContent = "⏱️ J'ai un créneau";
-  btn.style.cssText =
-    "display:block; margin:8px auto 0; padding:11px 20px; border-radius:999px; border:2px solid #14213D; background:#fff; color:#14213D; font-weight:700; font-size:13.5px; cursor:pointer;";
-  btn.addEventListener("click", __layoverOpen);
-  landingBtn.insertAdjacentElement("afterend", btn);
-}
-
-const __renderDiscoverBaseLayover = renderDiscover;
-renderDiscover = function () {
-  __renderDiscoverBaseLayover();
-  __ensureLayoverButton();
-};
-setTimeout(__ensureLayoverButton, 300);
+// Remarque : ce fichier ne pose plus son propre bouton "⏱️ J'ai un créneau" dans la barre —
+// ce point d'entrée est désormais unifié dans arrival-screen.js / unified-explore.js, qui
+// appelle directement __layoverOpen() ci-dessus. On garde ce fichier pour cette fonction
+// (calcul de l'itinéraire "escale"), toujours utilisée.
