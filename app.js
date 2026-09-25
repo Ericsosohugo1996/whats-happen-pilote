@@ -218,7 +218,7 @@ function wzNavbarHtml(activeKey) {
       const active = it.key === activeKey;
       const color = active ? "#F2864B" : "#5C6690";
       const weight = active ? 700 : 600;
-      return '<div class="wz-navbar-item" data-nav="' + it.key + '" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:' + color + '; cursor:pointer;"><span style="font-size:16px;">' + it.icon + '</span><span style="font-size:9.5px; font-weight:' + weight + ';">' + it.label + '</span></div>';
+      return '<div class="wz-navbar-item" data-nav="' + it.key + '" role="button" tabindex="0" aria-label="' + it.label + '"' + (active ? ' aria-current="page"' : "") + ' style="display:flex; flex-direction:column; align-items:center; gap:4px; color:' + color + '; cursor:pointer;"><span style="font-size:16px;" aria-hidden="true">' + it.icon + '</span><span style="font-size:9.5px; font-weight:' + weight + ';">' + it.label + '</span></div>';
     }).join("") +
     "</div>";
 }
@@ -228,7 +228,7 @@ function wzNavbarHtml(activeKey) {
 // qui ne quitte pas l'écran courant).
 function wzNavbarBind(container, onLeave) {
   container.querySelectorAll(".wz-navbar-item").forEach(function (item) {
-    item.addEventListener("click", function () {
+    function activate() {
       const nav = item.dataset.nav;
       if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(); return; }
       if (typeof onLeave === "function") onLeave();
@@ -236,6 +236,12 @@ function wzNavbarBind(container, onLeave) {
       else if (nav === "explore") { if (window.__exploreOpen) __exploreOpen(); }
       else if (nav === "visite") { if (window.__arrivalShowCityView) __arrivalShowCityView(); }
       else if (nav === "memorise") { if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
+    }
+    item.addEventListener("click", activate);
+    // accessibilité clavier : ces onglets sont des <div role="button">, pas de vrais <button>,
+    // donc Entrée/Espace ne les déclenchent pas nativement.
+    item.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(); }
     });
   });
 }
