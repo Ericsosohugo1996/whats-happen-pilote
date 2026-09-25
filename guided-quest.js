@@ -303,9 +303,14 @@ else if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(
     questAmbiance = null;
     let overlay = document.getElementById("quest-overlay");
     if (!overlay) {
+const questCityKey = (window.state && state.userPos) ? nearestCityKey() : (window.state ? state.city : null);
+const questPhoto = (typeof CITY_PHOTOS !== "undefined" && questCityKey) ? CITY_PHOTOS[questCityKey] : null;
+const questHeroBg = questPhoto
+? "linear-gradient(180deg, rgba(11,17,34,0.62) 0%, rgba(15,21,42,0.78) 45%, rgba(20,15,48,0.94) 100%), url('" + questPhoto + "') center/cover no-repeat"
+: "linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%)";
 overlay = document.createElement("div");
 overlay.id = "quest-overlay";
-overlay.style.cssText = "position:fixed; inset:0; background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%); z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
+overlay.style.cssText = "position:fixed; inset:0; background:" + questHeroBg + "; background-color:#0E1526; z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
 document.body.appendChild(overlay);
 }
 overlay.style.paddingBottom = "20px";
