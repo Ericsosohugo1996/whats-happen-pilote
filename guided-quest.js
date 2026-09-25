@@ -20,8 +20,28 @@
     { key: "originale", label: "🎲 Originale", boost: [] },
   ];
 
+  const BUDGETS = [
+    { key: "gratuit", label: "🆓 Gratuit" },
+    { key: "petit", label: "💶 Petit budget" },
+    { key: "peu_importe", label: "💰 Peu importe" },
+  ];
+
+  const COMPAGNIES = [
+    { key: "seul", label: "🚶 Seul(e)", boost: ["À voir", "Expo", "Bar"] },
+    { key: "couple", label: "💑 En couple", boost: ["Théâtre", "À voir", "Musique"] },
+    { key: "amis", label: "🎉 Entre amis", boost: ["Bar", "Soirée", "Festival"] },
+    { key: "famille", label: "👨‍👩‍👧 En famille", boost: ["À voir", "Expo", "Marché", "Festival"] },
+  ];
+
+  function eventIsFree(ev) {
+    const p = (ev.price || "").toLowerCase();
+    return p.includes("gratuit") || p.includes("libre");
+  }
+
   let questSelectedCats = [];
   let questAmbiance = null;
+  let questBudget = null;
+  let questCompagnie = null;
 
   function walkingTimeLabel(km) {
     const minutes = Math.max(2, Math.round((km * 12) / 5) * 5);
@@ -38,13 +58,17 @@
       if (ev.city !== cityKey || !ev.lat || !ev.lng) return false;
       if (!cats.includes(ev.category)) return false;
       if (!ev.isPlace && ev.date && ev.date < today) return false;
+      if (questBudget === "gratuit" && !eventIsFree(ev)) return false;
       return true;
     });
 
     list = list.map(function (ev) {
       const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
       const ambianceDef = AMBIANCES.find(function (a) { return a.key === questAmbiance; });
-      const boost = ambianceDef && ambianceDef.boost.includes(ev.category) ? 1 : 0;
+      const compagnieDef = COMPAGNIES.find(function (c) { return c.key === questCompagnie; });
+      let boost = ambianceDef && ambianceDef.boost.includes(ev.category) ? 1 : 0;
+      if (compagnieDef && compagnieDef.boost.includes(ev.category)) boost += 1;
+      if (questBudget === "petit" && eventIsFree(ev)) boost += 1;
       return { ev: ev, dist: dist, boost: boost };
     });
 
@@ -148,6 +172,8 @@ const cityKey = state.userPos ? nearestCityKey() : state.city;
 const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
 const now = new Date();
 const timeLabel = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
+const budgetDef = BUDGETS.find(function (b) { return b.key === questBudget; });
+const compagnieDef = COMPAGNIES.find(function (c) { return c.key === questCompagnie; });
 const items = picked.map(function (item) {
 return {
 title: item.ev.title,
@@ -262,25 +288,14 @@ else if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(
 });
 }
 
-  function questShowStep2() {
-    const overlay = document.getElementById("quest-overlay");
-    overlay.innerHTML =
-      '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
-      '<div style="background:#14213D; border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:20px;">' +
-      '<div style="color:#fff; font-size:11px; opacity:0.7; margin-bottom:10px;">ÉTAPE 2/2</div>' +
-      '<div style="color:#fff; font-size:16px; font-weight:700; margin-bottom:14px;">Quelle ambiance ?</div>' +
-      '<div id="quest-ambiance-list" style="display:flex; flex-direction:column; gap:8px;"></div>' +
-      '<button id="quest-see-result" style="margin-top:16px;width:100%;padding:11px;border-radius:999px;border:none;background:#E85D3D;color:#fff;font-size:13px;font-weight:600;cursor:pointer;">Voir mon parcours</button>' +
-      "</div></div>";
-
-    const list = document.getElementById("quest-ambiance-list");
-    AMBIANCES.forEach(function (a) {
+  function questBuildChoiceGroup(container, items, currentKeyGetter, onPick) {
+    items.forEach(function (item) {
       const btn = document.createElement("button");
-      btn.textContent = a.label;
-      btn.style.cssText = "padding:12px;border-radius:12px;border:none;background:rgba(255,255,255,0.1);color:#fff;font-size:13px;text-align:left;cursor:pointer;";
+      btn.textContent = item.label;
+      btn.style.cssText = "padding:10px 12px;border-radius:12px;border:none;background:rgba(255,255,255,0.1);color:#fff;font-size:12.5px;text-align:left;cursor:pointer;";
       btn.addEventListener("click", function () {
-        questAmbiance = a.key;
-        Array.from(list.children).forEach(function (b) {
+        onPick(item.key);
+        Array.from(container.children).forEach(function (b) {
           b.style.background = "rgba(255,255,255,0.1)";
           b.style.color = "#fff";
           b.style.fontWeight = "400";
@@ -289,11 +304,53 @@ else if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(
         btn.style.color = "#14213D";
         btn.style.fontWeight = "600";
       });
-      list.appendChild(btn);
+      container.appendChild(btn);
     });
+  }
+
+  function questShowStep2() {
+    const overlay = document.getElementById("quest-overlay");
+    overlay.innerHTML =
+      '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
+      '<div style="background:#14213D; border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:20px;">' +
+      '<div style="color:#fff; font-size:11px; opacity:0.7; margin-bottom:10px;">ÉTAPE 2/2</div>' +
+      '<div style="color:#fff; font-size:16px; font-weight:700; margin-bottom:4px;">Quelle ambiance ?</div>' +
+      '<div id="quest-ambiance-list" style="display:flex; flex-direction:column; gap:8px; margin-bottom:16px;"></div>' +
+      '<div style="color:#fff; font-size:13px; font-weight:700; margin-bottom:8px;">Budget</div>' +
+      '<div id="quest-budget-list" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;"></div>' +
+      '<div style="color:#fff; font-size:13px; font-weight:700; margin-bottom:8px;">Avec qui ?</div>' +
+      '<div id="quest-compagnie-list" style="display:flex; flex-wrap:wrap; gap:8px;"></div>' +
+      '<button id="quest-see-result" style="margin-top:16px;width:100%;padding:11px;border-radius:999px;border:none;background:#E85D3D;color:#fff;font-size:13px;font-weight:600;cursor:pointer;">Voir mon parcours</button>' +
+      "</div></div>";
+
+    const ambianceList = document.getElementById("quest-ambiance-list");
+    AMBIANCES.forEach(function (a) {
+      const btn = document.createElement("button");
+      btn.textContent = a.label;
+      btn.style.cssText = "padding:12px;border-radius:12px;border:none;background:rgba(255,255,255,0.1);color:#fff;font-size:13px;text-align:left;cursor:pointer;";
+      btn.addEventListener("click", function () {
+        questAmbiance = a.key;
+        Array.from(ambianceList.children).forEach(function (b) {
+          b.style.background = "rgba(255,255,255,0.1)";
+          b.style.color = "#fff";
+          b.style.fontWeight = "400";
+        });
+        btn.style.background = "#fff";
+        btn.style.color = "#14213D";
+        btn.style.fontWeight = "600";
+      });
+      ambianceList.appendChild(btn);
+    });
+
+    const budgetList = document.getElementById("quest-budget-list");
+    questBuildChoiceGroup(budgetList, BUDGETS, function () { return questBudget; }, function (key) { questBudget = key; });
+
+    const compagnieList = document.getElementById("quest-compagnie-list");
+    questBuildChoiceGroup(compagnieList, COMPAGNIES, function () { return questCompagnie; }, function (key) { questCompagnie = key; });
 
     document.getElementById("quest-see-result").addEventListener("click", function () {
       if (!questAmbiance) questAmbiance = "originale";
+      if (!questBudget) questBudget = "peu_importe";
       questRenderResult();
     });
   }
@@ -301,6 +358,8 @@ else if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(
   function questShowStep1() {
     questSelectedCats = [];
     questAmbiance = null;
+    questBudget = null;
+    questCompagnie = null;
     let overlay = document.getElementById("quest-overlay");
     if (!overlay) {
 const questCityKey = state.userPos ? nearestCityKey() : state.city;
