@@ -1,12 +1,7 @@
-// ---- unifie les 4 anciens boutons en un seul point d'entrée "Explorer" ----
-if (typeof __ensureLayoverButton === "function") {
-  __ensureLayoverButton = function () {};
-}
-if (typeof __ensureLandingModeButton === "function") {
-  __ensureLandingModeButton = function () {};
-}
+// ---- unifie les anciens boutons en un seul point d'entrée "Explorer" ----
+// (landing-mode.js a été retiré du site : son bouton n'existe plus, rien à neutraliser pour lui.)
 function __unifiedHideOldButtons() {
-  ["landing-mode-btn", "layover-mode-btn", "surprise-btn", "itinerary-btn"].forEach(function (id) {
+  ["layover-mode-btn", "surprise-btn", "itinerary-btn"].forEach(function (id) {
     const el = document.getElementById(id);
     if (el) el.style.display = "none";
   });
