@@ -3603,7 +3603,10 @@ function renderCityInfo(){
   el.querySelectorAll(".ci-tag").forEach(btn => {
     btn.onclick = () => openLandmark(btn.dataset.tag);
   });
-  el.querySelector("#btn-city-photos").onclick = () => openPhotosView(state.city);
+  el.querySelector("#btn-city-photos").onclick = () => {
+    if (window.__renderSouvenirsScreen) window.__renderSouvenirsScreen(state.city);
+    else openPhotosView(state.city);
+  };
 }
  
 let __discoverMap = null;
