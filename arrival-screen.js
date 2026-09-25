@@ -761,22 +761,6 @@ function __arrivalShowSearching() {
     document.head.appendChild(styleTag);
   }
 }
-const __choiceLocateBase = document.getElementById("choice-locate");
-if (__choiceLocateBase) {
-  __choiceLocateBase.addEventListener("click", function () {
-    __arrivalShowSearching();
-    let __arrivalWaited = 0;
-    const __arrivalWaitInterval = setInterval(function () {
-      __arrivalWaited += 200;
-      if (state.userPos || __arrivalWaited >= 8000) {
-        clearInterval(__arrivalWaitInterval);
-        const searchingOv = document.getElementById("arrival-searching-overlay");
-        if (searchingOv) searchingOv.remove();
-        __arrivalShow();
-      }
-    }, 200);
-  });
-}
 
 // ---- bouton retour sur "Tout voir" -> revient aux 3 choix ----
 document.addEventListener("click", function (e) {
