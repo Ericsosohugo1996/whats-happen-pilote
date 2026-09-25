@@ -302,10 +302,14 @@ __exploreTimeMode = "now";
 __exploreMoodQuery = "";
 const cityKey = state.userPos ? nearestCityKey() : state.city;
 const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+const explorePhoto = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[cityKey] : null;
+const exploreHeroBg = explorePhoto
+? "linear-gradient(180deg, rgba(9,14,29,0.62) 0%, rgba(13,19,38,0.78) 45%, rgba(24,17,58,0.94) 100%), url('" + explorePhoto + "') center/cover no-repeat"
+: "linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%)";
 const overlay = document.createElement("div");
 overlay.id = "explore-overlay";
 overlay.style.cssText =
-"position:fixed; inset:0; background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
+"position:fixed; inset:0; background:" + exploreHeroBg + "; background-color:#0d1730; z-index:9999; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
 
 overlay.innerHTML =
 '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
