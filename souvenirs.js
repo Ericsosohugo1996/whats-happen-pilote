@@ -56,6 +56,17 @@
       await ref.put(file);
       photoUrl = await ref.getDownloadURL();
     }
+    const resolvedCity = (lat && lng) ? nearestCityForCoords(lat, lng) : (city || null);
+    // Instantané météo automatique : coordonnées précises si connues, sinon coordonnées de la
+    // ville sélectionnée. Best-effort — un souvenir se sauvegarde même si la météo échoue.
+    let weatherIcon = null, weatherTemp = null;
+    try {
+      const weatherCoords = (lat && lng) ? { lat: lat, lng: lng } : (resolvedCity && CITIES[resolvedCity] ? CITIES[resolvedCity] : null);
+      if (weatherCoords && typeof fetchWeatherSnapshot === "function") {
+        const snap = await fetchWeatherSnapshot(weatherCoords.lat, weatherCoords.lng);
+        if (snap) { weatherIcon = snap.icon; weatherTemp = snap.temp; }
+      }
+    } catch (e) { /* météo indisponible, on continue sans */ }
     const data = {
       id: id,
       text: text || "",
@@ -63,9 +74,11 @@
       placeId: placeId || "",
       lat: lat || null,
       lng: lng || null,
-      city: (lat && lng) ? nearestCityForCoords(lat, lng) : (city || null),
+      city: resolvedCity,
       photoUrl: photoUrl,
       category: category || "",
+      weatherIcon: weatherIcon,
+      weatherTemp: weatherTemp,
       createdAt: Date.now(),
     };
     await col.doc(id).set(data);
@@ -337,7 +350,7 @@
       '<div style="background:#fff;border-radius:16px;padding:14px 14px 18px;box-shadow:0 20px 40px -12px rgba(0,0,0,0.5);">' +
       (s.photoUrl ? '<img src="' + s.photoUrl + '" style="width:100%;border-radius:10px;max-height:280px;object-fit:cover;display:block;" />' : '<div style="width:100%;height:180px;border-radius:10px;background:' + gradientFor(s.id) + ';"></div>') +
       (s.text ? '<div style="font-family:\'Fraunces\', Georgia, serif; font-style:italic; font-size:14.5px; color:#333; margin-top:14px; line-height:1.5;">' + s.text + (/[❤️😊🎉✨👍🙂😍]/.test(s.text) ? "" : " ❤️") + '</div>' : '') +
-      '<div style="display:flex;align-items:center;gap:6px;margin-top:10px;font-size:11.5px;color:#999;">' + (s.placeName ? '📍 ' + s.placeName + ' · ' : '') + dateStr + '</div>' +
+      '<div style="display:flex;align-items:center;gap:6px;margin-top:10px;font-size:11.5px;color:#999;">' + (s.placeName ? '📍 ' + s.placeName + ' · ' : '') + dateStr + (s.weatherIcon ? ' · ' + s.weatherIcon + ' ' + s.weatherTemp + '°C' : '') + '</div>' +
       '</div>' +
       '<div style="display:flex;justify-content:space-around;margin-top:20px;">' +
       '<button class="souvenir-share-opt" data-net="whatsapp" style="background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;"><span style="width:46px;height:46px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:20px;">💬</span><span style="font-size:10px;">WhatsApp</span></button>' +
@@ -561,7 +574,7 @@
           const bg = s.photoUrl ? "background-image:url('" + s.photoUrl + "');background-size:cover;background-position:center;" : "background:" + gradientFor(s.id) + ";";
           html += '<div class="souvenir-card" data-id="' + s.id + '" style="border-radius:14px;overflow:hidden;position:relative;height:130px;cursor:pointer;' + bg + '">' +
             '<div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.55), transparent 60%);"></div>' +
-            '<div style="position:absolute;bottom:6px;left:8px;right:8px;"><div style="color:#fff;font-size:10px;font-weight:700;">' + (s.placeName || "Souvenir libre") + '</div><div style="color:rgba(255,255,255,0.8);font-size:8.5px;">' + dateShort + '</div></div></div>';
+            '<div style="position:absolute;bottom:6px;left:8px;right:8px;"><div style="color:#fff;font-size:10px;font-weight:700;">' + (s.placeName || "Souvenir libre") + '</div><div style="color:rgba(255,255,255,0.8);font-size:8.5px;">' + dateShort + (s.weatherIcon ? ' · ' + s.weatherIcon + ' ' + s.weatherTemp + '°C' : '') + '</div></div></div>';
         });
         html += '</div>';
       });
