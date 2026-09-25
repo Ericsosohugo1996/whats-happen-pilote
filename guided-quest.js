@@ -303,7 +303,7 @@ else if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(
     questAmbiance = null;
     let overlay = document.getElementById("quest-overlay");
     if (!overlay) {
-const questCityKey = (window.state && state.userPos) ? nearestCityKey() : (window.state ? state.city : null);
+const questCityKey = state.userPos ? nearestCityKey() : state.city;
 const questPhoto = (typeof CITY_PHOTOS !== "undefined" && questCityKey) ? CITY_PHOTOS[questCityKey] : null;
 const questHeroBg = questPhoto
 ? "linear-gradient(180deg, rgba(11,17,34,0.62) 0%, rgba(15,21,42,0.78) 45%, rgba(20,15,48,0.94) 100%), url('" + questPhoto + "') center/cover no-repeat"
