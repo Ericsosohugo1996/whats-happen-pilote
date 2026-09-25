@@ -93,6 +93,11 @@ function __landingModeOpen() {
   overlay.style.cssText =
     "position:fixed; inset:0; background:rgba(20,33,61,0.6); z-index:9999; display:flex; align-items:flex-end; justify-content:center;";
 
+  const landingPhoto = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[activeCityKey] : null;
+  const landingSheetBg = landingPhoto
+    ? "linear-gradient(180deg, rgba(13,23,48,0.72) 0%, rgba(26,37,80,0.85) 55%, rgba(43,31,74,0.95) 100%), url('" + landingPhoto + "') center/cover no-repeat"
+    : "linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%)";
+
   const cardsHTML = picks.length
     ? picks
         .map(function (p) {
@@ -122,7 +127,7 @@ function __landingModeOpen() {
     : '<p style="padding:16px 0; color:#888; font-size:13px;">Rien de spécial à proposer pour le moment, essayez « Ma position » pour affiner.</p>';
 
   overlay.innerHTML =
-    '<div style="background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); border-radius:28px 28px 0 0; padding:24px 20px 28px; width:100%; max-width:420px; box-sizing:border-box;">' +
+    '<div style="background:' + landingSheetBg + '; background-color:#0d1730; border-radius:28px 28px 0 0; padding:24px 20px 28px; width:100%; max-width:420px; box-sizing:border-box;">' +
        '<div style="color:#fff; font-size:19px; font-weight:700; line-height:1.35; margin-bottom:6px;">' +
     __landingModeHeadline(slot, now.getHours(), now.getMinutes(), cityName) +
     "</div>" +
