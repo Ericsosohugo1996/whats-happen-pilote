@@ -3928,7 +3928,21 @@ async function toggleInterest(eventId){
       tx.set(counterRef, { count: newCount }, { merge: true });
       nowInterested = false;
     } else {
-      tx.set(interestRef, { eventId: eventId, at: Date.now() });
+      // On enregistre une "photo" des infos essentielles de l'événement (titre, date, heure,
+      // lieu) directement sur le document d'intérêt. Sans ça, un rappel envoyé par un service
+      // externe (Worker Cloudflare, sans accès aux mêmes sources d'événements que le site)
+      // n'aurait aucun moyen de savoir à qui/quoi le rappel correspond.
+      const ev = allEvents().find(e => e.id === eventId);
+      tx.set(interestRef, {
+        eventId: eventId,
+        at: Date.now(),
+        title: ev ? ev.title : "",
+        date: ev ? ev.date : null,
+        time: ev ? (ev.time || null) : null,
+        place: ev ? (ev.place || "") : "",
+        city: ev ? ev.city : null,
+        reminded: false,
+      });
       newCount = current + 1;
       tx.set(counterRef, { count: newCount }, { merge: true });
       nowInterested = true;
