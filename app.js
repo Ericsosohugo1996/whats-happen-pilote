@@ -3600,30 +3600,68 @@ function renderCityInfo(){
   el.querySelector("#btn-city-photos").onclick = () => openPhotosView(state.city);
 }
  
+let __discoverMap = null;
+let __discoverMapMarkers = null;
+
 function renderMap(events){
-  const pinsEl = document.getElementById("map-pins");
-  pinsEl.innerHTML = "";
+  const mapEl = document.getElementById("discover-leaflet-map");
+  if (!mapEl || typeof L === "undefined") return;
   const ref = referencePoint();
-  const spanKm = Math.max(state.radiusKm, 3) * 1.3;
- 
-  events.slice(0, 8).forEach(ev => {
-    const dxKm = (ev.lng - ref.lng) * 111 * Math.cos(ref.lat * Math.PI / 180);
-    const dyKm = (ev.lat - ref.lat) * 111;
-    const leftPct = 50 + (dxKm / spanKm) * 50;
-    const topPct = 50 - (dyKm / spanKm) * 50;
-    if (leftPct < 4 || leftPct > 96 || topPct < 4 || topPct > 96) return;
-       const pin = document.createElement("div");
-    pin.className = "map-pin";
-    pin.dataset.cat = ev.category;
-    pin.style.left = leftPct + "%";
-    pin.style.top = topPct + "%";
-    pin.title = ev.title;
-    pin.onclick = () => openDetail(ev.id);
-    pinsEl.appendChild(pin);
+
+  if (!__discoverMap) {
+    __discoverMap = L.map("discover-leaflet-map");
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap",
+      maxZoom: 19,
+    }).addTo(__discoverMap);
+    __discoverMapMarkers = L.layerGroup().addTo(__discoverMap);
+  }
+
+  __discoverMap.setView([ref.lat, ref.lng], state.userPos ? 13 : 12);
+  __discoverMapMarkers.clearLayers();
+
+  if (state.userPos) {
+    L.circle([ref.lat, ref.lng], { radius: state.radiusKm * 1000, color: "#c1440e", fillOpacity: 0.06, weight: 1.5, dashArray: "4 4" }).addTo(__discoverMapMarkers);
+    L.circleMarker([ref.lat, ref.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#14213D", fillOpacity: 1 }).addTo(__discoverMapMarkers);
+  }
+
+  const withCoords = events.filter(ev => ev.lat && ev.lng);
+  const seenCats = [];
+  withCoords.forEach(ev => {
+    if (seenCats.indexOf(ev.category) === -1) seenCats.push(ev.category);
+    const color = CATEGORY_COLORS[ev.category] || "#6C757D";
+    const emoji = CATEGORY_ICONS[ev.category] || "📍";
+    const icon = L.divIcon({
+      html:
+        '<div style="position:relative; width:32px; height:40px;">' +
+        '<div style="width:30px; height:30px; border-radius:50% 50% 50% 0; background:' + color + '; transform:rotate(-45deg); border:2.5px solid #fff; box-shadow:0 3px 6px rgba(0,0,0,0.4); position:absolute; top:0; left:1px;"></div>' +
+        '<div style="position:absolute; top:0; left:1px; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:14px;">' + emoji + '</div>' +
+        '</div>',
+      className: "",
+      iconSize: [32, 40],
+      iconAnchor: [16, 40],
+    });
+    const marker = L.marker([ev.lat, ev.lng], { icon: icon }).addTo(__discoverMapMarkers);
+    marker.on("click", () => openDetail(ev.id));
   });
- 
-  document.getElementById("map-radius-label").textContent = state.userPos ? state.radiusKm : "";
-  document.getElementById("map-radius-tag").classList.toggle("hidden", !state.userPos);
+
+  setTimeout(() => { if (__discoverMap) __discoverMap.invalidateSize(); }, 80);
+
+  const legendEl = document.getElementById("discover-map-legend");
+  if (legendEl) {
+    legendEl.innerHTML = CATEGORIES.filter(c => seenCats.indexOf(c) !== -1).map(function (c) {
+      const color = CATEGORY_COLORS[c] || "#6C757D";
+      const emoji = CATEGORY_ICONS[c] || "📍";
+      const label = CATEGORY_LABELS[c] || c;
+      return '<span style="display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; color:#14213D; background:rgba(0,0,0,0.04); padding:5px 10px; border-radius:999px;">' +
+        '<span style="width:16px;height:16px;border-radius:50%;background:' + color + ';display:flex;align-items:center;justify-content:center;font-size:9px;">' + emoji + '</span>' + label + '</span>';
+    }).join("");
+  }
+
+  const radiusLabelEl = document.getElementById("map-radius-label");
+  if (radiusLabelEl) radiusLabelEl.textContent = state.userPos ? state.radiusKm : "";
+  const radiusTagEl = document.getElementById("map-radius-tag");
+  if (radiusTagEl) radiusTagEl.classList.toggle("hidden", !state.userPos);
 }
  
 function eventCardHTML(ev){
@@ -4137,6 +4175,9 @@ document.addEventListener("DOMContentLoaded", () => {
       b.classList.add("active");
       state.mode = b.dataset.mode;
       document.getElementById("map-mock").classList.toggle("hidden", state.mode !== "carte");
+      if (state.mode === "carte" && __discoverMap) {
+        setTimeout(() => __discoverMap.invalidateSize(), 60);
+      }
     };
   });
  
