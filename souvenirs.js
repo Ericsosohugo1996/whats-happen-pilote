@@ -251,7 +251,7 @@
       const btn = document.createElement("button");
       btn.id = "souvenir-fab";
       btn.textContent = "📸";
-      btn.style.cssText = "position:fixed;right:18px;bottom:90px;width:54px;height:54px;border-radius:999px;background:#E85D3D;color:#fff;font-size:22px;border:none;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:500;";
+      btn.style.cssText = "position:fixed;right:18px;bottom:90px;width:54px;height:54px;border-radius:999px;background:#E85D3D;color:#fff;font-size:22px;border:none;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:9999;";
       btn.addEventListener("click", function () {
         if (btn.disabled) return;
         btn.disabled = true;
