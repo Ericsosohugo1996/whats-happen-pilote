@@ -42,7 +42,7 @@
     }
     return null;
   }
-  async function saveSouvenir({ file, text, placeName, placeId, lat, lng, category }) {
+  async function saveSouvenir({ file, text, placeName, placeId, lat, lng, category, city }) {
     const user = auth.currentUser;
     if (!user) {
       alert("Connecte-toi pour enregistrer un souvenir.");
@@ -63,13 +63,45 @@
       placeId: placeId || "",
       lat: lat || null,
       lng: lng || null,
-      city: (lat && lng) ? nearestCityForCoords(lat, lng) : null,
+      city: (lat && lng) ? nearestCityForCoords(lat, lng) : (city || null),
       photoUrl: photoUrl,
       category: category || "",
       createdAt: Date.now(),
     };
     await col.doc(id).set(data);
     return data;
+  }
+
+  // ---- migration des anciennes photos locales (IndexedDB, pré-"Mon carnet") ----
+  function dataUrlToBlob(dataUrl) {
+    const parts = dataUrl.split(",");
+    const mimeMatch = parts[0].match(/:(.*?);/);
+    const mime = mimeMatch ? mimeMatch[1] : "image/jpeg";
+    const bin = atob(parts[1]);
+    const arr = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+    return new Blob([arr], { type: mime });
+  }
+
+  async function migrateLegacyPhotosForCity(cityKey) {
+    if (typeof getPhotosForCity !== "function") return [];
+    let legacyPhotos = [];
+    try { legacyPhotos = await getPhotosForCity(cityKey); } catch (e) { return []; }
+    if (!legacyPhotos.length) return [];
+    const imported = [];
+    for (const p of legacyPhotos) {
+      try {
+        const blob = dataUrlToBlob(p.dataUrl);
+        const saved = await saveSouvenir({ file: blob, text: "", placeName: "Photo importée", category: "Autre", city: cityKey });
+        if (saved) {
+          imported.push(saved);
+          if (typeof deletePhotoById === "function") await deletePhotoById(p.id);
+        }
+      } catch (e) {
+        console.error("Erreur migration photo:", e);
+      }
+    }
+    return imported;
   }
 
   async function loadSouvenirs() {
@@ -422,7 +454,7 @@
 
   let souvenirsCurrentCity = "";
 
-  async function renderSouvenirsScreen() {
+  async function renderSouvenirsScreen(preferredCityKey) {
     const existing = document.getElementById("souvenirs-screen");
     if (existing) existing.remove();
 
@@ -464,6 +496,32 @@
     const listEl = document.getElementById("souvenirs-list");
     const tabsEl = document.getElementById("souvenirs-city-tabs");
 
+    // Ancien album de photos locales (IndexedDB) pour la ville demandée : on propose
+    // de l'importer dans "Mon carnet" pour n'avoir plus qu'un seul système.
+    if (preferredCityKey) {
+      let legacyCount = 0;
+      try {
+        const legacyPhotos = (typeof getPhotosForCity === "function") ? await getPhotosForCity(preferredCityKey) : [];
+        legacyCount = legacyPhotos.length;
+      } catch (e) { legacyCount = 0; }
+      if (legacyCount > 0) {
+        const cityLabel = (preferredCityKey !== "autre" && CITIES[preferredCityKey]) ? CITIES[preferredCityKey].name : "cette ville";
+        const banner = document.createElement("div");
+        banner.style.cssText = "background:rgba(242,134,75,0.12);border:1px solid rgba(242,134,75,0.35);border-radius:14px;padding:12px 14px;margin-bottom:14px;color:#fff;font-size:12.5px;";
+        banner.innerHTML =
+          '<div style="margin-bottom:8px;">📥 ' + legacyCount + ' ancienne' + (legacyCount > 1 ? "s photo" + "s" : " photo") + ' de ' + cityLabel + ' trouvée' + (legacyCount > 1 ? "s" : "") + ' sur cet appareil, hors de Mon carnet.</div>' +
+          '<button id="souvenirs-migrate-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;">Importer dans Mon carnet</button>';
+        screen.insertBefore(banner, tabsEl);
+        document.getElementById("souvenirs-migrate-btn").addEventListener("click", async function () {
+          const btn = document.getElementById("souvenirs-migrate-btn");
+          btn.textContent = "Import en cours...";
+          btn.disabled = true;
+          await migrateLegacyPhotosForCity(preferredCityKey);
+          renderSouvenirsScreen(preferredCityKey);
+        });
+      }
+    }
+
     if (!list.length) {
       tabsEl.style.display = "none";
       listEl.innerHTML = '<div style="text-align:center;color:#9BA5C2;padding:40px 0;">Aucun souvenir pour l\'instant.<br>Appuie sur 📸 pour en ajouter un !</div>';
@@ -476,8 +534,13 @@
       if (!cityGroups[key]) cityGroups[key] = [];
       cityGroups[key].push(s);
     });
+    if (preferredCityKey && !cityGroups[preferredCityKey]) cityGroups[preferredCityKey] = [];
     const cityKeys = Object.keys(cityGroups).sort(function (a, b) { return cityGroups[b].length - cityGroups[a].length; });
-    if (!souvenirsCurrentCity || !cityGroups[souvenirsCurrentCity]) souvenirsCurrentCity = cityKeys[0];
+    if (preferredCityKey && cityGroups[preferredCityKey]) {
+      souvenirsCurrentCity = preferredCityKey;
+    } else if (!souvenirsCurrentCity || !cityGroups[souvenirsCurrentCity]) {
+      souvenirsCurrentCity = cityKeys[0];
+    }
 
     tabsEl.innerHTML = "";
     cityKeys.forEach(function (key) {
