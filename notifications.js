@@ -48,6 +48,79 @@ function checkFollowedCityForNewEvents(){
   }
   saveSeenEvents(cityKey, currentIds);
 }
+// ---- rappel avant un événement marqué "intéressé(e)" ----
+function remindedEventsKey(){ return "wh_reminded_events"; }
+function loadRemindedEvents(){
+  try { return new Set(JSON.parse(localStorage.getItem(remindedEventsKey()) || "[]")); }
+  catch(e){ return new Set(); }
+}
+function markEventReminded(id){
+  const set = loadRemindedEvents();
+  set.add(id);
+  localStorage.setItem(remindedEventsKey(), JSON.stringify([...set]));
+}
+async function checkInterestedEventsReminder(){
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  const user = (typeof auth !== "undefined") ? auth.currentUser : null;
+  if (!user) return;
+  let interestDocs;
+  try {
+    const snap = await db.collection("users").doc(user.uid).collection("interests").get();
+    interestDocs = snap.docs.map(d => d.id);
+  } catch (e) { return; }
+  if (!interestDocs.length) return;
+  const reminded = loadRemindedEvents();
+  const now = Date.now();
+  const events = allEvents();
+  interestDocs.forEach(id => {
+    if (reminded.has(id)) return;
+    const ev = events.find(e => e.id === id);
+    if (!ev || ev.isPlace || !ev.date || !ev.time) return;
+    const startAt = new Date(ev.date + "T" + ev.time + ":00").getTime();
+    if (isNaN(startAt)) return;
+    const minutesUntil = (startAt - now) / 60000;
+    // Rappel dans la fenêtre "commence dans moins de 2h, pas encore commencé"
+    if (minutesUntil > 0 && minutesUntil <= 120){
+      const label = minutesUntil <= 60 ? Math.round(minutesUntil) + " min" : Math.round(minutesUntil / 60) + "h";
+      showLocalNotification("⏰ " + ev.title, "Ça commence dans " + label + " · " + (ev.place || ""));
+      markEventReminded(id);
+    }
+  });
+}
+
+// ---- alerte de proximité : événement en cours/imminent tout près de vous ----
+function proximityAlertedKey(){ return "wh_alerted_proximity"; }
+function loadProximityAlerted(){
+  try { return new Set(JSON.parse(localStorage.getItem(proximityAlertedKey()) || "[]")); }
+  catch(e){ return new Set(); }
+}
+function markProximityAlerted(id){
+  const set = loadProximityAlerted();
+  set.add(id);
+  localStorage.setItem(proximityAlertedKey(), JSON.stringify([...set]));
+}
+function checkNearbyImminentEvents(){
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  if (!state.userPos || typeof haversineKm !== "function") return;
+  const alerted = loadProximityAlerted();
+  const today = new Date().toISOString().slice(0, 10);
+  const now = Date.now();
+  const events = allEvents().filter(ev => !ev.isPlace && ev.date === today && ev.lat && ev.lng);
+  events.forEach(ev => {
+    if (alerted.has(ev.id)) return;
+    const distKm = haversineKm(state.userPos.lat, state.userPos.lng, ev.lat, ev.lng);
+    if (distKm > 0.3) return; // 300 m
+    if (!ev.time) return;
+    const startAt = new Date(ev.date + "T" + ev.time + ":00").getTime();
+    const minutesUntil = (startAt - now) / 60000;
+    // en cours (jusqu'à 2h après le début) ou imminent (dans les 30 min)
+    if (minutesUntil >= -120 && minutesUntil <= 30){
+      showLocalNotification("📍 Tout près de vous", ev.title + (minutesUntil > 0 ? " · dans " + Math.round(minutesUntil) + " min" : " · en cours"));
+      markProximityAlerted(ev.id);
+    }
+  });
+}
+
 function updateNotifBtn(){
   const btn = document.getElementById("btn-notif-follow");
   if (!btn) return;
@@ -84,5 +157,11 @@ renderDiscover = function(){
   __renderDiscoverBase();
   updateNotifBtn();
 };
-setTimeout(checkFollowedCityForNewEvents, 5000);
-setInterval(checkFollowedCityForNewEvents, 5 * 60 * 1000);
+function runNotificationChecks(){
+  checkFollowedCityForNewEvents();
+  checkInterestedEventsReminder();
+  checkNearbyImminentEvents();
+}
+setTimeout(runNotificationChecks, 5000);
+setInterval(runNotificationChecks, 5 * 60 * 1000);
+
