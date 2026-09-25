@@ -1,25 +1,3 @@
-
-Claude Desktop (Windows), Connecté
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Styles · CSS
 @media (min-width: 600px) {
   body {
     background: #e5e5e0;
@@ -843,3 +821,12 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 #view-discover .locate-label{ font-size:10px; }
 #view-discover .locate-value{ display:block; font-size:22px; font-weight:700; margin-top:2px; }
 #view-discover #weather-mini{ display:block; font-style:italic; font-weight:500; font-size:12.5px; color:rgba(255,255,255,.78); margin:3px 0 0 !important; }
+
+/* Boutons flottants (photo souvenir, etc.) : positionnés par défaut par rapport au bord de
+   l'écran (mobile, où le site occupe toute la largeur). Au-delà de 600px de large, le site
+   s'affiche dans une colonne centrée de 480px max (voir règle plus haut) — sans cette règle,
+   un bouton "position:fixed; right:18px" se retrouve caché tout à droite de la fenêtre,
+   en dehors de cette colonne visible. */
+@media (min-width: 600px) {
+  #souvenir-fab { right: max(18px, calc(50vw - 222px)) !important; }
+}
