@@ -106,7 +106,7 @@
     const existing = document.getElementById("souvenir-modal");
     if (existing) existing.remove();
 
-    const cityKey = prefill.lat && prefill.lng ? nearestCityForCoords(prefill.lat, prefill.lng) : (window.state && state.userPos ? nearestCityKey() : (window.state ? state.city : null));
+    const cityKey = prefill.lat && prefill.lng ? nearestCityForCoords(prefill.lat, prefill.lng) : (state.userPos ? nearestCityKey() : state.city);
     const cityName = (cityKey && typeof CITIES !== "undefined" && CITIES[cityKey]) ? CITIES[cityKey].name : "";
     const nowStr = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 
@@ -217,7 +217,7 @@
           btn.disabled = false;
           btn.textContent = originalText;
         }
-        if (window.state && state.userPos) {
+        if (state.userPos) {
           openWithCoords(state.userPos.lat, state.userPos.lng);
         } else if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
