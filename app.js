@@ -3881,6 +3881,69 @@ function renderFavorites(){
 }
  
 // ---- detail view ----
+// ---- dimension sociale : compteur "X personnes intéressées" par événement ----
+const INTEREST_COUNT_LABELS = {
+  fr: { one: "personne intéressée", many: "personnes intéressées" },
+  en: { one: "person interested", many: "people interested" },
+  es: { one: "persona interesada", many: "personas interesadas" },
+  de: { one: "Person interessiert", many: "Personen interessiert" },
+  it: { one: "persona interessata", many: "persone interessate" },
+  ja: { one: "人が興味あり", many: "人が興味あり" },
+  zh: { one: "人感兴趣", many: "人感兴趣" },
+};
+function interestCountText(n){
+  const labels = INTEREST_COUNT_LABELS[currentLang.value] || INTEREST_COUNT_LABELS.fr;
+  return "🔥 " + n + " " + (n > 1 ? labels.many : labels.one);
+}
+
+async function toggleInterest(eventId){
+  const user = auth.currentUser;
+  if (!user){ alert("Connecte-toi pour indiquer ton intérêt."); return null; }
+  const interestRef = db.collection("users").doc(user.uid).collection("interests").doc(eventId);
+  const counterRef = db.collection("eventInterest").doc(eventId);
+  let nowInterested = false;
+  let newCount = 0;
+  await db.runTransaction(async (tx) => {
+    const [interestSnap, counterSnap] = await Promise.all([tx.get(interestRef), tx.get(counterRef)]);
+    const current = counterSnap.exists ? (counterSnap.data().count || 0) : 0;
+    if (interestSnap.exists){
+      tx.delete(interestRef);
+      newCount = Math.max(0, current - 1);
+      tx.set(counterRef, { count: newCount }, { merge: true });
+      nowInterested = false;
+    } else {
+      tx.set(interestRef, { eventId: eventId, at: Date.now() });
+      newCount = current + 1;
+      tx.set(counterRef, { count: newCount }, { merge: true });
+      nowInterested = true;
+    }
+  });
+  return { nowInterested: nowInterested, count: newCount };
+}
+
+async function loadInterestState(id){
+  const btn = document.getElementById("btn-interested");
+  const countEl = document.getElementById("detail-interest-count");
+  countEl.textContent = "";
+  btn.classList.remove("active");
+  btn.textContent = t("Je suis intéressé(e)");
+  try {
+    const counterSnap = await db.collection("eventInterest").doc(id).get();
+    const count = counterSnap.exists ? (counterSnap.data().count || 0) : 0;
+    countEl.textContent = count > 0 ? interestCountText(count) : "";
+    const user = auth.currentUser;
+    if (user){
+      const interestSnap = await db.collection("users").doc(user.uid).collection("interests").doc(id).get();
+      if (interestSnap.exists){
+        btn.classList.add("active");
+        btn.textContent = t("✓ Vous êtes intéressé(e)");
+      }
+    }
+  } catch (e){
+    console.error("Erreur chargement intérêt:", e);
+  }
+}
+
 function openDetail(id){
   const ev = allEvents().find(e => e.id === id);
   if (!ev) return;
@@ -3911,7 +3974,8 @@ document.getElementById("detail-distance").textContent = "🚶 " + Math.max(2, M
   favBtn.classList.toggle("active", state.favorites.has(id));
  document.getElementById("favorite-icon").textContent = state.favorites.has(id) ? "❤️" : "🤍";
   renderBeenThereButton();
- 
+  loadInterestState(id);
+
   showView("detail");
 }
  
@@ -4218,11 +4282,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
  
   document.getElementById("btn-back-detail").onclick = () => showView("discover");
- document.getElementById("btn-interested").onclick = (e) => {
-    const isInterested = e.target.classList.toggle("active");
-    const dict = TRANSLATIONS[currentLang.value] || {};
-    const key = isInterested ? "✓ Vous êtes intéressé(e)" : "Je suis intéressé(e)";
-    e.target.textContent = currentLang.value === "en" && dict[key] ? dict[key] : key;
+ document.getElementById("btn-interested").onclick = async (e) => {
+    const btn = e.target;
+    const id = state.currentEventId;
+    if (!id || btn.disabled) return;
+    btn.disabled = true;
+    try {
+      const result = await toggleInterest(id);
+      if (result){
+        btn.classList.toggle("active", result.nowInterested);
+        btn.textContent = t(result.nowInterested ? "✓ Vous êtes intéressé(e)" : "Je suis intéressé(e)");
+        const countEl = document.getElementById("detail-interest-count");
+        countEl.textContent = result.count > 0 ? interestCountText(result.count) : "";
+      }
+    } catch (err){
+      console.error("Erreur intérêt:", err);
+    }
+    btn.disabled = false;
   };
   document.getElementById("btn-favorite").onclick = () => {
     const id = state.currentEventId;
