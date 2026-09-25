@@ -634,10 +634,15 @@ greeting = "Le soleil décline sur " + cityName + ". Qu'est-ce qu'on fait de cet
 greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente ?";
 }
 
+const cityPhoto = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[cityKey] : null;
+const heroBg = cityPhoto
+? "linear-gradient(180deg, rgba(11,17,34,0.60) 0%, rgba(15,21,42,0.72) 45%, rgba(20,15,48,0.93) 100%), url('" + cityPhoto + "') center/cover no-repeat"
+: "linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%)";
+
 const overlay = document.createElement("div");
 overlay.id = "arrival-screen-overlay";
 overlay.style.cssText =
-"position:fixed; inset:0; background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%); z-index:9998; display:flex; flex-direction:column; align-items:center; padding:60px 24px 84px; overflow-y:auto;";
+"position:fixed; inset:0; background:" + heroBg + "; background-color:#0E1526; z-index:9998; display:flex; flex-direction:column; align-items:center; padding:60px 24px 84px; overflow-y:auto;";
 
 overlay.innerHTML =
 '<style>@keyframes wzOrbFloat1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(18px,-26px) scale(1.08);}}@keyframes wzOrbFloat2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-22px,22px) scale(1.05);}}</style>' +
@@ -653,8 +658,8 @@ overlay.innerHTML =
 '<div style="position:absolute; top:-60px; right:-40px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(242,134,75,0.55), transparent 70%); filter:blur(50px); pointer-events:none; z-index:0; animation:wzOrbFloat1 9s ease-in-out infinite;"></div>' +
 '<div style="position:absolute; bottom:60px; left:-50px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(139,108,242,0.5), transparent 70%); filter:blur(50px); pointer-events:none; z-index:0; animation:wzOrbFloat2 11s ease-in-out infinite;"></div>' +
 '<div style="text-align:center; margin-bottom:38px; max-width:340px; position:relative; z-index:1;">' +
-'<div style="color:#9BA5C2; font-size:12px; margin-bottom:8px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">' + cityName + " · " + time + "</div>" +
-'<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:24px; font-weight:500; line-height:1.4;">' + greeting + "</div>" +
+'<div style="color:#C7CEE3; font-size:12px; margin-bottom:8px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase; text-shadow:0 2px 8px rgba(0,0,0,0.45);">' + cityName + " · " + time + "</div>" +
+'<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:24px; font-weight:500; line-height:1.4; text-shadow:0 2px 10px rgba(0,0,0,0.5);">' + greeting + "</div>" +
 "</div>" +
 '<div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:300px; position:relative; z-index:1;">' +
 '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
