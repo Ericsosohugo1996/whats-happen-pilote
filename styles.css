@@ -438,6 +438,8 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
   .modal{ align-items:center; }
   .modal-content{ border-radius:20px; }
 }
+.modal-content .btn-outline.btn-block{ width:100%; font-size:14px; margin-bottom:8px; }
+.modal-content .btn-outline.btn-block:last-child{ margin-bottom:0; }
 .landmark-modal-body{ padding:20px 22px 26px; }
 .landmark-modal-body h2{ font-family:var(--font-display); font-weight:600; font-size:19px; margin:0 0 9px; }
 .landmark-modal-body p{ font-size:13.5px; color:var(--ink-soft); line-height:1.65; margin:0; }
