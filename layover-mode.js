@@ -122,8 +122,14 @@ function __layoverOpen() {
   overlay.style.cssText =
     "position:fixed; inset:0; background:rgba(20,33,61,0.6); z-index:9999; display:flex; align-items:flex-end; justify-content:center;";
 
+  const layoverCityKey = state.userPos ? nearestCityKey() : state.city;
+  const layoverPhoto = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[layoverCityKey] : null;
+  const layoverSheetBg = layoverPhoto
+    ? "linear-gradient(180deg, rgba(13,23,48,0.72) 0%, rgba(26,37,80,0.85) 55%, rgba(43,31,74,0.95) 100%), url('" + layoverPhoto + "') center/cover no-repeat"
+    : "linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%)";
+
   overlay.innerHTML =
-    '<div style="background:linear-gradient(160deg, #0d1730 0%, #1a2550 55%, #2b1f4a 100%); border-radius:28px 28px 0 0; padding:24px 20px 28px; width:100%; max-width:420px; box-sizing:border-box;">' +
+    '<div style="background:' + layoverSheetBg + '; background-color:#0d1730; border-radius:28px 28px 0 0; padding:24px 20px 28px; width:100%; max-width:420px; box-sizing:border-box;">' +
     '<div style="color:#fff; font-size:13px; font-weight:500; margin-bottom:10px; opacity:0.8;">⏱️ Combien de temps devant vous ?</div>' +
     '<div id="layover-duration-btns" style="display:flex; gap:6px; margin-bottom:20px;"></div>' +
     '<div id="layover-result" style="background:#fff; border-radius:18px; padding:16px; min-height:20px;"></div>' +
