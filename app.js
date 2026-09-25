@@ -3086,16 +3086,22 @@ const OPENAGENDA_SOURCES = [
   { agendaId: 74583765, cityName: "Dijon", cityKey: "dijon", search: null, apiCity: "Dijon", forceCategory: "Bar" },
 ];
  
-function sceneForOpenAgendaEvent(title, description){ 
+// Détection "Soirée" volontairement stricte et limitée au TITRE (pas à la description, texte
+// libre trop souvent porteur d'une mention "soirée"/"bal" incidente) ET avec des frontières de
+// mot (\b) pour éviter que "bal" ne matche dans "global", "cheval", "banal", etc. — c'était la
+// cause de la pollution de cette catégorie par des événements mal classés.
+const SOIREE_TITLE_RE = /\bsoir[ée]e\b|\bbal\b|\bboum\b|\bclubbing\b/i;
+
+function sceneForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "expo";
   if (/concert|musique|jazz|chorale/.test(text)) return "musique";
   if (/march[ée]|brocante|vide-grenier/.test(text)) return "marche";
   if (/sport|p[ée]tanque|padel|tournoi|basket/.test(text)) return "sport";
-  if (/soir[ée]e|bal|f[êe]te/.test(text)) return "village";
+  if (SOIREE_TITLE_RE.test(title) || /f[êe]te/.test(text)) return "village";
   return "festival";
 }
- 
+
 function categoryForOpenAgendaEvent(title, description){
   const text = (title + " " + description).toLowerCase();
   if (/expo|mus[ée]e|galerie/.test(text)) return "Expo";
@@ -3103,7 +3109,7 @@ function categoryForOpenAgendaEvent(title, description){
   if (/brocante|vide-grenier|vide grenier/.test(text)) return "Brocante";
   if (/march[ée]/.test(text)) return "Marché";
   if (/sport|p[ée]tanque|padel|tournoi|basket/.test(text)) return "Sport";
-  if (/soir[ée]e|bal/.test(text)) return "Soirée";
+  if (SOIREE_TITLE_RE.test(title)) return "Soirée";
   return "Festival";
 }
  
@@ -3187,10 +3193,10 @@ function sceneForParisEvent(tags){
   if (/concert|musique|spectacle musical/.test(text)) return "musique";
   if (/march[ée]|brocante/.test(text)) return "marche";
   if (/sport/.test(text)) return "sport";
-  if (/soir[ée]e|bal|f[êe]te/.test(text)) return "village";
+  if (SOIREE_TITLE_RE.test(text) || /f[êe]te/.test(text)) return "village";
   return "festival";
 }
- 
+
 function categoryForParisEvent(tags){
   const text = tags.toLowerCase();
   if (/photo|histoire|expo/.test(text)) return "Expo";
@@ -3198,7 +3204,7 @@ function categoryForParisEvent(tags){
   if (/brocante|vide-grenier|vide grenier/.test(text)) return "Brocante";
   if (/march[ée]/.test(text)) return "Marché";
   if (/sport/.test(text)) return "Sport";
-  if (/soir[ée]e|bal/.test(text)) return "Soirée";
+  if (SOIREE_TITLE_RE.test(text)) return "Soirée";
   return "Festival";
 }
 async function fetchParisEvents(){
