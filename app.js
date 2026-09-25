@@ -202,6 +202,44 @@ function hideAccountError(){
   document.getElementById("account-error").style.display = "none";
 }
 
+// ---- barre de navigation inférieure partagée entre les écrans (Découvre/Explore/Visite/Mémorise/Partage) ----
+// Évite de dupliquer ce bloc HTML + sa logique de clic dans chaque écran (arrival-screen.js,
+// souvenirs.js, guided-quest.js) : un seul endroit à corriger si on ajoute/modifie un onglet.
+function wzNavbarHtml(activeKey) {
+  const items = [
+    { key: "decouvre", icon: "🧭", label: "Découvre" },
+    { key: "explore", icon: "🗺️", label: "Explore" },
+    { key: "visite", icon: "🏙️", label: "Visite" },
+    { key: "memorise", icon: "📖", label: "Mémorise" },
+    { key: "partage", icon: "🔗", label: "Partage" },
+  ];
+  return '<div class="wz-navbar" style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
+    items.map(function (it) {
+      const active = it.key === activeKey;
+      const color = active ? "#F2864B" : "#5C6690";
+      const weight = active ? 700 : 600;
+      return '<div class="wz-navbar-item" data-nav="' + it.key + '" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:' + color + '; cursor:pointer;"><span style="font-size:16px;">' + it.icon + '</span><span style="font-size:9.5px; font-weight:' + weight + ';">' + it.label + '</span></div>';
+    }).join("") +
+    "</div>";
+}
+
+// container : élément DOM qui contient les .wz-navbar-item (l'overlay/écran lui-même).
+// onLeave : fonction appelée pour fermer cet écran avant de naviguer (pas appelée pour "partage",
+// qui ne quitte pas l'écran courant).
+function wzNavbarBind(container, onLeave) {
+  container.querySelectorAll(".wz-navbar-item").forEach(function (item) {
+    item.addEventListener("click", function () {
+      const nav = item.dataset.nav;
+      if (nav === "partage") { if (window.__arrivalShareCity) __arrivalShareCity(); return; }
+      if (typeof onLeave === "function") onLeave();
+      if (nav === "decouvre") { if (window.__arrivalShow) __arrivalShow(); }
+      else if (nav === "explore") { if (window.__exploreOpen) __exploreOpen(); }
+      else if (nav === "visite") { if (window.__arrivalShowCityView) __arrivalShowCityView(); }
+      else if (nav === "memorise") { if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
+    });
+  });
+}
+
 // ---- met en forme le texte renvoyé par "✨ Whazup enrichi" (qui contient du Markdown simple) ----
 // pour affichage HTML sûr : échappe le HTML puis convertit gras/titres/listes en vraies balises.
 function whazupEnrichiToHtml(text){
