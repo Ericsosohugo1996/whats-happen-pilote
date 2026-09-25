@@ -686,13 +686,7 @@ overlay.innerHTML =
 (weatherText
 ? '<div style="margin-top:34px; text-align:center; position:relative; z-index:1;"><div style="display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,0.06); color:#9BA5C2; font-size:11px;">' + weatherText + "</div></div>"
 : "") +
-'<div class="wz-navbar" style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
-'<div class="wz-navbar-item" data-nav="decouvre" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#F2864B; cursor:pointer;"><span style="font-size:16px;">🧭</span><span style="font-size:9.5px; font-weight:700;">Découvre</span></div>' +
-'<div class="wz-navbar-item" data-nav="explore" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🗺️</span><span style="font-size:9.5px; font-weight:600;">Explore</span></div>' +
-'<div class="wz-navbar-item" data-nav="visite" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🏙️</span><span style="font-size:9.5px; font-weight:600;">Visite</span></div>' +
-'<div class="wz-navbar-item" data-nav="memorise" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">📖</span><span style="font-size:9.5px; font-weight:600;">Mémorise</span></div>' +
-'<div class="wz-navbar-item" data-nav="partage" style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#5C6690; cursor:pointer;"><span style="font-size:16px;">🔗</span><span style="font-size:9.5px; font-weight:600;">Partage</span></div>' +
-"</div>";
+wzNavbarHtml("decouvre");
 
 document.body.appendChild(overlay);
 
@@ -717,16 +711,7 @@ else if (key === "carnet") { if (window.__renderSouvenirsScreen) __renderSouveni
 });
 });
 
-overlay.querySelectorAll(".wz-navbar-item").forEach(function (item) {
-item.addEventListener("click", function () {
-const nav = item.dataset.nav;
-if (nav === "decouvre") { overlay.remove(); __arrivalShow(); }
-else if (nav === "explore") { overlay.remove(); __exploreOpen(); }
-else if (nav === "visite") { overlay.remove(); __arrivalShowCityView(); }
-else if (nav === "memorise") { overlay.remove(); if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
-else if (nav === "partage") { __arrivalShareCity(); }
-});
-});
+wzNavbarBind(overlay, function () { overlay.remove(); });
 }
 
 
