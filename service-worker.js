@@ -1,3 +1,34 @@
+// ---- notifications push (Firebase Cloud Messaging) ----
+// Le SDK Messaging a besoin d'un contexte Firebase dans le service worker pour afficher les
+// notifications reçues quand l'appli est en arrière-plan ou fermée. On réutilise ce service
+// worker existant plutôt que d'en enregistrer un second (firebase-messaging-sw.js), pour éviter
+// deux service workers qui se disputent le même scope.
+importScripts("https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging-compat.js");
+
+firebase.initializeApp({
+  apiKey: "AIzaSyCBF51BEU354GbcIAcDVoTSwQHrZ7xHCWQ",
+  authDomain: "whazup-46bb4.firebaseapp.com",
+  projectId: "whazup-46bb4",
+  storageBucket: "whazup-46bb4.firebasestorage.app",
+  messagingSenderId: "371962234007",
+  appId: "1:371962234007:web:037414d1d756c6b66c15d2"
+});
+
+try {
+  const messaging = firebase.messaging();
+  messaging.onBackgroundMessage(function (payload) {
+    const n = payload.notification || {};
+    self.registration.showNotification(n.title || "Whazup", {
+      body: n.body || "",
+      icon: "/logo-192.png",
+      badge: "/logo-192.png",
+    });
+  });
+} catch (e) {
+  console.error("Erreur messagerie push (arrière-plan) :", e);
+}
+
 const CACHE_NAME = "whazup-cache-v18";
 
 const FILES_TO_CACHE = [
