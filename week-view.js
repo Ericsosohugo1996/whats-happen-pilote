@@ -36,8 +36,8 @@ matchesPeriod = function (ev, period) {
   return __matchesPeriodBase(ev, period);
 };
 
-function updateStatsBanner(events) {
-  const banner = document.getElementById("stats-banner");
+function renderWeekStrip(events) {
+  const banner = document.getElementById("week-strip-banner");
   if (!banner) return;
    const weekdayLabels = __weekdayLabels();
   const monthLabels = __monthLabels();
