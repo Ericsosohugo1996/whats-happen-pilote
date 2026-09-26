@@ -735,7 +735,11 @@
       const rot = stampRotation(key);
       const firstDate = new Date(Math.min.apply(null, items.map(function (s) { return s.createdAt; })));
       const dateStr = firstDate.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
-      return '<div style="background:' + gradientFor(key) + ';border-radius:16px;padding:16px 10px;text-align:center;transform:rotate(' + rot + 'deg);border:3px dashed rgba(255,255,255,0.5);box-shadow:0 8px 18px -8px rgba(0,0,0,0.4);">' +
+         const cityPhoto = (typeof CITY_PHOTOS !== "undefined" && CITY_PHOTOS[key]) || "";
+      const stampBg = cityPhoto
+        ? "background:linear-gradient(rgba(10,15,30,.35),rgba(10,15,30,.55))," + gradientFor(key) + " center/cover; background-image:linear-gradient(rgba(10,15,30,.35),rgba(10,15,30,.55)), url('" + cityPhoto + "'); background-size:cover; background-position:center;"
+        : "background:" + gradientFor(key) + ";";
+      return '<div style="' + stampBg + 'border-radius:16px;padding:16px 10px;text-align:center;transform:rotate(' + rot + 'deg);border:3px dashed rgba(255,255,255,0.5);box-shadow:0 8px 18px -8px rgba(0,0,0,0.4);">' +
         '<div style="font-size:10px;color:rgba(255,255,255,0.8);font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Visité</div>' +
         '<div style="font-size:14px;color:#fff;font-weight:800;margin:4px 0 2px;font-family:Georgia,serif;">' + cityName + '</div>' +
         '<div style="font-size:10px;color:rgba(255,255,255,0.85);">' + items.length + ' souvenir' + (items.length > 1 ? 's' : '') + '</div>' +
