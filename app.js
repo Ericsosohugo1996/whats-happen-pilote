@@ -3630,6 +3630,11 @@ function eventPhotoHTML(ev, extraImgStyle){
     ? `<img src="${photo}" alt="${ev.title || ""}" loading="lazy" data-scene="${ev.scene || ""}"${styleAttr} onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
     : sceneSVG(ev.scene);
 }
+// ---- temps de marche estimé (en minutes) à partir d'une distance en km ----
+// même formule utilisée partout où on affiche un temps de marche, pour ne plus la dupliquer.
+function walkMinutes(distKm){
+  return Math.max(2, Math.round((distKm * 12) / 5 / 5) * 5);
+}
 // ---- ligne compacte "à pied" utilisée par l'écran "Autour de moi" (photo, icône catégorie, prix, temps de marche) ----
 // centralisée ici pour que ce format de carte ne soit plus construit qu'à un seul endroit.
 function exploreRowHTML(ev, walkMin, isFirst){
