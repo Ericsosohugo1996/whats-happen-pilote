@@ -3604,6 +3604,13 @@ function toggleCategoryFilter(cat){
   renderDiscover();
 }
 
+function toggleCategoryFilter(cat){
+  if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
+  else state.selectedCategories.add(cat);
+  renderCategoryChips();
+  renderDiscover();
+}
+
 function renderCategoryChips(){
   const el = document.getElementById("category-chips");
   if (el) {
@@ -3620,6 +3627,33 @@ function renderCategoryChips(){
       el.appendChild(b);
     });
   }
+
+  // ---- barre d'icônes colorées bien visible en haut de l'écran d'accueil (identité visuelle "grille d'icônes") ----
+  const quickEl = document.getElementById("home-category-quickbar");
+  if (quickEl) {
+    quickEl.innerHTML = "";
+    CATEGORIES.forEach(cat => {
+      const b = document.createElement("button");
+      const active = state.selectedCategories.has(cat);
+      b.type = "button";
+      b.className = "quick-cat" + (active ? " active" : "");
+      const color = CATEGORY_COLORS[cat] || "#6C757D";
+      const emoji = CATEGORY_ICONS[cat] || "📍";
+      const photo = CATEGORY_PHOTOS[cat];
+      const photoHTML = photo
+        ? '<img src="' + photo + '" alt="' + (CATEGORY_LABELS[cat] || cat) + '" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'quick-cat-emoji-fallback\',textContent:\'' + emoji + '\'}));">'
+        : '<span class="quick-cat-emoji-fallback">' + emoji + '</span>';
+      b.innerHTML =
+        '<span class="quick-cat-circle' + (active ? ' active' : '') + '" style="--cat-color:' + color + ';">' +
+          photoHTML +
+          '<span class="quick-cat-badge">' + emoji + '</span>' +
+        '</span>' +
+        '<span class="quick-cat-label">' + (CATEGORY_LABELS[cat] || cat) + '</span>';
+      b.onclick = () => toggleCategoryFilter(cat);
+      quickEl.appendChild(b);
+    });
+  }
+}
 
   // ---- barre d'icônes colorées bien visible en haut de l'écran d'accueil (identité visuelle "grille d'icônes") ----
   const quickEl = document.getElementById("home-category-quickbar");
