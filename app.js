@@ -3621,13 +3621,6 @@ function toggleCategoryFilter(cat){
   renderDiscover();
 }
 
-function toggleCategoryFilter(cat){
-  if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
-  else state.selectedCategories.add(cat);
-  renderCategoryChips();
-  renderDiscover();
-}
-
 function renderCategoryChips(){
   const el = document.getElementById("category-chips");
   if (el) {
