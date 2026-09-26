@@ -28,18 +28,15 @@ function __arrivalWeatherText() {
 let __exploreSortMode = "distance";
 // ---- Bonhomme 1 : explorer par catégorie, triable distance/note ----
 
-const EXPLORE_CATEGORIES = [
-{ key: "", label: "Tout" },
-{ key: "Musique", label: "🎵 Musique" },
-{ key: "Marché", label: "🛍️ Marché" },
-{ key: "Festival", label: "🎉 Festival" },
-{ key: "Soirée", label: "🎟️ Culture" },
-{ key: "Sport", label: "⚽ Sport" },
-{ key: "Expo", label: "🖼️ Expo" },
-{ key: "À voir", label: "🏛️ Musées" },
-{ key: "Bar", label: "🍸 Bars" },
-{ key: "Brocante", label: "📦 Brocante" },
-];
+// ---- dérivée des catégories définies une seule fois dans app.js (CATEGORIES/CATEGORY_ICONS/CATEGORY_LABELS) ----
+// pour ne plus avoir à maintenir cette liste à deux endroits différents.
+const EXPLORE_CATEGORIES = [{ key: "", label: "Tout" }].concat(
+  (typeof CATEGORIES !== "undefined" ? CATEGORIES : []).map(function (cat) {
+    const icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[cat]) || "📍";
+    const label = (typeof CATEGORY_LABELS !== "undefined" && CATEGORY_LABELS[cat]) || cat;
+    return { key: cat, label: icon + " " + label };
+  })
+);
 let __exploreShowAll = false;
 let __exploreCurrentCategory = "";
 let __exploreTimeMode = "now";
