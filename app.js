@@ -3858,8 +3858,7 @@ function renderMap(events){
 
   if (state.userPos) {
     L.circle([ref.lat, ref.lng], { radius: state.radiusKm * 1000, color: "#c1440e", fillOpacity: 0.06, weight: 1.5, dashArray: "4 4" }).addTo(__discoverMapMarkers);
-    L.circleMarker([ref.lat, ref.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#14213D", fillOpacity: 1 }).addTo(__discoverMapMarkers);
-  }
+       L.marker([ref.lat, ref.lng], { icon: userLocationIcon() }).addTo(__discoverMapMarkers);
 
   const withCoords = events.filter(ev => ev.lat && ev.lng);
   const seenCats = [];
