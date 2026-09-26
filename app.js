@@ -4470,6 +4470,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.seg[data-mode="liste"]').classList.add("active");
     state.mode = "liste";
     document.getElementById("map-mock").classList.add("hidden");
+    document.getElementById("btn-see-list").classList.add("hidden");
     document.getElementById("event-list").scrollIntoView({ behavior: "smooth", block: "start" });
   };
   document.querySelectorAll(".seg").forEach(b => {
@@ -4478,6 +4479,7 @@ document.addEventListener("DOMContentLoaded", () => {
       b.classList.add("active");
       state.mode = b.dataset.mode;
       document.getElementById("map-mock").classList.toggle("hidden", state.mode !== "carte");
+      document.getElementById("btn-see-list").classList.toggle("hidden", state.mode !== "carte");
       if (state.mode === "carte" && __discoverMap) {
         setTimeout(() => __discoverMap.invalidateSize(), 60);
       }
