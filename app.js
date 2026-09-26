@@ -887,7 +887,7 @@ const SEED_EVENTS = [
     lat: 48.8656,
     lng: 2.3212,
     price: "Gratuit",
-    thumb: "",
+       thumb: "https://commons.wikimedia.org/wiki/Special:FilePath/Pope Leo XIV on the loggia.jpg",
     description: "Messe en plein air présidée par le pape Léon XIV. Accès dès 9h, descente des Champs-Élysées vers la Concorde à 13h45, célébration jusqu'à environ 16h30.",
   },
   {
