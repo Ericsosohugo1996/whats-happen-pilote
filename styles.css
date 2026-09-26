@@ -609,17 +609,33 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .nearest-city-btn{ display:inline-block; }
 /* ---- bannière statistiques (aujourd'hui / demain / cette semaine) ---- */
 .stats-banner{
-  margin:0 0 16px; padding:8px; box-sizing:border-box;
-  background:#fff; border:1.5px solid var(--line); border-radius:var(--radius-sm);
-  display:flex; justify-content:space-between;
+  margin:0 0 16px; padding:0; box-sizing:border-box;
+  background:transparent; border:none;
+  display:flex; justify-content:space-between; gap:8px;
 }
 .stat{
-  text-align:center; flex:1; background:none; border:none; cursor:pointer;
-  padding:8px 6px; border-radius:8px; font-family:var(--font-body);
+  text-align:center; flex:1; border:1.5px solid var(--line); cursor:pointer;
+  padding:10px 4px 9px; border-radius:14px; font-family:var(--font-body);
+  background:#fff; transition:transform .15s ease, box-shadow .15s ease;
 }
-.stat.active{ background:var(--accent-soft); }
-.stat .num{ font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--accent); }
-.stat .label{ font-size:11px; color:var(--ink-soft); font-weight:600; text-transform:uppercase; letter-spacing:.03em; margin-top:2px; }
+.stat.active{ border-color:transparent; box-shadow:0 6px 16px -6px rgba(20,33,61,.28); transform:translateY(-1px); }
+.stat-icon{
+  width:32px; height:32px; margin:0 auto 5px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:15px;
+  background:var(--accent-soft);
+}
+.stat .num{ font-family:var(--font-display); font-size:21px; font-weight:700; color:var(--accent); line-height:1; }
+.stat .label{ font-size:10px; color:var(--ink-soft); font-weight:600; text-transform:uppercase; letter-spacing:.02em; margin-top:3px; display:block; }
+.stat[data-filter="tomorrow"] .stat-icon{ background:#E7F0FB; }
+.stat[data-filter="tomorrow"] .num{ color:#3E7CC2; }
+.stat[data-filter="week"] .stat-icon{ background:#F1EAFB; }
+.stat[data-filter="week"] .num{ color:#8E6FCE; }
+.stat[data-filter="later"] .stat-icon{ background:#E5F4F1; }
+.stat[data-filter="later"] .num{ color:#2F8A90; }
+.stat[data-filter="tomorrow"].active{ background:#E7F0FB; }
+.stat[data-filter="week"].active{ background:#F1EAFB; }
+.stat[data-filter="later"].active{ background:#E5F4F1; }
+.stat[data-filter="today"].active{ background:var(--accent-soft); }
 /* ---- écran intro : souvenirs ou découvrir ---- */
 .intro-screen{
   position:fixed; inset:0; z-index:101;
