@@ -3630,6 +3630,51 @@ function eventPhotoHTML(ev, extraImgStyle){
     ? `<img src="${photo}" alt="${ev.title || ""}" loading="lazy" data-scene="${ev.scene || ""}"${styleAttr} onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
     : sceneSVG(ev.scene);
 }
+// ---- ligne compacte "à pied" utilisée par l'écran "Autour de moi" (photo, icône catégorie, prix, temps de marche) ----
+// centralisée ici pour que ce format de carte ne soit plus construit qu'à un seul endroit.
+function exploreRowHTML(ev, walkMin, isFirst){
+  const today = new Date().toISOString().slice(0, 10);
+  let dateLabel = "";
+  if (ev.date) {
+    const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+    if (ev.date === today) dateLabel = "Aujourd'hui";
+    else if (ev.date === tomorrow) dateLabel = "Demain";
+    else dateLabel = formatDate(ev.date);
+    if (ev.time) dateLabel += " · " + ev.time;
+  }
+  const icon = CATEGORY_ICONS[ev.category] || (typeof iconFor === "function" ? iconFor(ev.category) : "📌");
+  const catColor = CATEGORY_COLORS[ev.category] || "#6C757D";
+  const thumbSvg = eventPhotoHTML(ev, "width:100%;height:100%;object-fit:cover;display:block;");
+  let priceLabel = "", priceBg = "";
+  if (ev.price) {
+    const priceType = eventPriceType(ev);
+    if (priceType === "free") { priceLabel = "Gratuit"; priceBg = "#28C76F"; }
+    else if (priceType === "inscription") { priceLabel = "Inscription"; priceBg = "linear-gradient(135deg,#A57CF7,#8B6CF2)"; }
+    else { priceLabel = "Payant"; priceBg = "linear-gradient(135deg,#F2C879,#E85D3D)"; }
+  }
+  return (
+    '<button class="explore-pick" data-id="' + ev.id +
+    '" style="display:flex; align-items:flex-start; gap:12px; width:100%; text-align:left; background:none; border:none; padding:14px 0; cursor:pointer;' +
+    (isFirst ? "" : "border-top:1px solid #eee;") +
+    '">' +
+    '<div style="position:relative; width:56px; height:56px; flex-shrink:0;">' +
+    '<div style="width:56px; height:56px; border-radius:14px; overflow:hidden; background:#f0f0f0;">' + thumbSvg + '</div>' +
+    '<div style="position:absolute; top:-4px; left:-4px; width:22px; height:22px; border-radius:50%; background:' + catColor + '; display:flex; align-items:center; justify-content:center; font-size:11px; border:2px solid #fff; box-shadow:0 2px 4px rgba(0,0,0,0.2);">' + icon + '</div>' +
+    '</div>' +
+    '<div style="flex:1; min-width:0;">' +
+    '<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px;">' +
+    '<div style="font-family:var(--font-display); font-size:13.5px; font-weight:600; color:#14213D; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + ev.title + '</div>' +
+    (priceLabel ? '<div style="font-size:10px; font-weight:800; color:#fff; background:' + priceBg + '; padding:4px 9px; border-radius:999px; white-space:nowrap; flex-shrink:0;">' + priceLabel + '</div>' : '') +
+    '</div>' +
+    (ev.place ? '<div style="font-size:11px; color:#999; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + ev.place + '</div>' : '') +
+    '<div style="display:flex; align-items:center; gap:8px; margin-top:4px;">' +
+    '<span style="font-size:11px; color:#E85D3D; font-weight:600;">🚶 ' + walkMin + ' min</span>' +
+    (dateLabel ? '<span style="font-size:11px; color:#888;">· ' + dateLabel + '</span>' : '') +
+    '</div>' +
+    '</div>' +
+    '</button>'
+  );
+}
 function toggleCategoryFilter(cat){
   if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
   else state.selectedCategories.add(cat);
