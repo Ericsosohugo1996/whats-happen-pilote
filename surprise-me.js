@@ -26,7 +26,7 @@ function surpriseCandidates(radiusKm, relaxed) {
   return events;
 }
 
-function pickSurprise(timeKey) {
+function pickSurprise(timeKey, excludeId) {
   const radiusKm = SURPRISE_TIME_KM[timeKey];
   let candidates = surpriseCandidates(radiusKm, false);
   let relaxed = false;
@@ -35,7 +35,8 @@ function pickSurprise(timeKey) {
     relaxed = true;
   }
   if (candidates.length === 0) return null;
-  const pick = candidates[Math.floor(Math.random() * candidates.length)];
+  const pool = (excludeId && candidates.length > 1) ? candidates.filter((c) => c.id !== excludeId) : candidates;
+  const pick = pool[Math.floor(Math.random() * pool.length)];
   const isOutdoor = window.__weatherOutdoor;
   const timeLabel = SURPRISE_TIME_LABELS[timeKey];
   let reason;
