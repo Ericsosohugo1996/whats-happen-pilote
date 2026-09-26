@@ -890,12 +890,7 @@ const SEED_EVENTS = [
     thumb: "",
     description: "Messe en plein air présidée par le pape Léon XIV. Accès dès 9h, descente des Champs-Élysées vers la Concorde à 13h45, célébration jusqu'à environ 16h30.",
   },
-    {
-    id: "chambery-foire-savoie",
-    scene: "festival",
-    ... 
-    {
-    id: "chambery-foire-savoie",
+  
     scene: "festival",
     city: "chambery",
     category: "Festival",
