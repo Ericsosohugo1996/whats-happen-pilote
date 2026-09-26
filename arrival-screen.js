@@ -347,6 +347,26 @@ overlay.innerHTML =
 "</div>";
 
 document.body.appendChild(overlay);
+
+(function () {
+  const featuredEl = document.getElementById("explore-featured");
+  if (!featuredEl || typeof allEvents !== "function" || typeof featuredCardHTML !== "function") return;
+  const todayIsoF = new Date().toISOString().slice(0, 10);
+  const featuredEv = allEvents().find(function (ev) {
+    return ev.featured && ev.city === cityKey && (ev.isPlace || !ev.date || ev.date >= todayIsoF);
+  });
+  if (!featuredEv) return;
+  featuredEl.innerHTML = featuredCardHTML(featuredEv);
+  const card = featuredEl.querySelector(".featured-card");
+  if (card) {
+    card.style.marginBottom = "14px";
+    card.addEventListener("click", function () {
+      overlay.remove();
+      openDetail(featuredEv.id);
+    });
+  }
+})();
+
 (async function () {
 const badge = document.getElementById("explore-weather-badge");
 if (!badge || typeof weatherCurrentCoords !== "function") return;
