@@ -3616,6 +3616,13 @@ const CATEGORY_PHOTOS = {
 };
 // ---- vignette photo d'un événement (photo propre, sinon photo de catégorie, sinon illustration) ----
 // utilisée partout où une carte d'événement est affichée, pour ne jamais avoir à dupliquer cette logique.
+// ---- type de tarif d'un événement (gratuit / inscription / payant), à partir du texte libre ev.price ----
+function eventPriceType(ev){
+  const p = (ev.price || "").toLowerCase();
+  if (p.includes("gratuit") || p.includes("libre")) return "free";
+  if (p.includes("inscription")) return "inscription";
+  return "paid";
+}
 function eventPhotoHTML(ev, extraImgStyle){
   const photo = ev.photo || CATEGORY_PHOTOS[ev.category] || "";
   const styleAttr = extraImgStyle ? ` style="${extraImgStyle}"` : "";
