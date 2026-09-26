@@ -169,7 +169,7 @@ maxZoom: 19,
 }).addTo(map);
 
 L.circle([ref.lat, ref.lng], { radius: 1000, color: "#c1440e", fillOpacity: 0.08, weight: 1.5, dashArray: "4 4" }).addTo(map);
-L.circleMarker([ref.lat, ref.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#14213D", fillOpacity: 1 }).addTo(map);
+L.marker([ref.lat, ref.lng], { icon: (typeof userLocationIcon === "function") ? userLocationIcon() : L.divIcon({ html: '<div class="user-loc-marker"><div class="user-loc-pulse"></div><div class="user-loc-dot"></div></div>', className: "", iconSize: [20, 20], iconAnchor: [10, 10] }) }).addTo(map);
 
 allNearby.forEach(function (ev) {
 const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
