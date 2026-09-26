@@ -243,12 +243,11 @@ function __exploreRender() {
          const thumbSvg = (typeof eventPhotoHTML === "function")
         ? eventPhotoHTML(item.ev, "width:100%;height:100%;object-fit:cover;display:block;")
         : ((typeof sceneSVG === "function") ? sceneSVG(item.ev.scene) : "");
-      const priceRaw = item.ev.price || "";
-      let priceLabel = "", priceBg = "";
-      if (priceRaw) {
-        const p = priceRaw.toLowerCase();
-        if (p.indexOf("gratuit") !== -1 || p.indexOf("libre") !== -1) { priceLabel = "Gratuit"; priceBg = "#28C76F"; }
-        else if (p.indexOf("inscription") !== -1) { priceLabel = "Inscription"; priceBg = "linear-gradient(135deg,#A57CF7,#8B6CF2)"; }
+          let priceLabel = "", priceBg = "";
+      if (item.ev.price) {
+        const priceType = (typeof eventPriceType === "function") ? eventPriceType(item.ev) : "paid";
+        if (priceType === "free") { priceLabel = "Gratuit"; priceBg = "#28C76F"; }
+        else if (priceType === "inscription") { priceLabel = "Inscription"; priceBg = "linear-gradient(135deg,#A57CF7,#8B6CF2)"; }
         else { priceLabel = "Payant"; priceBg = "linear-gradient(135deg,#F2C879,#E85D3D)"; }
       }
       return (
