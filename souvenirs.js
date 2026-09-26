@@ -568,13 +568,20 @@
       Object.keys(groups).forEach(function (monthKey) {
         const monthItems = groups[monthKey];
           html += '<div style="font-size:10px;color:#9BA5C2;font-weight:700;margin:18px 0 8px;text-transform:uppercase;letter-spacing:0.3px;">' + monthKey + ' · ' + monthItems.length + ' souvenir' + (monthItems.length > 1 ? 's' : '') + '</div>';
-        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-        monthItems.forEach(function (s) {
+            html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;">';
+        monthItems.forEach(function (s, idx) {
           const dateShort = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
           const bg = s.photoUrl ? "background-image:url('" + s.photoUrl + "');background-size:cover;background-position:center;" : "background:" + gradientFor(s.id) + ";";
-          html += '<div class="souvenir-card" data-id="' + s.id + '" style="border-radius:14px;overflow:hidden;position:relative;height:130px;cursor:pointer;' + bg + '">' +
-            '<div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.55), transparent 60%);"></div>' +
-            '<div style="position:absolute;bottom:6px;left:8px;right:8px;"><div style="color:#fff;font-size:10px;font-weight:700;">' + (s.placeName || "Souvenir libre") + '</div><div style="color:rgba(255,255,255,0.8);font-size:8.5px;">' + dateShort + (s.weatherIcon ? ' · ' + s.weatherIcon + ' ' + s.weatherTemp + '°C' : '') + '</div></div></div>';
+          const rot = (idx % 2 === 0) ? "-2deg" : "2deg";
+          html += '<div class="souvenir-card" data-id="' + s.id + '" style="background:#fdfbf8;border-radius:6px;padding:8px 8px 12px;cursor:pointer;box-shadow:0 10px 20px -8px rgba(0,0,0,0.45);transform:rotate(' + rot + ');transition:transform .15s ease;">' +
+            '<div style="border-radius:3px;overflow:hidden;position:relative;height:112px;' + bg + '">' +
+              (s.weatherIcon ? '<div style="position:absolute;top:6px;right:6px;background:rgba(255,255,255,0.85);border-radius:999px;padding:2px 7px;font-size:9.5px;font-weight:700;color:#14213D;">' + s.weatherIcon + ' ' + s.weatherTemp + '°C</div>' : '') +
+            '</div>' +
+            '<div style="padding-top:8px;text-align:center;">' +
+              '<div style="font-family:\'Caveat\',cursive;font-size:17px;font-weight:700;color:#2a2a2a;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (s.placeName || "Souvenir libre") + '</div>' +
+              '<div style="font-family:\'Caveat\',cursive;font-size:13px;color:#8a8a8a;margin-top:1px;">' + dateShort + '</div>' +
+            '</div>' +
+          '</div>';
         });
         html += '</div>';
       });
