@@ -4103,16 +4103,18 @@ function openDetail(id){
  
     const heroEl = document.getElementById("detail-hero");
   heroEl.className = "detail-hero";
-  if (ev.photo) {
+  const heroPhoto = ev.photo || CATEGORY_PHOTOS[ev.category];
+  if (heroPhoto) {
     const heroImg = document.createElement("img");
-    heroImg.src = ev.photo;
+    heroImg.src = heroPhoto;
     heroImg.alt = ev.title;
+    heroImg.style.cssText = "width:100%;height:100%;object-fit:cover;display:block;";
     heroImg.onerror = function () { heroEl.innerHTML = sceneSVG(ev.scene); };
     heroEl.innerHTML = "";
     heroEl.appendChild(heroImg);
   } else {
     heroEl.innerHTML = sceneSVG(ev.scene);
-  }
+  } 
   document.getElementById("detail-cat").textContent = iconFor(ev.category) + " " + ev.category;
   document.getElementById("detail-title").textContent = ev.title;
   document.getElementById("detail-date").textContent = formatDate(ev.date);
