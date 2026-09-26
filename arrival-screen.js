@@ -243,9 +243,8 @@ function __exploreRender() {
       }
       const icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || (typeof iconFor === "function" ? iconFor(item.ev.category) : "📌");
       const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#6C757D";
-           const thumbPhoto = item.ev.photo || (typeof CATEGORY_PHOTOS !== "undefined" && CATEGORY_PHOTOS[item.ev.category]) || "";
-      const thumbSvg = thumbPhoto
-        ? '<img src="' + thumbPhoto + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.outerHTML = (typeof sceneSVG===\'function\') ? sceneSVG(\'' + (item.ev.scene || '') + '\') : \'\';">'
+         const thumbSvg = (typeof eventPhotoHTML === "function")
+        ? eventPhotoHTML(item.ev, "width:100%;height:100%;object-fit:cover;display:block;")
         : ((typeof sceneSVG === "function") ? sceneSVG(item.ev.scene) : "");
       const priceRaw = item.ev.price || "";
       let priceLabel = "", priceBg = "";
