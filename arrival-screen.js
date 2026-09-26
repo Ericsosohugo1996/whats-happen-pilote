@@ -326,7 +326,8 @@ overlay.innerHTML =
 '</div>' +
 '</div>' +
 '<button id="explore-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
-'<div id="explore-time-tabs" style="display:flex; gap:6px; margin-bottom:12px;">' +
+'<div id="explore-featured"></div>' +
+  '<div id="explore-time-tabs" style="display:flex; gap:6px; margin-bottom:12px;">' +
 '<button class="explore-time-btn" data-time="now" style="flex:1; padding:9px 4px; border-radius:10px; border:none; background:linear-gradient(135deg,#F2C879,#E85D3D); color:#fff; font-size:12px; font-weight:700; cursor:pointer;">Maintenant</button>' +
 '<button class="explore-time-btn" data-time="tonight" style="flex:1; padding:9px 4px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer;">Ce soir</button>' +
 '<button class="explore-time-btn" data-time="tomorrow" style="flex:1; padding:9px 4px; border-radius:10px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; font-weight:600; cursor:pointer;">Demain</button>' +
