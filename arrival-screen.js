@@ -228,7 +228,7 @@ function __exploreRender() {
   }
    resultEl.innerHTML = shown
     .map(function (item, i) {
-      const walkMin = Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5);
+          const walkMin = (typeof walkMinutes === "function") ? walkMinutes(item.dist) : Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5);
       return (typeof exploreRowHTML === "function")
         ? exploreRowHTML(item.ev, walkMin, i === 0)
         : "";
