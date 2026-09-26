@@ -3614,6 +3614,15 @@ const CATEGORY_PHOTOS = {
   "Expo": "https://images.pexels.com/photos/69903/pexels-photo-69903.jpeg?auto=compress&cs=tinysrgb&w=200",
   "À voir": "https://images.pexels.com/photos/29284804/pexels-photo-29284804.jpeg?auto=compress&cs=tinysrgb&w=200",
 };
+// ---- vignette photo d'un événement (photo propre, sinon photo de catégorie, sinon illustration) ----
+// utilisée partout où une carte d'événement est affichée, pour ne jamais avoir à dupliquer cette logique.
+function eventPhotoHTML(ev, extraImgStyle){
+  const photo = ev.photo || CATEGORY_PHOTOS[ev.category] || "";
+  const styleAttr = extraImgStyle ? ` style="${extraImgStyle}"` : "";
+  return photo
+    ? `<img src="${photo}" alt="${ev.title || ""}" loading="lazy" data-scene="${ev.scene || ""}"${styleAttr} onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
+    : sceneSVG(ev.scene);
+}
 function toggleCategoryFilter(cat){
   if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
   else state.selectedCategories.add(cat);
