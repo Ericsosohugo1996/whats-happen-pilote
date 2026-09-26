@@ -875,7 +875,6 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
- const SEED_EVENTS = [
     {
     id: "paris-messe-pape-leon-xiv",
     scene: "festival",
