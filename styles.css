@@ -927,3 +927,4 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 @media (min-width: 600px) {
   #souvenir-fab { right: max(18px, calc(50vw - 222px)) !important; }
 }
+.week-strip-banner{ margin:0 0 16px; }
