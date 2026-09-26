@@ -3585,25 +3585,67 @@ function formatDate(iso){
 const CATEGORY_COLORS = {"Musique":"#9D4EDD","Théâtre":"#E85D3D","Soirée":"#E63980","Festival":"#F4A261","Expo":"#2A9D8F","Sport":"#2A9D5C","Marché":"#3498DB","À voir":"#457B9D","Bar":"#C1440E","Brocante":"#8B5E3C"};
 const CATEGORY_ICONS = {"Musique":"🎵","Théâtre":"🎭","Soirée":"🎟️","Festival":"🎪","Expo":"🖼️","Sport":"⚽","Marché":"🛍️","À voir":"🏛️","Bar":"🍸","Brocante":"🧺"};
 const CATEGORY_LABELS = {"À voir":"Musées", "Soirée":"Culture"};
+// ---- vraies photos (libres de droit, Pexels) pour la grille d'icônes de l'accueil ----
+const CATEGORY_PHOTOS = {
+  "Musique": "https://images.pexels.com/photos/1190295/pexels-photo-1190295.jpeg?auto=compress&cs=tinysrgb&w=200",
+  "Marché": "https://images.pexels.com/photos/2448523/pexels-photo-2448523.jpeg?auto=compress&cs=tinysrgb&w=200",
+  "Brocante": "https://images.pexels.com/photos/17351233/pexels-photo-17351233.jpeg?auto=compress&cs=tinysrgb&w=200",
+  "Festival": "https://images.pexels.com/photos/12657546/pexels-photo-12657546.jpeg?auto=compress&cs=tinysrgb&w=200",
+  "Sport": "https://images.pexels.com/photos/19347969/pexels-photo-19347969.jpeg?auto=compress&cs=tinysrgb&w=200",
+  "Soirée": "https://images.pexels.com/photos/5156606/pexels-photo-5156606.jpeg?auto=compress&cs=tinysrgb&w=200",
+  "Bar": "https://images.pexels.com/photos/29707925/pexels-photo-29707925.jpeg?auto=compress&cs=tinysrgb&w=200",
+  "Expo": "https://images.pexels.com/photos/69903/pexels-photo-69903.jpeg?auto=compress&cs=tinysrgb&w=200",
+  "À voir": "https://images.pexels.com/photos/29284804/pexels-photo-29284804.jpeg?auto=compress&cs=tinysrgb&w=200",
+};
+function toggleCategoryFilter(cat){
+  if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
+  else state.selectedCategories.add(cat);
+  renderCategoryChips();
+  renderDiscover();
+}
+
 function renderCategoryChips(){
   const el = document.getElementById("category-chips");
-  el.innerHTML = "";
-  CATEGORIES.forEach(cat => {
-    const b = document.createElement("button");
-    const active = state.selectedCategories.has(cat);
-    b.className = "cat-chip" + (active ? " active" : "");
-    const color = CATEGORY_COLORS[cat] || "#6C757D";
-    b.innerHTML =
-      '<span class="cat-chip-circle" style="background:' + color + ';' + (active ? '' : 'opacity:0.55;') + '">' + (CATEGORY_ICONS[cat] || "📍") + '</span>' +
-         '<span class="cat-chip-label">' + (CATEGORY_LABELS[cat] || cat) + '</span>';  
-    b.onclick = () => {
-      if (state.selectedCategories.has(cat)) state.selectedCategories.delete(cat);
-      else state.selectedCategories.add(cat);
-      renderCategoryChips();
-      renderDiscover();
-    };
-    el.appendChild(b);
-  });
+  if (el) {
+    el.innerHTML = "";
+    CATEGORIES.forEach(cat => {
+      const b = document.createElement("button");
+      const active = state.selectedCategories.has(cat);
+      b.className = "cat-chip" + (active ? " active" : "");
+      const color = CATEGORY_COLORS[cat] || "#6C757D";
+      b.innerHTML =
+        '<span class="cat-chip-circle" style="background:' + color + ';' + (active ? '' : 'opacity:0.55;') + '">' + (CATEGORY_ICONS[cat] || "📍") + '</span>' +
+           '<span class="cat-chip-label">' + (CATEGORY_LABELS[cat] || cat) + '</span>';
+      b.onclick = () => toggleCategoryFilter(cat);
+      el.appendChild(b);
+    });
+  }
+
+  // ---- barre d'icônes colorées bien visible en haut de l'écran d'accueil (identité visuelle "grille d'icônes") ----
+  const quickEl = document.getElementById("home-category-quickbar");
+  if (quickEl) {
+    quickEl.innerHTML = "";
+    CATEGORIES.forEach(cat => {
+      const b = document.createElement("button");
+      const active = state.selectedCategories.has(cat);
+      b.type = "button";
+      b.className = "quick-cat" + (active ? " active" : "");
+      const color = CATEGORY_COLORS[cat] || "#6C757D";
+      const emoji = CATEGORY_ICONS[cat] || "📍";
+      const photo = CATEGORY_PHOTOS[cat];
+      const photoHTML = photo
+        ? '<img src="' + photo + '" alt="' + (CATEGORY_LABELS[cat] || cat) + '" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'quick-cat-emoji-fallback\',textContent:\'' + emoji + '\'}));">'
+        : '<span class="quick-cat-emoji-fallback">' + emoji + '</span>';
+      b.innerHTML =
+        '<span class="quick-cat-circle' + (active ? ' active' : '') + '" style="--cat-color:' + color + ';">' +
+          photoHTML +
+          '<span class="quick-cat-badge">' + emoji + '</span>' +
+        '</span>' +
+        '<span class="quick-cat-label">' + (CATEGORY_LABELS[cat] || cat) + '</span>';
+      b.onclick = () => toggleCategoryFilter(cat);
+      quickEl.appendChild(b);
+    });
+  }
 }
  
 const CITY_PHOTOS = {
