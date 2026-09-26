@@ -3635,6 +3635,14 @@ function eventPhotoHTML(ev, extraImgStyle){
 function walkMinutes(distKm){
   return Math.max(2, Math.round((distKm * 12) / 5 / 5) * 5);
 }
+function userLocationIcon(){
+  return L.divIcon({
+    html: '<div class="user-loc-marker"><div class="user-loc-pulse"></div><div class="user-loc-dot"></div></div>',
+    className: "",
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+  });
+}
 // ---- ligne compacte "à pied" utilisée par l'écran "Autour de moi" (photo, icône catégorie, prix, temps de marche) ----
 // centralisée ici pour que ce format de carte ne soit plus construit qu'à un seul endroit.
 function exploreRowHTML(ev, walkMin, isFirst){
