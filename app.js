@@ -841,6 +841,33 @@ const CITIES = {
   cayenne: { name: "Cayenne", lat: 4.9333, lng: -52.3333, region: R_GUY },
   stdenisreunion: { name: "Saint-Denis (La Réunion)", lat: -20.8823, lng: 55.4504, region: R_REU },
   mamoudzou: { name: "Mamoudzou", lat: -12.7806, lng: 45.2278, region: R_MAY },
+  // ---- villes moyennes / sous-préfectures, chantier "Territoires" (lot 1) ----
+  saintmalo: { name: "Saint-Malo", lat: 48.6493, lng: -2.0257, region: R_BRE },
+  lorient: { name: "Lorient", lat: 47.7482, lng: -3.3660, region: R_BRE },
+  stnazaire: { name: "Saint-Nazaire", lat: 47.2734, lng: -2.2137, region: R_PDL },
+  cherbourg: { name: "Cherbourg-en-Cotentin", lat: 49.6337, lng: -1.6222, region: R_NOR },
+  dieppe: { name: "Dieppe", lat: 49.9219, lng: 1.0790, region: R_NOR },
+  deauville: { name: "Deauville", lat: 49.3592, lng: 0.0754, region: R_NOR },
+  dunkerque: { name: "Dunkerque", lat: 51.0343, lng: 2.3768, region: R_HDF },
+  calais: { name: "Calais", lat: 50.9513, lng: 1.8587, region: R_HDF },
+  boulognesurmer: { name: "Boulogne-sur-Mer", lat: 50.7264, lng: 1.6147, region: R_HDF },
+  compiegne: { name: "Compiègne", lat: 49.4180, lng: 2.8260, region: R_HDF },
+  mulhouse: { name: "Mulhouse", lat: 47.7508, lng: 7.3359, region: R_GES },
+  verdun: { name: "Verdun", lat: 49.1593, lng: 5.3844, region: R_GES },
+  epernay: { name: "Épernay", lat: 49.0417, lng: 3.9600, region: R_GES },
+  chalonsursaone: { name: "Chalon-sur-Saône", lat: 46.7806, lng: 4.8528, region: R_BFC },
+  beaune: { name: "Beaune", lat: 47.0245, lng: 4.8397, region: R_BFC },
+  roanne: { name: "Roanne", lat: 46.0333, lng: 4.0667, region: R_ARA },
+  vichy: { name: "Vichy", lat: 46.1279, lng: 3.4265, region: R_ARA },
+  annemasse: { name: "Annemasse", lat: 46.1936, lng: 6.2358, region: R_ARA },
+  cannes: { name: "Cannes", lat: 43.5528, lng: 7.0174, region: R_PACA },
+  antibes: { name: "Antibes", lat: 43.5808, lng: 7.1251, region: R_PACA },
+  hyeres: { name: "Hyères", lat: 43.1204, lng: 6.1286, region: R_PACA },
+  arles: { name: "Arles", lat: 43.6766, lng: 4.6278, region: R_PACA },
+  bayonne: { name: "Bayonne", lat: 43.4929, lng: -1.4749, region: R_NAQ },
+  arcachon: { name: "Arcachon", lat: 44.6586, lng: -1.1689, region: R_NAQ },
+  beziers: { name: "Béziers", lat: 43.3444, lng: 3.2158, region: R_OCC },
+  sete: { name: "Sète", lat: 43.4021, lng: 3.6976, region: R_OCC },
 };
  
 // Événements réels d'août-septembre 2026, reformulés à partir des agendas officiels (offices de
@@ -4069,10 +4096,33 @@ function showView(name){
   if (name === "favorites") renderFavorites();
 }
  
+// Remplit le menu déroulant "Ville" du formulaire de publication à partir de CITIES,
+// groupé par région, pour que toute nouvelle ville ajoutée à CITIES y apparaisse
+// automatiquement (au lieu d'une liste figée en HTML, forcément incomplète).
+function populatePublishCitySelect(){
+  const select = document.getElementById("publish-city-select");
+  if (!select) return;
+  const byRegion = {};
+  Object.keys(CITIES).forEach(key => {
+    const region = CITIES[key].region || "Autres";
+    (byRegion[region] = byRegion[region] || []).push(key);
+  });
+  const orderedRegions = [
+    ...CITY_REGIONS_ORDER.filter(r => byRegion[r]),
+    ...Object.keys(byRegion).filter(r => !CITY_REGIONS_ORDER.includes(r)),
+  ];
+  select.innerHTML = orderedRegions.map(region => {
+    const keys = byRegion[region].sort((a, b) => CITIES[a].name.localeCompare(CITIES[b].name, "fr"));
+    const options = keys.map(k => '<option value="' + k + '">' + CITIES[k].name + "</option>").join("");
+    return '<optgroup label="' + region + '">' + options + "</optgroup>";
+  }).join("");
+}
+
 // ---- wiring ----
 document.addEventListener("DOMContentLoaded", () => {
   renderCategoryChips();
   renderRegionAccordion();
+  populatePublishCitySelect();
   initCitySearch();
   renderDiscover();
   applyTranslation();
