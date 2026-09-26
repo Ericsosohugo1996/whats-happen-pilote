@@ -75,21 +75,28 @@ function __ensureSurpriseUI() {
     timeStep.style.display = timeStep.style.display === "none" ? "flex" : "none";
   };
 
-  block.querySelectorAll("[data-surprise-time]").forEach((btn) => {
-    btn.onclick = () => {
-      const timeKey = btn.dataset.surpriseTime;
-      const outcome = pickSurprise(timeKey);
-      const timeStep = block.querySelector("#surprise-time-step");
-      const result = block.querySelector("#surprise-result");
-      timeStep.style.display = "none";
-      if (!outcome) {
-        result.innerHTML =
-          '<div style="background:#fff; border-radius:12px; padding:14px; border:0.5px solid rgba(0,0,0,0.08); font-size:13px; color:#666;">Aucun événement trouvé pour l\'instant dans ce rayon. Essayez un temps plus large.</div>';
-      } else {
-        const ev = outcome.pick;
-               const photoUrl = (typeof CITY_PHOTOS !== "undefined" && CITY_PHOTOS[ev.city]) || "";
-        result.innerHTML =
-          '<div style="background:#fff; border-radius:12px; overflow:hidden; border:0.5px solid rgba(0,0,0,0.08); cursor:pointer;" id="surprise-card">' +
+  function renderSurpriseResult(timeKey, excludeId) {
+    const outcome = pickSurprise(timeKey, excludeId);
+    const timeStep = block.querySelector("#surprise-time-step");
+    const result = block.querySelector("#surprise-result");
+    timeStep.style.display = "none";
+    if (!outcome) {
+      result.innerHTML =
+        '<div style="display:flex; align-items:flex-start; gap:10px;">' +
+          '<img src="logo.svg" alt="" style="width:32px;height:32px;border-radius:50%;background:#14213D;padding:6px;flex:0 0 auto;box-shadow:0 4px 10px -4px rgba(0,0,0,.3);">' +
+          '<div style="background:#fff; border-radius:4px 16px 16px 16px; padding:12px 14px; border:0.5px solid rgba(0,0,0,0.08); font-size:13px; color:#666; flex:1;">Aucun événement trouvé pour l\'instant dans ce rayon. Essayez un temps plus large.</div>' +
+        '</div>';
+      result.style.display = "block";
+      return;
+    }
+    const ev = outcome.pick;
+    const photoUrl = ev.photo || (typeof CATEGORY_PHOTOS !== "undefined" && CATEGORY_PHOTOS[ev.category]) || (typeof CITY_PHOTOS !== "undefined" && CITY_PHOTOS[ev.city]) || "";
+    result.innerHTML =
+      '<div style="display:flex; align-items:flex-start; gap:10px;">' +
+        '<img src="logo.svg" alt="" style="width:32px;height:32px;border-radius:50%;background:#14213D;padding:6px;flex:0 0 auto;box-shadow:0 4px 10px -4px rgba(0,0,0,.3);">' +
+        '<div style="flex:1; min-width:0;">' +
+          '<div style="background:#fff; border-radius:4px 16px 16px 16px; padding:10px 13px; font-size:12.5px; color:#333; margin-bottom:8px; box-shadow:0 4px 10px -6px rgba(0,0,0,.15);">J\'ai trouvé une idée pour toi 👇</div>' +
+          '<div style="background:#fff; border-radius:14px; overflow:hidden; border:0.5px solid rgba(0,0,0,0.08); cursor:pointer; box-shadow:0 6px 16px -10px rgba(0,0,0,.25);" id="surprise-card">' +
             (photoUrl
               ? '<div style="height:120px; background-image:url(\'' + photoUrl + '\'); background-size:cover; background-position:center;"></div>'
               : "") +
@@ -99,11 +106,21 @@ function __ensureSurpriseUI() {
               '<div style="font-size:12px; color:#777; margin-bottom:8px;">' + formatDate(ev.date) + (ev.time ? " · " + ev.time : "") + " · " + (Math.round(ev.distance * 10) / 10) + ' km</div>' +
               '<div style="font-size:11.5px; color:#E8604C; background:rgba(232,96,76,0.08); border-radius:8px; padding:6px 8px;">' + outcome.reason + '</div>' +
             '</div>' +
-          '</div>';
-        result.querySelector("#surprise-card").onclick = () => openDetail(ev.id);
-      }
-      result.style.display = "block";
-    };
+          '</div>' +
+          '<div style="display:flex; gap:8px; margin-top:8px;">' +
+            '<button type="button" id="surprise-go" style="flex:1; padding:10px; border-radius:10px; border:none; background:linear-gradient(135deg,#E8604C,#c94a38); color:#fff; font-size:12.5px; font-weight:700; cursor:pointer;">J\'y vais</button>' +
+            '<button type="button" id="surprise-reroll" style="flex:1; padding:10px; border-radius:10px; border:1px solid rgba(20,33,61,0.15); background:#fff; color:#14213D; font-size:12.5px; font-weight:700; cursor:pointer;">🔁 Une autre idée</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    result.querySelector("#surprise-card").onclick = () => openDetail(ev.id);
+    result.querySelector("#surprise-go").onclick = () => openDetail(ev.id);
+    result.querySelector("#surprise-reroll").onclick = () => renderSurpriseResult(timeKey, ev.id);
+    result.style.display = "block";
+  }
+
+  block.querySelectorAll("[data-surprise-time]").forEach((btn) => {
+    btn.onclick = () => renderSurpriseResult(btn.dataset.surpriseTime, null);
   });
 
   return block;
