@@ -730,6 +730,15 @@ else if (key === "carnet") { if (window.__renderSouvenirsScreen) __renderSouveni
 });
 });
 
+const featuredCardBtn = document.getElementById("arrival-featured-card");
+if (featuredCardBtn) {
+featuredCardBtn.addEventListener("click", function () {
+const todayIso = new Date().toISOString().slice(0, 10);
+const featuredEv = (typeof allEvents === "function" ? allEvents() : [])
+.find(function (ev) { return ev.featured && ev.city === cityKey && (ev.isPlace || !ev.date || ev.date >= todayIso); });
+if (featuredEv) { overlay.remove(); openDetail(featuredEv.id); }
+});
+}
 wzNavbarBind(overlay, function () { overlay.remove(); });
 }
 
