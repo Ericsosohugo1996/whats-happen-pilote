@@ -3894,18 +3894,46 @@ function updateStatsBanner(events){
   if (elWeek) elWeek.textContent = weekCount;
   if (elLater) elLater.textContent = laterCount;
 }
+function featuredCardHTML(ev){
+  const photo = ev.photo || CATEGORY_PHOTOS[ev.category] || "";
+  const dateTimeTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
+  return `
+    <button class="featured-card" data-id="${ev.id}">
+      <div class="featured-photo" style="${photo ? "background-image:url('" + photo + "');" : "background:linear-gradient(135deg,#14213D,#0B1526);"}">
+        <span class="featured-badge">⭐ À LA UNE</span>
+        <div class="featured-body">
+          <div class="featured-cat">${ev.category}</div>
+          <div class="featured-title">${ev.title}</div>
+          <div class="featured-meta">📍 ${ev.place || ""} · 🕐 ${dateTimeTxt}</div>
+        </div>
+      </div>
+    </button>`;
+}
+
 function renderDiscover(){
   const events = visibleEvents();
   const listEl = document.getElementById("event-list");
+  const featuredEl = document.getElementById("event-list-featured");
   const emptyEl = document.getElementById("empty-state");
   updateStatsBanner(baseVisibleEvents());
+
+  const featuredEvents = events.filter(ev => ev.featured);
+  const restEvents = events.filter(ev => !ev.featured);
+
+  if (featuredEl) {
+    featuredEl.innerHTML = featuredEvents.map(featuredCardHTML).join("");
+    featuredEl.querySelectorAll(".featured-card").forEach(card => {
+      card.onclick = () => openDetail(card.dataset.id);
+    });
+  }
+
   if (events.length === 0){
     listEl.innerHTML = "";
     emptyEl.classList.remove("hidden");
     renderEmptyStateContent(emptyEl);
   } else {
     emptyEl.classList.add("hidden");
-    listEl.innerHTML = events.map(eventCardHTML).join("");
+    listEl.innerHTML = restEvents.map(eventCardHTML).join("");
     listEl.querySelectorAll(".event-card").forEach(card => {
       card.onclick = () => openDetail(card.dataset.id);
     });
