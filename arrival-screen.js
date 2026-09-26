@@ -226,7 +226,7 @@ function __exploreRender() {
     moreBtn.style.display = "none";
     return;
   }
-  resultEl.innerHTML = shown
+   resultEl.innerHTML = shown
     .map(function (item, i) {
       const walkMin = Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5);
       return (typeof exploreRowHTML === "function")
