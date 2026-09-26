@@ -174,12 +174,16 @@
     <button class="btn-ghost" id="btn-account" aria-label="Mon compte" style="margin-right:6px;">👤</button>
     <button class="btn-ghost" id="btn-publish-header" data-i18n="＋ Publier">＋ Publier</button>
   </header>
-  <div id="account-modal" class="modal hidden">
+   <div id="account-modal" class="modal hidden">
     <div class="modal-content">
       <button type="button" id="btn-account-close" class="modal-close">✕</button>
+      <div class="account-hero">
+        <div class="account-hero-badge">👋</div>
+        <div class="account-hero-title">Bienvenue sur Whazup</div>
+        <div class="account-hero-sub">Retrouve tes favoris et tes souvenirs sur tous tes appareils</div>
+      </div>
       <div id="account-logged-out">
-        <h2 style="margin-top:0;">Mon compte</h2>
-        <p style="font-size:13px; color:#666;">Connecte-toi pour synchroniser tes points et favoris entre tes appareils. L'appli reste utilisable sans compte.</p>
+        <p style="font-size:13px; color:#666; margin-top:0;">Connecte-toi pour synchroniser tes points et favoris entre tes appareils. L'appli reste utilisable sans compte.</p>
         <label class="field">
           <span>Email</span>
           <input type="email" id="account-email" placeholder="ton@email.com">
