@@ -484,6 +484,20 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 }
 .modal-content .btn-outline.btn-block{ width:100%; font-size:14px; margin-bottom:8px; }
 .modal-content .btn-outline.btn-block:last-child{ margin-bottom:0; }
+/* ---- en-tête visuel de la modale "Mon compte" ---- */
+.account-hero{
+  margin:-26px -20px 20px; padding:34px 20px 22px; text-align:center;
+  background:linear-gradient(135deg, #14213D 0%, #1F3A63 55%, #2F8A90 100%);
+  border-radius:24px 24px 0 0;
+}
+.account-hero-badge{
+  width:52px; height:52px; margin:0 auto 12px; border-radius:50%;
+  background:rgba(255,255,255,.16); backdrop-filter:blur(6px);
+  display:flex; align-items:center; justify-content:center; font-size:24px;
+}
+.account-hero-title{ color:#fff; font-family:var(--font-display); font-size:19px; font-weight:700; }
+.account-hero-sub{ color:rgba(255,255,255,.75); font-size:12px; margin-top:5px; line-height:1.4; }
+@media (min-width:600px){ .account-hero{ border-radius:20px 20px 0 0; } }
 .landmark-modal-body{ padding:20px 22px 26px; }
 .landmark-modal-body h2{ font-family:var(--font-display); font-weight:600; font-size:19px; margin:0 0 9px; }
 .landmark-modal-body p{ font-size:13.5px; color:var(--ink-soft); line-height:1.65; margin:0; }
