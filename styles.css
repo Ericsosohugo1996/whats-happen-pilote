@@ -275,6 +275,7 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .info-sub.accent{ color:var(--accent); font-weight:600; }
 .info-divider{ height:1px; background:#e5e0d8; margin:11px 0; }
 .price-badge{ display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:#eafaf0; color:#2a9d5c; font-size:12px; font-weight:700; margin-bottom:14px; }
+.detail-desc{ font-size:13.5px; color:var(--ink-soft); line-height:1.65; margin:0 0 18px; }
 .info-row .ico{ width:22px; text-align:center; color:var(--primary); }
 /* ---- fiche détail, style sobre : marine + accent corail réservé aux états confirmés ---- */
 .cta-row{ display:flex; gap:10px; margin:20px 0 12px; }
