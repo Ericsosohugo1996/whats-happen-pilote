@@ -229,50 +229,9 @@ function __exploreRender() {
   resultEl.innerHTML = shown
     .map(function (item, i) {
       const walkMin = Math.max(2, Math.round((item.dist * 12) / 5 / 5) * 5);
-      const today = new Date().toISOString().slice(0, 10);
-      let dateLabel = "";
-      if (item.ev.date) {
-        const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
-        if (item.ev.date === today) dateLabel = "Aujourd'hui";
-        else if (item.ev.date === tomorrow) dateLabel = "Demain";
-        else dateLabel = formatDate(item.ev.date);
-        if (item.ev.time) dateLabel += " · " + item.ev.time;
-      }
-      const icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || (typeof iconFor === "function" ? iconFor(item.ev.category) : "📌");
-      const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#6C757D";
-         const thumbSvg = (typeof eventPhotoHTML === "function")
-        ? eventPhotoHTML(item.ev, "width:100%;height:100%;object-fit:cover;display:block;")
-        : ((typeof sceneSVG === "function") ? sceneSVG(item.ev.scene) : "");
-          let priceLabel = "", priceBg = "";
-      if (item.ev.price) {
-        const priceType = (typeof eventPriceType === "function") ? eventPriceType(item.ev) : "paid";
-        if (priceType === "free") { priceLabel = "Gratuit"; priceBg = "#28C76F"; }
-        else if (priceType === "inscription") { priceLabel = "Inscription"; priceBg = "linear-gradient(135deg,#A57CF7,#8B6CF2)"; }
-        else { priceLabel = "Payant"; priceBg = "linear-gradient(135deg,#F2C879,#E85D3D)"; }
-      }
-      return (
-        '<button class="explore-pick" data-id="' +
-        item.ev.id +
-        '" style="display:flex; align-items:flex-start; gap:12px; width:100%; text-align:left; background:none; border:none; padding:14px 0; cursor:pointer;' +
-        (i > 0 ? "border-top:1px solid #eee;" : "") +
-        '">' +
-        '<div style="position:relative; width:56px; height:56px; flex-shrink:0;">' +
-        '<div style="width:56px; height:56px; border-radius:14px; overflow:hidden; background:#f0f0f0;">' + thumbSvg + '</div>' +
-        '<div style="position:absolute; top:-4px; left:-4px; width:22px; height:22px; border-radius:50%; background:' + catColor + '; display:flex; align-items:center; justify-content:center; font-size:11px; border:2px solid #fff; box-shadow:0 2px 4px rgba(0,0,0,0.2);">' + icon + '</div>' +
-        '</div>' +
-        '<div style="flex:1; min-width:0;">' +
-        '<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px;">' +
-        '<div style="font-family:var(--font-display); font-size:13.5px; font-weight:600; color:#14213D; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + item.ev.title + '</div>' +
-        (priceLabel ? '<div style="font-size:10px; font-weight:800; color:#fff; background:' + priceBg + '; padding:4px 9px; border-radius:999px; white-space:nowrap; flex-shrink:0;">' + priceLabel + '</div>' : '') +
-        '</div>' +
-        (item.ev.place ? '<div style="font-size:11px; color:#999; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + item.ev.place + '</div>' : '') +
-        '<div style="display:flex; align-items:center; gap:8px; margin-top:4px;">' +
-        '<span style="font-size:11px; color:#E85D3D; font-weight:600;">🚶 ' + walkMin + ' min</span>' +
-        (dateLabel ? '<span style="font-size:11px; color:#888;">· ' + dateLabel + '</span>' : '') +
-        '</div>' +
-        '</div>' +
-        "</button>"
-      );
+      return (typeof exploreRowHTML === "function")
+        ? exploreRowHTML(item.ev, walkMin, i === 0)
+        : "";
     })
     .join("");
   resultEl.querySelectorAll(".explore-pick").forEach(function (btn) {
