@@ -286,11 +286,16 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .home-category-quickbar .quick-cat-emoji-fallback{ font-size:24px; filter:drop-shadow(0 1px 2px rgba(0,0,0,.15)); }
 .home-category-quickbar .quick-cat-badge{ position:absolute; bottom:-3px; right:-3px; width:22px; height:22px; border-radius:50%; background:var(--cat-color); display:flex; align-items:center; justify-content:center; font-size:11px; border:2px solid #fff; box-shadow:0 2px 5px rgba(0,0,0,.25); }
 .home-category-quickbar .quick-cat.active .quick-cat-circle{ transform:translateY(-3px) scale(1.06); box-shadow:0 12px 22px -8px rgba(20,33,61,0.55); }
-.home-category-quickbar .quick-cat-label{ font-size:10.5px; font-weight:700; color:var(--ink-soft); white-space:nowrap; text-align:center; }
-.home-category-quickbar .quick-cat.active .quick-cat-label{ color:var(--ink); }
-
-.empty-state{ text-align:center; color:var(--ink-soft); font-size:13px; padding:28px 10px; }
-/* ---- grille d'icônes colorées "Que se passe-t-il ?" (accueil, toujours visible) ---- */
+.action-tiles{ display:flex; gap:8px; margin-bottom:14px; }
+.action-tile{ flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; padding:12px 4px 10px; border-radius:14px; border:none; background:#f7f5f2; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease; }
+.action-tile .tile-icon{ width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; background:#fff; box-shadow:0 2px 6px rgba(20,33,61,.12); }
+.action-tile .tile-label{ font-size:9.5px; color:#666; font-weight:600; }
+.action-tile.active{ background:var(--accent-soft); transform:translateY(-1px); }
+.action-tile.active .tile-icon{ box-shadow:0 4px 10px -2px rgba(232,96,76,.4); }
+#btn-favorite .tile-icon{ background:#FCE7EC; }
+#btn-been-there .tile-icon{ background:#E5F4EC; }
+#btn-add-souvenir-detail .tile-icon{ background:#FDF3D8; }
+#btn-share .tile-icon{ background:#E7F0FB; }
 .home-quickbar-section{ margin:4px 16px 14px; }
 .home-quickbar-title{ font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--ink); margin:0 0 10px; letter-spacing:-.01em; }
 .home-category-quickbar{ display:flex; gap:16px; overflow-x:auto; padding:2px 2px 8px; scrollbar-width:none; }
