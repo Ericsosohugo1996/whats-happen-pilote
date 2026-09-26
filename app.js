@@ -3632,13 +3632,21 @@ function renderCategoryChips(){
   const el = document.getElementById("category-chips");
   if (el) {
     el.innerHTML = "";
-    CATEGORIES.forEach(cat => {
+     CATEGORIES.forEach(cat => {
       const b = document.createElement("button");
       const active = state.selectedCategories.has(cat);
       b.className = "cat-chip" + (active ? " active" : "");
       const color = CATEGORY_COLORS[cat] || "#6C757D";
+      const emoji = CATEGORY_ICONS[cat] || "📍";
+      const photo = CATEGORY_PHOTOS[cat];
+      const photoHTML = photo
+        ? '<img src="' + photo + '" alt="" loading="lazy" onerror="this.remove();">'
+        : '';
       b.innerHTML =
-        '<span class="cat-chip-circle" style="background:' + color + ';' + (active ? '' : 'opacity:0.55;') + '">' + (CATEGORY_ICONS[cat] || "📍") + '</span>' +
+        '<span class="cat-chip-circle" style="background:' + color + ';' + (active ? '' : 'opacity:0.55;') + '">' +
+          photoHTML +
+          '<span class="cat-chip-emoji">' + emoji + '</span>' +
+        '</span>' +
            '<span class="cat-chip-label">' + (CATEGORY_LABELS[cat] || cat) + '</span>';
       b.onclick = () => toggleCategoryFilter(cat);
       el.appendChild(b);
