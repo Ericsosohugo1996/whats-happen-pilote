@@ -894,7 +894,12 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 #view-discover .event-card .dist.paid{ background:linear-gradient(135deg,#F2C879,#E85D3D); }
 #view-discover .event-card--place{ border-left:3px solid #22C55E; }
 
+.empty-state{ text-align:center; font-size:13.5px; line-height:1.6; color:#8b93a1; padding:36px 24px; max-width:320px; margin:0 auto; }
+.empty-state::before{ content:"🔍"; width:56px; height:56px; margin:0 auto 14px; border-radius:50%; background:#F1F3F7; font-size:24px; display:flex; align-items:center; justify-content:center; }
+#favorites-empty::before{ content:"🤍"; }
+#photos-empty::before{ content:"📸"; }
 #view-discover .empty-state{ color:rgba(255,255,255,.6); }
+#view-discover .empty-state::before{ background:rgba(255,255,255,.08); }
 #view-discover .map-mock{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); }
 #view-discover .map-tag{ background:rgba(20,33,61,.85); color:#fff; border:1px solid rgba(255,255,255,.2); }
 
