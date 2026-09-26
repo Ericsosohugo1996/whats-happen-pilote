@@ -3812,9 +3812,12 @@ function eventCardHTML(ev){
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
   const dateTimeTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
   const metaTxt = distTxt ? ("📍 " + distTxt + "  ·  🕐 " + dateTimeTxt) : ("🕐 " + dateTimeTxt);
+   const fallbackPhoto = CATEGORY_PHOTOS[ev.category];
   const thumbHTML = ev.photo
-    ? `<img src="${ev.photo}" alt="${ev.title}" data-scene="${ev.scene}" onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
-    : sceneSVG(ev.scene);
+    ? `<img src="${ev.photo}" alt="${ev.title}" loading="lazy" data-scene="${ev.scene}" onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
+    : fallbackPhoto
+      ? `<img src="${fallbackPhoto}" alt="${ev.title}" loading="lazy" data-scene="${ev.scene}" onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
+      : sceneSVG(ev.scene);
   const catColor = CATEGORY_COLORS[ev.category] || "#6C757D";
   const catIcon = CATEGORY_ICONS[ev.category] || "📍";
   const catLabel = ev.isPlace ? (ev.category === "Bar" ? "BAR" : "À VOIR") : ev.category;
