@@ -875,6 +875,26 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
+ const SEED_EVENTS = [
+    {
+    id: "paris-messe-pape-leon-xiv",
+    scene: "festival",
+    city: "paris",
+    category: "Festival",
+    title: "Messe du pape Léon XIV",
+    date: "2026-09-26",
+    time: "15:00",
+    place: "Place de la Concorde et avenue des Champs-Élysées, Paris 8e",
+    lat: 48.8656,
+    lng: 2.3212,
+    price: "Gratuit",
+    thumb: "",
+    description: "Messe en plein air présidée par le pape Léon XIV. Accès dès 9h, descente des Champs-Élysées vers la Concorde à 13h45, célébration jusqu'à environ 16h30.",
+  },
+    {
+    id: "chambery-foire-savoie",
+    scene: "festival",
+    ... 
     {
     id: "chambery-foire-savoie",
     scene: "festival",
