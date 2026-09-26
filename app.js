@@ -3851,10 +3851,9 @@ function eventCardHTML(ev){
   const catIcon = CATEGORY_ICONS[ev.category] || "📍";
   const catLabel = ev.isPlace ? (ev.category === "Bar" ? "BAR" : "À VOIR") : ev.category;
   const venueTxt = ev.place ? ev.place.split(",")[0] : "";
-  const priceRaw = (ev.price || "").toLowerCase();
-  let priceCls = "paid", priceLabel = "Payant";
-  if (priceRaw.includes("gratuit") || priceRaw.includes("libre")) { priceCls = "free"; priceLabel = "Gratuit"; }
-  else if (priceRaw.includes("inscription")) { priceCls = "inscr"; priceLabel = "Inscription"; }
+   const priceType = eventPriceType(ev);
+  const priceCls = priceType === "free" ? "free" : priceType === "inscription" ? "inscr" : "paid";
+  const priceLabel = priceType === "free" ? "Gratuit" : priceType === "inscription" ? "Inscription" : "Payant";
   return `
     <button class="event-card${ev.isPlace ? " event-card--place" : ""}" data-id="${ev.id}" data-cat="${ev.category}">
       <div class="thumb-wrap">
