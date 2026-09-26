@@ -89,3 +89,9 @@ function renderWeekStrip(events) {
     };
   });
 }
+
+const __renderDiscoverBaseWeekStrip = renderDiscover;
+renderDiscover = function () {
+  __renderDiscoverBaseWeekStrip();
+  renderWeekStrip(baseVisibleEvents());
+};
