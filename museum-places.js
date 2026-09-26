@@ -1,34 +1,32 @@
-// ---- musées et lieux "à voir" pour les nouvelles villes moyennes (chantier "Territoires", lot 3, dernier lot) ----
-// (Dieppe, Deauville, Calais, Boulogne-sur-Mer, Compiègne, Épernay, Beaune, Annemasse, Hyères, Arcachon)
-const CURATED_MUSEUMS_13 = [
-  // ---- Dieppe ----
-  { id: "musee13-dieppe-1", isPlace: true, scene: "expo", city: "dieppe", category: "À voir", title: "Château-Musée de Dieppe", date: null, time: "", place: "Rue de Chastes, Dieppe", lat: 49.9285, lng: 1.0715, price: "Payant", thumb: "", description: "Château du XVe siècle sur la falaise, réputé pour sa collection unique d'ivoires sculptés dieppois." },
-  // ---- Deauville ----
-  { id: "musee13-deauville-1", isPlace: true, scene: "expo", city: "deauville", category: "À voir", title: "Les Planches de Deauville", date: null, time: "", place: "Promenade des Planches, Deauville", lat: 49.3565, lng: 0.0745, price: "Gratuit", thumb: "", description: "Célèbre promenade en bois le long de la plage, cabines de bain baptisées du nom de stars de cinéma." },
-  // ---- Calais ----
-  { id: "musee13-calais-1", isPlace: true, scene: "expo", city: "calais", category: "À voir", title: "Cité de la Dentelle et de la Mode", date: null, time: "", place: "135 Quai du Commerce, Calais", lat: 50.9575, lng: 1.8555, price: "Payant", thumb: "", description: "Dans une ancienne usine textile, retrace la tradition dentelière de Calais et son lien avec la mode." },
-  { id: "musee13-calais-2", isPlace: true, scene: "expo", city: "calais", category: "À voir", title: "Les Bourgeois de Calais (Rodin)", date: null, time: "", place: "Place du Parc, Calais", lat: 50.9600, lng: 1.8555, price: "Gratuit", thumb: "", description: "Célèbre groupe sculpté d'Auguste Rodin, devant l'hôtel de ville, hommage aux six bourgeois qui sauvèrent la ville en 1347." },
-  // ---- Boulogne-sur-Mer ----
-  { id: "musee13-boulognesurmer-1", isPlace: true, scene: "expo", city: "boulognesurmer", category: "À voir", title: "Nausicaá, Centre National de la Mer", date: null, time: "", place: "Boulevard Sainte-Beuve, Boulogne-sur-Mer", lat: 50.7245, lng: 1.5940, price: "Payant", thumb: "", description: "Plus grand aquarium d'Europe, requins et écosystèmes marins du monde entier, face à la Manche." },
-  { id: "musee13-boulognesurmer-2", isPlace: true, scene: "expo", city: "boulognesurmer", category: "À voir", title: "Château-Musée de Boulogne-sur-Mer", date: null, time: "", place: "Rue de Bernet, Boulogne-sur-Mer", lat: 50.7275, lng: 1.6140, price: "Payant", thumb: "", description: "Château médiéval abritant des collections égyptiennes, grecques et des masques d'Alaska, dans la ville haute fortifiée." },
-  // ---- Compiègne ----
-  { id: "musee13-compiegne-1", isPlace: true, scene: "expo", city: "compiegne", category: "À voir", title: "Château de Compiègne", date: null, time: "", place: "Place du Général de Gaulle, Compiègne", lat: 49.4175, lng: 2.8255, price: "Payant", thumb: "", description: "Ancienne résidence impériale de Napoléon Ier et Napoléon III, appartements d'apparat et musée de la voiture." },
-  { id: "musee13-compiegne-2", isPlace: true, scene: "expo", city: "compiegne", category: "À voir", title: "Clairière de l'Armistice", date: null, time: "", place: "Route de Soissons, Compiègne", lat: 49.4290, lng: 2.9040, price: "Payant", thumb: "", description: "Lieu de signature de l'armistice de 1918, wagon reconstitué et mémorial dans la forêt de Compiègne." },
-  // ---- Épernay ----
-  { id: "musee13-epernay-1", isPlace: true, scene: "expo", city: "epernay", category: "À voir", title: "Avenue de Champagne", date: null, time: "", place: "Avenue de Champagne, Épernay", lat: 49.0405, lng: 3.9650, price: "Gratuit", thumb: "", description: "Avenue classée à l'Unesco bordée des plus prestigieuses maisons de champagne, sous laquelle dorment des kilomètres de caves." },
-  // ---- Beaune ----
-  { id: "musee13-beaune-1", isPlace: true, scene: "expo", city: "beaune", category: "À voir", title: "Hospices de Beaune (Hôtel-Dieu)", date: null, time: "", place: "Rue de l'Hôtel Dieu, Beaune", lat: 47.0245, lng: 4.8395, price: "Payant", thumb: "", description: "Hôpital du XVe siècle aux toits de tuiles vernissées multicolores, l'un des monuments les plus photographiés de Bourgogne." },
-  // ---- Annemasse ----
-  { id: "musee13-annemasse-1", isPlace: true, scene: "expo", city: "annemasse", category: "À voir", title: "Villa du Parc, centre d'art contemporain", date: null, time: "", place: "4 Avenue des Verchères, Annemasse", lat: 46.1935, lng: 6.2350, price: "Gratuit", thumb: "", description: "Centre d'art contemporain municipal proposant des expositions temporaires, au cœur d'Annemasse." },
-  // ---- Hyères ----
-  { id: "musee13-hyeres-1", isPlace: true, scene: "expo", city: "hyeres", category: "À voir", title: "Villa Noailles", date: null, time: "", place: "Montée de Noailles, Hyères", lat: 43.1215, lng: 6.1300, price: "Payant", thumb: "", description: "Villa moderniste des années 1920, chef-d'œuvre d'architecture Art déco dominant la vieille ville de Hyères." },
-  { id: "musee13-hyeres-2", isPlace: true, scene: "expo", city: "hyeres", category: "À voir", title: "Ruines du Château Saint-Bernard", date: null, time: "", place: "Colline du Château, Hyères", lat: 43.1230, lng: 6.1290, price: "Gratuit", thumb: "", description: "Vestiges d'une forteresse médiévale offrant un panorama sur Hyères, la rade et les îles d'Or." },
-  // ---- Arcachon ----
-  { id: "musee13-arcachon-1", isPlace: true, scene: "expo", city: "arcachon", category: "À voir", title: "Ville d'Hiver d'Arcachon", date: null, time: "", place: "Ville d'Hiver, Arcachon", lat: 44.6570, lng: -1.1650, price: "Gratuit", thumb: "", description: "Quartier de villas victoriennes du XIXe siècle nichées dans la forêt de pins, classé site remarquable." },
-  { id: "musee13-arcachon-2", isPlace: true, scene: "expo", city: "arcachon", category: "À voir", title: "Dune du Pilat", date: null, time: "", place: "Route de la Corniche, Arcachon", lat: 44.5900, lng: -1.2140, price: "Gratuit", thumb: "", description: "Plus haute dune de sable d'Europe, panorama exceptionnel sur le bassin d'Arcachon et l'océan Atlantique." },
+// ---- musées et lieux "à voir" : dernières villes sans contenu (DOM-TOM + petite couronne parisienne) ----
+// (Fort-de-France, Cayenne, Saint-Denis de La Réunion, Basse-Terre, Mamoudzou, Nanterre, Bobigny, Créteil, Cergy)
+const CURATED_MUSEUMS_14 = [
+  // ---- Fort-de-France (Martinique) ----
+  { id: "musee14-fortdefrance-1", isPlace: true, scene: "expo", city: "fortdefrance", category: "À voir", title: "Musée d'Histoire et d'Ethnographie de la Martinique", date: null, time: "", place: "10 Boulevard du Général de Gaulle, Fort-de-France", lat: 14.6035, lng: -61.0730, price: "Payant", thumb: "", description: "Costumes créoles, bijoux traditionnels et histoire de la Martinique, dans une villa coloniale du centre-ville." },
+  { id: "musee14-fortdefrance-2", isPlace: true, scene: "expo", city: "fortdefrance", category: "À voir", title: "Bibliothèque Schœlcher", date: null, time: "", place: "Rue Victor Schœlcher, Fort-de-France", lat: 14.6013, lng: -61.0693, price: "Gratuit", thumb: "", description: "Étonnant édifice byzantino-mauresque en fer et céramique, transporté de l'Exposition universelle de 1889 à Fort-de-France." },
+  // ---- Cayenne (Guyane) ----
+  { id: "musee14-cayenne-1", isPlace: true, scene: "expo", city: "cayenne", category: "À voir", title: "Musée des Cultures Guyanaises", date: null, time: "", place: "52 Rue Madame Suzanne Paille, Cayenne", lat: 4.9370, lng: -52.3260, price: "Payant", thumb: "", description: "Ethnographie amérindienne, bushinenge et créole, pour comprendre la diversité culturelle de la Guyane." },
+  { id: "musee14-cayenne-2", isPlace: true, scene: "expo", city: "cayenne", category: "À voir", title: "Place des Palmistes", date: null, time: "", place: "Place des Palmistes, Cayenne", lat: 4.9350, lng: -52.3280, price: "Gratuit", thumb: "", description: "Grande place ombragée de palmiers royaux, cœur historique et social du centre-ville de Cayenne." },
+  // ---- Saint-Denis (La Réunion) ----
+  { id: "musee14-stdenisreunion-1", isPlace: true, scene: "expo", city: "stdenisreunion", category: "À voir", title: "Muséum d'Histoire Naturelle de La Réunion", date: null, time: "", place: "Jardin de l'État, Saint-Denis", lat: -20.8795, lng: 55.4485, price: "Gratuit", thumb: "", description: "Faune, flore et volcanisme de l'océan Indien, dans un beau jardin colonial planté au XVIIIe siècle." },
+  { id: "musee14-stdenisreunion-2", isPlace: true, scene: "expo", city: "stdenisreunion", category: "À voir", title: "Le Barachois", date: null, time: "", place: "Le Barachois, Saint-Denis", lat: -20.8730, lng: 55.4460, price: "Gratuit", thumb: "", description: "Esplanade en bord de mer bordée de vieux canons, lieu de promenade emblématique du front de mer de Saint-Denis." },
+  // ---- Basse-Terre (Guadeloupe) ----
+  { id: "musee14-basseterre-1", isPlace: true, scene: "expo", city: "basseterre", category: "À voir", title: "Fort Louis Delgrès", date: null, time: "", place: "Fort Louis Delgrès, Basse-Terre", lat: 15.9940, lng: -61.7280, price: "Payant", thumb: "", description: "Forteresse du XVIIe siècle dominant la baie, dédiée à l'histoire militaire et à la mémoire de l'abolition de l'esclavage." },
+  { id: "musee14-basseterre-2", isPlace: true, scene: "expo", city: "basseterre", category: "À voir", title: "Cathédrale Notre-Dame-de-Guadeloupe", date: null, time: "", place: "Basse-Terre", lat: 16.0000, lng: -61.7320, price: "Gratuit", thumb: "", description: "Cathédrale du XVIIIe siècle, principal édifice religieux du centre historique de Basse-Terre." },
+  // ---- Mamoudzou (Mayotte) ----
+  { id: "musee14-mamoudzou-1", isPlace: true, scene: "expo", city: "mamoudzou", category: "À voir", title: "MuMa, Musée de Mayotte", date: null, time: "", place: "Dzaoudzi, en face de Mamoudzou", lat: -12.7869, lng: 45.2864, price: "Gratuit", thumb: "", description: "Premier musée de Mayotte, histoire et cultures de l'île, sur l'îlot de Dzaoudzi accessible par barge depuis Mamoudzou." },
+  { id: "musee14-mamoudzou-2", isPlace: true, scene: "expo", city: "mamoudzou", category: "À voir", title: "Marché couvert de Mamoudzou", date: null, time: "", place: "Centre-ville, Mamoudzou", lat: -12.7810, lng: 45.2290, price: "Gratuit", thumb: "", description: "Marché animé au cœur de Mamoudzou, épices, fruits tropicaux et artisanat local mahorais." },
+  // ---- Nanterre ----
+  { id: "musee14-nanterre-1", isPlace: true, scene: "expo", city: "nanterre", category: "À voir", title: "Musée d'Histoire Urbaine et Sociale de Nanterre", date: null, time: "", place: "Rue du Docteur Foucault, Nanterre", lat: 48.8935, lng: 2.2040, price: "Gratuit", thumb: "", description: "Retrace l'histoire de Nanterre, ville ouvrière puis préfecture des Hauts-de-Seine, à travers objets et photographies." },
+  // ---- Bobigny ----
+  { id: "musee14-bobigny-1", isPlace: true, scene: "expo", city: "bobigny", category: "À voir", title: "Bourse du Travail de Bobigny", date: null, time: "", place: "1 Place de la Libération, Bobigny", lat: 48.9060, lng: 2.4460, price: "Gratuit", thumb: "", description: "Bâtiment emblématique dessiné par l'architecte brésilien Oscar Niemeyer, symbole architectural de Bobigny." },
+  // ---- Créteil ----
+  { id: "musee14-creteil-1", isPlace: true, scene: "expo", city: "creteil", category: "À voir", title: "Cathédrale Notre-Dame de Créteil", date: null, time: "", place: "Place des Pyramides, Créteil", lat: 48.7895, lng: 2.4550, price: "Gratuit", thumb: "", description: "Cathédrale contemporaine circulaire, l'une des plus récentes de France, consacrée en 2015." },
+  // ---- Cergy ----
+  { id: "musee14-cergy-1", isPlace: true, scene: "expo", city: "cergy", category: "À voir", title: "Axe majeur de Cergy", date: null, time: "", place: "Place des Colonnes, Cergy", lat: 49.0380, lng: 2.0640, price: "Gratuit", thumb: "", description: "Immense œuvre monumentale de l'artiste Dani Karavan, tour, colonnes et jardins reliant Cergy-Préfecture à l'île de loisirs." },
 ];
 
-const __allEventsBaseMuseums13 = allEvents;
+const __allEventsBaseMuseums14 = allEvents;
 allEvents = function () {
-  return [...__allEventsBaseMuseums13(), ...CURATED_MUSEUMS_13];
+  return [...__allEventsBaseMuseums14(), ...CURATED_MUSEUMS_14];
 };
