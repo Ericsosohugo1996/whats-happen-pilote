@@ -571,7 +571,7 @@
             html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;">';
         monthItems.forEach(function (s, idx) {
           const dateShort = new Date(s.createdAt).toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
-          const bg = s.photoUrl ? "background-image:url('" + s.photoUrl + "');background-size:cover;background-position:center;" : "background:" + gradientFor(s.id) + ";";
+                 const bg = "background:" + gradientFor(s.id) + ";" + (s.photoUrl ? "background-image:url('" + s.photoUrl + "');background-size:cover;background-position:center;" : "");
           const rot = (idx % 2 === 0) ? "-2deg" : "2deg";
           html += '<div class="souvenir-card" data-id="' + s.id + '" style="background:#fdfbf8;border-radius:6px;padding:8px 8px 12px;cursor:pointer;box-shadow:0 10px 20px -8px rgba(0,0,0,0.45);transform:rotate(' + rot + ');transition:transform .15s ease;">' +
             '<div style="border-radius:3px;overflow:hidden;position:relative;height:112px;' + bg + '">' +
