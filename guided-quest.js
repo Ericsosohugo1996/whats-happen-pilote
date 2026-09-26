@@ -121,10 +121,14 @@ stepsHtml = picked
 const intro = intros[i] || "Ensuite";
 const catColor = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[item.ev.category]) || "#8B6CF2";
 const catIcon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[item.ev.category]) || "📍";
+const catPhoto = item.ev.photo || (typeof CATEGORY_PHOTOS !== "undefined" && CATEGORY_PHOTOS[item.ev.category]) || "";
 return (
 '<div style="display:flex; gap:12px; margin-bottom:' + (i < picked.length - 1 ? "14px" : "0") + ';">' +
 '<div style="display:flex; flex-direction:column; align-items:center;">' +
-'<div style="width:38px; height:38px; border-radius:999px; background:' + catColor + '; box-shadow:0 4px 12px -4px ' + catColor + '99; color:#fff; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">' + catIcon + "</div>" +
+'<div style="position:relative; width:38px; height:38px; border-radius:999px; overflow:hidden; background:' + catColor + '; box-shadow:0 4px 12px -4px ' + catColor + '99; flex-shrink:0;">' +
+(catPhoto ? '<img src="' + catPhoto + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.remove();">' : "") +
+'<span style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:15px;' + (catPhoto ? ' text-shadow:0 1px 3px rgba(0,0,0,.5);' : ' color:#fff;') + '">' + catIcon + '</span>' +
+"</div>" +
 (i < picked.length - 1 ? '<div style="width:2px; flex:1; background:repeating-linear-gradient(180deg, rgba(255,255,255,0.18) 0 5px, transparent 5px 10px); margin:4px 0;"></div>' : "") +
 "</div>" +
 '<div style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:11px 14px; padding-bottom:' + (i < picked.length - 1 ? "11px" : "11px") + ';">' +
