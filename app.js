@@ -3651,6 +3651,48 @@ const CITY_MARKETS = {
   cannes: [
     { title: "Marché Forville", place: "Rue du Marché Forville, Cannes", recurring: "Mar.-ven. 8h-12h30, sam.-dim. 8h-13h30 (tous les jours 8h-13h30 mi-juin à mi-sept.)", description: "Le marché couvert le plus célèbre de Cannes, produits locaux et poissons de la baie." },
   ], 
+  troyes: [
+    { title: "Marché central des Halles", place: "Rue Claude Huez, Troyes", recurring: "Lun.-jeu. 8h-13h et 15h30-19h, ven.-sam. 7h-19h (non-stop), dim. matin", description: "Le marché couvert central de Troyes, une trentaine de commerces alimentaires." },
+  ],
+  larochelle: [
+    { title: "Marché Central des Halles", place: "17 rue Léonce Vieljeux, La Rochelle", recurring: "Tous les matins 8h-13h30 (7j/7) ; extension mer./sam. 7h-13h30 ; marché du soir vendredi place de Verdun 13h30-19h30", description: "Le marché couvert central de La Rochelle, ouvert tous les matins de l'année." },
+  ],
+  bourges: [
+    { title: "Marché de la Chancellerie", place: "Avenue Gustave Eiffel, Bourges", recurring: "Mercredi 7h30-12h30", description: "Marché hebdomadaire du quartier de la Chancellerie à Bourges." },
+  ],
+  chartres: [
+    { title: "Marché Place Billard", place: "Place Billard, Chartres", recurring: "Samedi 8h-14h", description: "Le marché principal de Chartres, alimentaire et produits bio." },
+  ],
+  quimper: [
+    { title: "Halles Saint-François", place: "Halles Saint-François, Quimper", recurring: "Lundi 8h-14h, mar.-jeu. 8h-19h30, ven.-sam. 8h-20h, dimanche 8h-13h", description: "Le marché couvert central de Quimper." },
+  ],
+  poitiers: [
+    { title: "Marché Notre-Dame", place: "Rue du Marché Notre-Dame, Poitiers", recurring: "Halles : mar.-sam. 7h-13h ; marché de plein air samedi 7h-13h", description: "Le marché couvert et de plein air du centre-ville de Poitiers." },
+  ],
+  arras: [
+    { title: "Marché de la Place des Héros", place: "Place des Héros, Arras", recurring: "Mercredi et samedi, 8h-13h", description: "Le marché central d'Arras, sous les arcades de la place des Héros et de la Grand'Place." },
+  ],
+  pau: [
+    { title: "Les Halles de Pau", place: "Les Halles, Pau", recurring: "Mardi au samedi 7h-15h, dimanche 9h-15h", description: "Le marché couvert central de Pau." },
+  ],
+  colmar: [
+    { title: "Marché couvert de Colmar", place: "Marché couvert, Colmar", recurring: "Mar.-jeu. 8h-18h, vendredi 8h-19h, samedi 8h-17h, dimanche 10h-14h (fermé le lundi)", description: "Le marché couvert historique de Colmar." },
+  ],
+  versailles: [
+    { title: "Marché Notre-Dame", place: "Place du Marché Notre-Dame, Versailles", recurring: "Halles : mar.-sam. 7h-13h30 et 15h-19h30, dim. 7h-14h ; carreau plein air mar./ven./dim. 7h30-14h", description: "Le marché historique du quartier Notre-Dame à Versailles." },
+  ],
+  beziers: [
+    { title: "Les Halles de Béziers", place: "Place Pierre Sémard, Béziers", recurring: "Du mardi au dimanche, 8h-14h (fermé le lundi)", description: "Le marché couvert de Béziers." },
+  ],
+  arles: [
+    { title: "Marché du Boulevard des Lices", place: "Boulevard des Lices, Arles", recurring: "Samedi 8h-12h45", description: "L'un des plus grands marchés de Provence, sur les boulevards des Lices et Clemenceau." },
+  ],
+  antibes: [
+    { title: "Marché Provençal", place: "Cours Masséna, Antibes", recurring: "Mardi au dimanche, le matin (+ lundi en été)", description: "Marché couvert du vieil Antibes, une cinquantaine d'exposants." },
+  ],
+  vannes: [
+    { title: "Marché de la Place des Lices", place: "Place des Lices, Vannes", recurring: "Mercredi et samedi, 8h-13h30", description: "Considéré comme l'un des plus beaux marchés de France, dans le centre historique de Vannes." },
+  ],
 };
 function buildMarketEvents(){
   const results = [];
