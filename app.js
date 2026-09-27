@@ -3569,7 +3569,7 @@ function buildMarketEvents(){
 const MARKET_EVENTS = buildMarketEvents();
  
 function allEvents(){
-  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.communityEvents, ...state.brocanteEvents, ...PLACE_EVENTS];
+   return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.communityEvents, ...state.brocanteEvents, ...PLACE_EVENTS, ...MARKET_EVENTS];
 }
  
 // ---- geo helpers ----
