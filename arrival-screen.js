@@ -658,7 +658,7 @@ overlay.innerHTML =
 '<div style="text-align:center; margin-bottom:38px; max-width:340px; position:relative; z-index:1;">' +
 '<div style="color:#C7CEE3; font-size:12px; margin-bottom:8px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase; text-shadow:0 2px 8px rgba(0,0,0,0.45);">' + cityName + " · " + time + "</div>" +
 '<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:24px; font-weight:500; line-height:1.4; text-shadow:0 2px 10px rgba(0,0,0,0.5);">' + greeting + "</div>" +
-(isReallyThere ? "" : '<button type="button" id="arrival-change-city" style="margin-top:14px; padding:8px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:rgba(255,255,255,0.08); color:#fff; font-size:12px; font-weight:600; cursor:pointer;">📍 Changer de ville</button>') +
+(isReallyThere ? "" : '<button type="button" id="arrival-change-city" style="margin-top:14px; padding:8px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:rgba(255,255,255,0.08); color:#fff; font-size:12px; font-weight:600; cursor:pointer;">' + t("📍 Changer de ville") + '</button>') +
 "</div>" +
 '<div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:300px; position:relative; z-index:1;">' +
 '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
