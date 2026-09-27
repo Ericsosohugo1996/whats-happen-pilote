@@ -4295,9 +4295,14 @@ function openDetail(id){
     heroEl.innerHTML = sceneSVG(ev.scene);
   } 
   document.getElementById("detail-cat").textContent = iconFor(ev.category) + " " + ev.category;
-  document.getElementById("detail-title").textContent = ev.title;
-  document.getElementById("detail-date").textContent = formatDate(ev.date);
- document.getElementById("detail-time").textContent = "à " + ev.time;
+   document.getElementById("detail-title").textContent = ev.title;
+  if (ev.date) {
+    document.getElementById("detail-date").textContent = formatDate(ev.date);
+    document.getElementById("detail-time").textContent = "à " + ev.time;
+  } else {
+    document.getElementById("detail-date").textContent = "Toujours ouvert";
+    document.getElementById("detail-time").textContent = "";
+  }
   document.getElementById("detail-place").textContent = ev.place;
 document.getElementById("detail-distance").textContent = "🚶 " + walkMinutes(distanceToEvent(ev)) + " min à pied";
   const detailPriceEl = document.getElementById("detail-price");
