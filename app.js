@@ -3925,7 +3925,7 @@ function renderMap(events){
  
 function eventCardHTML(ev){
   const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
-  const dateTimeTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
+   const dateTimeTxt = ev.isPlace ? (ev.recurring || "Toujours ouvert") : (formatDate(ev.date) + " · " + ev.time);
   const metaTxt = distTxt ? ("📍 " + distTxt + "  ·  🕐 " + dateTimeTxt) : ("🕐 " + dateTimeTxt);
   const thumbHTML = eventPhotoHTML(ev);
   const catColor = CATEGORY_COLORS[ev.category] || "#6C757D";
@@ -3989,7 +3989,7 @@ function updateStatsBanner(events){
 }
 function featuredCardHTML(ev){
   const photo = ev.photo || CATEGORY_PHOTOS[ev.category] || "";
-  const dateTimeTxt = ev.isPlace ? "Toujours ouvert" : (formatDate(ev.date) + " · " + ev.time);
+   const dateTimeTxt = ev.isPlace ? (ev.recurring || "Toujours ouvert") : (formatDate(ev.date) + " · " + ev.time);
   return `
     <button class="featured-card" data-id="${ev.id}">
       <div class="featured-photo" style="${photo ? "background-image:url('" + photo + "');" : "background:linear-gradient(135deg,#14213D,#0B1526);"}">
