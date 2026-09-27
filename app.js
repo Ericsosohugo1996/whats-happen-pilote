@@ -3661,7 +3661,7 @@ function userLocationIcon(){
 }
 // ---- ligne compacte "à pied" utilisée par l'écran "Autour de moi" (photo, icône catégorie, prix, temps de marche) ----
 // centralisée ici pour que ce format de carte ne soit plus construit qu'à un seul endroit.
-function exploreRowHTML(ev, walkMin, isFirst){
+function exploreRowHTML(ev, walkMin, isFirst, badgeHtml){
   const today = new Date().toISOString().slice(0, 10);
   let dateLabel = "";
   if (ev.date) {
