@@ -256,7 +256,9 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .event-card:hover{ box-shadow:0 6px 18px rgba(20,33,61,0.12); transform:translateY(-1px); }
 .event-card:active{ box-shadow:var(--shadow-sm); background:#fdfbf8; }
 .event-card .thumb-wrap{ position:relative; flex:0 0 auto; }
-.event-card .thumb{ width:78px;height:78px;border-radius:16px; overflow:hidden; background:var(--line); box-shadow:0 4px 10px -4px rgba(33,31,27,.22); }
+@keyframes thumbShimmer{ 0%{ background-position:-150% 0; } 100%{ background-position:150% 0; } }
+.thumb-shimmer{ background:linear-gradient(100deg, #ececec 30%, #f6f6f6 50%, #ececec 70%); background-size:200% 100%; animation:thumbShimmer 1.6s ease-in-out infinite; }
+.event-card .thumb{ width:78px;height:78px;border-radius:16px; overflow:hidden; background:linear-gradient(100deg, #ececec 30%, #f6f6f6 50%, #ececec 70%); background-size:200% 100%; animation:thumbShimmer 1.6s ease-in-out infinite; box-shadow:0 4px 10px -4px rgba(33,31,27,.22); }
 .event-card .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 .event-card .thumb svg{ display:block; width:100%; height:100%; }
 .event-card .thumb-badge{ position:absolute; bottom:-6px; left:-6px; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; border:2.5px solid var(--card); box-shadow:0 2px 6px rgba(0,0,0,0.25); }
