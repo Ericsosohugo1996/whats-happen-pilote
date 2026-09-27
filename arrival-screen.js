@@ -705,6 +705,16 @@ if (typeof setLang === "function") setLang(btn.dataset.lang);
 });
 if (typeof applyTranslation === "function") applyTranslation();
 
+const changeCityBtn = document.getElementById("arrival-change-city");
+if (changeCityBtn) {
+changeCityBtn.addEventListener("click", function () {
+overlay.remove();
+state.userPos = null;
+if (typeof __hasPickedCity !== "undefined") __hasPickedCity = false;
+renderDiscover();
+});
+}
+
 overlay.querySelectorAll(".arrival-opt").forEach(function (opt) {
 opt.addEventListener("click", function () {
 opt.style.transform = "scale(0.94)";
