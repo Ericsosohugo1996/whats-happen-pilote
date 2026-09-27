@@ -198,7 +198,7 @@ context: { cityName: cityName, time: timeLabel, budget: budgetDef ? budgetDef.la
 .then(function (data) {
 resultBox.style.display = "block";
 resultBox.innerHTML =
-'<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Whazup enrichi</div>' +
+'<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Raconté par Whazup</div>' +
 '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text"></div>';
 btn.remove();
 const target = document.getElementById("quest-ai-text");
