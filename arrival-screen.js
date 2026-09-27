@@ -572,6 +572,7 @@ function __arrivalShowCityView() {
   if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true;
   if (typeof __hasPickedFilter !== "undefined") __hasPickedFilter = true;
   renderDiscover();
+  if (typeof __nearMeRemoveTimeTabs === "function") __nearMeRemoveTimeTabs();
   __ensureArrivalBackButton();
 }
 
