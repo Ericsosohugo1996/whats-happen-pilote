@@ -4235,7 +4235,10 @@ function openDetail(id){
  document.getElementById("detail-time").textContent = "à " + ev.time;
   document.getElementById("detail-place").textContent = ev.place;
 document.getElementById("detail-distance").textContent = "🚶 " + walkMinutes(distanceToEvent(ev)) + " min à pied";
-  document.getElementById("detail-price").textContent = ev.price;
+  const detailPriceEl = document.getElementById("detail-price");
+  detailPriceEl.textContent = ev.price;
+  const detailPriceType = eventPriceType(ev);
+  detailPriceEl.className = "price-badge " + (detailPriceType === "free" ? "free" : detailPriceType === "inscription" ? "inscr" : "paid");  
   document.getElementById("detail-desc").textContent = ev.description;
  
    const favBtn = document.getElementById("btn-favorite");
