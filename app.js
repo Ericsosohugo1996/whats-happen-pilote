@@ -3577,6 +3577,12 @@ function matchesPeriod(ev, period){
   const tomorrowIso = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
   const weekLimit = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
   if (period === "today") return ev.date === todayIso;
+  if (period === "tonight") {
+    if (ev.date !== todayIso) return false;
+    if (!ev.time) return true;
+    const h = parseInt(ev.time.split(":")[0], 10);
+    return h >= 18 || h < 4;
+  }
   if (period === "tomorrow") return ev.date === tomorrowIso;
   if (period === "week") return ev.date >= todayIso && ev.date <= weekLimit;
   if (period === "later") return ev.date > weekLimit;
