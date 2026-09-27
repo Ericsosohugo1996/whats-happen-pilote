@@ -3924,8 +3924,13 @@ function eventCardHTML(ev){
   const thumbHTML = eventPhotoHTML(ev);
   const catColor = CATEGORY_COLORS[ev.category] || "#6C757D";
   const catIcon = CATEGORY_ICONS[ev.category] || "📍";
-   document.getElementById("detail-date").textContent = formatDate(ev.date);
- document.getElementById("detail-time").textContent = "à " + ev.time;
+   if (ev.date) {
+    document.getElementById("detail-date").textContent = formatDate(ev.date);
+    document.getElementById("detail-time").textContent = "à " + ev.time;
+  } else {
+    document.getElementById("detail-date").textContent = "Toujours ouvert";
+    document.getElementById("detail-time").textContent = "";
+  }
   const venueTxt = ev.place ? ev.place.split(",")[0] : "";
    const priceType = eventPriceType(ev);
   const priceCls = priceType === "free" ? "free" : priceType === "inscription" ? "inscr" : "paid";
