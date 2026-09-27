@@ -724,7 +724,7 @@ opt.style.transform = "scale(0.94)";
 const key = opt.dataset.key;
 setTimeout(function () {
 overlay.remove();
-if (key === "near") __exploreOpen();
+if (key === "near") { if (typeof __nearMeShow === "function") __nearMeShow(); else __exploreOpen(); }
 else if (key === "other") { if (window.__questOpen) __questOpen(); else __arrivalOpenMood(); }
 else if (key === "all") __arrivalShowCityView();
 else if (key === "carnet") { if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
