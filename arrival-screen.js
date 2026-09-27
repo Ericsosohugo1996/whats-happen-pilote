@@ -799,6 +799,7 @@ if (key === "near") { if (typeof __nearMeShow === "function") __nearMeShow(); el
 else if (key === "other") { if (window.__questOpen) __questOpen(); else __arrivalOpenMood(); }
 else if (key === "all") __arrivalShowCityView();
 else if (key === "carnet") { if (window.__renderSouvenirsScreen) __renderSouvenirsScreen(); }
+else if (key === "nouveautes") { if (typeof __newFindsShow === "function") __newFindsShow(); }
 }, 180);
 });
 });
