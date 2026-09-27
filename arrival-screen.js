@@ -605,7 +605,9 @@ const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
 const time = hour + "h" + String(now.getMinutes()).padStart(2, "0");
 const weatherText = __arrivalWeatherText();
 
+const isReallyThere = !!state.userPos;
 let greeting;
+if (isReallyThere) {
 if (hour >= 5 && hour < 12) {
 greeting = "Une nouvelle journée commence à " + cityName + ". Par quoi on démarre ?";
 } else if (hour >= 12 && hour < 17) {
@@ -614,6 +616,17 @@ greeting = "Il est " + time + " à " + cityName + ". Qu'est-ce qu'on fait de cet
 greeting = "Le soleil décline sur " + cityName + ". Qu'est-ce qu'on fait de cette soirée ?";
 } else {
 greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente ?";
+}
+} else {
+if (hour >= 5 && hour < 12) {
+greeting = "Envie de découvrir " + cityName + " ce matin ?";
+} else if (hour >= 12 && hour < 17) {
+greeting = "Envie de découvrir " + cityName + " cet après-midi ?";
+} else if (hour >= 17 && hour < 20) {
+greeting = "Envie de découvrir " + cityName + " ce soir ?";
+} else {
+greeting = "Envie de découvrir " + cityName + " cette nuit ?";
+}
 }
 
 const cityPhoto = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[cityKey] : null;
