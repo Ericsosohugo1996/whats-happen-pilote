@@ -4806,15 +4806,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+       const noFixedDate = !fd.get("date");
     const newEvent = {
       id: eventId,
       city,
       category: fd.get("category"),
       scene: CATEGORY_SCENE[fd.get("category")] || "village",
       title: fd.get("title"),
-      date: fd.get("date"),
-      time: fd.get("time"),
-      place,
+      isPlace: noFixedDate,
+      date: fd.get("date") || null,
+      time: fd.get("time") || "",
+      place, 
       lat: coords.lat,
       lng: coords.lng,
       price: "Non précisé",
