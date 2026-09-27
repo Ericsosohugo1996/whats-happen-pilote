@@ -590,6 +590,73 @@ function __ensureArrivalBackButton() {
   document.body.appendChild(btn);
 }
 
+// ---- "Nouveautés" : événements récemment publiés ou marqués comme exclusifs ----
+const NEW_FIND_WINDOW_DAYS = 21;
+
+function __isNewFind(ev) {
+  return !!ev.insolite || (ev.createdAt && (Date.now() - ev.createdAt) < NEW_FIND_WINDOW_DAYS * 86400000);
+}
+
+function __newFindBadgeHTML(ev) {
+  if (ev.insolite) {
+    return '<span style="display:inline-flex; align-items:center; gap:4px; font-size:10px; font-weight:800; color:#fff; background:linear-gradient(135deg,#A57CF7,#8B6CF2); padding:3px 9px; border-radius:999px;">✨ Exclusif</span>';
+  }
+  return '<span style="display:inline-flex; align-items:center; gap:4px; font-size:10px; font-weight:800; color:#fff; background:linear-gradient(135deg,#F2C879,#E85D3D); padding:3px 9px; border-radius:999px;">🆕 Nouveau</span>';
+}
+
+function __newFindsShow() {
+  const cityKey = state.userPos ? nearestCityKey() : state.city;
+  const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+  const finds = allEvents()
+    .filter(function (ev) { return ev.city === cityKey && __isNewFind(ev); })
+    .sort(function (a, b) {
+      const aScore = (a.insolite ? 2 : 0) + (a.createdAt ? 1 : 0);
+      const bScore = (b.insolite ? 2 : 0) + (b.createdAt ? 1 : 0);
+      if (aScore !== bScore) return bScore - aScore;
+      return (b.createdAt || 0) - (a.createdAt || 0);
+    });
+
+  const overlay = document.createElement("div");
+  overlay.id = "newfinds-overlay";
+  overlay.style.cssText =
+    "position:fixed; inset:0; background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%); z-index:9998; display:flex; flex-direction:column; align-items:center; padding:50px 20px 20px; overflow-y:auto;";
+
+  const listHTML = finds.length
+    ? finds.map(function (ev, i) {
+        const walkMin = (typeof walkMinutes === "function") ? walkMinutes(distanceToEvent(ev)) : 10;
+        return exploreRowHTML(ev, walkMin, i === 0, __newFindBadgeHTML(ev));
+      }).join("")
+    : '<p style="padding:16px 0; color:#888; font-size:13px;">Rien de nouveau à ' + cityName + ' pour le moment.</p>';
+
+  overlay.innerHTML =
+    '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
+    '<div style="text-align:center; margin-bottom:16px;">' +
+    '<div style="color:#C7CEE3; font-size:10px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase;">✨ Nouveautés à</div>' +
+    '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:23px; font-weight:700; color:#fff; margin-top:2px;">' + cityName + '</div>' +
+    '</div>' +
+    '<button id="newfinds-back" style="display:block; margin:0 auto 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux choix</button>' +
+    '<div id="newfinds-result" style="background:#fff; border-radius:16px; padding:0 14px;">' + listHTML + '</div>' +
+    '<button id="newfinds-close" style="width:100%; margin-top:16px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:#fff; font-size:13px; cursor:pointer;">Fermer</button>' +
+    '</div>';
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelectorAll(".explore-pick").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      overlay.remove();
+      openDetail(btn.dataset.id);
+    });
+  });
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) overlay.remove();
+    if (e.target.id === "newfinds-close") overlay.remove();
+  });
+  document.getElementById("newfinds-back").addEventListener("click", function () {
+    overlay.remove();
+    __arrivalShow();
+  });
+}
+
 // ---- écran principal des 3 bonhommes ----
 
 function __arrivalShow() {
