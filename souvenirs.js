@@ -592,7 +592,7 @@
         '<div style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px; text-align:center;"><div style="font-size:18px; font-weight:800; color:#fff;">' + totalVisits + '</div><div style="font-size:9px; color:#9BA5C2;">SOUVENIRS</div></div>' +
         (hasCoords ? '<button id="souvenirs-map-btn" style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px; text-align:center; color:#fff; cursor:pointer;"><div style="font-size:18px;">🗺️</div><div style="font-size:9px;">VOIR LA CARTE</div></button>' : '') +
         '</div>' +
-       '<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Raconé par Whazup</div>' +
+       '<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Raconte-moi mon voyage</div>' +
         '<div id="souvenirs-ai-result" style="display:none; margin-top:12px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px;"></div>';
       listEl.innerHTML = html;
       listEl.querySelectorAll(".souvenir-card").forEach(function (card) {
