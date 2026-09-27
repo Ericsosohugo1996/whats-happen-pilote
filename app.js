@@ -3671,7 +3671,7 @@ function exploreRowHTML(ev, walkMin, isFirst){
     (isFirst ? "" : "border-top:1px solid #eee;") +
     '">' +
     '<div style="position:relative; width:56px; height:56px; flex-shrink:0;">' +
-    '<div style="width:56px; height:56px; border-radius:14px; overflow:hidden; background:#f0f0f0;">' + thumbSvg + '</div>' +
+        '<div class="thumb-shimmer" style="width:56px; height:56px; border-radius:14px; overflow:hidden;">' + thumbSvg + '</div>' +
     '<div style="position:absolute; top:-4px; left:-4px; width:22px; height:22px; border-radius:50%; background:' + catColor + '; display:flex; align-items:center; justify-content:center; font-size:11px; border:2px solid #fff; box-shadow:0 2px 4px rgba(0,0,0,0.2);">' + icon + '</div>' +
     '</div>' +
     '<div style="flex:1; min-width:0;">' +
