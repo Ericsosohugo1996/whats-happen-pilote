@@ -4048,8 +4048,8 @@ function __nearMeShow(){
     document.querySelectorAll("#radius-presets .chip-btn").forEach(b => {
       b.classList.toggle("active", Number(b.dataset.radius) === state.radiusKm);
     });
-    document.querySelectorAll(".stat[data-filter]").forEach(b => {
-      b.classList.toggle("active", b.dataset.filter === "today");
+       document.querySelectorAll(".stat[data-filter]").forEach(b => {
+      b.classList.remove("active");
     });
     const arrSelect = document.getElementById("arrondissement-select");
     if (arrSelect) arrSelect.value = "";
