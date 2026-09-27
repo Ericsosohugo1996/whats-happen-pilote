@@ -4029,6 +4029,54 @@ function renderDiscover(){
   renderCityInfo();
   renderArrondissementFilter();
 }
+
+// ---- "Autour de moi" : entre directement sur "Tout voir" avec des filtres près de moi/maintenant,
+// au lieu d'ouvrir un écran séparé (fusion des deux écrans) ----
+function __nearMeShow(){
+  function apply(){
+    state.selectedPeriod = "today";
+    state.selectedCategories = new Set();
+    state.selectedArrondissement = null;
+    state.radiusKm = 5;
+    if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true;
+    if (typeof __hasPickedFilter !== "undefined") __hasPickedFilter = true;
+    renderDiscover();
+    const radiusRange = document.getElementById("radius-range");
+    if (radiusRange) radiusRange.value = state.radiusKm;
+    const radiusValue = document.getElementById("radius-value");
+    if (radiusValue) radiusValue.textContent = formatRadius(state.radiusKm);
+    document.querySelectorAll("#radius-presets .chip-btn").forEach(b => {
+      b.classList.toggle("active", Number(b.dataset.radius) === state.radiusKm);
+    });
+    document.querySelectorAll(".stat[data-filter]").forEach(b => {
+      b.classList.toggle("active", b.dataset.filter === "today");
+    });
+    const arrSelect = document.getElementById("arrondissement-select");
+    if (arrSelect) arrSelect.value = "";
+    if (typeof __ensureArrivalBackButton === "function") __ensureArrivalBackButton();
+    const anchor = document.getElementById("event-list-featured") || document.getElementById("event-list");
+    if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  if (!state.userPos && navigator.geolocation) {
+    if (typeof __arrivalShowSearching === "function") __arrivalShowSearching();
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        const searching = document.getElementById("arrival-searching-overlay");
+        if (searching) searching.remove();
+        state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        apply();
+      },
+      () => {
+        const searching = document.getElementById("arrival-searching-overlay");
+        if (searching) searching.remove();
+        apply();
+      },
+      { enableHighAccuracy: true, timeout: 8000 }
+    );
+  } else {
+    apply();
+  }
+}
  
 // ---- villes de France : quelles ont déjà du contenu (SEED_EVENTS / OpenAgenda / lieux) ----
 function curatedCityKeys(){
