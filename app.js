@@ -4754,6 +4754,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+   const publishCategorySelect = document.querySelector('#publish-form select[name="category"]');
+  const publishDateInput = document.querySelector('#publish-form input[name="date"]');
+  const publishTimeInput = document.querySelector('#publish-form input[name="time"]');
+  if (publishCategorySelect && publishDateInput && publishTimeInput) {
+    const applyDateRequirement = () => {
+      const optional = publishCategorySelect.value === "Bons plans";
+      publishDateInput.required = !optional;
+      publishTimeInput.required = !optional;
+      publishDateInput.parentElement.style.display = "";
+      publishTimeInput.parentElement.style.display = "";
+    };
+    publishCategorySelect.addEventListener("change", applyDateRequirement);
+    applyDateRequirement();
+  }
+
   document.getElementById("publish-form").onsubmit = async (e) => {
     e.preventDefault();
     const submitBtn = e.target.querySelector("button[type=submit], .btn-primary");
