@@ -687,7 +687,7 @@ overlay.innerHTML =
   return '<button type="button" id="arrival-featured-card" style="margin-top:28px; width:100%; max-width:320px; text-align:left; border:none; border-radius:18px; overflow:hidden; cursor:pointer; position:relative; z-index:1; box-shadow:0 14px 30px -14px rgba(0,0,0,0.6);">' +
     '<div style="height:130px; background:' + (photo ? "url('" + photo + "') center/cover" : "linear-gradient(135deg,#14213D,#0B1526)") + '; position:relative;">' +
       '<div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(11,21,38,.92), transparent 60%);"></div>' +
-      '<span style="position:absolute; top:10px; left:10px; background:linear-gradient(135deg,#F2C879,#E8604C); color:#fff; font-size:10px; font-weight:800; letter-spacing:.04em; padding:5px 10px; border-radius:999px;">⭐ À LA UNE</span>' +
+           '<span style="position:absolute; top:10px; left:10px; background:linear-gradient(135deg,#F2C879,#E8604C); color:#fff; font-size:10px; font-weight:800; letter-spacing:.04em; padding:5px 10px; border-radius:999px;">' + t("⭐ À LA UNE") + '</span>' +
       '<div style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px;">' +
         '<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:14.5px; font-weight:600; line-height:1.25;">' + featuredEv.title + '</div>' +
       '</div>' +
