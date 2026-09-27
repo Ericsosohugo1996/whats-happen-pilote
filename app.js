@@ -3525,6 +3525,10 @@ const CITY_MARKETS = {
   ],
   paris: [
     { title: "Marché d'Aligre", place: "Place et rue d'Aligre, 75012 Paris", recurring: "Du mardi au dimanche, le matin (fermé le lundi)", description: "L'un des marchés les plus populaires et animés de Paris, dans le 12e arrondissement." },
+    { title: "Marché Bastille", place: "Boulevard Richard-Lenoir, 75011 Paris", recurring: "Jeudi 7h-13h30, dimanche 7h-14h30", description: "Grand marché alimentaire le long du boulevard Richard-Lenoir, entre Bastille et République." },
+    { title: "Marché couvert des Enfants Rouges", place: "39 rue de Bretagne, 75003 Paris", recurring: "Du mardi au dimanche, 8h30-20h30 (fermé le lundi)", description: "Le plus vieux marché couvert de Paris, réputé pour ses étals de street-food du monde entier." },
+    { title: "Marché biologique Raspail", place: "Boulevard Raspail (entre rue du Cherche-Midi et rue de Rennes), 75006 Paris", recurring: "Dimanche 7h-14h30", description: "Marché 100% biologique, l'un des plus connus de Paris, dans le 6e arrondissement." },
+    { title: "Marché Belleville", place: "Boulevard de Belleville, 75011 Paris", recurring: "Mardi et vendredi, 7h-13h30", description: "Marché populaire et multiculturel à la frontière des 11e et 20e arrondissements." },
   ],
   bordeaux: [
     { title: "Marché des Capucins", place: "Place des Capucins, Bordeaux", recurring: "Du mardi au samedi 6h-13h30, dimanche 6h-13h (fermé le lundi)", description: "Le grand marché couvert historique de Bordeaux." },
@@ -3534,6 +3538,54 @@ const CITY_MARKETS = {
   ],
   nantes: [
     { title: "Marché de Talensac", place: "Rue de Talensac, Nantes", recurring: "Mar.-ven. 8h-13h, sam.-dim. 8h-13h30 (fermé le lundi)", description: "Le marché couvert le plus fréquenté de Nantes." },
+  ],
+  drag: [
+    { title: "Marché de Draguignan", place: "Place du Marché (alimentaire) et Boulevard Jean Jaurès (textile/artisanat), Draguignan", recurring: "Mercredi et samedi, 7h-12h30", description: "L'un des grands marchés de l'intérieur du Var, plus de 150 exposants le mercredi." },
+  ],
+  moug: [
+    { title: "Marché de Mougins", place: "Cours des Arts, Mougins", recurring: "Dimanche 9h-13h", description: "Marché dominical au cœur du village de Mougins, parking gratuit sur place." },
+  ],
+  mart: [
+    { title: "Grand marché de Jonquières", place: "Place des Martyrs / Esplanade des Belges / Parking Général Leclerc, Martigues", recurring: "Jeudi 8h-13h, dimanche 8h-13h30", description: "Le plus grand marché de Martigues avec une centaine d'exposants, producteurs et artisans." },
+  ],
+  rennes: [
+    { title: "Marché des Lices", place: "Place des Lices, Rennes", recurring: "Samedi matin", description: "L'un des plus grands et plus réputés marchés de France, alimentaire et floral." },
+  ],
+  brest: [
+    { title: "Halles Saint-Martin", place: "Halles Saint-Martin, Brest", recurring: "Du mardi au samedi, 8h30-12h30", description: "Le marché couvert central de Brest." },
+  ],
+  lille: [
+    { title: "Marché de Wazemmes", place: "Place Nouvelle Aventure, Lille", recurring: "Mardi, jeudi et dimanche, 7h-14h", description: "Le marché le plus populaire de Lille, jusqu'à 400 exposants et 50 000 visiteurs le dimanche." },
+  ],
+  dijon: [
+    { title: "Les Halles de Dijon", place: "Les Halles, Dijon", recurring: "Mardi et jeudi 7h-13h, vendredi 6h30-13h, samedi 6h30-16h30 (fermé dimanche)", description: "Le marché couvert historique de Dijon, dans une halle du 19e siècle." },
+  ],
+  chambery: [
+    { title: "Les Halles de Chambéry", place: "Place de Genève, Chambéry", recurring: "Du mardi au samedi, 6h-13h30", description: "Le marché couvert principal de Chambéry, une trentaine de commerçants." },
+  ],
+  rouen: [
+    { title: "Marché Place du Vieux-Marché", place: "Place du Vieux-Marché, Rouen", recurring: "Du mardi au samedi 7h-19h, dimanche 7h-13h", description: "Marché emblématique du centre historique de Rouen, sur la place où Jeanne d'Arc fut exécutée." },
+  ],
+  reims: [
+    { title: "Marché du Boulingrin", place: "Halles du Boulingrin, Reims", recurring: "Mercredi et vendredi 7h-13h, samedi 6h-14h", description: "Institution rémoise depuis 1929, dans une halle Art déco classée." },
+  ],
+  montpellier: [
+    { title: "Marché des Arceaux", place: "Les Arceaux, Montpellier", recurring: "Mardi et samedi, 7h-13h30", description: "Marché réputé de Montpellier sous les arches de l'aqueduc Saint-Clément, jusqu'à 80 commerçants." },
+  ],
+  angers: [
+    { title: "Marché Centre-Ville", place: "Place du Maréchal Leclerc, Angers", recurring: "Samedi 8h-13h30", description: "Le rendez-vous hebdomadaire du centre-ville d'Angers." },
+  ],
+  avignon: [
+    { title: "Les Halles d'Avignon", place: "Place Pie, Avignon", recurring: "Mar.-jeu. 6h-14h, ven.-dim. 6h-15h (fermé le lundi)", description: "Le marché couvert d'Avignon, avec son célèbre mur végétal sur la façade." },
+  ],
+  strasbourg: [
+    { title: "Marché Broglie", place: "Place Broglie, Strasbourg", recurring: "Mercredi et vendredi, 7h-18h", description: "L'un des marchés historiques du centre de Strasbourg." },
+  ],
+  metz: [
+    { title: "Marché couvert de Metz", place: "Marché Couvert, Metz", recurring: "Du mardi au samedi, 8h-18h", description: "Le marché couvert historique de Metz, en face de la cathédrale." },
+  ],
+  caen: [
+    { title: "Marché Saint-Sauveur", place: "Place Saint-Sauveur, Caen", recurring: "Vendredi 9h-13h30", description: "Considéré comme l'un des plus beaux marchés de France, environ 150 exposants." },
   ],
 };
 function buildMarketEvents(){
