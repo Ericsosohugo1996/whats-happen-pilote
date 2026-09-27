@@ -4048,8 +4048,8 @@ function renderRegionAccordion(){
   el.innerHTML = orderedRegions.map((region, i) => {
     const keys = byRegion[region].sort((a, b) => CITIES[a].name.localeCompare(CITIES[b].name, "fr"));
     const chips = keys.map(k => cityChipHTML(k, curated.has(k))).join("");
-    return '<div class="region-block"><button type="button" class="region-toggle" data-region="r' + i + '">' +
-      region + ' <span class="chevron">›</span></button>' +
+      return '<div class="region-block"><button type="button" class="region-toggle" data-region="r' + i + '">' +
+      '<span>📍 ' + region + '</span><span class="chevron">›</span></button>' +  
       '<div class="region-panel" data-panel="r' + i + '"><div class="locate-actions">' + chips + "</div></div></div>";
   }).join("");
 }
