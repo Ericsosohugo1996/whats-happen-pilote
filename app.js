@@ -3774,6 +3774,39 @@ const CITY_MARKETS = {
   stbrieuc: [
     { title: "Marché du centre-ville", place: "Centre-ville, Saint-Brieuc", recurring: "Mercredi et samedi", description: "Le marché principal du centre-ville de Saint-Brieuc." },
   ],
+  bayonne: [
+    { title: "Les Halles de Bayonne", place: "Les Halles, Bayonne", recurring: "Lun.-jeu. 7h-13h30, ven. 7h-14h30, sam. 6h-14h30, dim. 8h-14h30", description: "Le marché couvert emblématique de Bayonne, sous sa verrière." },
+  ],
+  arcachon: [
+    { title: "Halles d'Arcachon", place: "Place des Marquises, Arcachon", recurring: "Mar.-dim. 7h30-14h (tous les jours en vacances scolaires et l'été)", description: "Le marché couvert d'Arcachon, produits de la mer et locaux." },
+  ],
+  deauville: [
+    { title: "Marché de Deauville", place: "Place du Marché, Deauville", recurring: "7h-13h30, tous les jours sauf mercredi en haute saison ; mar./ven./sam. en basse saison", description: "Le marché du centre de Deauville, près de la Place Morny." },
+  ],
+  stnazaire: [
+    { title: "Les Halles de Saint-Nazaire", place: "Les Halles, Saint-Nazaire", recurring: "Mardi, vendredi, samedi 7h30-12h30/13h, dimanche 7h30-13h/13h30", description: "Le marché couvert de Saint-Nazaire." },
+  ],
+  calais: [
+    { title: "Marché Place d'Armes", place: "Place d'Armes, Calais", recurring: "Mercredi et samedi matin", description: "Le marché principal du centre-ville de Calais." },
+  ],
+  compiegne: [
+    { title: "Marché du centre-ville", place: "Rue Saint-Corneille, Compiègne", recurring: "Mercredi et samedi, 7h-13h", description: "Le marché alimentaire du centre-ville de Compiègne." },
+  ],
+  macon: [
+    { title: "Marché de l'Esplanade Lamartine", place: "Esplanade Lamartine, Mâcon", recurring: "Samedi 7h30-13h", description: "Le grand marché hebdomadaire de Mâcon, environ 150 exposants." },
+  ],
+  vichy: [
+    { title: "Grand Marché Couvert de Vichy", place: "Marché couvert, Vichy", recurring: "Du mardi au dimanche, 7h-13h", description: "Le marché couvert historique de Vichy." },
+  ],
+  roanne: [
+    { title: "Marché Place du Marché", place: "Place du Marché, Roanne", recurring: "Mardi et vendredi, 8h-12h30", description: "Le marché alimentaire du centre de Roanne." },
+  ],
+  hyeres: [
+    { title: "Grand Marché des Îles d'Or", place: "Place Clemenceau et alentours, Hyères", recurring: "Samedi matin", description: "Le grand marché du centre-ville d'Hyères, environ 120 exposants." },
+  ],
+  chalonsursaone: [
+    { title: "Marché Place Saint-Vincent", place: "Place Saint-Vincent, Chalon-sur-Saône", recurring: "Vendredi et dimanche, 8h-13h", description: "Une institution chalonnaise, marché alimentaire du centre historique." },
+  ],
 };
 function buildMarketEvents(){
   const results = [];
