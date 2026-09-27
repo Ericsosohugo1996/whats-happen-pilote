@@ -266,7 +266,7 @@ typeStep2();
 .catch(function () {
 resultBox.style.display = "block";
 resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
-btn.textContent = "✨ Enrichir Whazup";
+btn.textContent = "✨ Raconte-moi ce parcours";
 btn.disabled = false;
 });
 });
