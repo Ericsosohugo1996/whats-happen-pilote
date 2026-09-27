@@ -3852,6 +3852,110 @@ const CITY_MARKETS = {
   epernay: [
     { title: "Halle Saint-Thibault", place: "Halle Saint-Thibault, Épernay", recurring: "Mercredi matin (petit marché), samedi matin (grand marché, environ 50 commerçants)", description: "Le marché couvert principal d'Épernay, capitale du Champagne." },
   ],
+  ram: [
+    { title: "Marché de Ramatuelle", place: "Place de l'Ormeau, Ramatuelle", recurring: "Jeudi et dimanche matin, toute l'année, 8h-13h", description: "Le marché provençal du village de Ramatuelle." },
+  ],
+  lcv: [
+    { title: "Marché du dimanche", place: "La Croix-Valmer", recurring: "Dimanche matin", description: "Le plus grand marché dominical du Golfe de Saint-Tropez, jusqu'à 170 exposants en saison." },
+  ],
+  sens: [
+    { title: "Marché des Halles", place: "Place de la République, Sens", recurring: "Lundi, mercredi, vendredi et samedi, 8h-13h", description: "Le marché couvert du centre-ville de Sens." },
+    { title: "Marché Champs-Plaisants", place: "Place des Champs-Plaisants, Sens", recurring: "Mercredi et dimanche, 8h-13h", description: "Le marché de quartier de Champs-Plaisants à Sens." },
+  ],
+  montgeron: [
+    { title: "Marché Saint-Hubert", place: "Avenue de la République, Montgeron", recurring: "Mercredi et samedi, 8h-13h", description: "Le marché principal de Montgeron, environ 70 commerçants." },
+  ],
+  digne: [
+    { title: "Marché provençal de Digne-les-Bains", place: "Place du Général de Gaulle et Boulevard Gassendi, Digne-les-Bains", recurring: "Mercredi et samedi matin", description: "Élu plus beau marché de la région PACA et 7e de France en 2022." },
+  ],
+  privas: [
+    { title: "Marché de Privas", place: "Place de l'Hôtel de Ville et Rue Élie Reynier, Privas", recurring: "Mercredi et samedi, 7h-12h", description: "Le marché hebdomadaire de la préfecture de l'Ardèche." },
+  ],
+  charleville: [
+    { title: "Marché des Halles / Place Nevers", place: "Place Nevers, Charleville-Mézières", recurring: "Mardi, jeudi et samedi, 8h-13h", description: "Le marché couvert du centre de Charleville-Mézières." },
+    { title: "Marché de la Ronde Couture", place: "Quartier Ronde Couture, Charleville-Mézières", recurring: "Dimanche matin, jusqu'à 13h", description: "Le marché dominical du quartier de la Ronde Couture." },
+  ],
+  tulle: [
+    { title: "Marché de Tulle", place: "Cathédrale et quartier de la Gare, Tulle", recurring: "Mercredi et samedi, 8h-13h", description: "Le marché hebdomadaire de la préfecture de la Corrèze." },
+  ],
+  gueret: [
+    { title: "Marché de Guéret", place: "Place Bonnyaud, Guéret", recurring: "Jeudi et samedi, 8h-13h", description: "Le marché hebdomadaire du centre de Guéret." },
+  ],
+  lons: [
+    { title: "Marché place de Verdun", place: "Place de Verdun, Lons-le-Saunier", recurring: "Jeudi matin", description: "Le marché alimentaire du jeudi à Lons-le-Saunier." },
+    { title: "Marché cours Sully", place: "Cours Sully, Lons-le-Saunier", recurring: "Samedi, 8h-13h", description: "Le grand marché du samedi de Lons-le-Saunier." },
+  ],
+  montdemarsan: [
+    { title: "Marché Saint-Roch", place: "Marché Saint-Roch, Mont-de-Marsan", recurring: "Mardi et samedi matin", description: "Le marché traditionnel de Mont-de-Marsan, avec les Arènes le mardi." },
+  ],
+  mende: [
+    { title: "Marché de Mende", place: "Place Urbain V et Place Chaptal, Mende", recurring: "Samedi, 7h-12h", description: "Le marché de producteurs de la préfecture de la Lozère." },
+  ],
+  stlo: [
+    { title: "Marché de Saint-Lô", place: "Place de Gaulle, Saint-Lô", recurring: "Vendredi et samedi, 8h-13h", description: "Le marché hebdomadaire du centre de Saint-Lô." },
+  ],
+  chalons: [
+    { title: "Marché de Châlons-en-Champagne", place: "Place Godart (Halles du Marché), Châlons-en-Champagne", recurring: "Mercredi, samedi et dimanche matin", description: "Le marché couvert historique de Châlons-en-Champagne." },
+  ],
+  chaumont: [
+    { title: "Marché des Halles de Chaumont", place: "Les Halles, 21 Rue Georges Clémenceau, Chaumont", recurring: "Mercredi et samedi, 7h30-13h (grand marché le samedi)", description: "Le marché couvert de Chaumont, en Haute-Marne." },
+  ],
+  barleduc: [
+    { title: "Marché couvert de Bar-le-Duc", place: "Marché couvert, Bar-le-Duc", recurring: "Mardi, jeudi et samedi, 7h15-12h30", description: "Le marché couvert de la préfecture de la Meuse." },
+  ],
+  alencon: [
+    { title: "Marché de la Magdeleine", place: "Place de la Magdeleine, Alençon", recurring: "Jeudi et samedi matin", description: "Le plus grand marché d'Alençon, au pied de Notre-Dame." },
+    { title: "Marché de Courteille", place: "Place du Point du Jour, Alençon", recurring: "Dimanche matin", description: "Le marché alimentaire du quartier de Courteille." },
+  ],
+  vesoul: [
+    { title: "Marché des Halles de Vesoul", place: "Places Pierre-Rénet et République, Vesoul", recurring: "Jeudi et samedi matin", description: "Le marché couvert de Vesoul, jusqu'à 250 exposants le jeudi en été." },
+  ],
+  epinal: [
+    { title: "Marché couvert d'Épinal", place: "Rue de la Comédie, Épinal", recurring: "Du mardi au samedi, horaires variables (env. 6h30-19h selon jours)", description: "Le marché couvert quotidien du centre d'Épinal." },
+  ],
+  bobigny: [
+    { title: "Marché de La Ferme", place: "Rue de Normandie, Bobigny", recurring: "Mercredi et samedi matin", description: "Le marché couvert de La Ferme à Bobigny." },
+    { title: "Marché Édouard-Vaillant", place: "Rue de Vienne, Bobigny", recurring: "Mardi, jeudi et dimanche matin", description: "Le marché couvert Édouard-Vaillant à Bobigny." },
+  ],
+  basseterre: [
+    { title: "Marché de Basse-Terre", place: "Centre-ville, Basse-Terre", recurring: "Tous les jours dès 6h, particulièrement animé le samedi matin", description: "Le marché coloré du centre-ville de Basse-Terre, en Guadeloupe." },
+  ],
+  cayenne: [
+    { title: "Marché Central de Cayenne", place: "Place du Coq, Cayenne", recurring: "Mercredi, vendredi et samedi, 4h-14h", description: "Le marché central de Cayenne, en Guyane." },
+  ],
+  stdenisreunion: [
+    { title: "Marché du Chaudron", place: "Le Chaudron, Saint-Denis, La Réunion", recurring: "Mercredi et dimanche matin, environ 6h-12h", description: "Un des grands marchés forains de Saint-Denis de La Réunion." },
+  ],
+  mamoudzou: [
+    { title: "Marché de Mamoudzou", place: "Boulevard Halidi-Selemani, Mamoudzou", recurring: "Du lundi au samedi, 8h-20h (fermé le dimanche)", description: "Le grand marché couvert de Mamoudzou, à Mayotte." },
+  ],
+  dieppe: [
+    { title: "Grand marché de Dieppe", place: "Place Nationale et Grande Rue, Dieppe", recurring: "Samedi matin", description: "Le grand marché hebdomadaire du centre de Dieppe." },
+  ],
+  dunkerque: [
+    { title: "Marché du Centre-Ville", place: "Centre-ville, Dunkerque", recurring: "Mercredi matin, environ 200 exposants", description: "Le grand marché du centre-ville de Dunkerque." },
+    { title: "Marché de Malo-les-Bains", place: "Malo-les-Bains, Dunkerque", recurring: "Mardi matin, environ 60 exposants", description: "Le marché du quartier balnéaire de Malo-les-Bains." },
+  ],
+  boulognesurmer: [
+    { title: "Marché Place Dalton", place: "Place Dalton, Boulogne-sur-Mer", recurring: "Mercredi et samedi matin, 8h-12h30", description: "Le marché traditionnel devant l'église Saint-Nicolas." },
+    { title: "Marché Quai Gambetta", place: "Quai Gambetta, Boulogne-sur-Mer", recurring: "Dimanche matin, 8h-12h30", description: "Le marché du dimanche face aux étals de poissons du quai Gambetta." },
+  ],
+  verdun: [
+    { title: "Marché couvert de Verdun", place: "Marché couvert, Verdun", recurring: "Vendredi matin, 8h-13h", description: "Le marché couvert hebdomadaire de Verdun." },
+  ],
+  beaune: [
+    { title: "Marché de Beaune", place: "Halles de Beaune, Place de la Halle, Place Fleury, Beaune", recurring: "Samedi, 8h-12h", description: "Le grand marché de Beaune, environ 180 exposants." },
+  ],
+  annemasse: [
+    { title: "Marché Place de la Libération", place: "Place de la Libération, Annemasse", recurring: "Mardi et vendredi, 8h-12h30", description: "Le grand marché du centre-ville d'Annemasse, plus de 200 exposants." },
+    { title: "Marché du Perrier", place: "Places du Jumelage et Jean Jaurès, Annemasse", recurring: "Mercredi, 8h-12h30", description: "Le marché du quartier du Perrier à Annemasse." },
+  ],
+  sete: [
+    { title: "Marché du centre-ville", place: "Centre-ville, Sète", recurring: "Lundi, mercredi et vendredi matin", description: "Les marchés hebdomadaires du centre-ville de Sète." },
+  ],
+  laroche: [
+    { title: "Marché des Halles", place: "Place du Marché, La Roche-sur-Yon", recurring: "Tous les jours sauf lundi et mercredi, 8h-13h (7h le samedi)", description: "Le plus grand marché de produits frais de Vendée, certifié Qualité Marché." },
+  ],
 };
 function buildMarketEvents(){
   const results = [];
