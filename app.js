@@ -4322,7 +4322,7 @@ document.getElementById("detail-distance").textContent = "🚶 " + walkMinutes(d
 }
  
 function iconFor(cat){
-  return { Musique:"🎷", Marché:"🛍️", Brocante:"🧺", Festival:"🎪", Sport:"🏁", Soirée:"🎧", Expo:"🖼️", "À voir":"🏛️" }[cat] || "📌";
+  return { Musique:"🎷", Marché:"🛍️", Brocante:"🧺", Festival:"🎪", Sport:"🏁", Soirée:"🎧", Expo:"🖼️", "À voir":"🏛️", "Bons plans":"🏷️" }[cat] || "📌"; 
 }
  
 // ---- view switching ----
