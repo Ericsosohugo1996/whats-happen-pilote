@@ -3732,6 +3732,48 @@ const CITY_MARKETS = {
   lorient: [
     { title: "Halles de Merville", place: "Halles de Merville, Lorient", recurring: "Tous les matins, extension le mercredi et le samedi", description: "Le marché couvert emblématique du centre de Lorient, à la façade colorée." },
   ],
+  angouleme: [
+    { title: "Les Halles d'Angoulême", place: "Les Halles, Angoulême", recurring: "Du mardi au dimanche, 7h-13h (fermé le lundi)", description: "Le marché couvert central d'Angoulême." },
+  ],
+  carcassonne: [
+    { title: "Halles Prosper Montagné", place: "Place Eggenfelden, Carcassonne (Bastide Saint-Louis)", recurring: "Du mardi au samedi, 7h-13h (fermé dimanche et lundi)", description: "Le marché couvert de la Bastide Saint-Louis à Carcassonne." },
+  ],
+  rodez: [
+    { title: "Marché de Rodez", place: "Place du Bourg, Rodez", recurring: "Mercredi et samedi 6h-12h30, vendredi après-midi (Faubourg) 13h30-17h30", description: "Le marché du centre ancien de Rodez." },
+  ],
+  aurillac: [
+    { title: "Marché Couvert d'Aurillac", place: "Marché couvert, Aurillac", recurring: "Mercredi et samedi, 6h30-12h30", description: "Le marché couvert du centre-ville d'Aurillac." },
+  ],
+  evreux: [
+    { title: "Marché Place Clemenceau", place: "Place Clemenceau, Évreux", recurring: "Mercredi et samedi, 8h-13h", description: "Le marché principal du centre-ville d'Évreux." },
+  ],
+  chateauroux: [
+    { title: "Marché Place Monestier", place: "Place Monestier, Châteauroux", recurring: "Du mardi au samedi, 7h-13h", description: "Le marché du centre-ville de Châteauroux, produits fermiers et artisanaux." },
+  ],
+  blois: [
+    { title: "Marché Place Louis XII", place: "Place Louis XII, Blois", recurring: "Mardi 8h30-12h45 (petit marché), samedi 8h30-12h45 (grand marché, une centaine de commerçants)", description: "Le marché du centre-ville de Blois, au pied du château." },
+  ],
+  lepuy: [
+    { title: "Marché du Puy-en-Velay", place: "Place du Plot et Place du Marché Couvert, Le Puy-en-Velay", recurring: "Samedi matin", description: "Le grand marché hebdomadaire du centre historique du Puy-en-Velay." },
+  ],
+  cahors: [
+    { title: "La Halle de Cahors", place: "Place Galdemar, Cahors", recurring: "Mar.-sam. 7h30-13h et 15h30-19h, dimanche 9h-12h30 (fermé le lundi)", description: "Le marché couvert du centre historique de Cahors." },
+  ],
+  auch: [
+    { title: "Marché du jeudi matin (Halle aux Herbes)", place: "Halle aux Herbes, Auch", recurring: "Jeudi matin", description: "Le marché traditionnel du centre historique d'Auch." },
+  ],
+  auxerre: [
+    { title: "Marché Place de l'Hôtel de Ville", place: "Place de l'Hôtel de Ville, Auxerre", recurring: "Mercredi 8h-12h30, samedi 8h-12h", description: "Le marché du centre-ville d'Auxerre, producteurs locaux." },
+  ],
+  belfort: [
+    { title: "Marché des Vosges", place: "Centre-ville, Belfort", recurring: "Jeudi 7h-12h, dimanche 7h-13h", description: "L'un des marchés couverts du centre de Belfort." },
+  ],
+  agen: [
+    { title: "Marché fermier du Pin", place: "Halle du Pin, Agen", recurring: "Dimanche 8h-13h", description: "Le marché fermier du centre d'Agen." },
+  ],
+  stbrieuc: [
+    { title: "Marché du centre-ville", place: "Centre-ville, Saint-Brieuc", recurring: "Mercredi et samedi", description: "Le marché principal du centre-ville de Saint-Brieuc." },
+  ],
 };
 function buildMarketEvents(){
   const results = [];
