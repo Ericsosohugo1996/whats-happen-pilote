@@ -4034,10 +4034,10 @@ function renderDiscover(){
 // au lieu d'ouvrir un écran séparé (fusion des deux écrans) ----
 function __nearMeShow(){
   function apply(){
-    state.selectedPeriod = "today";
+      state.selectedPeriod = null;
     state.selectedCategories = new Set();
     state.selectedArrondissement = null;
-    state.radiusKm = 5;
+    state.radiusKm = 20; 
     if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true;
     if (typeof __hasPickedFilter !== "undefined") __hasPickedFilter = true;
     renderDiscover();
