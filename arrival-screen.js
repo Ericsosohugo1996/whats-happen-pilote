@@ -663,19 +663,19 @@ overlay.innerHTML =
 '<div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:300px; position:relative; z-index:1;">' +
 '<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
 '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
-'<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">Autour de moi</div>' +
+'<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Autour de moi") + '</div>' +
 "</div>" +
 '<div class="arrival-opt" data-key="other" style="text-align:center; cursor:pointer;">' +
 '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #F2864B, #E85D3D); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(242,134,75,0.35);">✨</div>' +
-'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Surprends-moi</div>' +
+'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Surprends-moi") + '</div>' +
 "</div>" +
 '<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
 '<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">🗺️</div>' +
-'<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">Tout voir</div>' +
+'<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Tout voir") + '</div>' +
 "</div>" +
 '<div class="arrival-opt" data-key="carnet" style="text-align:center; cursor:pointer;">' +
 '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #A57CF7, #8B6CF2); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(139,108,242,0.35);">📖</div>' +
-'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">Mon carnet</div>' +
+'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Mon carnet") + '</div>' +
 "</div>" +
 "</div>" +
 (function () {
