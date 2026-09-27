@@ -4040,6 +4040,45 @@ function renderDiscover(){
 
 // ---- "Autour de moi" : entre directement sur "Tout voir" avec des filtres près de moi/maintenant,
 // au lieu d'ouvrir un écran séparé (fusion des deux écrans) ----
+// ---- petits onglets "Maintenant / Ce soir / Demain", visibles directement (sans ouvrir les
+// filtres) uniquement quand on arrive via "Autour de moi" ----
+function __nearMeTimeTabsHTML(){
+  const periods = [
+    { key: "today", label: "Maintenant" },
+    { key: "tonight", label: "Ce soir" },
+    { key: "tomorrow", label: "Demain" },
+  ];
+  return '<div id="nearme-time-tabs" style="display:flex; gap:6px; margin:0 0 14px;">' +
+    periods.map(function (p) {
+      const active = state.selectedPeriod === p.key;
+      return '<button type="button" class="nearme-time-btn" data-period="' + p.key +
+        '" style="flex:1; padding:9px 4px; border-radius:10px; border:' + (active ? "none" : "1px solid rgba(255,255,255,0.25)") +
+        "; background:" + (active ? "linear-gradient(135deg,#F2C879,#E85D3D)" : "rgba(255,255,255,0.07)") +
+        "; color:#fff; font-size:12px; font-weight:" + (active ? "700" : "600") +
+        '; cursor:pointer;">' + p.label + "</button>";
+    }).join("") +
+    "</div>";
+}
+function __nearMeRenderTimeTabs(){
+  const existing = document.getElementById("nearme-time-tabs");
+  if (existing) existing.remove();
+  const anchor = document.getElementById("event-list-featured");
+  if (!anchor) return;
+  anchor.insertAdjacentHTML("beforebegin", __nearMeTimeTabsHTML());
+  document.querySelectorAll(".nearme-time-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.period;
+      state.selectedPeriod = (state.selectedPeriod === key) ? null : key;
+      renderDiscover();
+      __nearMeRenderTimeTabs();
+    });
+  });
+}
+function __nearMeRemoveTimeTabs(){
+  const existing = document.getElementById("nearme-time-tabs");
+  if (existing) existing.remove();
+}
+
 function __nearMeShow(){
   function apply(){
       state.selectedPeriod = null;
