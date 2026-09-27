@@ -3566,10 +3566,61 @@ function buildMarketEvents(){
   });
   return results;
 }
+const PLACE_EVENTS = buildPlaceEvents();
+
+// ---- marchés hebdomadaires réels par ville ----
+const CITY_MARKETS = {
+  aix: [
+    { title: "Marché provençal (Richelme, Hôtel de Ville, Cours Mirabeau)", place: "Place Richelme, Aix-en-Provence", recurring: "Tous les jours, 8h-13h (grand marché mar./jeu./sam.)", description: "Le grand marché provençal historique d'Aix-en-Provence, réparti sur plusieurs places du centre-ville." },
+  ],
+  marseille: [
+    { title: "Marché du Prado", place: "Avenue du Prado (Rond-point Castellane à Périer), Marseille", recurring: "Du lundi au samedi dès 7h30 (fleurs et artisanat le vendredi)", description: "Marché alimentaire quotidien le long de l'avenue du Prado." },
+  ],
+  paris: [
+    { title: "Marché d'Aligre", place: "Place et rue d'Aligre, 75012 Paris", recurring: "Du mardi au dimanche, le matin (fermé le lundi)", description: "L'un des marchés les plus populaires et animés de Paris, dans le 12e arrondissement." },
+  ],
+  bordeaux: [
+    { title: "Marché des Capucins", place: "Place des Capucins, Bordeaux", recurring: "Du mardi au samedi 6h-13h30, dimanche 6h-13h (fermé le lundi)", description: "Le grand marché couvert historique de Bordeaux." },
+  ],
+  toulouse: [
+    { title: "Marché Victor Hugo", place: "Place Victor Hugo, Toulouse", recurring: "Du mardi au dimanche, 7h-13h30 (fermé le lundi)", description: "Marché couvert emblématique de Toulouse, réputé pour ses produits frais et ses restaurants." },
+  ],
+  nantes: [
+    { title: "Marché de Talensac", place: "Rue de Talensac, Nantes", recurring: "Mar.-ven. 8h-13h, sam.-dim. 8h-13h30 (fermé le lundi)", description: "Le marché couvert le plus fréquenté de Nantes." },
+  ],
+};
+function buildMarketEvents(){
+  const results = [];
+  Object.keys(CITY_MARKETS).forEach(cityKey => {
+    const cityCoords = CITIES[cityKey];
+    if (!cityCoords) return;
+    CITY_MARKETS[cityKey].forEach((m, i) => {
+      const angle = (i / Math.max(CITY_MARKETS[cityKey].length, 1)) * Math.PI * 2;
+      results.push({
+        id: "market-" + cityKey + "-" + i,
+        isPlace: true,
+        scene: "marche",
+        city: cityKey,
+        category: "Marché",
+        title: m.title,
+        date: null,
+        time: "",
+        recurring: m.recurring,
+        place: m.place,
+        lat: cityCoords.lat + Math.cos(angle) * 0.004,
+        lng: cityCoords.lng + Math.sin(angle) * 0.004,
+        price: "Gratuit / accès libre",
+        thumb: "",
+        description: m.description || "",
+      });
+    });
+  });
+  return results;
+}
 const MARKET_EVENTS = buildMarketEvents();
- 
+
 function allEvents(){
-   return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.communityEvents, ...state.brocanteEvents, ...PLACE_EVENTS, ...MARKET_EVENTS];
+  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.communityEvents, ...state.brocanteEvents, ...PLACE_EVENTS, ...MARKET_EVENTS];
 }
  
 // ---- geo helpers ----
