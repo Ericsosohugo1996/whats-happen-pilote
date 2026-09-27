@@ -3529,6 +3529,16 @@ const CITY_MARKETS = {
     { title: "Marché couvert des Enfants Rouges", place: "39 rue de Bretagne, 75003 Paris", recurring: "Du mardi au dimanche, 8h30-20h30 (fermé le lundi)", description: "Le plus vieux marché couvert de Paris, réputé pour ses étals de street-food du monde entier." },
     { title: "Marché biologique Raspail", place: "Boulevard Raspail (entre rue du Cherche-Midi et rue de Rennes), 75006 Paris", recurring: "Dimanche 7h-14h30", description: "Marché 100% biologique, l'un des plus connus de Paris, dans le 6e arrondissement." },
     { title: "Marché Belleville", place: "Boulevard de Belleville, 75011 Paris", recurring: "Mardi et vendredi, 7h-13h30", description: "Marché populaire et multiculturel à la frontière des 11e et 20e arrondissements." },
+    { title: "Marché Maubert", place: "Place Maubert, 75005 Paris", recurring: "Mardi, jeudi 7h-13h30, samedi 7h-14h30", description: "Marché du Quartier Latin, près de Maubert-Mutualité." },
+    { title: "Marché de la rue Mouffetard", place: "Rue Mouffetard, 75005 Paris", recurring: "Du mardi au dimanche, 8h-13h30 (fermé le lundi)", description: "L'une des plus anciennes rues-marché de Paris, dans le quartier latin." },
+    { title: "Marché Monge", place: "Place Monge, 75005 Paris", recurring: "Mercredi, vendredi 7h-13h30, dimanche 7h-14h30", description: "Marché du 5e arrondissement, près du Jardin des Plantes." },
+    { title: "Marché Saxe-Breteuil", place: "Avenue de Saxe, 75007 Paris", recurring: "Jeudi 7h-13h30, samedi 7h-14h30", description: "Marché chic avec vue sur la Tour Eiffel, dans le 7e arrondissement." },
+    { title: "Marché Madeleine", place: "Place de la Madeleine, 75008 Paris", recurring: "Mardi et vendredi, 7h-13h30", description: "Petit marché élégant près de l'église de la Madeleine." },
+    { title: "Marché biologique des Batignolles", place: "Boulevard des Batignolles, 75008/75017 Paris", recurring: "Samedi 7h-14h30", description: "Marché 100% biologique entre le 8e et le 17e arrondissement." },
+    { title: "Marché Daumesnil", place: "Boulevard de Reuilly, 75012 Paris", recurring: "Mardi et vendredi, 7h-13h30", description: "Marché du 12e arrondissement, près de la coulée verte." },
+    { title: "Marché Ménilmontant", place: "Boulevard de Ménilmontant, 75011 Paris", recurring: "Mardi et vendredi, 7h-13h30", description: "Marché populaire du 11e arrondissement." },
+    { title: "Marché Edgar Quinet", place: "Boulevard Edgar Quinet, 75014 Paris", recurring: "Mercredi 7h-13h30, samedi 7h-14h30", description: "Marché du quartier Montparnasse, dans le 14e arrondissement." },
+    { title: "Marché Grenelle", place: "Boulevard de Grenelle, 75015 Paris", recurring: "Mercredi 7h-13h30, dimanche 7h-14h30", description: "Marché sous le viaduc du métro aérien, dans le 15e arrondissement." },
   ],
   bordeaux: [
     { title: "Marché des Capucins", place: "Place des Capucins, Bordeaux", recurring: "Du mardi au samedi 6h-13h30, dimanche 6h-13h (fermé le lundi)", description: "Le grand marché couvert historique de Bordeaux." },
@@ -3587,6 +3597,60 @@ const CITY_MARKETS = {
   caen: [
     { title: "Marché Saint-Sauveur", place: "Place Saint-Sauveur, Caen", recurring: "Vendredi 9h-13h30", description: "Considéré comme l'un des plus beaux marchés de France, environ 150 exposants." },
   ],
+   lyon: [
+    { title: "Marché de la Croix-Rousse", place: "Boulevard de la Croix-Rousse, Lyon", recurring: "Tous les jours sauf lundi, 6h-13h (6h-13h30 mar./ven./sam./dim.)", description: "L'un des marchés les plus réputés de Lyon, jusqu'à 95 exposants le week-end." },
+  ],
+  nice: [
+    { title: "Marché aux fleurs et à l'alimentation du Cours Saleya", place: "Cours Saleya, Nice", recurring: "Fruits et légumes tous les jours sauf lundi 6h-13h30 ; fleurs mar./jeu./ven. 6h-17h30, mer./sam. 6h30-18h30, dim. 6h30-13h30 ; brocante le lundi 7h-18h", description: "Le marché le plus emblématique de Nice, en plein cœur de la Vieille Ville." },
+  ],
+  toulon: [
+    { title: "Marché du Cours Lafayette", place: "Cours Lafayette, Toulon", recurring: "Du mardi au dimanche, 7h30-12h30 (fermé le lundi hors saison)", description: "Le grand marché provençal de Toulon, alimentaire et non-alimentaire." },
+  ],
+  grenoble: [
+    { title: "Marché Place aux Herbes", place: "Place aux Herbes, Grenoble", recurring: "Mar.-ven. 7h-13h, sam.-dim. jusqu'à 13h30 (+ vendredi soir 15h-19h)", description: "Marché historique du centre-ville de Grenoble." },
+  ],
+  stetienne: [
+    { title: "Marché de Carnot", place: "Place Carnot, Saint-Étienne", recurring: "Mardi et vendredi 6h-13h, dimanche 6h-13h30", description: "Le plus grand marché de Saint-Étienne, plus de 120 exposants le dimanche." },
+  ],
+  nancy: [
+    { title: "Marché Central", place: "Place Henri Mengin, Nancy", recurring: "Du mardi au samedi 7h-19h, dimanche 9h-13h30 (fermé le lundi)", description: "Le marché couvert central de Nancy, alimentation, fleurs et livres." },
+  ],
+  nimes: [
+    { title: "Les Halles de Nîmes", place: "Les Halles, Nîmes", recurring: "Tous les jours, 7h-13h", description: "Le marché couvert de Nîmes, ouvert tous les jours de l'année." },
+  ],
+  clermont: [
+    { title: "Marché Saint-Pierre", place: "Place Saint-Pierre, Clermont-Ferrand", recurring: "Du lundi au samedi, 7h-19h", description: "Marché alimentaire du centre-ville de Clermont-Ferrand, une quarantaine de commerçants." },
+  ],
+  lemans: [
+    { title: "Marché des Jacobins", place: "Place des Jacobins / Place du Jet d'Eau, Le Mans", recurring: "Mercredi 7h-13h, vendredi 7h-17h30, dimanche 7h-13h (brocante ven./dim.)", description: "Marché emblématique du Mans, réputé pour sa brocante du vendredi et dimanche." },
+  ],
+  amiens: [
+    { title: "Marché Saint-Leu", place: "Place Parmentier, Amiens", recurring: "Samedi 6h-13h", description: "Marché hebdomadaire du pittoresque quartier Saint-Leu à Amiens." },
+  ],
+  limoges: [
+    { title: "Halles Centrales", place: "Halles Centrales, Limoges", recurring: "Mar.-mer. 7h-14h, jeu.-dim. 7h-15h", description: "Le marché couvert historique de Limoges, une trentaine de commerçants." },
+  ],
+  tours: [
+    { title: "Les Halles de Tours", place: "Les Halles, Tours", recurring: "Lun.-sam. 7h-19h, dim. et jours fériés 7h-13h (+ marché extérieur mer./sam. matin)", description: "Le marché couvert central de Tours." },
+  ],
+  perpignan: [
+    { title: "Marché Cassanyes", place: "Place Cassanyes, Perpignan", recurring: "Du mardi au dimanche, 7h30-13h", description: "L'un des marchés les plus animés et colorés de Perpignan." },
+  ],
+  besancon: [
+    { title: "Marché de la Révolution", place: "Place de la Révolution, Besançon", recurring: "Mardi et vendredi 7h-13h, samedi 7h-18h", description: "Le grand marché de plein air du centre de Besançon." },
+  ],
+  mulhouse: [
+    { title: "Marché de Mulhouse", place: "Centre-ville, Mulhouse", recurring: "Mardi, jeudi et samedi, 6h-17h", description: "Le plus grand marché de l'Est de la France, selon les organisateurs." },
+  ],
+  orleans: [
+    { title: "Halles Châtelet", place: "Place du Châtelet, Orléans", recurring: "Halles alimentaires : mar.-sam. 8h-19h30, dim. et jours fériés 8h-13h", description: "Le marché couvert central d'Orléans." },
+  ],
+  annecy: [
+    { title: "Marché de la Vieille Ville", place: "Vieille Ville, Annecy", recurring: "Mardi, vendredi et dimanche, 7h-13h", description: "Le marché du dimanche est considéré comme le meilleur d'Annecy, dans le cadre de la vieille ville." },
+  ],
+  cannes: [
+    { title: "Marché Forville", place: "Rue du Marché Forville, Cannes", recurring: "Mar.-ven. 8h-12h30, sam.-dim. 8h-13h30 (tous les jours 8h-13h30 mi-juin à mi-sept.)", description: "Le marché couvert le plus célèbre de Cannes, produits locaux et poissons de la baie." },
+  ], 
 };
 function buildMarketEvents(){
   const results = [];
