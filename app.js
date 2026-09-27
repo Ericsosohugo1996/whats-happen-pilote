@@ -46,6 +46,7 @@ document.getElementById("choice-locate").onclick = function(){
   document.getElementById("choice-visit").onclick = function(){
     proceedAfterClick(this, () => {
       state.userPos = null;
+      if (typeof __hasPickedCity !== "undefined") __hasPickedCity = false;
       renderDiscover();
     });
   };
