@@ -3693,6 +3693,45 @@ const CITY_MARKETS = {
   vannes: [
     { title: "Marché de la Place des Lices", place: "Place des Lices, Vannes", recurring: "Mercredi et samedi, 8h-13h30", description: "Considéré comme l'un des plus beaux marchés de France, dans le centre historique de Vannes." },
   ],
+  ajaccio: [
+    { title: "Marché Central", place: "Place Foch, Ajaccio", recurring: "Tous les matins sauf le lundi, 8h-12h", description: "Le marché central d'Ajaccio, produits corses : charcuterie, fromage, fleurs, fruits et légumes." },
+  ],
+  bastia: [
+    { title: "Marché de Bastia", place: "Place Saint-Nicolas, Bastia", recurring: "Vendredi 7h-12h, dimanche 8h-13h (marché nocturne en été)", description: "Le marché de plein air du centre de Bastia, produits locaux et corses." },
+  ],
+  perigueux: [
+    { title: "Marché de Périgueux", place: "Place du Coderc à Place Saint-Silain, Périgueux", recurring: "Mercredi et samedi, 8h-13h", description: "Le grand marché du centre historique de Périgueux, producteurs bio et spécialités du Périgord." },
+  ],
+  valence: [
+    { title: "Marché Place des Clercs", place: "Place des Clercs, Valence", recurring: "Jeudi 7h-12h30, samedi 7h-14h", description: "Le marché alimentaire du centre-ville de Valence." },
+  ],
+  albi: [
+    { title: "Marché Couvert d'Albi", place: "Rue Émile Grand, Albi", recurring: "Du mardi au dimanche, 7h-14h", description: "Le marché couvert d'Albi, dans le centre historique près de la cathédrale Sainte-Cécile." },
+  ],
+  montauban: [
+    { title: "Marché Couvert de Montauban", place: "11 Place Nationale, Montauban", recurring: "Du mardi au dimanche, 8h-13h (fermé le lundi)", description: "Le marché couvert de Montauban, sous les arcades de la Place Nationale." },
+  ],
+  niort: [
+    { title: "Les Halles de Niort", place: "Les Halles, Niort", recurring: "Tous les jours sauf lundi (grands jours de marché : jeudi, samedi, dimanche)", description: "Le marché couvert central de Niort, plus de 30 exposants en extérieur les grands jours." },
+  ],
+  laval: [
+    { title: "Marché Central", place: "Esplanade du Château-Neuf / centre-ville, Laval", recurring: "Mardi et samedi, 8h-13h30", description: "Le marché central de Laval, alimentaire le mardi, plus étendu le samedi." },
+  ],
+  nevers: [
+    { title: "Marché Place Carnot", place: "Place Carnot, Nevers", recurring: "Samedi 8h-13h (+ marché couvert en semaine)", description: "Le marché de plein air du centre de Nevers, avec une quarantaine d'exposants." },
+  ],
+  beauvais: [
+    { title: "Marché Place des Halles", place: "Place des Halles, Beauvais", recurring: "Mercredi et samedi, toute la journée", description: "Le grand marché du centre-ville de Beauvais, environ 120 exposants." },
+  ],
+  cherbourg: [
+    { title: "Marché Place de Gaulle", place: "Place de Gaulle, Cherbourg-en-Cotentin", recurring: "Jeudi et dimanche 8h30-13h30, samedi 8h30-13h", description: "Le grand marché du centre de Cherbourg, jusqu'à 115 exposants jeudi et dimanche." },
+  ],
+  saintmalo: [
+    { title: "Halle de Rocabey", place: "Rocabey, Saint-Malo", recurring: "Lundi, jeudi et samedi, 8h-12h30", description: "Le marché couvert du quartier de Rocabey à Saint-Malo." },
+  ],
+  lorient: [
+    { title: "Halles de Merville", place: "Halles de Merville, Lorient", recurring: "Tous les matins, extension le mercredi et le samedi", description: "Le marché couvert emblématique du centre de Lorient, à la façade colorée." },
+  ],
 };
 function buildMarketEvents(){
   const results = [];
