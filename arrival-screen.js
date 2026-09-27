@@ -606,28 +606,31 @@ const time = hour + "h" + String(now.getMinutes()).padStart(2, "0");
 const weatherText = __arrivalWeatherText();
 
 const isReallyThere = !!state.userPos;
-let greeting;
+let greetingTemplate;
 if (isReallyThere) {
 if (hour >= 5 && hour < 12) {
-greeting = "Une nouvelle journée commence à " + cityName + ". Par quoi on démarre ?";
+greetingTemplate = "Une nouvelle journée commence à {city}. Par quoi on démarre ?";
 } else if (hour >= 12 && hour < 17) {
-greeting = "Il est " + time + " à " + cityName + ". Qu'est-ce qu'on fait de cet après-midi ?";
+greetingTemplate = "Il est {time} à {city}. Qu'est-ce qu'on fait de cet après-midi ?";
 } else if (hour >= 17 && hour < 20) {
-greeting = "Le soleil décline sur " + cityName + ". Qu'est-ce qu'on fait de cette soirée ?";
+greetingTemplate = "Le soleil décline sur {city}. Qu'est-ce qu'on fait de cette soirée ?";
 } else {
-greeting = cityName + " s'anime pour la nuit. Qu'est-ce qui vous tente ?";
+greetingTemplate = "{city} s'anime pour la nuit. Qu'est-ce qui vous tente ?";
 }
 } else {
 if (hour >= 5 && hour < 12) {
-greeting = "Envie de découvrir " + cityName + " ce matin ?";
+greetingTemplate = "Envie de découvrir {city} ce matin ?";
 } else if (hour >= 12 && hour < 17) {
-greeting = "Envie de découvrir " + cityName + " cet après-midi ?";
+greetingTemplate = "Envie de découvrir {city} cet après-midi ?";
 } else if (hour >= 17 && hour < 20) {
-greeting = "Envie de découvrir " + cityName + " ce soir ?";
+greetingTemplate = "Envie de découvrir {city} ce soir ?";
 } else {
-greeting = "Envie de découvrir " + cityName + " cette nuit ?";
+greetingTemplate = "Envie de découvrir {city} cette nuit ?";
 }
 }
+const greeting = (typeof t === "function" ? t(greetingTemplate) : greetingTemplate)
+  .replace("{city}", cityName)
+  .replace("{time}", time);
 
 const cityPhoto = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[cityKey] : null;
 const heroBg = cityPhoto
