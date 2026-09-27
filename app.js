@@ -3807,6 +3807,51 @@ const CITY_MARKETS = {
   chalonsursaone: [
     { title: "Marché Place Saint-Vincent", place: "Place Saint-Vincent, Chalon-sur-Saône", recurring: "Vendredi et dimanche, 8h-13h", description: "Une institution chalonnaise, marché alimentaire du centre historique." },
   ],
+  st: [
+    { title: "Marché Provençal", place: "Place des Lices, Saint-Tropez", recurring: "Mardi et samedi, 8h-13h", description: "Le marché mythique de la place des Lices à Saint-Tropez." },
+  ],
+  ste: [
+    { title: "Marché Couvert de Sainte-Maxime", place: "Rue Fernand Bessy, Sainte-Maxime", recurring: "Du mardi au dimanche, 8h-14h (fermé le lundi)", description: "Le marché couvert de Sainte-Maxime, près du port." },
+  ],
+  melun: [
+    { title: "Marché Gaillardon", place: "Place Gaillardon, Melun", recurring: "Mercredi et samedi, 7h-13h30", description: "Le plus grand des marchés de Melun, plus de 50 commerçants alimentaires." },
+  ],
+  tarbes: [
+    { title: "Halle Brauhauban", place: "Halle Brauhauban, Tarbes", recurring: "Tous les jours, 7h-13h30 (commerces jusqu'à 20h en semaine)", description: "Le marché gourmand couvert de Tarbes." },
+  ],
+  gap: [
+    { title: "Marché traditionnel de Gap", place: "Place de la République et Place aux Herbes, Gap", recurring: "Mercredi et samedi, 8h-12h30", description: "Le marché traditionnel du centre-ville de Gap." },
+  ],
+  nanterre: [
+    { title: "Marché du Centre", place: "Place du Maréchal Foch, Nanterre", recurring: "Mardi, jeudi et dimanche, 8h-13h30", description: "Le marché du centre-ville de Nanterre." },
+  ],
+  creteil: [
+    { title: "Marché du Village", place: "Place de l'Abbaye, Créteil", recurring: "Mercredi et samedi, 7h-13h30", description: "Le marché du quartier de l'Abbaye à Créteil." },
+  ],
+  cergy: [
+    { title: "Marché de Saint-Christophe", place: "Axe Majeur-Horloge, Cergy", recurring: "Mercredi et samedi, 8h30-13h15", description: "L'un des plus grands marchés d'Île-de-France, environ 244 exposants." },
+  ],
+  evry: [
+    { title: "Marché Senghor", place: "Parking Léopold Sédar Senghor-Est, Évry-Courcouronnes", recurring: "Mercredi 11h-18h, samedi 8h30-13h30", description: "Le marché principal d'Évry-Courcouronnes." },
+  ],
+  fortdefrance: [
+    { title: "Grand Marché Couvert (Marché aux Épices)", place: "Rue A. Siger / rue Isambert, Fort-de-France", recurring: "Lun.-ven. 6h-16h, samedi 6h-15h (fermé le dimanche)", description: "Le marché couvert historique de Fort-de-France, inauguré en 1886." },
+  ],
+  foix: [
+    { title: "Marché du vendredi", place: "Allées Villote, Halle Saint-Volusien et Place Violet, Foix", recurring: "Vendredi, 8h-13h", description: "Le grand marché hebdomadaire du centre de Foix." },
+  ],
+  laon: [
+    { title: "Marché de la Halle", place: "Place Victor Hugo, Laon", recurring: "Samedi, 8h-13h30", description: "Le marché hebdomadaire du centre de Laon." },
+  ],
+  moulins: [
+    { title: "Marché du Quartier des Champins", place: "Quartier des Champins, Moulins", recurring: "Mardi matin", description: "Le marché hebdomadaire de Moulins, une vingtaine d'exposants." },
+  ],
+  bourgenbresse: [
+    { title: "Petite Halle", place: "Jean Macé, Bourg-en-Bresse", recurring: "Du mardi au dimanche, 8h-13h", description: "Le marché couvert de Bourg-en-Bresse, ouvert toute la semaine." },
+  ],
+  epernay: [
+    { title: "Halle Saint-Thibault", place: "Halle Saint-Thibault, Épernay", recurring: "Mercredi matin (petit marché), samedi matin (grand marché, environ 50 commerçants)", description: "Le marché couvert principal d'Épernay, capitale du Champagne." },
+  ],
 };
 function buildMarketEvents(){
   const results = [];
