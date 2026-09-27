@@ -591,9 +591,9 @@
       html += '<div style="display:flex; gap:8px; margin-top:18px;">' +
         '<div style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px; text-align:center;"><div style="font-size:18px; font-weight:800; color:#fff;">' + totalVisits + '</div><div style="font-size:9px; color:#9BA5C2;">SOUVENIRS</div></div>' +
         (hasCoords ? '<button id="souvenirs-map-btn" style="flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px; text-align:center; color:#fff; cursor:pointer;"><div style="font-size:18px;">🗺️</div><div style="font-size:9px;">VOIR LA CARTE</div></button>' : '') +
-        '</div>' +
-       '<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Raconte-moi mon voyage</div>' +
-        '<div id="souvenirs-ai-result" style="display:none; margin-top:12px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px;"></div>';
+              '</div>' +
+        '<button id="souvenirs-ai-btn" style="width:100%; margin-top:10px; padding:13px; border-radius:999px; border:none; background:linear-gradient(90deg, #F2864B, #E85D3D); color:#fff; font-size:13px; font-weight:700; box-shadow:0 8px 18px -8px rgba(242,134,75,0.5); cursor:pointer;">✨ Raconte-moi mon voyage</button>' +
+        '<div id="souvenirs-ai-result" style="display:none; margin-top:12px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px;"></div>'; 
       listEl.innerHTML = html;
       listEl.querySelectorAll(".souvenir-card").forEach(function (card) {
         card.addEventListener("click", function () {
