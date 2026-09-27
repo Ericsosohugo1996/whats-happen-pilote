@@ -647,7 +647,7 @@
             .catch(function () {
               resultBox.style.display = "block";
               resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
-              aiBtn.textContent = "✨ Enrichir Whazup";
+              aiBtn.textContent = "✨ Raconte-moi mon voyage";
               aiBtn.disabled = false;
             });
         });
