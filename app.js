@@ -4581,11 +4581,11 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.textContent = "📍 Localisation…";
     navigator.geolocation.getCurrentPosition(
          pos => {
-      state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+            state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
         btn.textContent = "📍 Ma position";
-        if (typeof __exploreOpen === "function") __exploreOpen();
+        if (typeof __nearMeShow === "function") __nearMeShow();
         else renderDiscover();
-      },       
+      },   
       err => {
         btn.textContent = "📍 Ma position";
         alert("Position indisponible (" + err.message + "). Vous pouvez choisir une ville manuellement.");
