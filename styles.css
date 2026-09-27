@@ -323,8 +323,9 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 .detail-body h1{ font-family:var(--font-display); font-weight:600; font-size:24px; margin:0 0 16px; line-height:1.22; letter-spacing:-.01em; }
 .info-row{ display:flex; gap:12px; font-size:13.5px; margin-bottom:13px; }
 .info-card{ background:#f7f5f2; border-radius:14px; padding:14px 16px; margin-bottom:16px; }
-.info-row-new{ display:flex; gap:12px; align-items:baseline; }
-.info-row-new .ico{ width:20px; text-align:center; font-size:15px; }
+.info-row-new{ display:flex; gap:12px; align-items:center; }
+.info-row-new .ico{ width:34px; height:34px; flex-shrink:0; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; background:#FCE7EC; }
+.info-row-place .ico{ background:#E7F0FB; }
 .info-main{ font-size:14.5px; font-weight:700; color:var(--primary); }
 .info-sub{ font-size:12px; color:#888; margin-top:2px; }
 .info-sub.accent{ color:var(--accent); font-weight:600; }
