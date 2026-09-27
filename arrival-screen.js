@@ -744,6 +744,10 @@ overlay.innerHTML =
 '<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #A57CF7, #8B6CF2); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(139,108,242,0.35);">📖</div>' +
 '<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Mon carnet") + '</div>' +
 "</div>" +
+'<div class="arrival-opt" data-key="nouveautes" style="text-align:center; cursor:pointer;">' +
+'<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #F2C879, #E8604C); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(232,96,76,0.35);">🆕</div>' +
+'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Nouveautés") + '</div>' +
+"</div>" +
 "</div>" +
 (function () {
   const todayIso = new Date().toISOString().slice(0, 10);
