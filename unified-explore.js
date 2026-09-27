@@ -17,8 +17,9 @@ function __ensureUnifiedExploreButton() {
   __unifiedHideOldButtons();
   const cityKey = state.userPos ? nearestCityKey() : state.city;
   const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+  const exploreLabel = "🔍 " + (typeof t === "function" ? t("Explorer") : "Explorer") + " " + cityName;
   if (existing) {
-    existing.textContent = "🔍 Explorer " + cityName;
+    existing.textContent = exploreLabel;
     return;
   }
   const topbar = document.querySelector(".topbar");
@@ -26,7 +27,7 @@ function __ensureUnifiedExploreButton() {
   const btn = document.createElement("button");
   btn.id = "unified-explore-btn";
   btn.type = "button";
-  btn.textContent = "🔍 Explorer " + cityName;
+  btn.textContent = exploreLabel;
   btn.style.cssText =
     "display:block; margin:10px auto 0; padding:11px 20px; border-radius:999px; border:none; background:linear-gradient(90deg,#c1440e,#e3a72e); color:#fff; font-weight:700; font-size:13.5px; cursor:pointer;";
   btn.addEventListener("click", function () {
