@@ -3693,8 +3693,9 @@ function exploreRowHTML(ev, walkMin, isFirst, badgeHtml){
     '<div style="flex:1; min-width:0;">' +
     '<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px;">' +
     '<div style="font-family:var(--font-display); font-size:13.5px; font-weight:600; color:#14213D; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + ev.title + '</div>' +
-    (priceLabel ? '<div style="font-size:10px; font-weight:800; color:#fff; background:' + priceBg + '; padding:4px 9px; border-radius:999px; white-space:nowrap; flex-shrink:0;">' + priceLabel + '</div>' : '') +
+        (priceLabel ? '<div style="font-size:10px; font-weight:800; color:#fff; background:' + priceBg + '; padding:4px 9px; border-radius:999px; white-space:nowrap; flex-shrink:0;">' + priceLabel + '</div>' : '') +
     '</div>' +
+    (badgeHtml ? '<div style="margin-top:3px;">' + badgeHtml + '</div>' : '') +
     (ev.place ? '<div style="font-size:11px; color:#999; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + ev.place + '</div>' : '') +
     '<div style="display:flex; align-items:center; gap:8px; margin-top:4px;">' +
     '<span style="font-size:11px; color:#E85D3D; font-weight:600;">🚶 ' + walkMin + ' min</span>' +
