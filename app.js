@@ -891,7 +891,22 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-    {
+   {
+    id: "charleville-affaire-tueur-ombre",
+    scene: "spectacle",
+    city: "charleville",
+    category: "Théâtre",
+    title: "L'Affaire du tueur de l'Ombre",
+    date: "2026-10-15",
+    time: "20:00",
+    place: "Théâtre de Charleville-Mézières, Place du Théâtre, Charleville-Mézières",
+    lat: 49.7739,
+    lng: 4.7196,
+    price: "Payant",
+    thumb: "",
+    description: "Pièce de théâtre L'Affaire du tueur de l'Ombre, au Théâtre de Charleville-Mézières.",
+  },
+  {
     id: "lons-fin-du-debut",
     scene: "spectacle",
     city: "lons",
