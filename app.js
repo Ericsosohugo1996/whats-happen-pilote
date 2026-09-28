@@ -891,7 +891,38 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-               {
+                {
+    id: "niort-youn-sun-nah-moulin-du-roc",
+    scene: "musique",
+    city: "niort",
+    category: "Musique",
+    title: "Youn Sun Nah",
+    date: "2026-11-12",
+    time: "20:30",
+    place: "Le Moulin du Roc, 9 Boulevard Main, Niort",
+    lat: 46.3230,
+    lng: -0.4610,
+    price: "Payant",
+    featured: true,
+    thumb: "",
+    description: "Concert de la chanteuse de jazz sud-coréenne Youn Sun Nah, au Moulin du Roc — Scène nationale de Niort.",
+  },
+  {
+    id: "evreux-expo-romain-niceron",
+    scene: "expo",
+    city: "evreux",
+    category: "Expo",
+    title: "Romain Niceron — In extremis",
+    date: "2026-10-08",
+    time: "10:00",
+    place: "Musée d'Art, Histoire et Archéologie, 2 Esplanade Anne Baudot, Évreux",
+    lat: 49.0260,
+    lng: 1.1500,
+    price: "Payant",
+    thumb: "",
+    description: "Exposition d'art contemporain de Romain Niceron, « In extremis », au Musée d'Art, Histoire et Archéologie d'Évreux, jusqu'au 21 novembre.",
+  },         
+  {
     id: "troyes-laurent-voulzy-cube",
     scene: "musique",
     city: "troyes",
