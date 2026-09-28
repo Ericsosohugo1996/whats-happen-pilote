@@ -891,7 +891,37 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-                 {
+                  {
+    id: "stetienne-melancolie-paquebots",
+    scene: "spectacle",
+    city: "stetienne",
+    category: "Spectacle",
+    title: "La Mélancolie des paquebots",
+    date: "2026-10-06",
+    time: "20:00",
+    place: "La Comédie de Saint-Étienne, Place Jean Dasté, Saint-Étienne",
+    lat: 45.4360,
+    lng: 4.3920,
+    price: "Payant",
+    thumb: "",
+    description: "Création mise en scène par Benoît Lambert, à La Comédie de Saint-Étienne, du 6 au 16 octobre.",
+  },
+  {
+    id: "epernay-theatre-salle-odile-kopp",
+    scene: "spectacle",
+    city: "epernay",
+    category: "Spectacle",
+    title: "Propriété privée / La liberté ou la prison",
+    date: "2026-10-24",
+    time: "20:30",
+    place: "Salle Odile Kopp, 1 Avenue de Middelkerke, Épernay",
+    lat: 49.0430,
+    lng: 3.9530,
+    price: "Payant",
+    thumb: "",
+    description: "Deux comédies jouées par la Compagnie Étoile, à la Salle Odile Kopp d'Épernay, les 24 et 25 octobre.",
+  }, 
+  {
     id: "beziers-dave-zinga-zanga",
     scene: "musique",
     city: "beziers",
