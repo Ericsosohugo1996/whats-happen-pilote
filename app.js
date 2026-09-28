@@ -892,6 +892,21 @@ const CITIES = {
 // liste pour la démonstration.
 const SEED_EVENTS = [
     {
+    id: "stdenisreunion-je-suis-trop-vert",
+    scene: "spectacle",
+    city: "stdenisreunion",
+    category: "Théâtre",
+    title: "Je suis trop vert — Cie du Kairos",
+    date: "2026-10-07",
+    time: "18:00",
+    place: "CDNOI, 2 rue du Maréchal Leclerc, Saint-Denis (La Réunion)",
+    lat: -20.8823,
+    lng: 55.4504,
+    price: "Payant",
+    thumb: "",
+    description: "Spectacle Je suis trop vert, par la Compagnie du Kairos, au CDNOI, Centre Dramatique National de l'Océan Indien, à Saint-Denis.",
+  },
+  {
     id: "evry-1664",
     scene: "spectacle",
     city: "evry",
