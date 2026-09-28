@@ -891,7 +891,37 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-   {
+    {
+    id: "basseterre-news-de-la-maf",
+    scene: "spectacle",
+    city: "basseterre",
+    category: "Théâtre",
+    title: "Les news de la MAF",
+    date: "2026-10-10",
+    time: "18:00",
+    place: "L'Artchipel, Salle Jenny Alpha, Boulevard Félix Eboué, Basse-Terre",
+    lat: 15.9958,
+    lng: -61.7296,
+    price: "Payant",
+    thumb: "",
+    description: "Pièce de théâtre Les news de la MAF, sur la situation des femmes en prison, à L'Artchipel, Scène nationale de Guadeloupe.",
+  },
+  {
+    id: "fortdefrance-heroines-beatrice-boulaye",
+    scene: "spectacle",
+    city: "fortdefrance",
+    category: "Spectacle",
+    title: "Héroïnes — Béatrice de La Boulaye",
+    date: "2026-10-13",
+    time: "20:00",
+    place: "Grand Carbet du Parc Culturel Aimé Césaire, Place José-Marty, Fort-de-France",
+    lat: 14.6161,
+    lng: -61.0588,
+    price: "Payant",
+    thumb: "",
+    description: "Spectacle Héroïnes de Béatrice de La Boulaye, au Grand Carbet du Parc Culturel Aimé Césaire de Fort-de-France.",
+  },
+  {
     id: "boulognesurmer-avant-que-joublie",
     scene: "spectacle",
     city: "boulognesurmer",
