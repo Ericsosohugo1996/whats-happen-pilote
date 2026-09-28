@@ -3234,7 +3234,7 @@ async function fetchOpenAgendaCityEvents(source){
     const res = await fetch(url);
     const data = await res.json();
     if (!data.events) return [];
-    const strictCities = ["Aix-en-Provence", "Marseille"];
+        const strictCities = ["Aix-en-Provence", "Marseille", "Draguignan"];
     return data.events
       .filter(ev => {
         if (!ev.location || !ev.nextTiming) return false;
