@@ -891,7 +891,38 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-         {
+          {
+    id: "cannes-nrj-music-awards-2026",
+    scene: "musique",
+    city: "cannes",
+    category: "Festival",
+    title: "NRJ Music Awards 2026",
+    date: "2026-10-23",
+    time: "21:00",
+    place: "Palais des Festivals, 1 Boulevard de la Croisette, Cannes",
+    lat: 43.5497,
+    lng: 7.0169,
+    price: "Payant",
+    featured: true,
+    thumb: "",
+    description: "La grande cérémonie annuelle des NRJ Music Awards, au Palais des Festivals de Cannes.",
+  },
+  {
+    id: "lemans-gaetan-roussel-antares",
+    scene: "musique",
+    city: "lemans",
+    category: "Musique",
+    title: "Gaëtan Roussel",
+    date: "2026-11-03",
+    time: "20:00",
+    place: "Antarès Arena, 2 Avenue Antarès, Le Mans",
+    lat: 48.0075,
+    lng: 0.2350,
+    price: "Payant",
+    thumb: "",
+    description: "Concert de Gaëtan Roussel (ex-Louise Attaque) à l'Antarès Arena du Mans.",
+  },        
+  {
     id: "besancon-aymeric-lompret-yolo",
     scene: "spectacle",
     city: "besancon",
