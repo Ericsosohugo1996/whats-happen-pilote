@@ -891,7 +891,22 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-    {
+        {
+    id: "bobigny-bouchra-ouizguen-mc93",
+    scene: "spectacle",
+    city: "bobigny",
+    category: "Spectacle",
+    title: "Qunfudh — Bouchra Ouizguen",
+    date: "2026-10-22",
+    time: "19:30",
+    place: "MC93 — Maison de la Culture de Seine-Saint-Denis, 9 Boulevard Lénine, Bobigny",
+    lat: 48.9080,
+    lng: 2.4400,
+    price: "Payant",
+    thumb: "",
+    description: "Création chorégraphique solo de Bouchra Ouizguen, au MC93 dans le cadre du Festival d'Automne à Paris.",
+  },
+  {
     id: "gap-vie-et-mort-chirac",
     scene: "spectacle",
     city: "gap",
