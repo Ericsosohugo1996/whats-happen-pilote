@@ -891,7 +891,23 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-                    {
+    {
+    id: "compiegne-medee-marie-nicole-lemieux",
+    scene: "musique",
+    city: "compiegne",
+    category: "Musique",
+    title: "Médée — Marie-Nicole Lemieux",
+    date: "2026-10-02",
+    time: "20:00",
+    place: "Théâtre Impérial, 3 Rue Othenin, Compiègne",
+    lat: 49.4175,
+    lng: 2.8300,
+    price: "Payant",
+    featured: true,
+    thumb: "",
+    description: "L'opéra tragique de Marc-Antoine Charpentier avec la contralto Marie-Nicole Lemieux, au Théâtre Impérial de Compiègne.",
+  },               
+  {
     id: "carcassonne-kyle-eastwood",
     scene: "musique",
     city: "carcassonne",
