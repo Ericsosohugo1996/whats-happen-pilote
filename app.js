@@ -891,7 +891,37 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-   {
+  {
+    id: "creteil-poussiere-dor-eicher",
+    scene: "musique",
+    city: "creteil",
+    category: "Musique",
+    title: "Poussière d'or — Stephan Eicher",
+    date: "2026-10-12",
+    time: "20:30",
+    place: "Maison des Arts de Créteil, Place Salvador Allende, Créteil",
+    lat: 48.7904,
+    lng: 2.4556,
+    price: "Payant",
+    thumb: "",
+    description: "Concert de Stephan Eicher, Poussière d'or, à la Maison des Arts de Créteil.",
+  },
+  {
+    id: "annemasse-erik-truffaz",
+    scene: "musique",
+    city: "annemasse",
+    category: "Musique",
+    title: "Erik Truffaz avec l'Orchestre des Alpes & du Léman",
+    date: "2026-10-01",
+    time: "20:30",
+    place: "Château Rouge, 1 Route de Bonneville, Annemasse",
+    lat: 46.1936,
+    lng: 6.2358,
+    price: "Payant",
+    thumb: "",
+    description: "Concert d'Erik Truffaz avec l'Orchestre des Alpes et du Léman, à Château Rouge, Scène conventionnée d'Annemasse.",
+  }, 
+  {
     id: "cergy-pente-raide",
     scene: "spectacle",
     city: "cergy",
