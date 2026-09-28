@@ -892,6 +892,21 @@ const CITIES = {
 // liste pour la démonstration.
 const SEED_EVENTS = [
   {
+    id: "gueret-fleurs-pour-algernon",
+    scene: "spectacle",
+    city: "gueret",
+    category: "Théâtre",
+    title: "Des fleurs pour Algernon — William Mesguich",
+    date: "2026-10-15",
+    time: "20:30",
+    place: "La Guérétoise de spectacle, Espace Fayolle, 6 avenue Fayolle, Guéret",
+    lat: 46.1667,
+    lng: 1.8667,
+    price: "Payant",
+    thumb: "",
+    description: "Adaptation théâtrale du roman de Daniel Keyes par William Mesguich, à La Guérétoise de spectacle, Scène conventionnée de Guéret.",
+  },
+  {
     id: "chaumont-parhelie-ciel-reims",
     scene: "spectacle",
     city: "chaumont",
