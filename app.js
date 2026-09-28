@@ -891,6 +891,21 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
+   {
+    id: "boulognesurmer-avant-que-joublie",
+    scene: "spectacle",
+    city: "boulognesurmer",
+    category: "Danse",
+    title: "Avant que j'oublie",
+    date: "2026-10-10",
+    time: "20:00",
+    place: "L'Embarcadère, 9 Quai Thurot, Boulogne-sur-Mer",
+    lat: 50.7264,
+    lng: 1.6147,
+    price: "Payant",
+    thumb: "",
+    description: "Spectacle de danse Avant que j'oublie, à L'Embarcadère, Palais des spectacles et des congrès de Boulogne-sur-Mer.",
+  },
   {
     id: "gueret-fleurs-pour-algernon",
     scene: "spectacle",
