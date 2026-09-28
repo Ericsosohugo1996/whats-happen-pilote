@@ -891,7 +891,38 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-          {
+            {
+    id: "dunkerque-entre-temps-decouffle",
+    scene: "spectacle",
+    city: "dunkerque",
+    category: "Spectacle",
+    title: "Entre-Temps — Philippe Decouflé",
+    date: "2026-10-15",
+    time: "20:00",
+    place: "Le Bateau Feu — Scène nationale, Place du Général-de-Gaulle, Dunkerque",
+    lat: 51.0350,
+    lng: 2.3770,
+    price: "Payant",
+    featured: true,
+    thumb: "",
+    description: "Création chorégraphique du célèbre chorégraphe Philippe Decouflé, au Bateau Feu — Scène nationale de Dunkerque, les 15 et 16 octobre.",
+  },
+  {
+    id: "stnazaire-walid-ben-selim",
+    scene: "musique",
+    city: "stnazaire",
+    category: "Musique",
+    title: "Walid Ben Selim — Here and Now",
+    date: "2026-10-07",
+    time: "20:00",
+    place: "Le Théâtre — Scène nationale, Quai Eugène Péreire, Saint-Nazaire",
+    lat: 47.2740,
+    lng: -2.2140,
+    price: "Payant",
+    thumb: "",
+    description: "Concert de musiques du monde de Walid Ben Selim, au Théâtre — Scène nationale de Saint-Nazaire.",
+  },       
+  {
     id: "deauville-elie-semoun-cactus",
     scene: "spectacle",
     city: "deauville",
