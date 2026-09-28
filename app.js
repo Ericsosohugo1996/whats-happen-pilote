@@ -891,7 +891,38 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
-                {
+                 {
+    id: "beziers-dave-zinga-zanga",
+    scene: "musique",
+    city: "beziers",
+    category: "Musique",
+    title: "Dave",
+    date: "2026-10-04",
+    time: "20:30",
+    place: "Zinga Zanga, Traverse de Colombiers, Béziers",
+    lat: 43.3520,
+    lng: 3.1980,
+    price: "Payant",
+    featured: true,
+    thumb: "",
+    description: "Concert du chanteur Dave à Zinga Zanga, Béziers.",
+  },
+  {
+    id: "antibes-chilly-gonzales-anthea",
+    scene: "musique",
+    city: "antibes",
+    category: "Musique",
+    title: "Chilly Gonzales",
+    date: "2026-10-18",
+    time: "20:30",
+    place: "Anthéa, 260 Avenue Jules Grec, Antibes",
+    lat: 43.5920,
+    lng: 7.1280,
+    price: "Payant",
+    thumb: "",
+    description: "Concert du pianiste et compositeur Chilly Gonzales à Anthéa, Antipolis Théâtre d'Antibes.",
+  },           
+  {
     id: "niort-youn-sun-nah-moulin-du-roc",
     scene: "musique",
     city: "niort",
