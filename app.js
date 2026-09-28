@@ -891,6 +891,36 @@ const CITIES = {
 // — dates et lieux vérifiés le 21/08/2026. Quelques événements génériques (marchés) complètent la
 // liste pour la démonstration.
 const SEED_EVENTS = [
+   {
+    id: "cergy-pente-raide",
+    scene: "spectacle",
+    city: "cergy",
+    category: "Spectacle",
+    title: "Pente raide — Samira Negrouche & Marin Fouqué",
+    date: "2026-10-10",
+    time: "20:00",
+    place: "Théâtre 95, 1 place du Théâtre, Cergy",
+    lat: 49.0367,
+    lng: 2.0761,
+    price: "Payant",
+    thumb: "",
+    description: "Spectacle Pente raide, de Samira Negrouche et Marin Fouqué, au Théâtre 95 de Cergy, Points Communs.",
+  },
+  {
+    id: "aurillac-cabaret-lip",
+    scene: "spectacle",
+    city: "aurillac",
+    category: "Spectacle",
+    title: "Le Cabaret LIP",
+    date: "2026-09-29",
+    time: "20:30",
+    place: "Théâtre d'Aurillac, 4 rue La Coste, Aurillac",
+    lat: 44.9276,
+    lng: 2.4434,
+    price: "Payant",
+    thumb: "",
+    description: "Spectacle Le Cabaret LIP, au Théâtre d'Aurillac, Scène conventionnée d'intérêt national.",
+  },
   {
     id: "hyeres-dal-sasso-africa-brass",
     scene: "musique",
