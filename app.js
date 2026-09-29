@@ -275,10 +275,35 @@ function renderAccountState(user){
     if (accountBtn) accountBtn.textContent = "👤✓";
     const modBtn = document.getElementById("btn-open-moderation");
     if (modBtn) modBtn.classList.toggle("hidden", user.email !== "ericbrunebarbe@gmail.com");
+    renderProfileStats();
    } else {
     loggedOut.classList.remove("hidden");
     loggedIn.classList.add("hidden");
     if (accountBtn) accountBtn.textContent = "👤";
+  }
+}
+
+// ---- "Mon profil" : quelques compteurs agrégés à partir de données déjà en base (aucune
+// nouvelle donnée à saisir ni à maintenir), affichés dans la fenêtre "Mon compte". ----
+async function renderProfileStats(){
+  const villesEl = document.getElementById("account-stat-villes");
+  const lieuxEl = document.getElementById("account-stat-lieux");
+  const souvenirsEl = document.getElementById("account-stat-souvenirs");
+  const favorisEl = document.getElementById("account-stat-favoris");
+  if (!villesEl) return;
+  if (lieuxEl) lieuxEl.textContent = state.visitedEvents.size;
+  if (favorisEl) favorisEl.textContent = state.favorites.size;
+  if (typeof window.__loadSouvenirs === "function") {
+    try {
+      const list = await window.__loadSouvenirs();
+      if (list) {
+        souvenirsEl.textContent = list.length;
+        const villesSet = new Set(list.map(function (s) { return s.city; }).filter(Boolean));
+        villesEl.textContent = villesSet.size;
+      }
+    } catch (e) {
+      // Pas bloquant : les compteurs restent affichés avec leur valeur précédente ("–" au pire).
+    }
   }
 }
 // ---- synchronisation avec le compte (Firestore) ----
