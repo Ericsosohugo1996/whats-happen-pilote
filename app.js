@@ -193,6 +193,10 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 const analytics = firebase.analytics();
+// Résolu une seule fois, dès qu'un utilisateur (même anonyme) est vraiment disponible sur
+// auth.currentUser — sert à éviter qu'un écran lisant Firestore juste après le chargement
+// (ex. "Mon carnet"/passeport) ne conclue à tort que l'utilisateur n'a aucune donnée.
+window.__authReady = new Promise(function (resolve) { window.__authReadyResolve = resolve; });
 function showAccountError(message){
   const el = document.getElementById("account-error");
   el.textContent = message;
