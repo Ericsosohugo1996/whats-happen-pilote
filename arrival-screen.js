@@ -657,6 +657,21 @@ function __newFindsShow() {
     __arrivalShow();
   });
 }
+// ---- aperçu "ce soir près de toi" : événements du jour, déjà en base, triés par distance ----
+function __arrivalTonightEvents(cityKey) {
+  const ref = referencePoint();
+  const todayIso = new Date().toISOString().slice(0, 10);
+  return (typeof allEvents === "function" ? allEvents() : [])
+    .filter(function (ev) {
+      if (ev.city !== cityKey || !ev.lat || !ev.lng) return false;
+      if (ev.isPlace) return true;
+      if (!ev.date) return false;
+      return ev.date === todayIso;
+    })
+    .map(function (ev) { return { ev: ev, dist: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) }; })
+    .sort(function (a, b) { return a.dist - b.dist; })
+    .slice(0, 3);
+}
 
 // ---- écran principal des 3 bonhommes ----
 
