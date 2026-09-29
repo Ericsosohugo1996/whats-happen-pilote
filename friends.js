@@ -225,11 +225,12 @@
           '<button id="friend-search-btn" style="border:none;background:#14213D;color:#fff;border-radius:999px;padding:10px 16px;font-size:12.5px;font-weight:700;white-space:nowrap;">Chercher</button>' +
         '</div>' +
         '<div id="friend-search-result" style="margin-top:10px;"></div>' +
-      '</div>' +
+     
       '<div id="friend-requests-block" style="display:none;margin-bottom:16px;">' +
         '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">Demandes reçues</div>' +
         '<div id="friend-requests-list"></div>' +
       '</div>' +
+      '<div id="proposals-block" style="margin-bottom:16px;"></div>' +
       '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">Mes amis</div>' +
       '<div id="friends-list">Chargement...</div>';
     document.body.appendChild(screen);
@@ -237,6 +238,9 @@
     document.getElementById("friends-close-btn").addEventListener("click", function () { screen.remove(); });
     document.getElementById("friends-invite-btn").addEventListener("click", shareInviteLink);
 
+    if (typeof window.__renderProposalsBlock === "function") {
+      window.__renderProposalsBlock(document.getElementById("proposals-block"));
+    }
     function doSearch() {
       const input = document.getElementById("friend-search-input");
       const resultEl = document.getElementById("friend-search-result");
