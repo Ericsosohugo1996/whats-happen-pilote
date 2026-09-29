@@ -743,44 +743,41 @@ overlay.innerHTML =
 '<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:24px; font-weight:500; line-height:1.4; text-shadow:0 2px 10px rgba(0,0,0,0.5);">' + greeting + "</div>" +
 (isReallyThere ? "" : '<button type="button" id="arrival-change-city" style="margin-top:14px; padding:8px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:rgba(255,255,255,0.08); color:#fff; font-size:12px; font-weight:600; cursor:pointer;">' + t("📍 Changer de ville") + '</button>') +
 "</div>" +
-'<div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:300px; position:relative; z-index:1;">' +
-'<div class="arrival-opt" data-key="near" style="text-align:center; cursor:pointer;">' +
-'<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">📍</div>' +
-'<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Autour de moi") + '</div>' +
+'<button type="button" class="arrival-opt" data-key="near" style="width:100%; max-width:320px; border:none; border-radius:20px; padding:16px 18px; background:linear-gradient(135deg, #F2864B, #E85D3D); display:flex; align-items:center; gap:14px; text-align:left; cursor:pointer; box-shadow:0 12px 26px -10px rgba(232,93,61,0.55); position:relative; z-index:1;">' +
+'<div style="width:44px; height:44px; border-radius:14px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0;">📍</div>' +
+'<div style="flex:1; min-width:0;">' +
+'<div style="color:#fff; font-size:15px; font-weight:800;">' + t("Autour de moi") + '</div>' +
+'<div style="color:rgba(255,255,255,0.85); font-size:11.5px; margin-top:2px;">' + t("Ce qui se passe près de toi, dès maintenant") + '</div>' +
 "</div>" +
-'<div class="arrival-opt" data-key="other" style="text-align:center; cursor:pointer;">' +
-'<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #F2864B, #E85D3D); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(242,134,75,0.35);">✨</div>' +
-'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Surprends-moi") + '</div>' +
-"</div>" +
-'<div class="arrival-opt" data-key="all" style="text-align:center; cursor:pointer;">' +
-'<div style="width:74px; height:74px; border-radius:22px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); display:flex; align-items:center; justify-content:center; font-size:26px;">🗺️</div>' +
-'<div style="color:#C7CEE3; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Tout voir") + '</div>' +
-"</div>" +
-'<div class="arrival-opt" data-key="carnet" style="text-align:center; cursor:pointer;">' +
-'<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #A57CF7, #8B6CF2); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(139,108,242,0.35);">📖</div>' +
-'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Mon carnet") + '</div>' +
-"</div>" +
-'<div class="arrival-opt" data-key="nouveautes" style="text-align:center; cursor:pointer;">' +
-'<div style="width:74px; height:74px; border-radius:22px; background:linear-gradient(135deg, #F2C879, #E8604C); display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 20px rgba(232,96,76,0.35);">🆕</div>' +
-'<div style="color:#fff; font-size:11.5px; margin-top:9px; font-weight:600;">' + t("Nouveautés") + '</div>' +
-"</div>" +
-"</div>" +
+'<div style="color:#fff; font-size:16px; opacity:0.8;">›</div>' +
+"</button>" +
 (function () {
-  const todayIso = new Date().toISOString().slice(0, 10);
-  const featuredEv = (typeof allEvents === "function" ? allEvents() : [])
-    .find(function (ev) { return ev.featured && ev.city === cityKey && (ev.isPlace || !ev.date || ev.date >= todayIso); });
-  if (!featuredEv) return "";
-  const photo = featuredEv.photo || (typeof CATEGORY_PHOTOS !== "undefined" && CATEGORY_PHOTOS[featuredEv.category]) || "";
-  return '<button type="button" id="arrival-featured-card" style="margin-top:28px; width:100%; max-width:320px; text-align:left; border:none; border-radius:18px; overflow:hidden; cursor:pointer; position:relative; z-index:1; box-shadow:0 14px 30px -14px rgba(0,0,0,0.6);">' +
-    '<div style="height:130px; background:' + (photo ? "url('" + photo + "') center/cover" : "linear-gradient(135deg,#14213D,#0B1526)") + '; position:relative;">' +
-      '<div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(11,21,38,.92), transparent 60%);"></div>' +
-           '<span style="position:absolute; top:10px; left:10px; background:linear-gradient(135deg,#F2C879,#E8604C); color:#fff; font-size:10px; font-weight:800; letter-spacing:.04em; padding:5px 10px; border-radius:999px;">' + t("⭐ À LA UNE") + '</span>' +
-      '<div style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px;">' +
-        '<div style="color:#fff; font-family:\'Fraunces\', Georgia, serif; font-size:14.5px; font-weight:600; line-height:1.25;">' + featuredEv.title + '</div>' +
-      '</div>' +
-    '</div>' +
-  '</button>';
+  const items = __arrivalTonightEvents(cityKey);
+  if (!items.length) return "";
+  return '<div style="width:100%; max-width:320px; margin-top:22px; position:relative; z-index:1;">' +
+    '<div style="color:#fff; font-size:13px; font-weight:700; margin-bottom:10px;">' + t("Ce soir près de toi") + '</div>' +
+    '<div id="arrival-tonight-strip" style="display:flex; gap:10px; overflow-x:auto; padding-bottom:2px; margin:0 -24px; padding-left:24px; padding-right:24px;">' +
+      items.map(function (item) {
+        const ev = item.ev;
+        const photo = ev.photo || (typeof CATEGORY_PHOTOS !== "undefined" && CATEGORY_PHOTOS[ev.category]) || (typeof CITY_PHOTOS !== "undefined" && CITY_PHOTOS[cityKey]) || "";
+        const distLabel = (Math.round(item.dist * 10) / 10) + " km";
+        return '<button type="button" class="arrival-tonight-card" data-id="' + ev.id + '" style="flex:0 0 150px; border:none; text-align:left; border-radius:14px; overflow:hidden; background:#1A2340; border:0.5px solid rgba(255,255,255,0.08); cursor:pointer; padding:0;">' +
+          (photo ? '<div style="height:78px; background-image:url(\'' + photo + '\'); background-size:cover; background-position:center;"></div>' : '<div style="height:78px; background:linear-gradient(135deg,#2F4E5E,#1F2E45);"></div>') +
+          '<div style="padding:9px 10px;">' +
+            '<div style="color:#fff; font-size:11.5px; font-weight:700; line-height:1.25;">' + ev.title + '</div>' +
+            '<div style="color:#8891B5; font-size:9.5px; margin-top:3px;">' + (ev.time ? ev.time + " · " : "") + distLabel + '</div>' +
+          '</div>' +
+        '</button>';
+      }).join("") +
+    "</div>" +
+  "</div>";
 })() +
+'<div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%; max-width:320px; margin-top:22px; position:relative; z-index:1;">' +
+'<div class="arrival-opt" data-key="other" style="display:flex; align-items:center; gap:10px; padding:12px 13px; border-radius:14px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); cursor:pointer;"><span style="font-size:17px;">✨</span><span style="color:#C7CEE3; font-size:11px; font-weight:600;">' + t("Surprends-moi") + '</span></div>' +
+'<div class="arrival-opt" data-key="all" style="display:flex; align-items:center; gap:10px; padding:12px 13px; border-radius:14px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); cursor:pointer;"><span style="font-size:17px;">🗺️</span><span style="color:#C7CEE3; font-size:11px; font-weight:600;">' + t("Tout voir") + '</span></div>' +
+'<div class="arrival-opt" data-key="carnet" style="display:flex; align-items:center; gap:10px; padding:12px 13px; border-radius:14px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); cursor:pointer;"><span style="font-size:17px;">📖</span><span style="color:#C7CEE3; font-size:11px; font-weight:600;">' + t("Mon carnet") + '</span></div>' +
+'<div class="arrival-opt" data-key="nouveautes" style="display:flex; align-items:center; gap:10px; padding:12px 13px; border-radius:14px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); cursor:pointer;"><span style="font-size:17px;">🆕</span><span style="color:#C7CEE3; font-size:11px; font-weight:600;">' + t("Nouveautés") + '</span></div>' +
+"</div>" +
 (weatherText
 ? '<div style="margin-top:34px; text-align:center; position:relative; z-index:1;"><div style="display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,0.06); color:#9BA5C2; font-size:11px;">' + weatherText + "</div></div>"
 : "") +
