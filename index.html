@@ -206,9 +206,27 @@
         </button>
       </div>
       <div id="account-logged-in" class="hidden">
-        <h2 style="margin-top:0;">Mon compte</h2>
+             <h2 style="margin-top:0;">Mon compte</h2>
         <p id="account-user-email" style="font-size:14px;"></p>
-       <button type="button" class="btn-primary btn-block" id="btn-open-souvenirs" style="margin-bottom:8px;">📖 Mes souvenirs</button>
+        <div id="account-stats-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0 16px;">
+          <div style="background:#f7f7f7; border-radius:12px; padding:10px 8px; text-align:center;">
+            <div id="account-stat-villes" style="font-size:18px; font-weight:800; color:#14213D;">–</div>
+            <div style="font-size:10px; color:#777; font-weight:600;">villes découvertes</div>
+          </div>
+          <div style="background:#f7f7f7; border-radius:12px; padding:10px 8px; text-align:center;">
+            <div id="account-stat-lieux" style="font-size:18px; font-weight:800; color:#14213D;">–</div>
+            <div style="font-size:10px; color:#777; font-weight:600;">lieux visités</div>
+          </div>
+          <div style="background:#f7f7f7; border-radius:12px; padding:10px 8px; text-align:center;">
+            <div id="account-stat-souvenirs" style="font-size:18px; font-weight:800; color:#14213D;">–</div>
+            <div style="font-size:10px; color:#777; font-weight:600;">souvenirs</div>
+          </div>
+          <div style="background:#f7f7f7; border-radius:12px; padding:10px 8px; text-align:center;">
+            <div id="account-stat-favoris" style="font-size:18px; font-weight:800; color:#14213D;">–</div>
+            <div style="font-size:10px; color:#777; font-weight:600;">favoris</div>
+          </div>
+        </div>
+       <button type="button" class="btn-primary btn-block" id="btn-open-souvenirs" style="margin-bottom:8px;">📖 Mes souvenirs</button>   
 <button type="button" class="btn-outline btn-block hidden" id="btn-open-moderation" style="margin-bottom:8px;">🛡️ Modération</button>
 <button type="button" class="btn-outline btn-block" id="btn-account-logout">Se déconnecter</button>
       </div>
