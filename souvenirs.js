@@ -118,6 +118,7 @@
   }
 
   async function loadSouvenirs() {
+    if (window.__authReady) await window.__authReady;
     const col = souvenirsCollection();
     if (!col) return [];
     const snap = await col.orderBy("createdAt", "desc").get();
