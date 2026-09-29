@@ -7495,9 +7495,13 @@ document.addEventListener("DOMContentLoaded", () => {
  
   auth.onAuthStateChanged(user => {
   renderAccountState(user);
-  if (user) loadFromCloud(user);
-  else auth.signInAnonymously().catch(function(e){ console.error("Connexion anonyme impossible:", e); });
-});  
+  if (user) {
+    loadFromCloud(user);
+    if (window.__authReadyResolve) { window.__authReadyResolve(); window.__authReadyResolve = null; }
+  } else {
+    auth.signInAnonymously().catch(function(e){ console.error("Connexion anonyme impossible:", e); });
+  }
+});
  
   const accountModal = document.getElementById("account-modal");
   document.getElementById("btn-account").onclick = () => accountModal.classList.remove("hidden");
