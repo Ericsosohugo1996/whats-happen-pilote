@@ -704,7 +704,12 @@
       screen.remove();
     });
 
-    const list = await loadSouvenirs();
+      const list = await loadSouvenirs();
+    if (list === null) {
+      document.getElementById("passport-grid").innerHTML =
+        '<div style="grid-column:1/-1;text-align:center;color:rgba(255,255,255,0.6);padding:40px 0;">Connexion impossible pour l\'instant.<br>Vérifie ta connexion internet et réessaie.</div>';
+      return;
+    }
     const cityGroups = {};
     list.forEach(function (s) {
       const key = s.city;
