@@ -787,11 +787,31 @@ wzNavbarHtml("decouvre");
 
 document.body.appendChild(overlay);
 
+const langToggleBtn = document.getElementById("arrival-lang-toggle");
+const flagsPanel = document.getElementById("arrival-flags-row");
 overlay.querySelectorAll(".flag-btn[data-lang]").forEach(function (btn) {
+if (typeof currentLang !== "undefined" && btn.dataset.lang === currentLang.value) {
+btn.classList.add("active");
+}
 btn.addEventListener("click", function () {
 if (typeof setLang === "function") setLang(btn.dataset.lang);
+overlay.querySelectorAll(".flag-btn[data-lang]").forEach(function (b) {
+b.classList.toggle("active", b === btn);
+});
+if (flagsPanel) flagsPanel.style.display = "none";
 });
 });
+if (langToggleBtn && flagsPanel) {
+langToggleBtn.addEventListener("click", function (e) {
+e.stopPropagation();
+flagsPanel.style.display = flagsPanel.style.display === "none" ? "flex" : "none";
+});
+overlay.addEventListener("click", function (e) {
+if (flagsPanel.style.display !== "none" && !flagsPanel.contains(e.target) && e.target !== langToggleBtn) {
+flagsPanel.style.display = "none";
+}
+});
+}
 if (typeof applyTranslation === "function") applyTranslation();
 
 const friendsBtn = document.getElementById("arrival-friends-btn");
