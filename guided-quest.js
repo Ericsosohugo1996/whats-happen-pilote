@@ -66,8 +66,16 @@
       if (!cats.includes(ev.category)) return false;
       if (!ev.isPlace && ev.date && ev.date < today) return false;
       if (questBudget === "gratuit" && !eventIsFree(ev)) return false;
-      return true;
+        return true;
     });
+
+    const radiusKm = (typeof SURPRISE_TIME_KM !== "undefined" && questTemps) ? SURPRISE_TIME_KM[questTemps] : null;
+    if (radiusKm) {
+      const withinRadius = list.filter(function (ev) {
+        return haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) <= radiusKm;
+      });
+      if (withinRadius.length >= 3) list = withinRadius;
+    }
 
     list = list.map(function (ev) {
       const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
