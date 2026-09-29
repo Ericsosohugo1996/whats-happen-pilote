@@ -5,6 +5,8 @@
 (function () {
   "use strict";
 
+  function tt(key) { return (typeof t === "function") ? t(key) : key; }
+
   function friendPairId(uidA, uidB) {
     return [uidA, uidB].sort().join("_");
   }
@@ -40,7 +42,7 @@
         const data = d.data();
         const otherUid = data.members.find(function (m) { return m !== user.uid; });
         const info = (data.memberInfo && data.memberInfo[otherUid]) || {};
-        return { uid: otherUid, email: info.email || "Ami Whazup", since: data.createdAt || 0 };
+        return { uid: otherUid, email: info.email || tt("Ami Whazup"), since: data.createdAt || 0 };
       }).sort(function (a, b) { return b.since - a.since; });
     } catch (err) {
       console.error("Erreur de chargement des amis :", err);
@@ -143,16 +145,16 @@
   function shareInviteLink() {
     const user = auth.currentUser;
     if (!user || user.isAnonymous) {
-      alert("Connecte-toi avec un vrai compte pour inviter des amis.");
+      alert(tt("Connecte-toi avec un vrai compte pour inviter des amis."));
       return;
     }
     const link = inviteLink();
-    const text = "Rejoins-moi sur Whazup pour qu'on organise nos sorties ensemble ! " + link;
+    const text = tt("Rejoins-moi sur Whazup pour qu'on organise nos sorties ensemble ! ") + link;
     if (navigator.share) {
       navigator.share({ title: "Whazup", text: text }).catch(function () {});
     } else if (navigator.clipboard) {
       navigator.clipboard.writeText(text).then(function () {
-        if (typeof showShareToast === "function") showShareToast("✓ Lien copié ! Envoie-le à un ami.");
+        if (typeof showShareToast === "function") showShareToast(tt("✓ Lien copié ! Envoie-le à un ami."));
       }).catch(function () {});
     }
   }
@@ -171,10 +173,10 @@
     overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;";
     overlay.innerHTML = '<div style="background:#fff;border-radius:20px;padding:20px;max-width:380px;width:100%;text-align:center;">' +
       '<div style="font-size:32px;margin-bottom:10px;">👋</div>' +
-      '<div style="font-size:15px;font-weight:700;color:#14213D;margin-bottom:6px;">' + (otherEmail || "Un utilisateur Whazup") + '</div>' +
-      '<div style="font-size:13px;color:#666;margin-bottom:16px;">souhaite devenir ton ami sur Whazup, pour organiser des sorties ensemble.</div>' +
-      '<button id="friend-invite-accept" style="width:100%;padding:12px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;cursor:pointer;">Accepter</button>' +
-      '<button id="friend-invite-dismiss" style="width:100%;padding:12px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#666;font-size:13px;cursor:pointer;">Plus tard</button>' +
+      '<div style="font-size:15px;font-weight:700;color:#14213D;margin-bottom:6px;">' + (otherEmail || tt("Un utilisateur Whazup")) + '</div>' +
+      '<div style="font-size:13px;color:#666;margin-bottom:16px;">' + tt("souhaite devenir ton ami sur Whazup, pour organiser des sorties ensemble.") + '</div>' +
+      '<button id="friend-invite-accept" style="width:100%;padding:12px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;cursor:pointer;">' + tt("Accepter") + '</button>' +
+      '<button id="friend-invite-dismiss" style="width:100%;padding:12px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#666;font-size:13px;cursor:pointer;">' + tt("Plus tard") + '</button>' +
       '</div>';
     document.body.appendChild(overlay);
     function closeOverlay() {
@@ -190,17 +192,17 @@
       const currentUser = auth.currentUser;
       if (!currentUser || currentUser.isAnonymous) {
         closeOverlay();
-        alert("Connecte-toi avec un vrai compte pour devenir ami, puis rouvre ce lien.");
+        alert(tt("Connecte-toi avec un vrai compte pour devenir ami, puis rouvre ce lien."));
         return;
       }
       const ok = await createFriendship(otherUid, otherEmail);
       if (ok) {
-        btn.textContent = "✓ Ami ajouté !";
+        btn.textContent = tt("✓ Ami ajouté !");
         setTimeout(closeOverlay, 1200);
       } else {
-        btn.textContent = "Accepter";
+        btn.textContent = tt("Accepter");
         btn.disabled = false;
-        alert("Impossible d'ajouter cet ami pour le moment.");
+        alert(tt("Impossible d'ajouter cet ami pour le moment."));
       }
     });
   }
@@ -214,25 +216,25 @@
     screen.style.cssText = "position:fixed;inset:0;background:linear-gradient(165deg, #0E1526 0%, #141C36 55%, #1B1440 100%);z-index:9998;overflow-y:auto;padding:16px 16px 84px;";
     screen.innerHTML =
       '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">' +
-        '<button id="friends-close-btn" style="border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;">← Retour</button>' +
-        '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:17px;font-weight:600;color:#fff;flex:1;">👥 Mes amis</div>' +
-        '<button id="friends-invite-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:8px 12px;font-size:11.5px;font-weight:700;white-space:nowrap;">🔗 Lien</button>' +
+        '<button id="friends-close-btn" style="border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;">' + tt("← Retour") + '</button>' +
+        '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:17px;font-weight:600;color:#fff;flex:1;">👥 ' + tt("Mes amis") + '</div>' +
+        '<button id="friends-invite-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:8px 12px;font-size:11.5px;font-weight:700;white-space:nowrap;">🔗 ' + tt("Lien") + '</button>' +
       '</div>' +
       '<div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px;margin-bottom:16px;">' +
-        '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">Ajouter un ami par email</div>' +
+        '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">' + tt("Ajouter un ami par email") + '</div>' +
         '<div style="display:flex;gap:8px;">' +
-          '<input id="friend-search-input" type="email" placeholder="email@exemple.com" style="flex:1;border:none;border-radius:999px;padding:10px 14px;font-size:12.5px;font-family:inherit;">' +
-          '<button id="friend-search-btn" style="border:none;background:#14213D;color:#fff;border-radius:999px;padding:10px 16px;font-size:12.5px;font-weight:700;white-space:nowrap;">Chercher</button>' +
+          '<input id="friend-search-input" type="email" placeholder="' + tt("email@exemple.com") + '" style="flex:1;border:none;border-radius:999px;padding:10px 14px;font-size:12.5px;font-family:inherit;">' +
+          '<button id="friend-search-btn" style="border:none;background:#14213D;color:#fff;border-radius:999px;padding:10px 16px;font-size:12.5px;font-weight:700;white-space:nowrap;">' + tt("Chercher") + '</button>' +
         '</div>' +
         '<div id="friend-search-result" style="margin-top:10px;"></div>' +
-     
+      '</div>' +
       '<div id="friend-requests-block" style="display:none;margin-bottom:16px;">' +
-        '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">Demandes reçues</div>' +
+        '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">' + tt("Demandes reçues") + '</div>' +
         '<div id="friend-requests-list"></div>' +
       '</div>' +
       '<div id="proposals-block" style="margin-bottom:16px;"></div>' +
-      '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">Mes amis</div>' +
-      '<div id="friends-list">Chargement...</div>';
+      '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">' + tt("Mes amis") + '</div>' +
+      '<div id="friends-list">' + tt("Chargement...") + '</div>';
     document.body.appendChild(screen);
 
     document.getElementById("friends-close-btn").addEventListener("click", function () { screen.remove(); });
@@ -246,20 +248,20 @@
       const resultEl = document.getElementById("friend-search-result");
       const email = input.value.trim();
       if (!email) return;
-      resultEl.innerHTML = '<div style="color:#9BA5C2;font-size:12px;">Recherche...</div>';
+      resultEl.innerHTML = '<div style="color:#9BA5C2;font-size:12px;">' + tt("Recherche...") + '</div>';
       findUserByEmail(email).then(function (found) {
         const user = auth.currentUser;
         if (!found) {
-          resultEl.innerHTML = '<div style="color:#9BA5C2;font-size:12px;">Aucun utilisateur Whazup avec cet email (il doit s\'être connecté au moins une fois avec un compte).</div>';
+          resultEl.innerHTML = '<div style="color:#9BA5C2;font-size:12px;">' + tt("Aucun utilisateur Whazup avec cet email (il doit s'être connecté au moins une fois avec un compte).") + '</div>';
           return;
         }
         if (user && found.uid === user.uid) {
-          resultEl.innerHTML = '<div style="color:#9BA5C2;font-size:12px;">C\'est ton propre email !</div>';
+          resultEl.innerHTML = '<div style="color:#9BA5C2;font-size:12px;">' + tt("C'est ton propre email !") + '</div>';
           return;
         }
         resultEl.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border-radius:12px;padding:10px 12px;">' +
           '<div style="flex:1;color:#fff;font-size:12.5px;">' + found.email + '</div>' +
-          '<button id="friend-send-request-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:7px 12px;font-size:11.5px;font-weight:700;white-space:nowrap;">Envoyer</button>' +
+          '<button id="friend-send-request-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:7px 12px;font-size:11.5px;font-weight:700;white-space:nowrap;">' + tt("Envoyer") + '</button>' +
           '</div>';
         document.getElementById("friend-send-request-btn").addEventListener("click", async function () {
           const btn = document.getElementById("friend-send-request-btn");
@@ -267,13 +269,13 @@
           btn.disabled = true;
           const outcome = await sendFriendRequest(found.uid, found.email);
           if (outcome === true) {
-            btn.textContent = "✓ Envoyée";
+            btn.textContent = tt("✓ Envoyée");
           } else if (outcome === "already-friends") {
-            btn.textContent = "Déjà ami";
+            btn.textContent = tt("Déjà ami");
           } else {
-            btn.textContent = "Envoyer";
+            btn.textContent = tt("Envoyer");
             btn.disabled = false;
-            alert("Impossible d'envoyer la demande pour le moment.");
+            alert(tt("Impossible d'envoyer la demande pour le moment."));
           }
         });
       });
@@ -292,8 +294,8 @@
       listEl.innerHTML = requests.map(function (r) {
         return '<div class="friend-request-row" data-id="' + r.id + '" data-uid="' + r.fromUid + '" data-email="' + r.fromEmail + '" style="display:flex;align-items:center;gap:10px;background:rgba(139,108,242,0.12);border:1px solid rgba(139,108,242,0.35);border-radius:14px;padding:12px 14px;margin-bottom:10px;">' +
           '<div style="flex:1;color:#fff;font-size:12.5px;">' + r.fromEmail + '</div>' +
-          '<button class="friend-accept-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700;">Accepter</button>' +
-          '<button class="friend-decline-btn" style="border:1px solid rgba(255,255,255,0.2);background:transparent;color:#9BA5C2;border-radius:999px;padding:7px 12px;font-size:11px;">Refuser</button>' +
+          '<button class="friend-accept-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700;">' + tt("Accepter") + '</button>' +
+          '<button class="friend-decline-btn" style="border:1px solid rgba(255,255,255,0.2);background:transparent;color:#9BA5C2;border-radius:999px;padding:7px 12px;font-size:11px;">' + tt("Refuser") + '</button>' +
           '</div>';
       }).join("");
       listEl.querySelectorAll(".friend-accept-btn").forEach(function (btn) {
@@ -316,24 +318,24 @@
     const listEl = document.getElementById("friends-list");
     const friends = await loadFriends();
     if (friends === null) {
-      listEl.innerHTML = '<div style="text-align:center;color:#9BA5C2;padding:40px 0;">Connexion impossible pour l\'instant.<br>Vérifie ta connexion internet et réessaie.</div>';
+      listEl.innerHTML = '<div style="text-align:center;color:#9BA5C2;padding:40px 0;">' + tt("Connexion impossible pour l'instant.") + '<br>' + tt("Vérifie ta connexion internet et réessaie.") + '</div>';
       return;
     }
     if (!friends.length) {
-      listEl.innerHTML = '<div style="text-align:center;color:#9BA5C2;padding:40px 0;">Tu n\'as pas encore d\'amis sur Whazup.<br>Cherche un email ci-dessus, ou envoie ton lien d\'invitation !</div>';
+      listEl.innerHTML = '<div style="text-align:center;color:#9BA5C2;padding:40px 0;">' + tt("Tu n'as pas encore d'amis sur Whazup.") + '<br>' + tt("Cherche un email ci-dessus, ou envoie ton lien d'invitation !") + '</div>';
       return;
     }
     listEl.innerHTML = friends.map(function (f) {
       return '<div class="friend-row" data-uid="' + f.uid + '" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:12px 14px;margin-bottom:10px;">' +
         '<div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#A57CF7,#8B6CF2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex-shrink:0;">' + (f.email ? f.email[0].toUpperCase() : "?") + '</div>' +
         '<div style="flex:1;color:#fff;font-size:13px;">' + f.email + '</div>' +
-        '<button class="friend-remove-btn" data-uid="' + f.uid + '" style="border:none;background:transparent;color:#E85D3D;font-size:11.5px;font-weight:700;cursor:pointer;">Retirer</button>' +
+        '<button class="friend-remove-btn" data-uid="' + f.uid + '" style="border:none;background:transparent;color:#E85D3D;font-size:11.5px;font-weight:700;cursor:pointer;">' + tt("Retirer") + '</button>' +
       '</div>';
     }).join("");
 
     listEl.querySelectorAll(".friend-remove-btn").forEach(function (btn) {
       btn.addEventListener("click", async function () {
-        if (!confirm("Retirer cet ami ?")) return;
+        if (!confirm(tt("Retirer cet ami ?"))) return;
         await removeFriend(btn.dataset.uid);
         renderFriendsScreen();
       });
@@ -358,7 +360,7 @@
         renderFriendsScreen();
       });
     }
-  } 
+  }
 
   function initFriends() {
     bindFriendsButton();
@@ -377,4 +379,4 @@
 
   window.__renderFriendsScreen = renderFriendsScreen;
   window.__loadFriendsList = loadFriends;
-})(); 
+})();
