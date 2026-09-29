@@ -376,4 +376,5 @@
   }
 
   window.__renderFriendsScreen = renderFriendsScreen;
-})();
+  window.__loadFriendsList = loadFriends;
+})(); 
