@@ -5741,14 +5741,15 @@ async function fetchOpenAgendaCityEvents(source){
           title,
           date: dateIso,
           time,
-          place: (ev.location.name || ev.location.address || source.cityName) + ", " + source.cityName,
+                place: (ev.location.name || ev.location.address || source.cityName) + ", " + source.cityName,
           lat: ev.location.latitude,
           lng: ev.location.longitude,
                    price: "Voir sur place",
           thumb: "",
           photo: photo,
+          createdAt: ev.updatedAt ? Date.parse(ev.updatedAt) : (ev.createdAt ? Date.parse(ev.createdAt) : Date.now()),
           description: description || ("Événement importé depuis OpenAgenda."),
-        };
+        };    
       });
   } catch (err) {
     console.error("Erreur lors de la récupération des événements OpenAgenda (" + source.cityName + ") :", err);
