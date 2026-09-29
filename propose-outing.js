@@ -33,10 +33,15 @@
         eventTitle: ev.title || "",
         eventDate: ev.date || "",
         eventCity: ev.city || "",
-        responses: {},
+            responses: {},
         createdAt: Date.now(),
       });
-      return true;
+      notifyFriends(
+        toUids,
+        "👥 Nouvelle proposition de sortie",
+        (user.email || "Un ami") + " te propose : " + (ev.title || "une sortie")
+      );
+      return true;  
     } catch (err) {
       console.error("Erreur lors de l'envoi de la proposition :", err);
       return false;
