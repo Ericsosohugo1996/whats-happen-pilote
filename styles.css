@@ -530,7 +530,6 @@ input[type="range"]{ width:100%; accent-color:var(--primary); }
 /* ---- responsive : desktop ---- */
 @media (min-width:760px){
   .view{ padding-top:26px; }
-  .event-list{ display:grid; grid-template-columns:1fr 1fr; }
   .cta-row{ max-width:360px; }
 }
 /* ---- badge de points, harmonisé avec le nouvel en-tête ---- */
