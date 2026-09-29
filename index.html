@@ -57,9 +57,19 @@
         <div class="splash-confetti-burst" id="splashConfettiBurst"></div>
  </div>
 
-    <div id="brand-intro-screen" class="brand-intro-screen hidden">
+        <div id="brand-intro-screen" class="brand-intro-screen hidden">
     <div class="brand-intro-photo" id="brand-intro-photo"></div>
     <div class="brand-intro-overlay"></div>
+    <button type="button" id="brand-intro-lang-toggle" aria-label="Choisir la langue" style="position:absolute; top:max(16px, env(safe-area-inset-top)); right:16px; z-index:3; width:42px; height:42px; border-radius:50%; border:none; background:linear-gradient(135deg, #6C5CE7, #8B6CF2); color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px -2px rgba(139,108,242,0.65);">🌐</button>
+    <div class="flags-row" id="brand-intro-flags-row" style="position:absolute; top:calc(max(16px, env(safe-area-inset-top)) + 48px); right:16px; z-index:3; width:170px; flex-wrap:wrap; justify-content:flex-end; background:rgba(14,21,38,0.94); border:1px solid rgba(255,255,255,0.14); padding:10px; border-radius:16px; box-shadow:0 10px 26px -8px rgba(0,0,0,0.55); display:none;">
+      <button class="flag-btn" id="flag-fr-intro" data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" alt="Français"></button>
+      <button class="flag-btn" id="flag-en-intro" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="English"></button>
+      <button class="flag-btn" id="flag-es-intro" data-lang="es"><img src="https://flagcdn.com/w40/es.png" alt="Español"></button>
+      <button class="flag-btn" id="flag-de-intro" data-lang="de"><img src="https://flagcdn.com/w40/de.png" alt="Deutsch"></button>
+      <button class="flag-btn" id="flag-it-intro" data-lang="it"><img src="https://flagcdn.com/w40/it.png" alt="Italiano"></button>
+      <button class="flag-btn" id="flag-ja-intro" data-lang="ja"><img src="https://flagcdn.com/w40/jp.png" alt="日本語"></button>
+      <button class="flag-btn" id="flag-zh-intro" data-lang="zh"><img src="https://flagcdn.com/w40/cn.png" alt="中文"></button>
+    </div>
     <div class="brand-intro-content">
       <div class="brand-intro-top">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="brand-intro-logo-icon">
