@@ -505,9 +505,25 @@
       renderPassportScreen();
     });
 
-    const list = await loadSouvenirs();
+       const list = await loadSouvenirs();
     const listEl = document.getElementById("souvenirs-list");
     const tabsEl = document.getElementById("souvenirs-city-tabs");
+
+    // Sans vrai compte (juste connecté anonymement), le carnet est lié à cet appareil/navigateur
+    // seul : il peut sembler "vide" ailleurs. On le signale clairement, avec une action directe.
+    if (auth.currentUser && auth.currentUser.isAnonymous) {
+      const accountBanner = document.createElement("div");
+      accountBanner.style.cssText = "background:rgba(139,108,242,0.12);border:1px solid rgba(139,108,242,0.35);border-radius:14px;padding:12px 14px;margin-bottom:14px;color:#fff;font-size:12.5px;display:flex;align-items:center;gap:10px;";
+      accountBanner.innerHTML =
+        '<span style="font-size:18px;">🔒</span>' +
+        '<span style="flex:1;">Connecte-toi pour ne jamais perdre ton carnet, même si tu changes d\'appareil.</span>' +
+        '<button id="souvenirs-connect-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:8px 12px;font-size:11.5px;font-weight:700;white-space:nowrap;cursor:pointer;">Se connecter</button>';
+      screen.insertBefore(accountBanner, tabsEl);
+      document.getElementById("souvenirs-connect-btn").addEventListener("click", function () {
+        const accountModal = document.getElementById("account-modal");
+        if (accountModal) accountModal.classList.remove("hidden");
+      });
+    }
 
     // Ancien album de photos locales (IndexedDB) pour la ville demandée : on propose
     // de l'importer dans "Mon carnet" pour n'avoir plus qu'un seul système.
