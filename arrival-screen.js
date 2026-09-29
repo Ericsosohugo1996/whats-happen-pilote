@@ -793,7 +793,15 @@ if (typeof setLang === "function") setLang(btn.dataset.lang);
 });
 if (typeof applyTranslation === "function") applyTranslation();
 
+const friendsBtn = document.getElementById("arrival-friends-btn");
+if (friendsBtn) {
+friendsBtn.addEventListener("click", function () {
+if (window.__renderFriendsScreen) __renderFriendsScreen();
+});
+}
+
 const changeCityBtn = document.getElementById("arrival-change-city");
+
 if (changeCityBtn) {
 changeCityBtn.addEventListener("click", function () {
 overlay.remove();
