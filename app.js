@@ -5826,13 +5826,14 @@ async function fetchParisEvents(){
           date: dateIso,
           time: time,
           place: placeName + ", Paris",
-          lat: f.lat_lon[0],
+                lat: f.lat_lon[0],
           lng: f.lat_lon[1],
                    price: f.price_type ? f.price_type.charAt(0).toUpperCase() + f.price_type.slice(1) : "Voir sur place",
           thumb: "",
           photo: photo,
+          createdAt: r.record_timestamp ? Date.parse(r.record_timestamp) : Date.now(),
           description: f.lead_text || "Evenement importe depuis Que Faire a Paris.",
-        };
+        };  
       });
   } catch (err) {
     console.error("Erreur lors de la recuperation des evenements Paris Data :", err);
