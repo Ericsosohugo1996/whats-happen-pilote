@@ -38,10 +38,17 @@
     return p.includes("gratuit") || p.includes("libre");
   }
 
+   const QUEST_TEMPS = [
+    { key: "1h", label: "⏱️ " + ((typeof SURPRISE_TIME_LABELS !== "undefined" && SURPRISE_TIME_LABELS["1h"]) || "1h dispo") },
+    { key: "demi", label: "🕐 " + ((typeof SURPRISE_TIME_LABELS !== "undefined" && SURPRISE_TIME_LABELS["demi"]) || "Demi-journée") },
+    { key: "jour", label: "☀️ " + ((typeof SURPRISE_TIME_LABELS !== "undefined" && SURPRISE_TIME_LABELS["jour"]) || "Journée entière") },
+  ];
+
   let questSelectedCats = [];
   let questAmbiance = null;
   let questBudget = null;
   let questCompagnie = null;
+  let questTemps = null;
 
   function walkingTimeLabel(km) {
     const minutes = Math.max(2, Math.round((km * 12) / 5) * 5);
