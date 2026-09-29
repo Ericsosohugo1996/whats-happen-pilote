@@ -894,4 +894,5 @@
     window.__openAddSouvenirModal = openAddSouvenirModal;
   window.__renderSouvenirsScreen = renderSouvenirsScreen;
   window.__renderPassportScreen = renderPassportScreen;
+  window.__loadSouvenirs = loadSouvenirs;
 })();
