@@ -3,6 +3,19 @@
 (function () {
   "use strict";
 
+  const PUSH_WORKER_URL = "https://whazup-push-reminder.ericbrunebarbe.workers.dev/";
+
+  // Prévient tout de suite le(s) ami(s) visé(s) par une notification push, plutôt que de
+  // compter sur eux pour penser à ouvrir "Mes amis". Ne bloque jamais l'envoi de la
+  // proposition elle-même si ça échoue (pas de notifications activées, réseau, etc.).
+  function notifyFriends(uids, title, body) {
+    fetch(PUSH_WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ uids: uids, title: title, body: body }),
+    }).catch(function () {});
+  }
+
   function currentEvent() {
     if (typeof allEvents !== "function" || !state || !state.currentEventId) return null;
     return allEvents().find(function (e) { return e.id === state.currentEventId; }) || null;
