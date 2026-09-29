@@ -123,7 +123,8 @@ const catLabel = questSelectedCats.length
 const ambianceDef = AMBIANCES.find(function (a) { return a.key === questAmbiance; });
 const budgetDefLbl = BUDGETS.find(function (b) { return b.key === questBudget; });
 const compagnieDefLbl = COMPAGNIES.find(function (c) { return c.key === questCompagnie; });
-const subtitleParts = [ambianceDef ? ambianceDef.label : null, budgetDefLbl && budgetDefLbl.key !== "peu_importe" ? budgetDefLbl.label : null, compagnieDefLbl ? compagnieDefLbl.label : null].filter(Boolean);
+const tempsDefLbl = QUEST_TEMPS.find(function (t) { return t.key === questTemps; });
+const subtitleParts = [tempsDefLbl ? tempsDefLbl.label : null, ambianceDef ? ambianceDef.label : null, budgetDefLbl && budgetDefLbl.key !== "peu_importe" ? budgetDefLbl.label : null, compagnieDefLbl ? compagnieDefLbl.label : null].filter(Boolean);
 const picked = questGetCandidates();
 
 let stepsHtml = "";
