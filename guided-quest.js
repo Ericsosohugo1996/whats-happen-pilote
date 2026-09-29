@@ -349,8 +349,11 @@ wzNavbarBind(overlay, function () { overlay.remove(); });
         btn.style.color = "#14213D";
         btn.style.fontWeight = "600";
       });
-      ambianceList.appendChild(btn);
+         ambianceList.appendChild(btn);
     });
+
+    const tempsList = document.getElementById("quest-temps-list");
+    questBuildChoiceGroup(tempsList, QUEST_TEMPS, function () { return questTemps; }, function (key) { questTemps = key; });
 
     const budgetList = document.getElementById("quest-budget-list");
     questBuildChoiceGroup(budgetList, BUDGETS, function () { return questBudget; }, function (key) { questBudget = key; });
