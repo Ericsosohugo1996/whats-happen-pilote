@@ -146,7 +146,7 @@ function initBrandChoice(){
       }
     };
   }
-   if (visitBtn) {
+    if (visitBtn) {
     visitBtn.onclick = function(){
       hideBrandIntroScreen();
       state.userPos = null;
@@ -156,6 +156,43 @@ function initBrandChoice(){
   }
 }
 initBrandChoice();
+
+// ---- sélecteur de langue sur l'écran de bienvenue (avant même "Autour de moi") ----
+function initBrandIntroLang(){
+  const toggleBtn = document.getElementById("brand-intro-lang-toggle");
+  const panel = document.getElementById("brand-intro-flags-row");
+  if (!toggleBtn || !panel) return;
+  const screen = document.getElementById("brand-intro-screen");
+  // Note : à cet instant (chargement initial de la page), la constante `currentLang` plus
+  // bas dans ce fichier n'est pas encore déclarée (zone morte temporelle) — on lit donc la
+  // langue directement dans localStorage plutôt que via `currentLang.value` pour éviter un
+  // ReferenceError qui bloquerait l'exécution du reste du script.
+  const storedLang = localStorage.getItem("wh_lang") || "fr";
+  panel.querySelectorAll(".flag-btn[data-lang]").forEach(function (btn) {
+    if (btn.dataset.lang === storedLang) {
+      btn.classList.add("active");
+    }
+    btn.addEventListener("click", function () {
+      if (typeof setLang === "function") setLang(btn.dataset.lang);
+      panel.querySelectorAll(".flag-btn[data-lang]").forEach(function (b) {
+        b.classList.toggle("active", b === btn);
+      });
+      panel.style.display = "none";
+    });
+  });
+  toggleBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    panel.style.display = panel.style.display === "none" ? "flex" : "none";
+  });
+  if (screen) {
+    screen.addEventListener("click", function (e) {
+      if (panel.style.display !== "none" && !panel.contains(e.target) && e.target !== toggleBtn) {
+        panel.style.display = "none";
+      }
+    });
+  }
+}
+initBrandIntroLang(); 
 
 // ---- écran intro (souvenirs ou découvrir) ----
 function initIntroScreen(){
