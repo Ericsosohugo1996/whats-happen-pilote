@@ -346,7 +346,15 @@
         renderFriendsScreen();
       });
     }
-  }
+    // Accès direct depuis le bandeau du haut, sans passer par "Mon compte".
+    const headerBtn = document.getElementById("btn-friends-header");
+    if (headerBtn && !headerBtn.dataset.bound) {
+      headerBtn.dataset.bound = "1";
+      headerBtn.addEventListener("click", function () {
+        renderFriendsScreen();
+      });
+    }
+  } 
 
   function initFriends() {
     bindFriendsButton();
