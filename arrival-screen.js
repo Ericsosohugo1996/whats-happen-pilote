@@ -727,7 +727,7 @@ overlay.style.cssText =
 
 overlay.innerHTML =
 '<style>@keyframes wzOrbFloat1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(18px,-26px) scale(1.08);}}@keyframes wzOrbFloat2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-22px,22px) scale(1.05);}}</style>' +
-(window.__renderFriendsScreen ? '<button type="button" id="arrival-friends-btn" aria-label="Mes amis" style="position:absolute; top:16px; left:16px; z-index:2; width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,0.18); background:rgba(255,255,255,0.08); color:#fff; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center;">👥</button>' : '') +
+(window.__renderFriendsScreen ? '<button type="button" id="arrival-friends-btn" aria-label="Mes amis" style="position:absolute; top:16px; left:16px; z-index:2; width:42px; height:42px; border-radius:50%; border:none; background:#14213D; color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.35);">👥</button>' : '') +
 '<div class="flags-row" style="position:absolute; top:16px; right:16px; z-index:2; max-width:150px; flex-wrap:wrap; justify-content:flex-end;">' +
 '<button class="flag-btn" id="flag-fr-arrival" data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" alt="Français"></button>' +
 '<button class="flag-btn" id="flag-en-arrival" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="English"></button>' +
