@@ -362,8 +362,9 @@ wzNavbarBind(overlay, function () { overlay.remove(); });
     questBuildChoiceGroup(compagnieList, COMPAGNIES, function () { return questCompagnie; }, function (key) { questCompagnie = key; });
 
     document.getElementById("quest-see-result").addEventListener("click", function () {
-      if (!questAmbiance) questAmbiance = "originale";
+        if (!questAmbiance) questAmbiance = "originale";
       if (!questBudget) questBudget = "peu_importe";
+      if (!questTemps) questTemps = "jour";
       questRenderResult();
     });
   }
