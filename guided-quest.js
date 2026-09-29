@@ -374,6 +374,7 @@ wzNavbarBind(overlay, function () { overlay.remove(); });
     questAmbiance = null;
     questBudget = null;
     questCompagnie = null;
+    questTemps = null;
     let overlay = document.getElementById("quest-overlay");
     if (!overlay) {
 const questCityKey = state.userPos ? nearestCityKey() : state.city;
