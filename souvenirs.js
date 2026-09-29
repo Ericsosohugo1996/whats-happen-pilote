@@ -117,12 +117,25 @@
     return imported;
   }
 
+   // Renvoie la liste des souvenirs, [] si l'utilisateur n'a vraiment aucun souvenir,
+  // ou null si le chargement a échoué (typiquement : pas de connexion internet) — pour que
+  // l'écran affiche "vérifie ta connexion" plutôt qu'un carnet vide à tort.
   async function loadSouvenirs() {
-    if (window.__authReady) await window.__authReady;
+    if (window.__authReady) {
+      await Promise.race([
+        window.__authReady,
+        new Promise(function (resolve) { setTimeout(resolve, 6000); }),
+      ]);
+    }
     const col = souvenirsCollection();
     if (!col) return [];
-    const snap = await col.orderBy("createdAt", "desc").get();
-    return snap.docs.map(function (d) { return d.data(); });
+    try {
+      const snap = await col.orderBy("createdAt", "desc").get();
+      return snap.docs.map(function (d) { return d.data(); });
+    } catch (err) {
+      console.error("Erreur de chargement des souvenirs :", err);
+      return null;
+    }
   }
 
   async function deleteSouvenir(s) {
