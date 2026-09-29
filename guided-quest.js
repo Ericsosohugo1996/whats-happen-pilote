@@ -323,7 +323,9 @@ wzNavbarBind(overlay, function () { overlay.remove(); });
       '<div style="background:#14213D; border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:20px;">' +
       '<div style="color:#fff; font-size:11px; opacity:0.7; margin-bottom:10px;">ÉTAPE 2/2</div>' +
       '<div style="color:#fff; font-size:16px; font-weight:700; margin-bottom:4px;">Quelle ambiance ?</div>' +
-      '<div id="quest-ambiance-list" style="display:flex; flex-direction:column; gap:8px; margin-bottom:16px;"></div>' +
+            '<div id="quest-ambiance-list" style="display:flex; flex-direction:column; gap:8px; margin-bottom:16px;"></div>' +
+      '<div style="color:#fff; font-size:13px; font-weight:700; margin-bottom:8px;">Tu as combien de temps ?</div>' +
+      '<div id="quest-temps-list" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;"></div>' +
       '<div style="color:#fff; font-size:13px; font-weight:700; margin-bottom:8px;">Budget</div>' +
       '<div id="quest-budget-list" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;"></div>' +
       '<div style="color:#fff; font-size:13px; font-weight:700; margin-bottom:8px;">Avec qui ?</div>' +
