@@ -210,7 +210,7 @@ function wzNavbarHtml(activeKey) {
     { key: "decouvre", icon: "🧭", label: "Découvre" },
     { key: "explore", icon: "🗺️", label: "Explore" },
     { key: "visite", icon: "🏙️", label: "Visite" },
-    { key: "memorise", icon: "📖", label: "Mémorise" },
+       { key: "memorise", icon: "📖", label: "Souvenirs" },
     { key: "partage", icon: "🔗", label: "Partage" },
   ];
   return '<div class="wz-navbar" style="position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-around; padding:12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); background:rgba(9,13,26,0.85); backdrop-filter:blur(6px); border-top:1px solid rgba(255,255,255,0.08); z-index:2;">' +
