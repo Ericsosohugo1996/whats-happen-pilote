@@ -535,6 +535,12 @@
       }
     }
 
+       if (list === null) {
+      tabsEl.style.display = "none";
+      listEl.innerHTML = '<div style="text-align:center;color:#9BA5C2;padding:40px 0;">Connexion impossible pour l\'instant.<br>Vérifie ta connexion internet et réessaie.</div>';
+      return;
+    }
+
     if (!list.length) {
       tabsEl.style.display = "none";
       listEl.innerHTML = '<div style="text-align:center;color:#9BA5C2;padding:40px 0;">Aucun souvenir pour l\'instant.<br>Appuie sur 📸 pour en ajouter un !</div>';
