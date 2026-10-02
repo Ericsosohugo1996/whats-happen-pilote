@@ -168,7 +168,7 @@ function startBrandIntroCarousel(){
     const showLayer1 = (idx % 2) === 1;
     const back = showLayer1 ? layer1 : layer0;
     const frontEl = showLayer1 ? layer0 : layer1;
-    back.style.backgroundImage = "url('" + CITY_PHOTOS[cities[idx]] + "')";
+       back.style.backgroundImage = 'url("' + CITY_PHOTOS[cities[idx]] + '")';
     back.classList.add("show");
     frontEl.classList.remove("show");
     updateBrandIntroToday(cities[idx]);
