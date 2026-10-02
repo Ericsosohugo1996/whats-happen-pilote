@@ -381,22 +381,42 @@ async function streamAndFilter(todayIso) {
     byCity[cityKey] = (byCity[cityKey] || 0) + 1;
   }
 
+  // Extrait toutes les lignes complètes actuellement disponibles dans "buffer" (en recollant
+  // les lignes coupées au milieu d'un champ entre guillemets), et ne garde dans "buffer" que
+  // le reste incomplet en attente du prochain morceau du flux réseau. Beaucoup plus rapide que
+  // d'accumuler caractère par caractère (qui devient O(n²) sur un fichier de cette taille).
+  function drainBuffer(isFinal) {
+    let pendingStart = 0;
+    let searchFrom = 0;
+    let parity = 0; // nombre de guillemets rencontrés depuis pendingStart, modulo 2
+    // eslint-disable-next-line no-constant-condition
+    while (true) {
+      const nl = buffer.indexOf("\n", searchFrom);
+      if (nl === -1) break;
+      parity ^= quoteCount(buffer, searchFrom, nl) & 1;
+      if (parity === 0) {
+        handleRecord(buffer.slice(pendingStart, nl));
+        pendingStart = nl + 1;
+        searchFrom = pendingStart;
+      } else {
+        searchFrom = nl + 1; // toujours au milieu d'un champ entre guillemets : on continue
+      }
+    }
+    buffer = buffer.slice(pendingStart);
+    if (isFinal && buffer.trim()) {
+      handleRecord(buffer);
+      buffer = "";
+    }
+  }
+
   // eslint-disable-next-line no-constant-condition
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
-    const chunk = decoder.decode(value, { stream: true });
-    for (let i = 0; i < chunk.length; i++) {
-      const ch = chunk[i];
-      record += ch;
-      if (ch === '"') inQuotes = !inQuotes;
-      else if (ch === "\n" && !inQuotes) {
-        handleRecord(record.slice(0, -1));
-        record = "";
-      }
-    }
+    buffer += decoder.decode(value, { stream: true });
+    drainBuffer(false);
   }
-  if (record.trim()) handleRecord(record);
+  drainBuffer(true);
 
   return { rowCount, matches, byCity };
 }
