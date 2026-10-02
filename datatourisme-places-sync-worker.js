@@ -324,11 +324,13 @@ async function streamAndFilter() {
     }
     rowCount++;
     const f = parseCsvRecord(line);
-    // Colonnes (même format simplifié que l'export FMA DataTourisme) :
+    // Colonnes de l'export Place (vérifiées directement sur le fichier réel — PAS les mêmes
+    // index que le FMA : pas de colonne "Periodes_regroupees" pour des lieux permanents, donc
+    // tout est décalé d'une colonne à partir de Covid19_mesures_specifiques) :
     // 0 Nom_du_POI, 1 Categories_de_POI, 2 Latitude, 3 Longitude, 4 Adresse_postale,
-    // 5 Code_postal_et_commune, 6 Periodes_regroupees, 7 Covid19_mesures_specifiques,
-    // 8 Createur_de_la_donnee, 9 SIT_diffuseur, 10 Date_de_mise_a_jour,
-    // 11 Contacts_du_POI, 12 Classements_du_POI, 13 Description, 14 URI_ID_du_POI
+    // 5 Code_postal_et_commune, 6 Covid19_mesures_specifiques, 7 Createur_de_la_donnee,
+    // 8 SIT_diffuseur, 9 Date_de_mise_a_jour, 10 Contacts_du_POI, 11 Classements_du_POI,
+    // 12 Description, 13 URI_ID_du_POI
     const title = (f[0] || "").trim();
     const lat = parseFloat(f[2]);
     const lng = parseFloat(f[3]);
@@ -346,11 +348,11 @@ async function streamAndFilter() {
     const haystack = title + " " + categories;
     if (!PLACE_KEEP_RE.test(haystack) || PLACE_EXCLUDE_RE.test(haystack)) return;
  
-    const uri = f[14] || "";
+    const uri = f[13] || "";
     if (uri && seenUris.has(uri)) return;
     if (uri) seenUris.add(uri);
  
-    const description = (f[13] || "").trim().slice(0, MAX_DESCRIPTION_LEN);
+    const description = (f[12] || "").trim().slice(0, MAX_DESCRIPTION_LEN);
     const cityInfo = CITIES_COORDS[cityKey];
     const communeRaw = (f[5] || "").split("#")[1] || cityInfo.name;
     const address = (f[4] || "").trim();
