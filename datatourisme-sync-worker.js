@@ -311,12 +311,20 @@ async function streamAndFilter(todayIso) {
   const decoder = new TextDecoder("utf-8");
 
   let header = null;
-  let record = "";
-  let inQuotes = false;
+  let buffer = "";
   let rowCount = 0;
   const seenUris = new Set();
   const matches = [];
   const byCity = {};
+
+  // Compte les guillemets dans buffer[from, to) sans allocation (pas de sous-chaîne créée) —
+  // sert uniquement à savoir si on est au milieu d'un champ entre guillemets contenant un
+  // retour à la ligne (comme certaines Description multi-lignes).
+  function quoteCount(s, from, to) {
+    let n = 0;
+    for (let i = from; i < to; i++) if (s.charCodeAt(i) === 34) n++;
+    return n;
+  }
 
   function handleRecord(raw) {
     const line = raw.replace(/\r$/, "");
