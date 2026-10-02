@@ -7968,12 +7968,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const doGoogle = (current && current.isAnonymous)
       ? current.linkWithPopup(provider)
       : auth.signInWithPopup(provider);
-    doGoogle
-      .then(() => accountModal.classList.add("hidden"))
+       doGoogle
+      .then(() => closeAccountModalAndResume())
       .catch(err => {
         if (err.code === "auth/credential-already-in-use") {
           auth.signInWithCredential(err.credential)
-            .then(() => accountModal.classList.add("hidden"))
+            .then(() => closeAccountModalAndResume())
             .catch(err2 => showAccountError(err2.message));
         } else if (err.code !== "auth/popup-closed-by-user" && err.code !== "auth/cancelled-popup-request") {
           showAccountError(err.message);
