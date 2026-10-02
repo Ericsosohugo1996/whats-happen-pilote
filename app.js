@@ -8074,6 +8074,16 @@ document.addEventListener("DOMContentLoaded", () => {
       renderDiscover();
     })
     .catch(err => console.error("Erreur de chargement des lieux DataTourisme :", err));
+
+  // Bars (OpenStreetMap, licence ODbL) : même principe, catégorie "Bar" déjà prévue dans
+  // l'UI mais jusqu'ici sans contenu (DataTourisme ne couvre pas les bars).
+  fetch("/osm-bars.json")
+    .then(res => (res.ok ? res.json() : []))
+    .then(bars => {
+      state.osmBars = Array.isArray(bars) ? bars : [];
+      renderDiscover();
+    })
+    .catch(err => console.error("Erreur de chargement des bars OpenStreetMap :", err));
   // Événements publiés par les utilisateurs et déjà validés : visibles par tout le monde.
  
 
