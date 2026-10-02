@@ -7057,14 +7057,108 @@ function distanceToEvent(ev){
   return haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
 }
 
-// Ouvre Google Maps avec l'itinéraire vers l'événement, depuis la position actuelle de
-// l'utilisateur (Maps la détecte tout seul) — l'utilisateur choisit ensuite à pied / en
-// transports en commun / en voiture directement dans Maps.
+// ---- itinéraire à pied intégré (carte + tracé réel via OpenRouteService, repli ligne droite) ----
+const ORS_WORKER_URL = "https://whazup-itineraire-1204.ericbrunebarbe.workers.dev/route";
+let __itineraryMap = null;
+let __itineraryMarkers = null;
+
 function openItinerary(){
   const ev = allEvents().find(e => e.id === state.currentEventId);
   if (!ev || !ev.lat || !ev.lng) return;
-  const url = "https://www.google.com/maps/dir/?api=1&destination=" + ev.lat + "," + ev.lng;
-  window.open(url, "_blank");
+  const modal = document.getElementById("itinerary-modal");
+  if (!modal) {
+    window.open("https://www.google.com/maps/dir/?api=1&destination=" + ev.lat + "," + ev.lng, "_blank");
+    return;
+  }
+  modal.classList.remove("hidden");
+  const gmapsBtn = document.getElementById("itinerary-gmaps-btn");
+  if (gmapsBtn) gmapsBtn.href = "https://www.google.com/maps/dir/?api=1&destination=" + ev.lat + "," + ev.lng;
+
+  const statusEl = document.getElementById("itinerary-status");
+  if (statusEl) statusEl.textContent = "Calcul de l'itinéraire…";
+
+  if (state.userPos) {
+    fetchAndDrawItinerary(state.userPos, ev);
+  } else if (navigator.geolocation) {
+    if (statusEl) statusEl.textContent = "Localisation en cours…";
+    navigator.geolocation.getCurrentPosition(
+      function(pos){
+        state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        fetchAndDrawItinerary(state.userPos, ev);
+      },
+      function(){
+        showItineraryFallback(ev, "Active la localisation pour voir le trajet à pied.");
+      },
+      { timeout: 8000 }
+    );
+  } else {
+    showItineraryFallback(ev, "Localisation non disponible sur cet appareil.");
+  }
+}
+
+function closeItineraryModal(){
+  const modal = document.getElementById("itinerary-modal");
+  if (modal) modal.classList.add("hidden");
+}
+
+function ensureItineraryMap(){
+  const mapEl = document.getElementById("itinerary-map");
+  if (!mapEl || typeof L === "undefined") return null;
+  if (!__itineraryMap) {
+    __itineraryMap = L.map("itinerary-map");
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap",
+      maxZoom: 19,
+    }).addTo(__itineraryMap);
+    __itineraryMarkers = L.layerGroup().addTo(__itineraryMap);
+  }
+  return __itineraryMap;
+}
+
+function showItineraryFallback(ev, message){
+  const statusEl = document.getElementById("itinerary-status");
+  const dist = distanceToEvent(ev);
+  const mins = walkMinutes(dist);
+  if (statusEl) {
+    statusEl.textContent = (message ? message + " " : "") + "Distance à vol d'oiseau : " + formatRadius(dist) + " (~" + mins + " min à pied).";
+  }
+  const map = ensureItineraryMap();
+  if (!map) return;
+  __itineraryMarkers.clearLayers();
+  const ref = referencePoint();
+  L.marker([ref.lat, ref.lng], { icon: userLocationIcon() }).addTo(__itineraryMarkers);
+  L.marker([ev.lat, ev.lng]).addTo(__itineraryMarkers);
+  const line = L.polyline([[ref.lat, ref.lng], [ev.lat, ev.lng]], { color: "#E85D3D", weight: 3, dashArray: "6 6" }).addTo(__itineraryMarkers);
+  map.fitBounds(line.getBounds(), { padding: [30, 30] });
+  setTimeout(function(){ if (__itineraryMap) __itineraryMap.invalidateSize(); }, 80);
+}
+
+function fetchAndDrawItinerary(from, ev){
+  const statusEl = document.getElementById("itinerary-status");
+  fetch(ORS_WORKER_URL + "?from=" + from.lat + "," + from.lng + "&to=" + ev.lat + "," + ev.lng)
+    .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+    .then(function(result){
+      if (!result.ok || !result.data || !result.data.coordinates) {
+        showItineraryFallback(ev, "Itinéraire à pied indisponible pour le moment.");
+        return;
+      }
+      const data = result.data;
+      const map = ensureItineraryMap();
+      if (!map) return;
+      __itineraryMarkers.clearLayers();
+      const latlngs = data.coordinates.map(function(c){ return [c[1], c[0]]; });
+      L.marker([from.lat, from.lng], { icon: userLocationIcon() }).addTo(__itineraryMarkers);
+      L.marker([ev.lat, ev.lng]).addTo(__itineraryMarkers);
+      const line = L.polyline(latlngs, { color: "#E85D3D", weight: 4 }).addTo(__itineraryMarkers);
+      map.fitBounds(line.getBounds(), { padding: [30, 30] });
+      setTimeout(function(){ if (__itineraryMap) __itineraryMap.invalidateSize(); }, 80);
+      const km = Math.round((data.distanceMeters / 1000) * 10) / 10;
+      const mins = Math.round(data.durationSeconds / 60);
+      if (statusEl) statusEl.textContent = "🚶 " + km + " km · ~" + mins + " min à pied";
+    })
+    .catch(function(){
+      showItineraryFallback(ev, "Itinéraire à pied indisponible pour le moment.");
+    });
 }
  
 // ---- local persistence (this browser only, no server yet) ----
