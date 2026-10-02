@@ -1,5 +1,3 @@
-
-Datatourisme places sync worker · JS
 // ============================================================================
 // Worker Cloudflare — import quotidien des LIEUX DataTourisme (musées, monuments,
 // sites culturels...) dans Whazup
