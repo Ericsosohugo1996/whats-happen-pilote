@@ -145,7 +145,7 @@ function startBrandIntroCarousel(){
     '</div>';
   const layer0 = document.getElementById("brand-intro-layer-0");
   const layer1 = document.getElementById("brand-intro-layer-1");
-  layer0.style.backgroundImage = "url('" + CITY_PHOTOS[cities[0]] + "')";
+   layer0.style.backgroundImage = 'url("' + CITY_PHOTOS[cities[0]] + '")';
   updateBrandIntroToday(cities[0]);
   requestAnimationFrame(function(){
     requestAnimationFrame(function(){ layer0.classList.add("show"); });
