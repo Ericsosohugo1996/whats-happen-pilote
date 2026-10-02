@@ -7766,6 +7766,14 @@ async function loadInterestState(id){
 }
 
 function openDetail(id){
+  const user = auth.currentUser;
+  if (!user || user.isAnonymous) {
+    state.pendingEventId = id;
+    const gateMsg = document.getElementById("account-gate-msg");
+    if (gateMsg) gateMsg.classList.remove("hidden");
+    document.getElementById("account-modal").classList.remove("hidden");
+    return;
+  }
   const ev = allEvents().find(e => e.id === id);
   if (!ev) return;
   state.currentEventId = id;
