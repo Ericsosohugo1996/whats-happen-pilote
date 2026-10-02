@@ -106,10 +106,6 @@ function showBrandIntroScreen(){
   const screen = document.getElementById("brand-intro-screen");
   if (!screen) { initChoiceScreen(); return; }
   startBrandIntroCarousel();
-  const todayEl = document.getElementById("brand-intro-today");
-  if (todayEl && typeof CITIES !== "undefined" && CITIES[state.city]) {
-    todayEl.textContent = "Aujourd'hui, à " + CITIES[state.city].name + "…";
-  }
   screen.classList.remove("hidden");
 }
 
@@ -120,7 +116,15 @@ function hideBrandIntroScreen(){
   screen.remove();
 }
 
+function updateBrandIntroToday(cityKey){
+  const todayEl = document.getElementById("brand-intro-today");
+  if (todayEl && typeof CITIES !== "undefined" && CITIES[cityKey]) {
+    todayEl.textContent = "Aujourd'hui, à " + CITIES[cityKey].name + "…";
+  }
+}
+
 function startBrandIntroCarousel(){
+  stopBrandIntroCarousel();
   const wrap = document.getElementById("brand-intro-photo");
   if (!wrap || typeof CITY_PHOTOS === "undefined") return;
   const cities = BRAND_INTRO_PHOTO_CITIES.filter(function(k){ return !!CITY_PHOTOS[k]; });
@@ -142,6 +146,7 @@ function startBrandIntroCarousel(){
   const layer0 = document.getElementById("brand-intro-layer-0");
   const layer1 = document.getElementById("brand-intro-layer-1");
   layer0.style.backgroundImage = "url('" + CITY_PHOTOS[cities[0]] + "')";
+  updateBrandIntroToday(cities[0]);
   requestAnimationFrame(function(){
     requestAnimationFrame(function(){ layer0.classList.add("show"); });
   });
@@ -157,16 +162,16 @@ function startBrandIntroCarousel(){
     }, 4000);
   }
 
-  let front = 0;
   let idx = 0;
   __brandIntroTimer = setInterval(function(){
     idx = (idx + 1) % cities.length;
-    const back = front === 0 ? layer1 : layer0;
-    const frontEl = front === 0 ? layer0 : layer1;
+    const showLayer1 = (idx % 2) === 1;
+    const back = showLayer1 ? layer1 : layer0;
+    const frontEl = showLayer1 ? layer0 : layer1;
     back.style.backgroundImage = "url('" + CITY_PHOTOS[cities[idx]] + "')";
     back.classList.add("show");
     frontEl.classList.remove("show");
-    front = front === 0 ? 1 : 0;
+    updateBrandIntroToday(cities[idx]);
   }, 5000);
 }
 
