@@ -8224,8 +8224,15 @@ document.addEventListener("DOMContentLoaded", () => {
      const beenThereBtn = document.getElementById("btn-been-there");
   if (beenThereBtn) beenThereBtn.onclick = markBeenThere;
  
-  const itineraryBtn = document.getElementById("btn-itinerary");
+   const itineraryBtn = document.getElementById("btn-itinerary");
   if (itineraryBtn) itineraryBtn.onclick = openItinerary;
+
+  const itineraryCloseBtn = document.getElementById("btn-itinerary-close");
+  const itineraryModal = document.getElementById("itinerary-modal");
+  if (itineraryCloseBtn && itineraryModal) {
+    itineraryCloseBtn.onclick = closeItineraryModal;
+    itineraryModal.onclick = function(e){ if (e.target === itineraryModal) closeItineraryModal(); };
+  }
  
     const inviteBtn = document.getElementById("btn-invite-friend");
   if (inviteBtn) inviteBtn.onclick = inviteFriend;
