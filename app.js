@@ -7948,12 +7948,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const doSignup = (current && current.isAnonymous)
       ? current.linkWithCredential(credential)
       : auth.createUserWithEmailAndPassword(email, password);
-    doSignup
-      .then(() => accountModal.classList.add("hidden"))
+       doSignup
+      .then(() => closeAccountModalAndResume())
       .catch(err => {
         if (err.code === "auth/email-already-in-use" || err.code === "auth/credential-already-in-use") {
           auth.signInWithEmailAndPassword(email, password)
-            .then(() => accountModal.classList.add("hidden"))
+            .then(() => closeAccountModalAndResume())
             .catch(err2 => showAccountError(err2.message));
         } else {
           showAccountError(err.message);
