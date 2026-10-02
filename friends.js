@@ -158,7 +158,53 @@
       }).catch(function () {});
     }
   }
+  // ---- invitation d'un ami pas encore inscrit sur Whazup ----
+  async function recordPendingInvite(toEmail) {
+    const user = auth.currentUser;
+    if (!user || user.isAnonymous) return false;
+    const normalized = (toEmail || "").trim().toLowerCase();
+    if (!normalized) return false;
+    try {
+      await db.collection("pendingFriendInvites").doc(normalized + "_" + user.uid).set({
+        fromUid: user.uid,
+        fromEmail: user.email || "",
+        toEmail: normalized,
+        createdAt: Date.now(),
+      });
+      return true;
+    } catch (err) {
+      console.error("Erreur lors de l'enregistrement de l'invitation :", err);
+      return false;
+    }
+  }
 
+  // Dès qu'un compte réel se connecte, on regarde si quelqu'un l'a déjà invité avant qu'il
+  // n'ait de compte : si oui, on devient amis tout de suite, sans lien à rouvrir.
+  async function resolvePendingInvites(user) {
+    if (!user || user.isAnonymous || !user.email) return;
+    const normalized = user.email.trim().toLowerCase();
+    try {
+      const snap = await db.collection("pendingFriendInvites").where("toEmail", "==", normalized).get();
+      for (const doc of snap.docs) {
+        const data = doc.data();
+        if (data.fromUid !== user.uid) {
+          await createFriendship(data.fromUid, data.fromEmail);
+        }
+        await doc.ref.delete();
+      }
+    } catch (err) {
+      console.error("Erreur lors de la résolution des invitations en attente :", err);
+    }
+  }
+
+  function openInviteMailto(toEmail) {
+    const user = auth.currentUser;
+    const link = inviteLink();
+    const subject = encodeURIComponent(tt("Rejoins-moi sur Whazup !"));
+    const intro = (user && user.email ? user.email + " " : "") + tt("t'invite à rejoindre Whazup, pour organiser vos sorties ensemble : ");
+    const body = encodeURIComponent(intro + link);
+    window.location.href = "mailto:" + encodeURIComponent(toEmail) + "?subject=" + subject + "&body=" + body;
+  }
   function checkFriendInviteLink() {
     const params = new URLSearchParams(window.location.search);
     const otherUid = params.get("ami");
