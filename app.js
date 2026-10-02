@@ -242,6 +242,16 @@ function showAccountError(message){
 function hideAccountError(){
   document.getElementById("account-error").style.display = "none";
 }
+function closeAccountModalAndResume(){
+  document.getElementById("account-modal").classList.add("hidden");
+  const gateMsg = document.getElementById("account-gate-msg");
+  if (gateMsg) gateMsg.classList.add("hidden");
+  if (state.pendingEventId) {
+    const id = state.pendingEventId;
+    state.pendingEventId = null;
+    openDetail(id);
+  }
+}
 
 // ---- barre de navigation inférieure partagée entre les écrans (Découvre/Explore/Visite/Mémorise/Partage) ----
 // Évite de dupliquer ce bloc HTML + sa logique de clic dans chaque écran (arrival-screen.js,
