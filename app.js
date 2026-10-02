@@ -6360,6 +6360,7 @@ mode: "liste",
  openAgendaEvents: [],
   communityEvents: [],
    dataTourismeEvents: [],
+  dataTourismePlaces: [],  
   loyalty: loadLoyalty(),
   visitedEvents: loadVisitedEvents(),
 }; 
