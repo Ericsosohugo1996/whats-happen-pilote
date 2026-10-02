@@ -234,7 +234,7 @@ function nearestCity(lat, lng) {
 // qu'Overpass met déjà ~20s à répondre pour seulement 2 villes (dont Paris, dense), et un seul
 // énorme appel risquerait de dépasser son propre timeout ou d'être mal vu par ce service public
 // gratuit — plusieurs petites requêtes successives sont plus fiables et plus respectueuses.
-const CITY_BATCH_SIZE = 12;
+const CITY_BATCH_SIZE = 6;
  
 function buildOverpassQuery(cityBatch) {
   const clauses = cityBatch
@@ -246,7 +246,29 @@ function buildOverpassQuery(cityBatch) {
       );
     })
     .join("\n");
-  return "[out:json][timeout:90];\n(\n" + clauses + "\n);\nout center tags;";
+  return "[out:json][timeout:50];\n(\n" + clauses + "\n);\nout center tags;";
+}
+ 
+// Un lot interrogé avec retry : jusqu'à 2 tentatives (le service public Overpass a des latences
+// variables), avec une petite pause entre les deux.
+async function fetchBatchWithRetry(query) {
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const res = await fetch(OVERPASS_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "whazup-osm-bars-sync (contact: bot@whazup.fr)",
+        },
+        body: "data=" + encodeURIComponent(query),
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return await res.json();
+    } catch (err) {
+      if (attempt === 2) throw err;
+      await new Promise((r) => setTimeout(r, 2000));
+    }
+  }
 }
  
 function idFromOsm(type, id) {
@@ -270,22 +292,19 @@ async function fetchAndFilter() {
   const matches = [];
   const byCity = {};
   let elementCount = 0;
+  let failedBatches = 0;
  
   for (const batch of batches) {
     const query = buildOverpassQuery(batch);
-    const res = await fetch(OVERPASS_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "whazup-osm-bars-sync (contact: bot@whazup.fr)",
-      },
-      body: "data=" + encodeURIComponent(query),
-    });
-    if (!res.ok) {
-      const errText = await res.text();
-      throw new Error("Requête Overpass échouée : HTTP " + res.status + " — " + errText.slice(0, 300));
+    let data;
+    try {
+      data = await fetchBatchWithRetry(query);
+    } catch (err) {
+      // Un lot qui échoue (même après retry) ne doit pas faire perdre tous les autres — on le
+      // saute et on continue ; le résumé renvoyé en fin de traitement indique combien ont échoué.
+      failedBatches++;
+      continue;
     }
-    const data = await res.json();
     const elements = data.elements || [];
     elementCount += elements.length;
  
@@ -340,7 +359,7 @@ async function fetchAndFilter() {
     }
   }
  
-  return { elementCount, matches, byCity };
+  return { elementCount, matches, byCity, totalBatches: batches.length, failedBatches };
 }
  
 // ---- encodage base64 sûr pour un texte UTF-8 potentiellement volumineux ----
@@ -397,12 +416,13 @@ async function commitBarsFile(env, jsonString) {
 }
  
 async function runSync(env) {
-  const { elementCount, matches, byCity } = await fetchAndFilter();
+  const { elementCount, matches, byCity, totalBatches, failedBatches } = await fetchAndFilter();
   const jsonString = JSON.stringify(matches);
   await commitBarsFile(env, jsonString);
   return {
     elementsFromOverpass: elementCount,
     barsRetained: matches.length,
+    batches: totalBatches + " lots au total, " + failedBatches + " échoué(s) (ignoré(s), pas bloquant)",
     byCity,
     sizeKB: Math.round(jsonString.length / 1024),
   };
