@@ -7934,8 +7934,8 @@ document.addEventListener("DOMContentLoaded", () => {
     hideAccountError();
     const email = document.getElementById("account-email").value;
     const password = document.getElementById("account-password").value;
-    auth.signInWithEmailAndPassword(email, password)
-      .then(() => accountModal.classList.add("hidden"))
+      auth.signInWithEmailAndPassword(email, password)
+      .then(() => closeAccountModalAndResume())
       .catch(err => showAccountError(err.message));
   };
 
