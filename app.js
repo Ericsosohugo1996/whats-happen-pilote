@@ -8054,6 +8054,13 @@ document.addEventListener("DOMContentLoaded", () => {
     renderDiscover();
   });
 
+  fetch("/datatourisme-events.json")
+    .then(res => (res.ok ? res.json() : []))
+    .then(events => {
+      state.dataTourismeEvents = Array.isArray(events) ? events : [];
+      renderDiscover();
+    })
+    .catch(err => console.error("Erreur de chargement des événements DataTourisme :", err));
   // Événements publiés par les utilisateurs et déjà validés : visibles par tout le monde.
   db.collection("communityEvents").where("status", "==", "approved").get().then(snap => {
     state.communityEvents = snap.docs.map(d => d.data());
