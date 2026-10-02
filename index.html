@@ -185,7 +185,17 @@
     <button class="btn-ghost" id="btn-account" aria-label="Mon compte" style="margin-right:6px;">👤</button>
     <button class="btn-ghost" id="btn-publish-header" data-i18n="＋ Publier">＋ Publier</button>
   </header>
+   <div id="itinerary-modal" class="modal hidden">
+  <div class="modal-content">
+    <button type="button" id="btn-itinerary-close" class="modal-close">✕</button>
+    <h3 style="margin:0 0 12px; font-family:var(--font-display); font-size:19px; color:#14213D;">🧭 Itinéraire à pied</h3>
+    <div id="itinerary-map" class="itinerary-map"></div>
+    <div id="itinerary-status" class="itinerary-status">Calcul de l'itinéraire…</div>
+    <a id="itinerary-gmaps-btn" class="btn-outline btn-block" target="_blank" rel="noopener" style="display:block; text-align:center; text-decoration:none; margin-top:12px;">Ouvrir dans Google Maps</a>
+  </div>
+</div>
    <div id="account-modal" class="modal hidden">
+ <div id="account-modal" class="modal hidden">
     <div class="modal-content">
       <button type="button" id="btn-account-close" class="modal-close">✕</button>
       <div class="account-hero">
