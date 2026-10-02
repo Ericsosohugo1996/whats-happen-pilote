@@ -6359,6 +6359,7 @@ mode: "liste",
   localEvents: loadLocalEvents(),
  openAgendaEvents: [],
   communityEvents: [],
+   dataTourismeEvents: [],
   loyalty: loadLoyalty(),
   visitedEvents: loadVisitedEvents(),
 }; 
