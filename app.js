@@ -6995,6 +6995,16 @@ function distanceToEvent(ev){
   const ref = referencePoint();
   return haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
 }
+
+// Ouvre Google Maps avec l'itinéraire vers l'événement, depuis la position actuelle de
+// l'utilisateur (Maps la détecte tout seul) — l'utilisateur choisit ensuite à pied / en
+// transports en commun / en voiture directement dans Maps.
+function openItinerary(){
+  const ev = allEvents().find(e => e.id === state.currentEventId);
+  if (!ev || !ev.lat || !ev.lng) return;
+  const url = "https://www.google.com/maps/dir/?api=1&destination=" + ev.lat + "," + ev.lng;
+  window.open(url, "_blank");
+}
  
 // ---- local persistence (this browser only, no server yet) ----
 function loadFavorites(){
