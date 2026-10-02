@@ -6947,7 +6947,7 @@ function buildMarketEvents(){
 const MARKET_EVENTS = buildMarketEvents();
 
 function allEvents(){
-...state.brocanteEvents, ...state.dataTourismeEvents, ...PLACE_EVENTS, ...MARKET_EVENTS];
+  return [...SEED_EVENTS, ...state.localEvents, ...state.openAgendaEvents, ...state.communityEvents, ...state.brocanteEvents, ...state.dataTourismeEvents, ...PLACE_EVENTS, ...MARKET_EVENTS];
 }
  
 // ---- geo helpers ----
