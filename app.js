@@ -99,12 +99,13 @@ if ("serviceWorker" in navigator) {
 })();
  
 // ---- écran de bienvenue (photo de ville + accroche + choix) ----
+const BRAND_INTRO_PHOTO_CITIES = ["paris","marseille","bordeaux","strasbourg","lille","avignon","nantes","aix"];
+let __brandIntroTimer = null;
+
 function showBrandIntroScreen(){
   const screen = document.getElementById("brand-intro-screen");
   if (!screen) { initChoiceScreen(); return; }
-  const photoEl = document.getElementById("brand-intro-photo");
-  const photoUrl = (typeof CITY_PHOTOS !== "undefined") ? CITY_PHOTOS[state.city] : null;
-  if (photoEl && photoUrl) photoEl.style.backgroundImage = "url('" + photoUrl + "')";
+  startBrandIntroCarousel();
   const todayEl = document.getElementById("brand-intro-today");
   if (todayEl && typeof CITIES !== "undefined" && CITIES[state.city]) {
     todayEl.textContent = "Aujourd'hui, à " + CITIES[state.city].name + "…";
@@ -115,7 +116,62 @@ function showBrandIntroScreen(){
 function hideBrandIntroScreen(){
   const screen = document.getElementById("brand-intro-screen");
   if (!screen) return;
+  stopBrandIntroCarousel();
   screen.remove();
+}
+
+function startBrandIntroCarousel(){
+  const wrap = document.getElementById("brand-intro-photo");
+  if (!wrap || typeof CITY_PHOTOS === "undefined") return;
+  const cities = BRAND_INTRO_PHOTO_CITIES.filter(function(k){ return !!CITY_PHOTOS[k]; });
+  if (!cities.length) return;
+  wrap.innerHTML =
+    '<div class="brand-intro-photo-layer" id="brand-intro-layer-0"></div>' +
+    '<div class="brand-intro-photo-layer" id="brand-intro-layer-1"></div>' +
+    '<div class="brand-intro-beacon" id="brand-intro-beacon"></div>' +
+    '<div class="brand-intro-sparkles" id="brand-intro-sparkles">' +
+      '<span style="left:48%;top:22%;animation-delay:.1s;"></span>' +
+      '<span style="left:53%;top:30%;animation-delay:.5s;"></span>' +
+      '<span style="left:44%;top:35%;animation-delay:.2s;"></span>' +
+      '<span style="left:58%;top:40%;animation-delay:.7s;"></span>' +
+      '<span style="left:40%;top:46%;animation-delay:.35s;"></span>' +
+      '<span style="left:61%;top:50%;animation-delay:.05s;"></span>' +
+      '<span style="left:46%;top:55%;animation-delay:.6s;"></span>' +
+      '<span style="left:56%;top:60%;animation-delay:.25s;"></span>' +
+    '</div>';
+  const layer0 = document.getElementById("brand-intro-layer-0");
+  const layer1 = document.getElementById("brand-intro-layer-1");
+  layer0.style.backgroundImage = "url('" + CITY_PHOTOS[cities[0]] + "')";
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){ layer0.classList.add("show"); });
+  });
+
+  if (cities[0] === "paris") {
+    const beacon = document.getElementById("brand-intro-beacon");
+    const sparks = document.getElementById("brand-intro-sparkles");
+    if (beacon) beacon.classList.add("active");
+    if (sparks) sparks.classList.add("active");
+    setTimeout(function(){
+      if (beacon) beacon.classList.remove("active");
+      if (sparks) sparks.classList.remove("active");
+    }, 4000);
+  }
+
+  let front = 0;
+  let idx = 0;
+  __brandIntroTimer = setInterval(function(){
+    idx = (idx + 1) % cities.length;
+    const back = front === 0 ? layer1 : layer0;
+    const frontEl = front === 0 ? layer0 : layer1;
+    back.style.backgroundImage = "url('" + CITY_PHOTOS[cities[idx]] + "')";
+    back.classList.add("show");
+    frontEl.classList.remove("show");
+    front = front === 0 ? 1 : 0;
+  }, 5000);
+}
+
+function stopBrandIntroCarousel(){
+  if (__brandIntroTimer) { clearInterval(__brandIntroTimer); __brandIntroTimer = null; }
 }
 
 // ---- boutons de choix directement sur l'écran de bienvenue ----
