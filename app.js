@@ -7925,9 +7925,19 @@ document.addEventListener("DOMContentLoaded", () => {
  
   const accountModal = document.getElementById("account-modal");
   document.getElementById("btn-account").onclick = () => accountModal.classList.remove("hidden");
-  document.getElementById("btn-account-close").onclick = () => accountModal.classList.add("hidden");
+  document.getElementById("btn-account-close").onclick = () => {
+    accountModal.classList.add("hidden");
+    const gateMsg = document.getElementById("account-gate-msg");
+    if (gateMsg) gateMsg.classList.add("hidden");
+    state.pendingEventId = null;
+  };
   accountModal.onclick = (e) => {
-    if (e.target.id === "account-modal") accountModal.classList.add("hidden");
+    if (e.target.id === "account-modal") {
+      accountModal.classList.add("hidden");
+      const gateMsg = document.getElementById("account-gate-msg");
+      if (gateMsg) gateMsg.classList.add("hidden");
+      state.pendingEventId = null;
+    }
   };
  
   document.getElementById("btn-account-login").onclick = () => {
