@@ -8066,8 +8066,11 @@ document.addEventListener("DOMContentLoaded", () => {
   awardReferralWelcomeBonus();
   renderLoyalty();
  
-   const beenThereBtn = document.getElementById("btn-been-there");
+     const beenThereBtn = document.getElementById("btn-been-there");
   if (beenThereBtn) beenThereBtn.onclick = markBeenThere;
+ 
+  const itineraryBtn = document.getElementById("btn-itinerary");
+  if (itineraryBtn) itineraryBtn.onclick = openItinerary;
  
     const inviteBtn = document.getElementById("btn-invite-friend");
   if (inviteBtn) inviteBtn.onclick = inviteFriend;
