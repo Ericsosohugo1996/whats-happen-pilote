@@ -31,7 +31,9 @@
 // requête ([timeout:180]) — largement dans les clous d'un usage respectueux du service.
 // ============================================================================
  
-const OVERPASS_URL = "https://overpass-api.de/api/interpreter";
+// overpass-api.de (instance principale) est parfois indisponible (erreur 521) ; le miroir
+// français ci-dessous s'est montré rapide et fiable lors des tests de ce Worker.
+const OVERPASS_URL = "https://overpass.openstreetmap.fr/api/interpreter";
 const RADIUS_KM = 20; // même rayon que "autour de moi" dans l'app (state.radiusKm)
 const OUTPUT_PATH = "osm-bars.json";
 const MAX_DESCRIPTION_LEN = 300;
