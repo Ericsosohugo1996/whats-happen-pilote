@@ -421,11 +421,11 @@
 
   function initFriends() {
     bindFriendsButton();
-    function run() {
+       function run() {
       checkFriendInviteLink();
-      if (auth.currentUser) upsertPublicProfile(auth.currentUser);
-      auth.onAuthStateChanged(function (user) { upsertPublicProfile(user); });
-    }
+      if (auth.currentUser) { upsertPublicProfile(auth.currentUser); resolvePendingInvites(auth.currentUser); }
+      auth.onAuthStateChanged(function (user) { upsertPublicProfile(user); resolvePendingInvites(user); });
+    } 
     if (window.__authReady) { window.__authReady.then(run); } else { run(); }
   }
   if (document.readyState !== "loading") {
