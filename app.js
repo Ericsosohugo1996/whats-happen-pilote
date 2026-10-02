@@ -8075,16 +8075,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Erreur de chargement des lieux DataTourisme :", err));
   // Événements publiés par les utilisateurs et déjà validés : visibles par tout le monde.
  
-  // Lieux DataTourisme (musées, monuments, sites culturels...) : même principe que les
-  // événements ci-dessus, mais pour un fichier statique régénéré par un second Worker
-  // Cloudflare (voir datatourisme-places-sync-worker.js), sans date (lieux permanents).
-  fetch("/datatourisme-places.json")
-    .then(res => (res.ok ? res.json() : []))
-    .then(places => {
-      state.dataTourismePlaces = Array.isArray(places) ? places : [];
-      renderDiscover();
-    })
-    .catch(err => console.error("Erreur de chargement des lieux DataTourisme :", err));
+
   db.collection("communityEvents").where("status", "==", "approved").get().then(snap => {
     state.communityEvents = snap.docs.map(d => d.data());
     renderDiscover();
