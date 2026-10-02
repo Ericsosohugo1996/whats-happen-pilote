@@ -297,8 +297,19 @@
       resultEl.innerHTML = '<div style="color:#9BA5C2;font-size:12px;">' + tt("Recherche...") + '</div>';
       findUserByEmail(email).then(function (found) {
         const user = auth.currentUser;
-        if (!found) {
-          resultEl.innerHTML = '<div style="color:#9BA5C2;font-size:12px;">' + tt("Aucun utilisateur Whazup avec cet email (il doit s'être connecté au moins une fois avec un compte).") + '</div>';
+               if (!found) {
+          resultEl.innerHTML = '<div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:10px 12px;">' +
+            '<div style="color:#9BA5C2;font-size:12px;margin-bottom:8px;">' + tt("Cette personne n'a pas encore de compte Whazup.") + '</div>' +
+            '<button id="friend-invite-new-btn" style="width:100%;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:9px 12px;font-size:12px;font-weight:700;cursor:pointer;">📤 ' + tt("Lui proposer Whazup") + '</button>' +
+            '</div>';
+          document.getElementById("friend-invite-new-btn").addEventListener("click", async function () {
+            const btn = document.getElementById("friend-invite-new-btn");
+            btn.textContent = "...";
+            btn.disabled = true;
+            await recordPendingInvite(email);
+            openInviteMailto(email);
+            btn.textContent = tt("✓ Invitation envoyée !");
+          });
           return;
         }
         if (user && found.uid === user.uid) {
