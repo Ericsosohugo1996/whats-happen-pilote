@@ -28,6 +28,10 @@ function __arrivalWeatherText() {
 let __exploreSortMode = "distance";
 // ---- Bonhomme 1 : explorer par catégorie, triable distance/note ----
 
+// ---- "Tout voir" / "Autour de moi" : permet d'explorer une autre ville que sa position
+// réelle, sans désactiver le GPS pour autant (on restaure la position en quittant) ----
+let __exploreSavedUserPos = undefined;
+
 // ---- dérivée des catégories définies une seule fois dans app.js (CATEGORIES/CATEGORY_ICONS/CATEGORY_LABELS) ----
 // pour ne plus avoir à maintenir cette liste à deux endroits différents.
 const EXPLORE_CATEGORIES = [{ key: "", label: "Tout" }].concat(
