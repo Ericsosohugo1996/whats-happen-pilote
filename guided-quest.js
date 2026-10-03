@@ -132,7 +132,7 @@ const picked = questGetCandidates();
 
 let stepsHtml = "";
 if (!picked.length) {
-stepsHtml = '<p style="color:#9BA5C2; font-size:13px; text-align:center; padding:20px 0;">Rien trouvé pour ce parcours pour le moment.</p>';
+stepsHtml = '<p style="color:#9BA5C2; font-size:13px; text-align:center; padding:20px 0;">Rien trouvé pour cette proposition pour le moment.</p>';
 } else {
 const intros = ["Commence par", "Puis direction", "Pour finir"];
 stepsHtml = picked
