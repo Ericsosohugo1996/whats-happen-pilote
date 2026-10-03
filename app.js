@@ -8484,7 +8484,8 @@ function __nearMeShow(){
     });
     const arrSelect = document.getElementById("arrondissement-select");
     if (arrSelect) arrSelect.value = "";
-       if (typeof __ensureArrivalBackButton === "function") __ensureArrivalBackButton();
+        if (typeof __ensureArrivalBackButton === "function") __ensureArrivalBackButton();
+    if (typeof __ensureExploreCityBadge === "function") __ensureExploreCityBadge();
     __nearMeRenderTimeTabs();
     const anchor = document.getElementById("event-list-featured") || document.getElementById("event-list");
     if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "start" });
