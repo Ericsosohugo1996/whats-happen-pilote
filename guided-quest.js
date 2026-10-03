@@ -304,7 +304,113 @@ btn.textContent = "✨ Raconte-moi ce parcours";
 btn.disabled = false;
 });
 });
-document.getElementById("quest-redo").addEventListener("click", questShowStep1);
+document.getElementById("quest-ai-btn").addEventListener("click", function () {
+const btn = document.getElementById("quest-ai-btn");
+const resultBox = document.getElementById("quest-ai-result");
+btn.textContent = "✨ Rédaction en cours...";
+btn.disabled = true;
+const cityKey = state.userPos ? nearestCityKey() : state.city;
+const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+const now = new Date();
+const timeLabel = now.getHours() + "h" + String(now.getMinutes()).padStart(2, "0");
+const budgetDef = BUDGETS.find(function (b) { return b.key === questBudget; });
+const compagnieDef = COMPAGNIES.find(function (c) { return c.key === questCompagnie; });
+const items = picked.map(function (item) {
+return {
+title: item.ev.title,
+category: item.ev.category,
+date: item.ev.isPlace ? null : item.ev.date,
+time: item.ev.time || null,
+place: item.ev.place,
+distanceMin: walkingTimeLabel(item.dist).replace(" min à pied", ""),
+};
+});
+fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+items: items,
+question: catLabel,
+context: { cityName: cityName, time: timeLabel, budget: budgetDef ? budgetDef.label : null, compagnie: compagnieDef ? compagnieDef.label : null },
+}),
+})
+.then(function (r) { return r.json(); })
+.then(function (data) {
+resultBox.style.display = "block";
+resultBox.innerHTML =
+'<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Raconté par Whazup</div>' +
+'<div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text"></div>';
+btn.remove();
+const target = document.getElementById("quest-ai-text");
+const fullText = data.text || "Une erreur est survenue, réessaie.";
+let i = 0;
+function typeStep() {
+if (i < fullText.length) {
+target.textContent += fullText[i];
+i++;
+setTimeout(typeStep, 12);
+} else {
+target.innerHTML = whazupEnrichiToHtml(fullText);
+const followWrap = document.createElement("div");
+followWrap.style.cssText = "display:flex; gap:8px; margin-top:14px;";
+followWrap.innerHTML =
+'<input id="quest-ai-followup" type="text" placeholder="Réponds-lui..." style="flex:1; border:1px solid #eee; border-radius:999px; padding:10px 14px; font-size:13px; font-family:inherit;">' +
+'<button id="quest-ai-followup-btn" style="padding:10px 16px; border-radius:999px; border:none; background:#14213D; color:#fff; font-size:13px; cursor:pointer;">➤</button>';
+resultBox.appendChild(followWrap);
+document.getElementById("quest-ai-followup-btn").addEventListener("click", sendFollowup);
+document.getElementById("quest-ai-followup").addEventListener("keydown", function (e) {
+if (e.key === "Enter") sendFollowup();
+});
+}
+}
+typeStep();
+
+function sendFollowup() {
+const input = document.getElementById("quest-ai-followup");
+const question = input.value.trim();
+if (!question) return;
+const w = document.getElementById("quest-ai-followup");
+if (w && w.parentElement) w.parentElement.remove();
+const newBlock = document.createElement("div");
+newBlock.style.cssText = "margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.1);";
+newBlock.innerHTML = '<div style="font-size:12px; color:#9BA5C2; font-style:italic; margin-bottom:8px;">Toi : ' + question + '</div><div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text2">✨</div>';
+resultBox.appendChild(newBlock);
+fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+items: items,
+question: question,
+context: { cityName: cityName, time: timeLabel, budget: budgetDef ? budgetDef.label : null, compagnie: compagnieDef ? compagnieDef.label : null },
+}),
+})
+.then(function (r) { return r.json(); })
+.then(function (d2) {
+const target2 = document.getElementById("quest-ai-text2");
+target2.textContent = "";
+const text2 = d2.text || "Une erreur est survenue.";
+let j = 0;
+function typeStep2() {
+if (j < text2.length) {
+target2.textContent += text2[j];
+j++;
+setTimeout(typeStep2, 12);
+} else {
+target2.innerHTML = whazupEnrichiToHtml(text2);
+}
+}
+typeStep2();
+});
+}
+})
+.catch(function () {
+resultBox.style.display = "block";
+resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
+btn.textContent = "✨ Raconte-moi ce parcours";
+btn.disabled = false;
+});
+});
+    document.getElementById("quest-redo").addEventListener("click", questShowStep1);
 overlay.querySelectorAll(".quest-step-btn").forEach(function (btn) {
 btn.addEventListener("click", function () {
 overlay.remove();
