@@ -684,6 +684,12 @@ const existing = document.getElementById("arrival-screen-overlay");
 if (existing) existing.remove();
 const floating = document.getElementById("arrival-back-floating");
 if (floating) floating.remove();
+const exploreBadge = document.getElementById("explore-city-badge");
+if (exploreBadge) exploreBadge.remove();
+if (__exploreSavedUserPos !== undefined) {
+state.userPos = __exploreSavedUserPos;
+__exploreSavedUserPos = undefined;
+}
 
 const now = new Date();
 const hour = now.getHours();
