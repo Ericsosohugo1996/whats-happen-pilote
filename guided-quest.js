@@ -334,7 +334,7 @@ wzNavbarBind(overlay, function () { overlay.remove(); });
       '<div id="quest-budget-list" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;"></div>' +
       '<div style="color:#fff; font-size:13px; font-weight:700; margin-bottom:8px;">Avec qui ?</div>' +
       '<div id="quest-compagnie-list" style="display:flex; flex-wrap:wrap; gap:8px;"></div>' +
-      '<button id="quest-see-result" style="margin-top:16px;width:100%;padding:11px;border-radius:999px;border:none;background:#E85D3D;color:#fff;font-size:13px;font-weight:600;cursor:pointer;">Voir mon parcours</button>' +
+     '<button id="quest-see-result" style="margin-top:16px;width:100%;padding:11px;border-radius:999px;border:none;background:#E85D3D;color:#fff;font-size:13px;font-weight:600;cursor:pointer;">Voir ma proposition</button>' +
       "</div></div>";
 
     const ambianceList = document.getElementById("quest-ambiance-list");
