@@ -307,8 +307,6 @@ btn.disabled = false;
 document.getElementById("quest-ai-btn").addEventListener("click", function () {
 const btn = document.getElementById("quest-ai-btn");
 const resultBox = document.getElementById("quest-ai-result");
-btn.textContent = "✨ Rédaction en cours...";
-btn.disabled = true;
 const cityKey = state.userPos ? nearestCityKey() : state.city;
 const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
 const now = new Date();
@@ -325,45 +323,18 @@ place: item.ev.place,
 distanceMin: walkingTimeLabel(item.dist).replace(" min à pied", ""),
 };
 });
-fetch("https://tight-hill-1359.ericbrunebarbe.workers.dev/enrich", {
-method: "POST",
-headers: { "Content-Type": "application/json" },
-body: JSON.stringify({
-items: items,
-question: catLabel,
-context: { cityName: cityName, time: timeLabel, budget: budgetDef ? budgetDef.label : null, compagnie: compagnieDef ? compagnieDef.label : null },
-}),
-})
-.then(function (r) { return r.json(); })
-.then(function (data) {
+btn.remove();
 resultBox.style.display = "block";
 resultBox.innerHTML =
-'<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.3px;">✨ Raconté par Whazup</div>' +
-'<div style="font-family:\'Fraunces\', Georgia, serif; font-size:13.5px; line-height:1.6; color:#fff; white-space:pre-wrap;" id="quest-ai-text"></div>';
-btn.remove();
-const target = document.getElementById("quest-ai-text");
-const fullText = data.text || "Une erreur est survenue, réessaie.";
-let i = 0;
-function typeStep() {
-if (i < fullText.length) {
-target.textContent += fullText[i];
-i++;
-setTimeout(typeStep, 12);
-} else {
-target.innerHTML = whazupEnrichiToHtml(fullText);
-const followWrap = document.createElement("div");
-followWrap.style.cssText = "display:flex; gap:8px; margin-top:14px;";
-followWrap.innerHTML =
-'<input id="quest-ai-followup" type="text" placeholder="Réponds-lui..." style="flex:1; border:1px solid #eee; border-radius:999px; padding:10px 14px; font-size:13px; font-family:inherit;">' +
-'<button id="quest-ai-followup-btn" style="padding:10px 16px; border-radius:999px; border:none; background:#14213D; color:#fff; font-size:13px; cursor:pointer;">➤</button>';
-resultBox.appendChild(followWrap);
+'<div style="font-size:10.5px; color:#F2A57E; font-weight:700; margin-bottom:10px; text-transform:uppercase; letter-spacing:0.3px;">💬 Une question sur ce parcours ?</div>' +
+'<div style="display:flex; gap:8px;">' +
+'<input id="quest-ai-followup" type="text" placeholder="Demande un conseil, une astuce..." style="flex:1; border:1px solid #eee; border-radius:999px; padding:10px 14px; font-size:13px; font-family:inherit;">' +
+'<button id="quest-ai-followup-btn" style="padding:10px 16px; border-radius:999px; border:none; background:#14213D; color:#fff; font-size:13px; cursor:pointer;">➤</button>' +
+"</div>";
 document.getElementById("quest-ai-followup-btn").addEventListener("click", sendFollowup);
 document.getElementById("quest-ai-followup").addEventListener("keydown", function (e) {
 if (e.key === "Enter") sendFollowup();
 });
-}
-}
-typeStep();
 
 function sendFollowup() {
 const input = document.getElementById("quest-ai-followup");
@@ -400,15 +371,12 @@ target2.innerHTML = whazupEnrichiToHtml(text2);
 }
 }
 typeStep2();
-});
-}
 })
 .catch(function () {
-resultBox.style.display = "block";
-resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
-btn.textContent = "✨ Raconte-moi ce parcours";
-btn.disabled = false;
+const target2 = document.getElementById("quest-ai-text2");
+if (target2) target2.textContent = "Erreur lors de la génération, réessaie.";
 });
+}
 });
     document.getElementById("quest-redo").addEventListener("click", questShowStep1);
 overlay.querySelectorAll(".quest-step-btn").forEach(function (btn) {
