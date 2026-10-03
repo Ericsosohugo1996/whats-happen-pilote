@@ -6854,6 +6854,23 @@ const BROCANTE_CITY_SLUGS = {
   cergy: "Cergy-95",
 };
  
+const __townGeocodeCache = {};
+async function geocodeTownName(townName){
+  if (!townName) return null;
+  if (townName in __townGeocodeCache) return __townGeocodeCache[townName];
+  try {
+    const res = await fetch("https://api-adresse.data.gouv.fr/search/?q=" + encodeURIComponent(townName) + "&type=municipality&limit=1");
+    const data = await res.json();
+    const feature = data.features && data.features[0];
+    const coords = feature ? { lat: feature.geometry.coordinates[1], lng: feature.geometry.coordinates[0] } : null;
+    __townGeocodeCache[townName] = coords;
+    return coords;
+  } catch (err) {
+    __townGeocodeCache[townName] = null;
+    return null;
+  }
+}
+
 async function fetchBrocantesForCity(cityKey){
   const slug = BROCANTE_CITY_SLUGS[cityKey];
   if (!slug) return [];
@@ -6861,9 +6878,10 @@ async function fetchBrocantesForCity(cityKey){
     const res = await fetch(BROCANTE_WORKER_URL + "?city=" + encodeURIComponent(slug));
     const data = await res.json();
     const cityName = CITIES[cityKey].name;
-    return data
-      .filter(e => /brocante|vide-greniers/i.test(e.categorie))
-      .map(e => ({
+    const filtered = data.filter(e => /brocante|vide-greniers/i.test(e.categorie));
+    return await Promise.all(filtered.map(async e => {
+      const geocoded = await geocodeTownName(e.ville);
+      return {
         id: "vg-" + e.id + "-" + e.date,
         scene: "marche",
         city: cityKey,
@@ -6872,12 +6890,13 @@ async function fetchBrocantesForCity(cityKey){
         date: e.date,
         time: "08:00",
         place: e.ville + ", " + cityName,
-        lat: CITIES[cityKey].lat + (Math.random() - 0.5) * 0.01,
-        lng: CITIES[cityKey].lng + (Math.random() - 0.5) * 0.01,
+        lat: geocoded ? geocoded.lat : CITIES[cityKey].lat + (Math.random() - 0.5) * 0.01,
+        lng: geocoded ? geocoded.lng : CITIES[cityKey].lng + (Math.random() - 0.5) * 0.01,
         price: "Voir sur place",
         thumb: "",
         description: "Brocante / vide-greniers importé depuis vide-greniers.org. Voir la fiche complète : " + e.url,
-      }));
+      };
+    }));
   } catch (err) {
     console.error("Erreur lors de la récupération des brocantes (" + cityKey + ") :", err);
     return [];
