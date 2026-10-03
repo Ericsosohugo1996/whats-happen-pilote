@@ -8938,10 +8938,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
  
-  document.getElementById("btn-account-login").onclick = () => {
+   document.getElementById("btn-account-login").onclick = () => {
     hideAccountError();
-    const email = document.getElementById("account-email").value;
+    const email = document.getElementById("account-email").value.trim();
     const password = document.getElementById("account-password").value;
+    if (!email || !password) {
+      showAccountError("Remplis ton email et ton mot de passe avant de valider.");
+      return;
+    }
       auth.signInWithEmailAndPassword(email, password)
       .then(() => closeAccountModalAndResume())
       .catch(err => showAccountError(translateAuthError(err)));
@@ -8949,9 +8953,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
    document.getElementById("btn-account-signup").onclick = () => {
     hideAccountError();
-    const email = document.getElementById("account-email").value;
+    const email = document.getElementById("account-email").value.trim();
     const password = document.getElementById("account-password").value;
-    const credential = firebase.auth.EmailAuthProvider.credential(email, password);
+    if (!email || !password) {
+      showAccountError("Remplis ton email et ton mot de passe avant de valider.");
+      return;
+    }
+    const credential = firebase.auth.EmailAuthProvider.credential(email, password); 
     const current = auth.currentUser;
     const doSignup = (current && current.isAnonymous)
       ? current.linkWithCredential(credential)
