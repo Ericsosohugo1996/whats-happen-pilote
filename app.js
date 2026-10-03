@@ -8074,7 +8074,7 @@ function eventPhotoHTML(ev, extraImgStyle){
 // ---- temps de marche estimé (en minutes) à partir d'une distance en km ----
 // même formule utilisée partout où on affiche un temps de marche, pour ne plus la dupliquer.
 function walkMinutes(distKm){
-  return Math.max(2, Math.round((distKm * 12) / 5 / 5) * 5);
+  return Math.max(2, Math.round((distKm * 12) / 5) * 5);
 }
 function userLocationIcon(){
   return L.divIcon({
