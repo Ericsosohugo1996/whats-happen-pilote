@@ -33,14 +33,22 @@ function initChoiceScreen(show){
  
 document.getElementById("choice-locate").onclick = function(){
     proceedAfterClick(this, () => {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        },
-        () => {}
-      );
-      if (window.__arrivalShow) __arrivalShow();
-      else document.getElementById("btn-geoloc").click();
+      function showArrivalScreen(){
+        if (window.__arrivalShow) __arrivalShow();
+        else document.getElementById("btn-geoloc").click();
+      }
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            state.userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+            showArrivalScreen();
+          },
+          () => { showArrivalScreen(); },
+          { timeout: 8000 }
+        );
+      } else {
+        showArrivalScreen();
+      }
     });
   };
   document.getElementById("choice-visit").onclick = function(){
