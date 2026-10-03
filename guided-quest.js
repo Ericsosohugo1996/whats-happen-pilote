@@ -179,8 +179,9 @@ overlay.innerHTML =
 '<div style="width:100%; max-width:420px; box-sizing:border-box;">' +
 '<button id="quest-back" style="display:block; margin:0 0 14px; padding:8px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#fff; font-size:12px; cursor:pointer;">← Retour aux 3 choix</button>' +
 '<div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:20px;">' +
-'<div style="font-family:\'Fraunces\', Georgia, serif; font-size:19px; font-weight:600; color:#fff; margin-bottom:2px;">Que faire maintenant ?</div>' +
-'<div style="font-size:11px; color:#9BA5C2; margin-bottom:16px;">Je te propose : ' + catLabel + (subtitleParts.length ? " · " + subtitleParts.join(" · ") : "") + "</div>" +
+'<div style="font-family:\'Fraunces\', Georgia, serif; font-size:19px; font-weight:600; color:#fff; margin-bottom:6px;">Que faire maintenant ?</div>' +
+'<div style="font-family:\'Fraunces\', Georgia, serif; font-style:italic; font-size:14px; color:#fff; margin-bottom:8px; line-height:1.4;">' + questTimeIntroPhrase(picked) + "</div>" +
+'<div style="font-size:11px; color:#9BA5C2; margin-bottom:16px;">' + catLabel + (subtitleParts.length ? " · " + subtitleParts.join(" · ") : "") + "</div>" +
 (window.__weatherRainy ? '<div style="font-size:11.5px; color:#F2C879; margin-bottom:12px;">☔ Il pleut en ce moment — j\'ai privilégié des idées plutôt pour l\'intérieur.</div>' : "") +
 stepsHtml +
 "</div>" +
