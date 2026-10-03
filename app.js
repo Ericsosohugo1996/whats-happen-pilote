@@ -8526,6 +8526,9 @@ function __nearMeShow(){
       () => {
         const searching = document.getElementById("arrival-searching-overlay");
         if (searching) searching.remove();
+        if (typeof showShareToast === "function") {
+          showShareToast("📍 Localisation indisponible — si tu as ouvert ce lien depuis Mail ou une autre appli, ouvre-le plutôt dans Safari pour autoriser ta position.");
+        }
         apply();
       },
       { enableHighAccuracy: true, timeout: 8000 }
