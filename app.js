@@ -8947,7 +8947,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(err => showAccountError(translateAuthError(err)));
   };
 
-  document.getElementById("btn-account-signup").onclick = () => {
+   document.getElementById("btn-account-signup").onclick = () => {
     hideAccountError();
     const email = document.getElementById("account-email").value;
     const password = document.getElementById("account-password").value;
@@ -8962,12 +8962,37 @@ document.addEventListener("DOMContentLoaded", () => {
         if (err.code === "auth/email-already-in-use" || err.code === "auth/credential-already-in-use") {
           auth.signInWithEmailAndPassword(email, password)
             .then(() => closeAccountModalAndResume())
-            .catch(err2 => showAccountError(translateAuthError(err2)));
+            .catch(function(){
+              showAccountError("Un compte existe déjà avec cet email, mais ce mot de passe ne correspond pas. Utilise \"Mot de passe oublié ?\" juste au-dessus pour le réinitialiser.");
+            });
         } else {
           showAccountError(translateAuthError(err));
         }
       });
   };
+
+  const forgotPasswordLink = document.getElementById("account-forgot-password");
+  if (forgotPasswordLink) {
+    forgotPasswordLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      const errEl = document.getElementById("account-error");
+      const email = document.getElementById("account-email").value.trim();
+      if (!email) {
+        errEl.style.color = "#c0392b";
+        showAccountError("Tape d'abord ton email ci-dessus, puis clique à nouveau sur \"Mot de passe oublié ?\".");
+        return;
+      }
+      auth.sendPasswordResetEmail(email)
+        .then(() => {
+          errEl.style.color = "#2e7d32";
+          showAccountError("✓ Email envoyé ! Regarde ta boîte mail (et tes spams) pour choisir un nouveau mot de passe.");
+        })
+        .catch(err => {
+          errEl.style.color = "#c0392b";
+          showAccountError(translateAuthError(err));
+        });
+    });
+  }
 
   document.getElementById("btn-account-google").onclick = () => {
     hideAccountError();
