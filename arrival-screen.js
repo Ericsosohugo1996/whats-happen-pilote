@@ -578,6 +578,7 @@ function __arrivalShowCityView() {
   renderDiscover();
   if (typeof __nearMeRemoveTimeTabs === "function") __nearMeRemoveTimeTabs();
   __ensureArrivalBackButton();
+  __ensureExploreCityBadge();
 }
 
 function __ensureArrivalBackButton() {
@@ -593,6 +594,75 @@ function __ensureArrivalBackButton() {
     __arrivalShow();
   });
   document.body.appendChild(btn);
+}
+
+// ---- badge "📍 Ville · changer" affiché sur l'écran de résultats : permet de choisir une
+// autre ville à explorer sans toucher à la géolocalisation (restaurée au retour à l'accueil) ----
+function __ensureExploreCityBadge() {
+  const existing = document.getElementById("explore-city-badge");
+  if (existing) existing.remove();
+  const cityKey = state.city;
+  const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
+  const btn = document.createElement("button");
+  btn.id = "explore-city-badge";
+  btn.type = "button";
+  btn.textContent = "📍 " + cityName + " · changer";
+  btn.style.cssText =
+    "position:fixed; top:14px; left:50%; transform:translateX(-50%); padding:8px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:rgba(20,33,61,0.85); color:#fff; font-size:12px; font-weight:600; z-index:9000; cursor:pointer; backdrop-filter:blur(6px);";
+  btn.addEventListener("click", __exploreOpenCityPicker);
+  document.body.appendChild(btn);
+}
+
+function __exploreSwitchCity(newCityKey) {
+  if (__exploreSavedUserPos === undefined) __exploreSavedUserPos = state.userPos;
+  state.userPos = null;
+  state.city = newCityKey;
+  renderDiscover();
+  if (typeof __nearMeRemoveTimeTabs === "function") __nearMeRemoveTimeTabs();
+  __ensureArrivalBackButton();
+  __ensureExploreCityBadge();
+}
+
+function __exploreOpenCityPicker() {
+  const existing = document.getElementById("explore-city-picker-overlay");
+  if (existing) { existing.remove(); return; }
+  const overlay = document.createElement("div");
+  overlay.id = "explore-city-picker-overlay";
+  overlay.style.cssText =
+    "position:fixed; inset:0; background:rgba(20,33,61,0.75); z-index:9500; display:flex; align-items:center; justify-content:center; padding:20px;";
+  const curated = (typeof curatedCityKeys === "function") ? Array.from(curatedCityKeys()) : Object.keys(CITIES);
+  const sorted = curated.filter(function (k) { return CITIES[k]; }).sort(function (a, b) {
+    return CITIES[a].name.localeCompare(CITIES[b].name, "fr");
+  });
+  overlay.innerHTML =
+    '<div style="background:#14213D; border-radius:20px; padding:20px; width:100%; max-width:360px; max-height:70vh; display:flex; flex-direction:column; box-sizing:border-box;">' +
+    '<div style="color:#fff; font-weight:700; font-size:15px; margin-bottom:12px;">Explorer une autre ville</div>' +
+    '<input id="explore-city-picker-input" type="text" placeholder="Rechercher une ville..." style="width:100%; box-sizing:border-box; padding:10px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:13px; margin-bottom:12px;">' +
+    '<div id="explore-city-picker-list" style="overflow-y:auto; display:flex; flex-direction:column; gap:6px;"></div>' +
+    '<button type="button" id="explore-city-picker-close" style="margin-top:14px; padding:10px; border-radius:999px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:#9BA5C2; font-size:12px; cursor:pointer;">Fermer</button>' +
+    "</div>";
+  document.body.appendChild(overlay);
+  overlay.addEventListener("click", function (e) { if (e.target === overlay) overlay.remove(); });
+  document.getElementById("explore-city-picker-close").addEventListener("click", function () { overlay.remove(); });
+
+  function renderList(filterText) {
+    const listEl = document.getElementById("explore-city-picker-list");
+    const q = (filterText || "").trim().toLowerCase();
+    const matches = sorted.filter(function (k) { return !q || CITIES[k].name.toLowerCase().includes(q); }).slice(0, 40);
+    listEl.innerHTML = matches.map(function (k) {
+      return '<button type="button" class="explore-city-picker-item" data-city="' + k + '" style="text-align:left; padding:10px 14px; border-radius:12px; border:none; background:rgba(255,255,255,0.06); color:#fff; font-size:13px; cursor:pointer;">' + CITIES[k].name + "</button>";
+    }).join("") || '<p style="color:#9BA5C2; font-size:12px;">Aucune ville trouvée.</p>';
+    listEl.querySelectorAll(".explore-city-picker-item").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        overlay.remove();
+        __exploreSwitchCity(btn.dataset.city);
+      });
+    });
+  }
+  renderList("");
+  document.getElementById("explore-city-picker-input").addEventListener("input", function (e) {
+    renderList(e.target.value);
+  });
 }
 
 // ---- "Nouveautés" : événements récemment publiés ou marqués comme exclusifs ----
