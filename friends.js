@@ -236,9 +236,12 @@
       btn.disabled = true;
       if (window.__authReady) await window.__authReady;
       const currentUser = auth.currentUser;
-      if (!currentUser || currentUser.isAnonymous) {
+        if (!currentUser || currentUser.isAnonymous) {
+        window.__pendingFriendInviteUid = otherUid;
+        window.__pendingFriendInviteEmail = otherEmail;
         closeOverlay();
-        alert(tt("Connecte-toi avec un vrai compte pour devenir ami, puis rouvre ce lien."));
+        const accountModal = document.getElementById("account-modal");
+        if (accountModal) accountModal.classList.remove("hidden");
         return;
       }
       const ok = await createFriendship(otherUid, otherEmail);
