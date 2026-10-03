@@ -8911,7 +8911,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("account-password").value;
       auth.signInWithEmailAndPassword(email, password)
       .then(() => closeAccountModalAndResume())
-      .catch(err => showAccountError(err.message));
+      .catch(err => showAccountError(translateAuthError(err)));
   };
 
   document.getElementById("btn-account-signup").onclick = () => {
@@ -8929,9 +8929,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (err.code === "auth/email-already-in-use" || err.code === "auth/credential-already-in-use") {
           auth.signInWithEmailAndPassword(email, password)
             .then(() => closeAccountModalAndResume())
-            .catch(err2 => showAccountError(err2.message));
+            .catch(err2 => showAccountError(translateAuthError(err2)));
         } else {
-          showAccountError(err.message);
+          showAccountError(translateAuthError(err));
         }
       });
   };
@@ -8949,9 +8949,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (err.code === "auth/credential-already-in-use") {
           auth.signInWithCredential(err.credential)
             .then(() => closeAccountModalAndResume())
-            .catch(err2 => showAccountError(err2.message));
+            .catch(err2 => showAccountError(translateAuthError(err2)));
         } else if (err.code !== "auth/popup-closed-by-user" && err.code !== "auth/cancelled-popup-request") {
-          showAccountError(err.message);
+          showAccountError(translateAuthError(err));
         }
       });
   };
