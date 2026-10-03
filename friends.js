@@ -90,6 +90,12 @@
     try {
       const existingFriend = await db.collection("friendships").doc(friendPairId(user.uid, toUid)).get();
       if (existingFriend.exists) return "already-friends";
+    } catch (err) {
+      // la vérification préalable peut être refusée tant que l'amitié n'existe pas
+      // encore ; on continue quand même l'envoi de la demande plutôt que d'abandonner.
+      console.error("Vérification d'amitié existante impossible (on continue quand même) :", err);
+    }
+    try {
       await db.collection("friendRequests").add({
         fromUid: user.uid,
         fromEmail: user.email || "",
