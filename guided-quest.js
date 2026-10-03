@@ -83,9 +83,10 @@
       const dist = haversineKm(ref.lat, ref.lng, ev.lat, ev.lng);
       const ambianceDef = AMBIANCES.find(function (a) { return a.key === questAmbiance; });
       const compagnieDef = COMPAGNIES.find(function (c) { return c.key === questCompagnie; });
-      let boost = ambianceDef && ambianceDef.boost.includes(ev.category) ? 1 : 0;
+          let boost = ambianceDef && ambianceDef.boost.includes(ev.category) ? 1 : 0;
       if (compagnieDef && compagnieDef.boost.includes(ev.category)) boost += 1;
       if (questBudget === "petit" && eventIsFree(ev)) boost += 1;
+      if (window.__weatherRainy && WEATHER_INDOOR_CATS.includes(ev.category)) boost += 1;
       return { ev: ev, dist: dist, boost: boost };
     });
 
