@@ -602,6 +602,7 @@ function __ensureArrivalBackButton() {
 function __ensureExploreCityBadge() {
   const existing = document.getElementById("explore-city-badge");
   if (existing) existing.remove();
+  if (__exploreSavedUserPos === undefined) return;
   const cityKey = state.city;
   const cityName = CITIES[cityKey] ? CITIES[cityKey].name : "";
   const btn = document.createElement("button");
