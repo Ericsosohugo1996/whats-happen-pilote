@@ -33,6 +33,8 @@
     { key: "famille", label: "👨‍👩‍👧 En famille", boost: ["À voir", "Expo", "Marché", "Festival"] },
   ];
 
+  const WEATHER_INDOOR_CATS = ["À voir", "Théâtre", "Expo", "Musique", "Bar"];
+
   function eventIsFree(ev) {
     const p = (ev.price || "").toLowerCase();
     return p.includes("gratuit") || p.includes("libre");
