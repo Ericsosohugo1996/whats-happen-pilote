@@ -173,7 +173,7 @@ stepsHtml +
 "</div>" +
 '<button id="quest-ai-btn" style="width:100%; margin-top:14px; padding:13px; border-radius:999px; border:none; background:linear-gradient(90deg, #F2864B, #E85D3D); color:#fff; font-size:13px; font-weight:700; box-shadow:0 8px 18px -8px rgba(242,134,75,0.5); cursor:pointer;">✨ Raconte-moi ce parcours</button>' +
 '<div id="quest-ai-result" style="display:none; margin-top:14px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px;"></div>' +
-'<button id="quest-redo" style="width:100%; margin-top:14px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#9BA5C2; font-size:13px; cursor:pointer;">🔄 Refaire un parcours</button>' +
+'<button id="quest-redo" style="width:100%; margin-top:14px; padding:12px; border-radius:999px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:#9BA5C2; font-size:13px; cursor:pointer;">🔄 Refaire une proposition</button>' +
 "</div>" +
 wzNavbarHtml("decouvre");
 
