@@ -29,8 +29,9 @@ let __exploreSortMode = "distance";
 // ---- Bonhomme 1 : explorer par catégorie, triable distance/note ----
 
 // ---- "Tout voir" / "Autour de moi" : permet d'explorer une autre ville que sa position
-// réelle, sans désactiver le GPS pour autant (on restaure la position en quittant) ----
+// réelle, sans désactiver le GPS pour autant (on restaure la position et la ville en quittant) ----
 let __exploreSavedUserPos = undefined;
+let __exploreSavedCity = undefined;
 
 // ---- dérivée des catégories définies une seule fois dans app.js (CATEGORIES/CATEGORY_ICONS/CATEGORY_LABELS) ----
 // pour ne plus avoir à maintenir cette liste à deux endroits différents.
