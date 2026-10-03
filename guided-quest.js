@@ -52,10 +52,23 @@
   let questCompagnie = null;
   let questTemps = null;
 
-  function walkingTimeLabel(km) {
+    function walkingTimeLabel(km) {
     const minutes = Math.max(2, Math.round((km * 12) / 5) * 5);
     return minutes + " min à pied";
   }
+
+  function questTimeIntroPhrase(picked) {
+    const h = new Date().getHours();
+    const place = picked && picked.length && picked[0].ev ? picked[0].ev.title : null;
+    const placeTxt = place ? "<b>" + place + "</b>" : "une petite pause";
+    if (h >= 6 && h < 10) return "☕ Il est " + h + "h, commençons par un petit-déjeuner, direction " + placeTxt + ".";
+    if (h >= 10 && h < 12) return "🥐 Il est " + h + "h, pour cette fin de matinée, je te propose " + placeTxt + ".";
+    if (h >= 12 && h < 14) return "🍽️ Il est " + h + "h, c'est l'heure de déjeuner, direction " + placeTxt + ".";
+    if (h >= 14 && h < 17) return "☕ Il est " + h + "h, je te propose un petit café ou un matcha à " + placeTxt + ".";
+    if (h >= 17 && h < 20) return "🌇 Il est " + h + "h, c'est l'heure de l'apéro, je te propose " + placeTxt + ".";
+    if (h >= 20 && h < 23) return "🌙 Il est " + h + "h, pour cette soirée, direction " + placeTxt + ".";
+    return "🌃 Il est " + h + "h, pour les plus courageux, direction " + placeTxt + ".";
+  } 
 
   function questGetCandidates() {
     const ref = referencePoint();
