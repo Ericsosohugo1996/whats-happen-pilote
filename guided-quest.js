@@ -198,12 +198,6 @@ overlay.remove();
 __arrivalShow();
 });
 
-
-resultBox.innerHTML = '<div style="color:#c0392b; font-size:13px;">Erreur lors de la génération, réessaie.</div>';
-btn.textContent = "✨ Raconte-moi ce parcours";
-btn.disabled = false;
-});
-});
 document.getElementById("quest-ai-btn").addEventListener("click", function () {
 const btn = document.getElementById("quest-ai-btn");
 const resultBox = document.getElementById("quest-ai-result");
