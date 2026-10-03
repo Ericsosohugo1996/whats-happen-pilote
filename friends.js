@@ -439,4 +439,5 @@
 
   window.__renderFriendsScreen = renderFriendsScreen;
   window.__loadFriendsList = loadFriends;
+  window.__createFriendship = createFriendship;
 })();
