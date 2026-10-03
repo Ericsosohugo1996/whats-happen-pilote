@@ -311,6 +311,22 @@ function showAccountError(message){
 function hideAccountError(){
   document.getElementById("account-error").style.display = "none";
 }
+function translateAuthError(err){
+  const code = err && err.code;
+  if (code === "auth/invalid-credential" || code === "auth/wrong-password" || code === "auth/user-not-found") {
+    return "Aucun compte ne correspond à cet email et ce mot de passe. Si tu n'as pas encore de compte, utilise \"Créer un compte\".";
+  }
+  if (code === "auth/email-already-in-use") {
+    return "Un compte existe déjà avec cet email. Utilise \"Se connecter\" avec ton mot de passe.";
+  }
+  if (code === "auth/weak-password") {
+    return "Le mot de passe doit faire au moins 6 caractères.";
+  }
+  if (code === "auth/invalid-email") {
+    return "Cette adresse email n'est pas valide.";
+  }
+  return (err && err.message) || "Une erreur est survenue, réessaie.";
+}
 function closeAccountModalAndResume(){
   document.getElementById("account-modal").classList.add("hidden");
   const gateMsg = document.getElementById("account-gate-msg");
