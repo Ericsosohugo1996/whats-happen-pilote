@@ -615,7 +615,10 @@ function __ensureExploreCityBadge() {
 }
 
 function __exploreSwitchCity(newCityKey) {
-  if (__exploreSavedUserPos === undefined) __exploreSavedUserPos = state.userPos;
+  if (__exploreSavedUserPos === undefined) {
+    __exploreSavedUserPos = state.userPos;
+    __exploreSavedCity = state.city;
+  }
   state.userPos = null;
   state.city = newCityKey;
   renderDiscover();
