@@ -762,7 +762,9 @@ const exploreBadge = document.getElementById("explore-city-badge");
 if (exploreBadge) exploreBadge.remove();
 if (__exploreSavedUserPos !== undefined) {
 state.userPos = __exploreSavedUserPos;
+state.city = __exploreSavedCity;
 __exploreSavedUserPos = undefined;
+__exploreSavedCity = undefined;
 }
 
 const now = new Date();
