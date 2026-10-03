@@ -331,6 +331,17 @@ function closeAccountModalAndResume(){
   document.getElementById("account-modal").classList.add("hidden");
   const gateMsg = document.getElementById("account-gate-msg");
   if (gateMsg) gateMsg.classList.add("hidden");
+  if (window.__pendingFriendInviteUid) {
+    const inviteUid = window.__pendingFriendInviteUid;
+    const inviteEmail = window.__pendingFriendInviteEmail;
+    window.__pendingFriendInviteUid = null;
+    window.__pendingFriendInviteEmail = null;
+    if (typeof window.__createFriendship === "function") {
+      window.__createFriendship(inviteUid, inviteEmail).then(function(ok){
+        if (ok && typeof showShareToast === "function") showShareToast("✓ Ami ajouté !");
+      });
+    }
+  }
   if (state.pendingEventId) {
     const id = state.pendingEventId;
     state.pendingEventId = null;
