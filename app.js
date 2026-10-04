@@ -8232,8 +8232,14 @@ const CITY_PHOTOS = {
   strasbourg: "https://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg_Cathedral_Exterior_-_Diliff.jpg", 
   nantes: "https://commons.wikimedia.org/wiki/Special:FilePath/Marit%C3%A9.jpg",
   metz: "https://commons.wikimedia.org/wiki/Special:FilePath/Centre_Pompidou-Metz_02.jpg",
-  caen: "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG",
+   caen: "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade_sud_du_ch%C3%A2teau_de_Caen.JPG",
 }; 
+Object.keys(CITY_PHOTOS).forEach(function(k){
+  const url = CITY_PHOTOS[k];
+  if (url && url.indexOf("commons.wikimedia.org/wiki/Special:FilePath/") !== -1 && url.indexOf("?") === -1) {
+    CITY_PHOTOS[k] = url + "?width=900";
+  }
+});
 function renderLocateBar(){
     document.getElementById("locate-label").textContent = t("📍 Vous êtes à");
   document.getElementById("locate-value").textContent = state.userPos
