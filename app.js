@@ -8999,7 +8999,7 @@ document.addEventListener("DOMContentLoaded", () => {
       auth.sendPasswordResetEmail(email)
         .then(() => {
           errEl.style.color = "#2e7d32";
-          showAccountError("✓ Email envoyé ! Regarde ta boîte mail (et tes spams) pour choisir un nouveau mot de passe.");
+                 showAccountError("✓ Email envoyé ! S'il n'arrive pas sous 5 min, regarde dans tes spams : il vient de \"noreply@whazup-46bb4.firebaseapp.com\" avec pour objet \"Reset your password\" (en anglais, c'est normal).");  
         })
         .catch(err => {
           errEl.style.color = "#c0392b";
