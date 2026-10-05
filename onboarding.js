@@ -268,7 +268,8 @@
   window.openOnboarding = function () {
     var prefs = null;
     try { prefs = JSON.parse(localStorage.getItem(PREFS_KEY) || "null"); } catch (e) {}
-    var cur = null; try { cur = state.city; } catch (e) {}
+    // la ville par défaut de l'appli (Aix) n'est pas un choix : on ne la reprend que si une ville a vraiment été choisie
+    var cur = null; try { if (state.userPos || (typeof __hasPickedCity !== "undefined" && __hasPickedCity)) cur = state.city; } catch (e) {}
     ob.step = 1; ob.usePos = false; ob.q = ""; ob.err = "";
     ob.cityKey = (prefs && prefs.city) || cur || null;
     ob.wishes = {};
