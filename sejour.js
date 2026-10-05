@@ -599,6 +599,33 @@
     b.querySelector("#sejour-btn").onclick = open;
   }
 
+
+  // ---- le même bouton sur l'écran d'arrivée (Surprends-moi / Tout voir / Mon carnet / Nouveautés) ----
+  function ensureArrivalTile() {
+    var ref = document.querySelector('.arrival-opt[data-key="nouveautes"]') || document.querySelector('.arrival-opt[data-key="carnet"]');
+    if (!ref || !ref.parentNode || ref.parentNode.querySelector("#sejour-tile")) return;
+    var t = ref.cloneNode(true);
+    t.classList.remove("arrival-opt");
+    t.removeAttribute("data-key");
+    t.id = "sejour-tile";
+    t.style.gridColumn = "1 / -1";
+    t.style.background = "linear-gradient(135deg, rgba(240,200,120,0.22), rgba(31,111,120,0.30))";
+    t.style.border = "1px solid rgba(240,200,120,0.45)";
+    var spans = t.querySelectorAll("span");
+    if (spans[0]) spans[0].textContent = "🧳";
+    if (spans[1]) { spans[1].textContent = "Prépare ton séjour"; spans[1].style.color = "#fff"; spans[1].style.fontSize = "13px"; spans[1].style.fontWeight = "700"; }
+    t.onclick = function (e) { e.stopPropagation(); open(); };
+    ref.parentNode.appendChild(t);
+  }
+  try {
+    var pending = false;
+    new MutationObserver(function () {
+      if (pending) return;
+      pending = true;
+      setTimeout(function () { pending = false; try { ensureArrivalTile(); } catch (e) {} }, 150);
+    }).observe(document.body, { childList: true, subtree: true });
+  } catch (e) {}
+
   window.openSejour = open;
   window.__wzSejour = { composePlan: composePlan, swapStop: swapStop, buildIcs: buildIcs, planText: planText, groupOf: groupOf };
 
