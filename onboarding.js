@@ -283,17 +283,19 @@
   }
 
 
-  // ---- petit lien « Mes envies et rappels » sur l'accueil de la ville ----
+  // ---- lien « Mes envies et rappels » rangé dans le profil (bouton 👤) ----
   function ensurePrefsEntries() {
-    var anchor = document.getElementById("sejour-block") || document.getElementById("itinerary-block") || document.getElementById("surprise-block");
-    if (anchor && anchor.parentNode && !document.getElementById("prefs-block")) {
-      var b = document.createElement("div");
-      b.id = "prefs-block";
-      b.style.cssText = "margin:-6px 16px 16px;text-align:center;";
-      b.innerHTML = '<button type="button" id="prefs-btn" style="border:0;background:none;color:#6C5CE7;font-size:13.5px;font-weight:700;cursor:pointer;padding:6px 10px;">⚙️ Mes envies et rappels</button>';
-      anchor.parentNode.insertBefore(b, anchor.nextSibling);
-      b.querySelector("#prefs-btn").onclick = function () { window.openOnboarding(); };
-    }
+    var hero = document.querySelector("#account-modal .account-hero");
+    if (!hero || !hero.parentNode || document.getElementById("prefs-link")) return;
+    var a = document.createElement("button");
+    a.type = "button"; a.id = "prefs-link";
+    a.textContent = "⚙️ Mes envies et rappels";
+    a.style.cssText = "display:block;width:100%;margin:2px 0 14px;border:0;background:none;color:#6C5CE7;font-size:14px;font-weight:700;cursor:pointer;padding:8px;font-family:inherit;text-align:center;";
+    a.onclick = function () {
+      var m = document.getElementById("account-modal"); if (m) m.classList.add("hidden");
+      window.openOnboarding();
+    };
+    hero.parentNode.insertBefore(a, hero.nextSibling);
   }
   try {
     var pend = false;
