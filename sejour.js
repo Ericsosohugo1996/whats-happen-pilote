@@ -586,7 +586,14 @@
       try { cur = state && state.city; } catch (e) {}
       if (!ui.cityKey) ui.cityKey = (saved && saved.city) || (cur && ui.cities.some(function (c) { return c.key === cur; }) ? cur : (ui.cities[0] && ui.cities[0].key));
       if (!ui.start) { ui.start = nextFriday(); ui.end = addDays(ui.start, 2); }
-      if (!Object.keys(ui.groups).length) DEFAULT_GROUPS.forEach(function (g) { ui.groups[g] = true; });
+      if (!Object.keys(ui.groups).length) {
+        var prefs = null;
+        try { prefs = JSON.parse(localStorage.getItem("wz_prefs_v1") || "null"); } catch (e) {}
+        var MAP = { musique: ["musique"], culture: ["culture", "lieux"], festival: ["fetes"], marche: ["marches"], sport: ["sport"], soiree: ["bars", "musique"], brocante: ["marches"] };
+        var fromPrefs = [];
+        if (prefs && prefs.wishes) prefs.wishes.forEach(function (w) { (MAP[w] || []).forEach(function (g) { if (fromPrefs.indexOf(g) < 0) fromPrefs.push(g); }); });
+        (fromPrefs.length ? fromPrefs.concat(["lieux"]) : DEFAULT_GROUPS).forEach(function (g) { ui.groups[g] = true; });
+      }
       if (saved && !ui.plan) {
         ui.plan = saved; ui.cityKey = saved.city; ui.start = saved.start; ui.end = saved.end; ui.rhythm = saved.rhythm;
         ui.groups = {}; saved.groups.forEach(function (g) { ui.groups[g] = true; });
