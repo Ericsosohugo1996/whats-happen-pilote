@@ -10,7 +10,7 @@ function tokens(s) {
   return norm(s).split(/[^a-z0-9]+/).filter((w) => w.length >= 3 && !STOP.has(w));
 }
 // un article qui parle d'une rue, d'un quartier, d'une gare... n'est pas le lieu lui-même
-const NOT_A_PLACE = /^(rue|avenue|boulevard|place|quartier|esplanade|gare|station|pont|quai|passage|square|allee|chemin|route|arrondissement|canton|commune|ligne|metro)\b|funiculaire|\bmetro\b|\bligne \d/;
+const NOT_A_PLACE = /^(rue|avenue|boulevard|place|quartier|esplanade|gare|station|pont|quai|passage|square|allee|chemin|route|arrondissement|canton|commune|ligne|metro|impasse|villa|sentier|ruelle|cours|voie|statue|fontaine|cimetiere|stele|plaque)\b|funiculaire|\bmetro\b|\bligne \d/;
 const RELIGIOUS = /eglise|cathedrale|basilique|chapelle|abbaye|collegiale|temple|synagogue|mosquee/;
 const TYPE_WORD = /\b(musee|museum|chateau|eglise|cathedrale|basilique|chapelle|abbaye|collegiale|theatre|palais|domaine|hotel|jardin|parc|maison|fort|citadelle|monument|site)\b/;
 
@@ -19,6 +19,8 @@ function nameMatches(placeTitle, articleTitle) {
   if (NOT_A_PLACE.test(an)) return false;
   // article avec précision entre parenthèses sans type de lieu ("Grimaud (Var)") : c'est une commune
   if (/\([^)]*\)\s*$/.test(an) && !TYPE_WORD.test(an)) return false;
+  // un théâtre doit correspondre à un article de théâtre / salle de spectacle
+  if (/theatre/.test(pn) && !/theatre|comedie|opera|salle|bouffes|folies|olympia/.test(an)) return false;
   // une église ne correspond pas à un théâtre (et inversement)
   if (RELIGIOUS.test(an) !== RELIGIOUS.test(pn) && TYPE_WORD.test(an) && TYPE_WORD.test(pn)) return false;
   const p = tokens(placeTitle), a = tokens(articleTitle);
