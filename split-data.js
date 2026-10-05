@@ -4,6 +4,7 @@
 // Lancé automatiquement par le robot GitHub (.github/workflows/split-data.yml) après chaque mise à jour des gros fichiers.
 const fs = require("fs");
 const path = require("path");
+const { nameMatches } = require("./photo-match.js");
 
 const SOURCES = [
   { kind: "events", file: "datatourisme-events.json" },
@@ -28,7 +29,7 @@ for (const { kind, file } of SOURCES) {
     let n = 0;
     for (const ev of items) {
       const c = cache[ev.id];
-      if (c && c.u && !ev.photo) { ev.photo = c.u; ev.photoCredit = "Wikimedia Commons"; n++; }
+      if (c && c.u && !ev.photo && nameMatches(ev.title, c.w)) { ev.photo = c.u; ev.photoCredit = "Wikimedia Commons"; n++; }
     }
     console.log("photos ajoutées aux lieux :", n);
   }
