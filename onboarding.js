@@ -264,11 +264,45 @@
     fetch("/data/index.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
       .then(function (idx) { ob.counts = idx; render(); });
   }
-  window.openOnboarding = function () { ob.step = 1; ob.cityKey = null; ob.usePos = false; ob.q = ""; ob.wishes = {}; start2(); };
+  // rouvre les 3 écrans avec les choix déjà enregistrés (bouton « Mes envies et rappels »)
+  window.openOnboarding = function () {
+    var prefs = null;
+    try { prefs = JSON.parse(localStorage.getItem(PREFS_KEY) || "null"); } catch (e) {}
+    var cur = null; try { cur = state.city; } catch (e) {}
+    ob.step = 1; ob.usePos = false; ob.q = ""; ob.err = "";
+    ob.cityKey = (prefs && prefs.city) || cur || null;
+    ob.wishes = {};
+    if (prefs && prefs.wishes) prefs.wishes.forEach(function (w) { ob.wishes[w] = true; });
+    ob.reminders = { weekend: true, before: true, favorite: true };
+    if (prefs && prefs.reminders && (prefs.reminders.weekend || prefs.reminders.before || prefs.reminders.favorite)) ob.reminders = prefs.reminders;
+    start2();
+  };
   function start2() {
     fetch("/data/index.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
       .then(function (idx) { ob.counts = idx; render(); });
   }
+
+
+  // ---- petit lien « Mes envies et rappels » sur l'accueil de la ville ----
+  function ensurePrefsEntries() {
+    var anchor = document.getElementById("sejour-block") || document.getElementById("itinerary-block") || document.getElementById("surprise-block");
+    if (anchor && anchor.parentNode && !document.getElementById("prefs-block")) {
+      var b = document.createElement("div");
+      b.id = "prefs-block";
+      b.style.cssText = "margin:-6px 16px 16px;text-align:center;";
+      b.innerHTML = '<button type="button" id="prefs-btn" style="border:0;background:none;color:#6C5CE7;font-size:13.5px;font-weight:700;cursor:pointer;padding:6px 10px;">⚙️ Mes envies et rappels</button>';
+      anchor.parentNode.insertBefore(b, anchor.nextSibling);
+      b.querySelector("#prefs-btn").onclick = function () { window.openOnboarding(); };
+    }
+  }
+  try {
+    var pend = false;
+    new MutationObserver(function () {
+      if (pend) return; pend = true;
+      setTimeout(function () { pend = false; try { ensurePrefsEntries(); } catch (e) {} }, 400);
+    }).observe(document.body, { childList: true, subtree: true });
+    setTimeout(function () { try { ensurePrefsEntries(); } catch (e) {} }, 2000);
+  } catch (e) {}
 
   // on attend que l'appli soit prête (CITIES et state existent)
   function boot() { try { if (typeof CITIES === "undefined" || typeof state === "undefined") return setTimeout(boot, 300); } catch (e) { return setTimeout(boot, 300); } start(); }
