@@ -167,9 +167,36 @@
     "#wz-ci-toggle{margin:8px 16px !important;padding:11px 16px !important}" +
     "#btn-newsletter{margin:8px 0 10px 16px !important}" +
     "#btn-discover-back{margin:10px 0 0 16px !important}" +
+    /* v5 : photos plus éclatantes (cartes, bandeau de ville, fiche) */
+    ".event-card .thumb img,.featured-photo,#detail-hero img{filter:brightness(1.07) saturate(1.2) contrast(1.05)}" +
+    "#view-discover .locate-bar:has(.locate-bar-photo.visible){padding:0 !important;border:0 !important}" +
+    "#view-discover .locate-bar-photo.visible{position:relative !important;min-height:132px;display:flex !important;align-items:flex-end;justify-content:flex-start;text-align:left;padding:14px 18px !important;border-radius:18px !important;overflow:hidden}" +
+    "#view-discover .locate-bar-photo.visible::before{content:'' !important;position:absolute;inset:0;background:var(--wz-city) center/cover no-repeat;filter:brightness(1.1) saturate(1.22) contrast(1.05);border-radius:inherit}" +
+    "#view-discover .locate-bar-photo.visible::after{content:'' !important;position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,21,38,0) 38%,rgba(11,21,38,.74) 100%);border-radius:inherit}" +
+    "#view-discover .locate-bar-photo.visible .locate-info{position:relative;z-index:2;text-align:left;text-shadow:0 1px 8px rgba(0,0,0,.55)}" +
+    "#view-discover .locate-bar-photo.visible .locate-value{font-size:26px !important}" +
     "#souvenir-fab{width:44px !important;height:44px !important;font-size:18px !important;right:14px !important;bottom:96px !important;opacity:.92;box-shadow:0 3px 10px rgba(0,0,0,.35) !important}";
   document.head.appendChild(css);
   try { polish(); skeleton(); } catch (e) {}
+
+  /* v5 : la photo de la ville (posée en style direct par renderLocateBar) est aussi exposée en variable CSS,
+     pour pouvoir l'afficher avec un éclaircissement sous le texte, sans toucher à app.js */
+  var origLocate = window.renderLocateBar;
+  if (typeof origLocate === "function") {
+    window.renderLocateBar = function () {
+      var r = origLocate.apply(this, arguments);
+      try {
+        var el = document.getElementById("locate-bar-photo");
+        if (el) {
+          var bg = el.style.backgroundImage;
+          if (bg && bg !== "none") el.style.setProperty("--wz-city", bg);
+          else el.style.removeProperty("--wz-city");
+        }
+      } catch (e) {}
+      return r;
+    };
+    try { window.renderLocateBar(); } catch (e) {}
+  }
 
   /* v4 : cartes d'événement plus honnêtes.
      - prix inconnu ("Voir sur place") : on n'affiche plus « Payant »
