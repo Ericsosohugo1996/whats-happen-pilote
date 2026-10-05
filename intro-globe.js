@@ -5,7 +5,7 @@
 (function(){
   "use strict";
   var KEY="wz_intro_day", today=new Date().toISOString().slice(0,10), force=/[?&]intro(=|&|$)/.test(location.search);
-  try{ if(!force && localStorage.getItem(KEY)===today) return; }catch(e){}
+  
   if(!force && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var cvTest=document.createElement("canvas");
   if(!cvTest.getContext||!cvTest.getContext("2d")) return;
