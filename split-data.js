@@ -21,6 +21,17 @@ for (const { kind, file } of SOURCES) {
   if (!fs.existsSync(file)) { console.log("absent :", file); continue; }
   const items = JSON.parse(fs.readFileSync(file, "utf8"));
   if (!Array.isArray(items)) { console.log("format inattendu :", file); continue; }
+  // photos des lieux (trouvées par enrich-photos.js) : on les ajoute aux lieux qui n'en ont pas
+  if (kind === "places") {
+    let cache = {};
+    try { cache = JSON.parse(fs.readFileSync("photos-cache.json", "utf8")); } catch (e) {}
+    let n = 0;
+    for (const ev of items) {
+      const c = cache[ev.id];
+      if (c && c.u && !ev.photo) { ev.photo = c.u; ev.photoCredit = "Wikimedia Commons"; n++; }
+    }
+    console.log("photos ajoutées aux lieux :", n);
+  }
   const byCity = {};
   for (const ev of items) (byCity[safe(ev.city)] = byCity[safe(ev.city)] || []).push(ev);
   const dir = path.join(OUT, kind);
