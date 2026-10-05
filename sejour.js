@@ -373,6 +373,11 @@
     "#wz-sj .b1{border:0;background:#1f6f78;color:#fff}#wz-sj .b2{border:1.5px solid #f0c878;background:transparent;color:#f0c878}",
     "#wz-sj .note{border-radius:14px;padding:12px 14px;background:#162340;font-size:13.5px;line-height:1.45;color:#c3c8d6}",
     "#wz-sj .note b{display:block;font-size:12px;color:#8f98ad;letter-spacing:.04em;margin-bottom:4px}",
+    "#wz-sj .mlist{display:flex;flex-direction:column;gap:8px}",
+    "#wz-sj .mrow{display:flex;align-items:center;gap:12px;text-align:left;border:0;border-radius:14px;padding:10px 12px;background:#1b2a4d;color:#fff;cursor:pointer;font-family:inherit}",
+    "#wz-sj .mn{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}",
+    "#wz-sj .mt{min-width:0}#wz-sj .mt b{display:block;font-size:14.5px;line-height:1.25}#wz-sj .mt i{font-style:normal;font-size:12px;color:#8f98ad}",
+    "#wz-sj .leaflet-container{font-family:inherit}",
     "#wz-sj button:focus-visible,#wz-sj select:focus-visible,#wz-sj input:focus-visible{outline:2px solid #f0c878;outline-offset:2px}"
   ].join("\n");
 
@@ -386,6 +391,7 @@
     return root;
   }
   function closeSj() {
+    destroyMap();
     if (root) { root.remove(); root = null; }
     document.body.style.overflow = ui._bodyOverflow || "";
   }
@@ -478,7 +484,7 @@
           var more = s.alt.length > 2 ? " et " + (s.alt.length - 2) + " autre" + (s.alt.length > 3 ? "s" : "") : "";
           alt = '<div class="sub" style="margin-top:6px;color:#f0c878">À la même heure aussi : ' + shown + more + "</div>";
         }
-        var maps = validPt(s) ? "https://www.google.com/maps/search/?api=1&query=" + s.lat + "," + s.lng : "";
+        var maps = validPt(s);
         if (i > 0) {
           var h = hop(d.stops[i - 1], s);
           if (h) body += '<div class="hop">↓ ' + esc(h) + "</div>";
@@ -487,13 +493,12 @@
           '<div class="body"><div class="kind" style="color:' + col + '">' + kindTxt + '</div><div class="ttl">' + esc(s.title) + "</div>" +
           (sub.length ? '<div class="sub">' + sub.join(" · ") + "</div>" : "") + alt +
           '<div class="acts">' +
-            (maps ? '<a class="lnk" href="' + esc(maps) + '" target="_blank" rel="noopener">Y aller</a>' : "") +
+            (maps ? '<button type="button" class="lnk" data-map="' + i + '">Voir sur la carte</button>' : "") +
             (!s.fixed ? '<button type="button" class="lnk dim" data-swap="' + i + '">Autre idée</button>' : "") +
             '<button type="button" class="lnk dim" data-del="' + i + '">Retirer</button>' +
           "</div></div></div>";
       });
     }
-    var route = mapsDay(d);
     r.innerHTML =
       '<div class="in">' +
         '<div class="top"><button type="button" class="x" data-act="edit">‹ Modifier</button><button type="button" class="x" data-act="close">Fermer</button></div>' +
@@ -501,11 +506,59 @@
         '<p class="lead" style="font-size:14px;color:#aeb5c8">' + total + (total > 1 ? " sorties" : " sortie") + " au programme · " + p.days.length + (p.days.length > 1 ? " jours" : " jour") + "</p></div>" +
         '<div class="tabs" role="tablist">' + tabs + "</div>" +
         '<div><div style="font-family:Georgia,serif;font-size:21px;font-weight:700;margin-bottom:10px">' + esc(dayLong(d.date)) + "</div>" + body + "</div>" +
-        (route && d.stops.length > 1 ? '<a class="lnk" style="text-align:center;padding:4px" href="' + esc(route) + '" target="_blank" rel="noopener">Voir le parcours du jour sur la carte</a>' : "") +
+        (d.stops.some(validPt) ? '<button type="button" class="lnk" style="text-align:center;padding:4px" data-map="day">🗺️ Voir le parcours du jour sur la carte</button>' : "") +
         '<div class="exp"><button type="button" class="b1" data-act="ics">Ajouter au calendrier</button><button type="button" class="b2" data-act="share">Partager</button></div>' +
         '<div class="note"><b>IL RESTE À PRÉVOIR DE TON CÔTÉ</b>Où dormir, comment y aller et où manger. Whazup te propose un programme culturel et festif, pas une réservation. Les distances sont à vol d’oiseau : vérifie les horaires avant de partir.</div>' +
       "</div>";
     r.scrollTop = 0;
+  }
+
+
+  // ---- carte dans le site (Leaflet, comme le reste de l'app) ----
+  var sjMap = null;
+  function destroyMap() { if (sjMap) { try { sjMap.remove(); } catch (e) {} sjMap = null; } }
+  function numIcon(n, col, big) {
+    var sz = big ? 38 : 30;
+    return L.divIcon({ className: "wz-sj-pin", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2],
+      html: '<div style="width:' + sz + 'px;height:' + sz + 'px;border-radius:50%;background:' + col + ';color:#fff;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;font:800 ' + (big ? 16 : 14) + 'px system-ui,sans-serif">' + n + "</div>" });
+  }
+  function renderMap(focus) {
+    var r = ensureRoot(), p = ui.plan, d = p.days[ui.day];
+    destroyMap();
+    var pts = [];
+    d.stops.forEach(function (s, i) { if (validPt(s)) pts.push({ s: s, n: i + 1 }); });
+    var list = pts.map(function (x) {
+      return '<button type="button" class="mrow" data-focus="' + x.n + '"><span class="mn" style="background:' + kindColor(x.s) + '">' + x.n + '</span><span class="mt"><b>' + esc(x.s.title) + "</b><i>" + esc(x.s.time || SLOT_LABEL[x.s.slot]) + "</i></span></button>";
+    }).join("");
+    r.innerHTML =
+      '<div class="in" style="height:100%;min-height:0">' +
+        '<div class="top"><button type="button" class="x" data-act="back">‹ Retour au programme</button><button type="button" class="x" data-act="close">Fermer</button></div>' +
+        '<div><p class="eyebrow">Parcours du jour</p><div style="font-family:Georgia,serif;font-size:21px;font-weight:700">' + esc(dayLong(d.date)) + "</div></div>" +
+        '<div id="wz-sj-map" style="height:46vh;min-height:280px;border-radius:16px;overflow:hidden;background:#1b2a4d"></div>' +
+        '<div class="mlist">' + list + "</div>" +
+        '<div class="sub" style="text-align:center">Distances à vol d’oiseau · fond de carte © OpenStreetMap</div>' +
+      "</div>";
+    r.scrollTop = 0;
+    var box = r.querySelector("#wz-sj-map");
+    if (typeof L === "undefined" || !L.map) { box.innerHTML = '<div class="empty">La carte n’a pas pu se charger. Vérifie ta connexion.</div>'; return; }
+    try {
+      sjMap = L.map(box, { zoomControl: true, attributionControl: false, scrollWheelZoom: false });
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19 }).addTo(sjMap);
+      var latlngs = pts.map(function (x) { return [x.s.lat, x.s.lng]; });
+      if (latlngs.length > 1) L.polyline(latlngs, { color: "#e85d3d", weight: 4, opacity: .85, dashArray: "2 8", lineCap: "round" }).addTo(sjMap);
+      sjMap.__pins = {};
+      pts.forEach(function (x) {
+        var m = L.marker([x.s.lat, x.s.lng], { icon: numIcon(x.n, kindColor(x.s), x.n === focus), title: x.s.title }).addTo(sjMap);
+        m.bindPopup('<b>' + esc(x.s.title) + "</b><br>" + esc(x.s.time || SLOT_LABEL[x.s.slot]));
+        sjMap.__pins[x.n] = m;
+      });
+      if (latlngs.length === 1 || focus) {
+        var f = pts.filter(function (x) { return x.n === focus; })[0] || pts[0];
+        sjMap.setView([f.s.lat, f.s.lng], 16);
+        if (sjMap.__pins[f.n]) sjMap.__pins[f.n].openPopup();
+      } else sjMap.fitBounds(latlngs, { padding: [34, 34], maxZoom: 16 });
+      setTimeout(function () { if (sjMap) sjMap.invalidateSize(); }, 120);
+    } catch (e) { box.innerHTML = '<div class="empty">La carte n’a pas pu s’afficher.</div>'; }
   }
 
   function showToast(msg) {
@@ -545,7 +598,14 @@
     if (!t || !root || !root.contains(t)) return;
     var act = t.getAttribute("data-act");
     if (act === "close") return closeSj();
-    if (act === "edit") return renderForm();
+    if (act === "edit") { destroyMap(); return renderForm(); }
+    if (act === "back") { destroyMap(); return renderResult(); }
+    if (t.hasAttribute("data-map")) { var mv = t.getAttribute("data-map"); return renderMap(mv === "day" ? 0 : +mv + 1); }
+    if (t.hasAttribute("data-focus")) {
+      var fn = +t.getAttribute("data-focus");
+      if (sjMap && sjMap.__pins && sjMap.__pins[fn]) { sjMap.setView(sjMap.__pins[fn].getLatLng(), 16); sjMap.__pins[fn].openPopup(); var bx = root.querySelector("#wz-sj-map"); if (bx) root.scrollTop = 0; }
+      return;
+    }
     if (act === "compose") return compose();
     if (act === "ics") { downloadIcs(ui.plan); return showToast("Calendrier prêt : ouvre le fichier"); }
     if (act === "share") {
