@@ -128,7 +128,8 @@ function __applyDiscoverMoodFilter() {
   const listEl = document.getElementById("event-list");
   const emptyEl = document.getElementById("empty-state");
   if (!listEl) return;
-  const all = allEvents();
+   const byId = new Map();
+  allEvents().forEach(function (e) { byId.set(String(e.id), e); });
   const cards = listEl.querySelectorAll(".event-card");
   let visibleCount = 0;
   cards.forEach(function (card) {
