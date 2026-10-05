@@ -153,7 +153,41 @@
     ".chip-btn:active,.bottomnav button:active{transform:scale(.95)}" +
     "@media (prefers-reduced-motion:reduce){.wz-skel-card i,.wz-skel-card b{animation:none}.event-card:active,.featured-card:active,.stat:active,.chip-btn:active{transform:none}}" +
     "#btn-newsletter{display:inline-block !important;width:auto !important;margin:10px 0 14px 16px !important;padding:8px 14px !important;font-size:12.5px !important;font-weight:600 !important;background:transparent !important;color:rgba(255,255,255,.85) !important;border:1px solid rgba(255,255,255,.22) !important;border-radius:999px !important;box-shadow:none !important}" +
-    "#btn-discover-back{display:inline-block !important;margin:14px 0 0 16px !important}";
+    "#btn-discover-back{display:inline-block !important;margin:14px 0 0 16px !important}" +
+    /* v4 : blocs de l'accueil plus compacts */
+    "#view-discover .stats-banner{gap:8px !important;margin:0 0 12px !important}" +
+    "#view-discover .stats-banner .stat{padding:9px 4px 8px !important;min-height:0 !important;border-radius:14px !important}" +
+    "#view-discover .stats-banner .stat-icon{display:none !important}" +
+    "#view-discover .stats-banner .num{font-size:22px !important;line-height:1.05 !important;margin:0 !important}" +
+    "#view-discover .stats-banner .label{font-size:9.5px !important;letter-spacing:.03em !important;margin-top:3px !important;line-height:1.15 !important}" +
+    "#view-discover .week-strip-banner{margin:0 0 10px !important}" +
+    "#view-discover .week-strip-hint{padding:0 2px 5px !important}" +
+    "#view-discover .week-day-btn{flex-basis:50px !important;padding:6px 3px !important;gap:1px !important;border-radius:12px !important}" +
+    "#view-discover .week-day-btn .week-day-count{font-size:14px !important}" +
+    "#wz-ci-toggle{margin:8px 16px !important;padding:11px 16px !important}" +
+    "#btn-newsletter{margin:8px 0 10px 16px !important}" +
+    "#btn-discover-back{margin:10px 0 0 16px !important}" +
+    "#souvenir-fab{width:44px !important;height:44px !important;font-size:18px !important;right:14px !important;bottom:96px !important;opacity:.92;box-shadow:0 3px 10px rgba(0,0,0,.35) !important}";
   document.head.appendChild(css);
   try { polish(); skeleton(); } catch (e) {}
+
+  /* v4 : cartes d'événement plus honnêtes.
+     - prix inconnu ("Voir sur place") : on n'affiche plus « Payant »
+     - plus de « · » orphelin quand l'heure est vide */
+  var origCard = window.eventCardHTML;
+  if (typeof origCard === "function") {
+    window.eventCardHTML = function (ev) {
+      var h = origCard.apply(this, arguments);
+      try {
+        if (typeof h === "string") {
+          var p = ev && ev.price ? String(ev.price).toLowerCase() : "";
+          if (!p || p.indexOf("voir sur place") !== -1) {
+            h = h.replace(/<div class="dist paid">[^<]*<\/div>/, "");
+          }
+          h = h.replace(/\s*·\s*(<\/div>)/g, "$1");
+        }
+      } catch (e) {}
+      return h;
+    };
+  }
 })();
