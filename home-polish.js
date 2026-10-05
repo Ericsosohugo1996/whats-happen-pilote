@@ -185,6 +185,9 @@
             h = h.replace(/<div class="dist paid">[^<]*<\/div>/, "");
           }
           h = h.replace(/\s*·\s*(<\/div>)/g, "$1");
+          if (ev && ev.photo && ev.photoCredit) {
+            h = h.replace(/(<div class="meta">[\s\S]*?<\/div>)/, "$1<div style=\"font-size:10.5px;color:#8a8f98;margin-top:3px\">📷 " + String(ev.photoCredit).replace(/[<>&"]/g, "") + "</div>");
+          }
         }
       } catch (e) {}
       return h;
