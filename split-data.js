@@ -23,6 +23,16 @@ for (const { kind, file } of SOURCES) {
   if (!fs.existsSync(file)) { console.log("absent :", file); continue; }
   const items = JSON.parse(fs.readFileSync(file, "utf8"));
   if (!Array.isArray(items)) { console.log("format inattendu :", file); continue; }
+  // lieux OpenStreetMap (osm-places.js) : ils complètent les villes où DataTourisme n'a presque rien
+  if (kind === "places" && fs.existsSync("osm-places.json")) {
+    try {
+      const extra = JSON.parse(fs.readFileSync("osm-places.json", "utf8"));
+      const have = new Set(items.map((p) => p.id));
+      let added = 0;
+      if (Array.isArray(extra)) for (const p of extra) if (!have.has(p.id)) { items.push(p); added++; }
+      console.log("lieux OpenStreetMap ajoutés :", added);
+    } catch (e) { console.log("osm-places.json illisible :", e.message); }
+  }
   // photos des lieux (trouvées par enrich-photos.js) : on les ajoute aux lieux qui n'en ont pas
   if (kind === "places") {
     let cache = {};
