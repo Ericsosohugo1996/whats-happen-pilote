@@ -4,6 +4,7 @@
 // 2) la fiche "À propos de la ville" (500 px de texte) est repliée par défaut, un tap l'ouvre
 // 3) pendant le chargement des données, de fausses cartes grises (squelettes) remplacent l'écran vide
 // 4) retour tactile : une carte ou un bouton s'enfonce légèrement quand on appuie dessus
+// 3c) en-tête réduit à une seule ligne (le bouton "Publier" du haut fait doublon avec celui du bas)
 // 3b) les gros boutons "Retour aux choix" et "Recevoir par email" deviennent de petites pastilles
 // Pour tout annuler : retirer la ligne <script src="home-polish.js"> dans index.html.
 (function () {
@@ -136,6 +137,14 @@
     ".wz-skel-card i,.wz-skel-card b{background:linear-gradient(100deg,#ececec 30%,#f7f7f7 50%,#ececec 70%);background-size:200% 100%;animation:wzShim 1.4s ease-in-out infinite}" +
     "@keyframes wzShim{0%{background-position:100% 0}100%{background-position:-100% 0}}" +
     "body.wz-loading #empty-state{display:none !important}" +
+    ".btn-ghost{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}" +
+    "@media (max-width:480px){" +
+      ".topbar{flex-wrap:nowrap !important;gap:6px !important;padding:10px 14px !important}" +
+      ".topbar .brand{margin-right:auto}.topbar .brand-word{display:none}" +
+      ".topbar .btn-ghost{margin:0 !important;padding:8px 12px !important;font-size:12.5px !important;white-space:nowrap}" +
+      "#btn-publish-header{display:none !important}" +
+    "}" +
+    "body:has(#view-discover:not(.hidden)) #unified-explore-btn{box-shadow:0 0 0 100vmax #0E1526;clip-path:inset(-10px -100vmax 0 -100vmax)}" +
     ".home-quickbar-title{color:rgba(255,255,255,.92) !important}" +
     "*{-webkit-tap-highlight-color:transparent}" +
     ".event-card,.featured-card,.chip-btn,.stat,#wz-more,#wz-ci-toggle,.bottomnav button{transition:transform .12s ease}" +
