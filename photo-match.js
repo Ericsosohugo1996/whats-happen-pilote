@@ -7,7 +7,7 @@ function norm(s) {
   return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 }
 function tokens(s) {
-  return norm(s).split(/[^a-z0-9]+/).filter((w) => w.length >= 3 && !STOP.has(w));
+  return norm(s).split(/[^a-z0-9]+/).filter((w) => w.length >= 3 && !STOP.has(w) && !/^[0-9]+$/.test(w));
 }
 // un article qui parle d'une rue, d'un quartier, d'une gare... n'est pas le lieu lui-même
 const NOT_A_PLACE = /^(rue|avenue|boulevard|place|quartier|esplanade|gare|station|pont|quai|passage|square|allee|chemin|route|arrondissement|canton|commune|ligne|metro|impasse|villa|sentier|ruelle|cours|voie|statue|fontaine|cimetiere|stele|plaque)\b|funiculaire|\bmetro\b|\bligne \d/;
