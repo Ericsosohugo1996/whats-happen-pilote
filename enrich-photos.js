@@ -14,22 +14,7 @@ const RADIUS_M = 300;
 const RETRY_MISS_DAYS = 90;
 const UA = "WhazupPhotoBot/1.0 (https://whazup.fr; photos de lieux)";
 
-const STOP = new Set(("le la les un une des du de d l et en au aux sur sous dans pour par chez ses son sa leur " +
-  "musee museum chateau eglise cathedrale basilique chapelle theatre palais domaine site jardin parc maison hotel " +
-  "salle espace centre national nationale departemental municipal saint sainte st ste notre dame the of and").split(" "));
-
-function tokens(s) {
-  return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
-    .split(/[^a-z0-9]+/).filter((w) => w.length >= 3 && !STOP.has(w));
-}
-function nameMatches(placeTitle, articleTitle) {
-  const p = tokens(placeTitle), a = tokens(articleTitle);
-  if (!p.length || !a.length) return false;
-  const aset = new Set(a);
-  let overlap = 0;
-  for (const w of new Set(p)) if (aset.has(w)) overlap++;
-  return overlap >= Math.max(1, Math.ceil(Math.min(new Set(p).size, aset.size) * 0.6));
-}
+const { nameMatches } = require("./photo-match.js");
 function haversineM(lat1, lon1, lat2, lon2) {
   const R = 6371000, r = Math.PI / 180;
   const dLat = (lat2 - lat1) * r, dLon = (lon2 - lon1) * r;
@@ -108,4 +93,4 @@ async function main() {
   if (consecutiveFail >= 40) console.log("arrêt anticipé (trop d'échecs de suite) : le reste sera repris au prochain passage");
 }
 if (require.main === module) main().catch((e) => { console.error(e); process.exit(1); });
-module.exports = { nameMatches, pickPhoto, tokens };
+module.exports = { nameMatches, pickPhoto };
