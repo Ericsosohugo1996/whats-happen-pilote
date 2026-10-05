@@ -1,1 +1,46 @@
+name: Photos d'illustration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: split-data
+  cancel-in-progress: false
+
+jobs:
+  illustration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Chercher les photos d'illustration (Wikimedia Commons)
+        run: node type-photos.js
+
+      - name: Mettre les photos dans les fichiers par ville
+        run: node split-data.js
+
+      - name: Enregistrer
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add type-photos.json data
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau à enregistrer"
+          else
+            git commit -m "Photos d'illustration (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Relancer la publication du site
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds || true
 
