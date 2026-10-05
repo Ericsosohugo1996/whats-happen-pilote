@@ -135,7 +135,7 @@
     if (go) go.disabled = !(ob.cityKey || ob.usePos);
   }
   function step1() {
-    var picked = ob.cityKey && !ob.usePos ? '<div class="res">' + cityRow(ob.cityKey) + "</div>" : "";
+    var picked = ob.cityKey && !ob.usePos ? '<div class="res">' + cityRow(ob.cityKey) + '<button type="button" class="ghost" data-act="clearcity" style="text-align:left">✕ Retirer ma ville</button></div>' : "";
     root.innerHTML = '<div class="in">' + top(false) +
       '<div><p class="eyebrow">Étape 1 sur 3</p><h1>Où veux-tu sortir ?</h1><p class="lead">On te montre ce qui se passe autour de toi, ce soir et ce week-end.</p></div>' +
       '<button type="button" class="loc" data-act="locate"><span aria-hidden="true">📍</span><span>' + (ob.usePos ? "Position utilisée ✓" : "Utiliser ma position") + "</span></button>" +
@@ -251,6 +251,11 @@
     if (act === "skip") { markDone(null); return close(); }
     if (act === "back") { ob.step = Math.max(1, ob.step - 1); return render(); }
     if (act === "locate") return locate();
+    if (act === "clearcity") {
+      ob.cityKey = null; ob.usePos = false; ob.q = "";
+      try { var p = JSON.parse(localStorage.getItem(PREFS_KEY) || "null"); if (p) { p.city = null; p.usePosition = false; localStorage.setItem(PREFS_KEY, JSON.stringify(p)); } } catch (e2) {}
+      return render();
+    }
     if (act === "next") { if (ob.step === 1 && !(ob.cityKey || ob.usePos)) return; ob.step++; return render(); }
     if (act === "finish") return finish(true);
     if (act === "finish-nonotif") return finish(false);
