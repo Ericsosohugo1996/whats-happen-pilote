@@ -131,7 +131,15 @@
       var t = parseTime(e.time);
       if (t == null) flex.push(e); else timed.push({ e: e, t: t });
     });
-    function evScore(x) { return 10 - km(centre, x.e || x) * 0.3 + 3; }
+    function evScore(x) {
+      var e = x.e || x;
+      var sc = 10 - km(centre, e) * 0.6 + 3;
+      sc += { Musique: 1.5, Expo: 1.5, "Spectacle": 1.5, "Théâtre": 1.5, Concert: 1.5, "Soirée": 1, Festival: 0.3 }[e.category] || 0;
+      if (/th[ée][âa]tre|com[ée]die|op[ée]ra|salle|capitole|z[ée]nith|casino|mus[ée]e|halle|cin[ée]ma|galerie|abbaye|[ée]glise|cath[ée]drale|jardin/i.test(e.place || "")) sc += 1.5;
+      if ((e.description || "").length > 150) sc += 0.7;
+      if (/octobre rose|vide-|journ[ée]e nationale|stage |loto|bourse aux|assembl[ée]e|r[ée]union|permanence|portes? ouvertes? du club/i.test(e.title || "")) sc -= 3;
+      return sc;
+    }
     timed.sort(function (a, b) { return evScore(b) - evScore(a); });
     var fixedCap = rhythm >= 4 ? rhythm : Math.max(1, rhythm - 1);
     var picked = [];
@@ -143,6 +151,7 @@
       }
       if (clash) {
         (clash.alt = clash.alt || []).push({ title: x.e.title, time: hhmm(x.t) });
+        clash.altN = (clash.altN || 0) + 1;
       } else if (picked.length < fixedCap) {
         picked.push(x);
       }
@@ -170,7 +179,7 @@
       var stop = null;
       var NIGHT = /^(Soirée|Concert|Musique|Spectacle|Théâtre|Danse)$/;
       if (slot === "evening") {
-        var nf = flexLeft.filter(function (e) { return !used[e.id] && NIGHT.test(e.category) && km(centre, e) <= 15; })[0];
+        var nf = flexLeft.filter(function (e) { return !used[e.id] && NIGHT.test(e.category) && km(centre, e) <= 15 && evScore({ e: e }) >= 11; })[0];
         if (nf) {
           stop = mkStop(nf, "event", slot, ""); stop.flex = true; mark(used, nf);
         } else if (groups.bars && pools.bars.length) {
@@ -179,7 +188,7 @@
         }
       } else {
         // un événement « sans heure précise » passe en premier s'il y en a un de bien placé
-        var f = flexLeft.filter(function (e) { return !used[e.id] && !NIGHT.test(e.category) && km(centre, e) <= 12 && (slot !== "morning" || e.category === "Marché"); })[0];
+        var f = flexLeft.filter(function (e) { return !used[e.id] && !NIGHT.test(e.category) && km(centre, e) <= 12 && evScore({ e: e }) >= 11 && (slot !== "morning" || e.category === "Marché"); })[0];
         if (f) {
           stop = mkStop(f, "event", slot, ""); stop.flex = true; mark(used, f);
         } else {
@@ -465,7 +474,9 @@
         if (s.flex) sub.push("Horaires à vérifier sur place");
         var alt = "";
         if (s.alt && s.alt.length) {
-          alt = '<div class="sub" style="margin-top:6px;color:#f0c878">Se chevauche avec : ' + s.alt.map(function (a) { return esc(a.title) + " (" + esc(a.time) + ")"; }).join(", ") + "</div>";
+          var shown = s.alt.slice(0, 2).map(function (a) { return esc(a.title) + " (" + esc(a.time) + ")"; }).join(", ");
+          var more = s.alt.length > 2 ? " et " + (s.alt.length - 2) + " autre" + (s.alt.length > 3 ? "s" : "") : "";
+          alt = '<div class="sub" style="margin-top:6px;color:#f0c878">À la même heure aussi : ' + shown + more + "</div>";
         }
         var maps = validPt(s) ? "https://www.google.com/maps/search/?api=1&query=" + s.lat + "," + s.lng : "";
         if (i > 0) {
