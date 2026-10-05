@@ -133,7 +133,7 @@ function __applyDiscoverMoodFilter() {
   const cards = listEl.querySelectorAll(".event-card");
   let visibleCount = 0;
   cards.forEach(function (card) {
-      const ev = all.find(function (e) { return String(e.id) === card.dataset.id; }); 
+       const ev = byId.get(card.dataset.id);
     const score = ev ? __moodScoreForEvent(ev, query) : 0;
     if (score > 0) {
       card.style.display = "";
