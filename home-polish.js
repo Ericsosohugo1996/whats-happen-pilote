@@ -2,7 +2,9 @@
 // 1) la liste n'affiche plus les 3 000 événements d'un coup : les 30 premiers, puis un bouton "Voir plus"
 //    (les filtres, la recherche, les compteurs et la carte continuent de travailler sur la liste complète)
 // 2) la fiche "À propos de la ville" (500 px de texte) est repliée par défaut, un tap l'ouvre
-// 3) les gros boutons "Retour aux choix" et "Recevoir par email" deviennent de petites pastilles
+// 3) pendant le chargement des données, de fausses cartes grises (squelettes) remplacent l'écran vide
+// 4) retour tactile : une carte ou un bouton s'enfonce légèrement quand on appuie dessus
+// 3b) les gros boutons "Retour aux choix" et "Recevoir par email" deviennent de petites pastilles
 // Pour tout annuler : retirer la ligne <script src="home-polish.js"> dans index.html.
 (function () {
   "use strict";
@@ -81,10 +83,38 @@
       tg.hidden = ci.classList.contains("hidden");
     }
   }
+  // --- squelettes : tant que les 3 gros fichiers de données ne sont pas arrivés (25 s max)
+  var T0 = Date.now();
+  function loading() {
+    if (Date.now() - T0 > 25000) return false;
+    try {
+      return !(state.dataTourismeEvents.length && state.dataTourismePlaces.length && state.osmBars.length);
+    } catch (e) { return false; }
+  }
+  function skeleton() {
+    var list = el("event-list"), sk = el("wz-skel");
+    var need = loading() && list && list.querySelectorAll(".event-card").length < 8;
+    document.body.classList.toggle("wz-loading", !!need);
+    if (!list) return;
+    if (need) {
+      if (!sk) {
+        sk = document.createElement("div");
+        sk.id = "wz-skel"; sk.setAttribute("aria-hidden", "true");
+        var h = "";
+        for (var i = 0; i < 6; i++) h += '<div class="wz-skel-card"><i></i><div><b></b><b></b><b></b></div></div>';
+        sk.innerHTML = h;
+        list.parentNode.insertBefore(sk, list.nextSibling);
+      }
+      sk.hidden = false;
+      // on revérifie dans une seconde : le redessin final de l'appli suffit souvent, mais pas toujours
+      if (!skeleton.t) skeleton.t = setTimeout(function () { skeleton.t = 0; try { skeleton(); } catch (e) {} }, 1000);
+    } else if (sk) sk.hidden = true;
+  }
+
   var origArr = renderArrondissementFilter;
   renderArrondissementFilter = function () {
     var r = origArr.apply(this, arguments);
-    try { polish(); } catch (e) {}
+    try { polish(); skeleton(); } catch (e) {}
     return r;
   };
 
@@ -97,8 +127,23 @@
     "#wz-ci-toggle[hidden]{display:none !important}" +
     "#wz-more{display:block;width:calc(100% - 32px);margin:16px;padding:15px 18px;border:0;border-radius:14px;background:linear-gradient(135deg,#F2C879,#E85D3D);color:#fff;font:700 14px inherit;font-family:inherit;cursor:pointer;box-shadow:0 6px 16px -6px rgba(232,93,61,.55)}" +
     "#wz-more[hidden]{display:none !important}" +
+    "#wz-skel{margin-top:10px}#wz-skel[hidden]{display:none !important}" +
+    ".wz-skel-card{display:flex;gap:12px;align-items:center;margin:0 0 10px;padding:12px;border-radius:16px;background:#fff;opacity:.92}" +
+    ".wz-skel-card i{flex:none;width:64px;height:64px;border-radius:14px}" +
+    ".wz-skel-card div{flex:1;display:flex;flex-direction:column;gap:9px}" +
+    ".wz-skel-card b{display:block;height:11px;border-radius:6px}" +
+    ".wz-skel-card b:nth-child(1){width:35%}.wz-skel-card b:nth-child(2){width:85%}.wz-skel-card b:nth-child(3){width:60%}" +
+    ".wz-skel-card i,.wz-skel-card b{background:linear-gradient(100deg,#ececec 30%,#f7f7f7 50%,#ececec 70%);background-size:200% 100%;animation:wzShim 1.4s ease-in-out infinite}" +
+    "@keyframes wzShim{0%{background-position:100% 0}100%{background-position:-100% 0}}" +
+    "body.wz-loading #empty-state{display:none !important}" +
+    ".home-quickbar-title{color:rgba(255,255,255,.92) !important}" +
+    "*{-webkit-tap-highlight-color:transparent}" +
+    ".event-card,.featured-card,.chip-btn,.stat,#wz-more,#wz-ci-toggle,.bottomnav button{transition:transform .12s ease}" +
+    ".event-card:active,.featured-card:active,.stat:active,#wz-more:active,#wz-ci-toggle:active{transform:scale(.98)}" +
+    ".chip-btn:active,.bottomnav button:active{transform:scale(.95)}" +
+    "@media (prefers-reduced-motion:reduce){.wz-skel-card i,.wz-skel-card b{animation:none}.event-card:active,.featured-card:active,.stat:active,.chip-btn:active{transform:none}}" +
     "#btn-newsletter{display:inline-block !important;width:auto !important;margin:10px 0 14px 16px !important;padding:8px 14px !important;font-size:12.5px !important;font-weight:600 !important;background:transparent !important;color:rgba(255,255,255,.85) !important;border:1px solid rgba(255,255,255,.22) !important;border-radius:999px !important;box-shadow:none !important}" +
     "#btn-discover-back{display:inline-block !important;margin:14px 0 0 16px !important}";
   document.head.appendChild(css);
-  try { polish(); } catch (e) {}
+  try { polish(); skeleton(); } catch (e) {}
 })();
