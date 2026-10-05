@@ -88,6 +88,7 @@
   var T0 = Date.now();
   function loading() {
     if (Date.now() - T0 > 25000) return false;
+    if (typeof window.__wzDataLoading === "boolean") return window.__wzDataLoading;
     try {
       return !(state.dataTourismeEvents.length && state.dataTourismePlaces.length && state.osmBars.length);
     } catch (e) { return false; }
