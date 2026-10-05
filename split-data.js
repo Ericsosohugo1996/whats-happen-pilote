@@ -5,6 +5,7 @@
 const fs = require("fs");
 const path = require("path");
 const { nameMatches } = require("./photo-match.js");
+const { pickFor } = require("./type-photos.js");
 
 const SOURCES = [
   { kind: "events", file: "datatourisme-events.json" },
@@ -32,6 +33,18 @@ for (const { kind, file } of SOURCES) {
       if (c && c.u && !ev.photo && nameMatches(ev.title, c.w)) { ev.photo = c.u; ev.photoCredit = "Wikimedia Commons"; n++; }
     }
     console.log("photos ajoutées aux lieux :", n);
+    // lieux toujours sans photo : photo d'illustration de leur type (théâtre, musée…), si type-photos.json existe
+    let typePhotos = null;
+    try { typePhotos = JSON.parse(fs.readFileSync("type-photos.json", "utf8")); } catch (e) {}
+    if (typePhotos) {
+      let g = 0;
+      for (const ev of items) {
+        if (ev.photo || ev.category !== "À voir") continue;
+        const p = pickFor(ev, typePhotos);
+        if (p) { ev.photo = p.u; ev.photoCredit = p.c; ev.photoGeneric = true; g++; }
+      }
+      console.log("photos d'illustration ajoutées :", g);
+    }
   }
   const byCity = {};
   for (const ev of items) (byCity[safe(ev.city)] = byCity[safe(ev.city)] || []).push(ev);
