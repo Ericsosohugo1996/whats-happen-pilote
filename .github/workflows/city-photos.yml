@@ -1,0 +1,44 @@
+name: Photos des villes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "40 3 * * 0"
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: split-data
+  cancel-in-progress: false
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Copier les photos des villes sur whazup.fr
+        run: node city-photos.js
+
+      - name: Enregistrer
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add city-photos city-photos.json
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau à enregistrer"
+          else
+            git commit -m "Photos des villes (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Relancer la publication du site
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds || true
