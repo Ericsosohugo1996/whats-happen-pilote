@@ -19,6 +19,11 @@
       sc.id = "wz-arrival-light-js"; sc.src = "arrival-light.js";
       document.head.appendChild(sc);
     }
+    if (!document.getElementById("wz-screens-light-js")) {
+      var sc2 = document.createElement("script");
+      sc2.id = "wz-screens-light-js"; sc2.src = "screens-light.js";
+      document.head.appendChild(sc2);
+    }
   } catch (e) {}
   function safeUrl(u) { return /^https?:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : ""; }
   function el(tag, props, css) { var e = document.createElement(tag); if (props) Object.keys(props).forEach(function (k) { e[k] = props[k]; }); if (css) e.style.cssText = css; return e; }
