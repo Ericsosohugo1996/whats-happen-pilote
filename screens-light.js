@@ -51,7 +51,7 @@
       var cs = getComputedStyle(el);
       var bg = parse(cs.backgroundColor), hasImg = cs.backgroundImage !== "none";
       // fonds
-      if (!hasImg && bg && bg.a > 0.02) {
+      if (!hasImg && bg && bg.a > 0.02 && !(root.id === "quest-overlay" && el.tagName === "BUTTON")) {
         var isBtn = el.tagName === "BUTTON" || el.getAttribute("role") === "button";
         if (bg.r > 235 && bg.g > 235 && bg.b > 235 && bg.a < 0.5) {
           el.style.setProperty("background", SOFT, "important");

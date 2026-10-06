@@ -153,3 +153,7 @@ html body #view-discover .locate-bar:has(.locate-bar-photo.visible){background:t
 .locate-body .locate-hint{color:#6B7280!important;border-top-color:#E5E7EB!important}
 .locate-body #propose-city-btn{color:#E85D3D!important}
 .locate-body #propose-city-form{background:#fff!important}
+
+/* ===== "Surprends-moi" : choix bien visibles (fond bleu très clair) ===== */
+#quest-overlay button[style*="background: rgb(255, 255, 255)"]{background:#DBEAFE!important;border:1.5px solid #60A5FA!important;color:#14213D!important;font-weight:700!important;box-shadow:0 4px 12px -6px rgba(37,99,235,.45)!important}
+#quest-overlay button[style*="rgba(255, 255, 255, 0.1)"]{background:#F1F3F7!important;color:#14213D!important}
