@@ -37,5 +37,52 @@ body{background:#fff!important}
 #btn-discover-back{background:#fff!important;border:1px solid #E5E7EB!important;color:#14213D!important}
 #btn-newsletter{background:#fff!important;color:#14213D!important;border:1px solid #E5E7EB!important}
 #wz-ci-toggle{background:#F7F8FA!important;color:#14213D!important;border:1px solid #E5E7EB!important}
-/* photo de la ville moins sombre */
-#view-discover .locate-bar-photo.visible::after{background:linear-gradient(180deg,rgba(11,21,38,0) 45%,rgba(11,21,38,.5) 100%)!important}
+
+/* ===== Séjour + bienvenue (onboarding) en clair ===== */
+html #wz-sj,html #wz-ob{background:linear-gradient(180deg,#fff 0%,#F7F8FA 100%);color:#14213D}
+html #wz-sj .x{background:#F1F3F7;color:#14213D}
+html #wz-sj .eyebrow,html #wz-ob .eyebrow{color:#D9732B}
+html #wz-sj .lead,html #wz-ob .lead{color:#4B5563}
+html #wz-sj .card{background:#fff;border:1px solid #E5E7EB;box-shadow:0 8px 20px -16px rgba(20,33,61,.35)}
+html #wz-sj .lab{color:#6B7280}
+html #wz-sj select,html #wz-sj input[type=date]{background:#fff;border-color:#D5D9E1;color:#14213D;color-scheme:light}
+html #wz-sj .rbtn{background:#fff;border-color:#D5D9E1;color:#14213D}
+html #wz-sj .rbtn small{color:#6B7280}
+html #wz-sj .rbtn.on{background:#1f6f78;border-color:#1f6f78;color:#fff}
+html #wz-sj .rbtn.on small{color:#d6eef0}
+html #wz-sj .chip,html #wz-ob .chip{border-color:#D5D9E1;color:#14213D;background:#fff}
+html #wz-sj .chip.on,html #wz-ob .chip.on{color:#fff}
+html #wz-sj .err,html #wz-ob .err{color:#C2410C}
+html #wz-sj .tab{border-color:#D5D9E1;color:#4B5563;background:#fff}
+html #wz-sj .tab.on{background:linear-gradient(150deg,#F2C879,#E85D3D);border-color:transparent;color:#fff}
+html #wz-sj .when b,html #wz-sj .when i{color:#6B7280}
+html #wz-sj .when b.t{color:#14213D}
+html #wz-sj .body{background:#fff;border:1px solid #E5E7EB;box-shadow:0 8px 20px -16px rgba(20,33,61,.4)}
+html #wz-sj .sub{color:#4B5563}
+html #wz-sj .lnk{color:#E85D3D}
+html #wz-sj .lnk.dim{color:#6B7280}
+html #wz-sj .hop{color:#6B7280}
+html #wz-sj .warn{border-color:#D5D9E1;color:#4B5563}
+html #wz-sj .warn b{color:#D9732B}
+html #wz-sj .empty{background:#F1F3F7;color:#4B5563}
+html #wz-sj .b2{border-color:#E85D3D;color:#E85D3D}
+html #wz-sj .note,html #wz-ob .note{background:#F1F3F7;color:#4B5563}
+html #wz-sj .note b{color:#6B7280}
+html #wz-sj .mrow{background:#fff;border:1px solid #E5E7EB;color:#14213D}
+html #wz-sj .mt i{color:#6B7280}
+html #wz-sj button:focus-visible,html #wz-sj select:focus-visible,html #wz-sj input:focus-visible,html #wz-ob button:focus-visible,html #wz-ob input:focus-visible{outline-color:#E85D3D}
+html #wz-ob .dots i{background:#E5E7EB}
+html #wz-ob .dots i.on{background:#E85D3D}
+html #wz-ob .ghost{color:#6B7280}
+html #wz-ob .or{color:#6B7280}
+html #wz-ob input[type=search]{background:#fff;border-color:#D5D9E1;color:#14213D}
+html #wz-ob .city{background:#fff;border-color:#E5E7EB;color:#14213D}
+html #wz-ob .city.on{border-color:#E85D3D}
+html #wz-ob .city span{color:#6B7280}
+html #wz-ob .rem{background:#fff;border-color:#E5E7EB;color:#14213D}
+html #wz-ob .rem.on{border-color:#2a9d8f}
+html #wz-ob .rem span{color:#6B7280}
+html #wz-ob .rem em{color:#D9732B}
+html #wz-ob .sw{background:#D5D9E1}
+html #wz-sj .sub[style*="f0c878"]{color:#C2570F!important}
+html #wz-sj .lead[style],html #wz-sj p[style*="8f98ad"],html #wz-sj [style*="color:#8f98ad"]{color:#6B7280!important}
