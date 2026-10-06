@@ -37,6 +37,11 @@
       sc3.id = "wz-quest-map-js"; sc3.src = "quest-map.js";
       document.head.appendChild(sc3);
     }
+    if (!document.getElementById("wz-geo-fallback-js")) {
+      var sc4 = document.createElement("script");
+      sc4.id = "wz-geo-fallback-js"; sc4.src = "geo-fallback.js";
+      document.head.appendChild(sc4);
+    }
   } catch (e) {}
   function safeUrl(u) { return /^https?:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : ""; }
   function el(tag, props, css) { var e = document.createElement(tag); if (props) Object.keys(props).forEach(function (k) { e[k] = props[k]; }); if (css) e.style.cssText = css; return e; }
