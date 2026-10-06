@@ -253,7 +253,10 @@
     if (act === "locate") return locate();
     if (act === "clearcity") {
       ob.cityKey = null; ob.usePos = false; ob.q = "";
-      try { var p = JSON.parse(localStorage.getItem(PREFS_KEY) || "null"); if (p) { p.city = null; p.usePosition = false; localStorage.setItem(PREFS_KEY, JSON.stringify(p)); } } catch (e2) {}
+      try { var p = JSON.parse(localStorage.getItem(PREFS_KEY) || "null"); if (p) { p.city = null; p.usePosition = false; localStorage.setItem(PREFS_KEY, JSON.stringify(p)); savePrefsCloud(p); } } catch (e2) {}
+      // l'appli ne doit plus considérer qu'une ville a été choisie (sinon Aix revient à la prochaine ouverture)
+      try { __hasPickedCity = false; } catch (e3) {}
+      try { state.userPos = null; } catch (e4) {}
       return render();
     }
     if (act === "next") { if (ob.step === 1 && !(ob.cityKey || ob.usePos)) return; ob.step++; return render(); }
