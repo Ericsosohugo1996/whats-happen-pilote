@@ -2,7 +2,7 @@
 // Pour revenir à l'ancien look : supprimer ce fichier sur GitHub.
 (function () {
   "use strict";
-  var ROOTS = ["friends-screen", "souvenirs-screen", "passport-screen", "newfinds-overlay", "explore-city-picker-overlay", "souvenir-modal", "souvenir-detail-modal", "explore-overlay"];
+  var ROOTS = ["friends-screen", "souvenirs-screen", "passport-screen", "newfinds-overlay", "explore-city-picker-overlay", "souvenir-modal", "souvenir-detail-modal", "explore-overlay", "quest-overlay", "propose-outing-modal"];
   var NAVY = "#14213D", GREY = "#4B5563", LINE = "#E5E7EB", SOFT = "#F7F8FA";
 
   function parse(c) {

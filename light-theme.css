@@ -97,3 +97,29 @@ html .brand-choice-btn.ghost{background:#F1F3F7;border:1px solid #E5E7EB;color:#
 html .brand-intro-logo-icon{filter:drop-shadow(0 4px 12px rgba(11,21,38,.35))}
 html .brand-intro-wordmark{text-shadow:0 2px 14px rgba(11,21,38,.5)}
 html .brand-intro-tagline{color:#fff;text-shadow:0 2px 12px rgba(11,21,38,.6)}
+
+/* ===== Harmonisation générale : barre du haut, boutons, compte ===== */
+.topbar{background:#fff!important;box-shadow:0 1px 0 #E5E7EB,0 8px 18px -14px rgba(20,33,61,.35)!important}
+.topbar .brand-word{color:#14213D!important}
+.topbar .brand img{box-shadow:0 0 0 1px #E5E7EB!important}
+.topbar .btn-ghost{background:#F1F3F7!important;border:1px solid #E5E7EB!important;color:#14213D!important;backdrop-filter:none!important}
+.topbar .btn-ghost:active{background:#E5E7EB!important}
+body:has(#view-discover:not(.hidden)) #unified-explore-btn{box-shadow:0 8px 18px -8px rgba(193,68,14,.55)!important;clip-path:none!important}
+#view-discover .segmented .seg.active{background:linear-gradient(135deg,#F2C879,#E85D3D)!important;box-shadow:0 6px 14px -6px rgba(232,93,61,.6)!important;color:#fff!important}
+#sejour-btn{background:linear-gradient(135deg,#FFF4DC,#E3F1F1)!important;color:#14213D!important;border:1px solid #F0D79A!important;font-weight:700!important}
+#itinerary-btn{background:linear-gradient(135deg,#F2C879,#E85D3D)!important;box-shadow:0 8px 18px -8px rgba(232,93,61,.55)}
+#arrival-lang-toggle,#brand-intro-lang-toggle{background:#fff!important;box-shadow:0 4px 14px -4px rgba(11,21,38,.45)!important}
+#arrival-friends-btn{box-shadow:0 4px 14px -4px rgba(11,21,38,.4)!important}
+
+/* boutons de base (n'avaient pas de style : "Se connecter", "Créer un compte"…) */
+.btn-primary{background:linear-gradient(135deg,#F2C879,#E85D3D);color:#fff;border:0;border-radius:14px;padding:13px 16px;font-size:15px;font-weight:800;box-shadow:0 8px 18px -8px rgba(232,93,61,.55)}
+.modal-content .btn-outline.btn-block{background:#fff;color:#14213D;border:1.5px solid #E5E7EB;border-radius:14px;padding:12px 16px;font-weight:700;box-shadow:none}
+
+/* modale "Mon compte" */
+.account-hero{background:linear-gradient(135deg,#FFF4DC 0%,#FDE3D6 100%)!important}
+.account-hero-badge{background:#fff!important;box-shadow:0 4px 12px -6px rgba(20,33,61,.3)}
+.account-hero-title{color:#14213D!important}
+.account-hero-sub{color:#4B5563!important}
+.modal-close{background:#F1F3F7!important;color:#14213D!important;border:1px solid #E5E7EB!important}
+#prefs-link{color:#E85D3D!important}
+#account-modal a,#account-modal [style*="6C5CE7"],#account-modal [style*="8B6CF2"]{color:#E85D3D!important}
