@@ -432,7 +432,8 @@
         '<div class="top"><span></span><button type="button" class="x" data-act="close">Fermer</button></div>' +
         '<div><p class="eyebrow">Nouveau · Prépare ton séjour</p><h1>Où pars-tu, et quand ?</h1>' +
         '<p class="lead">On te compose un programme jour par jour avec ce qui se passe vraiment pendant ton séjour.</p></div>' +
-        '<div class="card"><label class="lab" for="sj-city">Destination</label><select id="sj-city">' + opts + "</select></div>" +
+        (ui.saved ? '<div class="card"><div class="lab">Ton dernier séjour</div><div style="font-size:15px;font-weight:700">' + esc(ui.saved.cityName) + ", " + esc(rangeLabel(ui.saved.start, ui.saved.end)) + '</div><div class="acts"><button type="button" class="lnk" data-act="resume">Le rouvrir</button><button type="button" class="lnk dim" data-act="forget">Effacer</button></div></div>' : "") +
+        '<div class="card"><label class="lab" for="sj-city">Destination</label><select id="sj-city"><option value=""' + (ui.cityKey ? "" : " selected") + '>Choisis une ville…</option>' + opts + "</select></div>" +
         '<div class="card"><div class="lab">Dates' + (nb ? " · " + nb + (nb > 1 ? " jours" : " jour") : "") + "</div>" +
           '<div class="row"><div><label class="lab" for="sj-start">Arrivée</label><input type="date" id="sj-start" min="' + today + '" value="' + esc(ui.start) + '"></div>' +
           '<div><label class="lab" for="sj-end">Départ</label><input type="date" id="sj-end" min="' + today + '" value="' + esc(ui.end) + '"></div></div></div>' +
@@ -573,7 +574,7 @@
 
   function compose() {
     ui.err = "";
-    if (!ui.cityKey) { ui.err = "Choisis une destination."; return renderForm(); }
+    if (!ui.cityKey) { ui.err = "Choisis une ville."; return renderForm(); }
     if (!ui.start || !ui.end) { ui.err = "Choisis tes dates d’arrivée et de départ."; return renderForm(); }
     var nb = Math.round((parseIso(ui.end) - parseIso(ui.start)) / 86400000) + 1;
     if (nb < 1) { ui.err = "Le départ doit être après l’arrivée."; return renderForm(); }
@@ -607,6 +608,12 @@
       return;
     }
     if (act === "compose") return compose();
+    if (act === "resume") {
+      var sv = ui.saved; ui.plan = sv; ui.cityKey = sv.city; ui.start = sv.start; ui.end = sv.end; ui.rhythm = sv.rhythm;
+      ui.groups = {}; sv.groups.forEach(function (g) { ui.groups[g] = true; });
+      ui.day = 0; return renderResult();
+    }
+    if (act === "forget") { try { localStorage.removeItem(STORE_KEY); } catch (e) {} ui.saved = null; ui.plan = null; return renderForm(); }
     if (act === "ics") { downloadIcs(ui.plan); return showToast("Calendrier prêt : ouvre le fichier"); }
     if (act === "share") {
       var txt = planText(ui.plan);
@@ -641,10 +648,7 @@
       ui.cities = keys.filter(function (k) { return !idx || (idx.events && idx.events[k]) || (idx.places && idx.places[k]); })
         .map(function (k) { return { key: k, name: cityName(k) }; })
         .sort(function (a, b) { return a.name.localeCompare(b.name, "fr"); });
-      var saved = loadPlan();
-      var cur = null;
-      try { cur = state && state.city; } catch (e) {}
-      if (!ui.cityKey) ui.cityKey = (saved && saved.city) || (cur && ui.cities.some(function (c) { return c.key === cur; }) ? cur : (ui.cities[0] && ui.cities[0].key));
+      ui.saved = loadPlan();
       if (!ui.start) { ui.start = nextFriday(); ui.end = addDays(ui.start, 2); }
       if (!Object.keys(ui.groups).length) {
         var prefs = null;
@@ -654,12 +658,7 @@
         if (prefs && prefs.wishes) prefs.wishes.forEach(function (w) { (MAP[w] || []).forEach(function (g) { if (fromPrefs.indexOf(g) < 0) fromPrefs.push(g); }); });
         (fromPrefs.length ? fromPrefs.concat(["lieux"]) : DEFAULT_GROUPS).forEach(function (g) { ui.groups[g] = true; });
       }
-      if (saved && !ui.plan) {
-        ui.plan = saved; ui.cityKey = saved.city; ui.start = saved.start; ui.end = saved.end; ui.rhythm = saved.rhythm;
-        ui.groups = {}; saved.groups.forEach(function (g) { ui.groups[g] = true; });
-        ui.day = 0; return renderResult();
-      }
-      if (ui.plan) return renderResult();
+      if (ui.plan && ui.cityKey) return renderResult();
       renderForm();
     });
   }

@@ -276,10 +276,9 @@
   window.openOnboarding = function () {
     var prefs = null;
     try { prefs = JSON.parse(localStorage.getItem(PREFS_KEY) || "null"); } catch (e) {}
-    // la ville par défaut de l'appli (Aix) n'est pas un choix : on ne la reprend que si une ville a vraiment été choisie
-    var cur = null; try { if (state.userPos || (typeof __hasPickedCity !== "undefined" && __hasPickedCity)) cur = state.city; } catch (e) {}
+    // seule une ville choisie ici (et enregistrée) est reprise : jamais la ville par défaut ni celle de l'appli
     ob.step = 1; ob.usePos = false; ob.q = ""; ob.err = "";
-    ob.cityKey = (prefs && prefs.city) || cur || null;
+    ob.cityKey = (prefs && prefs.city) || null;
     ob.wishes = {};
     if (prefs && prefs.wishes) prefs.wishes.forEach(function (w) { ob.wishes[w] = true; });
     ob.reminders = { weekend: true, before: true, favorite: true };
