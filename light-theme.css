@@ -86,3 +86,14 @@ html #wz-ob .rem em{color:#D9732B}
 html #wz-ob .sw{background:#D5D9E1}
 html #wz-sj .sub[style*="f0c878"]{color:#C2570F!important}
 html #wz-sj .lead[style],html #wz-sj p[style*="8f98ad"],html #wz-sj [style*="color:#8f98ad"]{color:#6B7280!important}
+
+/* ===== Écran d'accueil de départ (photo + choix) en clair ===== */
+html .brand-intro-overlay{background:linear-gradient(180deg,rgba(20,33,61,.55) 0%,rgba(20,33,61,.12) 30%,rgba(20,33,61,0) 55%,rgba(20,33,61,.25) 100%)}
+html .brand-intro-bottom{max-width:none;background:#fff;border-radius:24px;padding:20px 20px 18px;box-shadow:0 18px 40px -16px rgba(11,21,38,.45);gap:8px}
+html .brand-intro-pitch{color:#14213D;font-size:21px}
+html .brand-intro-today{color:#D9732B}
+html .brand-intro-today::after{background:#E85D3D}
+html .brand-choice-btn.ghost{background:#F1F3F7;border:1px solid #E5E7EB;color:#14213D}
+html .brand-intro-logo-icon{filter:drop-shadow(0 4px 12px rgba(11,21,38,.35))}
+html .brand-intro-wordmark{text-shadow:0 2px 14px rgba(11,21,38,.5)}
+html .brand-intro-tagline{color:#fff;text-shadow:0 2px 12px rgba(11,21,38,.6)}
