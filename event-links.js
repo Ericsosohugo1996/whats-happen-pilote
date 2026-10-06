@@ -32,6 +32,11 @@
       sc2.id = "wz-screens-light-js"; sc2.src = "screens-light.js";
       document.head.appendChild(sc2);
     }
+    if (!document.getElementById("wz-quest-map-js")) {
+      var sc3 = document.createElement("script");
+      sc3.id = "wz-quest-map-js"; sc3.src = "quest-map.js";
+      document.head.appendChild(sc3);
+    }
   } catch (e) {}
   function safeUrl(u) { return /^https?:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : ""; }
   function el(tag, props, css) { var e = document.createElement(tag); if (props) Object.keys(props).forEach(function (k) { e[k] = props[k]; }); if (css) e.style.cssText = css; return e; }
