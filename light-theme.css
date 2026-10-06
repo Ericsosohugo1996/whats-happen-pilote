@@ -1,0 +1,41 @@
+/* Whazup en clair : l'accueil passe du bleu marine au blanc (chargé par event-links.js). */
+body{background:#fff!important}
+@media (min-width:600px){body{background:#eef0f4!important}}
+#view-discover{background:#fff!important}
+#view-discover .week-strip-hint{color:#8891A6!important}
+#view-discover .week-day-btn{background:#fff!important;border:1px solid #E5E7EB!important;color:#14213D!important;box-shadow:0 4px 12px -8px rgba(20,33,61,.25)}
+#view-discover .week-day-btn .week-day-label{color:#6B7280!important}
+#view-discover .week-day-btn .week-day-date{color:#8891A6!important}
+#view-discover .week-day-btn .week-day-count{color:#E8604C!important}
+#view-discover .week-day-btn.active{background:linear-gradient(150deg,#F2C879,#E85D3D)!important;border-color:transparent!important}
+#view-discover .week-day-btn.active .week-day-label,#view-discover .week-day-btn.active .week-day-date,#view-discover .week-day-btn.active .week-day-count{color:#fff!important}
+#view-discover .city-info{background:#F7F8FA!important;border:1px solid #E5E7EB!important}
+#view-discover .city-info .ci-name{color:#14213D!important}
+#view-discover .city-info .ci-pop,#view-discover .city-info .ci-desc{color:#4B5563!important}
+#view-discover .city-info .ci-facts{border-top-color:#E5E7EB!important}
+#view-discover .city-info .ci-fact{color:#14213D!important}
+#view-discover .city-info .ci-source{color:#8891A6!important}
+#view-discover .city-info .ci-tags .ci-tag{background:#EEF0F4!important;color:#14213D!important}
+#view-discover .city-info .btn-photos{background:#fff!important;color:#14213D!important;border:1px solid #E5E7EB!important}
+#view-discover .segmented{background:#F1F3F7!important;border:1px solid #E5E7EB!important}
+#view-discover .segmented .seg{color:#6B7280!important}
+#view-discover .segmented .seg.active{color:#fff!important}
+#view-discover .toolbar .chip-btn{background:#fff!important;border:1px solid #E5E7EB!important;color:#14213D!important}
+#view-discover .filters-panel{background:#F7F8FA!important;border:1px solid #E5E7EB!important}
+#view-discover .filters-label{color:#6B7280!important}
+#view-discover .filters-panel .chip-btn{background:#fff!important;border:1px solid #E5E7EB!important;color:#14213D!important}
+#view-discover .filters-panel .chip-btn.active{background:linear-gradient(135deg,#F2C879,#E85D3D)!important;border-color:transparent!important;color:#fff!important}
+#view-discover .filters-panel select{background:#fff!important;border:1px solid #E5E7EB!important;color:#14213D!important}
+#view-discover .event-card{border:1px solid #E5E7EB!important;box-shadow:0 8px 20px -14px rgba(20,33,61,.3)!important}
+#view-discover .empty-state{color:#6B7280!important}
+#view-discover .empty-state::before{background:#F1F3F7!important}
+#view-discover .map-mock{background:#F7F8FA!important;border:1px solid #E5E7EB!important}
+#view-discover h2,#view-discover h3{color:#14213D!important}
+.info-card{background:#fff!important;border:1px solid #E5E7EB;box-shadow:0 6px 18px -10px rgba(20,33,61,.18)}
+.action-tile{background:#fff!important;border:1px solid #E5E7EB!important}
+.event-card:active{background:#f6f7f9!important}
+#btn-discover-back{background:#fff!important;border:1px solid #E5E7EB!important;color:#14213D!important}
+#btn-newsletter{background:#fff!important;color:#14213D!important;border:1px solid #E5E7EB!important}
+#wz-ci-toggle{background:#F7F8FA!important;color:#14213D!important;border:1px solid #E5E7EB!important}
+/* photo de la ville moins sombre */
+#view-discover .locate-bar-photo.visible::after{background:linear-gradient(180deg,rgba(11,21,38,0) 45%,rgba(11,21,38,.5) 100%)!important}

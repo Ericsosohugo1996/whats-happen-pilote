@@ -1,16 +1,13 @@
 // Fiche d'un événement : bouton « Infos et billets » (site de l'organisateur / billetterie),
 // bouton « Appeler » et crédit de la photo. Données fournies par DATAtourisme (licence ouverte).
 (function () {
-  // fond blanc (au lieu du dégradé crème), cartes d'info bien détachées
+  // thème clair (fond blanc au lieu du bleu marine) : feuille de style séparée
   try {
-    var st = document.createElement("style");
-    st.id = "wz-white-css";
-    st.textContent = "body{background:#fff!important}" +
-      "@media (min-width:600px){body{background:#eef0f4!important}}" +
-      ".info-card{background:#fff!important;border:1px solid #E5E7EB;box-shadow:0 6px 18px -10px rgba(20,33,61,.18)}" +
-      ".action-tile{background:#fff!important;border:1px solid #E5E7EB!important}" +
-      ".event-card:active{background:#f6f7f9!important}";
-    document.head.appendChild(st);
+    if (!document.getElementById("wz-light-css")) {
+      var lk = document.createElement("link");
+      lk.id = "wz-light-css"; lk.rel = "stylesheet"; lk.href = "light-theme.css";
+      document.head.appendChild(lk);
+    }
   } catch (e) {}
   function safeUrl(u) { return /^https?:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : ""; }
   function el(tag, props, css) { var e = document.createElement(tag); if (props) Object.keys(props).forEach(function (k) { e[k] = props[k]; }); if (css) e.style.cssText = css; return e; }
