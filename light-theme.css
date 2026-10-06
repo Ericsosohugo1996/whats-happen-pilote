@@ -133,3 +133,23 @@ body:has(#view-discover:not(.hidden)) #unified-explore-btn{box-shadow:0 8px 18px
 /* priorité sur les règles de home-polish.js */
 html body #btn-newsletter{background:#fff!important;color:#14213D!important;border:1px solid #E5E7EB!important}
 html body #wz-ci-toggle{background:#F7F8FA!important;color:#14213D!important;border:1px solid #E5E7EB!important}
+
+/* ===== Choisir une ville (recherche + régions) en clair ===== */
+html body #view-discover .locate-bar{background:#F7F8FA!important;border:1px solid #E5E7EB!important;box-shadow:0 10px 24px -18px rgba(20,33,61,.35)!important}
+html body #view-discover .locate-bar:has(.locate-bar-photo.visible){background:transparent!important;border:0!important;box-shadow:none!important}
+#bonhomme-banner .brand-word{color:#14213D!important}
+#bonhomme-banner svg{filter:drop-shadow(0 4px 8px rgba(20,33,61,.35))}
+#bonhomme-banner>div:last-child{color:#4B5563!important}
+.locate-body .city-search-input{background:#fff!important;border:1.5px solid #D5D9E1!important;color:#14213D!important}
+.locate-body .city-search-input::placeholder{color:#8891A6!important}
+.locate-body .city-search-empty{color:#6B7280!important}
+.locate-body .region-block{background:#fff!important;border:1px solid #E5E7EB!important}
+.locate-body .region-block.open{background:#fff!important}
+.locate-body .region-toggle{color:#14213D!important}
+.locate-body .chevron{color:#8891A6!important}
+.locate-body .chip-btn{background:#fff!important;border:1px solid #D5D9E1!important;color:#14213D!important}
+.locate-body .chip-btn.active,.locate-body .chip-btn--primary{background:linear-gradient(135deg,#F2C879,#E85D3D)!important;border-color:transparent!important;color:#fff!important}
+.locate-body #btn-notif-follow{background:#fff!important;color:#14213D!important;border:1px solid #D5D9E1!important}
+.locate-body .locate-hint{color:#6B7280!important;border-top-color:#E5E7EB!important}
+.locate-body #propose-city-btn{color:#E85D3D!important}
+.locate-body #propose-city-form{background:#fff!important}
