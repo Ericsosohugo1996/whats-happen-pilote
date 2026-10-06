@@ -47,11 +47,11 @@
       var box = el("div", { id: "wz-ev-links" }, "display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0 6px;");
       if (link && ev.ticket) {
         box.appendChild(el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: "🎟️ Réserver ma place" },
-          "display:inline-block;background:#6C5CE7;color:#fff;font-weight:800;font-size:14.5px;padding:11px 16px;border-radius:12px;text-decoration:none;"));
+          "display:inline-block;background:linear-gradient(135deg,#F2C879,#E85D3D);color:#fff;font-weight:800;font-size:14.5px;padding:11px 16px;border-radius:12px;box-shadow:0 8px 18px -8px rgba(232,93,61,.6);text-decoration:none;"));
       }
       if (hasPhone) {
         box.appendChild(el("a", { href: "tel:" + ev.phone.replace(/[^\d+]/g, ""), textContent: "📞 Appeler" },
-          "display:inline-block;border:1.5px solid #6C5CE7;color:#6C5CE7;font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:12px;text-decoration:none;"));
+          "display:inline-block;border:1.5px solid #14213D;color:#14213D;font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:12px;text-decoration:none;"));
       }
       if (link && !ev.ticket) {
         box.appendChild(el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: "Site de l’organisateur ↗" },
