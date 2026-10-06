@@ -1,6 +1,8 @@
 // Fiche d'un événement : bouton « Infos et billets » (site de l'organisateur / billetterie),
 // bouton « Appeler » et crédit de la photo. Données fournies par DATAtourisme (licence ouverte).
 (function () {
+  // ville par défaut = Paris (au lieu d'Aix-en-Provence) tant que la personne n'a pas choisi la sienne
+  try { if (typeof state !== "undefined" && state && state.city === "aix" && !state.userPos) state.city = "paris"; } catch (e) {}
   // fond blanc (au lieu du dégradé crème), cartes d'info bien détachées
   try {
     var st = document.createElement("style");
