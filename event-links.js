@@ -1,6 +1,17 @@
 // Fiche d'un événement : bouton « Infos et billets » (site de l'organisateur / billetterie),
 // bouton « Appeler » et crédit de la photo. Données fournies par DATAtourisme (licence ouverte).
 (function () {
+  // fond blanc (au lieu du dégradé crème), cartes d'info bien détachées
+  try {
+    var st = document.createElement("style");
+    st.id = "wz-white-css";
+    st.textContent = "body{background:#fff!important}" +
+      "@media (min-width:600px){body{background:#eef0f4!important}}" +
+      ".info-card{background:#fff!important;border:1px solid #E5E7EB;box-shadow:0 6px 18px -10px rgba(20,33,61,.18)}" +
+      ".action-tile{background:#fff!important;border:1px solid #E5E7EB!important}" +
+      ".event-card:active{background:#f6f7f9!important}";
+    document.head.appendChild(st);
+  } catch (e) {}
   function safeUrl(u) { return /^https?:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : ""; }
   function el(tag, props, css) { var e = document.createElement(tag); if (props) Object.keys(props).forEach(function (k) { e[k] = props[k]; }); if (css) e.style.cssText = css; return e; }
   function decorate(id) {
@@ -12,23 +23,30 @@
       var desc = document.getElementById("detail-desc");
       var hero = document.getElementById("detail-hero");
       if (hero && ev.photo && ev.photoCredit) {
-        var c = el("div", { id: "wz-ev-credit", textContent: "📷 " + ev.photoCredit }, "font-size:11px;color:#8a8f98;margin:4px 16px 0;");
-        hero.parentNode.insertBefore(c, hero.nextSibling);
+        hero.style.position = "relative";
+        var c = el("span", { id: "wz-ev-credit", textContent: "📷 " + ev.photoCredit },
+          "position:absolute;right:10px;bottom:10px;background:rgba(20,16,40,.62);color:#fff;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;max-width:80%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;");
+        hero.appendChild(c);
       }
       var link = safeUrl(ev.link);
-      if (!desc || (!link && !ev.phone)) return;
-      var box = el("div", { id: "wz-ev-links" }, "display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px;");
-      if (link) {
-        var a = el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: ev.ticket ? "🎟️ Billets et infos" : "ℹ️ Infos sur l’événement" },
-          "display:inline-block;background:#6C5CE7;color:#fff;font-weight:800;font-size:14.5px;padding:11px 16px;border-radius:12px;text-decoration:none;");
-        box.appendChild(a);
+      var hasPhone = ev.phone && /^[+\d][\d\s().-]{5,}$/.test(ev.phone);
+      if (!desc || (!link && !hasPhone)) return;
+      var box = el("div", { id: "wz-ev-links" }, "display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0 6px;");
+      if (link && ev.ticket) {
+        box.appendChild(el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: "🎟️ Réserver ma place" },
+          "display:inline-block;background:#6C5CE7;color:#fff;font-weight:800;font-size:14.5px;padding:11px 16px;border-radius:12px;text-decoration:none;"));
       }
-      if (ev.phone && /^[+\d][\d\s().-]{5,}$/.test(ev.phone)) {
-        var p = el("a", { href: "tel:" + ev.phone.replace(/[^\d+]/g, ""), textContent: "📞 Appeler" },
-          "display:inline-block;border:1.5px solid #6C5CE7;color:#6C5CE7;font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:12px;text-decoration:none;");
-        box.appendChild(p);
+      if (hasPhone) {
+        box.appendChild(el("a", { href: "tel:" + ev.phone.replace(/[^\d+]/g, ""), textContent: "📞 Appeler" },
+          "display:inline-block;border:1.5px solid #6C5CE7;color:#6C5CE7;font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:12px;text-decoration:none;"));
       }
-      desc.parentNode.insertBefore(box, desc.nextSibling);
+      if (link && !ev.ticket) {
+        box.appendChild(el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: "Site de l’organisateur ↗" },
+          "font-size:12.5px;color:#8a8f98;text-decoration:underline;padding:4px 2px;"));
+      }
+      var card = document.querySelector("#view-detail .info-card");
+      if (card && card.parentNode) card.parentNode.insertBefore(box, card.nextSibling);
+      else desc.parentNode.insertBefore(box, desc.nextSibling);
     } catch (e) {}
   }
   function wrap() {

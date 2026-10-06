@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const { nameMatches } = require("./photo-match.js");
 const { pickFor } = require("./type-photos.js");
+const { tidyText, tidyPlace } = require("./tidy-text.js");
 
 const SOURCES = [
   { kind: "events", file: "datatourisme-events.json" },
@@ -55,6 +56,16 @@ for (const { kind, file } of SOURCES) {
       }
       console.log("photos d'illustration ajoutées :", g);
     }
+  }
+  // titres et lieux écrits EN MAJUSCULES par les organisateurs : on les remet en forme normale
+  if (kind === "events" || kind === "places") {
+    let n = 0;
+    for (const ev of items) {
+      const t = tidyText(ev.title), pl = tidyPlace(ev.place);
+      if (t !== ev.title || pl !== ev.place) n++;
+      ev.title = t; ev.place = pl;
+    }
+    console.log("titres/lieux remis en forme :", n);
   }
   const byCity = {};
   for (const ev of items) (byCity[safe(ev.city)] = byCity[safe(ev.city)] || []).push(ev);
