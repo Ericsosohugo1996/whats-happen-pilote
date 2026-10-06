@@ -123,3 +123,9 @@ body:has(#view-discover:not(.hidden)) #unified-explore-btn{box-shadow:0 8px 18px
 .modal-close{background:#F1F3F7!important;color:#14213D!important;border:1px solid #E5E7EB!important}
 #prefs-link{color:#E85D3D!important}
 #account-modal a,#account-modal [style*="6C5CE7"],#account-modal [style*="8B6CF2"]{color:#E85D3D!important}
+
+/* ===== Publier / Favoris / Photos : couleurs Whazup ===== */
+#btn-invite-friend{background:linear-gradient(135deg,#F2C879,#E85D3D)!important;box-shadow:0 8px 18px -8px rgba(232,93,61,.55)!important}
+#btn-add-photo{background:linear-gradient(135deg,#F2C879,#E85D3D)!important;color:#fff!important;box-shadow:0 8px 18px -8px rgba(232,93,61,.55)!important}
+#account-forgot-password{color:#E85D3D!important}
+#view-publish .btn-primary,#view-publish button[type="submit"]{background:linear-gradient(135deg,#F2C879,#E85D3D)!important;color:#fff!important}
