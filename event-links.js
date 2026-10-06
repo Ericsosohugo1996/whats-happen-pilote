@@ -12,6 +12,14 @@
       ".event-card:active{background:#f6f7f9!important}";
     document.head.appendChild(st);
   } catch (e) {}
+  // thème clair : feuille de style séparée (séjour, bienvenue, accueil, compte, boutons…)
+  try {
+    if (!document.getElementById("wz-light-css")) {
+      var lk = document.createElement("link");
+      lk.id = "wz-light-css"; lk.rel = "stylesheet"; lk.href = "light-theme.css";
+      document.head.appendChild(lk);
+    }
+  } catch (e) {}
   // écran d'arrivée clair : fichier séparé (le supprimer sur GitHub = retour à l'ancien look)
   try {
     if (!document.getElementById("wz-arrival-light-js")) {
