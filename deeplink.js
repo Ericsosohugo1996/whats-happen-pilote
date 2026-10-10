@@ -94,6 +94,7 @@
       try { isNew = ev.city === cityKey && __isNewFind(ev); } catch (e) {}
       if (!isNew) { others.push(ev); return; }
       if (ev.isPlace || ev.category === "Marché" || ev.scene === "marche") return;
+      if (/^paris sport proximit/i.test(ev.title || "")) return; // séances de sport de quartier : trop nombreuses pour les Nouveautés
       if (ev.date && (ev.date < today || ev.date > lim)) return;
       keep.push(ev);
     });
@@ -101,7 +102,9 @@
       var ai = a.insolite ? 0 : 1, bi = b.insolite ? 0 : 1; if (ai !== bi) return ai - bi;
       var ap = a.photo || a.thumb ? 0 : 1, bp = b.photo || b.thumb ? 0 : 1;
       if ((a.date || "9") !== (b.date || "9")) return (a.date || "9") < (b.date || "9") ? -1 : 1;
-      return ap - bp;
+      var at = a.time ? 0 : 1, bt = b.time ? 0 : 1; if (at !== bt) return at - bt;
+      if (ap !== bp) return ap - bp;
+      return (a.time || "") < (b.time || "") ? -1 : (a.time || "") > (b.time || "") ? 1 : 0;
     });
     var seen = {}, out = [];
     keep.forEach(function (ev) {

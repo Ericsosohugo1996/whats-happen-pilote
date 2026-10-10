@@ -38,7 +38,7 @@ function pickDate(r) {
       if (e.date + "T" + e.time < NOW) continue; // déjà terminée
       if (s.date > LIMIT) continue;
       const date = s.date > TODAY ? s.date : TODAY;
-      const time = date === s.date && s.time !== "00:00" ? s.time : "";
+      const time = date === s.date && s.time >= "06:00" ? s.time : "";
       return { date, time };
     }
     if (occ.includes("_")) return null; // occurrences connues mais aucune à venir dans la fenêtre
@@ -48,7 +48,7 @@ function pickDate(r) {
   if (e && e.date < TODAY) return null;
   if (s.date > LIMIT) return null;
   const date = s.date > TODAY ? s.date : TODAY;
-  return { date, time: date === s.date && s.time !== "00:00" ? s.time : "" };
+  return { date, time: date === s.date && s.time >= "06:00" ? s.time : "" };
 }
 
 function classify(r) {
