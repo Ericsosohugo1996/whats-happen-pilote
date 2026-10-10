@@ -164,3 +164,37 @@
   }
   install();
 })();
+
+/* ---- Mention de la source des données, en bas de la fiche d'un événement (exigée par les licences ouvertes) ---- */
+(function () {
+  "use strict";
+  var NAMES = {
+    "paris-opendata": { t: "Source : Ville de Paris, « Que faire à Paris ? » (données ouvertes, licence ODbL)", u: "https://opendata.paris.fr/explore/dataset/que-faire-a-paris-/" },
+    "datatourisme": { t: "Source : DATAtourisme (licence ouverte)", u: "https://www.datatourisme.fr/" }
+  };
+  function decorate(id) {
+    try {
+      var old = document.getElementById("wz-ev-source"); if (old) old.remove();
+      var ev = allEvents().find(function (e) { return e.id === id; });
+      var s = ev && NAMES[ev.source]; if (!s) return;
+      var anchor = document.getElementById("wz-ev-links") || document.getElementById("detail-desc");
+      if (!anchor || !anchor.parentNode) return;
+      var p = document.createElement("p");
+      p.id = "wz-ev-source";
+      p.style.cssText = "margin:10px 0 4px;font-size:11px;line-height:1.4;color:#9AA1AD;";
+      var a = document.createElement("a"); a.href = s.u; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = s.t;
+      a.style.cssText = "color:#9AA1AD;text-decoration:underline;";
+      p.appendChild(a);
+      anchor.parentNode.insertBefore(p, anchor.nextSibling);
+    } catch (e) {}
+  }
+  function wrap() {
+    if (typeof window.openDetail !== "function") return setTimeout(wrap, 400);
+    if (window.openDetail.__wzSrc) return;
+    var orig = window.openDetail;
+    var w = function (id) { var r = orig.apply(this, arguments); setTimeout(function () { decorate(id); }, 60); return r; };
+    w.__wzSrc = true; w.__wzLinks = orig.__wzLinks;
+    window.openDetail = w;
+  }
+  wrap();
+})();
