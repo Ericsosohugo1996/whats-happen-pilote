@@ -44,6 +44,11 @@
       sc4.id = "wz-geo-fallback-js"; sc4.src = "geo-fallback.js";
       document.head.appendChild(sc4);
     }
+    if (!document.getElementById("wz-deeplink-js")) {
+      var sc5 = document.createElement("script");
+      sc5.id = "wz-deeplink-js"; sc5.src = "deeplink.js";
+      document.head.appendChild(sc5);
+    }
   } catch (e) {}
   function safeUrl(u) { return /^https?:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : ""; }
   function el(tag, props, css) { var e = document.createElement(tag); if (props) Object.keys(props).forEach(function (k) { e[k] = props[k]; }); if (css) e.style.cssText = css; return e; }
