@@ -16,8 +16,16 @@
   // masque tout de suite les écrans d'introduction pour éviter un flash
   var hide = document.createElement("style");
   hide.id = "wz-deeplink-hide";
-  hide.textContent = "#wz-intro,#splash-screen,#brand-intro-screen,#choice-screen{display:none!important}";
+  hide.textContent = "#wz-intro,#splash-screen,#brand-intro-screen,#choice-screen,#wz-ob{display:none!important}";
   document.head.appendChild(hide);
+
+  // le visiteur vient d'un lien (Instagram…) : il a déjà choisi sa ville, on saute l'accueil « Où veux-tu sortir ? »
+  try { localStorage.setItem("wz_onboarded_v1", "1"); } catch (e) {}
+  try {
+    var ob = new MutationObserver(function () { var e = document.getElementById("wz-ob"); if (e) e.remove(); });
+    ob.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(function () { ob.disconnect(); }, 12000);
+  } catch (e) {}
 
   function resolveKey() {
     var want = fold(ville);
