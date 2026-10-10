@@ -1,0 +1,46 @@
+name: Événements officiels de Paris
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 4 * * *"
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: split-data
+  cancel-in-progress: false
+
+jobs:
+  paris:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Récupérer les événements de la Ville de Paris
+        run: node paris-events-sync.js
+
+      - name: Découper les données par ville
+        run: node split-data.js
+
+      - name: Enregistrer les fichiers
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add paris-events.json paris-events-report.txt data
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau à enregistrer"
+          else
+            git commit -m "Événements Ville de Paris (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Relancer la publication du site
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds || true
