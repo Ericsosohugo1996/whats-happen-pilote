@@ -146,3 +146,18 @@
     .observe(document.documentElement, { childList: true, subtree: true });
   clean(document);
 })();
+
+/* ---- « Voir sur place » n'est pas « Payant » : on n'affiche pas de pastille de prix quand le tarif est inconnu ---- */
+(function () {
+  "use strict";
+  function install() {
+    if (typeof exploreRowHTML !== "function") return setTimeout(install, 300);
+    if (window.__wzPriceFix) return; window.__wzPriceFix = true;
+    var orig = exploreRowHTML;
+    window.exploreRowHTML = function (ev, walkMin, isFirst, badge) {
+      if (ev && /^voir sur place$/i.test(String(ev.price || "").trim())) ev = Object.assign({}, ev, { price: "" });
+      return orig.call(this, ev, walkMin, isFirst, badge);
+    };
+  }
+  install();
+})();

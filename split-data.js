@@ -34,6 +34,21 @@ for (const { kind, file } of SOURCES) {
       console.log("lieux OpenStreetMap ajoutés :", added);
     } catch (e) { console.log("osm-places.json illisible :", e.message); }
   }
+  // événements officiels de la Ville de Paris (paris-events-sync.js) : on les ajoute, sans doublon avec DATAtourisme
+  if (kind === "events" && fs.existsSync("paris-events.json")) {
+    try {
+      const extra = JSON.parse(fs.readFileSync("paris-events.json", "utf8"));
+      const fold = (x) => String(x || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+      const have = new Set(items.filter((e) => e.city === "paris").map((e) => fold(e.title) + "|" + e.date));
+      let added = 0;
+      if (Array.isArray(extra)) for (const e of extra) {
+        const k = fold(e.title) + "|" + e.date;
+        if (have.has(k)) continue;
+        have.add(k); items.push(e); added++;
+      }
+      console.log("événements Ville de Paris ajoutés :", added);
+    } catch (e) { console.log("paris-events.json illisible :", e.message); }
+  }
   // photos des lieux (trouvées par enrich-photos.js) : on les ajoute aux lieux qui n'en ont pas
   if (kind === "places") {
     let cache = {};
