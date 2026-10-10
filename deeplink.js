@@ -71,3 +71,70 @@
   if (document.readyState === "complete") setTimeout(start, 50);
   else window.addEventListener("load", function () { setTimeout(start, 50); });
 })();
+
+/* ---- Nouveautés plus utiles : à venir, dans l'ordre des dates, 2 par lieu maximum ---- */
+(function () {
+  "use strict";
+  if (window.__wzNfCurated) return; window.__wzNfCurated = true;
+  function venue(ev) { return String(ev.place || "").split(",")[0].trim().toLowerCase().slice(0, 40) || ev.id; }
+  function curate(list, cityKey) {
+    var today = new Date(); today = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
+    var lim = new Date(Date.now() + 28 * 86400000); lim = lim.getFullYear() + "-" + String(lim.getMonth() + 1).padStart(2, "0") + "-" + String(lim.getDate()).padStart(2, "0");
+    var keep = [], others = [];
+    list.forEach(function (ev) {
+      var isNew = false;
+      try { isNew = ev.city === cityKey && __isNewFind(ev); } catch (e) {}
+      if (!isNew) { others.push(ev); return; }
+      if (ev.isPlace || ev.category === "Marché" || ev.scene === "marche") return;
+      if (ev.date && (ev.date < today || ev.date > lim)) return;
+      keep.push(ev);
+    });
+    keep.sort(function (a, b) {
+      var ai = a.insolite ? 0 : 1, bi = b.insolite ? 0 : 1; if (ai !== bi) return ai - bi;
+      var ap = a.photo || a.thumb ? 0 : 1, bp = b.photo || b.thumb ? 0 : 1;
+      if ((a.date || "9") !== (b.date || "9")) return (a.date || "9") < (b.date || "9") ? -1 : 1;
+      return ap - bp;
+    });
+    var seen = {}, out = [];
+    keep.forEach(function (ev) {
+      var v = venue(ev); seen[v] = (seen[v] || 0) + 1;
+      if (seen[v] <= 2 && out.length < 15) out.push(ev);
+    });
+    var base = Date.now();
+    out = out.map(function (ev, i) { var c = Object.assign({}, ev); c.createdAt = base - i * 1000; return c; });
+    return others.concat(out);
+  }
+  function install() {
+    if (typeof __newFindsShow !== "function" || typeof allEvents !== "function") return setTimeout(install, 300);
+    var orig = __newFindsShow;
+    window.__newFindsShow = function () {
+      var realAll = allEvents;
+      try {
+        var key = state.userPos ? nearestCityKey() : state.city;
+        window.allEvents = function () { return curate(realAll(), key); };
+      } catch (e) {}
+      try { return orig.apply(this, arguments); } finally { window.allEvents = realAll; }
+    };
+  }
+  install();
+})();
+
+/* ---- Listes d'événements : on enlève le temps à pied (🚶 xx min) ---- */
+(function () {
+  "use strict";
+  function clean(root) {
+    try {
+      root.querySelectorAll(".explore-pick span").forEach(function (sp) {
+        if (/^\s*🚶\s*\d+\s*min\s*$/.test(sp.textContent)) {
+          var nx = sp.nextElementSibling;
+          if (nx) nx.textContent = nx.textContent.replace(/^\s*·\s*/, "");
+          sp.remove();
+        }
+      });
+    } catch (e) {}
+  }
+  var t = null;
+  new MutationObserver(function () { if (t) return; t = setTimeout(function () { t = null; clean(document); }, 60); })
+    .observe(document.documentElement, { childList: true, subtree: true });
+  clean(document);
+})();
