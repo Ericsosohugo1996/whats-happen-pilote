@@ -194,3 +194,11 @@ html body.wz-v2 .wz-sc { font-size: 11px; }
 html body.wz-v2 .wz-sc { flex: 1 1 auto !important; font-size: 10.5px; padding: 11px 3px; text-align: center; }
 html body.wz-v2 #sc-surprise { flex-grow: 1 !important; }
 html body.wz-v2 #wz-shortcuts { gap: 4px !important; margin: 0 12px 12px !important; }
+
+/* ---- écran Nouveautés : carte sombre, comme l'accueil ---- */
+html body.wz-v2 #newfinds-result { background: rgba(255,255,255,.06) !important; border: 1px solid rgba(255,255,255,.1) !important; }
+html body.wz-v2 #newfinds-result .explore-pick div[style*="font-family"] { color: #fff !important; }
+html body.wz-v2 #newfinds-result .explore-pick div[style*="color:#"] { color: rgba(255,255,255,.62) !important; }
+html body.wz-v2 #newfinds-result > * { border-color: rgba(255,255,255,.1) !important; }
+html body.wz-v2 #newfinds-result p { color: rgba(255,255,255,.7) !important; }
+html body.wz-v2 #newfinds-result .explore-pick div[style*="font-family"][style*="font-family"] { color: #fff !important; }

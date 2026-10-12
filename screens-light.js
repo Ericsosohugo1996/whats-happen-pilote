@@ -29,6 +29,8 @@
 
   function lightenRoot(root) {
     if (!root) return;
+    // nouvelle page d'accueil sombre (home-v2) : ces écrans gardent leur look d'origine, sombre (pour annuler : supprimer home-v2.js)
+    if (document.body.classList.contains("wz-v2") && (root.id === "newfinds-overlay" || root.id === "souvenirs-screen" || root.id === "passport-screen" || root.id === "friends-screen")) return;
     var cs0 = getComputedStyle(root);
     if (!root.__wzInit) {
       root.__wzInit = 1;
