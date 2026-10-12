@@ -404,31 +404,27 @@
   };
 
   // ligne « Hier soir » sur l'accueil
+  // Plus de bouton "Hier soir" sur l'accueil : seulement une pastille sur "Mon carnet"
+  // quand des amis ont partagé des photos.
   function paintSoirTeaser() {
     try {
-      var row = document.getElementById("wz-shortcuts");
-      if (!row) return;
-      var b = document.getElementById("sc-soir");
-      if (!b) {
-        b = document.createElement("button");
-        b.type = "button"; b.id = "sc-soir"; b.className = "wz-sc";
-        b.addEventListener("click", function () { window.__wzOpenSoir(); });
-        row.appendChild(b);
-      }
-      var c = (typeof state !== "undefined" && state.city) || "";
-      var key = c;
-      if (b.getAttribute("data-wzk") === key) return;
-      b.setAttribute("data-wzk", key);
-      var th = "";
-      if (SOIR_PH[c]) th = '<span class="wz-tz"><i style="background-image:url(\'' + SOIR_PH[c][1][0] + '\')"></i><i style="background-image:url(\'' + SOIR_PH[c][5][0] + '\')"></i></span>';
-      b.innerHTML = th + '<span class="wz-carnet-t"><b>📸 Hier soir à ' + cityNameNow() + '</b><small>' + (window.__wzFriendN ? window.__wzFriendN + ' photo' + (window.__wzFriendN > 1 ? 's' : '') + ' de tes amis' : 'Si tu avais su…') + '</small></span><span class="wz-carnet-go">›</span>';
+      var old = document.getElementById("sc-soir");
+      if (old) old.remove();
+      var c = document.getElementById("sc-carnet");
+      if (!c) return;
+      var bd = c.querySelector(".wz-badge");
+      if (window.__wzFriendN) {
+        if (!bd) { bd = document.createElement("span"); bd.className = "wz-badge"; c.appendChild(bd); }
+        bd.textContent = window.__wzFriendN;
+        bd.title = window.__wzFriendN + " photo(s) de tes amis";
+      } else if (bd) bd.remove();
       if (!window.__wzFriendTried && window.__wzLoadFriendPhotos) {
         window.__wzFriendTried = true;
         setTimeout(function () {
           window.__wzLoadFriendPhotos().then(function (l) {
             var me = (typeof auth !== "undefined" && auth.currentUser) ? auth.currentUser.uid : "";
             var n = (l || []).filter(function (p) { return p.ownerUid !== me; }).length;
-            if (n) { window.__wzFriendN = n; b.removeAttribute("data-wzk"); paintSoirTeaser(); }
+            if (n) { window.__wzFriendN = n; paintSoirTeaser(); }
           }).catch(function () {});
         }, 2500);
       }

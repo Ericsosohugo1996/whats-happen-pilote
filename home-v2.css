@@ -312,3 +312,6 @@ html body.wz-v2 #sc-soir .wz-carnet-go { font-size: 22px; color: #f6b25a; flex: 
 .wz-fp-a{padding:6px 12px 12px}
 .wz-fp-a button{width:100%;padding:11px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer}
 .wz-fp-a button:disabled{opacity:.6}
+
+html body.wz-v2 #sc-carnet{position:relative}
+html body.wz-v2 #sc-carnet .wz-badge{position:absolute;top:10px;right:12px;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#E85D3D;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.4);border:2px solid #0e1630}
