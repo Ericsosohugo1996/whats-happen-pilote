@@ -1,0 +1,196 @@
+/* home-v2.css — page d'accueil « nuit festive » (chargée par home-v2.js).
+   POUR TOUT ANNULER : supprimer home-v2.js et home-v2.css sur GitHub. */
+
+/* ---------- fond sombre quand la page d'accueil est affichée ---------- */
+html body.wz-v2:has(#view-discover:not(.hidden)) { background: #0E1730 !important; }
+html body.wz-v2 #view-discover {
+  background: #0E1730 !important; color: #fff;
+  display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 130px;
+}
+html body.wz-v2 #view-discover.hidden { display: none !important; }
+
+/* ---------- ordre des blocs (sans toucher au code de l'appli) ---------- */
+html body.wz-v2 #view-discover > * { order: 50; }
+html body.wz-v2 #view-discover > .locate-bar { order: 1; }
+html body.wz-v2 #view-discover > #wz-chips { order: 2; }
+html body.wz-v2 #view-discover > .toolbar { order: 3; }
+html body.wz-v2 #view-discover > #filters-panel { order: 4; }
+html body.wz-v2 #view-discover > #map-mock { order: 4; }
+html body.wz-v2 #view-discover > #btn-see-list { order: 4; }
+html body.wz-v2 #view-discover > #week-strip-banner { order: 5; }
+html body.wz-v2 #view-discover > #free-search-wrap { order: 6; }
+html body.wz-v2 #view-discover > .home-quickbar-section { order: 7; }
+html body.wz-v2 #view-discover > #event-list-featured { order: 8; }
+html body.wz-v2 #view-discover > #event-list { order: 9; }
+html body.wz-v2 #view-discover > #wz-more { order: 10; }
+html body.wz-v2 #view-discover > #wz-ci-toggle { order: 11; }
+html body.wz-v2 #view-discover > #city-info { order: 12; }
+html body.wz-v2 #view-discover > #sejour-block { order: 13; }
+html body.wz-v2 #view-discover > #btn-newsletter { order: 14; }
+html body.wz-v2 #view-discover > #btn-discover-back { order: 15; }
+html body.wz-v2 #view-discover > #stats-banner { display: none !important; }
+
+/* ---------- barre du haut ---------- */
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar {
+  background: rgba(14,23,48,.94) !important; box-shadow: 0 1px 0 rgba(255,255,255,.06) !important;
+  backdrop-filter: blur(10px);
+}
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .brand-word {
+  display: inline !important; color: #fff !important;
+  font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 21px; letter-spacing: -.5px;
+}
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .brand-word .accent { color: #F2C879 !important; }
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .brand img { box-shadow: none !important; }
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .btn-ghost {
+  background: rgba(255,255,255,.12) !important; border: 0 !important; color: #fff !important; border-radius: 999px !important;
+}
+
+/* ---------- photo de la ville (hero) ---------- */
+html body.wz-v2 #view-discover .locate-bar {
+  margin: 10px 16px 0 !important; border-radius: 26px !important; overflow: hidden;
+  background: linear-gradient(135deg,#1B2748,#0E1730) !important; border: 0 !important;
+  box-shadow: 0 14px 30px -18px rgba(0,0,0,.7) !important; padding: 0 !important;
+}
+html body.wz-v2 #view-discover .locate-bar-photo { min-height: 190px; display: flex; align-items: flex-end; padding: 22px 20px !important; background-color: transparent; }
+html body.wz-v2 #view-discover .locate-bar-photo.visible { min-height: 260px; }
+html body.wz-v2 #view-discover .locate-bar-photo.visible::after {
+  background: linear-gradient(180deg, rgba(14,23,48,.15) 0%, rgba(14,23,48,.2) 40%, rgba(14,23,48,.88) 100%) !important;
+}
+html body.wz-v2 #view-discover .locate-info { position: relative; z-index: 2; text-align: left; }
+html body.wz-v2 #view-discover .locate-label {
+  display: block; font-size: 11px !important; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: #F2C879 !important; opacity: 1 !important;
+}
+html body.wz-v2 #view-discover .locate-value {
+  display: block; font-family: 'Fraunces', Georgia, serif !important; font-weight: 700; font-size: 38px !important;
+  line-height: 1.05; letter-spacing: -1px; color: #fff !important; margin-top: 4px;
+}
+html body.wz-v2 #view-discover .wz-tagline { margin-top: 8px; font-size: 14px; font-style: italic; color: #D5DBEE; }
+html body.wz-v2 #view-discover #weather-mini { color: #D5DBEE; }
+html body.wz-v2 #view-discover .locate-body { display: none; }
+
+/* ---------- boutons Aujourd'hui / Ce soir / Demain / Ce week-end ---------- */
+#wz-chips {
+  display: flex; gap: 8px; overflow-x: auto; padding: 16px 16px 4px; margin: 0;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+#wz-chips::-webkit-scrollbar { display: none; }
+#wz-chips .wz-chip {
+  flex: none; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap;
+  padding: 10px 14px; border-radius: 999px; border: 0; cursor: pointer;
+  background: #1B2748; color: #C3CAE0; font: 700 13px 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+#wz-chips .wz-chip .wz-chip-n { font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 999px; background: rgba(255,255,255,.1); }
+#wz-chips .wz-chip.on { background: linear-gradient(135deg,#F2C879,#E85D3D); color: #14213D; }
+#wz-chips .wz-chip.on .wz-chip-n { background: rgba(20,33,61,.18); }
+
+/* ---------- Carte / Liste / Filtres ---------- */
+html body.wz-v2 #view-discover .toolbar { margin: 12px 16px 6px !important; }
+html body.wz-v2 #view-discover .segmented { background: #16213F !important; border: 0 !important; box-shadow: none !important; }
+html body.wz-v2 #view-discover .segmented .seg { color: #9BA5C2 !important; background: transparent !important; }
+html body.wz-v2 #view-discover .segmented .seg.active { background: linear-gradient(135deg,#F2C879,#E85D3D) !important; color: #14213D !important; }
+html body.wz-v2 #view-discover .toolbar .chip-btn { background: #16213F !important; color: #fff !important; border: 0 !important; }
+html body.wz-v2 #view-discover .filters-panel { background: #16213F !important; color: #fff !important; border: 0 !important; margin: 6px 16px !important; }
+html body.wz-v2 #view-discover .filters-panel .filters-label { color: #C3CAE0 !important; }
+html body.wz-v2 #view-discover .filters-panel .chip-btn { background: #1B2748 !important; color: #E5E9F5 !important; border: 0 !important; }
+html body.wz-v2 #view-discover .filters-panel .chip-btn.active { background: linear-gradient(135deg,#F2C879,#E85D3D) !important; color: #14213D !important; }
+html body.wz-v2 #view-discover .filters-panel select,
+html body.wz-v2 #view-discover .filters-panel input[type=text] { background: #1B2748 !important; color: #fff !important; border: 0 !important; }
+
+/* ---------- bande des jours, recherche, « À propos », séjour ---------- */
+html body.wz-v2 #view-discover .week-strip-banner { margin: 6px 0 0; }
+html body.wz-v2 #view-discover .week-strip-banner * { border-color: rgba(255,255,255,.1) !important; }
+html body.wz-v2 #view-discover .week-strip-banner [class*="day"],
+html body.wz-v2 #view-discover .week-strip-banner button { background: #16213F !important; color: #fff !important; border: 0 !important; }
+html body.wz-v2 #view-discover .week-strip-banner [class*="num"], html body.wz-v2 #view-discover .week-strip-banner b { color: #F2C879 !important; }
+html body.wz-v2 #view-discover #free-search-wrap input { background: #16213F !important; color: #fff !important; border: 0 !important; }
+html body.wz-v2 #view-discover #free-search-wrap input::placeholder { color: #8C96B6 !important; }
+html body.wz-v2 #view-discover #wz-ci-toggle { background: #16213F !important; color: #fff !important; border: 0 !important; }
+html body.wz-v2 #view-discover .city-info { background: #16213F !important; color: #D5DBEE !important; border: 0 !important; }
+html body.wz-v2 #view-discover .city-info * { color: inherit; }
+html body.wz-v2 #view-discover .city-info .ci-name { color: #fff !important; }
+html body.wz-v2 #view-discover #sejour-block button, html body.wz-v2 #view-discover #sejour-block a {
+  background: rgba(242,200,121,.12) !important; color: #F2C879 !important; border: 1px solid rgba(242,200,121,.35) !important;
+}
+html body.wz-v2 #view-discover #btn-newsletter, html body.wz-v2 #view-discover #btn-discover-back {
+  background: #16213F !important; color: #C3CAE0 !important; border: 0 !important; box-shadow: none !important;
+}
+
+/* ---------- « Que se passe-t-il ? » (catégories) ---------- */
+html body.wz-v2 #view-discover .home-quickbar-title { color: #fff !important; font-family: 'Fraunces', Georgia, serif; }
+html body.wz-v2 #view-discover .home-category-quickbar * { color: #C3CAE0 !important; }
+
+/* ---------- cartes d'événements ---------- */
+html body.wz-v2 #view-discover .event-list { padding: 0 14px; }
+html body.wz-v2 #view-discover .event-card {
+  background: #16213F !important; border: 0 !important; border-radius: 18px !important; box-shadow: none !important;
+  color: #fff !important; margin-bottom: 10px; display: flex; align-items: center; gap: 12px; padding: 10px !important; width: 100%; text-align: left;
+}
+html body.wz-v2 #view-discover .event-card .thumb { border-radius: 14px; overflow: hidden; }
+html body.wz-v2 #view-discover .event-card .title { color: #fff !important; font-weight: 700; }
+html body.wz-v2 #view-discover .event-card .venue { color: #9BA5C2 !important; }
+html body.wz-v2 #view-discover .event-card .meta { color: #9BA5C2 !important; }
+html body.wz-v2 #view-discover .event-card .dist {
+  flex: none; align-self: flex-start; font-size: 11px; font-weight: 800; padding: 5px 10px; border-radius: 999px; white-space: nowrap;
+  background: rgba(242,200,121,.16) !important; color: #F2C879 !important; border: 0 !important;
+}
+html body.wz-v2 #view-discover .event-card .dist.free { background: rgba(52,211,153,.16) !important; color: #34D399 !important; }
+html body.wz-v2 #view-discover .featured-card { border-radius: 22px !important; box-shadow: 0 14px 30px -16px rgba(0,0,0,.7) !important; }
+html body.wz-v2 #view-discover #event-list-featured { padding: 0 16px; }
+html body.wz-v2 #view-discover #wz-more { background: #16213F !important; color: #F2C879 !important; border: 0 !important; margin: 8px 16px !important; width: calc(100% - 32px); }
+html body.wz-v2 #view-discover .empty-state { color: #C3CAE0 !important; background: #16213F !important; border: 0 !important; }
+
+/* ---------- barre du bas ---------- */
+html body.wz-v2:has(#view-discover:not(.hidden)) .bottomnav {
+  background: rgba(27,39,72,.94) !important; border: 0 !important; box-shadow: 0 10px 30px rgba(0,0,0,.45) !important; backdrop-filter: blur(12px);
+}
+html body.wz-v2:has(#view-discover:not(.hidden)) .bottomnav .nav-item { color: #8C96B6 !important; background: transparent !important; }
+html body.wz-v2:has(#view-discover:not(.hidden)) .bottomnav .nav-item.active { color: #F2C879 !important; background: transparent !important; }
+html body.wz-v2:has(#view-discover:not(.hidden)) .bottomnav .nav-label { color: inherit !important; font-weight: 700; font-size: 10.5px; }
+html body.wz-v2:has(#view-discover:not(.hidden)) .bottomnav .dot {
+  font-size: 0 !important; width: 26px; height: 26px; display: block; margin: 0 auto 2px;
+  background: currentColor; -webkit-mask: var(--wz-ico) center/contain no-repeat; mask: var(--wz-ico) center/contain no-repeat;
+  filter: none !important; box-shadow: none !important;
+}
+html body.wz-v2 .bottomnav .nav-item[data-view="discover"] .dot { --wz-ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M15.5 8.5l-2 5-5 2 2-5z'/%3E%3C/svg%3E"); }
+html body.wz-v2 .bottomnav .nav-item[data-view="publish"] .dot { --wz-ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 8v8M8 12h8'/%3E%3C/svg%3E"); }
+html body.wz-v2 .bottomnav .nav-item[data-view="favorites"] .dot { --wz-ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z'/%3E%3C/svg%3E"); }
+html body.wz-v2 .bottomnav #nav-carnet-btn .dot { --wz-ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3z'/%3E%3Cpath d='M5 17a3 3 0 013-3h11'/%3E%3C/svg%3E"); }
+
+/* ---------- catégories rondes, jours de la semaine ---------- */
+html body.wz-v2 #view-discover .quick-cat-circle { background: #1B2748 !important; box-shadow: none !important; border: 1px solid rgba(255,255,255,.08) !important; }
+html body.wz-v2 #view-discover .quick-cat-label { color: #C3CAE0 !important; font-weight: 700; }
+html body.wz-v2 #view-discover .week-strip-hint { color: #8C96B6 !important; }
+html body.wz-v2 #view-discover .week-day-btn { background: #16213F !important; border: 0 !important; color: #fff !important; box-shadow: none !important; }
+html body.wz-v2 #view-discover .week-day-btn .week-day-label { color: #C3CAE0 !important; }
+html body.wz-v2 #view-discover .week-day-btn .week-day-date { color: #9BA5C2 !important; }
+html body.wz-v2 #view-discover .week-day-btn .week-day-count { color: #F2C879 !important; font-weight: 800; }
+html body.wz-v2 #view-discover .week-day-btn.active, html body.wz-v2 #view-discover .week-day-btn.selected { background: linear-gradient(135deg,#F2C879,#E85D3D) !important; }
+html body.wz-v2 #view-discover .week-day-btn.active *, html body.wz-v2 #view-discover .week-day-btn.selected * { color: #14213D !important; }
+html body.wz-v2 #view-discover #sejour-btn { background: rgba(242,200,121,.12) !important; color: #F2C879 !important; border: 1px solid rgba(242,200,121,.35) !important; }
+html body.wz-v2 #view-discover #btn-discover-back, html body.wz-v2 #view-discover #btn-newsletter { margin: 8px 16px 0 !important; width: calc(100% - 32px) !important; }
+
+html body.wz-v2 #view-discover .featured-photo { background-color: #16213F; }
+
+@media (max-width:380px){ html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .brand-word { display: none !important; } }
+
+/* « Autour de moi » avait ses propres boutons Maintenant / Ce soir / Demain : ils font doublon avec les nouveaux */
+html body.wz-v2 #view-discover #nearme-time-tabs { display: none !important; }
+
+
+/* ---- raccourcis Surprends-moi / Nouveautés / Mon carnet ---- */
+html body.wz-v2 #view-discover > #wz-shortcuts { order: 2; display: flex; gap: 8px; margin: 0 16px 12px; gap: 6px; }
+html body.wz-v2 #view-discover > #surprise-block { order: 2; display: none; margin: 0 16px 12px !important; }
+html body.wz-v2 #view-discover > #surprise-block.wz-open { display: block; }
+html body.wz-v2 #surprise-block #surprise-btn { display: none !important; }
+html body.wz-v2 .wz-sc { flex: 1 1 0; min-width: 0; padding: 11px 2px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.07); color: #fff; font: 600 11.5px/1.2 'Plus Jakarta Sans', system-ui, sans-serif; cursor: pointer; white-space: nowrap; }
+html body.wz-v2 .wz-sc.on { background: linear-gradient(135deg,#F5B942,#E8604C); border-color: transparent; color: #1a1030; }
+@media (max-width: 380px) { html body.wz-v2 .wz-sc { font-size: 10.5px; } }
+
+html body.wz-v2 #sc-surprise { flex-grow: 1.5; }
+html body.wz-v2 .wz-sc { font-size: 11px; }
+
+html body.wz-v2 .wz-sc { flex: 1 1 auto !important; font-size: 10.5px; padding: 11px 3px; text-align: center; }
+html body.wz-v2 #sc-surprise { flex-grow: 1 !important; }
+html body.wz-v2 #wz-shortcuts { gap: 4px !important; margin: 0 12px 12px !important; }

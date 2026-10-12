@@ -49,6 +49,12 @@
       sc5.id = "wz-deeplink-js"; sc5.src = "deeplink.js";
       document.head.appendChild(sc5);
     }
+    // nouvelle page d'accueil « nuit festive » : fichiers séparés (les supprimer sur GitHub = retour à l'ancien look)
+    if (!document.getElementById("wz-home-v2-js")) {
+      var sc6 = document.createElement("script");
+      sc6.id = "wz-home-v2-js"; sc6.src = "home-v2.js";
+      document.head.appendChild(sc6);
+    }
   } catch (e) {}
   function safeUrl(u) { return /^https?:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : ""; }
   function el(tag, props, css) { var e = document.createElement(tag); if (props) Object.keys(props).forEach(function (k) { e[k] = props[k]; }); if (css) e.style.cssText = css; return e; }

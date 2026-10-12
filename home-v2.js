@@ -1,0 +1,243 @@
+// home-v2.js — nouvelle page d'accueil Whazup (style « nuit festive »)
+// Ajoute : boutons Aujourd'hui / Ce soir / Demain / Ce week-end (avec le nombre de sorties),
+// phrase d'accroche sur la photo de la ville, prix lisible sur les cartes, icônes de la barre du bas.
+// Ne change AUCUNE donnée et ne remplace aucune fonction de l'appli : il ajoute seulement par-dessus.
+// POUR TOUT ANNULER : supprimer ce fichier (home-v2.js) et home-v2.css sur GitHub. Le site retrouve son ancien look.
+(function () {
+  "use strict";
+  if (window.__wzHomeV2) return;
+  window.__wzHomeV2 = true;
+
+  // ---- feuille de style (fichier séparé) ----
+  try {
+    if (!document.getElementById("wz-home-v2-css")) {
+      var lk = document.createElement("link");
+      lk.id = "wz-home-v2-css"; lk.rel = "stylesheet"; lk.href = "home-v2.css";
+      document.head.appendChild(lk);
+    }
+    document.body.classList.add("wz-v2");
+  } catch (e) {}
+
+  // ---- dates (même logique « UTC » que le reste de l'appli, pour rester cohérent) ----
+  function isoPlus(days) { return new Date(Date.now() + days * 86400000).toISOString().slice(0, 10); }
+  function dow(iso) { return new Date(iso + "T12:00:00").getDay(); } // 0 = dimanche, 6 = samedi
+  function weekendDates() {
+    var out = [];
+    for (var i = 0; i <= 7; i++) {
+      var d = isoPlus(i), w = dow(d);
+      if (w === 6 || w === 0) out.push(d);
+      if (out.length === 2 || (w === 0 && out.length >= 1)) break;
+    }
+    return out;
+  }
+
+  // ---- nouveaux filtres de période (clés propres à v2 : l'appli d'origine ne les connaît pas) ----
+  function matchV2(ev, period) {
+    if (ev.isPlace) return true;
+    var today = isoPlus(0);
+    if (period === "wz-tonight") {
+      if (ev.date !== today || !ev.time) return false;
+      var h = parseInt(String(ev.time).split(":")[0], 10);
+      return h >= 18 || h < 4;
+    }
+    if (period === "wz-weekend") return weekendDates().indexOf(ev.date) !== -1;
+    return null;
+  }
+  try {
+    if (typeof matchesPeriod === "function" && !matchesPeriod.__wzV2) {
+      var origMatches = matchesPeriod;
+      var wrapped = function (ev, period) {
+        var r = matchV2(ev, period);
+        return r === null ? origMatches(ev, period) : r;
+      };
+      wrapped.__wzV2 = true;
+      matchesPeriod = wrapped; // eslint-disable-line no-global-assign
+    }
+  } catch (e) {}
+
+  var CHIPS = [
+    { key: "today", label: "Aujourd'hui" },
+    { key: "wz-tonight", label: "Ce soir" },
+    { key: "tomorrow", label: "Demain" },
+    { key: "wz-weekend", label: "Ce week-end" },
+    { key: "week", label: "Cette semaine" }
+  ];
+
+  function countFor(events, key) {
+    var n = 0;
+    for (var i = 0; i < events.length; i++) {
+      var ev = events[i];
+      if (ev.isPlace) continue;
+      if (!ev.date || ev.date < isoPlus(0)) continue;
+      if (matchesPeriod(ev, key)) n++;
+    }
+    return n;
+  }
+
+  function ensureChips() {
+    var host = document.getElementById("view-discover");
+    var bar = document.getElementById("stats-banner");
+    if (!host || !bar) return null;
+    var row = document.getElementById("wz-chips");
+    if (row) return row;
+    row = document.createElement("div");
+    row.id = "wz-chips";
+    row.setAttribute("role", "tablist");
+    CHIPS.forEach(function (c) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "wz-chip"; b.dataset.key = c.key;
+      b.innerHTML = '<span class="wz-chip-l">' + c.label + '</span><span class="wz-chip-n"></span>';
+      b.addEventListener("click", function () {
+        try {
+          revealResults();
+          state.selectedPeriod = (state.selectedPeriod === c.key) ? null : c.key;
+          document.querySelectorAll(".stat[data-filter]").forEach(function (s) { s.classList.remove("active"); });
+          renderDiscover();
+        } catch (e) {}
+      });
+      row.appendChild(b);
+    });
+    bar.parentNode.insertBefore(row, bar);
+    return row;
+  }
+
+  function prixTexte(ev) {
+    var p = String(ev.price || "");
+    var low = p.toLowerCase();
+    if (low.indexOf("gratuit") !== -1 || low.indexOf("libre") !== -1) return null; // garder « Gratuit »
+    var re = /(\d+(?:[.,]\d+)?)\s*(?:€|euros?)/gi, m, min = null;
+    while ((m = re.exec(p))) {
+      var v = parseFloat(m[1].replace(",", "."));
+      if (!isNaN(v) && (min === null || v < min)) min = v;
+    }
+    if (min !== null) return "dès " + String(min).replace(".", ",") + " €";
+    if (low.indexOf("inscription") !== -1) return null;
+    if (!p || low.indexOf("voir sur place") !== -1) return "Voir sur place";
+    return null;
+  }
+
+  // la liste détaillée ne s'affichait qu'après un premier filtre : avec les nouveaux boutons, elle est visible tout de suite
+  function revealResults() {
+    try {
+      if (typeof __hasPickedCity !== "undefined" && __hasPickedCity &&
+          typeof __hasPickedFilter !== "undefined" && !__hasPickedFilter) {
+        __hasPickedFilter = true; // eslint-disable-line no-global-assign
+        if (typeof __toggleResultsContent === "function") __toggleResultsContent(true);
+      }
+    } catch (e) {}
+  }
+
+
+  // ---- raccourcis : Surprends-moi / Nouveautés / Mon carnet (accessibles d'un seul geste) ----
+  function ensureShortcuts() {
+    var host = document.getElementById("view-discover");
+    var chips = document.getElementById("wz-chips");
+    if (!host || !chips) return;
+    var row = document.getElementById("wz-shortcuts");
+    if (!row) {
+      row = document.createElement("div");
+      row.id = "wz-shortcuts";
+      var defs = [
+        { id: "sc-surprise", t: "✨ Surprends-moi" },
+        { id: "sc-new", t: "🆕 Nouveautés" },
+        { id: "sc-carnet", t: "📖 Mon carnet" }
+      ];
+      defs.forEach(function (d) {
+        var b = document.createElement("button");
+        b.type = "button"; b.id = d.id; b.className = "wz-sc"; b.textContent = d.t;
+        row.appendChild(b);
+      });
+      chips.parentNode.insertBefore(row, chips.nextSibling);
+      row.querySelector("#sc-surprise").addEventListener("click", function () {
+        try {
+          var blk = (typeof __ensureSurpriseUI === "function") ? __ensureSurpriseUI() : document.getElementById("surprise-block");
+          if (!blk) return;
+          var open = !blk.classList.contains("wz-open");
+          blk.classList.toggle("wz-open", open);
+          this.classList.toggle("on", open);
+          var step = blk.querySelector("#surprise-time-step"), res = blk.querySelector("#surprise-result");
+          if (res) res.style.display = "none";
+          if (step) step.style.display = open ? "flex" : "none";
+          if (open) blk.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } catch (e) {}
+      });
+      row.querySelector("#sc-new").addEventListener("click", function () {
+        try { if (typeof __newFindsShow === "function") __newFindsShow(); } catch (e) {}
+      });
+      row.querySelector("#sc-carnet").addEventListener("click", function () {
+        try { if (window.__renderSouvenirsScreen) window.__renderSouvenirsScreen(); } catch (e) {}
+      });
+    }
+    var blk2 = document.getElementById("surprise-block") || ((typeof __ensureSurpriseUI === "function") ? __ensureSurpriseUI() : null);
+    if (blk2 && blk2.previousElementSibling !== row) row.parentNode.insertBefore(blk2, row.nextSibling);
+  }
+
+  function decorate() {
+    try {
+      revealResults();
+      var row = ensureChips();
+      ensureShortcuts();
+      if (row) {
+        var base = (typeof baseVisibleEvents === "function") ? baseVisibleEvents() : [];
+        row.querySelectorAll(".wz-chip").forEach(function (b) {
+          var k = b.dataset.key;
+          b.classList.toggle("on", state.selectedPeriod === k);
+          b.querySelector(".wz-chip-n").textContent = countFor(base, k);
+        });
+      }
+      // phrase d'accroche sur la photo de la ville
+      var info = document.querySelector("#view-discover .locate-info");
+      if (info && !info.querySelector(".wz-tagline")) {
+        var t = document.createElement("div");
+        t.className = "wz-tagline";
+        t.textContent = "Si j'avais su, j'y serais allé.";
+        info.appendChild(t);
+      }
+      // prix lisible sur les cartes
+      var byId = null;
+      document.querySelectorAll("#view-discover .event-card:not(.event-card--place)").forEach(function (card) {
+        var tag = card.querySelector(".dist");
+        if (!tag || tag.dataset.wzp) return;
+        tag.dataset.wzp = "1";
+        if (!byId) {
+          byId = {};
+          (typeof allEvents === "function" ? allEvents() : []).forEach(function (e) { byId[e.id] = e; });
+        }
+        var ev = byId[card.dataset.id];
+        if (!ev) return;
+        var txt = prixTexte(ev);
+        if (txt) tag.textContent = txt;
+      });
+    } catch (e) {}
+  }
+
+  // ---- on se branche APRÈS l'affichage de la liste (sans remplacer la fonction d'origine) ----
+  try {
+    if (typeof renderDiscover === "function" && !renderDiscover.__wzV2) {
+      var origRender = renderDiscover;
+      var w2 = function () {
+        var r = origRender.apply(this, arguments);
+        decorate();
+        return r;
+      };
+      w2.__wzV2 = true;
+      renderDiscover = w2; // eslint-disable-line no-global-assign
+    }
+  } catch (e) {}
+
+  // la liste « complète » peut se rafraîchir toute seule (chargement progressif) : on regarde les changements
+  try {
+    var list = document.getElementById("event-list");
+    var feat = document.getElementById("event-list-featured");
+    var timer = null;
+    var mo = new MutationObserver(function () {
+      clearTimeout(timer);
+      timer = setTimeout(decorate, 120);
+    });
+    if (list) mo.observe(list, { childList: true });
+    if (feat) mo.observe(feat, { childList: true });
+  } catch (e) {}
+
+  decorate();
+  setTimeout(decorate, 1200);
+})();
