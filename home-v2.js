@@ -202,6 +202,15 @@
           b.querySelector(".wz-chip-n").textContent = countFor(base, k);
         });
       }
+      // titre : « Paris » au lieu de « Votre position actuelle (Paris) »
+      try {
+        var lv = document.getElementById("locate-value"), ll = document.getElementById("locate-label");
+        if (lv && state.userPos && typeof CITIES !== "undefined" && typeof nearestCityKey === "function") {
+          var cn = CITIES[nearestCityKey()].name;
+          if (lv.textContent !== cn) lv.textContent = cn;
+          if (ll && ll.textContent !== "📍 Autour de toi") ll.textContent = "📍 Autour de toi";
+        }
+      } catch (e2) {}
       // bouton « Autour de moi » sur la photo de la ville
       var bar = document.querySelector("#view-discover .locate-bar");
       if (bar && !bar.querySelector(".wz-near")) {
