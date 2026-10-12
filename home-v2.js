@@ -264,6 +264,32 @@
     };
   } catch (e) {}
 
+  // carnet vide sans compte : message clair (les souvenirs sont sur le compte) + bouton pour se connecter
+  try {
+    var emptyMo = new MutationObserver(function () {
+      var list = document.getElementById("souvenirs-list");
+      if (!list || list.dataset.wzEmpty) return;
+      if (!document.getElementById("souvenirs-connect-btn")) return; // seulement si pas de vrai compte
+      if (list.textContent.indexOf("Aucun souvenir") !== 0) return;
+      list.dataset.wzEmpty = "1";
+      try { document.getElementById("souvenirs-connect-btn").parentElement.style.display = "none"; } catch (e) {}
+      list.innerHTML =
+        '<div style="text-align:center;padding:36px 8px 8px;color:#C7CEE3;">' +
+        '<div style="font-size:34px;margin-bottom:10px;">📖</div>' +
+        '<div style="font-family:Fraunces,Georgia,serif;font-size:18px;font-weight:600;color:#fff;margin-bottom:8px;">Ton carnet est vide sur cet appareil</div>' +
+        '<div style="font-size:13.5px;line-height:1.5;margin-bottom:16px;">Tes souvenirs sont enregistrés sur ton compte : connecte-toi pour les retrouver, même depuis un autre téléphone.</div>' +
+        '<button type="button" id="wz-carnet-login" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:12px 22px;font-size:13.5px;font-weight:700;cursor:pointer;">Me connecter</button>' +
+        '<div style="font-size:12.5px;line-height:1.5;margin-top:18px;color:#9BA5C2;">Pas envie de te connecter ? Appuie sur 📸 pour ajouter un souvenir : il restera sur ce téléphone, mais tu risques de le perdre si tu changes d\'appareil.</div>' +
+        '</div>';
+      var b = document.getElementById("wz-carnet-login");
+      if (b) b.addEventListener("click", function () {
+        var m = document.getElementById("account-modal");
+        if (m) m.classList.remove("hidden");
+      });
+    });
+    emptyMo.observe(document.body, { childList: true, subtree: true });
+  } catch (e) {}
+
   decorate();
   setTimeout(decorate, 1200);
 })();
