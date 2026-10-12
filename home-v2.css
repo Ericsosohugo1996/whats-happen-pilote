@@ -315,3 +315,22 @@ html body.wz-v2 #sc-soir .wz-carnet-go { font-size: 22px; color: #f6b25a; flex: 
 
 html body.wz-v2 #sc-carnet{position:relative}
 html body.wz-v2 #sc-carnet .wz-badge{position:absolute;top:10px;right:12px;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#E85D3D;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.4);border:2px solid #0e1630}
+
+/* ---- barre du bas : mots visibles + bouton Photo rond ---- */
+html body.wz-v2 #wz-nav { padding: 9px 8px 8px; }
+html body.wz-v2 #wz-nav .nav-item { padding: 6px 0 4px; gap: 3px; overflow: visible; }
+html body.wz-v2 #wz-nav .nav-label {
+  position: static !important; width: auto !important; height: auto !important; margin: 0 !important; clip: auto !important;
+  overflow: visible !important; font-size: 11.5px !important; font-weight: 700; line-height: 1.1; white-space: nowrap;
+}
+html body.wz-v2 #wz-nav .nav-item.active .nav-label { color: #F2C879 !important; }
+html body.wz-v2 #wz-nav .nav-item.wz-cam .dot {
+  font-size: 26px !important; width: 58px !important; height: 58px !important; margin: -32px auto 0 !important;
+  border-radius: 50% !important; display: flex !important; align-items: center; justify-content: center;
+  background: linear-gradient(135deg,#F2864B,#E85D3D) !important; -webkit-mask: none !important; mask: none !important;
+  border: 4px solid #0e1630 !important; box-shadow: 0 6px 16px rgba(232,93,61,.5) !important; color: #fff; filter: none !important;
+}
+html body.wz-v2 #wz-nav .nav-item.wz-cam .nav-label { color: #E85D3D !important; }
+html body.wz-v2:has(#view-discover:not(.hidden)) #wz-nav .nav-item.wz-cam .nav-label { color: #F2C879 !important; }
+html body.wz-v2:not(:has(#view-discover:not(.hidden))) #wz-nav .nav-item.wz-cam .dot { border-color: #fff !important; }
+#wz-publink { display: block; margin: 18px auto 110px; padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); background: transparent; color: #cfd8ff; font-size: 13px; font-weight: 700; cursor: pointer; }

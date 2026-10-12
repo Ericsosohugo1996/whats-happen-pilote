@@ -579,6 +579,54 @@
     }
   } catch (e) {}
 
+  // ---- barre du bas : Sortir · Favoris · 📸 Photo · Mon carnet ----
+  function setupNav() {
+    try {
+      var nav = document.querySelector(".bottomnav");
+      if (!nav || nav.getAttribute("data-wznav")) return;
+      var items = nav.querySelectorAll(".nav-item");
+      if (items.length < 4) return;
+      nav.setAttribute("data-wznav", "1"); nav.id = "wz-nav";
+      function lab(el, t) { var l = el.querySelector(".nav-label"); if (l) { l.removeAttribute("data-i18n"); l.textContent = t; } }
+      var disc = nav.querySelector('[data-view="discover"]');
+      var pub = nav.querySelector('[data-view="publish"]');
+      var fav = nav.querySelector('[data-view="favorites"]');
+      var car = document.getElementById("nav-carnet-btn");
+      if (disc) lab(disc, "Sortir");
+      if (fav) lab(fav, "Favoris");
+      if (car) lab(car, "Mon carnet");
+      if (pub) {
+        pub.removeAttribute("data-view");
+        pub.classList.add("wz-cam");
+        var d = pub.querySelector(".dot"); if (d) d.textContent = "📸";
+        lab(pub, "Photo");
+        pub.onclick = function () { var f = document.getElementById("souvenir-fab"); if (f) f.click(); };
+        // ordre : Sortir, Favoris, Photo, Mon carnet
+        if (fav && fav.nextSibling !== pub) nav.insertBefore(fav, pub);
+      }
+      var fab = document.getElementById("souvenir-fab");
+      if (fab) fab.style.setProperty("display", "none", "important");
+      var st = document.createElement("style");
+      st.textContent = "#souvenir-fab{display:none !important}";
+      document.head.appendChild(st);
+    } catch (e) {}
+  }
+  // "Publier" a quitté la barre : on le garde en bas de la liste.
+  function setupPublishLink() {
+    try {
+      var host = document.getElementById("view-discover");
+      if (!host || document.getElementById("wz-publink")) return;
+      var b = document.createElement("button");
+      b.type = "button"; b.id = "wz-publink";
+      b.textContent = "➕ Proposer un événement";
+      b.addEventListener("click", function () { try { showView("publish"); } catch (e) {} });
+      host.appendChild(b);
+    } catch (e) {}
+  }
+  setupNav(); setupPublishLink();
+  setTimeout(function () { setupNav(); setupPublishLink(); }, 1500);
+  try { new MutationObserver(function () { if (!document.querySelector(".bottomnav[data-wznav]")) setupNav(); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {}
+
   decorate();
   setTimeout(decorate, 1200);
 })();
