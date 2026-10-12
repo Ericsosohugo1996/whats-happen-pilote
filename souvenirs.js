@@ -428,7 +428,8 @@
       '<button class="souvenir-share-opt" data-net="facebook" style="background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;"><span style="width:46px;height:46px;border-radius:50%;background:#1877F2;display:flex;align-items:center;justify-content:center;font-size:20px;">f</span><span style="font-size:10px;">Facebook</span></button>' +
       '<button class="souvenir-share-opt" data-net="link" style="background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;">🔗</span><span style="font-size:10px;">Lien</span></button>' +
       '</div>' +
-      '<button id="souvenir-detail-share" style="width:100%;margin-top:18px;padding:13px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">Partager</button>' +
+      (s.photoUrl ? '<button id="souvenir-detail-sendphoto" style="width:100%;margin-top:18px;padding:13px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">📤 Envoyer la photo à un ami</button>' : '') +
+      '<button id="souvenir-detail-share" style="width:100%;margin-top:' + (s.photoUrl ? '10' : '18') + 'px;padding:13px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">Partager</button>' +
       '<button id="souvenir-detail-delete" style="width:100%;margin-top:10px;padding:10px;border-radius:999px;border:none;background:none;color:rgba(255,255,255,0.6);font-size:12px;cursor:pointer;">🗑️ Supprimer ce souvenir</button>' +
       '</div>';
     document.body.appendChild(overlay);
@@ -449,6 +450,33 @@
     }
 
     document.getElementById("souvenir-detail-share").addEventListener("click", doShare);
+
+    // Envoi de la vraie photo (comme dans la galerie) via le menu de partage du téléphone.
+    // Si le navigateur ne sait pas envoyer un fichier, ou ne peut pas le lire, on retombe sur le lien.
+    const sendBtn = document.getElementById("souvenir-detail-sendphoto");
+    if (sendBtn) {
+      sendBtn.addEventListener("click", async function () {
+        const label = sendBtn.textContent;
+        sendBtn.textContent = "Préparation de la photo…";
+        sendBtn.disabled = true;
+        try {
+          const resp = await fetch(s.photoUrl);
+          if (!resp.ok) throw new Error("http " + resp.status);
+          const blob = await resp.blob();
+          const file = new File([blob], "whazup-souvenir.jpg", { type: blob.type || "image/jpeg" });
+          if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({ files: [file], text: (s.placeName ? s.placeName + " · " : "") + "whazup.fr" });
+            sendBtn.textContent = label; sendBtn.disabled = false;
+            return;
+          }
+        } catch (e) {
+          if (e && e.name === "AbortError") { sendBtn.textContent = label; sendBtn.disabled = false; return; }
+          console.error("Envoi de la photo impossible, on partage le lien :", e);
+        }
+        sendBtn.textContent = label; sendBtn.disabled = false;
+        doShare();
+      });
+    }
     overlay.querySelectorAll(".souvenir-share-opt").forEach(function (btn) {
       btn.addEventListener("click", async function () {
         const net = btn.dataset.net;
