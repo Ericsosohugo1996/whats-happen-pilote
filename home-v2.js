@@ -239,11 +239,47 @@
     } catch (e) {}
   }
 
+
+  // ---- vraies photos de Paris : lieux/expos/bars de Paris sans photo, et photo de nuit pour l'accueil le soir ----
+  var PARIS_PH = {
+    "Expo": ["photo-paris-louvre-reflet.jpg", "photo-paris-grand-palais-jour.jpg"],
+    "À voir": ["photo-paris-sainte-chapelle-jour.jpg", "photo-paris-grand-palais-nuit.jpg", "photo-paris-orsay-nuit.jpg", "photo-paris-louvre-reflet.jpg"],
+    "Bar": ["photo-paris-bar.jpg"]
+  };
+  function hashStr(s) { var h = 0; s = String(s); for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
+  try {
+    if (typeof eventPhotoHTML === "function" && !eventPhotoHTML.__wzV2) {
+      var origPhoto = eventPhotoHTML;
+      var photoW = function (ev, st) {
+        try {
+          if (ev && !ev.photo && ev.city === "paris" && PARIS_PH[ev.category]) {
+            var list = PARIS_PH[ev.category];
+            ev = Object.assign({}, ev, { photo: list[hashStr(ev.id) % list.length] });
+          }
+        } catch (e) {}
+        return origPhoto.call(this, ev, st);
+      };
+      photoW.__wzV2 = true;
+      eventPhotoHTML = photoW; // eslint-disable-line no-global-assign
+    }
+  } catch (e) {}
+  var parisDayPhoto = null;
+  function updateParisHero() {
+    try {
+      if (typeof CITY_PHOTOS === "undefined" || !CITY_PHOTOS.paris) return;
+      if (parisDayPhoto === null && CITY_PHOTOS.paris.indexOf("photo-paris-") === -1) parisDayPhoto = CITY_PHOTOS.paris;
+      var h = new Date().getHours();
+      var night = h >= 18 || h < 5;
+      CITY_PHOTOS.paris = night ? "photo-paris-pont-neuf-nuit.jpg" : "photo-paris-sainte-chapelle-jour.jpg";
+    } catch (e) {}
+  }
+
   // ---- on se branche APRÈS l'affichage de la liste (sans remplacer la fonction d'origine) ----
   try {
     if (typeof renderDiscover === "function" && !renderDiscover.__wzV2) {
       var origRender = renderDiscover;
       var w2 = function () {
+        updateParisHero();
         var r = origRender.apply(this, arguments);
         decorate();
         return r;
