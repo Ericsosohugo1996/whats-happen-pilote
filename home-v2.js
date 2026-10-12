@@ -238,6 +238,32 @@
     if (feat) mo.observe(feat, { childList: true });
   } catch (e) {}
 
+
+  // « Autour de moi » faisait défiler la page directement jusqu'à la liste : on remonte plutôt en haut (photo, boutons, raccourcis)
+  try {
+    if (typeof __nearMeShow === "function" && !__nearMeShow.__wzV2) {
+      var origNear = __nearMeShow;
+      var nearW = function () {
+        window.__wzNearAt = Date.now();
+        return origNear.apply(this, arguments);
+      };
+      nearW.__wzV2 = true;
+      __nearMeShow = nearW; // eslint-disable-line no-global-assign
+    }
+    var origSIV = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function () {
+      try {
+        if ((this.id === "event-list-featured" || this.id === "event-list") &&
+            window.__wzNearAt && Date.now() - window.__wzNearAt < 20000) {
+          window.__wzNearAt = 0;
+          window.scrollTo(0, 0);
+          return;
+        }
+      } catch (e) {}
+      return origSIV.apply(this, arguments);
+    };
+  } catch (e) {}
+
   decorate();
   setTimeout(decorate, 1200);
 })();
