@@ -42,6 +42,48 @@
     }
     return null;
   }
+  // ---- réduction des photos avant envoi (comme WhatsApp : ~1600 px, JPEG léger) ----
+  // Si quoi que ce soit échoue, on renvoie la photo d'origine : l'envoi ne doit jamais être bloqué.
+  async function compressImage(file, maxSide, quality) {
+    maxSide = maxSide || 1600; quality = quality || 0.72;
+    try {
+      if (!file || !file.type || file.type.indexOf("image/") !== 0) return file;
+      if (file.type === "image/gif") return file;
+      var bmp = null;
+      if (typeof createImageBitmap === "function") {
+        try { bmp = await createImageBitmap(file, { imageOrientation: "from-image" }); } catch (e) { bmp = null; }
+      }
+      var w, h, src;
+      if (bmp) { w = bmp.width; h = bmp.height; src = bmp; }
+      else {
+        src = await new Promise(function (resolve, reject) {
+          var url = URL.createObjectURL(file);
+          var img = new Image();
+          img.onload = function () { URL.revokeObjectURL(url); resolve(img); };
+          img.onerror = function () { URL.revokeObjectURL(url); reject(new Error("img")); };
+          img.src = url;
+        });
+        w = src.naturalWidth; h = src.naturalHeight;
+      }
+      if (!w || !h) return file;
+      var ratio = Math.min(1, maxSide / Math.max(w, h));
+      var tw = Math.max(1, Math.round(w * ratio)), th = Math.max(1, Math.round(h * ratio));
+      var canvas = document.createElement("canvas");
+      canvas.width = tw; canvas.height = th;
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, tw, th);
+      ctx.drawImage(src, 0, 0, tw, th);
+      if (bmp && bmp.close) bmp.close();
+      var blob = await new Promise(function (resolve) { canvas.toBlob(resolve, "image/jpeg", quality); });
+      if (!blob) return file;
+      return (blob.size < file.size) ? blob : file;
+    } catch (e) {
+      console.error("Réduction de la photo impossible, envoi de l'original :", e);
+      return file;
+    }
+  }
+  window.__compressImage = compressImage;
+
   async function saveSouvenir({ file, text, placeName, placeId, lat, lng, category, city }) {
     const user = auth.currentUser;
     if (!user) {
@@ -52,8 +94,9 @@
     const id = uid4();
     let photoUrl = "";
     if (file) {
+      file = await compressImage(file);
       const ref = storage.ref().child("souvenirs/" + user.uid + "/" + id + ".jpg");
-      await ref.put(file);
+      await ref.put(file, { contentType: "image/jpeg" });
       photoUrl = await ref.getDownloadURL();
     }
     const resolvedCity = (lat && lng) ? nearestCityForCoords(lat, lng) : (city || null);
