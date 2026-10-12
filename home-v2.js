@@ -141,6 +141,25 @@
 
 
   // ---- raccourcis : Surprends-moi / Nouveautés / Mon carnet (accessibles d'un seul geste) ----
+  // grand bouton « Mon carnet » avec ses polaroïds
+  function paintCarnet() {
+    try {
+      var b = document.getElementById("sc-carnet");
+      if (!b) return;
+      var city = (typeof state !== "undefined" && state.city) || "";
+      var key = city === "paris" ? "paris" : "other:" + city;
+      if (b.getAttribute("data-wzk") === key) return;
+      b.setAttribute("data-wzk", key);
+      var ph = [];
+      if (city === "paris") ph = ["photo-paris-pont-neuf-nuit.jpg", "photo-paris-bar.jpg", "photo-paris-orsay-nuit.jpg"];
+      else if (typeof CITY_PHOTOS !== "undefined" && CITY_PHOTOS[city]) ph = [CITY_PHOTOS[city]];
+      var h = '<span class="wz-pol">';
+      ph.forEach(function (u) { h += '<i style="background-image:url(\'' + String(u).replace(/'/g, "%27") + '\')"></i>'; });
+      if (!ph.length) h += '<i class="wz-pol-empty">📖</i>';
+      h += '</span><span class="wz-carnet-t"><b>📖 Mon carnet</b><small>Souvenirs, photos et amis</small></span><span class="wz-carnet-go">›</span>';
+      b.innerHTML = h;
+    } catch (e) {}
+  }
   function ensureShortcuts() {
     var host = document.getElementById("view-discover");
     var chips = document.getElementById("wz-chips");
@@ -152,12 +171,12 @@
       var defs = [
         { id: "sc-surprise", t: "✨ Surprends-moi" },
         { id: "sc-new", t: "🆕 Nouveautés" },
-        { id: "sc-carnet", t: "📖 Mon carnet" },
-        { id: "sc-envies", t: "💫 Mes envies" }
+        { id: "sc-envies", t: "💫 Mes envies" },
+        { id: "sc-carnet", t: "📖 Mon carnet" }
       ];
       defs.forEach(function (d) {
         var b = document.createElement("button");
-        b.type = "button"; b.id = d.id; b.className = "wz-sc"; b.textContent = d.t;
+        b.type = "button"; b.id = d.id; b.className = "wz-sc"; var sp = d.t.indexOf(" "); b.innerHTML = '<span class="wz-e">' + d.t.slice(0, sp) + '</span><span class="wz-l">' + d.t.slice(sp + 1) + "</span>";
         row.appendChild(b);
       });
       chips.parentNode.insertBefore(row, chips.nextSibling);
@@ -184,6 +203,7 @@
         try { if (window.__renderSouvenirsScreen) window.__renderSouvenirsScreen(); } catch (e) {}
       });
     }
+    paintCarnet();
     var blk2 = document.getElementById("surprise-block") || ((typeof __ensureSurpriseUI === "function") ? __ensureSurpriseUI() : null);
     if (blk2 && blk2.previousElementSibling !== row) row.parentNode.insertBefore(blk2, row.nextSibling);
   }
