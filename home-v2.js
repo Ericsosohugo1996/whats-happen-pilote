@@ -58,9 +58,7 @@
   var CHIPS = [
     { key: "today", label: "Aujourd'hui" },
     { key: "wz-tonight", label: "Ce soir" },
-    { key: "tomorrow", label: "Demain" },
-    { key: "wz-weekend", label: "Ce week-end" },
-    { key: "week", label: "Cette semaine" }
+    { key: "wz-weekend", label: "Ce week-end" }
   ];
 
   function countFor(events, key) {
@@ -140,7 +138,8 @@
       var defs = [
         { id: "sc-surprise", t: "✨ Surprends-moi" },
         { id: "sc-new", t: "🆕 Nouveautés" },
-        { id: "sc-carnet", t: "📖 Mon carnet" }
+        { id: "sc-carnet", t: "📖 Mon carnet" },
+        { id: "sc-envies", t: "💫 Mes envies" }
       ];
       defs.forEach(function (d) {
         var b = document.createElement("button");
@@ -164,6 +163,9 @@
       row.querySelector("#sc-new").addEventListener("click", function () {
         try { if (typeof __newFindsShow === "function") __newFindsShow(); } catch (e) {}
       });
+      row.querySelector("#sc-envies").addEventListener("click", function () {
+        try { if (window.__questOpen) window.__questOpen(); } catch (e) {}
+      });
       row.querySelector("#sc-carnet").addEventListener("click", function () {
         try { if (window.__renderSouvenirsScreen) window.__renderSouvenirsScreen(); } catch (e) {}
       });
@@ -184,6 +186,17 @@
           b.classList.toggle("on", state.selectedPeriod === k);
           b.querySelector(".wz-chip-n").textContent = countFor(base, k);
         });
+      }
+      // bouton « Autour de moi » sur la photo de la ville
+      var bar = document.querySelector("#view-discover .locate-bar");
+      if (bar && !bar.querySelector(".wz-near")) {
+        var nb = document.createElement("button");
+        nb.type = "button"; nb.className = "wz-near"; nb.textContent = "📍 Autour de moi";
+        nb.addEventListener("click", function (e) {
+          e.stopPropagation();
+          try { if (typeof __nearMeShow === "function") __nearMeShow(); } catch (er) {}
+        });
+        bar.appendChild(nb);
       }
       // phrase d'accroche sur la photo de la ville
       var info = document.querySelector("#view-discover .locate-info");
@@ -288,6 +301,38 @@
       });
     });
     emptyMo.observe(document.body, { childList: true, subtree: true });
+  } catch (e) {}
+
+  // écran d'arrivée : « Surprends-moi » (questionnaire d'ambiance) devient « Mes envies » pour ne pas le confondre avec celui de l'accueil
+  try {
+    var arrMo = new MutationObserver(function () {
+      var o = document.querySelector('#arrival-screen-overlay .arrival-opt[data-key="other"] span:last-child');
+      if (o && o.textContent.trim() !== "Mes envies" && /surprends|surprise/i.test(o.textContent)) o.textContent = "Mes envies";
+    });
+    arrMo.observe(document.body, { childList: true, subtree: true });
+  } catch (e) {}
+
+  // plus d'écran d'arrivée intermédiaire : « __arrivalShow » (appelé au démarrage et par les boutons Retour) ramène directement à l'accueil
+  try {
+    if (typeof __arrivalShow === "function" && !__arrivalShow.__wzV2) {
+      var origArrival = __arrivalShow;
+      var goHome = function () {
+        try { origArrival.apply(this, arguments); } catch (e) {}
+        try {
+          var ov = document.getElementById("arrival-screen-overlay");
+          if (ov) ov.remove();
+          var fl = document.getElementById("arrival-back-floating");
+          if (fl) fl.remove();
+          if (typeof __arrivalShowCityView === "function") __arrivalShowCityView();
+          var fl2 = document.getElementById("arrival-back-floating");
+          if (fl2) fl2.remove();
+          window.scrollTo(0, 0);
+        } catch (e) {}
+      };
+      goHome.__wzV2 = true;
+      __arrivalShow = goHome; // eslint-disable-line no-global-assign
+      window.__arrivalShow = goHome;
+    }
   } catch (e) {}
 
   decorate();

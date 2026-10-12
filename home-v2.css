@@ -202,3 +202,32 @@ html body.wz-v2 #newfinds-result .explore-pick div[style*="color:#"] { color: rg
 html body.wz-v2 #newfinds-result > * { border-color: rgba(255,255,255,.1) !important; }
 html body.wz-v2 #newfinds-result p { color: rgba(255,255,255,.7) !important; }
 html body.wz-v2 #newfinds-result .explore-pick div[style*="font-family"][style*="font-family"] { color: #fff !important; }
+
+
+/* ---- écran d'arrivée allégé : Autour de moi, Mon ambiance, Tout voir, Prépare ton séjour ---- */
+html body.wz-v2 #arrival-screen-overlay .arrival-opt[data-key="carnet"],
+html body.wz-v2 #arrival-screen-overlay .arrival-opt[data-key="nouveautes"],
+html body.wz-v2 #arrival-screen-overlay #arrival-tonight-strip { display: none !important; }
+html body.wz-v2 #arrival-screen-overlay div:has(> #arrival-tonight-strip) { display: none !important; }
+
+
+/* ---- tout sur l'accueil : 4 raccourcis en grille, bouton « Autour de moi » sur la photo, plus de 🛬 ---- */
+html body.wz-v2 #view-discover > #wz-shortcuts { display: grid !important; grid-template-columns: 1fr 1fr; gap: 8px !important; margin: 0 16px 12px !important; }
+html body.wz-v2 .wz-sc { padding: 12px 6px !important; font-size: 12.5px !important; flex: none !important; }
+html body.wz-v2 #arrival-back-floating { display: none !important; }
+html body.wz-v2 .locate-bar { position: relative; }
+html body.wz-v2 .locate-bar .wz-near { position: absolute; top: 14px; right: 14px; z-index: 3; border: none; border-radius: 999px; padding: 9px 14px;
+  background: linear-gradient(135deg,#F2864B,#E85D3D); color: #fff; font: 700 12.5px/1 'Plus Jakarta Sans', system-ui, sans-serif; cursor: pointer;
+  box-shadow: 0 6px 16px -6px rgba(232,93,61,.7); }
+
+
+/* bande des jours : sans les chiffres, plus compacte ; 3 boutons de période qui tiennent sur une ligne */
+html body.wz-v2 #view-discover .week-day-count { display: none !important; }
+html body.wz-v2 #view-discover .week-day-btn { padding-block: 8px !important; }
+html body.wz-v2 #wz-chips { overflow-x: visible !important; }
+html body.wz-v2 #wz-chips .wz-chip { flex: 1 1 0; justify-content: center; }
+
+html body.wz-v2 #wz-chips .wz-chip-n { display: none !important; }
+html body.wz-v2 #wz-chips { gap: 8px !important; padding: 0 16px !important; }
+html body.wz-v2 #wz-chips .wz-chip { padding: 12px 8px !important; text-align: center; }
+html body.wz-v2 #view-discover > #wz-chips { margin: 14px 0 10px !important; }
