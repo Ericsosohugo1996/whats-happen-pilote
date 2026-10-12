@@ -8,6 +8,20 @@
   if (window.__wzHomeV2) return;
   window.__wzHomeV2 = true;
 
+
+  // ---- mesure des visites (Cloudflare Web Analytics : sans cookies, sans suivi individuel) ----
+  // POUR ARRÊTER LA MESURE : supprimer ce bloc, ou supprimer home-v2.js.
+  try {
+    var h = location.hostname;
+    if ((h === "whazup.fr" || h === "www.whazup.fr") && !document.getElementById("wz-cf-beacon")) {
+      var cf = document.createElement("script");
+      cf.id = "wz-cf-beacon"; cf.defer = true;
+      cf.src = "https://static.cloudflareinsights.com/beacon.min.js";
+      cf.setAttribute("data-cf-beacon", '{"token": "ad121ae2ee3c49eab1b791fd877d0009"}');
+      document.head.appendChild(cf);
+    }
+  } catch (e) {}
+
   // ---- feuille de style (fichier séparé) ----
   try {
     if (!document.getElementById("wz-home-v2-css")) {
