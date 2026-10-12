@@ -176,6 +176,7 @@
 
   function decorate() {
     try {
+      document.body.classList.toggle("wz-nocity", typeof __hasPickedCity !== "undefined" && !__hasPickedCity);
       revealResults();
       var row = ensureChips();
       ensureShortcuts();

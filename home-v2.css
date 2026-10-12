@@ -231,3 +231,20 @@ html body.wz-v2 #wz-chips .wz-chip-n { display: none !important; }
 html body.wz-v2 #wz-chips { gap: 8px !important; padding: 0 16px !important; }
 html body.wz-v2 #wz-chips .wz-chip { padding: 12px 8px !important; text-align: center; }
 html body.wz-v2 #view-discover > #wz-chips { margin: 14px 0 10px !important; }
+
+/* ---- « Choisir une autre ville » : écran de choix de ville (avant qu'une ville soit choisie) ---- */
+html body.wz-v2.wz-nocity #wz-chips,
+html body.wz-v2.wz-nocity #wz-shortcuts,
+html body.wz-v2.wz-nocity #surprise-block,
+html body.wz-v2.wz-nocity .locate-bar .wz-near,
+html body.wz-v2.wz-nocity #locate-bar-photo,
+html body.wz-v2.wz-nocity #unified-explore-btn { display: none !important; }
+html body.wz-v2.wz-nocity #view-discover .locate-bar { height: auto !important; min-height: 0 !important; overflow: visible !important; background: none !important; box-shadow: none !important; border-radius: 0 !important; margin: 0 !important; }
+html body.wz-v2.wz-nocity #view-discover .locate-body { display: block !important; padding: 0 16px 24px !important; }
+html body.wz-v2.wz-nocity #bonhomme-banner { padding: 26px 0 18px !important; }
+html body.wz-v2.wz-nocity #bonhomme-banner .brand-word { color: #fff !important; }
+html body.wz-v2.wz-nocity #bonhomme-banner > div:last-child { color: #C7CEE3 !important; font-size: 15px !important; }
+
+html body.wz-v2.wz-nocity #view-discover > #wz-shortcuts, html body.wz-v2.wz-nocity #view-discover > #wz-chips, html body.wz-v2.wz-nocity #view-discover > #surprise-block, html body.wz-v2.wz-nocity #view-discover > #week-strip-banner { display: none !important; }
+
+html body.wz-v2.wz-nocity #view-discover > #wz-more, html body.wz-v2.wz-nocity #view-discover > .home-quickbar-section, html body.wz-v2.wz-nocity #view-discover > #free-search-wrap, html body.wz-v2.wz-nocity #view-discover > #event-list-featured { display: none !important; }
