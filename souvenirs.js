@@ -127,8 +127,21 @@
         new Promise(function (resolve) { setTimeout(resolve, 6000); }),
       ]);
     }
+    // Le compte peut mettre quelques secondes à se rétablir au démarrage : on l'attend
+    // plutôt que d'afficher à tort "Aucun souvenir".
+    if (!auth.currentUser) {
+      await new Promise(function (resolve) {
+        var unsub = function () {};
+        var timer = setTimeout(function () { try { unsub(); } catch (e) {} resolve(); }, 8000);
+        try {
+          unsub = auth.onAuthStateChanged(function (u) {
+            if (u) { clearTimeout(timer); try { unsub(); } catch (e) {} resolve(); }
+          });
+        } catch (e) { clearTimeout(timer); resolve(); }
+      });
+    }
     const col = souvenirsCollection();
-    if (!col) return [];
+    if (!col) return null;
     try {
       const snap = await col.orderBy("createdAt", "desc").get();
       return snap.docs.map(function (d) { return d.data(); });
