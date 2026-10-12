@@ -252,6 +252,11 @@
       '<select id="souvenir-category-input" style="width:100%;padding:11px;border-radius:12px;border:1px solid #ddd;font-size:13px;color:#333;margin-bottom:16px;background:#fff;">' +
       SOUVENIR_CATEGORIES.map(function (c) { return '<option value="' + c.key + '">' + c.label + '</option>'; }).join("") +
       '</select>' +
+      '<div style="font-size:11px;color:#888;font-weight:700;margin-bottom:6px;margin-top:-4px;">QUI PEUT VOIR LA PHOTO ?</div>' +
+      '<div style="display:flex;gap:8px;margin-bottom:16px;">' +
+      '<label style="flex:1;display:flex;align-items:center;gap:6px;padding:10px;border:1px solid #ddd;border-radius:12px;font-size:12.5px;color:#333;"><input type="radio" name="souvenir-visib" value="me" checked> 🔒 Moi seul</label>' +
+      '<label style="flex:1;display:flex;align-items:center;gap:6px;padding:10px;border:1px solid #ddd;border-radius:12px;font-size:12.5px;color:#333;"><input type="radio" name="souvenir-visib" value="amis"> 👥 Mes amis · 7 j</label>' +
+      '</div>' +
       '<div style="display:flex;gap:10px;">' +
       '<button id="souvenir-cancel-btn" style="flex:1;padding:12px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#333;font-size:13px;">Annuler</button>' +
       '<button id="souvenir-save-btn" style="flex:2;padding:12px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:13px;font-weight:700;">Enregistrer</button>' +
@@ -297,7 +302,7 @@
       const text = document.getElementById("souvenir-text-input").value;
       const category = document.getElementById("souvenir-category-input").value;
       try {
-        await saveSouvenir({
+        const saved = await saveSouvenir({
           file: selectedFile,
           text: text,
           placeName: prefill.placeName,
@@ -306,6 +311,9 @@
           lng: prefill.lng,
           category: category,
         });
+
+        const vis = overlay.querySelector('input[name="souvenir-visib"]:checked');
+        if (saved && saved.photoUrl && vis && vis.value === "amis" && window.__wzSharePhoto) { await window.__wzSharePhoto(saved); }
         overlay.remove();
         if (window.__renderSouvenirsScreen) window.__renderSouvenirsScreen();
       } catch (err) {
