@@ -330,13 +330,40 @@
     } else {
       h += '<div class="wz-soir-e">📸 Bientôt les photos des soirées de ' + cityNameNow() + '.</div>';
     }
-    h += '<div class="wz-soir-n2">Bientôt : les photos de tes amis, à garder dans ton carnet.</div>';
+    h += '<div class="wz-soir-h2">👥 Tes amis</div><div id="wz-amis-feed" class="wz-feed"><div class="wz-soir-n2">Chargement…</div></div>';
     return h;
+  }
+  function esc(t) { return String(t || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function fillFeed() {
+    var box = document.getElementById("wz-amis-feed");
+    if (!box || !window.__wzLoadFriendPhotos) return;
+    window.__wzLoadFriendPhotos().then(function (list) {
+      box = document.getElementById("wz-amis-feed");
+      if (!box) return;
+      if (list === null) { box.innerHTML = '<div class="wz-soir-n2">Connecte-toi avec ton compte pour voir les photos de tes amis.</div>'; return; }
+      if (!list.length) { box.innerHTML = '<div class="wz-soir-n2">Aucune photo pour l\'instant. Ouvre un souvenir et touche « 🌙 Partager avec mes amis ».</div>'; return; }
+      var me = (typeof auth !== "undefined" && auth.currentUser) ? auth.currentUser.uid : "";
+      box.innerHTML = list.map(function (p, i) {
+        var days = Math.max(1, Math.ceil((p.expiresAt - Date.now()) / 86400000));
+        var mine = p.ownerUid === me;
+        return '<div class="wz-fp"><div class="wz-fp-img" style="background-image:url(\'' + esc(p.photoUrl) + '\')"></div>' +
+          '<div class="wz-fp-b"><b>' + (mine ? "Toi" : esc(p.ownerName)) + '</b>' + (p.placeName ? ' · 📍 ' + esc(p.placeName) : '') +
+          '<small>encore ' + days + ' j</small></div>' +
+          '<div class="wz-fp-a">' + (mine ? '<button data-a="del" data-i="' + i + '">Retirer</button>' : '<button data-a="keep" data-i="' + i + '">📖 Garder dans mon carnet</button>') + '</div></div>';
+      }).join("");
+      box.onclick = function (e) {
+        var b = e.target.closest("button[data-a]"); if (!b) return;
+        var p = list[+b.dataset.i];
+        b.disabled = true;
+        if (b.dataset.a === "keep") window.__wzKeepPhoto(p).then(function (ok) { b.textContent = ok ? "✓ Dans ton carnet" : "Réessayer"; b.disabled = ok; });
+        else window.__wzUnshare(p._id).then(function () { fillFeed(); });
+      };
+    });
   }
   function setCarnetTab(scr, t) {
     scr.classList.toggle("wz-soir-on", t === "soir");
     var p = scr.querySelector("#wz-soir");
-    if (p) { p.hidden = t !== "soir"; if (t === "soir") p.innerHTML = soirHTML(); }
+    if (p) { p.hidden = t !== "soir"; if (t === "soir") { p.innerHTML = soirHTML(); fillFeed(); } }
     scr.querySelectorAll("#wz-ctabs button").forEach(function (b) { b.classList.toggle("on", b.dataset.t === t); });
   }
   function injectCarnetTabs(scr) {

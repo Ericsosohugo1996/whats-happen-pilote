@@ -187,6 +187,7 @@
     if (!col) return null;
     try {
       const snap = await col.orderBy("createdAt", "desc").get();
+      try { console.info("[carnet] uid=" + auth.currentUser.uid + " anonyme=" + auth.currentUser.isAnonymous + " souvenirs=" + snap.size); } catch (e) {}
       return snap.docs.map(function (d) { return d.data(); });
     } catch (err) {
       console.error("Erreur de chargement des souvenirs :", err);
@@ -429,6 +430,7 @@
       '<button class="souvenir-share-opt" data-net="link" style="background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;">🔗</span><span style="font-size:10px;">Lien</span></button>' +
       '</div>' +
       (s.photoUrl ? '<button id="souvenir-detail-sendphoto" style="width:100%;margin-top:18px;padding:13px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">📤 Envoyer la photo à un ami</button>' : '') +
+      (s.photoUrl ? '<button id="souvenir-detail-shareamis" style="width:100%;margin-top:10px;padding:13px;border-radius:999px;border:1px solid rgba(255,255,255,0.35);background:rgba(255,255,255,0.08);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">🌙 Partager avec mes amis (7 jours)</button>' : '') +
       '<button id="souvenir-detail-share" style="width:100%;margin-top:' + (s.photoUrl ? '10' : '18') + 'px;padding:13px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">Partager</button>' +
       '<button id="souvenir-detail-delete" style="width:100%;margin-top:10px;padding:10px;border-radius:999px;border:none;background:none;color:rgba(255,255,255,0.6);font-size:12px;cursor:pointer;">🗑️ Supprimer ce souvenir</button>' +
       '</div>';
@@ -450,6 +452,13 @@
     }
 
     document.getElementById("souvenir-detail-share").addEventListener("click", doShare);
+    const amisBtn = document.getElementById("souvenir-detail-shareamis");
+    if (amisBtn) amisBtn.addEventListener("click", async function () {
+      amisBtn.disabled = true;
+      const ok = await window.__wzSharePhoto(s);
+      amisBtn.disabled = false;
+      if (ok) amisBtn.textContent = "✓ Partagé avec tes amis";
+    });
 
     // Envoi de la vraie photo (comme dans la galerie) via le menu de partage du téléphone.
     // Si le navigateur ne sait pas envoyer un fichier, ou ne peut pas le lire, on retombe sur le lien.
@@ -976,6 +985,89 @@
   }
 
     window.__openAddSouvenirModal = openAddSouvenirModal;
+  // Si le compte est reconnu (ou change) pendant que le carnet est ouvert, on le recharge :
+  // ça évite un carnet vide à tort quand on l'ouvre juste après le démarrage.
+  (function () {
+    var lastUid = auth.currentUser ? auth.currentUser.uid : null;
+    try {
+      auth.onAuthStateChanged(function (u) {
+        var uid = u ? u.uid : null;
+        if (uid && uid !== lastUid) {
+          lastUid = uid;
+          if (document.getElementById("souvenirs-screen")) { try { renderSouvenirsScreen(); } catch (e) {} }
+        } else if (uid) {
+          lastUid = uid;
+        }
+      });
+    } catch (e) {}
+  })();
+
+  // ---- photos partagées avec les amis ("Hier soir", 7 jours) ----
+  function wzToast(m) { if (typeof showShareToast === "function") showShareToast(m); else alert(m); }
+  window.__wzSharePhoto = async function (s) {
+    const user = auth.currentUser;
+    if (!user || user.isAnonymous) { wzToast("Connecte-toi avec ton compte pour partager avec tes amis."); return false; }
+    if (!s || !s.photoUrl) { wzToast("Ce souvenir n'a pas de photo."); return false; }
+    const friends = window.__loadFriendsList ? await window.__loadFriendsList() : [];
+    if (!friends || !friends.length) { wzToast("Ajoute d'abord un ami dans l'onglet Amis."); return false; }
+    const now = Date.now();
+    try {
+      await db.collection("sharedPhotos").add({
+        ownerUid: user.uid,
+        ownerName: (user.email || "Un ami").split("@")[0],
+        audience: friends.map(function (f) { return f.uid; }),
+        photoUrl: s.photoUrl,
+        placeName: s.placeName || "",
+        city: s.city || "",
+        souvenirId: s.id || "",
+        createdAt: now,
+        expiresAt: now + 7 * 24 * 3600 * 1000
+      });
+      wzToast("✓ Partagé avec tes amis pendant 7 jours.");
+      return true;
+    } catch (e) { console.error(e); wzToast("Partage impossible pour le moment."); return false; }
+  };
+  // Renvoie les photos visibles (amis + les miennes), ou null si pas connecté.
+  window.__wzLoadFriendPhotos = async function () {
+    const user = auth.currentUser;
+    if (!user || user.isAnonymous) return null;
+    const now = Date.now();
+    const out = [];
+    try {
+      const snap = await db.collection("sharedPhotos").where("audience", "array-contains", user.uid).get();
+      snap.forEach(function (d) {
+        const x = d.data(); x._id = d.id;
+        if (x.expiresAt > now) out.push(x);
+      });
+      const mine = await db.collection("sharedPhotos").where("ownerUid", "==", user.uid).get();
+      mine.forEach(function (d) {
+        const x = d.data(); x._id = d.id;
+        if (x.expiresAt > now) out.push(x);
+        else d.ref.delete().catch(function () {});
+      });
+    } catch (e) { console.error(e); return []; }
+    out.sort(function (a, b) { return b.createdAt - a.createdAt; });
+    return out;
+  };
+  window.__wzUnshare = async function (id) {
+    try { await db.collection("sharedPhotos").doc(id).delete(); return true; } catch (e) { return false; }
+  };
+  // Garder la photo d'un ami : même photoUrl, aucune copie.
+  window.__wzKeepPhoto = async function (p) {
+    const col = souvenirsCollection();
+    if (!col) return false;
+    const id = uid4();
+    try {
+      await col.doc(id).set({
+        id: id, text: "", placeName: p.placeName || "", placeId: "", lat: null, lng: null,
+        city: p.city || null, photoUrl: p.photoUrl, category: "", weatherIcon: null, weatherTemp: null,
+        createdAt: Date.now(), sharedFrom: p.ownerName || ""
+      });
+      wzToast("✓ Gardée dans ton carnet.");
+      return true;
+    } catch (e) { console.error(e); wzToast("Impossible de garder la photo."); return false; }
+  };
+
   window.__renderSouvenirsScreen = renderSouvenirsScreen;
   window.__renderPassportScreen = renderPassportScreen;
   window.__loadSouvenirs = loadSouvenirs;
