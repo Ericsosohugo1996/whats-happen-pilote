@@ -204,6 +204,7 @@
       });
     }
     paintCarnet();
+    paintSoirTeaser();
     var blk2 = document.getElementById("surprise-block") || ((typeof __ensureSurpriseUI === "function") ? __ensureSurpriseUI() : null);
     if (blk2 && blk2.previousElementSibling !== row) row.parentNode.insertBefore(blk2, row.nextSibling);
   }
@@ -300,6 +301,100 @@
       var h = new Date().getHours();
       var night = h >= 18 || h < 5;
       CITY_PHOTOS.paris = night ? "photo-paris-pont-neuf-nuit.jpg" : "photo-paris-sainte-chapelle-jour.jpg";
+    } catch (e) {}
+  }
+
+
+  // ---- le Carnet a 4 onglets : Souvenirs · Hier soir · Amis · Passeport ----
+  var SOIR_PH = {
+    paris: [
+      ["photo-paris-pont-neuf-nuit.jpg", "Le Pont Neuf"],
+      ["photo-paris-grand-palais-nuit.jpg", "Le Grand Palais"],
+      ["photo-paris-orsay-nuit.jpg", "Orsay"],
+      ["photo-paris-louvre-reflet.jpg", "Le Louvre"],
+      ["photo-paris-sainte-chapelle-jour.jpg", "La Sainte-Chapelle"],
+      ["photo-paris-bar.jpg", "Un verre en ville"]
+    ]
+  };
+  function cityNameNow() {
+    try { return CITIES[state.city].name; } catch (e) { return "ta ville"; }
+  }
+  function soirHTML() {
+    var c = (typeof state !== "undefined" && state.city) || "";
+    var h = '<div class="wz-soir-h">Hier soir à ' + cityNameNow() + '</div><div class="wz-soir-s">Si j\'avais su, j\'y serais allé.</div>';
+    var list = SOIR_PH[c];
+    if (list) {
+      h += '<div class="wz-soir-g">';
+      list.forEach(function (p) { h += '<div class="wz-soir-i" style="background-image:url(\'' + p[0] + '\')"><span>' + p[1] + '</span></div>'; });
+      h += '</div><div class="wz-soir-n">📷 Sélection Whazup</div>';
+    } else {
+      h += '<div class="wz-soir-e">📸 Bientôt les photos des soirées de ' + cityNameNow() + '.</div>';
+    }
+    h += '<div class="wz-soir-n2">Bientôt : les photos de tes amis, à garder dans ton carnet.</div>';
+    return h;
+  }
+  function setCarnetTab(scr, t) {
+    scr.classList.toggle("wz-soir-on", t === "soir");
+    var p = scr.querySelector("#wz-soir");
+    if (p) { p.hidden = t !== "soir"; if (t === "soir") p.innerHTML = soirHTML(); }
+    scr.querySelectorAll("#wz-ctabs button").forEach(function (b) { b.classList.toggle("on", b.dataset.t === t); });
+  }
+  function injectCarnetTabs(scr) {
+    if (!scr || scr.querySelector("#wz-ctabs")) return;
+    var anchor = scr.querySelector("#souvenirs-city-tabs");
+    if (!anchor) return;
+    var bar = document.createElement("div");
+    bar.id = "wz-ctabs";
+    bar.innerHTML = '<button type="button" data-t="souv" class="on">Souvenirs</button><button type="button" data-t="soir">Hier soir</button><button type="button" data-t="amis">Amis</button><button type="button" data-t="pass">Passeport</button>';
+    var panel = document.createElement("div");
+    panel.id = "wz-soir"; panel.hidden = true;
+    anchor.parentNode.insertBefore(bar, anchor);
+    anchor.parentNode.insertBefore(panel, anchor);
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-t]");
+      if (!b) return;
+      var t = b.dataset.t;
+      if (t === "amis") { try { if (window.__renderFriendsScreen) window.__renderFriendsScreen(); } catch (er) {} return; }
+      if (t === "pass") { try { if (window.__renderPassportScreen) window.__renderPassportScreen(); } catch (er) {} return; }
+      setCarnetTab(scr, t);
+    });
+  }
+  try {
+    new MutationObserver(function () {
+      var scr = document.getElementById("souvenirs-screen");
+      if (scr && !scr.querySelector("#wz-ctabs")) injectCarnetTabs(scr);
+    }).observe(document.body, { childList: true });
+  } catch (e) {}
+  window.__wzOpenSoir = function () {
+    try {
+      if (!window.__renderSouvenirsScreen) return;
+      window.__renderSouvenirsScreen();
+      setTimeout(function () {
+        var scr = document.getElementById("souvenirs-screen");
+        if (scr) { injectCarnetTabs(scr); setCarnetTab(scr, "soir"); }
+      }, 30);
+    } catch (e) {}
+  };
+
+  // ligne « Hier soir » sur l'accueil
+  function paintSoirTeaser() {
+    try {
+      var row = document.getElementById("wz-shortcuts");
+      if (!row) return;
+      var b = document.getElementById("sc-soir");
+      if (!b) {
+        b = document.createElement("button");
+        b.type = "button"; b.id = "sc-soir"; b.className = "wz-sc";
+        b.addEventListener("click", function () { window.__wzOpenSoir(); });
+        row.appendChild(b);
+      }
+      var c = (typeof state !== "undefined" && state.city) || "";
+      var key = c;
+      if (b.getAttribute("data-wzk") === key) return;
+      b.setAttribute("data-wzk", key);
+      var th = "";
+      if (SOIR_PH[c]) th = '<span class="wz-tz"><i style="background-image:url(\'' + SOIR_PH[c][1][0] + '\')"></i><i style="background-image:url(\'' + SOIR_PH[c][5][0] + '\')"></i></span>';
+      b.innerHTML = th + '<span class="wz-carnet-t"><b>📸 Hier soir à ' + cityNameNow() + '</b><small>Si tu avais su…</small></span><span class="wz-carnet-go">›</span>';
     } catch (e) {}
   }
 
