@@ -25,6 +25,8 @@
   var origVisible = visibleEvents;
   visibleEvents = function () {
     var all = origVisible.apply(this, arguments);
+    // nouvelle page d'accueil (home-v2.js) : « Aujourd'hui » / « Ce soir » triés par heure AVANT de couper la liste
+    try { if (window.__wzSortSoon) all = window.__wzSortSoon(all); } catch (e) {}
     full = all; shown = all.length;
     var s = signature();
     if (s !== sig) { sig = s; page = FIRST; }

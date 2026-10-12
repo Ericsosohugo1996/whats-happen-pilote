@@ -336,6 +336,42 @@
     }
   } catch (e) {}
 
+  // « Aujourd'hui » et « Ce soir » : d'abord ce qui commence bientôt (par heure), puis les sorties sans heure, puis ce qui a déjà commencé
+  // (home-polish.js appelle cette fonction avant de couper la liste à 30 sorties)
+  window.__wzSortSoon = function (list) {
+    var p = state.selectedPeriod;
+    if ((p !== "today" && p !== "wz-tonight") || !Array.isArray(list)) return list;
+    var n = new Date(), pad = function (x) { return (x < 10 ? "0" : "") + x; };
+    var hm = pad(n.getHours()) + ":" + pad(n.getMinutes()), today = isoPlus(0);
+    var soon = [], none = [], started = [];
+    list.forEach(function (ev) {
+      if (ev.isPlace || ev.date !== today || !ev.time || ev.time === "00:00") none.push(ev);
+      else if (ev.time >= hm) soon.push(ev);
+      else started.push(ev);
+    });
+    var byTime = function (a, b) { return a.time < b.time ? -1 : a.time > b.time ? 1 : 0; };
+    soon.sort(byTime); started.sort(byTime);
+    return soon.concat(none, started);
+  };
+
+  // heure inconnue : on n'affiche plus « 00:00 » ni le « · » vide
+  try {
+    if (typeof exploreRowHTML === "function" && !exploreRowHTML.__wzV2) {
+      var origRow = exploreRowHTML;
+      var rowW = function () { return String(origRow.apply(this, arguments)).replace(/ · 00:00/g, ""); };
+      rowW.__wzV2 = true;
+      exploreRowHTML = rowW; // eslint-disable-line no-global-assign
+    }
+    if (typeof eventCardHTML === "function" && !eventCardHTML.__wzV2) {
+      var origCard = eventCardHTML;
+      var cardW = function () {
+        return String(origCard.apply(this, arguments)).replace(/ · 00:00/g, "").replace(/(<div class="meta">[^<]*?)\s*·\s*<\/div>/, "$1</div>");
+      };
+      cardW.__wzV2 = true;
+      eventCardHTML = cardW; // eslint-disable-line no-global-assign
+    }
+  } catch (e) {}
+
   decorate();
   setTimeout(decorate, 1200);
 })();
