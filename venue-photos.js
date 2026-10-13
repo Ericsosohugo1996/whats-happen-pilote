@@ -79,7 +79,8 @@ const BAD_FILE = /logo|blason|armoiries|drapeau|flag|plan[ _-]|carte|map|affiche
 const LIC_OK = /^(cc[ -]by|cc0|public domain|pd|attribution|domaine public)/i;
 const GENERIC = new Set(["saint", "sainte", "place", "rue", "avenue", "boulevard", "quai", "cours", "port", "pont", "gare", "paris", "ville", "grand", "grande", "petit", "petite", "nouveau", "nouvelle", "vieux", "vieille"]);
 const WEAK = new Set(["theatre", "opera", "salle", "cafe", "casino", "cinema", "auditorium", "complexe", "espace", "palais", "scene", "club", "bar", "comedie", "music", "hall", "halle", "stade", "arena", "zenith"]);
-const BAD_TITLE2 = /\b(rue|boulevard|avenue|gare|pont|inscription|manif|manifestation|panneau|plaque|bus|tram|metro|station|parking|voiture|travail|greve|marche|place|places|fontaine|virgin|vierge|madonna|tableau|retable|painting|statue|sculpture)\b/;
+const BAD_TITLE2 = /\b(rue|boulevard|avenue|gare|pont|inscription|manif|manifestation|panneau|plaque|bus|tram|metro|station|parking|voiture|travail|greve|marche|place|places|fontaine|virgin|vierge|madonna|tableau|retable|painting|statue|sculpture|panel|wood|paint|painting|christ|jesus|polished|gold|oil|portrait|square|jardin|garden|park|parc|village|panorama|vue)\b/;
+const VENUE_IN_TITLE = /(theatre|salle|opera|arena|zenith|palais|casino|cinema|auditorium|scene|club|halle|stade|kursaal|abbaye|chateau|musee|eglise|chapelle|cathedrale|basilique|mediatheque|bibliotheque|galerie|concert|live|tour|facade|interieur|bar|cafe|orange|boule|bain)/;
 async function commonsLookup(name, lat, lng, cityName) {
   const url = COMMONS + "?action=query&format=json&generator=geosearch&ggsprimary=all&ggsnamespace=6&ggsradius=80&ggslimit=30&ggscoord=" +
     lat + "%7C" + lng + "&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1000";
@@ -101,6 +102,7 @@ async function commonsLookup(name, lat, lng, cityName) {
     if ((ii.width || 0) < 800 || (ii.width || 0) < (ii.height || 0) * 0.9) continue; // paysage seulement
     const lic = ii.extmetadata && ii.extmetadata.LicenseShortName && ii.extmetadata.LicenseShortName.value;
     if (!lic || !LIC_OK.test(lic)) continue;
+    if (sig.length < 2 && !VENUE_IN_TITLE.test(title) && !VENUE_IN_TITLE.test(fold(name))) continue; // un seul mot (« Ferrenbach ») sans mot de salle : souvent un village ou une rue
     if (!sig.every((w) => title.includes(w))) continue; // TOUS les mots du nom du lieu doivent être dans le nom du fichier
     const score = (ii.width || 0) / 100;
     if (!best || score > best.score) {
@@ -147,10 +149,10 @@ async function main() {
   }
 
   // ---- passe 2 : Wikimedia Commons pour les lieux sans photo ----
-  if (cache._cv !== 3) { // règle plus stricte : on efface les anciennes photos Commons et on recommence
+  if (cache._cv !== 4) { // règle plus stricte : on efface les anciennes photos Commons et on recommence
     let purged = 0;
     for (const k of Object.keys(cache)) { if (k !== "_v" && k !== "_c" && k !== "_cv" && cache[k] && cache[k].s === "commons") { cache[k] = null; purged++; } }
-    cache._c = {}; cache._cv = 3; console.log("anciennes photos Commons effacées :", purged);
+    cache._c = {}; cache._cv = 4; console.log("anciennes photos Commons effacées :", purged);
   }
   cache._c = cache._c || {};
   const todo2 = Object.entries(all).filter(([k, v]) => v.lat != null && !cache[k] && !(k in cache._c)).sort((a, b) => b[1].n - a[1].n).slice(0, MAX_NEW);
