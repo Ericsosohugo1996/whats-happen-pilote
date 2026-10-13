@@ -49,11 +49,19 @@ function classify(ev) {
   }
   return null; // le reste n'est pas repris
 }
-function bestImage(ev) {
-  const imgs = (ev.images || []).filter((i) => i.url && !i.fallback);
+function pickImage(imgs) {
+  imgs = (imgs || []).filter((i) => i && i.url && !i.fallback);
   if (!imgs.length) return "";
   const wide = imgs.filter((i) => i.ratio === "16_9" && i.width >= 640).sort((a, b) => a.width - b.width);
   return (wide[0] || imgs.sort((a, b) => b.width - a.width)[0]).url;
+}
+// l'affiche de l'événement ; à défaut, celle du spectacle / de l'artiste (« attraction ») ; à défaut, celle de la salle
+function bestImage(ev) {
+  let u = pickImage(ev.images);
+  if (u) return u;
+  const emb = ev._embedded || {};
+  for (const a of emb.attractions || []) { u = pickImage(a.images); if (u) return u; }
+  return "";
 }
 function priceOf(ev) {
   const p = (ev.priceRanges || [])[0];
