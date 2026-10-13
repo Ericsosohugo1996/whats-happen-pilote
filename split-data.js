@@ -49,6 +49,21 @@ for (const { kind, file } of SOURCES) {
       console.log("événements Ville de Paris ajoutés :", added);
     } catch (e) { console.log("paris-events.json illisible :", e.message); }
   }
+  // concerts, soirées et sport via Ticketmaster (ticketmaster-sync.js) : on les ajoute, sans doublon (même ville, même titre, même jour)
+  if (kind === "events" && fs.existsSync("ticketmaster-events.json")) {
+    try {
+      const extra = JSON.parse(fs.readFileSync("ticketmaster-events.json", "utf8"));
+      const fold2 = (x) => String(x || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+      const have2 = new Set(items.map((e) => e.city + "|" + fold2(e.title) + "|" + e.date));
+      let added2 = 0;
+      if (Array.isArray(extra)) for (const e of extra) {
+        const k = e.city + "|" + fold2(e.title) + "|" + e.date;
+        if (have2.has(k)) continue;
+        have2.add(k); items.push(e); added2++;
+      }
+      console.log("événements Ticketmaster ajoutés :", added2);
+    } catch (e) { console.log("ticketmaster-events.json illisible :", e.message); }
+  }
   // photos des lieux (trouvées par enrich-photos.js) : on les ajoute aux lieux qui n'en ont pas
   if (kind === "places") {
     let cache = {};
