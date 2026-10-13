@@ -1,4 +1,4 @@
-// Whazup — concerts, soirées et spectacles via l'API Discovery de Ticketmaster.
+// Whazup — concerts, soirées électro et sport via l'API Discovery de Ticketmaster.
 // Lancé chaque jour par .github/workflows/ticketmaster-events.yml. Écrit ticketmaster-events.json
 // (même format que paris-events.json). La clé est lue dans le secret GitHub TICKETMASTER_KEY.
 // Chaque événement garde le lien Ticketmaster (billetterie), comme l'exigent les conditions d'utilisation.
@@ -42,7 +42,6 @@ function classify(ev) {
     return ["musique", "Musique"];
   }
   if (seg === "sports") return ["sport", "Sport"];
-  if (seg.indexOf("arts") === 0 && /comedy|humour|humor|stand/.test(genre + " " + sub)) return ["village", "Soirée"];
   return null; // théâtre, danse classique, etc. : pas pour l'instant
 }
 function bestImage(ev) {
@@ -85,7 +84,7 @@ async function getJson(url) {
       const q = new URLSearchParams({
         apikey: KEY, latlong: c.lat + "," + c.lng, radius: String(RADIUS_KM), unit: "km", countryCode: "FR",
         startDateTime: isoZ(now), endDateTime: isoZ(end), size: "200", page: String(page), sort: "date,asc", locale: "*",
-        classificationName: "music,sports,arts & theatre",
+        classificationName: "music,sports",
       });
       calls++;
       const r = await getJson(BASE + "?" + q.toString());
