@@ -78,13 +78,43 @@
     var id = kind + "/" + key;
     if (loaded[id] || inflight[id]) return inflight[id] || Promise.resolve();
     if (!index[kind] || !index[kind][key]) { loaded[id] = true; return Promise.resolve(); }
+    var sk = STATE_KEY[kind];
+    var hasSoon = kind === "events" && index.soon && index.soon[key];
     pending++; setLoading();
-    inflight[id] = origFetch("/data/" + kind + "/" + key + ".json")
-      .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (arr) {
-        if (Array.isArray(arr) && arr.length) state[STATE_KEY[kind]] = state[STATE_KEY[kind]].concat(arr);
-        loaded[id] = true;
-      })
+    function addFull(soonItems) {
+      // chargement complet en arrière-plan : il remplace le petit paquet, sans rien perdre
+      return origFetch("/data/" + kind + "/" + key + ".json")
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (arr) {
+          if (!Array.isArray(arr) || !arr.length) return;
+          if (soonItems && soonItems.length) {
+            var set = new Set(soonItems);
+            state[sk] = state[sk].filter(function (e) { return !set.has(e); });
+          }
+          state[sk] = state[sk].concat(arr);
+        });
+    }
+    var job;
+    if (hasSoon) {
+      job = origFetch("/data/events/" + key + ".soon.json")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; })
+        .then(function (soon) {
+          if (Array.isArray(soon) && soon.length) {
+            state[sk] = state[sk].concat(soon);
+            loaded[id] = true;
+            rerender(); // les événements des prochains jours s'affichent tout de suite
+            // le reste arrive en arrière-plan puis on redessine
+            addFull(soon).catch(function (e) { console.error("Chargement complet de " + id + " impossible", e); })
+              .then(function () { rerender(); });
+          } else {
+            return addFull(null).then(function () { loaded[id] = true; });
+          }
+        });
+    } else {
+      job = addFull(null).then(function () { loaded[id] = true; });
+    }
+    inflight[id] = job
       .catch(function (e) { console.error("Chargement de " + id + " impossible", e); })
       .then(function () { delete inflight[id]; pending--; setLoading(); });
     return inflight[id];
@@ -96,11 +126,14 @@
       if (fallback) return loadEverything();
       var jobs = [];
       neededKeys().forEach(function (k) {
-        ["events", "places", "bars"].forEach(function (kind) {
-          var id = kind + "/" + k;
-          if (!loaded[id] && !inflight[id]) jobs.push(loadKey(kind, k));
-          else if (inflight[id]) jobs.push(inflight[id]);
-        });
+        var fresh = ["events", "places", "bars"].some(function (kind) { return !loaded[kind + "/" + k]; });
+        if (!fresh) { ["events", "places", "bars"].forEach(function (kind) { if (inflight[kind + "/" + k]) jobs.push(inflight[kind + "/" + k]); }); return; }
+        if (index.soon && index.soon[k]) {
+          // grande ville : les événements d'abord (petit paquet), puis les lieux et les bars
+          jobs.push(loadKey("events", k).then(function () { return Promise.all([loadKey("places", k), loadKey("bars", k)]); }));
+        } else {
+          ["events", "places", "bars"].forEach(function (kind) { jobs.push(loadKey(kind, k)); });
+        }
       });
       return Promise.all(jobs).then(function () { return jobs.length; });
     });

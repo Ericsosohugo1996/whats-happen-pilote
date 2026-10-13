@@ -15,7 +15,7 @@ const SOURCES = [
   { kind: "bars", file: "osm-bars.json" },
 ];
 const OUT = "data";
-const index = { generatedAt: new Date().toISOString(), events: {}, places: {}, bars: {} };
+const index = { generatedAt: new Date().toISOString(), events: {}, places: {}, bars: {}, soon: {} };
 
 function safe(key) {
   return String(key || "autre").toLowerCase().replace(/[^a-z0-9_-]/g, "_");
@@ -127,20 +127,32 @@ for (const { kind, file } of SOURCES) {
   const dir = path.join(OUT, kind);
   fs.mkdirSync(dir, { recursive: true });
   // on supprime les fichiers de villes qui n'existent plus, pour ne pas garder de vieilles données
-  for (const f of fs.readdirSync(dir)) if (f.endsWith(".json") && !byCity[f.slice(0, -5)]) fs.unlinkSync(path.join(dir, f));
+  for (const f of fs.readdirSync(dir)) if (f.endsWith(".json") && !f.endsWith(".soon.json") && !byCity[f.slice(0, -5)]) fs.unlinkSync(path.join(dir, f));
   for (const [city, list] of Object.entries(byCity)) {
     const json = JSON.stringify(list);
     const target = path.join(dir, city + ".json");
     if (!fs.existsSync(target) || fs.readFileSync(target, "utf8") !== json) fs.writeFileSync(target, json);
     index[kind][city] = list.length;
+    // grandes villes : petit fichier « prochains jours » pour que le site s'affiche vite (le fichier complet suit en arrière-plan)
+    if (kind === "events") {
+      const sp = path.join(dir, city + ".soon.json");
+      if (list.length > 400) {
+        const lim = new Date(Date.now() + 10 * 86400000).toISOString().slice(0, 10);
+        const soon = list.filter((e) => !e.date || e.date <= lim).map((e) => { const c = Object.assign({}, e); delete c.description; return c; });
+        const sj = JSON.stringify(soon);
+        if (!fs.existsSync(sp) || fs.readFileSync(sp, "utf8") !== sj) fs.writeFileSync(sp, sj);
+        index.soon[city] = soon.length;
+      } else if (fs.existsSync(sp)) fs.unlinkSync(sp);
+    }
   }
+  if (kind === "events") for (const f of fs.readdirSync(dir)) if (f.endsWith(".soon.json") && !index.soon[f.slice(0, -10)]) fs.unlinkSync(path.join(dir, f));
   console.log(kind + " :", items.length, "éléments,", Object.keys(byCity).length, "villes");
 }
 // l'index ne change pas la date si rien d'autre n'a changé : on conserve l'ancienne date dans ce cas
 const idxPath = path.join(OUT, "index.json");
 try {
   const old = JSON.parse(fs.readFileSync(idxPath, "utf8"));
-  const same = JSON.stringify([old.events, old.places, old.bars]) === JSON.stringify([index.events, index.places, index.bars]);
+  const same = JSON.stringify([old.events, old.places, old.bars, old.soon]) === JSON.stringify([index.events, index.places, index.bars, index.soon]);
   if (same) index.generatedAt = old.generatedAt;
 } catch (e) {}
 fs.mkdirSync(OUT, { recursive: true });
