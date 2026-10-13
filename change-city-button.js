@@ -3,10 +3,19 @@ function goToChangeCity() {
   const landmarkModal = document.getElementById("landmark-modal");
   if (landmarkModal) landmarkModal.classList.add("hidden");
 
+  // si la personne s'était géolocalisée, on oublie la position : sinon la liste des villes reste cachée
+  try {
+    if (typeof state !== "undefined" && state.userPos) {
+      if (typeof nearestCityKey === "function") { try { state.city = nearestCityKey(); } catch (e) {} }
+      state.userPos = null;
+    }
+  } catch (e) {}
   if (typeof __hasPickedCity !== "undefined") {
     __hasPickedCity = false;
-    if (typeof renderLocateBar === "function") renderLocateBar();
+    if (typeof renderDiscover === "function") renderDiscover();
+    else if (typeof renderLocateBar === "function") renderLocateBar();
   }
+  try { var __acc = document.getElementById("region-accordion"); if (__acc) __acc.classList.remove("hidden"); var __h = document.getElementById("locate-hint"); if (__h) __h.classList.remove("hidden"); } catch (e) {}
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
