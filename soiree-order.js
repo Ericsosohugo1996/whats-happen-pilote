@@ -8,6 +8,14 @@
     if (ci > 1) { CATEGORIES.splice(ci, 1); CATEGORIES.splice(CATEGORIES.indexOf("Musique") + 1, 0, "Soirée"); }
   } catch (e) {}
 
+  try { // nouvelle rubrique « Spectacles » et nom clair pour « Expo »
+    var si = CATEGORIES.indexOf("Soirée");
+    if (CATEGORIES.indexOf("Spectacles") < 0) CATEGORIES.splice(si + 1, 0, "Spectacles");
+    CATEGORY_COLORS["Spectacles"] = "#7B4FD6";
+    CATEGORY_ICONS["Spectacles"] = "🎭";
+    CATEGORY_LABELS["Expo"] = "Expos & visites";
+  } catch (e) {}
+
   var NIGHT = ["Soirée", "Musique", "Bar"];
   function rank(ev) { // 0 = vraie soirée (20h-5h), 1 = début de soirée, 2 = le reste
     var t = ev.time ? parseInt(String(ev.time).split(":")[0], 10) : NaN;

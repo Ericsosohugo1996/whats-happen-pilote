@@ -7,6 +7,7 @@ const path = require("path");
 const { nameMatches } = require("./photo-match.js");
 const { pickFor } = require("./type-photos.js");
 const { tidyText, tidyPlace } = require("./tidy-text.js");
+const { reclassify } = require("./reclass.js");
 
 const SOURCES = [
   { kind: "events", file: "datatourisme-events.json" },
@@ -111,6 +112,15 @@ for (const { kind, file } of SOURCES) {
       ev.title = t; ev.place = pl;
     }
     console.log("titres/lieux remis en forme :", n);
+  }
+  // « Festival » ne doit contenir que de vrais festivals : le reste est rangé dans sa vraie catégorie
+  if (kind === "events") {
+    const moved = {};
+    for (const ev of items) {
+      const c = reclassify(ev);
+      if (c !== ev.category) { moved[c] = (moved[c] || 0) + 1; ev.category = c; }
+    }
+    console.log("événements reclassés depuis « Festival » :", JSON.stringify(moved));
   }
   const byCity = {};
   for (const ev of items) (byCity[safe(ev.city)] = byCity[safe(ev.city)] || []).push(ev);
