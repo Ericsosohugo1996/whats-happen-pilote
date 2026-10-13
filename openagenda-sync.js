@@ -186,7 +186,7 @@ async function fetchBrocantes(cities, nowIso, seen, prev) {
     let json = null;
     for (let i = 0; i < 3 && !json; i++) {
       try {
-        const res = await fetch(ODS + "?" + q.toString(), { headers: { "User-Agent": "whazup-sync/1.0 (+https://whazup.fr)" } });
+        const res = await fetch(ODS + "?" + q.toString(), { headers: { "User-Agent": "whazup-sync/1.0 (+https://whazup.fr)" }, signal: AbortSignal.timeout(20000) });
         if (res.ok) json = await res.json(); else { log("Brocantes : HTTP", res.status, (await res.text()).slice(0, 200)); await sleep(1500); }
       } catch (e) { await sleep(1500); }
     }
@@ -243,7 +243,8 @@ async function fetchLocal(cities, nowIso, seen, prev) {
   let calls = 0, lus = 0, hors = 0, bruit = 0, erreurs = 0, jours = 0;
   const day0 = new Date(nowIso.slice(0, 10) + "T00:00:00Z");
   for (let i = 0; i < DAYS_AHEAD; i++) {
-    if (Date.now() - t0 > 14 * 60 * 1000) { log("Sorties locales : temps limite atteint au jour", i); break; }
+    if (Date.now() - t0 > 9 * 60 * 1000) { log("Sorties locales : temps limite atteint au jour", i); break; }
+    if (i % 10 === 0) log("Sorties locales : jour", i, "— gardés jusqu'ici :", out.length, "— appels :", calls);
     const d1 = new Date(day0.getTime() + i * 86400000).toISOString().slice(0, 10);
     const d2 = new Date(day0.getTime() + (i + 1) * 86400000).toISOString().slice(0, 10);
     const where = "firstdate_begin >= date'" + d1 + "' AND firstdate_begin < date'" + d2 + "'";
@@ -254,7 +255,7 @@ async function fetchLocal(cities, nowIso, seen, prev) {
       for (let k = 0; k < 3 && !json; k++) {
         calls++;
         try {
-          const res = await fetch(ODS + "?" + q.toString(), { headers: { "User-Agent": "whazup-sync/1.0 (+https://whazup.fr)" } });
+          const res = await fetch(ODS + "?" + q.toString(), { headers: { "User-Agent": "whazup-sync/1.0 (+https://whazup.fr)" }, signal: AbortSignal.timeout(20000) });
           if (res.ok) json = await res.json(); else { if (calls < 5) log("Sorties locales : HTTP", res.status, (await res.text()).slice(0, 200)); await sleep(1500); }
         } catch (e) { await sleep(1500); }
       }
