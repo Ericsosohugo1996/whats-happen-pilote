@@ -7,7 +7,8 @@ const path = require("path");
 
 const API = "https://fr.wikipedia.org/w/api.php";
 const UA = "WhazupPhotoBot/1.0 (https://whazup.fr; photos des salles)";
-const MAX_NEW = 1200;
+const MAX_NEW = 1500;
+const CACHE_VERSION = 2; // version 2 : contrôle de la ville obligatoire (les anciennes réponses sont refaites)
 const STOP = new Set(["le", "la", "les", "de", "du", "des", "et", "au", "aux", "l", "d", "en", "sur", "a", "the", "salle", "espace", "centre"]);
 
 const fold = (x) => String(x || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -53,11 +54,14 @@ async function lookup(name, cityName) {
   for (const p of pages) {
     if (!p.thumbnail || !p.thumbnail.source || BAD_IMG.test(p.thumbnail.source)) continue;
     const title = fold(p.title), ext = fold(p.extract || "");
-    if (/est une commune|est une ville|est un departement/.test(ext.slice(0, 120))) continue;
+    if (/est une commune|est une ville|est un departement|est un homme|est une femme|\(\d{4}-\d{4}\)|\bne le\b|\bnee le\b|\bne en\b/.test(ext.slice(0, 160))) continue;
+    if (/^siege|bataille|histoire|liste |^communaute|^arrondissement|^canton/.test(title)) continue;
     if (!VENUE_WORD.test(title + " " + ext.slice(0, 200))) continue;
+    // la ville doit apparaître dans la page (titre ou résumé) : évite les homonymes d'une autre ville
+    if (!(title.includes(cn) || ext.includes(cn))) continue;
     const inTitle = sig.every((w) => title.includes(w));
     const inText = sig.every((w) => (title + " " + ext).includes(w));
-    if (inTitle || (inText && ext.includes(cn))) {
+    if (inTitle || inText) {
       if (p.thumbnail.width && p.thumbnail.width < 500) continue;
       return { u: p.thumbnail.source, t: p.title, c: "Photo du lieu · Wikipédia" };
     }
@@ -68,6 +72,7 @@ async function lookup(name, cityName) {
 async function main() {
   let cache = {};
   try { cache = JSON.parse(fs.readFileSync("venue-photos.json", "utf8")); } catch (e) {}
+  if (cache._v !== CACHE_VERSION) { console.log("ancienne mémoire ignorée (version", cache._v, ")"); cache = { _v: CACHE_VERSION }; }
   const names = cityNames();
   const count = {};
   for (const f of fs.readdirSync("data/events")) {
@@ -83,7 +88,7 @@ async function main() {
     }
   }
   const todo = Object.entries(count).sort((a, b) => b[1].n - a[1].n).slice(0, MAX_NEW);
-  console.log("lieux à chercher :", todo.length, "(déjà en mémoire :", Object.keys(cache).length + ")");
+  console.log("lieux à chercher :", todo.length, "(déjà en mémoire :", Object.keys(cache).length - 1 + ")");
   let found = 0, tried = 0;
   for (const [k, v] of todo) {
     tried++;
@@ -91,12 +96,12 @@ async function main() {
       const r = await lookup(v.name, names[v.city] || v.city);
       cache[k] = r; if (r) found++;
     } catch (e) { console.log("échec", v.name, e.message); await new Promise((r) => setTimeout(r, 1500)); }
-    await new Promise((r) => setTimeout(r, 250));
+    await new Promise((r) => setTimeout(r, 200));
     if (tried % 100 === 0) console.log("…", tried, "cherchés,", found, "trouvés");
   }
-  const total = Object.values(cache).filter(Boolean).length;
+  const total = Object.entries(cache).filter(([k, v]) => k !== "_v" && v).length;
   console.log("terminé :", tried, "lieux cherchés,", found, "photos trouvées, total en mémoire :", total);
-  const ex = Object.entries(cache).filter(([, v]) => v).slice(-12).map(([k, v]) => k + " → " + v.t);
+  const ex = Object.entries(cache).filter(([k, v]) => k !== "_v" && v).slice(-12).map(([k, v]) => k + " → " + v.t);
   console.log("exemples :\n" + ex.join("\n"));
   fs.writeFileSync("venue-photos.json", JSON.stringify(cache));
 }
