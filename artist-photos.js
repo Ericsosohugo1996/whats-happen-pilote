@@ -21,8 +21,11 @@ function artistName(title) {
   if (/\d/.test(t)) return "";
   if (REJECT.test(fold(t))) return "";
   if (t.split(" ").length > 4) return "";
+  if (NOT_ARTIST.has(fold(t).replace(/[^a-z0-9]+/g, " ").trim())) return "";
   return t;
 }
+// mots du quotidien ou genres musicaux : jamais des artistes (Wikipédia renvoie alors la page du mot)
+const NOT_ARTIST = new Set(["opera","concert","concertino","cirque","paroles","chanson","fado","recital","the wall","rhapsody in blue","deluxe","triangle des bermudes","get the shot","the obsessed","half me","any given day","la securite","jazz","blues","rock","rap","classique","piano","orgue","flamenco","tango","gospel","reggae","metal","soul","funk","electro","techno","musique","spectacle","humour","theatre","danse","magie","cabaret","karaoke","live","tournee","gala","carnaval"]);
 function artistKey(title) { const n = artistName(title); return n ? fold(n).replace(/[^a-z0-9]+/g, " ").trim() : ""; }
 
 const MUSIC_WORD = /groupe|chanteu|musicien|rappeu|duo\b|trio\b|quatuor|band\b|singer|rapper|musician|\bdj\b|producteu|compositeu|pianiste|guitariste|violoniste|saxophoniste|batteur|bassiste|auteur-compositeur|interpr[eè]te|humoriste|com[eé]dien|duo musical|collectif musical|artiste|songwriter|comedian|vocalist/;
@@ -49,6 +52,7 @@ async function main() {
   let cache = {};
   try { cache = JSON.parse(fs.readFileSync("artist-photos.json", "utf8")); } catch (e) {}
   if (cache._v !== 1) cache = { _v: 1 };
+  for (const k of Object.keys(cache)) if (NOT_ARTIST.has(k)) delete cache[k]; // retire les faux artistes déjà trouvés
   const count = {};
   for (const f of fs.readdirSync("data/events")) {
     if (!f.endsWith(".json") || f.endsWith(".soon.json")) continue;
