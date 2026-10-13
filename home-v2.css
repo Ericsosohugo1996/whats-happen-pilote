@@ -571,3 +571,41 @@ html body.wz-v2 #view-detail .action-tile .tile-label { color: #C3CAE0 !importan
 html body.wz-v2 #view-detail .action-tile.active { background: rgba(232,93,61,.22) !important; }
 html body.wz-v2 #view-detail a, html body.wz-v2 #view-detail [style*="text-decoration:underline"] { color: #9BA5C2; }
 html body.wz-v2 #view-detail .action-tile { border: 0 !important; }
+
+/* ===== « Je ne sais pas quoi faire » : questions puis 3 idées ===== */
+html body.wz-v2:not(.wz-nocity) #sc-surprise .wz-l::after { content: "Réponds à 2 questions : on te propose 3 idées" !important; }
+body.wz-idea-open { overflow: hidden; }
+#wz-idea { position: fixed; inset: 0; z-index: 10050; background: #0B1226; color: #fff; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: calc(env(safe-area-inset-top, 0px) + 22px) 18px calc(env(safe-area-inset-bottom, 0px) + 110px); display: flex; flex-direction: column; max-width: 560px; margin: 0 auto; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+#wz-idea .wz-i-x { align-self: flex-end; width: 38px; height: 38px; border-radius: 50%; border: 0; background: rgba(255,255,255,.1); color: #fff; font-size: 16px; cursor: pointer; margin-bottom: 4px; }
+#wz-idea .wz-i-steps { display: flex; gap: 6px; margin: 4px 0 20px; }
+#wz-idea .wz-i-steps i { height: 4px; flex: 1; border-radius: 4px; background: #243163; }
+#wz-idea .wz-i-steps i.on { background: #F2864B; }
+#wz-idea .wz-i-k { font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: #F2C879; font-weight: 800; }
+#wz-idea h1 { font-family: 'Fraunces', Georgia, serif; font-size: 30px; line-height: 1.1; margin: 8px 0 6px; font-weight: 700; color: #fff; text-wrap: balance; }
+#wz-idea .wz-i-sub { color: #9BA5C2; font-size: 14px; margin-bottom: 18px; }
+#wz-idea .wz-i-lab { font-weight: 800; font-size: 15px; margin: 6px 0 10px; }
+#wz-idea .wz-i-lab small { color: #9BA5C2; font-weight: 600; font-size: 12px; }
+#wz-idea .wz-i-row { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 20px; }
+#wz-idea .wz-i-c { padding: 12px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); background: #16213F; color: #C7CEE3; font: 700 14px inherit; font-family: inherit; cursor: pointer; }
+#wz-idea .wz-i-c.on { background: linear-gradient(90deg,#F2864B,#E85D3D); color: #fff; border-color: transparent; }
+#wz-idea .wz-i-spacer { flex: 1; min-height: 8px; }
+#wz-idea .wz-i-go { width: 100%; padding: 17px; border: 0; border-radius: 16px; background: linear-gradient(90deg,#F2864B,#E85D3D); color: #fff; font: 800 16px inherit; font-family: inherit; box-shadow: 0 12px 24px -12px rgba(232,93,61,.8); cursor: pointer; }
+#wz-idea .wz-i-go[disabled] { opacity: .45; box-shadow: none; }
+#wz-idea .wz-i-col { display: flex; flex-direction: column; gap: 10px; }
+#wz-idea .wz-i-alt { width: 100%; margin-top: 4px; padding: 14px; border: 0; border-radius: 14px; background: rgba(255,255,255,.07); color: #F2C879; font: 800 14px inherit; font-family: inherit; cursor: pointer; }
+#wz-idea .wz-i-alt.ghost { background: none; color: #9BA5C2; font-weight: 600; }
+#wz-idea .wz-i-card { display: block; width: 100%; padding: 0; margin: 0 0 14px; border: 0; border-radius: 22px; overflow: hidden; background: #16213F; text-align: left; color: #fff; cursor: pointer; font-family: inherit; box-shadow: 0 14px 28px -18px rgba(0,0,0,.75); }
+#wz-idea .wz-i-ph { position: relative; height: 120px; background: #0E1730; }
+#wz-idea .wz-i-card.big .wz-i-ph { height: 200px; }
+#wz-idea .wz-i-ph img, #wz-idea .wz-i-ph svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+#wz-idea .wz-i-ph::after { content: ""; position: absolute; inset: auto 0 0 0; height: 70px; background: linear-gradient(to top, rgba(10,16,36,.8), rgba(10,16,36,0)); pointer-events: none; }
+#wz-idea .wz-i-pill { position: absolute; top: 10px; left: 10px; z-index: 2; padding: 5px 11px; border-radius: 999px; background: rgba(10,16,36,.72); border: 1px solid rgba(255,255,255,.18); font-size: 11px; font-weight: 800; color: #fff; }
+#wz-idea .wz-i-bd { padding: 11px 15px 14px; }
+#wz-idea .wz-i-t { font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 700; line-height: 1.15; }
+#wz-idea .wz-i-card.big .wz-i-t { font-size: 23px; }
+#wz-idea .wz-i-v { color: #9BA5C2; font-size: 13px; margin-top: 3px; }
+#wz-idea .wz-i-why { margin-top: 8px; color: #F2C879; font-weight: 700; font-size: 13px; }
+#wz-idea > * { flex-shrink: 0; }
+#wz-idea .wz-i-card { min-height: 0; }
+#wz-idea .wz-i-ph { flex: none; }
