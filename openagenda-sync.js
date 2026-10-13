@@ -19,6 +19,48 @@ const AGENDAS = [
   [20971856, "Rock School Barbey", true],
   [54045603, "Agenda de concerts (Tremblay-en-France)", true],
   [3198948, "OpenAgenda et les événements musicaux", true],
+  // --- salles, bars, clubs (on garde tout) ---
+  [47052338, "La Sirène (La Rochelle)", true],
+  [25970595, "Le Musical (Lille)", true],
+  [43757319, "Mar'mousse - Kav, Bar & Resto", true],
+  [39942705, "Cabaret Sauvage (Paris)", true],
+  [35971985, "L'Estaminet (Magny-les-Hameaux)", true],
+  [3037864, "Éclats d'émail jazz (Limoges)", true],
+  [99768314, "Tourcoing Jazz (office de tourisme)", true],
+  [31182441, "Tourcoing Jazz Festival", true],
+  [82566953, "AgendaTrad (bals)", true],
+  // --- agendas de villes et métropoles (on garde seulement concerts, soirées, bals, clubs, karaoké…) ---
+  [89904399, "Métropole européenne de Lille", false],
+  [57621068, "Ville de Lille", false],
+  [84178045, "La culture en continu (Lille)", false],
+  [83549053, "Bordeaux Métropole", false],
+  [83392987, "Ville de Bordeaux", false],
+  [5538134, "Ville de Bordeaux - contributeurs", false],
+  [96269696, "Carte jeune Bordeaux Métropole", false],
+  [19327333, "Bordeaux Tourisme", false],
+  [50522407, "Toulouse Métropole", false],
+  [42448083, "Toulouse", false],
+  [14086709, "Festival Estiv'Oc (Toulouse)", false],
+  [82470621, "Nantes Métropole", false],
+  [56354628, "Contributions Nantes et métropole", false],
+  [20500020, "Rennes Métropole", false],
+  [83693824, "Carte Sortir ! (Rennes)", false],
+  [17739387, "Mon agenda des métropoles", false],
+  [21769447, "Aix-Marseille-Provence Métropole", false],
+  [11362982, "Métropole Rouen Normandie", false],
+  [11174431, "Rouen", false],
+  [6418448, "La Murmure (musiques actuelles de Normandie)", false],
+  [35710944, "Agenda de sorties de la métropole orléanaise", false],
+  [64168411, "Ville de Limoges", false],
+  [49283376, "Villeurbanne", false],
+  [38598267, "Ville de Cenon", false],
+  [35944609, "Petit Agenda (Perpignan)", false],
+  [14115607, "Unidivers (Bayonne)", false],
+  [46166621, "Office de tourisme La Baule", false],
+  [8530879, "Alsace Destination Tourisme", false],
+  [7430297, "Agenda culturel Grand-Est", false],
+  [78891697, "Alès Agglomération", false],
+  [87311181, "Mains d'Œuvres (Saint-Ouen)", false],
 ];
 const report = [];
 const log = (...a) => { const s = a.join(" "); console.log(s); report.push(s); };
@@ -59,9 +101,16 @@ async function api(path, params) {
   }
   return { error: "échec réseau" };
 }
+// pour les agendas généraux (villes, métropoles) : on ne garde que les sorties musique / soirée
+const WANT = /concert|\blive\b|\bdj\b|dj set|soiree|\bclub\b|clubbing|\bbal\b|bal (folk|trad|musette|populaire)|jazz|\brock\b|electro|techno|\bhouse\b|\brap\b|hip.?hop|reggae|karaoke|blind.?test|\bjam\b|scene ouverte|open mic|fest.?noz|afterwork|apero|dancing|salsa|bachata|festival.*(musique|jazz|rock)|showcase|release party|\bset\b|chanson|soul|funk|metal|punk|afro/;
+const NOT = /atelier|conference|enfant|jeune public|lecture|exposition|visite|stage\b|formation|webinaire|conte\b|cine|projection|club (de|des) (lecture|jeux|seniors?|echecs|photo|codeu)|club lecture|jeux? de societe|soiree (jeux|conference|debat|lecture|litteraire|prevention|bien-etre|rentree|soupes|d'information)|bebe|atelier|cours\b|reunion|permanence|dedicace/;
+function wanted(title, keywords) {
+  const t = fold(title + " " + (keywords || []).join(" "));
+  return WANT.test(t) && !NOT.test(t);
+}
 function classify(title, keywords) {
   const t = fold(title + " " + (keywords || []).join(" "));
-  if (/club|rave|techno|house|electro|dj\b|dj set|afterwork|after hours|after\b|soiree|party|open air|disco|bal\b|clubbing|nuit/.test(t)) return ["village", "Soirée"];
+  if (/club|rave|techno|house|electro|dj\b|dj set|afterwork|after hours|after\b|soiree|party|open air|disco|bal\b|clubbing|nuit|karaoke|blind.?test|apero|dancing|salsa|bachata/.test(t)) return ["village", "Soirée"];
   return ["musique", "Musique"];
 }
 function linkOf(ev) {
@@ -89,7 +138,7 @@ function imageOf(ev) {
   const now = new Date(), nowIso = now.toISOString(), endIso = new Date(now.getTime() + DAYS_AHEAD * 86400000).toISOString();
   const out = [], seen = new Set();
   let errors = 0, sample = null;
-  for (const [uid, name] of AGENDAS) {
+  for (const [uid, name, keepAll] of AGENDAS) {
     let after = null, got = 0, kept = 0, hors = 0;
     for (let page = 0; page < 30; page++) {
       const p = [["relative[]", "upcoming"], ["timings[gte]", nowIso], ["timings[lte]", endIso], ["size", "300"], ["detailed", "1"], ["monolingual", "fr"], ["sort", "timings.asc"]];
@@ -113,6 +162,7 @@ function imageOf(ev) {
         const s = parisParts(tm.begin); if (!s) continue;
         const title = strip(txt(ev.title));
         if (!title) continue;
+        if (keepAll === false && !wanted(title, ev.keywords)) { hors++; continue; }
         const key = fold(title) + "|" + s.date + "|" + lat.toFixed(3);
         if (seen.has(key)) continue; seen.add(key);
         const [scene, category] = classify(title, ev.keywords);
@@ -132,7 +182,7 @@ function imageOf(ev) {
       after = r.json.after;
       if (!after || !list.length) break;
     }
-    log("Agenda", name, "— reçus :", got, "— gardés :", kept, "— hors villes du site / sans position :", hors);
+    log("Agenda", name, "— reçus :", got, "— gardés :", kept, "— écartés (hors villes / sans position / pas musique-soirée) :", hors);
   }
   out.sort((a, b) => (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")));
   const by = {}, byCity = {};
