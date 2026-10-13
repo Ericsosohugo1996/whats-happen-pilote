@@ -509,3 +509,29 @@ html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .thumb,
 html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .thumb img,
 html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .thumb svg { height: 150px !important; }
 html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .info > div[style*="font-size:10.5px"] { top: 130px; }
+
+/* ===== ÉTAPE 3 : mouvement doux, chargement, « rien trouvé » ===== */
+@keyframes wzRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card { animation: wzRise .45s ease both; }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card:nth-child(n+9) { animation-duration: .3s; }
+html body.wz-v2 #view-discover .event-card, html body.wz-v2 .wz-chip, html body.wz-v2 .featured-card { transition: transform .15s ease; }
+html body.wz-v2 #view-discover .event-card:active, html body.wz-v2 .featured-card:active { transform: scale(.985); }
+html body.wz-v2 .wz-chip:active { transform: scale(.95); }
+/* chargement : mêmes grandes cartes, version sombre */
+html body.wz-v2 .wz-skel-card { display: block; padding: 0; margin: 0 14px 16px; border-radius: 22px; background: #16213F; opacity: 1; overflow: hidden; }
+html body.wz-v2 .wz-skel-card i { display: block; width: 100%; height: 188px; border-radius: 0; }
+html body.wz-v2 .wz-skel-card div { padding: 14px 16px 18px; gap: 10px; }
+html body.wz-v2 .wz-skel-card b { height: 13px; }
+html body.wz-v2 .wz-skel-card i, html body.wz-v2 .wz-skel-card b { background: linear-gradient(100deg,#1d2a50 30%,#26366a 50%,#1d2a50 70%) !important; background-size: 200% 100% !important; }
+/* « rien trouvé » */
+.wz-empty { text-align: center; padding: 6px 8px 22px; }
+.wz-empty-ic { font-size: 40px; margin-bottom: 8px; }
+.wz-empty-t { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 700; color: #fff; margin: 0 0 8px; line-height: 1.2; }
+.wz-empty-d { font-size: 14px; line-height: 1.5; color: #C3CAE0; margin: 0 auto 18px; max-width: 290px; }
+.wz-empty-b { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.wz-empty-b button { min-width: 220px; padding: 13px 20px; border: 0; border-radius: 999px; background: linear-gradient(90deg,#F2864B,#E85D3D); color: #fff; font: 700 14px 'Plus Jakarta Sans', system-ui, sans-serif; cursor: pointer; }
+.wz-empty-b button + button { background: rgba(255,255,255,.08); color: #F2C879; }
+@media (prefers-reduced-motion: reduce) {
+  html body.wz-v2 #view-discover .event-card { animation: none !important; }
+  html body.wz-v2 .wz-skel-card i, html body.wz-v2 .wz-skel-card b { animation: none !important; }
+}
