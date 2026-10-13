@@ -84,17 +84,19 @@ async function getJson(url) {
   const now = new Date(), end = new Date(now.getTime() + DAYS_AHEAD * 86400000);
   const found = new Map(); // id Ticketmaster -> {ev, dist}
   let calls = 0, errors = 0;
+  // une recherche séparée par type (musique, sport, spectacles) : sinon un type pousse les autres hors des 5 pages
   for (const c of cities) {
+   for (const cls of ["music", "sports", "arts & theatre"]) {
     for (let page = 0; page < 5; page++) {
       const q = new URLSearchParams({
         apikey: KEY, latlong: c.lat + "," + c.lng, radius: String(RADIUS_KM), unit: "km", countryCode: "FR",
         startDateTime: isoZ(now), endDateTime: isoZ(end), size: "200", page: String(page), sort: "date,asc", locale: "*",
-        classificationName: "music,sports,arts & theatre",
+        classificationName: cls,
       });
       calls++;
       const r = await getJson(BASE + "?" + q.toString());
       await sleep(250); // 5 appels par seconde maximum
-      if (r.error) { errors++; log("Erreur", c.key, r.error); break; }
+      if (r.error) { errors++; log("Erreur", c.key, cls, r.error); break; }
       const list = (r.json._embedded && r.json._embedded.events) || [];
       for (const ev of list) {
         const ven = ev._embedded && ev._embedded.venues && ev._embedded.venues[0];
@@ -109,9 +111,10 @@ async function getJson(url) {
       const pg = r.json.page || {};
       if (page + 1 >= (pg.totalPages || 1)) break;
     }
+   }
   }
   log("Appels :", calls, "— erreurs :", errors, "— événements distincts :", found.size);
-  if (errors > cities.length / 4) { log("Trop d'erreurs : ancien fichier conservé."); fs.writeFileSync(REPORT, report.join("\n") + "\n"); return; }
+  if (errors > cities.length / 2) { log("Trop d'erreurs : ancien fichier conservé."); fs.writeFileSync(REPORT, report.join("\n") + "\n"); return; }
 
   const out = [], seen = new Set(), stats = { annule: 0, horsCategorie: 0, ok: 0 };
   for (const { ev, city, lat, lng, ven } of found.values()) {
