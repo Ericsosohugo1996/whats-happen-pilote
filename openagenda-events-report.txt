@@ -1,0 +1,15 @@
+Villes lues dans app.js : 139
+Agenda Shotgun — reçus : 3208 — gardés : 3124 — hors villes du site / sans position : 83
+Agenda Festival Culture Bar-Bars (Nantes) — reçus : 528 — gardés : 484 — hors villes du site / sans position : 44
+Agenda JASS CLUB PARIS — reçus : 64 — gardés : 64 — hors villes du site / sans position : 0
+Agenda Rocher de Palmer — reçus : 52 — gardés : 49 — hors villes du site / sans position : 1
+Agenda Le Tamanoir — reçus : 5 — gardés : 5 — hors villes du site / sans position : 0
+Agenda En Soirée Je Danse Pas — reçus : 68 — gardés : 67 — hors villes du site / sans position : 0
+Agenda Sortie 13 — reçus : 9 — gardés : 9 — hors villes du site / sans position : 0
+Agenda Le Plan — reçus : 13 — gardés : 13 — hors villes du site / sans position : 0
+Agenda Rock School Barbey — reçus : 10 — gardés : 10 — hors villes du site / sans position : 0
+Agenda Agenda de concerts (Tremblay-en-France) — reçus : 10 — gardés : 3 — hors villes du site / sans position : 1
+Agenda OpenAgenda et les événements musicaux — reçus : 82 — gardés : 77 — hors villes du site / sans position : 5
+Résultat : 3905 événements — par catégorie : {"Soirée":1683,"Musique":2222}
+Villes couvertes : 93 — top : [["paris",1261],["nantes",331],["bobigny",250],["lyon",245],["toulouse",231],["rennes",158],["marseille",156],["bordeaux",152],["lille",129],["montpellier",108]]
+Exemple brut (pour vérifier la structure) : {"longDescription":"🔥 CHARLOTTE CLUB — BASTILLE 🔥\nAu cœur de la rue de Lappe, le Charlotte vous accueille 7j/7 de 18h à 6h pour faire la fête jusqu’au bout de la nuit.\n🎧 DJ tous les soirs\n 🎵 Hip-Hop • Rap US • Afrobeat • Hits\n 🍹 Happy Hour & cocktails\n 💃 Ambiance festive & dansante\n 🎂 Anniversaires & groupes\n 🌍 Parisiennes, Parisiens & international crowd\n📍 10 rue de Lappe, Paris 11e — Bastille\nCome for a drink, stay for the night. ❤️‍🔥","country":"France","featured":false,"private":0,"keywords":["afrobeat","afro house","r&b","rap","amapiano"],"accessibility":{"ii":false,"hi":false,"vi":false,"pi":false,"mi":false},"dateRange":"Mardi 13 octobre, 18h00","timezone":"Europe/Paris","organisateur":"Charlotte Club Paris","imageCredits":null,"originAgenda":{"image":"3476288f110d40eeac5e9178c4da58f8.full.image.jpg?__ts=1790934006452","private":0,"locationSetUid":null,"official":true,"description":"Billets de concerts, festivals, open air, club & raves\nImport quotidien du catalogue Shotgun.","title":"Shotgun","url":"https://shotgun.live/fr","_agg":"eyJ1aWQiOjk5Njk2MDgsInRpdGxlIjoiU2hvdGd1biIsImltYWdlIjoiMzQ3NjI4OGYxMTBkNDBlZWFjNWU5MTc4YzRkYTU4ZjguZnVsbC5pbWFnZS5qcGc/X190cz0xNzkwOTM0MDA2NDUyIiwidXJsIjoiaHR0cHM6Ly9zaG90Z3VuLmxpdmUvZnIiLCJzbHVnIjoic2hvdGd1biJ9","uid":9969608,"createdAt":"2026-10-02T09:40:06.000Z","organization":{"name":null,"url":null},"officializedAt":"2026-10-06T07:10:06.000Z","slug":"shotgun","updatedAt":"2026-10-07T03:47:42.000Z"},"description":"�
