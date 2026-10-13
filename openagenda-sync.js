@@ -26,7 +26,7 @@ const AGENDAS = [
   [39942705, "Cabaret Sauvage (Paris)", true],
   [35971985, "L'Estaminet (Magny-les-Hameaux)", true],
   [3037864, "Éclats d'émail jazz (Limoges)", true],
-  [99768314, "Tourcoing Jazz (office de tourisme)", true],
+  [99768314, "Tourcoing Jazz (office de tourisme)", false],
   [31182441, "Tourcoing Jazz Festival", true],
   [82566953, "AgendaTrad (bals)", true],
   // --- agendas de villes et métropoles (on garde seulement concerts, soirées, bals, clubs, karaoké…) ---
@@ -103,7 +103,7 @@ async function api(path, params) {
 }
 // pour les agendas généraux (villes, métropoles) : on ne garde que les sorties musique / soirée
 const WANT = /concert|\blive\b|\bdj\b|dj set|soiree|\bclub\b|clubbing|\bbal\b|bal (folk|trad|musette|populaire)|jazz|\brock\b|electro|techno|\bhouse\b|\brap\b|hip.?hop|reggae|karaoke|blind.?test|\bjam\b|scene ouverte|open mic|fest.?noz|afterwork|apero|dancing|salsa|bachata|festival.*(musique|jazz|rock)|showcase|release party|\bset\b|chanson|soul|funk|metal|punk|afro/;
-const NOT = /atelier|conference|enfant|jeune public|lecture|exposition|visite|stage\b|formation|webinaire|conte\b|cine|projection|club (de|des) (lecture|jeux|seniors?|echecs|photo|codeu)|club lecture|jeux? de societe|soiree (jeux|conference|debat|lecture|litteraire|prevention|bien-etre|rentree|soupes|d'information)|bebe|atelier|cours\b|reunion|permanence|dedicace/;
+const NOT = /atelier|conference|enfant|jeune public|lecture|exposition|visite|stage\b|formation|webinaire|conte\b|cine|projection|club (de|des) (lecture|jeux|seniors?|echecs|photo|codeu)|basket|football|rugby|handball|volley|tennis|\bmatch\b|manga|repair|aquatique|piscine|musee|balade|rando|naturaliste|escape|vide.?grenier|brocante|don du sang|bourse|octobre rose|soiree rose|club lecture|jeux? de societe|soiree (jeux|conference|debat|lecture|litteraire|prevention|bien-etre|rentree|soupes|d'information)|bebe|atelier|cours\b|reunion|permanence|dedicace/;
 function wanted(title, keywords) {
   const t = fold(title + " " + (keywords || []).join(" "));
   return WANT.test(t) && !NOT.test(t);
