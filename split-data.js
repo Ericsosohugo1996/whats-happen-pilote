@@ -64,6 +64,21 @@ for (const { kind, file } of SOURCES) {
       console.log("événements Ticketmaster ajoutés :", added2);
     } catch (e) { console.log("ticketmaster-events.json illisible :", e.message); }
   }
+  // concerts et soirées via OpenAgenda (openagenda-sync.js, dont l'agenda Shotgun) : on les ajoute, sans doublon (même ville, même titre, même jour)
+  if (kind === "events" && fs.existsSync("openagenda-events.json")) {
+    try {
+      const extra3 = JSON.parse(fs.readFileSync("openagenda-events.json", "utf8"));
+      const fold3 = (x) => String(x || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+      const have3 = new Set(items.map((e) => e.city + "|" + fold3(e.title) + "|" + e.date));
+      let added3 = 0;
+      if (Array.isArray(extra3)) for (const e of extra3) {
+        const k = e.city + "|" + fold3(e.title) + "|" + e.date;
+        if (have3.has(k)) continue;
+        have3.add(k); items.push(e); added3++;
+      }
+      console.log("événements OpenAgenda ajoutés :", added3);
+    } catch (e) { console.log("openagenda-events.json illisible :", e.message); }
+  }
   // photos des lieux (trouvées par enrich-photos.js) : on les ajoute aux lieux qui n'en ont pas
   if (kind === "places") {
     let cache = {};
