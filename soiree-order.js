@@ -40,8 +40,8 @@
 
   var F = window.__wzF = { when: null, kind: null, free: false };
   var KINDS = {
-    club: /club|dj\b|dj |party|rave|techno|house|electro|clubbing|afters?\b|nuit|night|disco|boiler/i,
-    concert: /concert|live\b|showcase|release|tour|acoustic|jazz|rock|rap|hip.?hop/i,
+    club: /\bclub\b|\bdj\b|party|\brave\b|techno|\bhouse\b|electro|clubbing|\bafters?\b|\bnuit\b|night|disco|boiler/i,
+    concert: /concert|\blive\b|showcase|\btour\b|acoustic|\bjazz\b|\brock\b|\brap\b|hip.?hop|release party/i,
     bar: /\bbar\b|ap[ée]ro|afterwork|pub\b|karaok|quiz|happy hour|guinguette|cocktail/i
   };
   function soireeOnly() { var c = state.selectedCategories; return c && c.size === 1 && c.has("Soirée"); }
@@ -60,14 +60,12 @@
   }
 
   function install() {
-    if (typeof window.visibleEvents !== "function" || typeof baseVisibleEvents !== "function") return false;
-    window.visibleEvents = function () {
-      var today = new Date().toISOString().slice(0, 10);
+    // appelé par home-polish.js (après le filtre de période, avant la coupe « Voir plus »)
+    window.__wzReorder = function (all) {
+      if (!Array.isArray(all)) return all;
       var cats = state.selectedCategories;
       var nightMode = cats && cats.size > 0 && Array.from(cats).every(function (c) { return NIGHT.indexOf(c) >= 0; });
-      return baseVisibleEvents()
-        .filter(function (ev) { return matchesPeriod(ev, state.selectedPeriod); })
-        .filter(function (ev) { return ev.isPlace || !ev.date || ev.date >= today; })
+      return all
         .filter(passF)
         .filter(function (ev) { return !(nightMode && !ev.isPlace && !ev.time && ev.source === "paris-opendata"); })
         .sort(function (a, b) {
