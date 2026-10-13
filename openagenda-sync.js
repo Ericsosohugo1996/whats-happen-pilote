@@ -157,10 +157,12 @@ const SCENE = { "Musique": "musique", "Soirée": "village", "Spectacles": "spect
 function classifyAll(title, keywords) {
   const t = fold(title);
   if (NOISE.test(t)) return null;
+  if (t.length < 4) return null;
   const cat = reclassify({ category: "Festival", source: "datatourisme", title: title + " " + (keywords || []).slice(0, 4).join(" ") });
-  if (!SCENE[cat]) return null; // « Divers » : on ne garde pas
-  // les ateliers, créations et autres « art » des agendas de mairie ne sont pas des sorties : on ne garde en Expo que les vraies expos et visites
-  if (cat === "Expo" && !/exposition|\bexpo\b|vernissage|visite|musee|patrimoine|galerie|parcours|balade|decouverte du/.test(t)) return null;
+  // « Divers » : on le garde maintenant, il apparaît dans la case « Autres sorties » (ça remplit les petites villes)
+  if (!SCENE[cat]) return ["festif", "Divers"];
+  // les ateliers, créations et autres « art » des agendas de mairie : rangés en « Autres sorties » plutôt qu'en Expo
+  if (cat === "Expo" && !/exposition|\bexpo\b|vernissage|visite|musee|patrimoine|galerie|parcours|balade|decouverte du/.test(t)) return ["festif", "Divers"];
   return [SCENE[cat], cat];
 }
 function wanted(title, keywords) {
