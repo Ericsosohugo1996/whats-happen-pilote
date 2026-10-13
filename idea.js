@@ -136,14 +136,15 @@
   }
   function go() { S.ranked = rank(); S.offset = 0; screenResult(); }
 
+  function openIdea() {
+    var h = new Date().getHours();
+    S = { when: h >= 18 ? "tonight" : "now", want: [], zone: "city", offset: 0, ranked: [] };
+    try { showView("discover"); } catch (e) {}
+    document.body.classList.add("wz-idea-open"); screenAsk();
+  }
   document.addEventListener("click", function (e) {
-    var t = e.target.closest("#sc-surprise");
-    if (t) {
-      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
-      var h = new Date().getHours();
-      S = { when: h >= 18 ? "tonight" : "now", want: [], zone: "city", offset: 0, ranked: [] };
-      document.body.classList.add("wz-idea-open"); screenAsk(); return;
-    }
+    var t = e.target.closest("#sc-surprise, #nav-idea");
+    if (t) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); return openIdea(); }
     var b = e.target.closest("#wz-idea [data-i]"); if (!b) return;
     var a = b.dataset.i, v = b.dataset.v;
     if (a === "close") return close();
@@ -161,5 +162,5 @@
     if (a === "open") { var id = b.dataset.id; close(); try { openDetail(id); } catch (x) {} }
   }, true);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
-  window.__wzIdeaOpen = function () { var s = document.getElementById("sc-surprise"); if (s) s.click(); };
+  window.__wzIdeaOpen = openIdea;
 })();

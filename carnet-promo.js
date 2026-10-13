@@ -13,6 +13,22 @@
   // ---------- 1. barre du bas : « Photo souvenir » + pastille « nouveau » sur le carnet ----------
   function nav() {
     try {
+      var bar = document.getElementById("wz-nav");
+      if (bar && !document.getElementById("nav-idea")) {
+        var b = document.createElement("button");
+        b.type = "button"; b.id = "nav-idea"; b.className = "nav-item";
+        b.innerHTML = '<span class="dot">💡</span><span class="nav-label">Une idée ?</span>';
+        bar.insertBefore(b, bar.firstChild);
+      }
+      // favoris : un cœur dans la barre du haut
+      var top = document.querySelector(".topbar"), fr = document.getElementById("btn-friends-header");
+      if (top && fr && !document.getElementById("btn-fav-header")) {
+        var h = document.createElement("button");
+        h.type = "button"; h.id = "btn-fav-header"; h.className = "btn-ghost"; h.setAttribute("aria-label", "Mes favoris"); h.textContent = "❤️";
+        h.style.marginRight = "6px";
+        h.addEventListener("click", function () { var n = document.querySelector('#wz-nav .nav-item[data-view="favorites"]'); if (n) n.click(); else { try { showView("favorites"); } catch (e) {} } });
+        fr.parentNode.insertBefore(h, fr);
+      }
       var cam = document.querySelector("#wz-nav .wz-cam .nav-label");
       if (cam && cam.textContent !== "Photo souvenir") cam.textContent = "Photo souvenir";
       var car = document.getElementById("nav-carnet-btn");
@@ -102,6 +118,15 @@
       } catch (x) {}
     }, 250);
   });
+
+  // le logo ramène à l'accueil depuis n'importe quel écran (favoris, publier…)
+  document.addEventListener("click", function (e) {
+    try {
+      var l = e.target.closest("#brand-home"); if (!l) return;
+      var d = document.getElementById("view-discover");
+      if (d && d.classList.contains("hidden")) { e.stopImmediatePropagation(); e.preventDefault(); showView("discover"); }
+    } catch (x) {}
+  }, true);
 
   function tick() { nav(); build(); if (Date.now() - lastLoad > 45000) load(build); }
   setInterval(tick, 1500);
