@@ -157,12 +157,26 @@ for (const { kind, file } of SOURCES) {
       let w = 0;
       for (const ev of items) {
         if (ev.photo && !ev.photoGeneric) continue;
-        if (!["Spectacles", "Musique", "Soirée", "Sport", "Famille"].includes(ev.category)) continue;
+        if (!["Spectacles", "Musique", "Soirée", "Sport", "Famille", "Expo", "Festival"].includes(ev.category)) continue;
         const r = vp[venueKey(ev.place, ev.city)];
         if (r && r.u) { ev.photo = r.u; ev.photoCredit = r.c; ev.photoVenue = true; delete ev.photoGeneric; w++; }
       }
       console.log("événements : photo du lieu (Wikipédia) :", w);
     } catch (e) { /* pas encore de venue-photos.json */ }
+    // photo de l'artiste (Wikipédia), robot « Photos des artistes » : pour les concerts sans affiche
+    try {
+      const { artistKey } = require("./artist-photos.js");
+      const ap = JSON.parse(fs.readFileSync("artist-photos.json", "utf8"));
+      let a = 0;
+      for (const ev of items) {
+        if (ev.category !== "Musique" && ev.category !== "Soirée") continue;
+        if (ev.photo && !ev.photoGeneric && !ev.photoVenue) continue; // vraie affiche : on la garde
+        const k = artistKey(ev.title); if (!k) continue;
+        const r = ap[k];
+        if (r && r.u) { ev.photo = r.u; ev.photoCredit = r.c; ev.photoArtist = true; delete ev.photoGeneric; delete ev.photoVenue; a++; }
+      }
+      console.log("événements : photo de l'artiste (Wikipédia) :", a);
+    } catch (e) { /* pas encore d'artist-photos.json */ }
     // sans affiche ni photo de lieu : photo d'illustration (théâtre pour les spectacles, salle de concert pour la musique, club pour les soirées)
     try {
       const tp = JSON.parse(fs.readFileSync("type-photos.json", "utf8"));

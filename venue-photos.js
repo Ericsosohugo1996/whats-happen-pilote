@@ -39,7 +39,7 @@ function cityNames() {
   return out;
 }
 
-const VENUE_WORD = /th[eé][aâ]tre|salle|op[eé]ra|z[eé]nith|cirque|caf[eé]|club|sc[eè]ne|music|stade|arena|festival|complexe|auditorium|cin[eé]ma|palais|com[eé]die|spectacle|concert|bar\b|bo[iî]te|cabaret|casino|olympia|bataclan|halle/;
+const VENUE_WORD = /th[eé][aâ]tre|salle|op[eé]ra|z[eé]nith|cirque|caf[eé]|club|sc[eè]ne|music|stade|arena|festival|complexe|auditorium|cin[eé]ma|palais|com[eé]die|spectacle|concert|bar\b|bo[iî]te|cabaret|casino|olympia|bataclan|halle|mus[eé]e|museum|ch[aâ]teau|abbaye|m[eé]diath[eè]que|biblioth[eè]que|galerie|cath[eé]drale|basilique|fondation|domaine|citadelle|fort\b/;
 const BAD_IMG = /logo|blason|armoiries|drapeau|flag|plan_|carte|map|\.svg/i;
 
 async function lookup(name, cityName) {
@@ -121,7 +121,7 @@ async function main() {
     if (!f.endsWith(".json") || f.endsWith(".soon.json")) continue;
     let d = []; try { d = JSON.parse(fs.readFileSync(path.join("data/events", f), "utf8")); } catch (e) { continue; }
     for (const ev of d) {
-      if (!["Spectacles", "Musique", "Soirée", "Sport", "Famille"].includes(ev.category)) continue;
+      if (!["Spectacles", "Musique", "Soirée", "Sport", "Famille", "Expo", "Festival"].includes(ev.category)) continue;
       if (ev.photo && !ev.photoGeneric && !ev.photoVenue) continue; // il a déjà une vraie affiche (une photo de salle trouvée avant ne compte pas : on la refait)
       const n = venueName(ev.place); if (!n) continue;
       const k = venueKey(ev.place, ev.city);
