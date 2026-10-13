@@ -447,3 +447,18 @@ html body.wz-v2:not(.wz-nocity) #wz-chips { gap: 6px !important; padding: 0 12px
 html body.wz-v2:not(.wz-nocity) #wz-chips .wz-chip { padding: 10px 4px !important; font-size: 13px !important; }
 html body.wz-v2[data-wz-moment="soir"] #wz-chips .wz-chip[data-key="today"],
 html body.wz-v2[data-wz-moment="nuit"] #wz-chips .wz-chip[data-key="today"] { display: none !important; }
+
+/* écran d'arrivée : on masque ce qui n'a de sens qu'une fois la ville choisie */
+html body.wz-v2.wz-nocity #view-discover .locate-actions,
+html body.wz-v2.wz-nocity #view-discover .locate-hint,
+html body.wz-v2.wz-nocity #view-discover > #btn-newsletter,
+html body.wz-v2.wz-nocity #view-discover > #btn-discover-back,
+html body.wz-v2.wz-nocity #view-discover #wz-ci-toggle,
+html body.wz-v2.wz-nocity #view-discover #wz-ci-panel,
+html body.wz-v2.wz-nocity #view-discover #itinerary-block,
+html body.wz-v2.wz-nocity #view-discover #sejour-block { display: none !important; }
+/* régions repliées derrière un bouton */
+html body.wz-v2.wz-nocity:not(.wz-regions) #region-accordion { display: none !important; }
+#wz-regions-btn { display: none; }
+html body.wz-v2.wz-nocity #wz-regions-btn { display: flex !important; align-items: center; justify-content: center; gap: 8px; width: 100%; margin: 14px 0 6px; padding: 13px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.05); color: #C7CEE3; font: 600 14px 'Plus Jakarta Sans', system-ui, sans-serif; cursor: pointer; }
+html body.wz-v2.wz-nocity.wz-regions #wz-regions-btn .wz-arr { transform: rotate(180deg); }

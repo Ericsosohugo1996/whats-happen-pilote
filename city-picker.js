@@ -39,6 +39,18 @@
       sep.parentNode.insertBefore(wrap, sep.nextSibling);
     } catch (e) {}
   }
-  ensure();
-  setInterval(ensure, 1000);
+  function regionsBtn() {
+    try {
+      if (!document.body.classList.contains("wz-nocity")) return;
+      var acc = document.getElementById("region-accordion");
+      if (!acc || document.getElementById("wz-regions-btn")) return;
+      var b = document.createElement("button");
+      b.type = "button"; b.id = "wz-regions-btn";
+      b.innerHTML = '<span>Toutes les régions</span><span class="wz-arr">▾</span>';
+      b.addEventListener("click", function () { document.body.classList.toggle("wz-regions"); });
+      acc.parentNode.insertBefore(b, acc);
+    } catch (e) {}
+  }
+  ensure(); regionsBtn();
+  setInterval(function () { ensure(); regionsBtn(); }, 1000);
 })();
