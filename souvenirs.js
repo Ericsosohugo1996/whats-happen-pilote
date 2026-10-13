@@ -243,7 +243,7 @@
       '</div>' +
       '</div>' +
       '<div style="display:flex;flex-direction:column;gap:6px;padding:10px 12px;background:#f7f7f9;border-radius:12px;margin-bottom:14px;">' +
-      '<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#333;">📍 ' + (prefill.placeName || "Souvenir libre") + '</div>' +
+      '<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#333;">📍 <span id="souvenir-place-label" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span><input id="souvenir-place-input" type="text" maxlength="80" placeholder="Nom du lieu (ex. Chez Paul)" style="display:none;flex:1;min-width:0;border:1px solid #ddd;border-radius:10px;padding:7px 9px;font-size:13px;font-family:inherit;box-sizing:border-box;" /><button id="souvenir-place-edit" type="button" style="border:none;background:none;color:#E85D3D;font-size:12px;font-weight:700;cursor:pointer;padding:2px 4px;">Changer</button></div>' +
       (cityName ? '<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#888;">📍 ' + cityName + '</div>' : '') +
       '<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#888;">📅 ' + nowStr + '</div>' +
       '</div>' +
@@ -262,6 +262,33 @@
       '<button id="souvenir-save-btn" style="flex:2;padding:12px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:13px;font-weight:700;">Enregistrer</button>' +
       '</div></div>';
     document.body.appendChild(overlay);
+
+    // lieu : affiché, avec un bouton "Changer" pour en écrire un autre (ou l'effacer)
+    let chosenPlace = prefill.placeName || "";
+    let placeEdited = false;
+    const placeLabel = document.getElementById("souvenir-place-label");
+    const placeInput = document.getElementById("souvenir-place-input");
+    const placeBtn = document.getElementById("souvenir-place-edit");
+    function showPlaceLabel() { placeLabel.textContent = chosenPlace || "Souvenir libre"; }
+    showPlaceLabel();
+    placeBtn.addEventListener("click", function () {
+      if (placeInput.style.display === "none") {
+        placeInput.value = chosenPlace;
+        placeLabel.style.display = "none";
+        placeInput.style.display = "block";
+        placeBtn.textContent = "OK";
+        placeInput.focus();
+      } else {
+        const v = placeInput.value.replace(/\s+/g, " ").trim().slice(0, 80);
+        if (v !== chosenPlace) placeEdited = true;
+        chosenPlace = v;
+        placeInput.style.display = "none";
+        placeLabel.style.display = "";
+        placeBtn.textContent = "Changer";
+        showPlaceLabel();
+      }
+    });
+    placeInput.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); placeBtn.click(); } });
 
     const photoInput = document.getElementById("souvenir-photo-input");
     const photoPreview = document.getElementById("souvenir-photo-preview");
@@ -299,14 +326,15 @@
       const btn = document.getElementById("souvenir-save-btn");
       btn.textContent = "Enregistrement...";
       btn.disabled = true;
+      if (placeInput.style.display !== "none") placeBtn.click(); // lieu en cours de saisie : on le valide
       const text = document.getElementById("souvenir-text-input").value;
       const category = document.getElementById("souvenir-category-input").value;
       try {
         const saved = await saveSouvenir({
           file: selectedFile,
           text: text,
-          placeName: prefill.placeName,
-          placeId: prefill.placeId,
+          placeName: chosenPlace,
+          placeId: placeEdited ? "" : prefill.placeId,
           lat: prefill.lat,
           lng: prefill.lng,
           category: category,
