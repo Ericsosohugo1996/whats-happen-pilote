@@ -1,0 +1,5 @@
+Villes lues dans app.js : 139
+Appels : 174 — erreurs : 0 — événements distincts : 7548
+Résultat : {"annule":94,"horsCategorie":3266,"ok":4082}
+Par catégorie : {"Soirée":2328,"Musique":1695,"Sport":59}
+Villes couvertes : 117 — top : [["bordeaux",345],["nantes",302],["paris",294],["toulouse",267],["lyon",258],["lille",248],["montgeron",168],["rouen",95]]
