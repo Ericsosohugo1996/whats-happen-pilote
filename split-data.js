@@ -150,6 +150,19 @@ for (const { kind, file } of SOURCES) {
       }
       console.log("événements : photo du lieu ajoutée :", v);
     } catch (e) { console.log("photos des lieux (événements) :", e.message); }
+    // photo réelle du lieu trouvée sur Wikipédia (venue-photos.json, robot « Photos des salles »)
+    try {
+      const { venueKey } = require("./venue-photos.js");
+      const vp = JSON.parse(fs.readFileSync("venue-photos.json", "utf8"));
+      let w = 0;
+      for (const ev of items) {
+        if (ev.photo && !ev.photoGeneric) continue;
+        if (!["Spectacles", "Musique", "Soirée", "Sport", "Famille"].includes(ev.category)) continue;
+        const r = vp[venueKey(ev.place, ev.city)];
+        if (r && r.u) { ev.photo = r.u; ev.photoCredit = r.c; ev.photoVenue = true; delete ev.photoGeneric; w++; }
+      }
+      console.log("événements : photo du lieu (Wikipédia) :", w);
+    } catch (e) { /* pas encore de venue-photos.json */ }
     // sans affiche ni photo de lieu : photo d'illustration (théâtre pour les spectacles, salle de concert pour la musique, club pour les soirées)
     try {
       const tp = JSON.parse(fs.readFileSync("type-photos.json", "utf8"));
