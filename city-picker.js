@@ -53,4 +53,13 @@
   }
   ensure(); regionsBtn();
   setInterval(function () { ensure(); regionsBtn(); }, 1000);
+
+  // quand on choisit une ville, l'accueil de la ville s'affiche depuis le HAUT de la page (et non à mi-hauteur)
+  function toTop() { try { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; } catch (e) {} }
+  document.addEventListener("click", function (e) {
+    try {
+      if (!e.target.closest(".chip-btn[data-city]")) return;
+      [0, 60, 200, 500, 1000].forEach(function (ms) { setTimeout(toTop, ms); });
+    } catch (x) {}
+  }, true);
 })();
