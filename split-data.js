@@ -9,10 +9,11 @@ const { pickFor } = require("./type-photos.js");
 const { tidyText, tidyPlace } = require("./tidy-text.js");
 const { reclassify } = require("./reclass.js");
 
+// les lieux passent AVANT les événements : on réutilise leurs photos pour les spectacles et concerts sans affiche
 const SOURCES = [
-  { kind: "events", file: "datatourisme-events.json" },
   { kind: "places", file: "datatourisme-places.json" },
   { kind: "bars", file: "osm-bars.json" },
+  { kind: "events", file: "datatourisme-events.json" },
 ];
 const OUT = "data";
 const index = { generatedAt: new Date().toISOString(), events: {}, places: {}, bars: {}, soon: {} };
@@ -121,6 +122,49 @@ for (const { kind, file } of SOURCES) {
       if (c !== ev.category) { moved[c] = (moved[c] || 0) + 1; ev.category = c; }
     }
     console.log("événements reclassés depuis « Festival » :", JSON.stringify(moved));
+    // concerts, spectacles et soirées sans affiche : photo du lieu (salle, théâtre) si on en a une à moins de 150 m, avec le même nom
+    try {
+      const STOP = new Set(["theatre", "le", "la", "les", "de", "du", "des", "salle", "paris", "et", "au", "aux", "l", "d", "st", "saint", "sainte", "cafe", "bar", "club", "espace", "centre", "maison", "palais"]);
+      const toks = (x) => new Set(String(x || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !STOP.has(w)));
+      const dm = (a, b, c, d) => { const r = Math.PI / 180, x = (c - a) * r, y = (d - b) * r * Math.cos(a * r); return 6371000 * Math.sqrt(x * x + y * y); };
+      const pcache = {};
+      const placesOf = (city) => {
+        if (pcache[city]) return pcache[city];
+        let arr = [];
+        try { arr = JSON.parse(fs.readFileSync(path.join(OUT, "places", safe(city) + ".json"), "utf8")).filter((p) => p.photo && isFinite(p.lat) && isFinite(p.lng)).map((p) => ({ p, t: toks(p.title) })); } catch (e) {}
+        return (pcache[city] = arr);
+      };
+      let v = 0;
+      for (const ev of items) {
+        if (ev.photo || !["Spectacles", "Musique", "Soirée"].includes(ev.category) || !isFinite(ev.lat) || !isFinite(ev.lng)) continue;
+        const et = toks(String(ev.place || "").split(",")[0]);
+        if (!et.size) continue;
+        let best = null;
+        for (const { p, t } of placesOf(ev.city)) {
+          const d = dm(ev.lat, ev.lng, p.lat, p.lng);
+          if (d > 150) continue;
+          let ok = false; for (const w of et) if (t.has(w)) { ok = true; break; }
+          if (ok && (!best || d < best.d)) best = { d, p };
+        }
+        if (best) { ev.photo = best.p.photo; ev.photoCredit = best.p.photoCredit || "Photo du lieu"; ev.photoVenue = true; v++; }
+      }
+      console.log("événements : photo du lieu ajoutée :", v);
+    } catch (e) { console.log("photos des lieux (événements) :", e.message); }
+    // spectacles sans affiche : photo d'illustration de théâtre (scène, salle) à la place du dessin par défaut
+    try {
+      const tp = JSON.parse(fs.readFileSync("type-photos.json", "utf8"));
+      const pool = tp && tp.theatre;
+      if (pool && pool.length) {
+        let g = 0;
+        for (const ev of items) {
+          if (ev.photo || ev.category !== "Spectacles") continue;
+          let h = 0; for (const ch of String(ev.id)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+          const p = pool[h % pool.length];
+          ev.photo = p.u; ev.photoCredit = p.c; ev.photoGeneric = true; g++;
+        }
+        console.log("spectacles : photos d'illustration ajoutées :", g);
+      }
+    } catch (e) {}
   }
   const byCity = {};
   for (const ev of items) (byCity[safe(ev.city)] = byCity[safe(ev.city)] || []).push(ev);
