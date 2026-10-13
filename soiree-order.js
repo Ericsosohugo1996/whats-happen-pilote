@@ -3,6 +3,11 @@
   "use strict";
   try { if (typeof CATEGORY_LABELS === "object") CATEGORY_LABELS["Soirée"] = "Soirées"; } catch (e) {}
 
+  try { // Soirées juste après Musique
+    var ci = CATEGORIES.indexOf("Soirée");
+    if (ci > 1) { CATEGORIES.splice(ci, 1); CATEGORIES.splice(CATEGORIES.indexOf("Musique") + 1, 0, "Soirée"); }
+  } catch (e) {}
+
   var NIGHT = ["Soirée", "Musique", "Bar"];
   function rank(ev) { // 0 = vraie soirée (20h-5h), 1 = début de soirée, 2 = le reste
     var t = ev.time ? parseInt(String(ev.time).split(":")[0], 10) : NaN;
@@ -108,6 +113,7 @@
     var mo = new MutationObserver(function () { if (!busy) { mo.disconnect(); addHeaders(); mo.observe(list, { childList: true }); } });
     mo.observe(list, { childList: true });
     addHeaders();
+    try { if (typeof renderCategoryChips === "function") renderCategoryChips(); } catch (e) {}
     try { if (typeof renderDiscover === "function") renderDiscover(); } catch (e) {}
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { setTimeout(boot, 800); });
