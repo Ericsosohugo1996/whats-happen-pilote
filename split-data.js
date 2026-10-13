@@ -150,20 +150,19 @@ for (const { kind, file } of SOURCES) {
       }
       console.log("événements : photo du lieu ajoutée :", v);
     } catch (e) { console.log("photos des lieux (événements) :", e.message); }
-    // spectacles sans affiche : photo d'illustration de théâtre (scène, salle) à la place du dessin par défaut
+    // sans affiche ni photo de lieu : photo d'illustration (théâtre pour les spectacles, salle de concert pour la musique, club pour les soirées)
     try {
       const tp = JSON.parse(fs.readFileSync("type-photos.json", "utf8"));
-      const pool = tp && tp.theatre;
-      if (pool && pool.length) {
-        let g = 0;
-        for (const ev of items) {
-          if (ev.photo || ev.category !== "Spectacles") continue;
-          let h = 0; for (const ch of String(ev.id)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-          const p = pool[h % pool.length];
-          ev.photo = p.u; ev.photoCredit = p.c; ev.photoGeneric = true; g++;
-        }
-        console.log("spectacles : photos d'illustration ajoutées :", g);
+      const pools = { "Spectacles": tp.theatre, "Musique": tp.concert, "Soirée": tp.club };
+      let g = 0;
+      for (const ev of items) {
+        const pool = pools[ev.category];
+        if (ev.photo || !pool || !pool.length) continue;
+        let h = 0; for (const ch of String(ev.id)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+        const p = pool[h % pool.length];
+        ev.photo = p.u; ev.photoCredit = p.c; ev.photoGeneric = true; g++;
       }
+      console.log("événements : photos d'illustration ajoutées :", g);
     } catch (e) {}
   }
   const byCity = {};

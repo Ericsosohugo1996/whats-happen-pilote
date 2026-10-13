@@ -18,6 +18,8 @@ const QUERIES = {
   cinema: ["cinema auditorium", "movie theatre interior", "cinema"],
   livre: ["bookshop interior", "library reading room", "bookstore"],
   galerie: ["art gallery exhibition", "gallery exhibition paintings", "contemporary art exhibition"],
+  concert: ["concert hall interior", "concert stage lights", "live music stage"],
+  club: ["nightclub dance floor", "night club lights", "disco lights party"],
   monument: ["monument france", "triumphal arch", "historic monument square"],
 };
 const BAD_TITLE = /(map|plan|diagram|logo|drawing|painting|poster|screenshot|stamp|coat of arms|flag|schema|floor ?plan|interior of a mosque|statue of|portrait|crowd|protest|night shot of a car)/i;
