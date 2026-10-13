@@ -630,3 +630,6 @@
   decorate();
   setTimeout(decorate, 1200);
 })();
+
+/* Soirées rangées par jour puis par heure */
+(function(){try{var s=document.createElement("script");s.src="soiree-order.js?v=1";document.body.appendChild(s);}catch(e){}})();
