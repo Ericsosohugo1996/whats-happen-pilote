@@ -47,17 +47,26 @@ const txt = (v) => (v && typeof v === "object" ? v.fr || v.en || Object.values(v
   const now = new Date(), end = new Date(now.getTime() + 60 * 86400000);
   const rows = [];
   let n = 0, errs = 0;
-  for (const a of agendas.values()) {
-    n++;
-    const r = await api("/agendas/" + a.uid + "/events", [["relative[]", "upcoming"], ["timings[lte]", end.toISOString()], ["size", "3"], ["detailed", "1"], ["monolingual", "fr"]]);
-    await sleep(200);
-    if (r.error) { errs++; continue; }
-    const total = r.json.total || 0;
-    if (!total) continue;
-    const ev = (r.json.events || [])[0] || {};
-    const loc = ev.location || {};
-    rows.push({ uid: a.uid, title: a.title, slug: a.slug, official: a.official, total, city: txt(loc.city) || "", sample: txt(ev.title).slice(0, 60), lat: loc.latitude || null, lng: loc.longitude || null });
+  // 6 agendas examinés en même temps (au lieu d'un par un) pour finir en une dizaine de minutes
+  const list = Array.from(agendas.values());
+  let idx = 0;
+  const t0 = Date.now();
+  async function worker() {
+    while (idx < list.length && Date.now() - t0 < 30 * 60 * 1000) {
+      const a = list[idx++];
+      n++;
+      const r = await api("/agendas/" + a.uid + "/events", [["relative[]", "upcoming"], ["timings[lte]", end.toISOString()], ["size", "3"], ["detailed", "1"], ["monolingual", "fr"]]);
+      await sleep(100);
+      if (r.error) { errs++; continue; }
+      const total = r.json.total || 0;
+      if (!total) continue;
+      const ev = (r.json.events || [])[0] || {};
+      const loc = ev.location || {};
+      rows.push({ uid: a.uid, title: a.title, slug: a.slug, official: a.official, total, city: txt(loc.city) || "", sample: txt(ev.title).slice(0, 60), lat: loc.latitude || null, lng: loc.longitude || null });
+    }
   }
+  await Promise.all([1, 2, 3, 4, 5, 6].map(worker));
+  if (idx < list.length) log("Attention : arrêt avant la fin (temps limite) —", list.length - idx, "agendas non examinés");
   rows.sort((x, y) => y.total - x.total);
   log("Agendas examinés :", n, "— erreurs :", errs, "— agendas avec événements à venir (60 jours) :", rows.length);
   log("Total d'événements à venir dans ces agendas :", rows.reduce((s, r) => s + r.total, 0));
