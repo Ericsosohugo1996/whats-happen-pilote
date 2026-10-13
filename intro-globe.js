@@ -13,6 +13,19 @@
     "#wz-locate-sep{text-align:center;color:rgba(255,255,255,.65);font:600 12.5px system-ui,sans-serif;margin:2px 0 12px}";
   document.head.appendChild(st);
 
+  // Plus d'accueil en 3 étapes : « Me localiser » est déjà en haut du choix de ville.
+  try { localStorage.setItem("wz_onboarded_v1", "1"); } catch (e) {}
+
+  // On saute la page de bienvenue (photo de ville) : après le bonhomme, on arrive directement au choix de ville.
+  try {
+    var orig = window.showBrandIntroScreen;
+    window.showBrandIntroScreen = function () {
+      var v = document.getElementById("brand-choice-visit");
+      if (v) { v.click(); return; }
+      if (typeof orig === "function") orig();
+    };
+  } catch (e) {}
+
   function ensure() {
     var body = document.querySelector(".locate-body");
     if (!body || document.getElementById("wz-locate-top")) return;
