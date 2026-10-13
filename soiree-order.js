@@ -156,14 +156,6 @@
     ".wz-fbtn.on{border:none;background:linear-gradient(135deg,#F2864B,#E85D3D);font-weight:700}";
   document.head.appendChild(st);
 
-  function relabel() {
-    document.querySelectorAll(".cat-chip-label,.quick-cat-label,.chip-btn,.cat-chip,[data-cat] span").forEach(function (n) {
-      if (n.children.length === 0 && n.textContent.trim() === "Culture") n.textContent = "Soirées";
-    });
-  }
-  try { new MutationObserver(relabel).observe(document.body, { childList: true, subtree: true }); relabel(); } catch (e) {}
-
-
   var cs = document.createElement("style");
   cs.textContent =
     "html body #view-discover .quick-cat.active .quick-cat-circle{border:3px solid #F2864B !important;box-shadow:0 0 0 4px rgba(242,134,75,.28),0 10px 22px -6px rgba(242,134,75,.7) !important;transform:translateY(-3px) scale(1.1) !important}" +
