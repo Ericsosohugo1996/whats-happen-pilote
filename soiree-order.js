@@ -14,6 +14,12 @@
     CATEGORY_COLORS["Spectacles"] = "#7B4FD6";
     CATEGORY_ICONS["Spectacles"] = "🎭";
     CATEGORY_LABELS["Expo"] = "Expos & visites";
+    // « Famille » (enfants, contes, Halloween…) juste après Spectacles ; « Autres sorties » (l'ancien « Divers ») avant « Bons plans »
+    if (CATEGORIES.indexOf("Famille") < 0) CATEGORIES.splice(CATEGORIES.indexOf("Spectacles") + 1, 0, "Famille");
+    var bp = CATEGORIES.indexOf("Bons plans");
+    if (CATEGORIES.indexOf("Divers") < 0) { if (bp < 0) CATEGORIES.push("Divers"); else CATEGORIES.splice(bp, 0, "Divers"); }
+    CATEGORY_COLORS["Famille"] = "#F2A93B"; CATEGORY_ICONS["Famille"] = "👨‍👩‍👧";
+    CATEGORY_COLORS["Divers"] = "#6E86A6"; CATEGORY_ICONS["Divers"] = "✨"; CATEGORY_LABELS["Divers"] = "Autres sorties";
   } catch (e) {}
 
   var NIGHT = ["Soirée", "Musique", "Bar"];

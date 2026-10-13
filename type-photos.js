@@ -6,11 +6,11 @@ const fs = require("fs");
 
 const API = process.env.WIKI_API_COMMONS || "https://commons.wikimedia.org/w/api.php";
 const UA = "WhazupPhotoBot/1.0 (https://whazup.fr; photos d'illustration)";
-const PER_TYPE = 6;
+const PER_TYPE = 14;
 
 // requêtes de recherche par type (les premières sont les plus précises)
 const QUERIES = {
-  theatre: ["theatre auditorium", "theatre interior stage", "opera house interior"],
+  theatre: ["theatre auditorium", "theatre interior stage", "opera house interior", "theatre stage curtain", "comedy club stage", "opera house auditorium", "theatre facade france"],
   musee: ["museum interior gallery", "museum facade", "museum hall exhibition"],
   eglise: ["church facade france", "cathedral exterior", "chapel church"],
   chateau: ["chateau france", "castle france", "castle tower"],
@@ -18,12 +18,12 @@ const QUERIES = {
   cinema: ["cinema auditorium", "movie theatre interior", "cinema"],
   livre: ["bookshop interior", "library reading room", "bookstore"],
   galerie: ["art gallery exhibition", "gallery exhibition paintings", "contemporary art exhibition"],
-  concert: ["concert hall interior", "concert stage lights", "live music stage"],
-  club: ["nightclub dance floor", "night club lights", "disco lights party"],
-  marche: ["market stalls france", "farmers market france", "covered market halles"],
-  sport: ["sports stadium", "football stadium", "sports hall arena"],
-  brocante: ["flea market", "antique market", "second hand market stalls"],
-  festival: ["music festival stage", "open air festival stage", "festival lights stage"],
+  concert: ["concert hall interior", "concert stage lights", "live music stage", "rock concert stage", "jazz concert stage", "concert venue interior", "music venue stage"],
+  club: ["nightclub dance floor", "night club lights", "disco lights party", "dj booth club", "nightclub interior", "dance floor lights", "club party lights"],
+  marche: ["market stalls france", "farmers market france", "covered market halles", "market square france", "fruit vegetable market", "christmas market france"],
+  sport: ["sports stadium", "football stadium", "sports hall arena", "stadium interior", "rugby stadium", "basketball arena", "swimming pool sport"],
+  brocante: ["flea market", "antique market", "second hand market stalls", "vintage market stall", "antiques stall", "flea market street"],
+  festival: ["music festival stage", "open air festival stage", "festival lights stage", "festival stage lights", "outdoor concert festival", "festival tents"],
   monument: ["monument france", "triumphal arch", "historic monument square"],
 };
 const MUST = {
@@ -34,7 +34,7 @@ const MUST = {
   brocante: /flea|market|brocante|antique|puces|second.?hand/i,
   festival: /festival|stage|concert|open.?air/i,
 };
-const BAD_TITLE = /(map|plan|diagram|logo|drawing|painting|poster|screenshot|stamp|coat of arms|flag|schema|floor ?plan|interior of a mosque|statue of|portrait|crowd|protest|night shot of a car)/i;
+const BAD_TITLE = /(boat|ship|yacht|harbou?r|vessel|map|plan|diagram|logo|drawing|painting|poster|screenshot|stamp|coat of arms|flag|schema|floor ?plan|interior of a mosque|statue of|portrait|crowd|protest|night shot of a car)/i;
 
 function norm(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
 
@@ -104,7 +104,7 @@ async function main() {
       }
     }
     // pas assez de photos « vedettes » : recherche large, en exigeant un titre qui parle du bon sujet
-    if (got.length < 4 && MUST[type]) {
+    if (got.length < 10 && MUST[type]) {
       for (const q of queries) {
         if (got.length >= PER_TYPE) break;
         try {

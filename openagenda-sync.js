@@ -138,7 +138,7 @@ const WANT = /concert|\blive\b|\bdj\b|dj set|soiree|\bclub\b|clubbing|\bbal\b|ba
 const NOT = /atelier|conference|enfant|jeune public|lecture|exposition|visite|stage\b|formation|webinaire|conte\b|cine|projection|club (de|des) (lecture|jeux|seniors?|echecs|photo|codeu)|basket|football|rugby|handball|volley|tennis|\bmatch\b|manga|repair|aquatique|piscine|musee|balade|rando|naturaliste|escape|don du sang|bourse|octobre rose|soiree rose|club lecture|jeux? de societe|soiree (jeux|conference|debat|lecture|litteraire|prevention|bien-etre|rentree|soupes|d'information)|bebe|atelier|cours\b|reunion|permanence|dedicace/;
 const { reclassify } = require("./reclass.js");
 const NOISE = /numerique|informatique|ordinateur|emploi|recrut|formation|webinaire|permanence|reunion|conseil (municipal|citoyen|de quartier)|assemblee|don du sang|depistage|sante|inscription|accompagnement|\bcv\b|entreprise|creation d'entreprise|retail|decarbon|dechet|tri\b|compost|vaccin|bilan|forum (de l'|des metiers)|journee (de|d')(information|prevention)|point (info|conseil)|aide aux|demarche|impot|logement|energie|reglement|mairie|permis|securite routiere|ecole|college|lycee|vacances scolaires|periscolaire|crèche|creche/;
-const SCENE = { "Musique": "musique", "Soirée": "village", "Spectacles": "spectacle", "Expo": "expo", "Marché": "marche", "Brocante": "marche", "Sport": "sport", "Festival": "festival" };
+const SCENE = { "Musique": "musique", "Soirée": "village", "Spectacles": "spectacle", "Expo": "expo", "Marché": "marche", "Brocante": "marche", "Sport": "sport", "Festival": "festival", "Famille": "festif" };
 function classifyAll(title, keywords) {
   const t = fold(title);
   if (NOISE.test(t)) return null;
@@ -220,6 +220,68 @@ async function fetchBrocantes(cities, nowIso, seen, prev) {
   return out;
 }
 
+// TOUTES les sorties OpenAgenda près de nos villes (jeu de données ouvert Opendatasoft, sans clé) : on lit jour par jour,
+// on garde ce qui est à moins de MAX_KM d'une ville du site, et on range chaque événement avec classifyAll().
+async function fetchLocal(cities, nowIso, seen, prev) {
+  const ODS = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/evenements-publics-openagenda/records";
+  const out = [], t0 = Date.now();
+  let calls = 0, lus = 0, hors = 0, bruit = 0, erreurs = 0, jours = 0;
+  const day0 = new Date(nowIso.slice(0, 10) + "T00:00:00Z");
+  for (let i = 0; i < DAYS_AHEAD; i++) {
+    if (Date.now() - t0 > 14 * 60 * 1000) { log("Sorties locales : temps limite atteint au jour", i); break; }
+    const d1 = new Date(day0.getTime() + i * 86400000).toISOString().slice(0, 10);
+    const d2 = new Date(day0.getTime() + (i + 1) * 86400000).toISOString().slice(0, 10);
+    const where = "firstdate_begin >= date'" + d1 + "' AND firstdate_begin < date'" + d2 + "'";
+    jours++;
+    for (let offset = 0; offset < 9900; offset += 100) {
+      const q = new URLSearchParams({ where, limit: "100", offset: String(offset) });
+      let json = null;
+      for (let k = 0; k < 3 && !json; k++) {
+        calls++;
+        try {
+          const res = await fetch(ODS + "?" + q.toString(), { headers: { "User-Agent": "whazup-sync/1.0 (+https://whazup.fr)" } });
+          if (res.ok) json = await res.json(); else { if (calls < 5) log("Sorties locales : HTTP", res.status, (await res.text()).slice(0, 200)); await sleep(1500); }
+        } catch (e) { await sleep(1500); }
+      }
+      if (!json) { erreurs++; break; }
+      const list = json.results || [];
+      for (const r of list) {
+        lus++;
+        const title = strip(r.title_fr || "");
+        if (!title) continue;
+        const co = r.location_coordinates || {};
+        const lat = +(co.lat != null ? co.lat : r.latitude), lng = +(co.lon != null ? co.lon : r.longitude);
+        if (!isFinite(lat) || !isFinite(lng) || (!lat && !lng)) { hors++; continue; }
+        let best = null;
+        for (const c of cities) { const d = km(c.lat, c.lng, lat, lng); if (!best || d < best.d) best = { c, d }; }
+        if (!best || best.d > MAX_KM) { hors++; continue; }
+        const kw = Array.isArray(r.keywords_fr) ? r.keywords_fr : (typeof r.keywords_fr === "string" ? r.keywords_fr.split(/[,;|]/) : []);
+        const cl = classifyAll(title, kw);
+        if (!cl) { bruit++; continue; }
+        const s2 = parisParts(r.firstdate_begin); if (!s2) continue;
+        const key = fold(title) + "|" + s2.date + "|" + lat.toFixed(3);
+        if (seen.has(key)) continue; seen.add(key);
+        const id = "oa-" + r.uid + "-" + s2.date;
+        const cond = strip(r.conditions_fr || "");
+        const place = [r.location_name, r.location_address].map((x) => String(x || "").trim()).filter(Boolean).join(", ");
+        const o = {
+          id, scene: cl[0], city: best.c.key, category: cl[1], title, date: s2.date, time: s2.time === "00:00" ? "" : s2.time,
+          place, lat, lng, price: /gratuit|entr[ée]e libre|free/i.test(cond) ? "Gratuit" : (cond ? cond.slice(0, 60) : "Voir sur place"),
+          thumb: "", source: "openagenda", createdAt: prev[id] || Date.now(),
+          description: strip(r.description_fr || "").slice(0, 300) || "Sortie près de chez vous",
+        };
+        if (r.canonicalurl) o.link = r.canonicalurl;
+        const im = typeof r.image === "string" ? r.image : (r.image && r.image.url) || ""; if (im) { o.photo = im; o.photoCredit = "OpenAgenda"; }
+        out.push(o);
+      }
+      if (list.length < 100) break;
+      await sleep(150);
+    }
+  }
+  log("Sorties locales — jours lus :", jours, "— appels :", calls, "— lus :", lus, "— hors villes :", hors, "— écartés (bruit / divers) :", bruit, "— erreurs :", erreurs, "— gardés :", out.length);
+  return out;
+}
+
 function linkOf(ev) {
   const reg = Array.isArray(ev.registration) ? ev.registration.find((r) => r && r.type === "link" && r.value) : null;
   if (reg) return reg.value;
@@ -294,6 +356,7 @@ function imageOf(ev) {
     log("Agenda", name, "— reçus :", got, "— gardés :", kept, "— écartés (hors villes / sans position / pas musique-soirée) :", hors);
   }
   try { for (const e of await fetchBrocantes(cities, nowIso, seen, prev)) out.push(e); } catch (e) { log("Brocantes : erreur", e.message); }
+  try { for (const e of await fetchLocal(cities, nowIso, seen, prev)) out.push(e); } catch (e) { log("Sorties locales : erreur", e.message); }
   out.sort((a, b) => (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")));
   const by = {}, byCity = {};
   for (const e of out) { by[e.category] = (by[e.category] || 0) + 1; byCity[e.city] = (byCity[e.city] || 0) + 1; }

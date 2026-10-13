@@ -162,7 +162,7 @@ for (const { kind, file } of SOURCES) {
         if (/bibliotheque|mediatheque|livre|lecture|librairie/.test(t)) return tp.livre;
         return tp.galerie;
       };
-      const pools = { "Spectacles": tp.theatre, "Musique": tp.concert, "Soirée": tp.club, "Marché": tp.marche, "Sport": tp.sport, "Brocante": tp.brocante, "Festival": tp.festival };
+      const pools = { "Spectacles": tp.theatre, "Musique": tp.concert, "Soirée": tp.club, "Marché": tp.marche, "Sport": tp.sport, "Brocante": tp.brocante, "Festival": tp.festival, "Famille": tp.jardin };
       let g = 0;
       for (const ev of items) {
         const pool = ev.category === "Expo" ? expoPool(ev) : pools[ev.category];
