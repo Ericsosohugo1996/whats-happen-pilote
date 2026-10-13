@@ -5,7 +5,7 @@ const fs = require("fs");
 const KEY = process.env.OPENAGENDA_KEY || "";
 const BASE = process.env.OA_BASE || "https://api.openagenda.com/v2";
 const OUT = "openagenda-events.json", REPORT = "openagenda-events-report.txt";
-const DAYS_AHEAD = 60, MAX_KM = 25;
+const DAYS_AHEAD = 60, MAX_KM = 25, MAX_LOCAL_KM = 40;
 // agendas retenus (voir openagenda-report.txt) : [uid, nom, conserver tout (true) ou seulement les titres musique/soirée (false)]
 const AGENDAS = [
   [9969608, "Shotgun", true],
@@ -240,18 +240,56 @@ async function fetchBrocantes(cities, nowIso, seen, prev) {
 
 // TOUTES les sorties OpenAgenda près de nos villes (jeu de données ouvert Opendatasoft, sans clé) : on lit jour par jour,
 // on garde ce qui est à moins de MAX_KM d'une ville du site, et on range chaque événement avec classifyAll().
-// SONDE NICE (lecture seule, ne change rien aux événements) : on note dans le rapport à quoi ressemble le fichier de l'Office du Tourisme de Nice
-async function sondeNice() {
-  try {
-    const res = await fetch("https://www.data.gouv.fr/api/1/datasets/r/4d57cbed-521f-44be-a2e4-da313cddd089", { redirect: "follow", signal: AbortSignal.timeout(60000), headers: { "User-Agent": "whazup-sync/1.0 (+https://whazup.fr)" } });
-    log("Nice sonde : HTTP", res.status, res.headers.get("content-type"));
-    const txt = await res.text();
-    log("Nice sonde : taille", txt.length);
-    let j = null; try { j = JSON.parse(txt); } catch (e) { log("Nice sonde : pas du JSON —", txt.slice(0, 300).replace(/\s+/g, " ")); return; }
-    const arr = Array.isArray(j) ? j : (j.events || j.items || j["@graph"] || j.results || j.data || null);
-    log("Nice sonde : type", Array.isArray(j) ? "tableau" : "objet", "— clés :", Array.isArray(j) ? "" : Object.keys(j).slice(0, 15).join(","), "— éléments :", arr ? arr.length : "?");
-    if (arr && arr[0]) { log("Nice sonde : 1er élément :", JSON.stringify(arr[0]).slice(0, 1500)); if (arr[1]) log("Nice sonde : 2e élément :", JSON.stringify(arr[1]).slice(0, 1500)); }
-  } catch (e) { log("Nice sonde : erreur", e.message); }
+// NICE : flux de l'Office du Tourisme (format Apidae, licence ouverte). Tolérant : si la structure est différente, on note dans le rapport et on n'ajoute rien.
+async function fetchNice(cities, nowIso, seen, prev) {
+  const out = [];
+  const res = await fetch("https://www.data.gouv.fr/api/1/datasets/r/4d57cbed-521f-44be-a2e4-da313cddd089", { redirect: "follow", signal: AbortSignal.timeout(90000), headers: { "User-Agent": "whazup-sync/1.0 (+https://whazup.fr)" } });
+  if (!res.ok) { log("Nice : HTTP", res.status); return out; }
+  const j = await res.json();
+  const arr = Array.isArray(j.objetsTouristiques) ? j.objetsTouristiques : [];
+  const types = {}; for (const o of arr) types[o.type || "?"] = (types[o.type || "?"] || 0) + 1;
+  log("Nice : objets", arr.length, "— types :", JSON.stringify(types).slice(0, 400));
+  const fr = (x) => (x && (x.libelleFr || x.fr)) || (typeof x === "string" ? x : "");
+  const today = nowIso.slice(0, 10), limit = new Date(Date.now() + DAYS_AHEAD * 86400000).toISOString().slice(0, 10);
+  let shown = false, sansDate = 0, sansPos = 0, bruit = 0;
+  for (const o of arr) {
+    if (!/FETE|MANIF|EVEN/i.test(String(o.type || ""))) continue;
+    if (!shown) { shown = true; log("Nice : exemple brut :", JSON.stringify(o).slice(0, 1800)); }
+    const title = strip(fr(o.nom)); if (!title) continue;
+    const co = o.localisation && o.localisation.geolocalisation && o.localisation.geolocalisation.geoJson && o.localisation.geolocalisation.geoJson.coordinates;
+    const lng = co ? +co[0] : NaN, lat = co ? +co[1] : NaN;
+    if (!isFinite(lat) || !isFinite(lng)) { sansPos++; continue; }
+    let best = null; for (const c of cities) { const d = km(c.lat, c.lng, lat, lng); if (!best || d < best.d) best = { c, d }; }
+    if (!best || best.d > MAX_LOCAL_KM) continue;
+    const tm = o.informationsFeteEtManifestation && o.informationsFeteEtManifestation.typesManifestation;
+    const extra = Array.isArray(tm) ? tm.map((x) => fr(x.libelle || x)).join(" ") : "";
+    const cl = classifyAll(title, extra ? [extra] : []); if (!cl) { bruit++; continue; }
+    const periods = (o.ouverture && o.ouverture.periodesOuvertures) || [];
+    const dates = new Set();
+    for (const p of periods) {
+      const d1 = String(p.dateDebut || "").slice(0, 10), d2 = String(p.dateFin || p.dateDebut || "").slice(0, 10);
+      if (!d1) continue;
+      let cur = new Date(d1 + "T00:00:00Z"); const end = new Date(d2 + "T00:00:00Z");
+      const span = Math.round((end - cur) / 86400000);
+      if (span > 5) { const st = d1 < today ? today : d1; if (st <= limit && d2 >= today) dates.add(st); continue; }
+      for (; cur <= end; cur = new Date(cur.getTime() + 86400000)) { const ds = cur.toISOString().slice(0, 10); if (ds >= today && ds <= limit) dates.add(ds); }
+    }
+    if (!dates.size) { sansDate++; continue; }
+    const adr = o.localisation && o.localisation.adresse || {};
+    const place = [fr(o.localisation && o.localisation.nomLieu) || "", [adr.adresse1, adr.codePostal, adr.commune && adr.commune.nom].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+    const desc = strip(fr(o.presentation && o.presentation.descriptifCourt)).slice(0, 300) || "Sortie près de chez vous";
+    let img = ""; const il = Array.isArray(o.illustrations) ? o.illustrations : [];
+    for (const x of il) { const f = x && x.traductionFichiers && x.traductionFichiers[0]; if (f && f.url) { img = f.url; break; } }
+    for (const ds of dates) {
+      const key = fold(title) + "|" + ds + "|" + lat.toFixed(3); if (seen.has(key)) continue; seen.add(key);
+      const id = "nice-" + (o.identifier || o.id || fold(title).slice(0, 30)) + "-" + ds;
+      const ev = { id, scene: cl[0], city: best.c.key, category: cl[1], title, date: ds, time: "", place, lat, lng, price: "Voir sur place", thumb: "", source: "openagenda", createdAt: prev[id] || Date.now(), description: desc };
+      if (img) { ev.photo = img; ev.photoCredit = "Office du Tourisme Métropolitain Nice Côte d'Azur"; }
+      out.push(ev);
+    }
+  }
+  log("Nice : événements gardés :", out.length, "— sans date :", sansDate, "— sans position :", sansPos, "— écartés (bruit) :", bruit);
+  return out;
 }
 
 async function fetchLocal(cities, nowIso, seen, prev) {
@@ -287,7 +325,7 @@ async function fetchLocal(cities, nowIso, seen, prev) {
         if (!isFinite(lat) || !isFinite(lng) || (!lat && !lng)) { hors++; continue; }
         let best = null;
         for (const c of cities) { const d = km(c.lat, c.lng, lat, lng); if (!best || d < best.d) best = { c, d }; }
-        if (!best || best.d > MAX_KM) { hors++; continue; }
+        if (!best || best.d > MAX_LOCAL_KM) { hors++; continue; }
         const kw = Array.isArray(r.keywords_fr) ? r.keywords_fr : (typeof r.keywords_fr === "string" ? r.keywords_fr.split(/[,;|]/) : []);
         const cl = classifyAll(title, kw);
         if (!cl) { bruit++; continue; }
@@ -390,10 +428,10 @@ function imageOf(ev) {
   }
   try { for (const e of await fetchBrocantes(cities, nowIso, seen, prev)) out.push(e); } catch (e) { log("Brocantes : erreur", e.message); }
   try { for (const e of await fetchLocal(cities, nowIso, seen, prev)) out.push(e); } catch (e) { log("Sorties locales : erreur", e.message); }
+  try { for (const e of await fetchNice(cities, nowIso, seen, prev)) out.push(e); } catch (e) { log("Nice : erreur", e.message); }
   out.sort((a, b) => (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")));
   const by = {}, byCity = {};
   for (const e of out) { by[e.category] = (by[e.category] || 0) + 1; byCity[e.city] = (byCity[e.city] || 0) + 1; }
-  await sondeNice();
   log("Résultat :", out.length, "événements — par catégorie :", JSON.stringify(by));
   log("Villes couvertes :", Object.keys(byCity).length, "— top :", JSON.stringify(Object.entries(byCity).sort((a, b) => b[1] - a[1]).slice(0, 10)));
   if (sample) log("Exemple brut (pour vérifier la structure) :", JSON.stringify(sample).slice(0, 1500));
