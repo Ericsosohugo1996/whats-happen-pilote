@@ -462,3 +462,50 @@ html body.wz-v2.wz-nocity:not(.wz-regions) #region-accordion { display: none !im
 #wz-regions-btn { display: none; }
 html body.wz-v2.wz-nocity #wz-regions-btn { display: flex !important; align-items: center; justify-content: center; gap: 8px; width: 100%; margin: 14px 0 6px; padding: 13px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.05); color: #C7CEE3; font: 600 14px 'Plus Jakarta Sans', system-ui, sans-serif; cursor: pointer; }
 html body.wz-v2.wz-nocity.wz-regions #wz-regions-btn .wz-arr { transform: rotate(180deg); }
+
+/* ===== ÉTAPE 2 : cartes « photo d'abord » ===== */
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card {
+  display: block !important; position: relative; padding: 0 !important; border-radius: 22px !important; overflow: hidden;
+  margin-bottom: 16px !important; background: #16213F !important;
+  box-shadow: 0 14px 28px -18px rgba(0,0,0,.75) !important;
+}
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .thumb-wrap {
+  position: relative; display: block; width: 100% !important; min-width: 0 !important; height: 188px !important; background: #0E1730;
+}
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .thumb-wrap .thumb { width: 100%; height: 188px !important; border-radius: 0 !important; overflow: hidden; }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .thumb img,
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .thumb svg { width: 100% !important; height: 188px !important; object-fit: cover; display: block; }
+/* léger dégradé en bas de la photo pour la lisibilité */
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .thumb-wrap::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 70px; pointer-events: none;
+  background: linear-gradient(to top, rgba(10,16,36,.78), rgba(10,16,36,0));
+}
+/* pastille de catégorie sur la photo (haut gauche) */
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .thumb-badge {
+  position: absolute !important; left: 12px !important; top: 12px !important; right: auto !important; bottom: auto !important;
+  width: 34px !important; height: 34px !important; border-radius: 50% !important; font-size: 17px !important;
+  border: 2px solid rgba(255,255,255,.9) !important; box-shadow: 0 4px 10px rgba(0,0,0,.4); z-index: 2;
+}
+/* prix sur la photo (haut droite) */
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .dist {
+  position: absolute !important; right: 12px; top: 12px; z-index: 2; align-self: auto;
+  background: rgba(10,16,36,.72) !important; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  color: #fff !important; border: 1px solid rgba(255,255,255,.18) !important;
+}
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .dist.free { background: rgba(16,120,84,.85) !important; color: #fff !important; }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .info { padding: 12px 16px 14px; display: block; }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .cat { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 800; margin-bottom: 3px; }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .title { font-family: 'Fraunces', Georgia, serif; font-size: 21px; line-height: 1.15; font-weight: 700; }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .venue { font-size: 14px; margin-top: 3px; }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .meta { font-size: 13px; margin-top: 8px; color: #F2C879 !important; font-weight: 700; }
+/* crédit photo : discret, posé sur le bas de la photo */
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card .info > div[style*="font-size:10.5px"] {
+  position: absolute; right: 10px; top: 168px; max-width: 70%; font-size: 9px !important; color: rgba(255,255,255,.7) !important; opacity: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,.8); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; z-index: 2; pointer-events: none;
+}
+/* lieux (bars, musées…) : même carte, un peu plus basse */
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .thumb-wrap,
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .thumb,
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .thumb img,
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .thumb svg { height: 150px !important; }
+html body.wz-v2:not(.wz-nocity) #view-discover .event-card--place .info > div[style*="font-size:10.5px"] { top: 130px; }
