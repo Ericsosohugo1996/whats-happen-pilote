@@ -93,6 +93,21 @@ const AGENDAS = [
   [961617, "Var Tourisme (Toulon)", "all"],
   [1051842, "Tourisme en Champagne (Reims)", "all"],
   [45088536, "Pyrénées Orientales Tourisme", "all"],
+  // --- ajoutés après l'exploration du 13 octobre : salles et théâtres de villes qui manquaient ---
+  [6574990, "Café-Théâtre Défonce de rire (Clermont-Ferrand)", "all"],
+  [79876741, "Comédie - CDN de Reims", "all"],
+  [3514473, "Théâtre de l'Union (Limoges)", "all"],
+  [66867210, "La Vapeur (Dijon)", "all"],
+  [8776300, "Opéra de Dijon", "all"],
+  [19009844, "Angers Nantes Opéra", "all"],
+  [4310687, "Zone Franche (Orléans)", "all"],
+  [16962406, "La Rochelle et ses environs - Culture", "all"],
+  [68587339, "POLE-SUD (Strasbourg)", "all"],
+  [64371698, "Le Nautilus (Perpignan)", "all"],
+  [2521325, "Le Train Théâtre (Portes-lès-Valence)", "all"],
+  [92106221, "Mon Petit Ponant (Brest)", "all"],
+  [48273866, "Centres Culturels Limoges", "all"],
+  [38962923, "Musées de Limoges", "all"],
 ];
 const report = [];
 const log = (...a) => { const s = a.join(" "); console.log(s); report.push(s); };
