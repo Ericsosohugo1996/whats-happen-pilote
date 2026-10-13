@@ -153,10 +153,19 @@ for (const { kind, file } of SOURCES) {
     // sans affiche ni photo de lieu : photo d'illustration (théâtre pour les spectacles, salle de concert pour la musique, club pour les soirées)
     try {
       const tp = JSON.parse(fs.readFileSync("type-photos.json", "utf8"));
-      const pools = { "Spectacles": tp.theatre, "Musique": tp.concert, "Soirée": tp.club };
+      const expoPool = (ev) => {
+        const t = String(ev.title + " " + ev.place).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        if (/chateau|abbaye|manoir|forteresse|citadelle/.test(t)) return tp.chateau;
+        if (/eglise|cathedrale|chapelle|basilique|collegiale/.test(t)) return tp.eglise;
+        if (/jardin|parc |nature|oiseaux|foret/.test(t)) return tp.jardin;
+        if (/musee|museum|patrimoine|visite/.test(t)) return tp.musee;
+        if (/bibliotheque|mediatheque|livre|lecture|librairie/.test(t)) return tp.livre;
+        return tp.galerie;
+      };
+      const pools = { "Spectacles": tp.theatre, "Musique": tp.concert, "Soirée": tp.club, "Marché": tp.marche, "Sport": tp.sport, "Brocante": tp.brocante, "Festival": tp.festival };
       let g = 0;
       for (const ev of items) {
-        const pool = pools[ev.category];
+        const pool = ev.category === "Expo" ? expoPool(ev) : pools[ev.category];
         if (ev.photo || !pool || !pool.length) continue;
         let h = 0; for (const ch of String(ev.id)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
         const p = pool[h % pool.length];

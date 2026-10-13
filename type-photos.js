@@ -20,7 +20,19 @@ const QUERIES = {
   galerie: ["art gallery exhibition", "gallery exhibition paintings", "contemporary art exhibition"],
   concert: ["concert hall interior", "concert stage lights", "live music stage"],
   club: ["nightclub dance floor", "night club lights", "disco lights party"],
+  marche: ["market stalls france", "farmers market france", "covered market halles"],
+  sport: ["sports stadium", "football stadium", "sports hall arena"],
+  brocante: ["flea market", "antique market", "second hand market stalls"],
+  festival: ["music festival stage", "open air festival stage", "festival lights stage"],
   monument: ["monument france", "triumphal arch", "historic monument square"],
+};
+const MUST = {
+  club: /club|disco|danc|\bdj\b|party|night/i,
+  concert: /concert|stage|hall|live|festival|band|theat|opera/i,
+  marche: /market|march[eé]|halle|stall/i,
+  sport: /stadium|stade|arena|gym|sport|football|rugby|match/i,
+  brocante: /flea|market|brocante|antique|puces|second.?hand/i,
+  festival: /festival|stage|concert|open.?air/i,
 };
 const BAD_TITLE = /(map|plan|diagram|logo|drawing|painting|poster|screenshot|stamp|coat of arms|flag|schema|floor ?plan|interior of a mosque|statue of|portrait|crowd|protest|night shot of a car)/i;
 
@@ -54,7 +66,7 @@ function plain(s) { return String(s || "").replace(/<[^>]*>/g, "").replace(/&amp
 
 async function search(q, cat) {
   const url = API + "?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40" +
-    "&gsrsearch=" + encodeURIComponent(q + ' filetype:bitmap incategory:"' + cat + '"') +
+    "&gsrsearch=" + encodeURIComponent(q + ' filetype:bitmap' + (cat ? ' incategory:"' + cat + '"' : "")) +
     "&prop=imageinfo&iiprop=url|size|mime|extmetadata&iiurlwidth=900";
   const r = await fetch(url, { headers: { "User-Agent": UA } });
   if (!r.ok) throw new Error("HTTP " + r.status);
@@ -88,6 +100,18 @@ async function main() {
             if (!seen.has(c.u) && got.length < PER_TYPE) { seen.add(c.u); got.push(c); }
           }
         } catch (e) { console.log("échec", type, q, e.message); }
+        await new Promise((r) => setTimeout(r, 400));
+      }
+    }
+    // pas assez de photos « vedettes » : recherche large, en exigeant un titre qui parle du bon sujet
+    if (got.length < 4 && MUST[type]) {
+      for (const q of queries) {
+        if (got.length >= PER_TYPE) break;
+        try {
+          for (const c of await search(q, null)) {
+            if (!seen.has(c.u) && got.length < PER_TYPE && MUST[type].test(c.t)) { seen.add(c.u); got.push(c); }
+          }
+        } catch (e) { console.log("échec (large)", type, q, e.message); }
         await new Promise((r) => setTimeout(r, 400));
       }
     }
