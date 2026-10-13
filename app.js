@@ -8087,7 +8087,7 @@ function eventPhotoHTML(ev, extraImgStyle){
   const photo = ev.photo || CATEGORY_PHOTOS[ev.category] || "";
   const styleAttr = extraImgStyle ? ` style="${extraImgStyle}"` : "";
   return photo
-    ? `<img src="${photo}" alt="${ev.title || ""}" loading="lazy" data-scene="${ev.scene || ""}"${styleAttr} onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
+    ? `<img src="${photo}" alt="${ev.title || ""}" loading="lazy" referrerpolicy="no-referrer" data-scene="${ev.scene || ""}"${styleAttr} onerror="this.outerHTML = window.sceneSVG(this.dataset.scene);">`
     : sceneSVG(ev.scene);
 }
 // ---- temps de marche estimé (en minutes) à partir d'une distance en km ----

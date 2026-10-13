@@ -177,6 +177,17 @@ for (const { kind, file } of SOURCES) {
       }
       console.log("événements : photo de l'artiste (Wikipédia) :", a);
     } catch (e) { /* pas encore d'artist-photos.json */ }
+    // image de partage de la page de l'organisateur (robot « Photos des organisateurs ») : affichée depuis son site, avec son nom
+    try {
+      const og = JSON.parse(fs.readFileSync("og-photos.json", "utf8"));
+      let o = 0;
+      for (const ev of items) {
+        if (ev.photo && !ev.photoGeneric && !ev.photoVenue) continue; // vraie affiche ou photo d'artiste
+        const r = og[ev.link] || og[ev.ticket]; if (!r || !r.u) continue;
+        ev.photo = r.u; ev.photoCredit = "Image : " + r.d; ev.photoOrganizer = true; delete ev.photoGeneric; delete ev.photoVenue; o++;
+      }
+      console.log("événements : image de l'organisateur :", o);
+    } catch (e) { /* pas encore d'og-photos.json */ }
     // sans affiche ni photo de lieu : photo d'illustration (théâtre pour les spectacles, salle de concert pour la musique, club pour les soirées)
     try {
       const tp = JSON.parse(fs.readFileSync("type-photos.json", "utf8"));
