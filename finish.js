@@ -39,3 +39,22 @@
   }
   watch();
 })();
+
+// Écran de détail : plus de « à » tout seul quand l'heure n'est pas connue.
+(function () {
+  function wrap() {
+    if (typeof window.openDetail !== "function" || window.openDetail.__wzFin) return false;
+    var orig = window.openDetail;
+    var w = function () {
+      var r = orig.apply(this, arguments);
+      try {
+        var t = document.getElementById("detail-time");
+        if (t && /^\s*à\s*(undefined|null|--:--)?\s*$/.test(t.textContent)) t.textContent = "";
+      } catch (e) {}
+      return r;
+    };
+    w.__wzFin = true; window.openDetail = w;
+    return true;
+  }
+  if (!wrap()) { setTimeout(wrap, 800); setTimeout(wrap, 2500); }
+})();

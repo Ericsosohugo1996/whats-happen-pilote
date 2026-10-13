@@ -535,3 +535,39 @@ html body.wz-v2 .wz-skel-card i, html body.wz-v2 .wz-skel-card b { background: l
   html body.wz-v2 #view-discover .event-card { animation: none !important; }
   html body.wz-v2 .wz-skel-card i, html body.wz-v2 .wz-skel-card b { animation: none !important; }
 }
+
+/* ===== ÉTAPE 4 : écran de détail d'une sortie ===== */
+html body.wz-v2:has(#view-detail:not(.hidden)) { background: #0B1226 !important; }
+html body.wz-v2 #view-detail { background: #0B1226 !important; padding: 0 !important; margin: 0 !important; position: relative; min-height: 100vh; color: #fff; }
+html body.wz-v2 #view-detail .back-btn {
+  position: absolute !important; top: 14px; left: 14px; z-index: 6; padding: 9px 15px !important; border-radius: 999px !important;
+  background: rgba(10,16,36,.62) !important; color: #fff !important; border: 1px solid rgba(255,255,255,.2) !important;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 13.5px !important;
+}
+html body.wz-v2 #view-detail .detail-hero {
+  height: 330px !important; border-radius: 0 0 30px 30px !important; margin: 0 !important; box-shadow: none !important; position: relative; background: #16213F;
+}
+html body.wz-v2 #view-detail .detail-hero::after { content: ""; position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(to top, rgba(11,18,38,.95), rgba(11,18,38,0)); pointer-events: none; }
+html body.wz-v2 #view-detail .detail-hero img, html body.wz-v2 #view-detail .detail-hero svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+html body.wz-v2 #view-detail #wz-ev-credit { z-index: 3; bottom: 16px !important; }
+html body.wz-v2 #view-detail .detail-body { position: relative; margin-top: -54px; padding: 0 18px 130px !important; background: none !important; z-index: 2; }
+html body.wz-v2 #view-detail .detail-body h1 { font-family: 'Fraunces', Georgia, serif; font-size: 30px !important; line-height: 1.12 !important; color: #fff !important; margin: 10px 0 18px !important; text-wrap: balance; }
+html body.wz-v2 #view-detail .info-card { background: #16213F !important; border: 0 !important; border-radius: 20px !important; padding: 16px 18px !important; box-shadow: none !important; }
+html body.wz-v2 #view-detail .info-main { color: #fff !important; font-weight: 700; }
+html body.wz-v2 #view-detail .info-sub { color: #9BA5C2 !important; }
+html body.wz-v2 #view-detail .info-sub.accent { color: #F2C879 !important; font-weight: 700; }
+html body.wz-v2 #view-detail .info-divider { background: rgba(255,255,255,.1) !important; }
+html body.wz-v2 #view-detail .info-row-new .ico { background: rgba(242,200,121,.14) !important; }
+html body.wz-v2 #view-detail .price-badge { margin: 14px 0 4px; font-size: 13px; }
+html body.wz-v2 #view-detail .detail-desc { color: #C7CEE3 !important; font-size: 15.5px; line-height: 1.65; margin: 14px 0 !important; max-width: 62ch; }
+html body.wz-v2 #view-detail #wz-ev-links a[href^="tel"] { border-color: #F2C879 !important; color: #F2C879 !important; }
+html body.wz-v2 #view-detail #wz-ev-links a { color: #C3CAE0; }
+html body.wz-v2 #view-detail #wz-ev-links a[href*="http"] { color: #9BA5C2; }
+html body.wz-v2 #view-detail #btn-interested { width: 100%; padding: 17px 20px !important; border-radius: 16px !important; border: 0 !important; background: linear-gradient(90deg,#F2864B,#E85D3D) !important; color: #fff !important; font-size: 16px !important; font-weight: 800; box-shadow: 0 12px 24px -12px rgba(232,93,61,.8); }
+html body.wz-v2 #view-detail #detail-interest-count { color: #9BA5C2 !important; }
+html body.wz-v2 #view-detail .action-tile { background: #16213F !important; border-radius: 16px !important; }
+html body.wz-v2 #view-detail .action-tile .tile-icon { background: #0B1226 !important; box-shadow: none !important; }
+html body.wz-v2 #view-detail .action-tile .tile-label { color: #C3CAE0 !important; }
+html body.wz-v2 #view-detail .action-tile.active { background: rgba(232,93,61,.22) !important; }
+html body.wz-v2 #view-detail a, html body.wz-v2 #view-detail [style*="text-decoration:underline"] { color: #9BA5C2; }
+html body.wz-v2 #view-detail .action-tile { border: 0 !important; }

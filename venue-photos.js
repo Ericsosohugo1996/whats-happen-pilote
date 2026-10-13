@@ -8,6 +8,8 @@ const path = require("path");
 const API = "https://fr.wikipedia.org/w/api.php";
 const UA = "WhazupPhotoBot/1.0 (https://whazup.fr; photos des salles)";
 const MAX_NEW = 1500;
+const T0 = Date.now();
+const TIME_UP = () => Date.now() - T0 > 17 * 60 * 1000; // on s'arrête avant la limite du robot (25 min) pour ne rien perdre
 const CACHE_VERSION = 3; // version 2 : contrôle de la ville obligatoire (les anciennes réponses sont refaites)
 const STOP = new Set(["le", "la", "les", "de", "du", "des", "et", "au", "aux", "l", "d", "en", "sur", "a", "the", "salle", "espace", "centre"]);
 
@@ -70,12 +72,45 @@ async function lookup(name, cityName) {
   return null;
 }
 
+
+// 2e source : Wikimedia Commons, photos géolocalisées à moins de 80 m du lieu, gardées SEULEMENT si le nom du fichier contient un mot du nom du lieu.
+const COMMONS = "https://commons.wikimedia.org/w/api.php";
+const BAD_FILE = /logo|blason|armoiries|drapeau|flag|plan[ _-]|carte|map|affiche|poster|programme|ticket|billet|\.svg|\.pdf|\.tif|\.gif|\.webm|\.ogv|portrait|concert de|interieur|plaque/i;
+const LIC_OK = /^(cc[ -]by|cc0|public domain|pd|attribution|domaine public)/i;
+async function commonsLookup(name, lat, lng) {
+  const url = COMMONS + "?action=query&format=json&generator=geosearch&ggsprimary=all&ggsnamespace=6&ggsradius=80&ggslimit=30&ggscoord=" +
+    lat + "%7C" + lng + "&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1000";
+  const r = await fetch(url, { headers: { "User-Agent": UA } });
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  const j = await r.json();
+  const files = Object.values((j.query && j.query.pages) || {});
+  const sig = fold(name).split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOP.has(w));
+  if (!sig.length) return null;
+  let best = null;
+  for (const p of files) {
+    const ii = p.imageinfo && p.imageinfo[0]; if (!ii) continue;
+    const title = fold((p.title || "").replace(/^File:/i, ""));
+    if (BAD_FILE.test(title)) continue;
+    if (!/image\/jpeg/.test(ii.mime || "")) continue;
+    if ((ii.width || 0) < 800 || (ii.width || 0) < (ii.height || 0) * 0.9) continue; // paysage seulement
+    const lic = ii.extmetadata && ii.extmetadata.LicenseShortName && ii.extmetadata.LicenseShortName.value;
+    if (!lic || !LIC_OK.test(lic)) continue;
+    if (!sig.some((w) => title.includes(w))) continue;
+    const score = sig.filter((w) => title.includes(w)).length * 10000 + (ii.width || 0) / 100;
+    if (!best || score > best.score) {
+      const artist = ((ii.extmetadata.Artist && ii.extmetadata.Artist.value) || "").replace(/<[^>]*>/g, "").trim().slice(0, 40);
+      best = { score, r: { u: ii.thumburl || ii.url, t: String(p.title).replace(/^File:/i, ""), c: "Photo du lieu · " + (artist ? artist + ", " : "") + lic + " · Wikimedia Commons", s: "commons" } };
+    }
+  }
+  return best ? best.r : null;
+}
+
 async function main() {
   let cache = {};
   try { cache = JSON.parse(fs.readFileSync("venue-photos.json", "utf8")); } catch (e) {}
   if (cache._v !== CACHE_VERSION) { console.log("ancienne mémoire ignorée (version", cache._v, ")"); cache = { _v: CACHE_VERSION }; }
   const names = cityNames();
-  const count = {};
+  const count = {}, all = {};
   for (const f of fs.readdirSync("data/events")) {
     if (!f.endsWith(".json") || f.endsWith(".soon.json")) continue;
     let d = []; try { d = JSON.parse(fs.readFileSync(path.join("data/events", f), "utf8")); } catch (e) { continue; }
@@ -84,14 +119,18 @@ async function main() {
       if (ev.photo && !ev.photoGeneric && !ev.photoVenue) continue; // il a déjà une vraie affiche (une photo de salle trouvée avant ne compte pas : on la refait)
       const n = venueName(ev.place); if (!n) continue;
       const k = venueKey(ev.place, ev.city);
+      const a = (all[k] = all[k] || { n: 0, name: n, city: ev.city, lat: null, lng: null }); a.n++;
+      if (a.lat == null && typeof ev.lat === "number" && typeof ev.lng === "number") { a.lat = ev.lat; a.lng = ev.lng; }
       if (k in cache) continue;
-      (count[k] = count[k] || { n: 0, name: n, city: ev.city }).n++;
+      const o = (count[k] = count[k] || { n: 0, name: n, city: ev.city, lat: null, lng: null }); o.n++;
+      if (o.lat == null && typeof ev.lat === "number" && typeof ev.lng === "number") { o.lat = ev.lat; o.lng = ev.lng; }
     }
   }
   const todo = Object.entries(count).sort((a, b) => b[1].n - a[1].n).slice(0, MAX_NEW);
   console.log("lieux à chercher :", todo.length, "(déjà en mémoire :", Object.keys(cache).length - 1 + ")");
   let found = 0, tried = 0;
   for (const [k, v] of todo) {
+    if (TIME_UP()) { console.log("temps presque écoulé : on enregistre et on s'arrête (relance pour continuer)"); break; }
     tried++;
     try {
       const r = await lookup(v.name, names[v.city] || v.city);
@@ -100,9 +139,28 @@ async function main() {
     await new Promise((r) => setTimeout(r, 200));
     if (tried % 100 === 0) console.log("…", tried, "cherchés,", found, "trouvés");
   }
-  const total = Object.entries(cache).filter(([k, v]) => k !== "_v" && v).length;
+
+  // ---- passe 2 : Wikimedia Commons pour les lieux sans photo ----
+  cache._c = cache._c || {};
+  const todo2 = Object.entries(all).filter(([k, v]) => v.lat != null && !cache[k] && !(k in cache._c)).sort((a, b) => b[1].n - a[1].n).slice(0, MAX_NEW);
+  // les lieux déjà « null » en mémoire (pas dans count car déjà cherchés) : on les retrouve aussi
+  console.log("passe 2 (Commons) :", todo2.length, "lieux");
+  let found2 = 0, tried2 = 0;
+  for (const [k, v] of todo2) {
+    if (TIME_UP()) { console.log("temps presque écoulé : on enregistre et on s'arrête (relance pour continuer)"); break; }
+    tried2++;
+    try {
+      const r = await commonsLookup(v.name, v.lat, v.lng);
+      cache._c[k] = r ? 1 : 0;
+      if (r) { cache[k] = r; found2++; }
+    } catch (e) { console.log("échec Commons", v.name, e.message); await new Promise((r) => setTimeout(r, 1500)); }
+    await new Promise((r) => setTimeout(r, 250));
+    if (tried2 % 100 === 0) console.log("… Commons", tried2, "cherchés,", found2, "trouvés");
+  }
+  console.log("passe 2 terminée :", tried2, "cherchés,", found2, "photos trouvées");
+  const total = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && v).length;
   console.log("terminé :", tried, "lieux cherchés,", found, "photos trouvées, total en mémoire :", total);
-  const ex = Object.entries(cache).filter(([k, v]) => k !== "_v" && v).slice(-12).map(([k, v]) => k + " → " + v.t);
+  const ex = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && v).slice(-12).map(([k, v]) => k + " → " + v.t);
   console.log("exemples :\n" + ex.join("\n"));
   fs.writeFileSync("venue-photos.json", JSON.stringify(cache));
 }
