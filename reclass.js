@@ -7,7 +7,7 @@ const RULES = [
   ["Marché", /\bmarche\b(?! (nordique|aquatique|active))|marche de noel|marche (aux|des)|\bfoire\b|\bpuces\b/],
   ["Sport", /\bmatch\b|\btrail\b|\bcourse\b|marathon|tournoi|randonnee|\brando\b|\bvelo\b|football|rugby|basket|handball|volley|tennis|natation|\bgym\b|yoga|escalade|\bski\b|equidays|horse|triathlon|cyclo|petanque|foulees|pilates|fitness/],
   ["Soirée", /soiree|\bbal\b|blind.?test|karaoke|\bquiz\b|apero|afterwork|\bdj\b|dj set|dancing|dansant|clubbing/],
-  ["Musique", /concert|quatuor|quintette|orchestre|opera|choeur|chorale|recital|\bjazz\b|symphon|musicien|\blive\b|musique|chanson|fanfare|harmonie|\bjam\b|\bsolo\b|\brock\b|\brap\b|\bslam\b|gospel|\bblues\b|\bfolk\b/],
+  ["Musique", /concert|quatuor|quintette|orchestre|\bopera\b|choeur|chorale|recital|\bjazz\b|symphon|musicien|\blive\b|musique|chanson|fanfare|harmonie|\bjam\b|\bsolo\b|\brock\b|\brap\b|\bslam\b|gospel|\bblues\b|\bfolk\b/],
   ["Spectacles", /spectacle|theatre|comedie|humour|one.?man|stand.?up|cirque|marionnette|improvisation|\bimpro\b|\bdanse\b|ballet|\bconte\b|clown|magie|cabaret|comedy|cinema|\bfilm\b|projection|catch d/],
   ["Expo", /exposition|\bexpo\b|vernissage|visite|musee|patrimoine|atelier|\bstage\b|conference|dedicace|\blecture\b|salon|repair|decouverte|balade|parcours|escape/],
 ];

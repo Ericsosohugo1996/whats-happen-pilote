@@ -30,37 +30,69 @@ const AGENDAS = [
   [31182441, "Tourcoing Jazz Festival", true],
   [82566953, "AgendaTrad (bals)", true],
   // --- agendas de villes et métropoles (on garde seulement concerts, soirées, bals, clubs, karaoké…) ---
-  [89904399, "Métropole européenne de Lille", false],
-  [57621068, "Ville de Lille", false],
-  [84178045, "La culture en continu (Lille)", false],
-  [83549053, "Bordeaux Métropole", false],
-  [83392987, "Ville de Bordeaux", false],
-  [5538134, "Ville de Bordeaux - contributeurs", false],
-  [96269696, "Carte jeune Bordeaux Métropole", false],
-  [19327333, "Bordeaux Tourisme", false],
-  [50522407, "Toulouse Métropole", false],
-  [42448083, "Toulouse", false],
-  [14086709, "Festival Estiv'Oc (Toulouse)", false],
-  [82470621, "Nantes Métropole", false],
-  [56354628, "Contributions Nantes et métropole", false],
-  [20500020, "Rennes Métropole", false],
-  [83693824, "Carte Sortir ! (Rennes)", false],
-  [17739387, "Mon agenda des métropoles", false],
-  [21769447, "Aix-Marseille-Provence Métropole", false],
-  [11362982, "Métropole Rouen Normandie", false],
-  [11174431, "Rouen", false],
-  [6418448, "La Murmure (musiques actuelles de Normandie)", false],
-  [35710944, "Agenda de sorties de la métropole orléanaise", false],
-  [64168411, "Ville de Limoges", false],
-  [49283376, "Villeurbanne", false],
-  [38598267, "Ville de Cenon", false],
-  [35944609, "Petit Agenda (Perpignan)", false],
-  [14115607, "Unidivers (Bayonne)", false],
-  [46166621, "Office de tourisme La Baule", false],
-  [8530879, "Alsace Destination Tourisme", false],
-  [7430297, "Agenda culturel Grand-Est", false],
-  [78891697, "Alès Agglomération", false],
+  [89904399, "Métropole européenne de Lille", "all"],
+  [57621068, "Ville de Lille", "all"],
+  [84178045, "La culture en continu (Lille)", "all"],
+  [83549053, "Bordeaux Métropole", "all"],
+  [83392987, "Ville de Bordeaux", "all"],
+  [5538134, "Ville de Bordeaux - contributeurs", "all"],
+  [96269696, "Carte jeune Bordeaux Métropole", "all"],
+  [19327333, "Bordeaux Tourisme", "all"],
+  [50522407, "Toulouse Métropole", "all"],
+  [42448083, "Toulouse", "all"],
+  [14086709, "Festival Estiv'Oc (Toulouse)", "all"],
+  [82470621, "Nantes Métropole", "all"],
+  [56354628, "Contributions Nantes et métropole", "all"],
+  [20500020, "Rennes Métropole", "all"],
+  [83693824, "Carte Sortir ! (Rennes)", "all"],
+  [17739387, "Mon agenda des métropoles", "all"],
+  [21769447, "Aix-Marseille-Provence Métropole", "all"],
+  [11362982, "Métropole Rouen Normandie", "all"],
+  [11174431, "Rouen", "all"],
+  [6418448, "La Murmure (musiques actuelles de Normandie)", "all"],
+  [35710944, "Agenda de sorties de la métropole orléanaise", "all"],
+  [64168411, "Ville de Limoges", "all"],
+  [49283376, "Villeurbanne", "all"],
+  [38598267, "Ville de Cenon", "all"],
+  [35944609, "Petit Agenda (Perpignan)", "all"],
+  [14115607, "Unidivers (Bayonne)", "all"],
+  [46166621, "Office de tourisme La Baule", "all"],
+  [8530879, "Alsace Destination Tourisme", "all"],
+  [7430297, "Agenda culturel Grand-Est", "all"],
+  [78891697, "Alès Agglomération", "all"],
   [87311181, "Mains d'Œuvres (Saint-Ouen)", false],
+  // --- salles de spectacle, humour, cirque, zéniths, sport (mode "all" : on classe chaque événement) ---
+  [648937, "Comédie de Rennes", "all"],
+  [11875341, "Théâtre National de Bretagne (Rennes)", "all"],
+  [1923913, "Comédie du Finistère (Brest)", "all"],
+  [4661116, "Comédie de Besançon", "all"],
+  [362238, "Comédie de Metz", "all"],
+  [61420366, "Mystère Comedy Club (Nantes)", "all"],
+  [96398684, "Zénith Toulouse Métropole", "all"],
+  [93507735, "Zénith Métropole Rouen Normandie", "all"],
+  [72019243, "Krakatoa (Mérignac)", "all"],
+  [74000941, "Le Colisée (Roubaix)", "all"],
+  [60166642, "Théâtre municipal de Nevers", "all"],
+  [4898229, "Opéra National de Bordeaux", "all"],
+  [1825978, "Les Concerts Classiques (Bordeaux)", "all"],
+  [36833164, "Le Cratère - Scène nationale d'Alès", "all"],
+  [31651509, "Théâtre de Laval", "all"],
+  [78449013, "La Verrerie - Pôle National Cirque Occitanie", "all"],
+  [13900760, "Haute-Garonne Culture", "all"],
+  [39750428, "Toulouse - Sport", "all"],
+  [9977986, "Ville de Roubaix", "all"],
+  [29125620, "Ville de Boulogne-sur-Mer", "all"],
+  [41493455, "Ville de Charleville-Mézières", "all"],
+  [48353388, "Albi", "all"],
+  [1276382, "Ville de Draguignan", "all"],
+  [99501607, "Arles agenda", "all"],
+  [79839448, "Ville d'Avignon", "all"],
+  [56293386, "Digne-les-Bains - On sort", "all"],
+  [5928978, "Sarthe Tourisme (Le Mans)", "all"],
+  [1359184, "Montpellier Tourisme", "all"],
+  [961617, "Var Tourisme (Toulon)", "all"],
+  [1051842, "Tourisme en Champagne (Reims)", "all"],
+  [45088536, "Pyrénées Orientales Tourisme", "all"],
 ];
 const report = [];
 const log = (...a) => { const s = a.join(" "); console.log(s); report.push(s); };
@@ -104,6 +136,18 @@ async function api(path, params) {
 // pour les agendas généraux (villes, métropoles) : on ne garde que les sorties musique / soirée
 const WANT = /concert|\blive\b|\bdj\b|dj set|soiree|\bclub\b|clubbing|\bbal\b|bal (folk|trad|musette|populaire)|jazz|\brock\b|electro|techno|\bhouse\b|\brap\b|hip.?hop|reggae|karaoke|blind.?test|\bjam\b|scene ouverte|open mic|fest.?noz|afterwork|apero|dancing|salsa|bachata|festival.*(musique|jazz|rock)|showcase|release party|\bset\b|chanson|soul|funk|metal|punk|afro/;
 const NOT = /atelier|conference|enfant|jeune public|lecture|exposition|visite|stage\b|formation|webinaire|conte\b|cine|projection|club (de|des) (lecture|jeux|seniors?|echecs|photo|codeu)|basket|football|rugby|handball|volley|tennis|\bmatch\b|manga|repair|aquatique|piscine|musee|balade|rando|naturaliste|escape|don du sang|bourse|octobre rose|soiree rose|club lecture|jeux? de societe|soiree (jeux|conference|debat|lecture|litteraire|prevention|bien-etre|rentree|soupes|d'information)|bebe|atelier|cours\b|reunion|permanence|dedicace/;
+const { reclassify } = require("./reclass.js");
+const NOISE = /numerique|informatique|ordinateur|emploi|recrut|formation|webinaire|permanence|reunion|conseil (municipal|citoyen|de quartier)|assemblee|don du sang|depistage|sante|inscription|accompagnement|\bcv\b|entreprise|creation d'entreprise|retail|decarbon|dechet|tri\b|compost|vaccin|bilan|forum (de l'|des metiers)|journee (de|d')(information|prevention)|point (info|conseil)|aide aux|demarche|impot|logement|energie|reglement|mairie|permis|securite routiere|ecole|college|lycee|vacances scolaires|periscolaire|crèche|creche/;
+const SCENE = { "Musique": "musique", "Soirée": "village", "Spectacles": "spectacle", "Expo": "expo", "Marché": "marche", "Brocante": "marche", "Sport": "sport", "Festival": "festival" };
+function classifyAll(title, keywords) {
+  const t = fold(title);
+  if (NOISE.test(t)) return null;
+  const cat = reclassify({ category: "Festival", source: "datatourisme", title: title + " " + (keywords || []).slice(0, 4).join(" ") });
+  if (!SCENE[cat]) return null; // « Divers » : on ne garde pas
+  // les ateliers, créations et autres « art » des agendas de mairie ne sont pas des sorties : on ne garde en Expo que les vraies expos et visites
+  if (cat === "Expo" && !/exposition|\bexpo\b|vernissage|visite|musee|patrimoine|galerie|parcours|balade|decouverte du/.test(t)) return null;
+  return [SCENE[cat], cat];
+}
 function wanted(title, keywords) {
   const t = fold(title + " " + (keywords || []).join(" "));
   return WANT.test(t) && !NOT.test(t);
@@ -226,9 +270,11 @@ function imageOf(ev) {
         const title = strip(txt(ev.title));
         if (!title) continue;
         if (keepAll === false && !wanted(title, ev.keywords)) { hors++; continue; }
+        let forced = null;
+        if (keepAll === "all") { forced = /sport/i.test(name) ? ["sport", "Sport"] : classifyAll(title, ev.keywords); if (!forced) { hors++; continue; } }
         const key = fold(title) + "|" + s.date + "|" + lat.toFixed(3);
         if (seen.has(key)) continue; seen.add(key);
-        const [scene, category] = classify(title, ev.keywords);
+        const [scene, category] = forced || classify(title, ev.keywords);
         const id = "oa-" + ev.uid + "-" + s.date;
         const cond = strip(txt(ev.conditions));
         const price = /gratuit|entr[ée]e libre|free/i.test(cond) ? "Gratuit" : (name === "Shotgun" ? "Billetterie en ligne" : (cond ? cond.slice(0, 60) : "Voir sur place"));

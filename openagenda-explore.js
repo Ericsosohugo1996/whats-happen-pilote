@@ -9,7 +9,7 @@ const REPORT = "openagenda-report.txt", OUT = "openagenda-agendas.json";
 const report = [];
 const log = (...a) => { const s = a.join(" "); console.log(s); report.push(s); };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const TERMS = ["concert", "musique", "soirée", "club", "bar", "salle de concert", "scène", "festival", "jazz", "rock", "électro", "dj", "spectacle", "sortir", "agenda culturel", "ville", "office de tourisme", "métropole"];
+const TERMS = ["Lyon", "Strasbourg", "Nice", "Montpellier", "Grenoble", "Dijon", "Angers", "Nancy", "Reims", "Tours", "Toulon", "Clermont-Ferrand", "Brest", "Metz", "Le Mans", "Amiens", "Poitiers", "Saint-Étienne", "Caen", "Le Havre", "Nîmes", "Avignon", "Perpignan", "Besançon", "Orléans", "Mulhouse", "Rouen", "Limoges", "Pau", "Bayonne", "Annecy", "Chambéry", "La Rochelle", "Cannes", "Antibes", "Dunkerque", "Calais", "Poitiers", "Troyes", "Valence", "Colmar", "Lorient", "Quimper", "Vannes", "théâtre", "humour", "comédie", "zénith", "scène nationale", "opéra", "cirque", "danse", "sport", "sorties", "agenda sorties ville"];
 
 async function api(path, params) {
   const q = new URLSearchParams();
@@ -62,8 +62,8 @@ const txt = (v) => (v && typeof v === "object" ? v.fr || v.en || Object.values(v
   log("Agendas examinés :", n, "— erreurs :", errs, "— agendas avec événements à venir (60 jours) :", rows.length);
   log("Total d'événements à venir dans ces agendas :", rows.reduce((s, r) => s + r.total, 0));
   log("");
-  log("TOP 150 agendas (événements à venir sous 60 jours) :");
-  for (const r of rows.slice(0, 150)) log(String(r.total).padStart(5), "|", r.uid, "|", r.title.slice(0, 50), "|", r.city, "| ex. :", r.sample);
+  log("TOP 500 agendas (événements à venir sous 60 jours) :");
+  for (const r of rows.slice(0, 500)) log(String(r.total).padStart(5), "|", r.uid, "|", r.title.slice(0, 50), "|", r.city, "| ex. :", r.sample);
   fs.writeFileSync(OUT, JSON.stringify(rows));
   fs.writeFileSync(REPORT, report.join("\n") + "\n");
 })();
