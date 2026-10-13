@@ -157,6 +157,18 @@
   }
   try { new MutationObserver(relabel).observe(document.body, { childList: true, subtree: true }); relabel(); } catch (e) {}
 
+
+  var cs = document.createElement("style");
+  cs.textContent =
+    "html body #view-discover .quick-cat.active .quick-cat-circle{border:3px solid #F2864B !important;box-shadow:0 0 0 4px rgba(242,134,75,.28),0 10px 22px -6px rgba(242,134,75,.7) !important;transform:translateY(-3px) scale(1.1) !important}" +
+    "html body #view-discover .quick-cat.active .quick-cat-label{color:#fff !important;font-weight:800 !important;border-bottom:3px solid #F2864B;padding-bottom:2px}" +
+    "html body #view-discover .home-category-quickbar:has(.quick-cat.active) .quick-cat:not(.active){opacity:.45}" +
+    "html body #view-discover .quick-cat.active .quick-cat-circle::after,#category-chips .cat-chip.active .cat-chip-circle::after{content:'✓';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#F2864B;color:#fff;font:800 11px/18px system-ui;text-align:center;z-index:3}" +
+    "html body #category-chips .cat-chip.active .cat-chip-circle{outline:3px solid #F2864B;outline-offset:1px;box-shadow:0 0 0 6px rgba(242,134,75,.28),0 8px 18px -4px rgba(242,134,75,.7) !important;transform:scale(1.12) !important;opacity:1 !important}" +
+    "html body #category-chips .cat-chip.active .cat-chip-label{color:#fff !important;font-weight:800 !important;border-bottom:2px solid #F2864B}" +
+    "html body #category-chips:has(.cat-chip.active) .cat-chip:not(.active){opacity:.45}";
+  document.head.appendChild(cs);
+
   function boot() {
     install();
     var list = document.getElementById("event-list");
