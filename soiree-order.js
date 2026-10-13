@@ -30,6 +30,27 @@
     return isNaN(h) ? 9999 : h * 60 + (isNaN(m) ? 0 : m);
   }
 
+  var F = window.__wzF = { when: null, kind: null, free: false };
+  var KINDS = {
+    club: /club|dj\b|dj |party|rave|techno|house|electro|clubbing|afters?\b|nuit|night|disco|boiler/i,
+    concert: /concert|live\b|showcase|release|tour|acoustic|jazz|rock|rap|hip.?hop/i,
+    bar: /\bbar\b|ap[ée]ro|afterwork|pub\b|karaok|quiz|happy hour|guinguette|cocktail/i
+  };
+  function soireeOnly() { var c = state.selectedCategories; return c && c.size === 1 && c.has("Soirée"); }
+  function passF(ev) {
+    if (!soireeOnly() || ev.isPlace) return true;
+    var now = new Date(), t = now.toISOString().slice(0, 10), tm = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
+    if (F.when === "tonight" && ev.date !== t) return false;
+    if (F.when === "tomorrow" && ev.date !== tm) return false;
+    if (F.when === "weekend") {
+      var wd = new Date(ev.date + "T12:00:00").getDay(), lim = new Date(now.getTime() + 7 * 86400000).toISOString().slice(0, 10);
+      if (!(ev.date >= t && ev.date <= lim && (wd === 5 || wd === 6 || wd === 0))) return false;
+    }
+    if (F.kind && !KINDS[F.kind].test((ev.title || "") + " " + (ev.place || ""))) return false;
+    if (F.free && typeof eventPriceType === "function" && eventPriceType(ev) !== "free") return false;
+    return true;
+  }
+
   function install() {
     if (typeof window.visibleEvents !== "function" || typeof baseVisibleEvents !== "function") return false;
     window.visibleEvents = function () {
@@ -39,6 +60,7 @@
       return baseVisibleEvents()
         .filter(function (ev) { return matchesPeriod(ev, state.selectedPeriod); })
         .filter(function (ev) { return ev.isPlace || !ev.date || ev.date >= today; })
+        .filter(passF)
         .filter(function (ev) { return !(nightMode && !ev.isPlace && !ev.time && ev.source === "paris-opendata"); })
         .sort(function (a, b) {
           var aD = !a.isPlace && a.date ? a.date : "9999-99-99";
@@ -68,11 +90,37 @@
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
+  function addBar() {
+    var old = document.getElementById("wz-filters"); if (old) old.remove();
+    if (!soireeOnly()) return;
+    var fe = document.getElementById("event-list-featured"), li = document.getElementById("event-list");
+    var anchor = (fe && li) ? ((fe.compareDocumentPosition(li) & 4) ? fe : li) : (fe || li);
+    if (!anchor) return;
+    var rows = [
+      { key: "when", opts: [["tonight", "Ce soir"], ["tomorrow", "Demain"], ["weekend", "Ce week-end"]] },
+      { key: "kind", opts: [["club", "Clubs & DJ"], ["concert", "Concerts"], ["bar", "Bars & afters"]] },
+      { key: "free", opts: [[true, "Gratuit"]] }
+    ];
+    var box = document.createElement("div"); box.id = "wz-filters";
+    rows.forEach(function (r) {
+      var row = document.createElement("div"); row.className = "wz-frow";
+      r.opts.forEach(function (o) {
+        var b = document.createElement("button"); b.type = "button";
+        b.className = "wz-fbtn" + (F[r.key] === o[0] ? " on" : ""); b.textContent = o[1];
+        b.onclick = function () { F[r.key] = (F[r.key] === o[0]) ? (r.key === "free" ? false : null) : o[0]; renderDiscover(); };
+        row.appendChild(b);
+      });
+      box.appendChild(row);
+    });
+    anchor.parentNode.insertBefore(box, anchor);
+  }
+
   var busy = false;
   function addHeaders() {
     var list = document.getElementById("event-list");
     if (!list || busy) return;
     busy = true;
+    try { addBar(); } catch (e) {}
     try {
       list.querySelectorAll(".wz-day").forEach(function (n) { n.remove(); });
       var byId = {};
@@ -97,6 +145,9 @@
   st.textContent = ".wz-day{position:sticky;top:58px;z-index:5;margin:18px 0 8px;padding:7px 12px;border-radius:10px;" +
     "font:700 13px/1.2 system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#fff;" +
     "background:linear-gradient(135deg,#F2864B,#E85D3D);width:fit-content;box-shadow:0 2px 8px rgba(0,0,0,.25)}";
+  st.textContent += "html body.wz-v2 #view-discover > #wz-filters{order:7}#wz-filters{display:flex;flex-direction:column;gap:8px;margin:6px 0 10px}.wz-frow{display:flex;gap:8px;flex-wrap:wrap}" +
+    ".wz-fbtn{padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.07);color:#fff;font:600 13px system-ui,sans-serif;cursor:pointer}" +
+    ".wz-fbtn.on{border:none;background:linear-gradient(135deg,#F2864B,#E85D3D);font-weight:700}";
   document.head.appendChild(st);
 
   function relabel() {
