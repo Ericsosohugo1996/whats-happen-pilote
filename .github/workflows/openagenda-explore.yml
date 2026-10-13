@@ -1,0 +1,32 @@
+name: Exploration OpenAgenda
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  explore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Explorer les agendas OpenAgenda
+        env:
+          OPENAGENDA_KEY: ${{ secrets.OPENAGENDA_KEY }}
+        run: node openagenda-explore.js
+
+      - name: Enregistrer le rapport
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add openagenda-report.txt openagenda-agendas.json
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau à enregistrer"
+          else
+            git commit -m "Rapport exploration OpenAgenda (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
