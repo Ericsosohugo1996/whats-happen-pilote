@@ -8,7 +8,7 @@ const path = require("path");
 const API = "https://fr.wikipedia.org/w/api.php";
 const UA = "WhazupPhotoBot/1.0 (https://whazup.fr; photos des salles)";
 const MAX_NEW = 1500;
-const CACHE_VERSION = 2; // version 2 : contrôle de la ville obligatoire (les anciennes réponses sont refaites)
+const CACHE_VERSION = 3; // version 2 : contrôle de la ville obligatoire (les anciennes réponses sont refaites)
 const STOP = new Set(["le", "la", "les", "de", "du", "des", "et", "au", "aux", "l", "d", "en", "sur", "a", "the", "salle", "espace", "centre"]);
 
 const fold = (x) => String(x || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -61,7 +61,8 @@ async function lookup(name, cityName) {
     if (!(title.includes(cn) || ext.includes(cn))) continue;
     const inTitle = sig.every((w) => title.includes(w));
     const inText = sig.every((w) => (title + " " + ext).includes(w));
-    if (inTitle || inText) {
+    const shares = sig.some((w) => title.includes(w)); // le titre de la page doit partager au moins un mot du nom du lieu
+    if (shares && (inTitle || inText)) {
       if (p.thumbnail.width && p.thumbnail.width < 500) continue;
       return { u: p.thumbnail.source, t: p.title, c: "Photo du lieu · Wikipédia" };
     }
@@ -80,7 +81,7 @@ async function main() {
     let d = []; try { d = JSON.parse(fs.readFileSync(path.join("data/events", f), "utf8")); } catch (e) { continue; }
     for (const ev of d) {
       if (!["Spectacles", "Musique", "Soirée", "Sport", "Famille"].includes(ev.category)) continue;
-      if (ev.photo && !ev.photoGeneric) continue; // il a déjà une vraie photo
+      if (ev.photo && !ev.photoGeneric && !ev.photoVenue) continue; // il a déjà une vraie affiche (une photo de salle trouvée avant ne compte pas : on la refait)
       const n = venueName(ev.place); if (!n) continue;
       const k = venueKey(ev.place, ev.city);
       if (k in cache) continue;
