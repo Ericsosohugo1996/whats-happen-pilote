@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const API = process.env.WIKI_API_COMMONS || "https://commons.wikimedia.org/w/api.php";
 const UA = "WhazupPhotoBot/1.0 (https://whazup.fr; photos d'illustration)";
-const PER_TYPE = 14;
+const PER_TYPE = 24;
 
 // requêtes de recherche par type (les premières sont les plus précises)
 const QUERIES = {
@@ -26,15 +26,27 @@ const QUERIES = {
   festival: ["music festival stage", "open air festival stage", "festival lights stage", "festival stage lights", "outdoor concert festival", "festival tents"],
   monument: ["monument france", "triumphal arch", "historic monument square"],
 };
+// chaque photo doit parler du bon sujet : on regarde le titre, les catégories Commons et la description
 const MUST = {
+  theatre: /theat|theatr|opera|stage|auditorium|playhouse|comedie|spectacle|concert hall|odeon|palais garnier/i,
+  musee: /museum|musee|gallery|galerie|exhibition/i,
+  eglise: /church|cathedral|chapel|basilic|abbey|abbaye|eglise|cathedrale|chapelle|collegiale/i,
+  chateau: /chateau|castle|palace|palais|fortress|manor|citadel/i,
+  jardin: /garden|jardin|park\b|parc|lake|forest|botanic/i,
+  cinema: /cinema|movie|film|kino|auditorium|theat/i,
+  livre: /librar|bibliot|bookshop|bookstore|librairie|reading room|books?\b/i,
+  galerie: /gallery|galerie|exhibition|art museum|museum/i,
+  monument: /monument|arch\b|arc de|tower|tour |pont|bridge|fountain|memorial|castle|cathedral|gate|porte|lighthouse|phare/i,
   club: /club|disco|danc|\bdj\b|party|night/i,
-  concert: /concert|stage|hall|live|festival|band|theat|opera/i,
-  marche: /market|march[eé]|halle|stall/i,
-  sport: /stadium|stade|arena|gym|sport|football|rugby|match/i,
-  brocante: /flea|market|brocante|antique|puces|second.?hand/i,
+  concert: /concert|stage|hall|live|festival|band|theat|opera|philharmon|auditorium/i,
+  marche: /market|march[eé]|halle|mercado|markt|stall|bazaar|christmas market/i,
+  sport: /stadium|stade|arena|gym|sport|football|rugby|match|olympi|basket|swimming/i,
+  brocante: /flea|antique|brocante|puces|second.?hand|bric|vintage|garage sale|yard sale|swap meet|junk/i,
   festival: /festival|stage|concert|open.?air/i,
 };
-const BAD_TITLE = /(boat|ship|yacht|harbou?r|vessel|map|plan|diagram|logo|drawing|painting|poster|screenshot|stamp|coat of arms|flag|schema|floor ?plan|interior of a mosque|statue of|portrait|crowd|protest|night shot of a car)/i;
+// pour ces types on ne regarde que le titre (les catégories sont trop larges)
+const TITLE_ONLY = { marche: 1, brocante: 1 };
+const BAD_TITLE = /(boat|ship|yacht|harbou?r|vessel|map|plan|diagram|logo|drawing|painting|poster|screenshot|stamp|coat of arms|flag|schema|floor ?plan|interior of a mosque|statue of|portrait|crowd|protest|night shot of a car|insect|beetle|volkswagen|boeing|cockpit|cirrus|cloud|yukata|macropodus|caterpillar|yarn|animal|bird|flower|butterfly|aircraft|airplane|train|bus\b|car\b)/i;
 
 function norm(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
 
@@ -82,10 +94,21 @@ async function search(q, cat) {
     const md = ii.extmetadata || {};
     const artist = plain(md.Artist && md.Artist.value).slice(0, 40);
     const lic = plain(md.LicenseShortName && md.LicenseShortName.value).slice(0, 20);
-    out.push({ u: ii.thumburl, t: p.title.replace(/^File:/, ""), c: "Illustration" + (artist ? " · " + artist : "") + (lic ? ", " + lic : " · Wikimedia Commons") });
+    const cats = plain(md.Categories && md.Categories.value).replace(/\|/g, " ");
+    const desc = plain(md.ImageDescription && md.ImageDescription.value).slice(0, 300);
+    out.push({ x: p.title + " " + cats + " " + desc, u: ii.thumburl, t: p.title.replace(/^File:/, ""), c: "Illustration" + (artist ? " · " + artist : "") + (lic ? ", " + lic : " · Wikimedia Commons") });
   }
   return out;
 }
+
+const BAD_BROC = /spice|sashimi|capsicum|orange|embutido|carnicer|fish|child working|bad sales day|vegetable|meat/i;
+function ok(type, c) {
+  if (type === "brocante" && BAD_BROC.test(c.t)) return false;
+  const m = MUST[type];
+  if (!m) return true;
+  return m.test(TITLE_ONLY[type] ? c.t : c.x);
+}
+function clean(c) { return { u: c.u, t: c.t, c: c.c }; }
 
 async function main() {
   const out = {};
@@ -97,19 +120,19 @@ async function main() {
         if (got.length >= PER_TYPE) break;
         try {
           for (const c of await search(q, cat)) {
-            if (!seen.has(c.u) && got.length < PER_TYPE) { seen.add(c.u); got.push(c); }
+            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c)) { seen.add(c.u); got.push(clean(c)); }
           }
         } catch (e) { console.log("échec", type, q, e.message); }
         await new Promise((r) => setTimeout(r, 400));
       }
     }
     // pas assez de photos « vedettes » : recherche large, en exigeant un titre qui parle du bon sujet
-    if (got.length < 10 && MUST[type]) {
+    if (got.length < 16 && MUST[type]) {
       for (const q of queries) {
         if (got.length >= PER_TYPE) break;
         try {
           for (const c of await search(q, null)) {
-            if (!seen.has(c.u) && got.length < PER_TYPE && MUST[type].test(c.t)) { seen.add(c.u); got.push(c); }
+            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c)) { seen.add(c.u); got.push(clean(c)); }
           }
         } catch (e) { console.log("échec (large)", type, q, e.message); }
         await new Promise((r) => setTimeout(r, 400));
