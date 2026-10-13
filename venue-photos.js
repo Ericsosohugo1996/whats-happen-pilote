@@ -77,26 +77,32 @@ async function lookup(name, cityName) {
 const COMMONS = "https://commons.wikimedia.org/w/api.php";
 const BAD_FILE = /logo|blason|armoiries|drapeau|flag|plan[ _-]|carte|map|affiche|poster|programme|ticket|billet|\.svg|\.pdf|\.tif|\.gif|\.webm|\.ogv|portrait|concert de|interieur|plaque/i;
 const LIC_OK = /^(cc[ -]by|cc0|public domain|pd|attribution|domaine public)/i;
-async function commonsLookup(name, lat, lng) {
+const GENERIC = new Set(["saint", "sainte", "place", "rue", "avenue", "boulevard", "quai", "cours", "port", "pont", "gare", "paris", "ville", "grand", "grande", "petit", "petite", "nouveau", "nouvelle", "vieux", "vieille"]);
+const WEAK = new Set(["theatre", "opera", "salle", "cafe", "casino", "cinema", "auditorium", "complexe", "espace", "palais", "scene", "club", "bar", "comedie", "music", "hall", "halle", "stade", "arena", "zenith"]);
+const BAD_TITLE2 = /\b(rue|boulevard|avenue|gare|pont|inscription|manif|manifestation|panneau|plaque|bus|tram|metro|station|parking|voiture|travail|greve|marche)\b/;
+async function commonsLookup(name, lat, lng, cityName) {
   const url = COMMONS + "?action=query&format=json&generator=geosearch&ggsprimary=all&ggsnamespace=6&ggsradius=80&ggslimit=30&ggscoord=" +
     lat + "%7C" + lng + "&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1000";
   const r = await fetch(url, { headers: { "User-Agent": UA } });
   if (!r.ok) throw new Error("HTTP " + r.status);
   const j = await r.json();
   const files = Object.values((j.query && j.query.pages) || {});
-  const sig = fold(name).split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOP.has(w));
-  if (!sig.length) return null;
+  const cn = fold(cityName || "").split(/[^a-z0-9]+/).filter(Boolean);
+  // mots qui identifient vraiment le lieu : ni la ville, ni les mots trop courants (saint, rue, place…)
+  const sig = fold(name).split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOP.has(w) && !GENERIC.has(w) && cn.indexOf(w) === -1);
+  const strong = sig.filter((w) => !WEAK.has(w));
+  if (!sig.length || !strong.length) return null; // un nom fait seulement de mots génériques (« Théâtre municipal ») : on ne devine pas
   let best = null;
   for (const p of files) {
     const ii = p.imageinfo && p.imageinfo[0]; if (!ii) continue;
     const title = fold((p.title || "").replace(/^File:/i, ""));
-    if (BAD_FILE.test(title)) continue;
+    if (BAD_FILE.test(title) || BAD_TITLE2.test(title)) continue;
     if (!/image\/jpeg/.test(ii.mime || "")) continue;
     if ((ii.width || 0) < 800 || (ii.width || 0) < (ii.height || 0) * 0.9) continue; // paysage seulement
     const lic = ii.extmetadata && ii.extmetadata.LicenseShortName && ii.extmetadata.LicenseShortName.value;
     if (!lic || !LIC_OK.test(lic)) continue;
-    if (!sig.some((w) => title.includes(w))) continue;
-    const score = sig.filter((w) => title.includes(w)).length * 10000 + (ii.width || 0) / 100;
+    if (!sig.every((w) => title.includes(w))) continue; // TOUS les mots du nom du lieu doivent être dans le nom du fichier
+    const score = (ii.width || 0) / 100;
     if (!best || score > best.score) {
       const artist = ((ii.extmetadata.Artist && ii.extmetadata.Artist.value) || "").replace(/<[^>]*>/g, "").trim().slice(0, 40);
       best = { score, r: { u: ii.thumburl || ii.url, t: String(p.title).replace(/^File:/i, ""), c: "Photo du lieu · " + (artist ? artist + ", " : "") + lic + " · Wikimedia Commons", s: "commons" } };
@@ -141,6 +147,11 @@ async function main() {
   }
 
   // ---- passe 2 : Wikimedia Commons pour les lieux sans photo ----
+  if (cache._cv !== 2) { // règle plus stricte : on efface les anciennes photos Commons et on recommence
+    let purged = 0;
+    for (const k of Object.keys(cache)) { if (k !== "_v" && k !== "_c" && k !== "_cv" && cache[k] && cache[k].s === "commons") { cache[k] = null; purged++; } }
+    cache._c = {}; cache._cv = 2; console.log("anciennes photos Commons effacées :", purged);
+  }
   cache._c = cache._c || {};
   const todo2 = Object.entries(all).filter(([k, v]) => v.lat != null && !cache[k] && !(k in cache._c)).sort((a, b) => b[1].n - a[1].n).slice(0, MAX_NEW);
   // les lieux déjà « null » en mémoire (pas dans count car déjà cherchés) : on les retrouve aussi
@@ -150,7 +161,7 @@ async function main() {
     if (TIME_UP()) { console.log("temps presque écoulé : on enregistre et on s'arrête (relance pour continuer)"); break; }
     tried2++;
     try {
-      const r = await commonsLookup(v.name, v.lat, v.lng);
+      const r = await commonsLookup(v.name, v.lat, v.lng, names[v.city] || v.city);
       cache._c[k] = r ? 1 : 0;
       if (r) { cache[k] = r; found2++; }
     } catch (e) { console.log("échec Commons", v.name, e.message); await new Promise((r) => setTimeout(r, 1500)); }
@@ -158,9 +169,9 @@ async function main() {
     if (tried2 % 100 === 0) console.log("… Commons", tried2, "cherchés,", found2, "trouvés");
   }
   console.log("passe 2 terminée :", tried2, "cherchés,", found2, "photos trouvées");
-  const total = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && v).length;
+  const total = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && k !== "_cv" && v).length;
   console.log("terminé :", tried, "lieux cherchés,", found, "photos trouvées, total en mémoire :", total);
-  const ex = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && v).slice(-12).map(([k, v]) => k + " → " + v.t);
+  const ex = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && k !== "_cv" && v).slice(-12).map(([k, v]) => k + " → " + v.t);
   console.log("exemples :\n" + ex.join("\n"));
   fs.writeFileSync("venue-photos.json", JSON.stringify(cache));
 }
