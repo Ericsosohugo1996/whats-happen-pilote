@@ -103,7 +103,7 @@ async function api(path, params) {
 }
 // pour les agendas généraux (villes, métropoles) : on ne garde que les sorties musique / soirée
 const WANT = /concert|\blive\b|\bdj\b|dj set|soiree|\bclub\b|clubbing|\bbal\b|bal (folk|trad|musette|populaire)|jazz|\brock\b|electro|techno|\bhouse\b|\brap\b|hip.?hop|reggae|karaoke|blind.?test|\bjam\b|scene ouverte|open mic|fest.?noz|afterwork|apero|dancing|salsa|bachata|festival.*(musique|jazz|rock)|showcase|release party|\bset\b|chanson|soul|funk|metal|punk|afro/;
-const NOT = /atelier|conference|enfant|jeune public|lecture|exposition|visite|stage\b|formation|webinaire|conte\b|cine|projection|club (de|des) (lecture|jeux|seniors?|echecs|photo|codeu)|basket|football|rugby|handball|volley|tennis|\bmatch\b|manga|repair|aquatique|piscine|musee|balade|rando|naturaliste|escape|vide.?grenier|brocante|don du sang|bourse|octobre rose|soiree rose|club lecture|jeux? de societe|soiree (jeux|conference|debat|lecture|litteraire|prevention|bien-etre|rentree|soupes|d'information)|bebe|atelier|cours\b|reunion|permanence|dedicace/;
+const NOT = /atelier|conference|enfant|jeune public|lecture|exposition|visite|stage\b|formation|webinaire|conte\b|cine|projection|club (de|des) (lecture|jeux|seniors?|echecs|photo|codeu)|basket|football|rugby|handball|volley|tennis|\bmatch\b|manga|repair|aquatique|piscine|musee|balade|rando|naturaliste|escape|don du sang|bourse|octobre rose|soiree rose|club lecture|jeux? de societe|soiree (jeux|conference|debat|lecture|litteraire|prevention|bien-etre|rentree|soupes|d'information)|bebe|atelier|cours\b|reunion|permanence|dedicace/;
 function wanted(title, keywords) {
   const t = fold(title + " " + (keywords || []).join(" "));
   return WANT.test(t) && !NOT.test(t);
@@ -113,6 +113,69 @@ function classify(title, keywords) {
   if (/club|rave|techno|house|electro|dj\b|dj set|afterwork|after hours|after\b|soiree|party|open air|disco|bal\b|clubbing|nuit|karaoke|blind.?test|apero|dancing|salsa|bachata/.test(t)) return ["village", "Soirée"];
   return ["musique", "Musique"];
 }
+
+// brocantes, vide-greniers, braderies : recherche dans le jeu de données ouvert « événements publics OpenAgenda » (Opendatasoft, sans clé)
+async function fetchBrocantes(cities, nowIso, seen, prev) {
+  const ODS = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/evenements-publics-openagenda/records";
+  const endIso = new Date(Date.now() + 120 * 86400000).toISOString();
+  let where = '(search("brocante") OR search("vide-grenier") OR search("vide grenier") OR search("vide-greniers") OR search("braderie") OR search("marche aux puces")) AND lastdate_end >= date\'' + nowIso.slice(0, 10) + '\'';
+  const RX = /brocante|vide.?grenier|vide.?dressing|braderie|marche aux puces|bourse aux/;
+  const out = [];
+  let offset = 0, total = 0, got = 0, hors = 0, shown = false;
+  for (let page = 0; page < 100; page++) {
+    const q = new URLSearchParams({ where, limit: "100", offset: String(offset) });
+    let json = null;
+    for (let i = 0; i < 3 && !json; i++) {
+      try {
+        const res = await fetch(ODS + "?" + q.toString(), { headers: { "User-Agent": "whazup-sync/1.0 (+https://whazup.fr)" } });
+        if (res.ok) json = await res.json(); else { log("Brocantes : HTTP", res.status, (await res.text()).slice(0, 200)); await sleep(1500); }
+      } catch (e) { await sleep(1500); }
+    }
+    if (!json && page === 0 && /lastdate_end/.test(where)) { where = where.replace(/ AND lastdate_end >= date'[^']*'/, ""); log("Brocantes : nouvel essai sans filtre de date"); page = -1; continue; }
+    if (!json) break;
+    total = json.total_count || total;
+    const list = json.results || [];
+    if (!shown && list[0]) { shown = true; log("Brocantes — champs reçus :", Object.keys(list[0]).join(", ")); }
+    for (const r of list) {
+      got++;
+      const title = strip(r.title_fr || "");
+      if (!title || !RX.test(fold(title))) { hors++; continue; }
+      const co = r.location_coordinates || {};
+      const lat = +(co.lat != null ? co.lat : r.latitude), lng = +(co.lon != null ? co.lon : r.longitude);
+      if (!isFinite(lat) || !isFinite(lng) || (!lat && !lng)) { hors++; continue; }
+      let best = null;
+      for (const c of cities) { const d = km(c.lat, c.lng, lat, lng); if (!best || d < best.d) best = { c, d }; }
+      if (!best || best.d > MAX_KM) { hors++; continue; }
+      let tms = [];
+      try { tms = typeof r.timings === "string" ? JSON.parse(r.timings) : (r.timings || []); } catch (e) {}
+      let begin = null;
+      for (const t of tms) { if (t && t.begin && t.end >= nowIso && t.begin <= endIso) { begin = t.begin; break; } }
+      if (!begin) { if (r.firstdate_begin && r.firstdate_begin >= nowIso && r.firstdate_begin <= endIso) begin = r.firstdate_begin; }
+      if (!begin) { hors++; continue; }
+      const s2 = parisParts(begin); if (!s2) continue;
+      const key = fold(title) + "|" + s2.date + "|" + lat.toFixed(3);
+      if (seen.has(key)) continue; seen.add(key);
+      const id = "oa-" + r.uid + "-" + s2.date;
+      const cond = strip(r.conditions_fr || "");
+      const place = [r.location_name, r.location_address].map((x) => String(x || "").trim()).filter(Boolean).join(", ");
+      const o = {
+        id, scene: "marche", city: best.c.key, category: "Brocante", title, date: s2.date, time: s2.time === "00:00" ? "" : s2.time,
+        place, lat, lng, price: /gratuit|entr[ée]e libre|free/i.test(cond) ? "Gratuit" : (cond ? cond.slice(0, 60) : "Voir sur place"),
+        thumb: "", source: "openagenda", createdAt: prev[id] || Date.now(),
+        description: strip(r.description_fr || "").slice(0, 300) || "Brocante / vide-grenier",
+      };
+      if (r.canonicalurl) o.link = r.canonicalurl;
+      const im = typeof r.image === "string" ? r.image : (r.image && r.image.url) || ""; if (im) { o.photo = im; o.photoCredit = "OpenAgenda"; }
+      out.push(o);
+    }
+    offset += 100;
+    if (!list.length || offset >= Math.min(total, 9900)) break;
+    await sleep(300);
+  }
+  log("Brocantes / vide-greniers — trouvés :", total, "— lus :", got, "— gardés :", out.length, "— écartés :", hors);
+  return out;
+}
+
 function linkOf(ev) {
   const reg = Array.isArray(ev.registration) ? ev.registration.find((r) => r && r.type === "link" && r.value) : null;
   if (reg) return reg.value;
@@ -184,6 +247,7 @@ function imageOf(ev) {
     }
     log("Agenda", name, "— reçus :", got, "— gardés :", kept, "— écartés (hors villes / sans position / pas musique-soirée) :", hors);
   }
+  try { for (const e of await fetchBrocantes(cities, nowIso, seen, prev)) out.push(e); } catch (e) { log("Brocantes : erreur", e.message); }
   out.sort((a, b) => (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")));
   const by = {}, byCity = {};
   for (const e of out) { by[e.category] = (by[e.category] || 0) + 1; byCity[e.city] = (byCity[e.city] || 0) + 1; }
