@@ -38,6 +38,12 @@
     if (h >= 18) k = h - 18; else if (h < 5) k = h + 6; else k = 100 + h;
     return k * 60 + (isNaN(m) ? 0 : m);
   }
+  // marchés et brocantes du matin : après les sorties de la journée et de la soirée
+  function dayKey(ev) {
+    var k = plainKey(ev.time);
+    if ((ev.category === "Marché" || ev.category === "Brocante") && k < 9 * 60) k += 3000;
+    return k;
+  }
   function plainKey(t) {
     if (!t) return 9999;
     var h = parseInt(String(t).split(":")[0], 10), m = parseInt(String(t).split(":")[1] || "0", 10);
@@ -84,6 +90,17 @@
       var nightMode = cats && cats.size > 0 && Array.from(cats).every(function (c) { return NIGHT.indexOf(c) >= 0; });
       return all
         .filter(passF)
+        .filter(function (ev) {
+          // « Autres sorties » n'apparaît que dans sa propre case, pas dans « Tout »
+          if (ev.category === "Divers" && !(cats && cats.has("Divers"))) return false;
+          // aujourd'hui : on ne montre plus ce qui est déjà fini depuis plus de 2 h
+          if (ev.isPlace || !ev.date || !ev.time) return true;
+          var n = new Date(), iso = new Date(n.getTime() - n.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+          if (ev.date !== iso) return true;
+          var hh = parseInt(String(ev.time).split(":")[0], 10), mm = parseInt(String(ev.time).split(":")[1] || "0", 10);
+          if (isNaN(hh)) return true;
+          return hh * 60 + (isNaN(mm) ? 0 : mm) >= n.getHours() * 60 + n.getMinutes() - 120;
+        })
         .filter(function (ev) { return !(nightMode && !ev.isPlace && !ev.time && ev.source === "paris-opendata"); })
         .sort(function (a, b) {
           var aD = !a.isPlace && a.date ? a.date : "9999-99-99";
@@ -94,7 +111,7 @@
             var d = nightKey(a.time) - nightKey(b.time);
             if (d) return d;
           } else {
-            var d2 = plainKey(a.time) - plainKey(b.time);
+            var d2 = dayKey(a) - dayKey(b);
             if (d2) return d2;
           }
           return (a.distance || 0) - (b.distance || 0);

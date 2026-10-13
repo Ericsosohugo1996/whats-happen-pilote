@@ -72,6 +72,7 @@
   var CHIPS = [
     { key: "today", label: "Aujourd'hui" },
     { key: "wz-tonight", label: "Ce soir" },
+    { key: "tomorrow", label: "Demain" },
     { key: "wz-weekend", label: "Ce week-end" }
   ];
 
@@ -633,3 +634,4 @@
 
 /* Soirées rangées par jour puis par heure */
 (function(){try{var s=document.createElement("script");s.src="soiree-order.js?v=1";document.body.appendChild(s);}catch(e){}})();
+(function(){try{var s=document.createElement("script");s.src="city-picker.js?v=1";document.body.appendChild(s);}catch(e){}})();
