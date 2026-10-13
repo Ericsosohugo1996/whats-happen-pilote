@@ -5,7 +5,7 @@ const fs = require("fs");
 const KEY = process.env.OPENAGENDA_KEY || "";
 const BASE = process.env.OA_BASE || "https://api.openagenda.com/v2";
 const OUT = "openagenda-events.json", REPORT = "openagenda-events-report.txt";
-const DAYS_AHEAD = 60, MAX_KM = 25;
+const DAYS_AHEAD = 60, MAX_KM = 25, MAX_LOCAL_KM = 40;
 // agendas retenus (voir openagenda-report.txt) : [uid, nom, conserver tout (true) ou seulement les titres musique/soirée (false)]
 const AGENDAS = [
   [9969608, "Shotgun", true],
@@ -273,7 +273,7 @@ async function fetchLocal(cities, nowIso, seen, prev) {
         if (!isFinite(lat) || !isFinite(lng) || (!lat && !lng)) { hors++; continue; }
         let best = null;
         for (const c of cities) { const d = km(c.lat, c.lng, lat, lng); if (!best || d < best.d) best = { c, d }; }
-        if (!best || best.d > MAX_KM) { hors++; continue; }
+        if (!best || best.d > MAX_LOCAL_KM) { hors++; continue; }
         const kw = Array.isArray(r.keywords_fr) ? r.keywords_fr : (typeof r.keywords_fr === "string" ? r.keywords_fr.split(/[,;|]/) : []);
         const cl = classifyAll(title, kw);
         if (!cl) { bruit++; continue; }
