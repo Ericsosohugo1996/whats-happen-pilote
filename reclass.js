@@ -12,7 +12,16 @@ const RULES = [
   ["Expo", /exposition|\bexpo\b|vernissage|visite|musee|patrimoine|atelier|\bstage\b|conference|dedicace|\blecture\b|salon|repair|decouverte|balade|parcours|escape/],
 ];
 const NOT_SOIREE = /soiree (jeux|conference|debat|lecture|litteraire|information|d'information)|soirees? jeux/;
+// Un vrai concert rangé en « Soirée » (ex. titres Shotgun) va dans « Musique ».
+// Reste en Soirée tout ce qui sent la fête : DJ, club, soirée, nuit, bal, karaoké, afters, bar...
+const CONCERT = /\bconcert|recital|showcase|acoustic|\bjazz\b|release party|\blive\b|\btour\b(?! eiffel)|quatuor|orchestre|\bopera\b/;
+const PARTY = /\bdj\b|dj set|\bclub|clubbing|soiree|\bnuit\b|night|\bbal\b|karaoke|\bafters?\b|\bbar\b|apero|afterwork|\bquiz|bingo|blind.?test|dancing|dansant|boum|raclette|fete des|grande fete|\bparty\b(?!.*release)|rave|techno|\bhouse\b|disco/;
 function reclassify(ev) {
+  if (ev.category === "Soirée" && ev.source !== "ticketmaster") {
+    const t0 = fold(ev.title).replace(/release party/g, "release_party");
+    if (CONCERT.test(fold(ev.title)) && !PARTY.test(t0.replace(/\blive\b/g, " "))) return "Musique";
+    return ev.category;
+  }
   if (ev.category !== "Festival") return ev.category;
   if (ev.source !== "datatourisme" && ev.source !== "paris-opendata") return ev.category;
   const t = fold(ev.title);

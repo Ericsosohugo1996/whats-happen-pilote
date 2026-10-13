@@ -104,7 +104,7 @@
     if (!anchor) return;
     var rows = [
       { key: "when", opts: [["tonight", "Ce soir"], ["tomorrow", "Demain"], ["weekend", "Ce week-end"]] },
-      { key: "kind", opts: [["club", "Clubs & DJ"], ["concert", "Concerts"], ["bar", "Bars & afters"]] },
+      { key: "kind", opts: [["club", "Clubs & DJ"], ["bar", "Bars & afters"]] },
       { key: "free", opts: [[true, "Gratuit"]] }
     ];
     var box = document.createElement("div"); box.id = "wz-filters";
