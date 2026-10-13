@@ -1,173 +1,561 @@
-Recherche « concert » → total agendas distincts : 239
-Recherche « musique » → total agendas distincts : 430
-Recherche « soirée » → total agendas distincts : 704
-Recherche « club » → total agendas distincts : 989
-Recherche « bar » → total agendas distincts : 1209
-Recherche « salle de concert » → total agendas distincts : 1347
-Recherche « scène » → total agendas distincts : 1605
-Recherche « festival » → total agendas distincts : 1808
-Recherche « jazz » → total agendas distincts : 2030
-Recherche « rock » → total agendas distincts : 2254
-Recherche « électro » → total agendas distincts : 2317
-Recherche « dj » → total agendas distincts : 2480
-Recherche « spectacle » → total agendas distincts : 2573
-Recherche « sortir » → total agendas distincts : 2691
-Recherche « agenda culturel » → total agendas distincts : 2877
-Recherche « ville » → total agendas distincts : 3060
-Recherche « office de tourisme » → total agendas distincts : 3340
-Recherche « métropole » → total agendas distincts : 3584
-Agendas examinés : 3584 — erreurs : 0 — agendas avec événements à venir (60 jours) : 860
-Total d'événements à venir dans ces agendas : 44359
+Recherche « Lyon » → total agendas distincts : 300
+Recherche « Strasbourg » → total agendas distincts : 579
+Recherche « Nice » → total agendas distincts : 742
+Recherche « Montpellier » → total agendas distincts : 921
+Recherche « Grenoble » → total agendas distincts : 1108
+Recherche « Dijon » → total agendas distincts : 1312
+Recherche « Angers » → total agendas distincts : 1492
+Recherche « Nancy » → total agendas distincts : 1634
+Recherche « Reims » → total agendas distincts : 1770
+Recherche « Tours » → total agendas distincts : 2043
+Recherche « Toulon » → total agendas distincts : 2109
+Recherche « Clermont-Ferrand » → total agendas distincts : 2234
+Recherche « Brest » → total agendas distincts : 2433
+Recherche « Metz » → total agendas distincts : 2559
+Recherche « Le Mans » → total agendas distincts : 2726
+Recherche « Amiens » → total agendas distincts : 2866
+Recherche « Poitiers » → total agendas distincts : 3033
+Recherche « Saint-Étienne » → total agendas distincts : 3316
+Recherche « Caen » → total agendas distincts : 3474
+Recherche « Le Havre » → total agendas distincts : 3567
+Recherche « Nîmes » → total agendas distincts : 3629
+Recherche « Avignon » → total agendas distincts : 3791
+Recherche « Perpignan » → total agendas distincts : 3869
+Recherche « Besançon » → total agendas distincts : 3919
+Recherche « Orléans » → total agendas distincts : 4182
+Recherche « Mulhouse » → total agendas distincts : 4246
+Recherche « Rouen » → total agendas distincts : 4449
+Recherche « Limoges » → total agendas distincts : 4609
+Recherche « Pau » → total agendas distincts : 4684
+Recherche « Bayonne » → total agendas distincts : 4720
+Recherche « Annecy » → total agendas distincts : 4787
+Recherche « Chambéry » → total agendas distincts : 4831
+Recherche « La Rochelle » → total agendas distincts : 4889
+Recherche « Cannes » → total agendas distincts : 4975
+Recherche « Antibes » → total agendas distincts : 5012
+Recherche « Dunkerque » → total agendas distincts : 5053
+Recherche « Calais » → total agendas distincts : 5093
+Recherche « Poitiers » → total agendas distincts : 5093
+Recherche « Troyes » → total agendas distincts : 5136
+Recherche « Valence » → total agendas distincts : 5234
+Recherche « Colmar » → total agendas distincts : 5269
+Recherche « Lorient » → total agendas distincts : 5325
+Recherche « Quimper » → total agendas distincts : 5362
+Recherche « Vannes » → total agendas distincts : 5413
+Recherche « théâtre » → total agendas distincts : 5645
+Recherche « humour » → total agendas distincts : 5876
+Recherche « comédie » → total agendas distincts : 6024
+Recherche « zénith » → total agendas distincts : 6030
+Recherche « scène nationale » → total agendas distincts : 6193
+Recherche « opéra » → total agendas distincts : 6293
+Recherche « cirque » → total agendas distincts : 6502
+Recherche « danse » → total agendas distincts : 6714
+Recherche « sport » → total agendas distincts : 6945
+Recherche « sorties » → total agendas distincts : 7199
+Recherche « agenda sorties ville » → total agendas distincts : 7363
+Agendas examinés : 7363 — erreurs : 0 — agendas avec événements à venir (60 jours) : 1188
+Total d'événements à venir dans ces agendas : 60297
 
-TOP 150 agendas (événements à venir sous 60 jours) :
- 3208 | 9969608 | Shotgun | Paris | ex. : After Hours Club 💄
- 1771 | 56500817 | OpenAgenda en Île-de-France | Guyancourt | ex. : Maîtrisez l'art du pitch !
- 1280 | 8276243 | RandoDate — apéros et randonnées entre célibataire | Périgueux | ex. : Apéro célibataires — Périgueux au Green lion
- 1219 | 83549053 | Bordeaux Métropole | Le Taillan-Médoc | ex. : Ciné-débat : Mégafeux, un été au combat
- 1206 | 89904399 | Métropole Européenne de Lille | Lille | ex. : Karaoké "spécial pattes d'éph"
- 1168 | 50522407 | Toulouse Métropole | Blagnac | ex. : Exposition : "Young stellar objects" - Du 13 au 24 octobre
- 1139 | 90014930 | Agenda annuel de l'architecture - Ministère de la  | Baie-Mahault | ex. : Point Conseil - Baie-Mahault • 2ème mardi du mois
- 1005 | 82470621 | Nantes Métropole | Nantes | ex. : Forum de l'emploi 2026
-  809 | 82566953 | AgendaTrad | Orléans | ex. : Mini-bal
-  806 | 83392987 | Ville de Bordeaux |  | ex. : Webinaire: 0-3 ans - S'informer sur les modes d'accueil
-  800 | 17821345 | Ville de Genève | Genève | ex. : Lancement de la BD Genève prospective
-  786 | 52853891 | Association des communes genevoises | Genève | ex. : Lancement de la BD Genève prospective
-  758 | 20500020 | Rennes Métropole | Cesson-Sévigné | ex. : Recrutement : Rejoignez Leocare en tant que Chargé·e de Rela
-  718 | 42448083 | Toulouse | Toulouse | ex. : Hydrogèn’Oc
-  601 | 21769447 | Aix-Marseille-Provence Métropole | Martigues | ex. : LE PONT SAINT-SÉBASTIEN, OUVRAGE MÉMOIRE DES MARTIGUES
-  575 | 95186839 | Coolturalia | Genève | ex. : Du cru du cru du cru
-  527 | 889555 | FESTIVAL CULTURE BAR-BARS | Nantes | ex. : EXPOSITION TERESA KÖNIG
-  515 | 57621068 | Ville de Lille | Lille | ex. : Karaoké "spécial pattes d'éph"
-  500 | 11362982 | Métropole Rouen Normandie | Rouen | ex. : Déclics - Une info, dix sources
-  463 | 35710944 | Agenda de sorties dans la métropole orléanaise | Orléans | ex. : Eliades Ochoa
-  432 | 46166621 | Office de tourisme La Baule - Presqu'île de Guéran | Le Pouliguen | ex. : Exposition - Éteindre la démesure
-  378 | 99768314 | Office de Tourisme de la Métropole Européenne de L | Tourcoing | ex. : TJF26 ⯁ PARENTHÈSE JAZZ
-  372 | 5538134 | Ville de Bordeaux - contributeurs | Bordeaux | ex. : Les rendez-vous des 1000 premiers jours dans les parcs de la
-  372 | 11174431 | Rouen | Rouen | ex. : Déclics - Une info, dix sources
-  328 | 61694203 | Versailles Grand Parc | Versailles | ex. : Musexpo
-  313 | 7430297 | Agenda culturel Grand-Est | Saint-Dizier | ex. : Atelier numérique
-  301 | 64168411 | Ville de Limoges | Limoges | ex. : Frairie des Petits-Ventres
-  291 | 78891697 | Alès Agglomération | Saint-Privat-des-Vieux | ex. : Don du sang
-  286 | 84178045 | La culture en continu | Lille | ex. : Karaoké "spécial pattes d'éph"
-  284 | 78111427 | Union Fédérale d'Intervention des Structures Cultu | Saint-Germain-en-Laye | ex. : Open DIY / Création autour du fil
-  277 | 35944609 | Contributeurs Petit Agenda | Perpignan | ex. : "Miró en son île" • Atelier d'écriture créative
-  270 | 83693824 | Carte Sortir ! | Rennes | ex. : Réunion d’information - L’équilibre, c’est le pied
-  269 | 10387409 | Ville de Versailles | Versailles | ex. : Musexpo
-  248 | 96269696 | Carte jeune Bordeaux Métropole | Bordeaux | ex. : EN MÊME TEMPS
-Olivia Grandville, Mille Plateaux, CCN La Roch
-  246 | 52693950 | Le réseau des bibliothèques et médiathèques de la  | Lille | ex. : Karaoké "spécial pattes d'éph"
-  242 | 80515007 | L'agenda de la ville d'Issy-les-Moulineaux | Issy-les-Moulineaux | ex. : Vernissage : Regards croisés ; portraits de famille
-  226 | 60871835 | Culture Versailles | Versailles | ex. : Musexpo
-  220 | 7562544 | Agenda de test | Nevers | ex. : Comité de lecture / Surtout n'ouvrez pas ce livre !
-  215 | 49283376 | Villeurbanne | Villeurbanne | ex. : LDLC ASVEL / Etoile Rouge de Belgrade
-  211 | 6862496 | RNCAP | Crest | ex. : LE CHEMIN OBSCURE - CREST (Drôme)
-  208 | 69319016 | Agenda Culturel Scène des Mondes | Saint-Christol-lez-Alès | ex. : Atelier : “Mon objet gourmand en argile”
-  206 | 30166879 | Confédération Musicale de France | Lille | ex. : Anniversaires, hommages, dédicaces
-  195 | 13613180 | Grand Châtellerault | Lencloître | ex. : Atelier numérique : stimuler son esprit critique sur Interne
-  194 | 31182441 | Wattrelos Tourisme | Tourcoing | ex. : TOURCOING JAZZ FESTIVAL 2026 ⯁ ADRIEN TYBERGHEIN TRIO
-  190 | 54154994 | Le RIF | Saint-Germain-en-Laye | ex. : Open DIY / Création autour du fil
-  190 | 11207540 | Ville de Meudon | Meudon | ex. : Le club des codeuses
-  187 | 17430951 | Rive Droite / Bordeaux Métropole | Bassens | ex. : Premiers pas avec l’ordinateur : s’orienter sur le bureau et
+TOP 500 agendas (événements à venir sous 60 jours) :
+14366 | 38495884 | Mes événements France Travail | Guémené-Penfao | ex. : LES ESSENTIEL.LES Soirée dédiée à l'emploi à domicile
+ 3208 | 9969608 | Shotgun | Paris | ex. : Deathchant + special guests : Fangus
+ 1785 | 56500817 | OpenAgenda en Île-de-France | Saint-Germain-en-Laye | ex. : Open DIY / Création autour du fil
+ 1609 | 59738311 | Plan Libre, la gazette | Lille | ex. : Lucienne Eden ou L’île perdue ~ Cie Hautblique
+ 1546 | 86244142 | Ministère de la culture - Tous les événements | Paris | ex. : La Maison de Bernarda Alba
+ 1279 | 8276243 | RandoDate — apéros et randonnées entre célibataire | Albi | ex. : Apéro célibataires — Albi
+ 1258 | 82470621 | Nantes Métropole | Nantes | ex. : Forum de l'emploi 2026
+ 1145 | 90014930 | Agenda annuel de l'architecture - Ministère de la  | Chaumont | ex. : Projection du film documentaire "Des chaises en rond" et vis
+  818 | 82566953 | AgendaTrad | Orléans | ex. : Mini-bal
+  813 | 83392987 | Ville de Bordeaux |  | ex. : Webinaire: 0-3 ans - S'informer sur les modes d'accueil
+  798 | 17821345 | Ville de Genève | Genève | ex. : Festival Chopin 2026 : récital de piano MATEUSZ KRZYŻOWSKI
+  756 | 20500020 | Rennes Métropole | Rennes | ex. : Cinémaniacs | The Rider
+  728 | 42448083 | Toulouse | Toulouse | ex. : Santé mentale : Ouvrons-nous aux arts
+  664 | 41240026 | SCARE - Syndicat des Cinémas d'Art, de Répertoire  | Redon | ex. : LE MONDE EST UN MIROIR
+  570 | 95186839 | Coolturalia | Genève | ex. : Vanessa Wagner en concert
+  528 | 889555 | FESTIVAL CULTURE BAR-BARS | Nantes | ex. : EXPOSITION TERESA KÖNIG
+  519 | 57621068 | Ville de Lille | Lille | ex. : Lucienne Eden ou L’île perdue ~ Cie Hautblique
+  500 | 11362982 | Métropole Rouen Normandie | Rouen | ex. : CINÉMA DE QUARTIER
+  464 | 35710944 | Agenda de sorties dans la métropole orléanaise | Orléans | ex. : Eliades Ochoa
+  459 | 2568169 | Bicentenaire de la Photographie - 2026-2027 | Budapest | ex. : Alain Fleischer, l'aventurier des expériences
+  374 | 5538134 | Ville de Bordeaux - contributeurs | Bordeaux | ex. : Groupe de parole pour les familles de personnes trans
+  372 | 11174431 | Rouen | Rouen | ex. : Katia et Marielle Labèque
+  328 | 61694203 | Versailles Grand Parc | Versailles | ex. : Bébés lecteurs
+  311 | 7430297 | Agenda culturel Grand-Est | Langres | ex. : Mon Ami.E
+  307 | 64168411 | Ville de Limoges | Limoges | ex. : Frairie des Petits-Ventres
+  293 | 78891697 | Alès Agglomération | Les Mages | ex. : Ciné Mages
+  284 | 84178045 | La culture en continu | Lille | ex. : Lucienne Eden ou L’île perdue ~ Cie Hautblique
+  277 | 35944609 | Contributeurs Petit Agenda | Perpignan | ex. : Jam Jazz
+  271 | 10387409 | Ville de Versailles | Versailles | ex. : Bébés lecteurs
+  270 | 83693824 | Carte Sortir ! | Rennes | ex. : NAZA — AVANT-PREMIÈRE EXCEPTIONNELLE
+  255 | 1388317 | Journées nationales de l’architecture 2026 : Île-d | Paris | ex. : Lancement de l’ouvrage « Elles enquêtent : portraits d’archi
+  247 | 80515007 | L'agenda de la ville d'Issy-les-Moulineaux | Issy-les-Moulineaux | ex. : Le bébé et les trames du langage
+  227 | 49283376 | Villeurbanne | Villeurbanne | ex. : LDLC ASVEL / Etoile Rouge de Belgrade
+  227 | 8049538 | Rouen Bibliothèques | Rouen | ex. : À petits petons vers les histoires : tapis à histoires
+  227 | 60871835 | Culture Versailles | Versailles | ex. : Bébés lecteurs
+  224 | 7562544 | Agenda de test | Varennes-Vauzelles | ex. : Rencontre parentalité – "Dire ou ne pas dire ? Secrets de fa
+  214 | 6862496 | RNCAP | Crest | ex. : LE CHEMIN OBSCURE - CREST (Drôme)
+  209 | 69319016 | Agenda Culturel Scène des Mondes | Saint-Christol-lez-Alès | ex. : Atelier : “Mon objet gourmand en argile”
+  208 | 30166879 | Confédération Musicale de France | SEPTFONDS | ex. : Interlude musical
+  192 | 11207540 | Ville de Meudon | Meudon | ex. : Kafé Gáta
+  188 | 87270972 | Échosciences | Rennes | ex. : [Mardi de l'Espace des sciences] La liberté de savoir est-el
   184 | 14086709 | Festival Estiv'Oc | Toulouse | ex. : Bal aux Carmélites 2
-  178 | 9977986 | Ville de Roubaix | Roubaix | ex. : 17 octobre 1961, 65 ans après, Roubaix se souvient.
-  178 | 11317568 | Département du Calvados | Bayeux | ex. : En avant les histoires
-  176 | 32344838 | Agenda culturel tourquennois | Tourcoing | ex. : TJF26 ⯁ PARENTHÈSE JAZZ
+  182 | 9977986 | Ville de Roubaix | Roubaix | ex. : 17 octobre 1961, 65 ans après, Roubaix se souvient.
+  181 | 11317568 | Département du Calvados | Bayeux | ex. : En avant les histoires
+  179 | 19704097 | Emploi & Insertion Calvados | Caen | ex. : Permanence pour les futurs créateurs d'entreprise
+  178 | 32344838 | Agenda culturel tourquennois | Tourcoing | ex. : Spectacle Gatsby
+  172 | 64260763 | Office de Tourisme de Roubaix | Roubaix | ex. : Atelier Prévention et Sécurité
   172 | 46688663 | Bibliothèques de Marseille | Marseille | ex. : Cinehonrizontes fête la jeunesse, rencontre avec l'auteur es
-  171 | 64260763 | Office de Tourisme de Roubaix | Roubaix | ex. : Devenez Expert en Stratégie Digitale !
-  170 | 17739387 | Mon agenda des métropoles | Rennes | ex. : Lancement du comité de rédaction
-  167 | 33774266 | La C'ART | Lille | ex. : Soirée Octobre rose : Un temps pour prendre soin de soi
-  160 | 69677100 | Département de la Haute-Marne | Saint-Dizier | ex. : Atelier numérique
+  160 | 9283118 | Mois de l'architecture/Journées nationales de l’ar | Bourgneuf | ex. : Visite de l'École de la Mini Forêt à Bourgneuf
+  149 | 75742032 | Écoles, universités et recherche | Rennes | ex. : Cinémaniacs | The Rider
+  149 | 60711089 | Sites & Cités | Bourg-en-Bresse | ex. : La restauration du Triptyque de Moulins
   149 | 96098268 | Agenda RESO Formation | Nantes | ex. : Excellence du service petit déjeuner
-  148 | 36207583 | Ville de Villeneuve d'Ascq | Villeneuve-d'Ascq | ex. : Atelier de chant prénatal
-  147 | 60711089 | Sites & Cités | Bourg-en-Bresse | ex. : La restauration du Triptyque de Moulins
-  143 | 43721605 | Agenda du Sicoval | Odars | ex. : Ateliers d'écriture à la Médiathèque d'Odars
-  141 | 48353388 | Albi | Albi | ex. : Il y a 120 ans, l’arrêt de la Cour de cassation mettant fin 
-  140 | 1108324 | Un air de Bordeaux | Martignas-sur-Jalle | ex. : Escape Game immersif
-  133 | 31345509 | OA - Agenda des Tiers-Lieux | Chambéry | ex. : Atelier découverte du scrapbooking
-  132 | 99501607 | Arles agenda | Arles | ex. : "L’amphithéâtre d’Arles, de sa construction à sa réoccupatio
-  131 | 97575085 | Agenda France Num du numérique pour les TPE PME |  | ex. : L’Instant Tuto : créez votre site e-commerce en quelques cli
-  131 | 23739714 | Ville de Grande-Synthe | Grande-Synthe | ex. : PERMANENCE DES ECRIVAINS PUBLICS A L'ATELIER
-  130 | 23491148 | Ville de Saint-Médard-en-Jalles | Saint-Médard-en-Jalles | ex. : Café littéraire : les romans policiers
-  128 | 2363867 | Île de Nantes | Nantes | ex. : Rencontre avec la police municipale
-  125 | 25270418 | Nevers Agglo dans ma poche | Nevers | ex. : Comité de lecture / Surtout n'ouvrez pas ce livre !
-  125 | 29131743 | Nevers Agglomération | Nevers | ex. : Comité de lecture / Surtout n'ouvrez pas ce livre !
-  123 | 24311718 | Saint-Dizier | Saint-Dizier | ex. : Atelier numérique
-  123 | 16265731 | CLAVIM | Issy-les-Moulineaux | ex. : Le bébé et les trames du langage
-  122 | 20289708 | Musée des Augustins | Toulouse | ex. : Visite guidée "Le voyage : paysage et géographie"
+  148 | 36207583 | Ville de Villeneuve d'Ascq | Villeneuve-d'Ascq | ex. : "Les Figurants"
+  145 | 43721605 | Agenda du Sicoval | Odars | ex. : Ateliers d'écriture à la Médiathèque d'Odars
+  140 | 48353388 | Albi | Albi | ex. : [Les enchevêtré.es] Apéro-conversation avec les chercheur-eu
+  136 | 99501607 | Arles agenda | Arles | ex. : Mieux comprendre le TDAH, l'autisme et les troubles dys
+  132 | 31345509 | OA - Agenda des Tiers-Lieux | Toulouse | ex. : Setmana occitana : Cecila Chaduèlh - Festival Occitania X Ca
+  131 | 23739714 | Ville de Grande-Synthe | Grande-Synthe | ex. : ATELIER DECORATION HALLOWEEN
+  129 | 97575085 | Agenda France Num du numérique pour les TPE PME | Fort-de-France | ex. : Café-débat sur l'intelligence artificielle : Comprendre aujo
+  129 | 23491148 | Ville de Saint-Médard-en-Jalles | Saint-Médard-en-Jalles | ex. : Évasion poétique #3
+  128 | 16265731 | CLAVIM | Issy-les-Moulineaux | ex. : Le bébé et les trames du langage
+  125 | 60701331 | Saint-Quentin-en-Yvelines / SQY | Montigny-le-Bretonneux | ex. : L'Art d'avoir toujours raison - Sébastien Valignat, Logan de
+  123 | 7107617 | Une Semaine en Galerie 2026 | Paris | ex. : Visite guidée - Galleria di Arte Maggiore g.a.m.
   121 | 94371477 | Culture Châtellerault | Châtellerault | ex. : Stage pratique artistiques
-  117 | 13900760 | Haute-Garonne Culture | Ramonville-Saint-Agne | ex. : Secrets • Compagnie de Cirque "eia"
+  120 | 24311718 | Saint-Dizier | Sommevoire | ex. : La Constellation 2.0
+  116 | 29658343 | Sortir à SQY | Montigny-le-Bretonneux | ex. : L'Art d'avoir toujours raison - Sébastien Valignat, Logan de
   116 | 97606842 | Tableau de bord - Agenda du Département théâtre -  | Paris | ex. : La Maison de Bernarda Alba
-  113 | 29658343 | Sortir à SQY | Montigny-le-Bretonneux | ex. : L'Art d'avoir toujours raison - Sébastien Valignat, Logan de
-  113 | 95716291 | Agenda Temps Libres | Montreuil | ex. : IA et recherche d'emploi
-  112 | 8334562 | Bibliothèques de Bordeaux | Bordeaux | ex. : Rencontre avec Tahnee
-  110 | 59272362 | Châtellerault | Châtellerault | ex. : Le vrai du faux
-  106 | 6008621 | Culture Nevers | Nevers | ex. : Comité de lecture / Surtout n'ouvrez pas ce livre !
-  106 | 87311181 | caroline RIF | Saint-Ouen-sur-Seine | ex. : Soirée Blind-Test à Mains d’Œuvres
-  105 | 87576260 | Ville de Nevers | Nevers | ex. : Comité de lecture / Surtout n'ouvrez pas ce livre !
-  104 | 37534937 | Agenda général Est Ensemble | Montreuil | ex. : Jeu de logique et mémoire
+  115 | 6068900 | Centre des Monuments Nationaux | Bourg-en-Bresse | ex. : La restauration du Triptyque de Moulins
+  114 | 8334562 | Bibliothèques de Bordeaux | Bordeaux | ex. : Club Manga avec un interprète LSF
+  113 | 81756682 | Villeurbanne Médiathèques | Villeurbanne | ex. : Bouquins câlins
+  112 | 95716291 | Agenda Temps Libres |  | ex. : Murmures - concert
+  111 | 64449655 | Cap Métiers | Loudun | ex. : Atelier Des idées des métiers
+  108 | 7817918 | Journées nationales de l’architecture 2026 : Auver | Clermont-Ferrand | ex. : Visite du site de Sabourin
+  106 | 91717718 | Bibliothèque francophone multimédia de Limoges | Limoges | ex. : Ta santé : Ta priorité !
+  105 | 91962954 | Roissy Pays de France | Arnouville | ex. : Atelier papiers multicolores (pour les enfants de 3 à 5 ans)
+  105 | 6008621 | Culture Nevers | Nevers | ex. : Éveil au cirque
+  104 | 1276382 | Ville de Draguignan | Draguignan | ex. : Journées nationales de I'Infanterie
+  104 | 87576260 | Ville de Nevers | Nevers | ex. : Éveil au cirque
   104 | 38598267 | Ville de Cenon | Cenon | ex. : THE MOLOTOVS
-  104 | 65550273 | L'agenda | Martigues | ex. : LE PONT SAINT-SÉBASTIEN, OUVRAGE MÉMOIRE DES MARTIGUES
-  103 | 91962954 | Roissy Pays de France | Villiers-le-Bel | ex. : RENTRÉE LITTÉRAIRE
-  102 | 1276382 | Ville de Draguignan | Draguignan | ex. : Journées nationales de I'Infanterie
-  101 | 99503172 | Réseau des Chambres d'agriculture françaises | Issanlas | ex. : RENCONTRE AUTOUR DE NOTRE ENVIRONNEMENT – ISSANLAS
-  101 | 91717718 | Bibliothèque francophone multimédia de Limoges | Limoges | ex. : Ta santé : Ta priorité !
-  100 | 70307495 | Cugnaux | Cugnaux | ex. : Parlons Santé, Parents d’Ados : Santé mentale
+  103 | 65550273 | L'agenda | Martigues | ex. : Balade Inclusive en ville
+  103 | 37534937 | Agenda général Est Ensemble | Montreuil | ex. : Jeu de logique et mémoire
+  102 | 1854436 | Saison Méditerranée 2026 | Montpellier | ex. : Stop Calling Beirut
+  102 | 99503172 | Réseau des Chambres d'agriculture françaises | Saint-Mars-la-Jaille | ex. : L'agriculture du Pays d'Ancenis en 2040
+  100 | 65751973 | Avignon Bibliothèques | Avignon | ex. : Babillages
+  100 | 79839448 | ViIle d'Avignon | Avignon | ex. : Babillages
    99 | 4310687 | Zone Franche | Orléans | ex. : Eliades Ochoa
-   98 | 61925199 | Ville de Guérande | Guérande | ex. : Visite guidée La cité bretonne
-   97 | 96869629 | Programmation culturelle du réseau des médiathèque | Tourcoing | ex. : Dîner, dînons, dinette !
-   97 | 65751973 | Avignon Bibliothèques | Avignon | ex. : Katulu ?
-   97 | 79839448 | ViIle d'Avignon | Avignon | ex. : Katulu ?
-   94 | 19211621 | Office de Tourisme Grand Roissy | Arnouville | ex. : Atelier papiers multicolores (pour les enfants de 3 à 5 ans)
+   98 | 67871262 | Réseau des Maisons de l'Architecture | Lorient | ex. : Bodélio, l’île aux jeux
+   97 | 80306788 | Université de Rennes | Rennes | ex. : Cinémaniacs | The Rider
+   97 | 98037558 | Paris Dépêches | Pantin | ex. : Concert du groupe Terrenoire
+   96 | 61925199 | Ville de Guérande | Guérande | ex. : Visitez nos entreprises - Lycée professionnel Olivier Guicha
+   95 | 19463175 | Vingt mille lieux | Saint-Jean-de-Braye | ex. : A vous le Numérique Seniors ! à Saint Jean de Braye
    92 | 71750868 | Vie parisienne | Paris | ex. : Comment Dieu nous parle-t-il ?
-   92 | 89137171 | Université Ouverte de Versailles | Versailles | ex. : Musexpo
-   90 | 34080678 | Scènes Culturelles - Ville de Genève | Genève | ex. : Dance First Think Later
-   90 | 56170473 | Senlis | Senlis | ex. : Ciné-P'tit Déj' : Le cygne et l'enfant
-   87 | 14115607 | Unidivers Oui sortir, vos deux agendas ! | Bayonne | ex. : Les entreprises de Bayonne recrutent !
-   86 | 73081336 | Agenda BoxSons | Vélizy-Villacoublay | ex. : Avishai Cohen
-   85 | 94141219 | Agenda annuel de l'architecture - Région PACA | L'Isle-sur-la-Sorgue | ex. : Visite-atelier pour les scolaires « Cartes postales d’hier, 
-   83 | 2417371 | Centres culturels | Toulouse | ex. : Santé mentale : Ouvrons-nous aux arts
+   91 | 7629071 | Journées nationales de l’architecture 2026 : Hauts | Dunkerque | ex. : Mini-atelier des esprits curieux - thème architecture (5-12 
+   91 | 56170473 | Senlis | Senlis | ex. : Ciné-P'tit Déj' : Le cygne et l'enfant
+   90 | 3856846 | Toujours Les Mêmes en tournée | Haubourdin | ex. : L'art (in)délicat de la féminité - Emilie Delétrez (Humour)
+   90 | 28050806 | QueFaire | Haubourdin | ex. : L'art (in)délicat de la féminité - Emilie Delétrez (Humour)
+   90 | 71121803 | Public Agenda |  | ex. : Murmures - concert
+   89 | 73081336 | Agenda BoxSons | Vélizy-Villacoublay | ex. : Avishai Cohen
+   88 | 34080678 | Scènes Culturelles - Ville de Genève | Genève | ex. : CHARLES ESTEN + Jenn Bostic
+   88 | 89137171 | Université Ouverte de Versailles | Versailles | ex. : Une histoire culturelle de la fête
+   87 | 46203967 | Ecosystème de l'architecture en BFC | La Vineuse sur Fregande | ex. : Conférence "Les paysages sonores"
+   86 | 94141219 | Agenda annuel de l'architecture - Région PACA | L'Isle-sur-la-Sorgue | ex. : Visite-atelier pour les scolaires « Cartes postales d’hier, 
+   86 | 4838751 | Mois de l'architecture/Journées nationales de l’ar | Montpellier | ex. : Méridionalité ? | Exposition des AJAP et autres voies de l’A
+   86 | 437359 | Patrimoine a Castelnau-Durnan | Montpellier | ex. : Méridionalité ? | Exposition des AJAP et autres voies de l’A
+   86 | 950638 | études | Montpellier | ex. : Méridionalité ? | Exposition des AJAP et autres voies de l’A
+   86 | 355525 | Mois de l'architecture/Journées nationales de l’ar | La Vineuse sur Fregande | ex. : Conférence "Les paysages sonores"
+   86 | 28635192 | CCHA 2024 | Bonneuil-Matours | ex. : Histoires à petits sons
+   85 | 14115607 | Unidivers Oui sortir, vos deux agendas ! | Rennes | ex. : Pierre Louis - Le syndrome de l'hippocampe
+   83 | 5243675 | Mois de l'architecture/Journées nationales de l’ar | Marseille | ex. : Escape Game des Archi-curieux
    82 | 3198948 | OpenAgenda et les événements musicaux | Perpignan | ex. : Jam Jazz
+   82 | 7704096 | Agence C'est à Dire | Segré-en-Anjou Bleu | ex. : Petit à petit
+   82 | 27384342 | Association VieLaJoie | Fleury-les-Aubrais | ex. : Baby-blues, déprime, isolement, culpabilité : ne restez pas 
    81 | 8530879 | Alsace Destination Tourisme | Mulhouse | ex. : Corporate
-   79 | 648937 | Comédie de Rennes | Rennes | ex. : C’est la première fois – Les Salopettes
-   77 | 29125620 | Ville de Boulogne-sur-Mer | Boulogne-sur-Mer | ex. : CONFÉRENCE #Boulogne 70's
-   75 | 26188004 | Vie associative Nantes ville et métropole | Nantes | ex. : Seniors et à vélo !
-   75 | 881924 | Communauté d'agglomération Lisieux Normandie | Lisieux | ex. : Atelier philo
-   75 | 51768045 | Musée des écoles | Lille | ex. : Anniversaires, hommages, dédicaces
+   80 | 648937 | Comédie de Rennes | Rennes | ex. : C’est la première fois – Les Salopettes
+   78 | 82290100 | Diocèse de Paris | Paris | ex. : Comment Dieu nous parle-t-il ?
+   78 | 26188004 | Vie associative Nantes ville et métropole | Nantes | ex. : On mange qui ce soir ?
+   77 | 29125620 | Ville de Boulogne-sur-Mer | Boulogne-sur-Mer | ex. : Exposition "Révéler le patrimoine des Hauts de France"
+   76 | 435523 | Saison Cabaret | Paris | ex. : Kabarè Z, cabaret de Nadia Chonville
+   76 | 51768045 | Musée des écoles | Lezennes | ex. : Retail Go 2026 : quelles transformations pour préparer le co
    75 | 35777956 | La Palestine à l'Affiche | Malaga | ex. : Projection du film "PUT YOUR SOUL ON YOUR HAND AND WALK" de 
-   74 | 87449634 | Culture - Boulogne-sur-Mer | Boulogne-sur-Mer | ex. : CONFÉRENCE #Boulogne 70's
-   74 | 59938959 | Colomiers | Colomiers | ex. : Table ronde : l'art d'être parent aujourd'hui
-   72 | 5970812 | Agenda culturel de Villeneuve d'Ascq | Villeneuve-d'Ascq | ex. : "Les Figurants"
+   74 | 35854041 | L'Agenda du VERNET | Auterive | ex. : Garance, 1h55, drame, de Jeanne Herry                       
+   74 | 881924 | Communauté d'agglomération Lisieux Normandie | Saint-Pierre-en-Auge | ex. : Bébé gribouille
+   73 | 8418266 | Le mois de la transmission-reprise en Nouvelle-Aqu | Créon | ex. : Les Matinales de la Transmission-Reprise – Petit-déjeuner av
+   73 | 88853435 | En Soirée Je Danse Pas | Limoges | ex. : Cybermois I Cloud privé souverain et responsable : sécurisat
+   73 | 5970812 | Agenda culturel de Villeneuve d'Ascq | Villeneuve-d'Ascq | ex. : "Les Figurants"
+   70 | 50138154 | Réunion des Opéras de France | Massy | ex. : Tobrouk
+   70 | 28388637 | Agenda des Voisins | Athis-Val-de-Rouvre | ex. : L’heure du conte
+   69 | 54470274 | SORTIE LILLE | Marcq-en-Barœul | ex. : Oldelaf
    69 | 19327333 | Bordeaux Tourisme | Bordeaux | ex. : Darwin x Mirador : closing des heures heureuses
-   69 | 88853435 | En Soirée Je Danse Pas | Limoges | ex. : 💼 18 ème édition du Forum Avenir de l'ENSIL-ENSCI
-   69 | 28388637 | Agenda des Voisins | Athis-Val-de-Rouvre | ex. : L’heure du conte
-   65 | 6418448 | LA MURMURE  Webzine des Musiques actuelles de Norm | Le Grand-Quevilly | ex. : FC Rouen (F) - ESOF Vendée La Roche
-   64 | 20272888 | JASS CLUB PARIS | Paris | ex. : Marsa Trio & Guests / Méditerranée du futur
-   64 | 41454951 | Lo CalenDiari | Langon | ex. : FIL A FIL
-   64 | 83339747 | Ville de Bègles | Bègles | ex. : Club de lecture
+   65 | 83339747 | Ville de Bègles | Bègles | ex. : Club de lecture
+   63 | 6418448 | LA MURMURE  Webzine des Musiques actuelles de Norm | Rouen | ex. : Katia et Marielle Labèque
+   63 | 87948516 | L'agenda différent de la Seine-Maritime | Rouen | ex. : Katia et Marielle Labèque
    63 | 15429369 | Agenda Médiathèques Orléans | Orléans | ex. : Réveil livres jusqu'à 3 ans
-   62 | 36002164 | L'Avant Seine | Meudon | ex. : Peinture sur mug
-   61 | 45975971 | Deiziataer an Emglevioù-bro - Agenda des Ententes  | Guingamp | ex. : Club lecture en breton
-   61 | 54892589 | Ville de Talence | Talence | ex. : Ciné mardi : projection en espagnol
+   62 | 45975971 | Deiziataer an Emglevioù-bro - Agenda des Ententes  | Vannes | ex. : Manger ensemble à Ti ar Vro
+   62 | 41454951 | Lo CalenDiari | Toulouse | ex. : Setmana occitana : Cecila Chaduèlh - Festival Occitania X Ca
+   61 | 23422404 | Action mutualiste MSA | Montauban-de-Bretagne | ex. : Le rendez-vous santé mentale
    61 | 18801698 | Direction éducation enfance | Rennes | ex. : Ciné surprise
-   61 | 54562962 | Actvités | Talence | ex. : Ciné mardi : projection en espagnol
-   59 | 54046098 | MAAD 93 | Saint-Ouen-sur-Seine | ex. : Soirée Blind-Test à Mains d’Œuvres
-   59 | 35854041 | L'Agenda du VERNET | Beaumont-sur-Lèze | ex. : Atelier Éveil Équi'sensoriel
+   60 | 4430378 | CLB PRODUCTION | Niort | ex. : Monsieur Maxence au pays des 5 sens
+   60 | 54046098 | MAAD 93 | Saint-Ouen-sur-Seine | ex. : Soirée Blind-Test à Mains d’Œuvres
+   59 | 48801866 | Maison de l'Architecture et des espaces en Bretagn | Lorient | ex. : Bodélio, l’île aux jeux
+   59 | 1923913 | Comédie du Finistère | Brest | ex. : Christophe Alévêque — Revue de Presse
+   59 | 27316238 | Bellevue - Chantenay - Sainte-Anne | Nantes | ex. : Trail Urbain Nantais - 100e Tour de Chantenay
+   59 | 54892589 | Ville de Talence | Talence | ex. : Hector, l'homme extraordinairement fort
    59 | 59822745 | Label "Comme à la maison" en Haute-Garonne | Ramonville-Saint-Agne | ex. : Secrets • Compagnie de Cirque "eia"
-   59 | 79282330 | Saint-Médard-en-Jalles Médiathèques | Saint-Médard-en-Jalles | ex. : Café littéraire : les romans policiers
-   58 | 52340672 | L'agenda des événements du Bassin Auterivain | Beaumont-sur-Lèze | ex. : Atelier Éveil Équi'sensoriel
-   58 | 5627105 | Haute-Garonne Le Département | Toulouse | ex. : Astrophysiques : au rythme des pulsars
-   57 | 33806548 | Mervilla | Ramonville-Saint-Agne | ex. : Secrets • Compagnie de Cirque "eia"
-   57 | 1923913 | Comédie du Finistère | Brest | ex. : Christophe Alévêque — Revue de Presse
-   57 | 88510546 | Festival Automne Musical Grand Châtellerault | Châtellerault | ex. : Permanence Le 4 Infos Jeunes : Vrai ou faux ? Repérer les fa
-   57 | 13451012 | Bibliothèque municipale de Lille | Lille | ex. : Karaoké "spécial pattes d'éph"
+   58 | 7727023 | Agenda des événements de la région Lorraine | Saint-Étienne-lès-Remiremont | ex. : Journées nationales de l’architecture 2026, réhabilitation d
+   57 | 86803888 | Maison Régionale de l'Environnement et des Solidar | Lille | ex. : Groupe local Adaptation Radicale / Métropole lilloise
+   57 | 79282330 | Saint-Médard-en-Jalles Médiathèques | Saint-Médard-en-Jalles | ex. : Premiers pas sur Scratch
+   56 | 1537494 | MAIRIE D'AMILLY(45200) | Chalette-sur-Loing | ex. : Journée DYS à la médiathèque de Châlette
+   56 | 37677191 | Le Temps des Cerises | Issy-les-Moulineaux | ex. : À l'art découverte : L'esthétique de l'invisible - représent
    55 | 4661116 | comédie de Besançon | Besançon | ex. : Les cigognes ont perdu la tête
    55 | 51124503 | Ville de Carvin | Carvin | ex. : Le CESEC vient à votre rencontre sur le marché.
-   55 | 16452582 | Agenda de l'association VélOOise, le vélo dans le  | Compiègne | ex. : Atelier d'auto-réparation du mardi soir à Compiègne
-   55 | 1537494 | MAIRIE D'AMILLY(45200) | Chalette-sur-Loing | ex. : Journée DYS à la médiathèque de Châlette
-   54 | 73931759 | Mois de la Résilience | Bordeaux | ex. : Conférence : L'impact de la nature sur la santé mentale prés
-   53 | 27316238 | Bellevue - Chantenay - Sainte-Anne | Nantes | ex. : Trail Urbain Nantais - 100e Tour de Chantenay
-   53 | 37677191 | Le Temps des Cerises | Issy-les-Moulineaux | ex. : À l'art découverte : L'esthétique de l'invisible - représent
-   53 | 16624806 | Les Médiathèques d'Issy-les-Moulineaux | Issy-les-Moulineaux | ex. : Le bleu dans l'art : voyage dans les coulisses et variations
-   52 | 94573624 | Rocher de Palmer | Cenon | ex. : THE MOLOTOVS
-   52 | 362238 | Comédie de Metz | Metz | ex. : Julien Strelzyk dans Santé !
-   52 | 21948171 | Médiathèques de Talence | Talence | ex. : Ciné mardi en espagnol
+   54 | 362238 | Comédie de Metz | Metz | ex. : Julien Strelzyk dans Santé !
+   52 | 34565671 | Tous les événements catho ! | Paris | ex. : Veillée d'Adoration à la Bougie à la Chapelle ND de Grâce de
+   52 | 2094153 | La Comédie de la Roseraie | Toulouse | ex. : Ah si j’étais une femme
+   51 | 55869711 | Frères de Saint-Jean en France | Saint-Quentin-sur-Indrois | ex. : Ecole Saint-Jean 2026/2027, formation chrétienne pour adulte
+   51 | 5678480 | Mois de l'architecture/Journées nationales de l’ar | Lorient | ex. : Bodélio, l’île aux jeux
+   51 | 6750901 | Festival Georges | Lorient | ex. : Bodélio, l’île aux jeux
+   51 | 50047541 | Agenda du quartier Doulon-Bottière | Nantes | ex. : Massage bébé
+   50 | 93993811 | Ville de Vernier | Vernier | ex. : D'un Train à l'Autre, concert-débat
+   49 | 29266 | Mois de l'architecture/Journées nationales de l’ar | Strasbourg | ex. : Table-ronde Le photovoltaïque : un élément architectural du 
+   49 | 63468483 | Ville de Pacé | Pacé | ex. : Histoires du mercredi
+   49 | 80230200 | Ville de Lormont | Lormont | ex. : Terre de rêves
+   48 | 190636 | Journées nationales de l’architecture 2026 : Centr | Olivet | ex. : Exposition Paul Chemetov
+   48 | 38962923 | Musées de Limoges | Limoges | ex. : Du portrait au selfie
+   47 | 4856591 | Nantes Erdre | Nantes | ex. : Forum de l'emploi 2026
+   47 | 56293386 | Digne-les-Bains - Provence Alpes Agglomération - O | Digne-les-Bains | ex. : Ciné-débat "Elise sous emprise"
+   46 | 78124741 | Agenda de Ramonville Saint-Agne | Ramonville-Saint-Agne | ex. : Secrets • Compagnie de Cirque "eia"
+   45 | 55677539 | Nantes Centre-ville | Nantes | ex. : POINT INFORMATION NANTES SOLIDAIRE
+   44 | 69750790 | Réseau TMN | Antony | ex. : L'École des femmes
+   44 | 39001109 | Place Locale | Paris | ex. : JEUDI CHANSON
+   44 | 8521170 | Collectif Récits Vagabonds 62 | Thiembronne | ex. : Rotules Rhapsody à Thiembronne (62) - Festival Conteurs en C
+   44 | 71672735 | Ville de Floirac | Floirac | ex. : Dravemont/Monrepos : Permanence élue de quartier
+   43 | 2186326 | Test Wayuto | Saint-Étienne-lès-Remiremont | ex. : Journées nationales de l’architecture 2026, réhabilitation d
+   43 | 96472628 | Ateliers créatifs aux Octopodes | Chambéry | ex. : Atelier création rouge à lèvres et vernis à ongles
+   42 | 32352185 | Journées Nationales de la Réparation 2025 | Sainghin-en-Mélantois | ex. : Repair Café de la Marque à Sainghin-en-Mélantois
+   42 | 66324610 | Agenda l'Europe s'engage en France |  | ex. : Des ateliers pour parler du changement climatique en Nouvell
+   42 | 6574990 | Café-Théâtre Défonce de rire - Clermont-Ferrand | Clermont-Ferrand | ex. : Amants à mi-temps
+   42 | 5928978 | Sarthe Tourisme | Le Mans | ex. : Le Matin des tout-petits : Imagine...
+   42 | 84503174 | Les Hauts-de-France Réparent 2026 ! - 6ème édition | Sainghin-en-Mélantois | ex. : Repair Café de la Marque à Sainghin-en-Mélantois
+   42 | 41493455 | Ville de Charleville-Mézières | Charleville-Mézières | ex. : Art thérapie
+   41 | 70970246 | Cop Rouen 2030 | Rouen | ex. : Création d'une Tapisserie avec des matières naturelles et in
+   41 | 23128103 | 76 agenda différent | Rouen | ex. : Katia et Marielle Labèque
+   41 | 67651029 | Perso test | Lormont | ex. : Job Dating Bouillon Marguerite : Rejoignez notre équipe pour
+   41 | 82546441 | Emmaus Terre - La Bricole Solidaire | Rennes | ex. : Fête de l'écocitoyenneté
+   40 | 31101747 | Saison culturelle | Meudon | ex. : Kafé Gáta
+   40 | 2119473 | Musées de Marseille | Marseille | ex. : Enfants de Palestine – Deux histoires de Cisjordanie
+   39 | 6170362 | Journées nationales de l’architecture 2026 : Norma | Falaise | ex. : Chasseurs d'images : un regard sur la reconstruction
+   38 | 17102062 | Agenda du GRAINE Pays de la Loire | Saint-Nazaire | ex. : COMPLET - Table ronde : Climat, santé et alimentation, que m
+   38 | 28497003 | PRC VAE - Nouvelle-Aquitaine | La Rochelle | ex. : Réunion d'information
+   38 | 86184123 | Université Paris-Saclay | Versailles | ex. : International SPS Symposium 2026
+   38 | 97836408 | Bibliothèques municipales de la Ville de Genève | Genève | ex. : Création de jeux vidéo avec Marion Bareil à la Bibliothèque 
+   37 | 16340088 | Quinzaine de la transmission | Buis-les-Baronnies | ex. : Quinzaine de la Transmission-Reprise dans la Drôme
+   37 | 66727730 | Conservatoire de Nantes | Nantes | ex. : Marina Viotti & Gabriel Bianco | Saison CRÉA
+   37 | 22695649 | Accueil agenda spectacle vivant - DRAC : Nouvelle- | Bordeaux | ex. : CALINS POULPE
+   37 | 92811285 | Saint-Orens-de-Gameville | Saint-Orens-de-Gameville | ex. : Soirée jeux
+   37 | 712281 | Test Agenda Caux Austreberthe | Rouen | ex. : Katia et Marielle Labèque
+   37 | 45217635 | Ville du Haillan | Le Haillan | ex. : Réussir sa 6ème
+   37 | 85121895 | Grand Paris Seine Ouest - GPSO | Ville-d'Avray | ex. : Décarbonation et pompe à chaleur
+   36 | 27232549 | OSTAL OCCITAN NARBONES | Toulouse | ex. : Setmana occitana : Cecila Chaduèlh - Festival Occitania X Ca
+   36 | 26283955 | Agenda de Villenave d'Ornon | Villenave-d'Ornon | ex. : Fabrication d'un abri à hérissons
+   35 | 43449308 | Réseau des Musées de Normandie | Rouen | ex. : Visite commentée « Les incontournables »
+   35 | 13775397 | Réunion des Musées Métropolitains | Rouen | ex. : Visite commentée « Les incontournables »
+   35 | 4898229 | Opéra National de Bordeaux | Bordeaux | ex. : Midi musical
+   35 | 868740 | Le Pouliguen | Le Pouliguen | ex. : Conférence en Folie
+   34 | 48454528 | Réseau des médiathèques & Archives du Mans | Le Mans | ex. : Le Matin des tout-petits : Imagine...
+   34 | 3477182 | Orientation | Saint-Junien | ex. : Aide aux choix professionnels
+   34 | 78623851 | Conservatoire à rayonnement régional de Toulouse | Toulouse | ex. : Concert de Professeurs
+   34 | 36135579 | Victoria Hall - Ville de Genève | Genève | ex. : Orchestre de Chambre de Genève; Guillaume Tourniaire; Tamara
+   33 | 30298725 | Rennes quartiers Ouest | Rennes | ex. : Ce soir, ça buzz ?
+   33 | 82662103 | Tu m'étonnes Productions | Marcq-en-Barœul | ex. : Oldelaf
+   33 | 56354628 | Contributions événements culturels Nantes et métro | Nantes | ex. : Atelier "Réalisez un collage", guidé par l'artiste Arnaud Th
+   33 | 82433240 | Ville du Taillan-Médoc | Le Taillan-Médoc | ex. : Ciné-débat : « Mégafeux, un été au combat »
+   33 | 51549958 | L'agenda du Pays du Coquelicot | Albert | ex. : Atelier sur les économies d'énergie
+   33 | 33098465 | Batz sur mer | Batz-sur-Mer | ex. : Visite "Sel , montre-nous tes pouvoirs"
+   32 | 44891982 | Kerlandrier | Concarneau | ex. : Formation à Coast Appli pour une étude participative du recu
+   32 | 48962291 | lille metropole yolo | Tourcoing | ex. : Spectacle Gatsby
+   32 | 79017343 | La Piscine - Roubaix | Roubaix | ex. : Art & Pilates
+   31 | 16676449 | Agenda de la Région des Pays de la Loire | Saint-Gilles-Croix-de-Vie | ex. : Conférence Orientation "Parents, accompagnez sereinement vos
+   31 | 20316903 | Info Jeunes France |  | ex. : Des ateliers pour parler du changement climatique en Nouvell
+   31 | 58017986 | Quinzaine de la mode responsable 2026 | Bordeaux | ex. : Délégation européenne réseau EEN
+   31 | 19096631 | Ville de Beaugency | Beaugency | ex. : DUCOBU ET LE FANTOME DE SAINT POTACHE
+   31 | 55116098 | Erquy | Erquy | ex. : JUSTIN LE JUSTE
+   31 | 81916163 | Culture et événements-ville Carvin | Carvin | ex. : Conférence populaire philo : écologie politique et considéra
+   31 | 4474137 | Bibliothèque Départementale des Vosges | Chaumousey | ex. : Ludovic Füschtelkeit
+   30 | 1168665 | Villeurbanne - Agenda culturel | Villeurbanne | ex. : Conférence CALA « Le paradoxe de Fermi : les réflexions d’un
+   30 | 40806617 | Gare Saint Sauveur | Lille | ex. : Cinéma Jeune Public "Flow, le chat qui n'avait plus peur de 
+   30 | 6821494 | De la suite dans les images | Dunkerque | ex. : Écrire la vie : Annie Ernaux racontée par des lycéennes et d
+   30 | 11875341 | Théâtre National de Bretagne | Rennes | ex. : NAZA — AVANT-PREMIÈRE EXCEPTIONNELLE
+   29 | 80866281 | Saint-Jean | Saint-Jean | ex. : Balade rose
+   29 | 28924702 | Maisons des forêts | Saint-Étienne-du-Rouvray | ex. : COMPLET | Les champignons
+   29 | 61591436 | Transition et développement durable | Rouen | ex. : Création d'une Tapisserie avec des matières naturelles et in
+   29 | 36845523 | Journées Nationales de l'Architecture | Guéret | ex. : Découverte du CAUE de la Creuse
+   29 | 76305859 | Mission Vivre ensemble | Paris | ex. : Formation des relais du champ social au musée des Arts et Mé
+   29 | 26425400 | Centre Culturel Athanor - Guérande | Guérande | ex. : Atelier Toc toc toc par l’illustratrice Lucie Felix - COMPLE
+   28 | 37397078 | Rennes quartiers Nord-Ouest | Rennes | ex. : Fête de l'écocitoyenneté
+   28 | 49409342 | Ville d'Olivet | Olivet | ex. : La Grande Lessive : «Photo-graphie»
+   28 | 3037864 | FESTIVAL ECLATS D'EMAIL JAZZ EDITION 2026 | Limoges | ex. : AUTOUR DU FESTIVAL
+   28 | 43509562 | tnba - Théâtre national Bordeaux Aquitaine | Bordeaux | ex. : En même temps
+   28 | 35574402 | Blagnac | Cornebarrieu | ex. : Concert : Kady Diarra - Jeudi 15 octobre
+   27 | 16031938 | Institut-culturel | Paris | ex. : Bistrot littéraire avec Pascale de Trazegnies et Florence Ve
+   27 | 61665301 | FICEP - Forum des Instituts Culturels Étrangers à  | Paris | ex. : Bistrot littéraire avec Pascale de Trazegnies et Florence Ve
+   27 | 41884077 | Culture Multimédia | Tourcoing | ex. : Conférence « Pharmacologie de l’intelligence artificielle : 
+   27 | 50023614 | Chambres d'agriculture d'Occitanie | Cesson-Sévigné | ex. : Journées Techniques Ovines 2026
+   27 | 3488513 | Journées nationales de l’architecture 2026 : Pays  | Angers | ex. : PARCOURS PÉDAGOGIQUE À LA MATP
+   27 | 48273866 | Centres Culturels Limoges | Limoges | ex. : J'y croiX pas !
+   27 | 4802410 | Tambour Sorcier | Thiembronne | ex. : Rotules Rhapsody à Thiembronne (62) - Festival Conteurs en C
+   27 | 136854 | Agenda Taxi Gui | Marseille | ex. : Résister, décoloniser, enraciner : le travail des Archives B
+   27 | 41327758 | Musée des Beaux-Arts Bordeaux | Bordeaux | ex. : La croisière littéraire et poétique - invitation au voyage
+   26 | 51511017 | ACP la Manufacture Chanson | Paris | ex. : MOI ET MICHAEL
+   26 | 37227192 | Ville de Sarcelles | Sarcelles | ex. : RDV Junior - Jeux
+   25 | 7139937 | Rencontres du spectacle vivant 2026 | Marcq-en-Barœul | ex. : Poil de la Bête
+   25 | 93507735 | Zénith de la Métropole Rouen Normandie | Le Grand-Quevilly | ex. : Josman
+   25 | 67810479 | Mission Locale | Le Grand-Quevilly | ex. : Josman
+   25 | 60662226 | Saison Culturelle Val d'Yerres Val de Seine | Brunoy | ex. : Renan Luce
+   25 | 25143590 | Ville de Brunoy | Brunoy | ex. : Renan Luce
+   25 | 48187734 | Ville de Brunoy | Brunoy | ex. : Renan Luce
+   25 | 78212880 | Ville d'Eysines | Eysines | ex. : La boîte à histoires
+   24 | 93479028 | Agenda global | Montreuil | ex. : Atelier artistique : fabrication de peinture avec la tempera
+   24 | 44228144 | Chambre d'agriculture du Gard | Cesson-Sévigné | ex. : Journées Techniques Ovines 2026
+   24 | 67013572 | Marionnette et arts associés en Nouvelle-Aquitaine | Agen | ex. : TERRE ! Compagnie Les Lubies
+   24 | 96493090 | Mains d'Œuvres | Saint-Ouen-sur-Seine | ex. : Soirée Blind-Test à Mains d’Œuvres
+   24 | 49620784 | Mon agenda | Saint-Aubin-lès-Elbeuf | ex. : Flashmob Octobre Rose
+   24 | 8549505 | Cornebarrieu | Cornebarrieu | ex. : Découverte de l’apiculture à Bouconne
+   24 | 78449013 | La Verrerie - Pôle National Cirque Occitanie | Saint-Martin-de-Valgalgues | ex. : Festival Temps de Cirques • Spectacle : DEMAIN HIER  • Les E
+   24 | 63114883 | Tourcoing Jazz | Tourcoing | ex. : TOURCOING JAZZ FESTIVAL 2026 ⯁ ERIK TRUFFAZ & ANTONIO LIZANA
+   24 | 49731145 | Quartiers populaires du 14 ème | Paris | ex. : Dame Kélément - Contes en musique
+   24 | 68079328 | Agenda de la ville des Lilas | Les Lilas | ex. : BLASER / AUGUSTIN / LÓPEZ
+   23 | 4003028 | Chambre d'agriculture Pays de la Loire | Saint-Mars-la-Jaille | ex. : L'agriculture du Pays d'Ancenis en 2040
+   23 | 51929165 | Formations, permanences et ateliers à l'espace Rei | Reims | ex. : Permanence Terrasses et Enseignes
+   23 | 45480601 | Où et Caen | Saint-Aubin-lès-Elbeuf | ex. : Flashmob Octobre Rose
+   23 | 36926695 | Ville de Fleury-les-Aubrais | Fleury-les-Aubrais | ex. : Baby-blues, déprime, isolement, culpabilité : ne restez pas 
+   23 | 47052338 | La Sirène | La Rochelle | ex. : TIF + CANNELLE
+   23 | 16962406 | La Rochelle et ses environs - Culture | La Rochelle | ex. : TIF + CANNELLE
+   23 | 96398684 | Zénith Toulouse Métropole | Toulouse | ex. : LEGEND TOUR BY TRADE REPUBLIC
+   23 | 74820174 | La Cali | Libourne | ex. : Don du sang
+   22 | 70214399 | Ambassadeurs IA | Fort-de-France | ex. : Café-débat sur l'intelligence artificielle : Comprendre aujo
+   22 | 58808633 | IA events | Fort-de-France | ex. : Café-débat sur l'intelligence artificielle : Comprendre aujo
+   22 | 71743713 | SOGESTEA CRM & IA | Fort-de-France | ex. : Café-débat sur l'intelligence artificielle : Comprendre aujo
+   22 | 75576682 | La Part Citoyenne du Centre-Val de Loire | Vierzon | ex. : Fresque de l'engagement - Ateliers collaboratifs
+   22 | 27888445 | Culture Calvados | Vieux | ex. : Chut... Je compte les nuages
+   22 | 51461391 | Limoges Ville d'art et d'histoire | Limoges | ex. : Promenade gourmande
+   22 | 27027963 | FLOW | Lille | ex. : PODCAST "Viens on parle" - Épisode 1
+   22 | 39750428 | Sport | Toulouse | ex. : TFC - Troyes
+   22 | 92998056 | Agenda du Frontonnais | Fronton | ex. : Atelier Philo | Le lien affectif est-il une force ou une dép
+   22 | 99155778 | EcoNature | Veigné | ex. : Vivre sa Nature - Apprendre le feu par friction
+   22 | 1007085 | Ville de Sèvres | Sèvres | ex. : SEVRES - ♻️🗑️ Le tri des déchets et leur devenir ♻️🗑️
+   22 | 22478436 | Ville de Carbon-Blanc | Carbon-Blanc | ex. : ROBOTIQUE
+   21 | 79876741 | Comédie – CDN de Reims | Reims | ex. : Sans faire de bruit
+   21 | 78820418 | Malakoff - Saint-Donatien | Nantes | ex. : Les Amis de Yamaayigui- 3 jours de fête africaine
+   21 | 20378280 | Groupe Ornithologique Normand - GONm | Fontenay-le-Marmion | ex. : FONTENAY-LE-MARMION/14 : rencontres régionales
+   21 | 98369889 | MOBE - Muséum d’Orléans pour la Biodiversité et l’ | Orléans | ex. : le Cyclo'Sciences
+   21 | 16541098 | Chambres d'agriculture Auvergne-Rhône-Alpes | Buis-les-Baronnies | ex. : Quinzaine de la Transmission-Reprise dans la Drôme
+   21 | 49284935 | Urgence Disk Records | Genève | ex. : Flowers for the Dead_us_ shoegaze
+   21 | 3933645 | Festival JazzContreBand | Vernier | ex. : D'un train à l'Autre, concert-débat
+   21 | 4087377 | Morbihan Tourisme | Lorient | ex. : Bodélio, l’île aux jeux
+   21 | 31651509 | Le Théâtre de Laval – Centre National de la Marion | Laval | ex. : [EXPOSITION] Capharnaüm · François Soutif
+   21 | 74000941 | Le Colisée Théâtre de Roubaix | Roubaix | ex. : Carmina Burana
+   21 | 3991265 | Agenda de  Chécy | Chécy | ex. : Clic et Déclic
+   21 | 62521262 | L'Azimut | Antony | ex. : L'École des femmes
+   21 | 149128 | Lillico théâtre jeune public Rennes | Rennes | ex. : Festival Marmaille - Le Loup en slip
+   21 | 36833164 | Le Cratère - Scène nationale d’Alès | Alès | ex. : Du folie
+   21 | 41517249 | Armor Ciné | Erquy | ex. : JUSTIN LE JUSTE
+   21 | 11020791 | Cultural Stage Festival | Villeurbanne | ex. : Conférence CALA « Le paradoxe de Fermi : les réflexions d’un
+   21 | 17009346 | Cév'inside | Salindres | ex. : Bébés lecteurs
+   21 | 41375362 | Ville de Bassens | Bassens | ex. : Atelier bricolage « Des cœurs pour la vie »
+   20 | 880020 | Médiation Numérique Loire | Roanne | ex. : Café numérique : Manipulations et arnaques en ligne
+   20 | 58592364 | Les événements de la Librairie Kléber, Strasbourg | STRASBOURG | ex. : Rencontre avec Michel Bussi
+   20 | 11035708 | Mougins | Mougins | ex. : WE ARE DOING GREAT
+   20 | 6715518 | Mixt | Vallet | ex. : Biographies
+   20 | 14898606 | Sortir & bouger à Montreuil | Montreuil | ex. : Atelier artistique : fabrication de peinture avec la tempera
+   20 | 45088536 | Pyrénées Orientales Tourisme | Perpignan | ex. : Open Mike
+   20 | 2109031 | wpmw-14 | Fleury-les-Aubrais | ex. : Baby-blues, déprime, isolement, culpabilité : ne restez pas 
+   20 | 90009822 | Université de Limoges | Limoges | ex. : Cybermois I Cloud privé souverain et responsable : sécurisat
+   20 | 10597757 | Réseau des transitions | Concarneau | ex. : Formation à Coast Appli pour une étude participative du recu
+   20 | 5946854 | Rennes Centre Thabor St-Hélier A-Guérin Baud-Chard | Rennes | ex. : Vacances d'Automne Passerelle au CPB Centre
+   20 | 84659022 | Maisons Folie Wazemmes et Moulins | Lille | ex. : Atelier Dessin - au Mini-Lab / Le MHN fait le Mur
+   20 | 24300765 | Ville de Wattrelos | Wattrelos | ex. : Concert JOVIN WEBB
+   20 | 61912627 | Ville d’art et d’histoire de Lille | Lille | ex. : Le comité d'entraide sociale du quartier Saint-Sauveur fête 
+   20 | 49323754 | Agenda de Pechabou | Montgiscard | ex. : Ateliers pour futurs parents
+   20 | 83690382 | St Lyphard | Saint-Lyphard | ex. : Magie Improvisée et Musicale - Jazz Magic
+   20 | 41294633 | Nantes Solidarités et Seniors | Nantes | ex. : Vivons Vieux, Vivons Heureux : il n'y a pas d'âge pour refai
+   19 | 1919724 | INTOUR-16 | Paris | ex. : WATERTECH 2026 @ PARIS 15ème
+   19 | 38199897 | Bretagne musées | Rennes | ex. : La pêche et la vie à bord des thoniers-senneurs tropicaux
+   19 | 82540281 | Pépite Bretagne |  | ex. : Webinaire Starter Pack Étudiant Entrepreneur
+   19 | 48433843 | Musée national Adrien Dubouché | Limoges | ex. : Visite guidée - Céramiques architecturales
+   19 | 46932816 | Les rendez-vous de la Médiathèque | Rieumes | ex. : Exposition - Tam-tam couleurs
+   19 | 90707514 | Nantes Sud | Nantes | ex. : Des ateliers de prévention routière pour les seniors
+   19 | 2897513 | Estevelles Direct | Carvin | ex. : Conférence populaire philo : écologie politique et considéra
+   19 | 53203404 | Ville de Lezennes | Lezennes | ex. : Soirée Rentrée Littéraire
+   19 | 84705763 | agregation agenda transiscope | Bachy | ex. : Roue libre
+   19 | 88114046 | Agenda des bibliothèques de Montreuil | Montreuil | ex. : Tournoi : échecs et dominos
+   19 | 33113744 | Agenda de la recherche et de l'innovation | Versailles | ex. : International SPS Symposium 2026
+   18 | 77351441 | Agenda Formation et Orientation de la Région des P | Saint-Gilles-Croix-de-Vie | ex. : Conférence Orientation "Parents, accompagnez sereinement vos
+   18 | 89972420 | KDR | Saint-Laurent-sur-Sèvre | ex. : Visages du patrimoine du Moyen Âge à nos jours - exposition 
+   18 | 1051842 | Tourisme en Champagne | Reims | ex. : Visite du conservatoire à rayonnement régional de Reims
+   18 | 53319507 | Agenda quartier Breil-Barberie Nantes | Nantes | ex. : Temps convivial "L'art de se faire du bien"
+   18 | 97589740 | Agenda L'Europe en Nouvelle-Aquitaine | Poitiers | ex. : Fête de la santé mentale
+   18 | 74282850 | Hauts-Pavés - Saint-Félix | Nantes | ex. : Excipit
+   18 | 62423080 | Agenda des musées d’Orléans | Orléans | ex. : Mini-atelier
+   18 | 1602856 | Forever Young - le festival de danse qui grandit | Roubaix | ex. : Un virage pour Jacky
+   18 | 76837900 | Le Fresnoy - Studio national des arts contemporain | Tourcoing | ex. : Conférence « Pharmacologie de l’intelligence artificielle : 
+   18 | 4833303 | Mois de l'architecture/Journées nationales de l’ar | Sainte-Rose | ex. : Point Conseil - Sainte-Rose • 2ème mercredi du mois
+   18 | 7133525 | L'Estive - Saison 26/27 | Foix | ex. : Pianip-Pianop · Compagnie dernière minute, Pierre Rigal, Bri
+   18 | 67210154 | Ville de Fronton | Fronton | ex. : Atelier Philo | Le lien affectif est-il une force ou une dép
+   18 | 31130662 | Val'Aïgo - Agenda des événements | Layrac-sur-Tarn | ex. : Réunion publique d'information TEOMi - Layrac-sur-Tarn
+   18 | 73292305 | Dervallières - Zola | Nantes | ex. : Journée festive Déjeuner + Concert New Orleans
+   17 | 12304846 | Maisons des Illustres | La Côte-Saint-André | ex. : Visite-dégustation - Hector prend les eaux… et savoure le ca
+   17 | 85651143 | Scène 55 | Mougins | ex. : WE ARE DOING GREAT
+   17 | 1359184 | Montpellier Tourisme | Montpellier | ex. : Stop Calling Beirut
+   17 | 34880093 | Info Jeunes Nouvelle-Aquitaine |  | ex. : Des ateliers pour parler du changement climatique en Nouvell
+   17 | 4782748 | Mille mots Contes et Musique | Thiembronne | ex. : Rotules Rhapsody à Thiembronne (62) - Festival Conteurs en C
+   17 | 61609922 | Département du Nord | Lille | ex. : La jam du musical
+   17 | 70348340 | Agenda Collaboratif des événements dédiés aux Tran | Baden | ex. : Nettoyage de la plage de Toulindac
+   17 | 60166642 | Théâtre municipal de Nevers | Nevers | ex. : Il a la côte Devos !
+   17 | 61420366 | Mystère Comedy Club | Nantes | ex. : Plateau Stand Up au Mystère Comedy Club
+   17 | 4394298 | ADT Ariège Pyrénées | Foix | ex. : Pianip-Pianop · Compagnie dernière minute, Pierre Rigal, Bri
+   17 | 16685272 | Libourne | Libourne | ex. : Don du sang
+   17 | 51738256 | L'histoire des ongles | Libourne | ex. : Don du sang
+   17 | 1029491 | Agenda de la Commune de BESSENAY | L'Arbresle | ex. : 🏛️ Bessenay : une mairie à travers l’Histoire
+   17 | 90672840 | Agenda patrimoine | Nantes | ex. : Initiation à la découpeuse laser : Le Fablab de Jules Verne
+   17 | 98629160 | Ateliers du développement durable | Villeneuve-d'Ascq | ex. : Formation compostage
+   17 | 41998231 | Espace Jeunes Anne Frank | Issy-les-Moulineaux | ex. : Stages scolaires collège
+   17 | 15322174 | Estey | Villenave-d'Ornon | ex. : Des corps & des quartiers #1
+STREET ART
+STREET FOOD
+   16 | 5897476 | Fraternités de Jérusalem | La Ferté-Imbault | ex. : Recollection des Fraternités Évangéliques de Jérusalem - 17/
+   16 | 68263389 | Fraternités de Jérusalem - All events | La Ferté-Imbault | ex. : Recollection des Fraternités Évangéliques de Jérusalem - 17/
+   16 | 35241188 | FMJ (copie_gabaritHTML) | La Ferté-Imbault | ex. : Recollection des Fraternités Évangéliques de Jérusalem - 17/
+   16 | 961617 | Var Tourisme | Toulon | ex. : Prendre la mer pour regarder la terre, 12 ans d'aventure de 
+   16 | 20261407 | Agenda du réseau des conservatoires d'Est Ensemble | Pantin | ex. : Mois de la petite enfance |  Murmures
+   16 | 52892578 | Agenda Conservatoire de Romainville | Pantin | ex. : Mois de la petite enfance |  Murmures
+   16 | 12003263 | Musée Saint-Raymond | Toulouse | ex. : Super-héros !
+   16 | 24629423 | Théâtre de Saint-Quentin-en-Yvelines, Scène nation | Montigny-le-Bretonneux | ex. : L'Art d'avoir toujours raison - Sébastien Valignat, Logan de
+   16 | 43556460 | Fédération française des Maisons de l’Europe |  | ex. : Tu souhaites partir à l'étranger ?
+   16 | 62611475 | Adie NA - 64 | Anglet | ex. : Atelier pour devenir entrepreneur
+   16 | 70401926 | Théâtre Monsigny | Boulogne-sur-Mer | ex. : TÜRK SANAT MÜZIGI - La Filature / Julien Lahaye
+   16 | 4689986 | Éclats du rire : expo & événements au Tripostal | Lille | ex. : Stand-up #1 • Le Loko Comedy Club
+   16 | 30777520 | Agenda Conservatoire de Danse et de Musique E. Sat | Pantin | ex. : Mois de la petite enfance |  Murmures
+   16 | 20245077 | Agenda Conservatoire de Noisy-le-Sec | Pantin | ex. : Mois de la petite enfance |  Murmures
+   16 | 58643913 | MJC Pacé | Pacé | ex. : Bricolo
+   16 | 81008507 | Agenda Conservatoire Gabriel Fauré des Lilas | Pantin | ex. : Mois de la petite enfance |  Murmures
+   16 | 57911056 | Agenda de la Ville de Castanet-Tolosan | Castanet-Tolosan | ex. : Exposition MP et MUKO
+   16 | 56239902 | Agenda Cosmopolis | Nantes | ex. : Tibet, encore et toujours
+   15 | 61790091 | Mois de la Bio en Grand Est | Grigy | ex. : Conférence LogiPRé à Agrimax – Un nouvel outil numérique pou
+   15 | 7454155 | Foxoo | Saint-Pryvé-Saint-Mesmin | ex. : Regards en dialogue, expo des Peintur’Elles
+   15 | 82890346 | L'Agenda régional de l'architecture en Pays de la  | Nantes | ex. : Exposition ICEBERG- Réhabilitation
+   15 | 9026453 | Cie Beluette | Mer | ex. : Trois petits pas
+   15 | 92106221 | # Mon Petit Ponant | Brest | ex. : NAZA dommage collatéral ?
+   15 | 49131320 | MJC Saint-Chamond | Saint-Chamond | ex. : Profil de face
+   15 | 17991852 | Commune de Saint-Aignan de Grand Lieu | Saint-Aignan de Grand Lieu | ex. : Midi mercredi : atelier fabrication de tampons
+   15 | 92876436 | THÉÂTRES EN DRACÉNIE | Draguignan | ex. : ABD AL MALIK
+   15 | 16637096 | Musée départemental de la Résistance & de la Dépor | Toulouse | ex. : Les Femmes du bloc 10
+   15 | 69850951 | Conservatoire à Rayonnement Régional de Lille | Lille | ex. : Chambre à Part
+   15 | 2717690 | Théâtre Fémina | Bordeaux | ex. : Lynda Lemay et Jean-Félix Lalanne
+   15 | 14558012 | Bretagne | Rennes | ex. : Portes ouvertes du LA
+   15 | 73698347 | KOAFER | Bordeaux | ex. : Accompagnement à l'emploi
+   15 | 88985048 | Sport Grand Châtellerault | Lencloître | ex. : Cherche et trouve les petits monstres
+   15 | 33717866 | Agenda de la ville de Goussainville | Goussainville | ex. : Spectacle de contes: Biviou raconte
+   15 | 94991195 | Ville du Chesnay-Rocquencourt | Le Chesnay-Rocquencourt | ex. : L'expérience théâtrale
+   15 | 42043575 | Floirac Médiathèque | Floirac | ex. : Atelier // Trucs et Bidouilles
+   15 | 81942013 | Agenda de l'Europe en Île-de-France | Saint-Ouen-sur-Seine | ex. : Webinaire de présentation de l'appel à projets FEDER Géother
+   14 | 53762205 | The Place TO be | Toulouse | ex. : Où fêter Halloween 2026 à Toulouse ? Et quoi faire pendant l
+   14 | 10918000 | Ville de Saint-Herblain | Saint-Herblain | ex. : Débat Place publique : Médias et extrême droite : le commerc
+   14 | 69270915 | HK près de chez vous | Châlette-sur-Loing | ex. : 23 octobre 2026 - Concert solidaire et fraternel avec HK à C
+   14 | 65612931 | Sud Alsace Museums | Mulhouse | ex. : KunstKino -  sélection de films en écho à l'exposition "Pers
+   14 | 50713243 | Musée des Beaux-Arts - Limoges | Limoges | ex. : Médiations vacances d’automne
+   14 | 76752149 | Cité éducative de Limoges-Beaubreuil | Limoges | ex. : Café conversation
+   14 | 2521325 | Le Train Théâtre - Saison 2026/2027 | Portes-lès-Valence | ex. : Secrets de Beatmaker
+   14 | 26055533 | Service orientation insertion entrepreneuriat - Un | Rennes | ex. : Semaine Pro'Fil / L'insertion pro des masters
+   14 | 1286145 | Théâtre 100 Noms | NANTES | ex. : IMPRO 100 NOMS BY LA POULE - CHICKEN RING
+   14 | 29692358 | Bretagne en Scène | Bruz | ex. : Alela Diane
+   14 | 76527314 | Tournefeuille | Tournefeuille | ex. : Atelier "Cuisine anti-gaspi” - Mercredi 14 octobre
+   14 | 3226707 | Le Zéphyr | Hem | ex. : L'Expérience Théâtrale
+   14 | 92686870 | Darwin Éco-système · Bordeaux, rive droite. | Bordeaux | ex. : Maladie de la jeunesse Aux Chantiers de la Garonne
+   14 | 97334958 | Rennes Quartiers Sud-Est | Rennes | ex. : La Ludo prend l'air fête Halloween
+   14 | 99877993 | IEO Òlt | Lalbenque | ex. : Bal Traditionnel ANNULE
+   13 | 5950634 | Laissez-vous conter Formations | Méras | ex. : Atelier nomade : perfectionnement à l'art du conte
+   13 | 130105 | La Compagnie de la Hulotte | Vence | ex. : Fête du Haut et Moyen Pays de Vence. Isabelle Pozzi
+   13 | 77951488 | Tradlor | Sarrebourg | ex. : Les Baladins du Folk + Duo Milo
+   13 | 69576706 | OSERen - Observatoire des sciences de l'environnem | Rennes | ex. : [Mardi de l'Espace des sciences] La liberté de savoir est-el
+   13 | 95499645 | Calendrier DREV | Gif-sur-Yvette | ex. : Table ronde métiers : Biotechnologies et Santé (2A)
+   13 | 9300087 | Musée de la faïence et de la céramique | Malicorne-sur-Sarthe | ex. : Initiation au tournage
+   13 | 18322200 | Saint-Quentin-sur-Indrois | Saint-Quentin-sur-Indrois | ex. : Ecole Saint-Jean 2026/2027, formation chrétienne pour adulte
+   13 | 41595456 | Saint-Pierre-en-Auge | Saint-Pierre-en-Auge | ex. : Bébé gribouille
+   13 | 2950892 | VilleNova | Rennes | ex. : soutenances de Master 2 STPE
+   13 | 3714696 | Agenda du Centre Social et Culturel Soleil Levant  | Manduel | ex. : Atelier Origami El día de los muertos
+   13 | 6006589 | Opéra Orchestre Normandie Rouen | Rouen | ex. : Katia et Marielle Labèque
+   13 | 17948752 | Jardinons ! | Rouen | ex. : Jardinons ! Cuisiner les courges
+   13 | 46533700 | CMI Rennes | Rennes | ex. : Exposition photo : ma mobilité internationale
+   13 | 48756049 | Théâtre les Salins (Martigues) | Martigues | ex. : La chute des anges
+   13 | 80642274 | Ville de Loos | Loos | ex. : Hip Hop Games - Exhibition - Art Track
+   13 | 77639002 | La Soufflerie | Rezé | ex. : Christine Salem + Etran de l'Aïr
+   13 | 85044452 | La Salle des Fêtes Bordeaux Grand Parc | Bordeaux | ex. : Projet Grand Parc 2050 : Décrocher les étoiles et pas l’écol
+   13 | 48488742 | Les Belles Sorties | Erquinghem-le-Sec | ex. : Les Belles Sorties - Les Deux Pêcheurs
+   13 | 85936066 | Ville de Pantin | Pantin | ex. : Mois de la petite enfance |  Murmures
+   13 | 49559515 | Fenouillet | Fenouillet | ex. : Atelier d’écriture ados - Mercredi 14 octobre
+   13 | 65710613 | Montrabé | Montrabé | ex. : Rencontre citoyenne autour du verre de l’amitié pour fêter l
+   12 | 5702376 | ESCP Europe Digital et Business | Paris | ex. : The Future of Automotive
+   12 | 16089593 | G9+ | Paris | ex. : The Future of Automotive
+   12 | 65335984 | La Mission French Tech | Grenoble | ex. : Hexagone Tour à Grenoble
+   12 | 72493931 | Laissez-vous conter | Cénac | ex. : Spectacle Hiberner c'est un métier
+   12 | 984671 | Ponts Alumni Digital & Technologies | Paris | ex. : The Future of Automotive
+   12 | 306233 | EMLYON Alumni Club TIC | Paris | ex. : The Future of Automotive
+   12 | 3436068 | ESSEC Alumni - Club Digital & Technology | Paris | ex. : The Future of Automotive
+   12 | 3859406 | Epita Alumni | Paris | ex. : The Future of Automotive
+   12 | 3239427 | Télécom Paris Alumni | Paris | ex. : The Future of Automotive
+   12 | 4520130 | European Champions Alliance | Paris | ex. : The Future of Automotive
+   12 | 4548266 | IMT Atlantique Alumni | Paris | ex. : The Future of Automotive
+   12 | 68587339 | POLE-SUD, CDCN Strasbourg | Strasbourg | ex. : Ali Chahrour - When I Saw the Sea
+   12 | 78684846 | VieMaVille | Digne-les-Bains | ex. : Atelier Surgissements Fantastiques
+   12 | 52308330 | CIRDOC - Institut Occitan de Cultura | Béziers | ex. : CineÒc - De Flòra e d'aiga
+   12 | 95332202 | Lockdown Webinars Calendar | Grenoble | ex. : Hexagone Tour à Grenoble
+   12 | 6337273 | AIN7 Numérique | Paris | ex. : The Future of Automotive
+   12 | 5513731 | MSIT - Management stratégique information et techn | Paris | ex. : The Future of Automotive
+   12 | 6394421 | Centraliens méditerranée | Paris | ex. : The Future of Automotive
+   12 | 62690234 | Mines digital (Intermines) | Paris | ex. : The Future of Automotive
+   12 | 76001072 | G9 plus | Paris | ex. : The Future of Automotive
+   12 | 96770891 | HEC Alumni - HUB Digital | Paris | ex. : The Future of Automotive
+   12 | 72884031 | Agenda Culture et Patrimoine de la Région des Pays | Saint-Laurent-sur-Sèvre | ex. : Visages du patrimoine du Moyen Âge à nos jours - exposition 
+   12 | 13306533 | VALLONSCENES | Saint-Laurent-sur-Sèvre | ex. : Visages du patrimoine du Moyen Âge à nos jours - exposition 
+   12 | 18027291 | Association des Planétariums de Langue Française | Alès | ex. : Lucia, le secret des étoiles filantes
+   12 | 6252231 | IAE Paris-Sorbonne Business School Alumni - CLUB S | Paris | ex. : The Future of Automotive
+   12 | 8094858 | CentraleSupélec Numérique | Paris | ex. : The Future of Automotive
+   12 | 95461652 | Ti ar Vro - Bro Gwened | Vannes | ex. : Manger ensemble à Ti ar Vro
+   12 | 96521228 | Scènes 2 Guyancourt la Batterie – Ferme de Bel Eba | Guyancourt | ex. : CONTEZ SUR NOUS
+   12 | 89873185 | Atout Loisirs | Carvin | ex. : Soutenir l'immunité de votre enfant et affronter l'hiver
+   12 | 86572278 | Ville de Louviers | Louviers | ex. : After-Works – Apéro Jazz
+   12 | 73739254 | Martigues la sportive | Martigues | ex. : VOLLEY BALL. MVB / HARNES VOLLEYBALL
+   12 | 34742307 | Agenda: Sortir à Chantepie | Chantepie | ex. : Stages danses orientales
+   12 | 30432609 | Cergy-Pontoise, l'agenda éco | Cergy | ex. : La journée des indépendants de Cergy-Pontoise : S’adapter et
+   12 | 19943336 | Rennes La Bellangerais | Rennes | ex. : ÉCRIRE ET DIRE : Héloïse Brézillon
+   12 | 52138616 | Rennes Quartiers Nord-Est | Rennes | ex. : ÉCRIRE ET DIRE : Héloïse Brézillon
+   11 | 5901469 | Agenda de Gaëtan Khélifa | Paris | ex. : CAPN Discipline
+   11 | 34998524 | Biologie à Toulouse | Toulouse | ex. : Understanding DNA Repair: Visualizing Tumour Suppressors in 
+   11 | 78167052 | Dijon Métropole | Dijon | ex. : Ghinzu
+   11 | 42109814 | Dijon Web Agenda | Dijon | ex. : Ghinzu
+   11 | 66867210 | La Vapeur | Dijon | ex. : Ghinzu
+   11 | 19009844 | Angers Nantes Opéra | Angers | ex. : Petite Balade aux Enfers
+   11 | 46568410 | Auvergne Velay Gévaudan | Brioude | ex. : Visite architecture de l'exposition Matisse
+   11 | 99486486 | En route pour le monde |  | ex. : Session d’info Erasmus + sur la nouvelle programmation
+   11 | 34376819 | Evènements emplois Hauts-de-France | Amiens | ex. : Apprentissage il est encore temps !
+   11 | 39206695 | L'agenda stéphanais | Saint-Étienne-du-Rouvray | ex. : Projection-débat : Silence on souffre
+   11 | 58381217 | Fédération TELENN / Ti ar Vro-l'Ôté de Saint-Brieu | Saint-Brieuc | ex. : Deomp da lenn
+   11 | 3722744 | Les 3 Scènes | Saint-Dizier | ex. : Fils de Flûte – De la musique recyclée
+   11 | 43881505 | fort Saint-André à Villeneuve-Lez-Avignon | Villeneuve-lès-Avignon | ex. : Monument Jeu d'Enfant
+   11 | 72271823 | Théâtre du Blanc-Mesnil | Le Blanc-Mesnil | ex. : Jamel Comedy Club
+   11 | 15224277 | Scènes de Pays | CHEMILLÉ-EN-ANJOU | ex. : LUX ou la petite fille qui avait peur du blanc
+   11 | 50781256 | Launaguet | Launaguet | ex. : Halloween Party – RCL
+   11 | 71519563 | Conservatoire Maurice André | Alès | ex. : CLUB MEHDI
+   11 | 77552471 | Conservatoire de Bordeaux - Jacques Thibaud | Bordeaux | ex. : Heure de l’orgue
+   11 | 16891719 | Programmation Théâtre de Poche Graslin | Nantes | ex. : C'est un beau roman
+   11 | 75919660 | La Maison/Nevers, Scène conventionnée Art en Terri | Nevers | ex. : La Salida
+   11 | 32940310 | Opéra de Massy | Massy | ex. : Tobrouk
+   11 | 56336696 | Naintré | Colombiers | ex. : Festival "Les potes en Ciel"
+   11 | 38911934 | Ville de Bruges | Bruges | ex. : Alter Ego Tour par Thibault Cauvin / Musique
+   11 | 41792566 | Associations Versailles | Versailles | ex. : Stages musique vacances de Toussaint
+   11 | 24073436 | Conservatoires de Grand Paris Seine Ouest - GPSO | Boulogne-Billancourt | ex. : Présentation de saison du CRR de Boulogne-Billancourt
+   10 | 86116194 | AIR DE MIDI,  Réseau art contemporain en Occitanie | Albi | ex. : Soirée de projection de films expérimentaux
+   10 | 85461817 | La French Tech Mayotte | Grenoble | ex. : Hexagone Tour à Grenoble
+   10 | 76685088 | Tournée des équipes Théâtre - Bourgogne-Franche-Co | Morteau | ex. : Stéréo Vulcani
+   10 | 4197104 | Saison 2026-2027 de l'Orchestre National des Pays  | Nantes | ex. : Les aventures du Prince Ahmed
+   10 | 65313232 | Chambres d'agriculture du Grand-Est | Nubécourt | ex. : Demi-Journée technique : Le chanvre, pourquoi pas chez vous 
