@@ -42,7 +42,12 @@ function classify(ev) {
     return ["musique", "Musique"];
   }
   if (seg === "sports") return ["sport", "Sport"];
-  return null; // théâtre, danse classique, etc. : pas pour l'instant
+  if (seg === "arts & theatre") {
+    const g = genre + " " + sub;
+    if (/fine art|museum|exhibit|cultural|visual/.test(g)) return null; // expositions : déjà couvertes ailleurs
+    return ["spectacle", "Spectacles", /comedy|humou?r|stand.?up|one.?man/.test(g) ? "humour" : /theat|play|drama|musical/.test(g) ? "theatre" : /dance|ballet/.test(g) ? "danse" : /circus|magic|illusion|specialty|variety/.test(g) ? "cirque" : /opera/.test(g) ? "opera" : /child|family|kid/.test(g) ? "enfants" : ""];
+  }
+  return null; // le reste n'est pas repris
 }
 function bestImage(ev) {
   const imgs = (ev.images || []).filter((i) => i.url && !i.fallback);
@@ -84,7 +89,7 @@ async function getJson(url) {
       const q = new URLSearchParams({
         apikey: KEY, latlong: c.lat + "," + c.lng, radius: String(RADIUS_KM), unit: "km", countryCode: "FR",
         startDateTime: isoZ(now), endDateTime: isoZ(end), size: "200", page: String(page), sort: "date,asc", locale: "*",
-        classificationName: "music,sports",
+        classificationName: "music,sports,arts & theatre",
       });
       calls++;
       const r = await getJson(BASE + "?" + q.toString());
@@ -127,6 +132,7 @@ async function getJson(url) {
       place, lat, lng, price: priceOf(ev), thumb: "", source: "ticketmaster", createdAt: prev[id] || Date.now(),
       description: String(ev.info || ev.pleaseNote || "").replace(/\s+/g, " ").slice(0, 300) || ("Billetterie : " + (ven.name || "Ticketmaster")),
     };
+    if (cat[2]) o.kind = cat[2];
     if (ev.url) o.link = ev.url;
     const img = bestImage(ev); if (img) { o.photo = img; o.photoCredit = "Ticketmaster"; }
     out.push(o); stats.ok++;

@@ -44,9 +44,18 @@
     concert: /concert|\blive\b|showcase|\btour\b|acoustic|\bjazz\b|\brock\b|\brap\b|hip.?hop|release party/i,
     bar: /\bbar\b|ap[ée]ro|afterwork|pub\b|karaok|quiz|happy hour|guinguette|cocktail/i
   };
-  function soireeOnly() { var c = state.selectedCategories; return c && c.size === 1 && c.has("Soirée"); }
+  var SKINDS = {
+    humour: /humou?r|one.?man|one.?woman|stand.?up|comedy|humoriste|sketch|\bdr[oô]le|imitat|seul en sc[eè]ne/i,
+    theatre: /th[eé][aâ]tre|pi[eè]ce|com[eé]die|moli[eè]re|trag[eé]die|vaudeville|dramatique/i,
+    danse: /danse|ballet|chor[eé]graph|flamenco|hip.?hop/i,
+    cirque: /cirque|magie|magicien|acrobat|marionnette|cabaret|illusion/i,
+    enfants: /enfant|jeune public|famille|petits|\bconte|des \d+ ans|b[eé]b[eé]/i
+  };
+  function mode() { var c = state.selectedCategories; if (!(c && c.size === 1)) return null; return c.has("Soirée") ? "Soirée" : c.has("Spectacles") ? "Spectacles" : null; }
+  function soireeOnly() { return mode() === "Soirée"; }
   function passF(ev) {
-    if (!soireeOnly() || ev.isPlace) return true;
+    var md = mode();
+    if (!md || ev.isPlace) return true;
     var now = new Date(), t = now.toISOString().slice(0, 10), tm = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
     if (F.when === "tonight" && ev.date !== t) return false;
     if (F.when === "tomorrow" && ev.date !== tm) return false;
@@ -54,7 +63,9 @@
       var wd = new Date(ev.date + "T12:00:00").getDay(), lim = new Date(now.getTime() + 7 * 86400000).toISOString().slice(0, 10);
       if (!(ev.date >= t && ev.date <= lim && (wd === 5 || wd === 6 || wd === 0))) return false;
     }
-    if (F.kind && !KINDS[F.kind].test((ev.title || "") + " " + (ev.place || ""))) return false;
+    var txt = (ev.title || "") + " " + (ev.place || "");
+    if (md === "Soirée" && F.kind && KINDS[F.kind] && !KINDS[F.kind].test(txt)) return false;
+    if (md === "Spectacles" && F.kind && SKINDS[F.kind] && !(ev.kind === F.kind || SKINDS[F.kind].test(txt))) return false;
     if (F.free && typeof eventPriceType === "function" && eventPriceType(ev) !== "free") return false;
     return true;
   }
@@ -98,13 +109,16 @@
 
   function addBar() {
     var old = document.getElementById("wz-filters"); if (old) old.remove();
-    if (!soireeOnly()) return;
+    var md = mode();
+    if (!md) return;
     var fe = document.getElementById("event-list-featured"), li = document.getElementById("event-list");
     var anchor = (fe && li) ? ((fe.compareDocumentPosition(li) & 4) ? fe : li) : (fe || li);
     if (!anchor) return;
     var rows = [
       { key: "when", opts: [["tonight", "Ce soir"], ["tomorrow", "Demain"], ["weekend", "Ce week-end"]] },
-      { key: "kind", opts: [["club", "Clubs & DJ"], ["bar", "Bars & afters"]] },
+      { key: "kind", opts: md === "Spectacles"
+        ? [["humour", "😂 Humour"], ["theatre", "Théâtre"], ["danse", "Danse"], ["cirque", "Cirque & magie"], ["enfants", "En famille"]]
+        : [["club", "Clubs & DJ"], ["bar", "Bars & afters"]] },
       { key: "free", opts: [[true, "Gratuit"]] }
     ];
     var box = document.createElement("div"); box.id = "wz-filters";
