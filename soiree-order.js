@@ -94,6 +94,13 @@
     "background:linear-gradient(135deg,#F2864B,#E85D3D);width:fit-content;box-shadow:0 2px 8px rgba(0,0,0,.25)}";
   document.head.appendChild(st);
 
+  function relabel() {
+    document.querySelectorAll(".cat-chip-label,.quick-cat-label,.chip-btn,.cat-chip,[data-cat] span").forEach(function (n) {
+      if (n.children.length === 0 && n.textContent.trim() === "Culture") n.textContent = "Soirées";
+    });
+  }
+  try { new MutationObserver(relabel).observe(document.body, { childList: true, subtree: true }); relabel(); } catch (e) {}
+
   function boot() {
     install();
     var list = document.getElementById("event-list");
