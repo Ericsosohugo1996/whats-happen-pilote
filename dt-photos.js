@@ -38,9 +38,10 @@ function findRights(rep) {
   })(rep, "");
   return holder.replace(/\s+/g, " ").trim().slice(0, 60);
 }
+// notre identifiant vient de la fin de l'adresse (« uri ») de l'événement, pas du champ « uuid »
 function uuidOf(o) {
-  const id = o.uuid || o["@id"] || o.id || "";
-  return String(id).split("/").pop();
+  const id = o.uri || o["@id"] || "";
+  return String(id).split("/").pop().replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 60);
 }
 
 async function api(url) {
@@ -62,14 +63,16 @@ async function main() {
     for (const ev of d) if (ev.source === "datatourisme" && String(ev.id).startsWith("dt-") && (ev.photoGeneric || !ev.photo)) need.add(String(ev.id).slice(3));
   }
   console.log("événements DATAtourisme à illustrer :", need.size);
-  let url = cache._next || (BASE + "/v1/entertainmentAndEvent?page_size=100&lang=fr");
+  if (cache._v === 1 && cache._fix !== 2) { for (const k of Object.keys(cache)) if (!k.startsWith("_")) delete cache[k]; cache._next = ""; cache._fix = 2; }
+  let url = cache._next || (BASE + "/v1/entertainmentAndEvent?page_size=100&lang=fr&fields=uri,hasMainRepresentation,hasBeenCreatedBy,lastUpdate");
   let req = 0, seen = 0, found = 0, pages = 0, fails = 0;
   while (url && req < MAX_REQ && !TIME_UP()) {
     let j;
     try { j = await api(url); } catch (e) { console.log("échec :", e.message); req++; if (++fails > 5) break; await sleep(3000); continue; }
     req++; pages++;
     const objs = j.objects || j.results || [];
-    if (!cache._sample && objs[0]) cache._sample = JSON.stringify(objs[0]).slice(0, 6000); // pour que je puisse vérifier la forme des données
+    const withImg = objs.find((x) => x.hasMainRepresentation && JSON.stringify(x.hasMainRepresentation).length > 5);
+    if (!cache._sample && withImg) cache._sample = JSON.stringify(withImg).slice(0, 4000); // pour que je puisse vérifier la forme des données
     for (const o of objs) {
       seen++;
       const u = uuidOf(o); if (!u || !need.has(u) || u in cache) continue;
