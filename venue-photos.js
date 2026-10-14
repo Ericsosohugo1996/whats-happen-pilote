@@ -113,6 +113,38 @@ async function commonsLookup(name, lat, lng, cityName) {
   return best ? best.r : null;
 }
 
+
+// ---- passe 3 : Wikidata (élément du lieu avec une photo P18 sur Commons, à moins de 200 m, nom identique) ----
+const WDQS = process.env.WDQS_API || "https://query.wikidata.org/sparql";
+async function wikidataLookup(name, lat, lng, cityName) {
+  const cn = fold(cityName || "").split(/[^a-z0-9]+/).filter(Boolean);
+  const sig = fold(name).split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOP.has(w) && !GENERIC.has(w) && cn.indexOf(w) === -1);
+  const strong = sig.filter((w) => !WEAK.has(w));
+  if (!sig.length || !strong.length) return null;
+  const q = 'SELECT ?itemLabel ?img WHERE { SERVICE wikibase:around { ?item wdt:P625 ?loc . bd:serviceParam wikibase:center "Point(' + lng + " " + lat + ')"^^geo:wktLiteral . bd:serviceParam wikibase:radius "0.2" } ?item wdt:P18 ?img . SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en" } } LIMIT 15';
+  const r = await fetch(WDQS + "?format=json&query=" + encodeURIComponent(q), { headers: { "User-Agent": UA, "Accept": "application/sparql-results+json" } });
+  if (r.status === 429) { await new Promise((x) => setTimeout(x, 30000)); throw new Error("trop de demandes"); }
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  const j = await r.json();
+  for (const b of (j.results && j.results.bindings) || []) {
+    const label = fold(b.itemLabel && b.itemLabel.value);
+    if (!label || BAD_TITLE2.test(label) || !sig.every((w) => label.includes(w))) continue;
+    const file = decodeURIComponent(String(b.img.value).split("/").pop()).replace(/_/g, " ");
+    const u = COMMONS + "?action=query&format=json&titles=" + encodeURIComponent("File:" + file) + "&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1000";
+    const rr = await fetch(u, { headers: { "User-Agent": UA } }); if (!rr.ok) continue;
+    const jj = await rr.json(); const p = Object.values((jj.query && jj.query.pages) || {})[0];
+    const ii = p && p.imageinfo && p.imageinfo[0]; if (!ii) continue;
+    const t = fold(file);
+    if (BAD_FILE.test(t) || BAD_TITLE2.test(t) || !/image\/jpeg/.test(ii.mime || "")) continue;
+    if ((ii.width || 0) < 800 || (ii.width || 0) < (ii.height || 0) * 0.9) continue;
+    const lic = ii.extmetadata && ii.extmetadata.LicenseShortName && ii.extmetadata.LicenseShortName.value;
+    if (!lic || !LIC_OK.test(lic)) continue;
+    const artist = ((ii.extmetadata.Artist && ii.extmetadata.Artist.value) || "").replace(/<[^>]*>/g, "").trim().slice(0, 40);
+    return { u: ii.thumburl || ii.url, t: file, c: "Photo du lieu · " + (artist ? artist + ", " : "") + lic + " · Wikimedia Commons", s: "wikidata" };
+  }
+  return null;
+}
+
 async function main() {
   let cache = {};
   try { cache = JSON.parse(fs.readFileSync("venue-photos.json", "utf8")); } catch (e) {}
@@ -151,7 +183,7 @@ async function main() {
   // ---- passe 2 : Wikimedia Commons pour les lieux sans photo ----
   if (cache._cv !== 4) { // règle plus stricte : on efface les anciennes photos Commons et on recommence
     let purged = 0;
-    for (const k of Object.keys(cache)) { if (k !== "_v" && k !== "_c" && k !== "_cv" && cache[k] && cache[k].s === "commons") { cache[k] = null; purged++; } }
+    for (const k of Object.keys(cache)) { if (k !== "_v" && k !== "_c" && k !== "_w" && k !== "_cv" && cache[k] && cache[k].s === "commons") { cache[k] = null; purged++; } }
     cache._c = {}; cache._cv = 4; console.log("anciennes photos Commons effacées :", purged);
   }
   cache._c = cache._c || {};
@@ -171,11 +203,29 @@ async function main() {
     if (tried2 % 100 === 0) console.log("… Commons", tried2, "cherchés,", found2, "trouvés");
   }
   console.log("passe 2 terminée :", tried2, "cherchés,", found2, "photos trouvées");
-  const total = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && k !== "_cv" && v).length;
+
+  // ---- passe 3 : Wikidata ----
+  cache._w = cache._w || {};
+  const todo3 = Object.entries(all).filter(([k, v]) => v.lat != null && !cache[k] && !(k in cache._w)).sort((a, b) => b[1].n - a[1].n).slice(0, MAX_NEW);
+  console.log("passe 3 (Wikidata) :", todo3.length, "lieux");
+  let found3 = 0, tried3 = 0;
+  for (const [k, v] of todo3) {
+    if (TIME_UP()) { console.log("temps presque écoulé : on enregistre et on s'arrête (relance pour continuer)"); break; }
+    tried3++;
+    try {
+      const r = await wikidataLookup(v.name, v.lat, v.lng, names[v.city] || v.city);
+      cache._w[k] = r ? 1 : 0;
+      if (r) { cache[k] = r; found3++; }
+    } catch (e) { console.log("échec Wikidata", v.name, e.message); await new Promise((r) => setTimeout(r, 2000)); }
+    await new Promise((r) => setTimeout(r, 1200));
+    if (tried3 % 100 === 0) console.log("… Wikidata", tried3, "cherchés,", found3, "trouvés");
+  }
+  console.log("passe 3 terminée :", tried3, "cherchés,", found3, "photos trouvées");
+  const total = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && k !== "_w" && k !== "_cv" && v).length;
   console.log("terminé :", tried, "lieux cherchés,", found, "photos trouvées, total en mémoire :", total);
-  const ex = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && k !== "_cv" && v).slice(-12).map(([k, v]) => k + " → " + v.t);
+  const ex = Object.entries(cache).filter(([k, v]) => k !== "_v" && k !== "_c" && k !== "_w" && k !== "_cv" && v).slice(-12).map(([k, v]) => k + " → " + v.t);
   console.log("exemples :\n" + ex.join("\n"));
   fs.writeFileSync("venue-photos.json", JSON.stringify(cache));
 }
-module.exports = { venueKey, venueName };
+module.exports = { venueKey, venueName, wikidataLookup };
 if (require.main === module) main().catch((e) => { console.error(e); process.exit(1); });
