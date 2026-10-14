@@ -184,7 +184,7 @@ for (const { kind, file } of SOURCES) {
       for (const ev of items) {
         if (ev.source !== "datatourisme" || (ev.photo && !ev.photoGeneric && !ev.photoVenue && !ev.photoArtist)) continue;
         const r = dp[String(ev.id).replace(/^dt-/, "")]; if (!r || !r.u) continue;
-        ev.photo = r.u; ev.photoCredit = "Photo : " + (r.a || r.s || "office de tourisme") + " · DATAtourisme" + (r.s && r.a ? " (" + r.s + ")" : "") + (r.d ? ", mis à jour le " + r.d.split("-").reverse().join("/") : ""); ev.photoDt = true; delete ev.photoGeneric; delete ev.photoVenue; delete ev.photoArtist; n++;
+        ev.photo = r.u; ev.photoCredit = "Photo : " + (r.s || "office de tourisme") + " · DATAtourisme" + (r.d ? ", mis à jour le " + r.d.split("-").reverse().join("/") : ""); ev.photoDt = true; delete ev.photoGeneric; delete ev.photoVenue; delete ev.photoArtist; n++;
       }
       console.log("événements : photo officielle DATAtourisme :", n);
     } catch (e) { /* pas encore de dt-photos.json */ }
