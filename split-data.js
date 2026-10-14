@@ -177,6 +177,17 @@ for (const { kind, file } of SOURCES) {
       }
       console.log("événements : photo de l'artiste (Wikipédia) :", a);
     } catch (e) { /* pas encore d'artist-photos.json */ }
+    // photo officielle DATAtourisme (robot « Photos DATAtourisme », API officielle, Licence Ouverte) : on crédite l'auteur et la source
+    try {
+      const dp = JSON.parse(fs.readFileSync("dt-photos.json", "utf8"));
+      let n = 0;
+      for (const ev of items) {
+        if (ev.source !== "datatourisme" || (ev.photo && !ev.photoGeneric && !ev.photoVenue && !ev.photoArtist)) continue;
+        const r = dp[String(ev.id).replace(/^dt-/, "")]; if (!r || !r.u) continue;
+        ev.photo = r.u; ev.photoCredit = "Photo : " + (r.a || r.s || "office de tourisme") + " · DATAtourisme" + (r.s && r.a ? " (" + r.s + ")" : "") + (r.d ? ", mis à jour le " + r.d.split("-").reverse().join("/") : ""); ev.photoDt = true; delete ev.photoGeneric; delete ev.photoVenue; delete ev.photoArtist; n++;
+      }
+      console.log("événements : photo officielle DATAtourisme :", n);
+    } catch (e) { /* pas encore de dt-photos.json */ }
     // image de partage de la page de l'organisateur (robot « Photos des organisateurs ») : affichée depuis son site, avec son nom
     try {
       const og = JSON.parse(fs.readFileSync("og-photos.json", "utf8"));
