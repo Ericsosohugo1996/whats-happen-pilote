@@ -30,10 +30,14 @@ const PARTY = /\bdj\b|dj set|\bclub|clubbing|soiree|\bnuit\b|night|\bbal\b|karao
 const NOT_OUTING = /job.?dating|recrutement|forum (de l.)?emploi|offres? de services?|atelier numbr|statuts? juridiques?|\bapec\b|pole emploi|france travail|mission locale|conseil municipal(?! des jeunes)|enquete publique/;
 const NOT_MUSIC = /photograph|exposition|\bexpo\b|vernissage|musee|galerie|biblioth|mediatheque|atelier|conference|rencontre|visite|cinema|cinematograph|langues|therapeut|modelage|illustr|imprimer|typograph|metiers|\bstage\b|projection/;
 const STRONG_MUSIC = /concert|orchestre|\bjazz\b|recital|\blive\b|\bmusic\b|musique|chorale|quatuor|\bopera\b|\bdj\b/;
+const OFFRE_LIEU = /(^|[-,] ?)agence\b|\bpcr\b|pole emploi|france travail|mission locale|cap emploi|\bmaison de l.emploi/;
+const OFFRE_TITRE = /candidat|embauche|\bposte?s?\b|\bh\/f\b|\b(f|h) ?\/ ?(h|f)\b|\balternance\b|\binsertion\b|\biae\b|\bbrsa\b|\bcv\b|clause|immersion professionnelle|recrut|entretiens? (individuels?|d.embauche)|adecco|randstad|manpower|\binterim|metiers? (de|du|des|d.)|job corner|vendredi des partenaires|emploi/;
 function reclassify(ev) {
   // Offres d'emploi et démarches administratives (job dating, offre de services APEC, permanences…) : pas des sorties.
   // Elles restent visibles (« Divers », « Tout voir ») mais ne polluent plus Sport, Marché, Famille…
   if (ev.source !== "shotgun" && ev.source !== "ticketmaster" && NOT_OUTING.test(fold(ev.title))) return "Divers";
+  // Agendas des agences emploi (OpenAgenda) : lieu « … - Agence … » ou titre d'offre d'emploi / de recrutement.
+  if (ev.source === "openagenda" && (OFFRE_LIEU.test(fold(ev.place)) || OFFRE_TITRE.test(fold(ev.title)))) return "Divers";
   if (ev.category === "Soirée" && ev.source !== "ticketmaster") {
     const t0 = fold(ev.title).replace(/release party/g, "release_party");
     if (CONCERT.test(fold(ev.title)) && !PARTY.test(t0.replace(/\blive\b/g, " "))) return "Musique";
