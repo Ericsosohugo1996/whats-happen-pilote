@@ -92,6 +92,8 @@
   function tip() {
     try {
       if (ls("wz-tip-photo") || document.body.classList.contains("wz-nocity")) return;
+      var vd = document.getElementById("view-detail"), am = document.getElementById("account-modal");
+      if ((vd && !vd.classList.contains("hidden")) || (am && !am.classList.contains("hidden"))) return;
       var cam = document.querySelector("#wz-nav .wz-cam");
       if (!cam || document.getElementById("wz-tip") || document.getElementById("wz-idea") || document.getElementById("arrival-screen-overlay")) return;
       var t = document.createElement("div"); t.id = "wz-tip"; t.setAttribute("role", "dialog");
@@ -99,7 +101,12 @@
       document.body.appendChild(t);
       function bye() { ls("wz-tip-photo", "1"); t.remove(); }
       t.querySelector("button").addEventListener("click", bye);
-      setTimeout(bye, 15000);
+      // elle ne reste pas devant les événements : 6 secondes, ou dès que la personne touche l'écran ailleurs / fait défiler
+      setTimeout(bye, 6000);
+      setTimeout(function () {
+        ["scroll", "touchmove"].forEach(function (ev) { window.addEventListener(ev, bye, { once: true, passive: true, capture: true }); });
+        document.addEventListener("pointerdown", function (e) { if (!t.contains(e.target)) bye(); }, { once: true, capture: true });
+      }, 800);
     } catch (e) {}
   }
 
