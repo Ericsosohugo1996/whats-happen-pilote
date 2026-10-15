@@ -8045,8 +8045,17 @@ function visibleEvents(){
       const aDate = !a.isPlace && a.date ? a.date : "9999-99-99";
       const bDate = !b.isPlace && b.date ? b.date : "9999-99-99";
       if (aDate !== bDate) return aDate < bDate ? -1 : 1;
+      // le même jour : d'abord les sorties avec une vraie photo, les illustrations à la fin
+      const aT = photoTier(a), bT = photoTier(b);
+      if (aT !== bT) return aT - bT;
       return a.distance - b.distance;
     });
+}
+function photoTier(ev){
+  if (!ev.photo) return 2;
+  if (ev.photoGeneric) return 2;
+  if (ev.photoVenue || ev.photoArtist || ev.photoOrganizer) return 1;
+  return 0;
 }
 // Affiche le rayon en mètres si < 1 km, sinon en km.
 function formatRadius(km){
