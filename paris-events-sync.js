@@ -57,7 +57,7 @@ function classify(r) {
   if (/brocante|vide[- ]grenier|puces/.test(t)) return ["marche", "Brocante"];
   if (/\bmarche\b/.test(t)) return ["marche", "Marché"];
   if (/sport|course|marathon|football|rugby|tennis|natation|basket|cyclis|yoga|fitness/.test(t)) return ["sport", "Sport"];
-  if (/concert|musique|jazz|opera|rock|rap|hip-hop|dj set|electro|chanson|orchestre|recital|symphoni/.test(t)) return ["musique", "Musique"];
+  if (/\b(concerts?|musiques?|jazz|opera|rock|rap|hip-hop|dj set|electro|chansons?|orchestre|recital|symphoni)/.test(t)) return ["musique", "Musique"];
   if (/exposition|expo\b|musee|galerie|photograph|vernissage|art contemporain/.test(t)) return ["expo", "Expo"];
   if (/soiree|nightlife|club|bar\b|afterwork|fete\b/.test(t)) return ["village", "Soirée"];
   return ["festival", "Festival"];

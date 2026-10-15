@@ -28,6 +28,8 @@ const NOT_SOIREE = /soiree (jeux|conference|debat|lecture|litteraire|information
 const CONCERT = /\bconcert|recital|showcase|acoustic|\bjazz\b|release party|\blive\b|\btour\b(?! eiffel)|quatuor|orchestre|\bopera\b/;
 const PARTY = /\bdj\b|dj set|\bclub|clubbing|soiree|\bnuit\b|night|\bbal\b|karaoke|\bafters?\b|\bbar\b|apero|afterwork|\bquiz|bingo|blind.?test|dancing|dansant|boum|raclette|fete des|grande fete|\bparty\b(?!.*release)|rave|techno|\bhouse\b|disco/;
 const NOT_OUTING = /job.?dating|recrutement|forum (de l.)?emploi|offres? de services?|atelier numbr|statuts? juridiques?|\bapec\b|pole emploi|france travail|mission locale|conseil municipal(?! des jeunes)|enquete publique/;
+const NOT_MUSIC = /photograph|exposition|\bexpo\b|vernissage|musee|galerie|biblioth|mediatheque|atelier|conference|rencontre|visite|cinema|cinematograph|langues|therapeut|modelage|illustr|imprimer|typograph|metiers|\bstage\b|projection/;
+const STRONG_MUSIC = /concert|orchestre|\bjazz\b|recital|\blive\b|\bmusic\b|musique|chorale|quatuor|\bopera\b|\bdj\b/;
 function reclassify(ev) {
   // Offres d'emploi et démarches administratives (job dating, offre de services APEC, permanences…) : pas des sorties.
   // Elles restent visibles (« Divers », « Tout voir ») mais ne polluent plus Sport, Marché, Famille…
@@ -35,6 +37,20 @@ function reclassify(ev) {
   if (ev.category === "Soirée" && ev.source !== "ticketmaster") {
     const t0 = fold(ev.title).replace(/release party/g, "release_party");
     if (CONCERT.test(fold(ev.title)) && !PARTY.test(t0.replace(/\blive\b/g, " "))) return "Musique";
+    return ev.category;
+  }
+  // Ville de Paris : le tri automatique prenait « photographie » pour de la musique (le mot contient « rap »).
+  // Une expo, une visite, un atelier… rangés en « Musique » sont remis dans leur vraie catégorie.
+  if (ev.category === "Musique" && ev.source === "paris-opendata") {
+    const t = fold(ev.title);
+    if (NOT_MUSIC.test(t) && !STRONG_MUSIC.test(t)) {
+      for (const [cat, rx] of RULES.concat(RULES2)) {
+        if (cat === "Musique" || cat === "Soirée") continue;
+        if (rx.test(t)) return cat;
+      }
+      if (/photograph|illustr|imprimer|typograph|metiers|tahiti|palestine/.test(t)) return "Expo";
+      return "Divers";
+    }
     return ev.category;
   }
   if (ev.category !== "Festival") return ev.category;
