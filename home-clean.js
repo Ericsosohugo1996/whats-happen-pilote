@@ -26,7 +26,10 @@
     "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav{background:rgba(14,23,48,.97) !important}",
     "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item .nav-label{color:#c3c8d6 !important}",
     "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav #nav-idea .nav-label{color:#F2C879 !important}",
-    "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item.wz-cam .nav-label{color:#F2C879 !important}"
+    "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item.wz-cam .nav-label{color:#F2C879 !important}",
+    "html body.wz-v2:has(#view-detail:not(.hidden)) #unified-explore-btn{display:none !important}",
+    "html body.wz-v2 #view-detail .detail-hero{height:200px !important}",
+    "html body.wz-v2 #view-detail .detail-body h1{font-size:26px !important;margin:8px 0 12px !important}"
   ].join("\n");
 
   function hideChangeCity() {
