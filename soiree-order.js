@@ -50,6 +50,19 @@
     return isNaN(h) ? 9999 : h * 60 + (isNaN(m) ? 0 : m);
   }
 
+  // qualité de la photo : 0 = vraie photo (affiche, artiste, office de tourisme), 1 = photo du lieu, 2 = illustration ou rien
+  function photoTier(ev) {
+    if (!ev || ev.isPlace) return 0;
+    if (!ev.photo || ev.photoGeneric) return 2;
+    return ev.photoVenue ? 1 : 0;
+  }
+  // moment de la journée : 0 matin, 1 après-midi, 2 soirée, 3 marchés du matin et sans heure (toujours en dernier)
+  function dayBucket(ev) {
+    var k = dayKey(ev);
+    if (k >= 3000) return 3;
+    return k < 720 ? 0 : k < 1020 ? 1 : 2;
+  }
+
   var F = window.__wzF = { when: null, kind: null, free: false };
   var KINDS = {
     club: /\bclub\b|\bdj\b|party|\brave\b|techno|\bhouse\b|electro|clubbing|\bafters?\b|\bnuit\b|night|disco|boiler/i,
@@ -108,9 +121,14 @@
           if (aD !== bD) return aD < bD ? -1 : 1;
           if (nightMode) {
             if (rank(a) !== rank(b)) return rank(a) - rank(b);
+            var dt = photoTier(a) - photoTier(b); // à moment égal, les événements avec une vraie photo d'abord
+            if (dt) return dt;
             var d = nightKey(a.time) - nightKey(b.time);
             if (d) return d;
           } else {
+            if (dayBucket(a) !== dayBucket(b)) return dayBucket(a) - dayBucket(b);
+            var dt2 = photoTier(a) - photoTier(b);
+            if (dt2) return dt2;
             var d2 = dayKey(a) - dayKey(b);
             if (d2) return d2;
           }
