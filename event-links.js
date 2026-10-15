@@ -73,20 +73,18 @@
         hero.appendChild(c);
       }
       var link = safeUrl(ev.link);
+      var isTicket = !!ev.ticket || /(shotgun|ticketmaster|fnacspectacles|francebillet|billetweb|helloasso|weezevent|digitick|eventbrite|dice\.fm|seetickets|yurplan|billetreduc|reservation|billetterie|ticket)/i.test(link);
       var hasPhone = ev.phone && /^[+\d][\d\s().-]{5,}$/.test(ev.phone);
-      if (!desc || (!link && !hasPhone)) return;
+      return; // boutons billetterie / appeler retirés à la demande d'Eric (seul le crédit photo reste)
+      if (!desc || ((!link || !isTicket) && !hasPhone)) return;
       var box = el("div", { id: "wz-ev-links" }, "display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0 6px;");
-      if (link && ev.ticket) {
+      if (link && isTicket) {
         box.appendChild(el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: "🎟️ Réserver ma place" },
           "display:inline-block;background:linear-gradient(135deg,#F2C879,#E85D3D);color:#fff;font-weight:800;font-size:14.5px;padding:11px 16px;border-radius:12px;box-shadow:0 8px 18px -8px rgba(232,93,61,.6);text-decoration:none;"));
       }
       if (hasPhone) {
         box.appendChild(el("a", { href: "tel:" + ev.phone.replace(/[^\d+]/g, ""), textContent: "📞 Appeler" },
           "display:inline-block;border:1.5px solid #14213D;color:#14213D;font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:12px;text-decoration:none;"));
-      }
-      if (link && !ev.ticket) {
-        box.appendChild(el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: "🔗 Plus d’infos sur le site ↗" },
-          "display:inline-block;border:1.5px solid #E85D3D;color:#E85D3D;background:rgba(232,93,61,.08);font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:12px;text-decoration:none;"));
       }
       var card = document.querySelector("#view-detail .info-card");
       if (card && card.parentNode) card.parentNode.insertBefore(box, card.nextSibling);
