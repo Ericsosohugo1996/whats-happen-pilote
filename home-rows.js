@@ -83,7 +83,7 @@
     return "<b>" + esc(s) + "</b>" + (t ? " · " + esc(t) : "");
   }
   function cardHTML(ev) {
-    var place = String(ev.place || "").split(",")[0].trim();
+    var place = ""; String(ev.place || "").split(",").some(function (p) { p = p.trim(); if (/[A-Za-zÀ-ÿ]{3,}/.test(p) && !/^\d+\s*(bis|ter)?\s+(rue|avenue|av|bd|boulevard|place|chemin|route|impasse|allée)\b/i.test(p)) { place = p; return true; } return false; });
     if (/^(lieu|aujourd.?hui|lieu à définir)$/i.test(place)) place = "";
     return '<button type="button" class="wzr-c" data-id="' + esc(ev.id) + '">' +
       '<img class="wzr-i" loading="lazy" referrerpolicy="no-referrer" alt="" src="' + esc(ev.photo) + '">' +
@@ -132,6 +132,26 @@
         html += '<section class="wzr" data-row="' + def.id + '"><div class="wzr-h"><h2>' + esc(def.title) + '</h2><button type="button" class="wzr-all" aria-label="Tout voir : ' + esc(def.title) + '">›</button></div>' +
           '<div class="wzr-s">' + list.map(cardHTML).join("") + "</div></section>";
       });
+      // petites villes : peu de vraies photos, donc peu (ou pas) de rangées. On complète avec « Prochaines sorties » (toutes photos, illustrations comprises)
+      if (shown.length < 2) {
+        var base = [];
+        try { base = baseVisibleEvents(); } catch (e2) { base = []; }
+        var lim = ymd(addDays(now, 14));
+        function tier(e) { return real(e) ? 0 : (e.photoGeneric ? 3 : (e.photoVenue ? 2 : 1)); }
+        var cand = base.filter(function (e) { return e && e.date && e.date >= today && e.date <= lim && e.photo && e.title && !isPlace(e) && e.category !== "Divers" && !used[e.id]; });
+        cand.sort(function (x, y) { return tier(x) - tier(y) || (sortKey(x) < sortKey(y) ? -1 : 1); });
+        var seen2 = {}, pick2 = [];
+        cand.forEach(function (e) {
+          var k = String(e.title).toLowerCase().replace(/\s*\(\d+\)\s*$/, "").slice(0, 40);
+          if (seen2[k] || pick2.length >= MAX_CARDS) return;
+          seen2[k] = 1; pick2.push(e);
+        });
+        pick2.sort(function (x, y) { return sortKey(x) < sortKey(y) ? -1 : 1; });
+        if (pick2.length >= MIN_CARDS) {
+          html += '<section class="wzr" data-row="soon"><div class="wzr-h"><h2>Prochaines sorties</h2><button type="button" class="wzr-all" aria-label="Tout voir : Prochaines sorties">›</button></div>' +
+            '<div class="wzr-s">' + pick2.map(cardHTML).join("") + "</div></section>";
+        }
+      }
       if (!wrap) {
         if (!document.getElementById("wz-rows-css")) { var st = document.createElement("style"); st.id = "wz-rows-css"; st.textContent = CSS; document.head.appendChild(st); }
         wrap = document.createElement("div"); wrap.id = "wz-rows";
