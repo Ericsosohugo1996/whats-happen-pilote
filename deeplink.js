@@ -170,7 +170,9 @@
   "use strict";
   var NAMES = {
     "paris-opendata": { t: "Source : Ville de Paris, « Que faire à Paris ? » (données ouvertes, licence ODbL)", u: "https://opendata.paris.fr/explore/dataset/que-faire-a-paris-/" },
-    "datatourisme": { t: "Source : DATAtourisme (licence ouverte)", u: "https://www.datatourisme.fr/" }
+    "datatourisme": { t: "Source : DATAtourisme (licence ouverte)", u: "https://www.datatourisme.fr/" },
+    "openagenda": { t: "Source : OpenAgenda (agendas publics des collectivités et organisateurs)", u: "https://openagenda.com/" },
+    "ticketmaster": { t: "Source : Ticketmaster", u: "https://www.ticketmaster.fr/" }
   };
   function decorate(id) {
     try {
