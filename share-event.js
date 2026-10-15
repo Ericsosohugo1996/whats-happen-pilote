@@ -1,10 +1,16 @@
 // ---- partager un événement avec un ami ----
+function eventShareUrl(ev) {
+  try {
+    return "https://whazup.fr/?ev=" + encodeURIComponent(ev.id) + (ev.city ? "&v=" + encodeURIComponent(ev.city) : "");
+  } catch (e) { return "https://whazup.fr"; }
+}
+
 function buildShareText(ev) {
   const dateLabel = typeof formatDate === "function" ? formatDate(ev.date) : ev.date;
   let text = ev.title + "\n" + dateLabel;
   if (ev.time) text += " · " + ev.time;
   if (ev.place) text += "\n" + ev.place;
-  text += "\n\nDécouvert sur Whazup : https://whazup.fr";
+  text += "\n\nVoir la sortie sur Whazup : " + eventShareUrl(ev);
   return text;
 }
 
@@ -64,3 +70,57 @@ document.addEventListener("click", (e) => {
     setTimeout(__ensureShareButton, 50);
   }
 }, true);
+
+
+// ---- lien direct vers une sortie : https://whazup.fr/?ev=<id>&v=<ville> ouvre directement la fiche ----
+(function () {
+  "use strict";
+  var q, evId, vKey;
+  try { q = new URLSearchParams(location.search); evId = (q.get("ev") || "").trim(); vKey = (q.get("v") || "").trim(); } catch (e) { return; }
+  if (!evId) return;
+  var hide = document.createElement("style");
+  hide.id = "wz-evlink-hide";
+  hide.textContent = "#wz-intro,#splash-screen,#brand-intro-screen,#choice-screen,#wz-ob,#arrival-overlay{display:none!important}";
+  document.head.appendChild(hide);
+  try { localStorage.setItem("wz_onboarded_v1", "1"); } catch (e) {}
+  try {
+    var ob = new MutationObserver(function () { var e = document.getElementById("wz-ob"); if (e) e.remove(); });
+    ob.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(function () { ob.disconnect(); }, 12000);
+  } catch (e) {}
+  function unhide() { var h = document.getElementById("wz-evlink-hide"); if (h) h.remove(); }
+  var tries = 0;
+  function start() {
+    tries++;
+    var ok = false;
+    try { ok = typeof state !== "undefined" && typeof CITIES !== "undefined" && typeof allEvents === "function" && typeof openDetail === "function"; } catch (e) {}
+    if (!ok) { if (tries < 100) return setTimeout(start, 100); return unhide(); }
+    try { if (vKey && CITIES[vKey]) { state.city = vKey; state.userPos = null; } } catch (e) {}
+    try { __hasPickedCity = true; } catch (e) {}
+    try { hideBrandIntroScreen(); } catch (e) {}
+    ["wz-intro", "splash-screen", "wz-ob", "arrival-overlay"].forEach(function (id) { var e = document.getElementById(id); if (e) e.remove(); });
+    var cs = document.getElementById("choice-screen"); if (cs) cs.classList.add("hidden");
+    var ens = (typeof window.__wzEnsureData === "function") ? window.__wzEnsureData() : Promise.resolve();
+    var done = false;
+    function fire() {
+      if (done) return; done = true;
+      try { if (typeof renderDiscover === "function") renderDiscover(); } catch (e) {}
+      try {
+        var found = allEvents().some(function (e) { return e.id === evId; });
+        if (found) openDetail(evId);
+      } catch (e) {}
+      unhide();
+    }
+    Promise.resolve(ens).then(function () {
+      var n = 0;
+      (function wait() {
+        var has = false;
+        try { has = allEvents().some(function (e) { return e.id === evId; }); } catch (e) {}
+        if (has || n++ > 40) fire(); else setTimeout(wait, 150);
+      })();
+    }, fire);
+    setTimeout(fire, 8000);
+  }
+  if (document.readyState === "complete") setTimeout(start, 50);
+  else window.addEventListener("load", function () { setTimeout(start, 50); });
+})();
