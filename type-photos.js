@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const API = process.env.WIKI_API_COMMONS || "https://commons.wikimedia.org/w/api.php";
 const UA = "WhazupPhotoBot/1.0 (https://whazup.fr; photos d'illustration)";
-const PER_TYPE = 24;
+const PER_TYPE = 40;
 
 // requêtes de recherche par type (les premières sont les plus précises)
 const QUERIES = {
@@ -26,6 +26,8 @@ const QUERIES = {
   festival: ["music festival stage", "open air festival stage", "festival lights stage", "festival stage lights", "outdoor concert festival", "festival tents"],
   monument: ["monument france", "triumphal arch", "historic monument square"],
 };
+// photos de France d'abord : le titre, les catégories ou la description doivent parler de la France
+const FR = /france|fran[cç]ais|french|\(fr\d{2,3}\)|paris|lyon|marseille|bordeaux|toulouse|lille|nantes|strasbourg|nice\b|montpellier|rennes|grenoble|dijon|reims|rouen|avignon|aix-en|provence|bretagne|normandie|alsace|occitanie|bourgogne|auvergne|savoie|corse|languedoc|aquitaine|loire|chartres|versailles|bayonne|biarritz|toulon|nancy|metz|amiens|caen|tours|angers|limoges|poitiers|perpignan|colmar|albi|arles|nimes/i;
 // chaque photo doit parler du bon sujet : on regarde le titre, les catégories Commons et la description
 const MUST = {
   theatre: /theat|theatr|opera|stage|auditorium|playhouse|comedie|spectacle|concert hall|odeon|palais garnier/i,
@@ -120,26 +122,27 @@ async function main() {
         if (got.length >= PER_TYPE) break;
         try {
           for (const c of await search(q, cat)) {
-            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c)) { seen.add(c.u); got.push(clean(c)); }
+            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c) && FR.test(c.x)) { seen.add(c.u); got.push(clean(c)); }
           }
         } catch (e) { console.log("échec", type, q, e.message); }
         await new Promise((r) => setTimeout(r, 400));
       }
     }
-    // pas assez de photos « vedettes » : recherche large, en exigeant un titre qui parle du bon sujet
-    if (got.length < 16 && MUST[type]) {
+    // pas assez de photos « vedettes » : recherche large en France, puis (en dernier recours) partout dans le monde
+    for (const needFR of [true, false]) {
+      if (got.length >= (needFR ? 24 : 16) || !MUST[type]) break;
       for (const q of queries) {
         if (got.length >= PER_TYPE) break;
         try {
-          for (const c of await search(q, null)) {
-            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c)) { seen.add(c.u); got.push(clean(c)); }
+          for (const c of await search(needFR ? q + " france" : q, null)) {
+            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c) && (!needFR || FR.test(c.x))) { seen.add(c.u); got.push(clean(c)); }
           }
         } catch (e) { console.log("échec (large)", type, q, e.message); }
         await new Promise((r) => setTimeout(r, 400));
       }
     }
     out[type] = got;
-    console.log(type, ":", got.length, "photos");
+    console.log(type, ":", got.length, "photos dont de France :", got.filter((g) => FR.test(g.t) || FR.test(g.c)).length);
   }
   fs.writeFileSync("type-photos.json", JSON.stringify(out, null, 1));
   console.log("type-photos.json écrit");
