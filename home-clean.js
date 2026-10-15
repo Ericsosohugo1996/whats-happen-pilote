@@ -13,7 +13,20 @@
     "html body.wz-v2 #view-discover > #wz-slogan{order:0;display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 22px 10px;font-size:13.5px;color:#c3c8d6}",
     "#wz-slogan .sl-s{font-family:Fraunces,Georgia,serif;font-style:italic;color:#f0c878}",
     "#wz-slogan .sl-w{white-space:nowrap;font-weight:600}",
-    "body.wz-nocity #wz-slogan{display:none !important}"
+    "body.wz-nocity #wz-slogan{display:none !important}",
+    // photos plus haut : la première rangée (Ce soir) vient juste après les boutons Ce soir / Demain / Ce week-end ;
+    // « Je ne sais pas quoi faire » et les raccourcis passent juste après (rien n'est retiré)
+    "html body.wz-v2 #view-discover > #wz-rows{display:contents}",
+    "html body.wz-v2 #view-discover #wz-rows > .wzr{order:4;margin:4px 0 14px}",
+    "html body.wz-v2 #view-discover #wz-rows > .wzr[data-row=tonight]{order:3}",
+    "html body.wz-v2:not(.wz-nocity) #view-discover > #wz-shortcuts{order:4}",
+    // fiche d'un événement : barres du haut et du bas en bleu nuit, comme le reste de la fiche
+    "html body.wz-v2:has(#view-detail:not(.hidden)) .topbar{background:rgba(14,23,48,.94) !important;box-shadow:0 1px 0 rgba(255,255,255,.06) !important}",
+    "html body.wz-v2:has(#view-detail:not(.hidden)) .topbar .btn-ghost{background:rgba(255,255,255,.12) !important;border:0 !important;color:#fff !important}",
+    "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav{background:rgba(14,23,48,.97) !important}",
+    "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item .nav-label{color:#c3c8d6 !important}",
+    "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav #nav-idea .nav-label{color:#F2C879 !important}",
+    "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item.wz-cam .nav-label{color:#F2C879 !important}"
   ].join("\n");
 
   function hideChangeCity() {
