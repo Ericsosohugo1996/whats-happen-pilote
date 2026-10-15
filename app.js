@@ -8078,7 +8078,9 @@ const CATEGORY_PHOTOS = {
 // utilisée partout où une carte d'événement est affichée, pour ne jamais avoir à dupliquer cette logique.
 // ---- type de tarif d'un événement (gratuit / inscription / payant), à partir du texte libre ev.price ----
 function eventPriceType(ev){
-  const p = (ev.price || "").toLowerCase();
+  const p = (ev.price || "").toLowerCase().trim();
+  // « Payant · les concerts ne sont pas gratuits… » est payant, même si le mot « gratuit » apparaît dans le texte
+  if (p.startsWith("payant")) return "paid";
   if (p.includes("gratuit") || p.includes("libre")) return "free";
   if (p.includes("inscription")) return "inscription";
   return "paid";

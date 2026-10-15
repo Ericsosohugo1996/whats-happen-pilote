@@ -117,7 +117,7 @@
   function prixTexte(ev) {
     var p = String(ev.price || "");
     var low = p.toLowerCase();
-    if (low.indexOf("gratuit") !== -1 || low.indexOf("libre") !== -1) return null; // garder « Gratuit »
+    if (low.indexOf("payant") !== 0 && (low.indexOf("gratuit") !== -1 || low.indexOf("libre") !== -1)) return null; // garder « Gratuit »
     var re = /(\d+(?:[.,]\d+)?)\s*(?:€|euros?)/gi, m, min = null;
     while ((m = re.exec(p))) {
       var v = parseFloat(m[1].replace(",", "."));
