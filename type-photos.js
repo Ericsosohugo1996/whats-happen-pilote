@@ -48,7 +48,7 @@ const MUST = {
 };
 // pour ces types on ne regarde que le titre (les catégories sont trop larges)
 const TITLE_ONLY = { marche: 1, brocante: 1 };
-const BAD_TITLE = /(boat|ship|yacht|harbou?r|vessel|map|plan|diagram|logo|drawing|painting|poster|screenshot|stamp|coat of arms|flag|schema|floor ?plan|interior of a mosque|statue of|portrait|crowd|protest|night shot of a car|insect|beetle|volkswagen|boeing|cockpit|cirrus|cloud|yukata|macropodus|caterpillar|yarn|animal|bird|flower|butterfly|aircraft|airplane|train|bus\b|car\b)/i;
+const BAD_TITLE = /(boat|ship|yacht|harbou?r|vessel|map|plan|diagram|logo|drawing|painting|poster|screenshot|stamp|coat of arms|flag|schema|floor ?plan|interior of a mosque|statue of|portrait|crowd|protest|night shot of a car|insect|beetle|volkswagen|boeing|cockpit|cirrus|cloud|yukata|macropodus|caterpillar|yarn|animal|bird|flower|butterfly|aircraft|airplane|train|bus\b|car\b|town hall|city hall|hotel de ville|mairie|mayor|bourbon|new orleans|wikimania|taylor|tribute)/i;
 
 function norm(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
 
