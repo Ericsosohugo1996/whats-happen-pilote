@@ -28,8 +28,9 @@
   var CSS = [
     "html body.wz-v2 #view-discover > #wz-searchbar{order:0;display:flex;align-items:center;gap:12px;margin:10px 16px 6px;padding:13px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:#fff;font-family:inherit;text-align:left;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.28);width:calc(100% - 32px)}",
     "#wz-searchbar .sp-i{font-size:20px}",
-    "#wz-searchbar .sp-t{display:flex;flex-direction:column;min-width:0}",
-    "#wz-searchbar .sp-a{font-size:15.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
+    "#wz-searchbar .sp-t{display:flex;flex-direction:column;min-width:0;flex:1;text-align:left}",
+    "#wz-searchbar .sp-c{font-size:18px;opacity:.85;margin-left:auto}",
+    "#wz-searchbar .sp-a{font-size:17px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
     "#wz-searchbar .sp-b{font-size:12.5px;color:#c3c8d6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
     "body.wz-nocity #wz-searchbar{display:none !important}",
     "#wz-sheet{position:fixed;inset:0;z-index:9600;background:linear-gradient(180deg,#14213f 0%,#0b1526 100%);color:#fff;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;display:flex;flex-direction:column}",
@@ -79,13 +80,14 @@
   }
   function summary() {
     var where = "Où ?";
-    try { where = state.userPos ? "Autour de moi" : cname(state.city); } catch (e) {}
+    try { where = state.userPos ? "Autour de moi · " + cname(typeof nearestCityKey === "function" ? nearestCityKey() : state.city) : cname(state.city); } catch (e) {}
     var w = ""; try { w = state.selectedPeriod ? whenLabel(state.selectedPeriod) : ""; } catch (e) {}
     var k = currentWhat();
     var parts = [];
     parts.push(w || "Quand tu veux");
     parts.push(k === "all" ? "Toutes les sorties" : whatOf(k).label.replace(/^[^\wÀ-ÿ]+\s*/, ""));
-    return { a: where, b: parts.join(" · ") };
+    var dflt = !w && k === "all";
+    return { a: where, b: dflt ? "Changer de ville ou de date" : parts.join(" · ") };
   }
 
   // ---- la barre ----
@@ -97,12 +99,12 @@
       if (!document.getElementById("wz-sheet-css")) { var st = document.createElement("style"); st.id = "wz-sheet-css"; st.textContent = CSS; document.head.appendChild(st); }
       bar = document.createElement("button");
       bar.type = "button"; bar.id = "wz-searchbar";
-      bar.setAttribute("aria-label", "Chercher une sortie : où, quand, quoi");
+      bar.setAttribute("aria-label", "Changer de ville ou de date");
       bar.addEventListener("click", openSheet);
       host.insertBefore(bar, host.firstChild);
     }
     var s = summary();
-    bar.innerHTML = '<span class="sp-i" aria-hidden="true">🔍</span><span class="sp-t"><span class="sp-a">' + esc(s.a) + '</span><span class="sp-b">' + esc(s.b) + "</span></span>";
+    bar.innerHTML = '<span class="sp-i" aria-hidden="true">📍</span><span class="sp-t"><span class="sp-a">' + esc(s.a) + '</span><span class="sp-b">' + esc(s.b) + '</span></span><span class="sp-c" aria-hidden="true">▾</span>';
   }
 
   // ---- l'écran de recherche ----
