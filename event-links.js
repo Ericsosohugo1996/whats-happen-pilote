@@ -85,8 +85,8 @@
           "display:inline-block;border:1.5px solid #14213D;color:#14213D;font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:12px;text-decoration:none;"));
       }
       if (link && !ev.ticket) {
-        box.appendChild(el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: "Site de l’organisateur ↗" },
-          "font-size:12.5px;color:#8a8f98;text-decoration:underline;padding:4px 2px;"));
+        box.appendChild(el("a", { href: link, target: "_blank", rel: "noopener noreferrer", textContent: "🔗 Plus d’infos sur le site ↗" },
+          "display:inline-block;border:1.5px solid #E85D3D;color:#E85D3D;background:rgba(232,93,61,.08);font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:12px;text-decoration:none;"));
       }
       var card = document.querySelector("#view-detail .info-card");
       if (card && card.parentNode) card.parentNode.insertBefore(box, card.nextSibling);
