@@ -8771,15 +8771,18 @@ async function loadInterestState(id){
   }
 }
 
-function openDetail(id){
+// Demande un compte au moment où la personne veut garder quelque chose (♥, intéressé(e)).
+function needAccountFor(message, id){
   const user = auth.currentUser;
-  if (!user || user.isAnonymous) {
-    state.pendingEventId = id;
-    const gateMsg = document.getElementById("account-gate-msg");
-    if (gateMsg) gateMsg.classList.remove("hidden");
-    document.getElementById("account-modal").classList.remove("hidden");
-    return;
-  }
+  if (user && !user.isAnonymous) return false;
+  state.pendingEventId = id || null;
+  const gateMsg = document.getElementById("account-gate-msg");
+  if (gateMsg) { gateMsg.textContent = message; gateMsg.classList.remove("hidden"); }
+  document.getElementById("account-modal").classList.remove("hidden");
+  return true;
+}
+function openDetail(id){
+  // La fiche est ouverte à tout le monde. Le compte n'est demandé que pour garder quelque chose (♥, « intéressé(e) »).
   const ev = allEvents().find(e => e.id === id);
   if (!ev) return;
   state.currentEventId = id;
@@ -9244,6 +9247,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = e.target;
     const id = state.currentEventId;
     if (!id || btn.disabled) return;
+    if (needAccountFor("🔒 Crée un compte gratuit pour dire que tu es intéressé(e) et prévenir tes amis.", id)) return;
     btn.disabled = true;
     try {
       const result = await toggleInterest(id);
@@ -9260,6 +9264,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   document.getElementById("btn-favorite").onclick = () => {
     const id = state.currentEventId;
+    if (needAccountFor("🔒 Crée un compte gratuit pour garder tes favoris ♥ et les retrouver sur tous tes appareils.", id)) return;
     if (state.favorites.has(id)) state.favorites.delete(id);
     else state.favorites.add(id);
     saveFavorites();
