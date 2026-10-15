@@ -103,13 +103,28 @@ async function search(q, cat) {
   return out;
 }
 
+// Filtres de qualité (ajoutés après nettoyage manuel) : dessins, plaques, photos hors sujet, séries répétées
+const BAD_ALL = /design for|drawing|sketch|painting|plaque|license plate|larus|abelia|conservatory/i;
+const BAD_TYPE = {
+  club: /holiday inn|plaza|rue saint-jean|exterior|jockey|rizal|balcombe|stall|stand at|men.s club|girls, girls|posing|david-sioux|lokomov|night view|night mark/i,
+  concert: /entrep|palmcourt|elmo joe \(band\)|abigoba/i,
+  livre: /american library|convalescent|fontainebleau|^120611|maison presse|galerie vivienne|jaworski|one kid|^paris 75005/i,
+  jardin: /etienne-jules|phipps|aerial/i,
+  marche: /banc poubelle|^maisons|building at place|place du march|place de la halle|marche aux|market-square|krak|march[eé]-aux|carottes/i,
+  musee: /notre dame|gustave le gray|church facade|hermitage/i,
+};
+const MAX_PER_SERIES = 3;
+function seriesKey(t) { return String(t || "").toLowerCase().replace(/[\d\W_]+/g, " ").slice(0, 16); }
 const BAD_BROC = /spice|sashimi|capsicum|orange|embutido|carnicer|fish|child working|bad sales day|vegetable|meat/i;
 function ok(type, c) {
+  if (BAD_ALL.test(c.t)) return false;
+  if (BAD_TYPE[type] && BAD_TYPE[type].test(c.t)) return false;
   if (type === "brocante" && BAD_BROC.test(c.t)) return false;
   const m = MUST[type];
   if (!m) return true;
   return m.test(TITLE_ONLY[type] ? c.t : c.x);
 }
+function seriesOk(got, c) { const k = seriesKey(c.t); return got.filter((g) => seriesKey(g.t) === k).length < MAX_PER_SERIES; }
 function clean(c) { return { u: c.u, t: c.t, c: c.c }; }
 
 async function main() {
@@ -122,7 +137,7 @@ async function main() {
         if (got.length >= PER_TYPE) break;
         try {
           for (const c of await search(q, cat)) {
-            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c) && FR.test(c.x)) { seen.add(c.u); got.push(clean(c)); }
+            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c) && FR.test(c.x) && seriesOk(got, c)) { seen.add(c.u); got.push(clean(c)); }
           }
         } catch (e) { console.log("échec", type, q, e.message); }
         await new Promise((r) => setTimeout(r, 400));
@@ -135,7 +150,7 @@ async function main() {
         if (got.length >= PER_TYPE) break;
         try {
           for (const c of await search(needFR ? q + " france" : q, null)) {
-            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c) && (!needFR || FR.test(c.x))) { seen.add(c.u); got.push(clean(c)); }
+            if (!seen.has(c.u) && got.length < PER_TYPE && ok(type, c) && (!needFR || FR.test(c.x)) && seriesOk(got, c)) { seen.add(c.u); got.push(clean(c)); }
           }
         } catch (e) { console.log("échec (large)", type, q, e.message); }
         await new Promise((r) => setTimeout(r, 400));
