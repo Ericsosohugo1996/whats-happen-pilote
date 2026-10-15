@@ -27,7 +27,11 @@ const NOT_SOIREE = /soiree (jeux|conference|debat|lecture|litteraire|information
 // Reste en Soirée tout ce qui sent la fête : DJ, club, soirée, nuit, bal, karaoké, afters, bar...
 const CONCERT = /\bconcert|recital|showcase|acoustic|\bjazz\b|release party|\blive\b|\btour\b(?! eiffel)|quatuor|orchestre|\bopera\b/;
 const PARTY = /\bdj\b|dj set|\bclub|clubbing|soiree|\bnuit\b|night|\bbal\b|karaoke|\bafters?\b|\bbar\b|apero|afterwork|\bquiz|bingo|blind.?test|dancing|dansant|boum|raclette|fete des|grande fete|\bparty\b(?!.*release)|rave|techno|\bhouse\b|disco/;
+const NOT_OUTING = /job.?dating|recrutement|forum (de l.)?emploi|offres? de services?|atelier numbr|statuts? juridiques?|\bapec\b|pole emploi|france travail|mission locale|conseil municipal(?! des jeunes)|enquete publique/;
 function reclassify(ev) {
+  // Offres d'emploi et démarches administratives (job dating, offre de services APEC, permanences…) : pas des sorties.
+  // Elles restent visibles (« Divers », « Tout voir ») mais ne polluent plus Sport, Marché, Famille…
+  if (ev.source !== "shotgun" && ev.source !== "ticketmaster" && NOT_OUTING.test(fold(ev.title))) return "Divers";
   if (ev.category === "Soirée" && ev.source !== "ticketmaster") {
     const t0 = fold(ev.title).replace(/release party/g, "release_party");
     if (CONCERT.test(fold(ev.title)) && !PARTY.test(t0.replace(/\blive\b/g, " "))) return "Musique";
