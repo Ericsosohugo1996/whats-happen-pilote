@@ -18,7 +18,7 @@
     // « Je ne sais pas quoi faire » et les raccourcis passent juste après (rien n'est retiré)
     "html body.wz-v2 #view-discover > #wz-rows{display:contents}",
     "html body.wz-v2 #view-discover #wz-rows > .wzr{order:4;margin:4px 0 14px}",
-    "html body.wz-v2 #view-discover #wz-rows > .wzr[data-row=tonight]{order:3}",
+    "html body.wz-v2 #view-discover #wz-rows > .wzr:first-child{order:3}",
     "html body.wz-v2:not(.wz-nocity) #view-discover > #wz-shortcuts{order:4}",
     // fiche d'un événement : barres du haut et du bas en bleu nuit, comme le reste de la fiche
     "html body.wz-v2:has(#view-detail:not(.hidden)) .topbar{background:rgba(14,23,48,.94) !important;box-shadow:0 1px 0 rgba(255,255,255,.06) !important}",

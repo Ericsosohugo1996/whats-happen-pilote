@@ -8,6 +8,7 @@
   var ROWS = [
     { id: "tonight", title: "Ce soir", chip: "wz-tonight" },
     { id: "weekend", title: "Ce week-end", chip: "wz-weekend" },
+    { id: "tomorrow", title: "Demain", chip: "tomorrow", onlySelected: true },
     { id: "music", title: "Concerts et musique", cats: ["Musique", "Musique classique"], days: 21, quick: "Musique" },
     { id: "show", title: "Spectacles", cats: ["Spectacles"], days: 21, quick: "Spectacles" },
     { id: "expo", title: "Expos à voir", cats: ["Expo"], days: 30 },
@@ -51,6 +52,9 @@
     var now = new Date(), end, out;
     if (def.id === "tonight") {
       out = evs.filter(function (e) { return e.date === today && timeOf(e) >= "17:00" && e.category !== "Marché"; });
+    } else if (def.id === "tomorrow") {
+      var dem = ymd(addDays(now, 1));
+      out = evs.filter(function (e) { return e.date === dem && e.category !== "Marché"; });
     } else if (def.id === "weekend") {
       var dow = now.getDay(); // 0 = dimanche
       var sat = dow === 6 ? 0 : dow === 0 ? -1 : 6 - dow;
@@ -110,12 +114,17 @@
       if (!host || typeof state === "undefined") return;
       var evs = pool();
       var now = new Date(), today = ymd(now);
-      var sig = state.city + "|" + (state.userPos ? "p" : "c") + "|" + evs.length + "|" + today;
+      var sel = state.selectedPeriod || "";
+      var sig = state.city + "|" + (state.userPos ? "p" : "c") + "|" + evs.length + "|" + today + "|" + sel;
       var wrap = document.getElementById("wz-rows");
       if (wrap && sig === lastSig) return;
       lastSig = sig;
       var used = {}, html = "", shown = [];
-      ROWS.forEach(function (def) {
+      // la période choisie en haut (Ce soir / Demain / Ce week-end) passe en première rangée
+      var want = { "wz-tonight": "tonight", "today": "tonight", "tomorrow": "tomorrow", "wz-weekend": "weekend" }[sel] || "";
+      var order = ROWS.filter(function (d) { return !d.onlySelected || d.id === want; });
+      order.sort(function (x, y) { return (y.id === want ? 1 : 0) - (x.id === want ? 1 : 0); });
+      order.forEach(function (def) {
         var list = pick(def, evs, today, used);
         if (list.length < MIN_CARDS) return;
         list.forEach(function (e) { used[e.id] = 1; });
