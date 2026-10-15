@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var POP = ["paris", "lyon", "marseille", "bordeaux", "lille", "toulouse", "nantes", "nice", "strasbourg", "montpellier", "rennes", "grenoble"];
+  var POP = ["paris", "lyon", "marseille", "bordeaux", "lille", "toulouse", "nantes", "nice", "strasbourg", "montpellier", "rennes", "reims"];
   var WHEN = [
     { key: null, label: "Quand tu veux" },
     { key: "today", label: "Aujourd'hui" },
@@ -113,9 +113,12 @@
     if (q.length >= 2) {
       keys = Object.keys(C).filter(function (k) { return fold(C[k].name).indexOf(q) >= 0; })
         .sort(function (a, b) { var sa = fold(C[a].name).indexOf(q) === 0 ? 0 : 1, sb = fold(C[b].name).indexOf(q) === 0 ? 0 : 1; return sa - sb || C[a].name.localeCompare(C[b].name, "fr"); }).slice(0, 8);
-    } else keys = POP.filter(function (k) { return C[k]; }).slice(0, 6);
+    } else if (sel.all) {
+      keys = Object.keys(C).sort(function (a, b) { return fold(C[a].name).localeCompare(fold(C[b].name), "fr"); });
+    } else keys = POP.filter(function (k) { return C[k]; }).slice(0, 12);
     var h = '<button type="button" class="row' + (sel.near ? " on" : "") + '" data-near="1"><span aria-hidden="true">📍</span><span>À proximité<small>Les sorties autour de moi</small></span></button>';
     h += keys.map(function (k) { return '<button type="button" class="row' + (!sel.near && sel.city === k ? " on" : "") + '" data-city="' + esc(k) + '"><span aria-hidden="true">🏙️</span><span>' + esc(C[k].name) + "</span></button>"; }).join("");
+    if (q.length < 2) h += '<button type="button" class="row" data-all="1"><span aria-hidden="true">' + (sel.all ? "▴" : "▾") + '</span><span>' + (sel.all ? "Voir moins de villes" : "Voir toutes les villes (" + Object.keys(C).length + ")") + "</span></button>";
     if (q.length >= 2 && !keys.length) h += '<div class="err">Aucune ville de ce nom pour l’instant.</div>';
     return h;
   }
@@ -164,6 +167,7 @@
     if (act === "close") return closeSheet();
     if (act === "clear") { sel.city = sel.near ? null : sel.city; sel.when = null; sel.what = "all"; sel.q = ""; sel.err = ""; return render(); }
     if (act === "go") return apply();
+    if (t.hasAttribute("data-all")) { sel.all = !sel.all; return render(); }
     if (t.hasAttribute("data-near")) { sel.near = true; sel.err = ""; return render(); }
     if (t.hasAttribute("data-city")) { sel.near = false; sel.city = t.getAttribute("data-city"); sel.err = ""; return render(); }
     if (t.hasAttribute("data-when")) { sel.when = t.getAttribute("data-when") || null; return render(); }
