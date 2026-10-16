@@ -4,8 +4,8 @@
   "description": "Découvrez les événements près de vous, partout en France.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#14213D",
-  "theme_color": "#14213D",
+  "background_color": "#FBF6EE",
+  "theme_color": "#FBF6EE",
   "icons": [
     {
       "src": "logo-192.png",
@@ -19,5 +19,9 @@
       "type": "image/png",
       "purpose": "any"
     }
-  ]
+  ],
+  "id": "/",
+  "lang": "fr",
+  "scope": "/",
+  "orientation": "portrait"
 }
