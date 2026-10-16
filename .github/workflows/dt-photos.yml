@@ -2,6 +2,8 @@ name: Photos DATAtourisme
 
 on:
   workflow_dispatch:
+     schedule:
+       - cron: "35 5 * * *"  
 
 permissions:
   contents: write
