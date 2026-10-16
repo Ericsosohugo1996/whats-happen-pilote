@@ -35,7 +35,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style id="wz-veil-css">html.wz-boot #view-discover{visibility:hidden !important}</style>
+<style id="wz-veil-css">html.wz-boot #view-discover,html.wz-boot .topbar,html.wz-boot .bottomnav,html.wz-boot #wz-nav,html.wz-boot #unified-explore-btn{visibility:hidden !important}
+html.wz-boot body::after{content:"Whazup";position:fixed;left:0;right:0;top:42%;text-align:center;z-index:1;font:600 34px/1 Fraunces,Georgia,serif;color:#E85D3D;opacity:.75;pointer-events:none}</style>
 <script id="wz-veil-js">
 /* Voile de démarrage : l'accueil reste invisible tant que son habillage n'est pas prêt (évite de voir défiler plusieurs versions). Filet : 5,5 s maximum.
    POUR ANNULER : supprimer ces 2 balises (wz-veil-css et wz-veil-js) dans index.html. */
@@ -626,3 +627,4 @@
 <script defer src="welcome-tour.js"></script>       
 </body>
 </html>
+
