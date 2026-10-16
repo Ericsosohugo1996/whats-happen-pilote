@@ -153,3 +153,25 @@
     }
   } catch (e) {}
 })();
+
+// ---- Voile de démarrage prolongé : si l'accueil met plus de 5,5 s à se construire (cache vidé, connexion lente),
+// on garde l'écran « Whazup » au lieu de montrer une page à moitié construite. Limite : 12 s.
+// POUR ANNULER : supprimer ce bloc.
+(function () {
+  "use strict";
+  var d = document.documentElement, t0 = Date.now(), stop = false;
+  function ready() {
+    var b = document.body;
+    if (!b || !b.classList.contains("wz-v2")) return false;
+    if (b.classList.contains("wz-nocity")) return !!document.getElementById("wz-locate-top");
+    return !!document.getElementById("wz-searchbar") && !!document.getElementById("wz-chips");
+  }
+  function over() { return stop || Date.now() - t0 > 12000; }
+  var mo = new MutationObserver(function () {
+    if (!over() && !d.classList.contains("wz-boot") && !ready()) d.classList.add("wz-boot");
+  });
+  try { mo.observe(d, { attributes: true, attributeFilter: ["class"] }); } catch (e) {}
+  var iv = setInterval(function () {
+    if (ready() || over()) { stop = true; clearInterval(iv); try { mo.disconnect(); } catch (e) {} d.classList.remove("wz-boot"); }
+  }, 100);
+})();
