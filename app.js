@@ -7892,6 +7892,7 @@ let __itineraryMap = null;
 let __itineraryMarkers = null;
 
 function openItinerary(){
+  if (window.__wzOpenRoute) return window.__wzOpenRoute();
   const ev = allEvents().find(e => e.id === state.currentEventId);
   if (!ev || !ev.lat || !ev.lng) return;
   const modal = document.getElementById("itinerary-modal");
@@ -8380,7 +8381,7 @@ function renderMap(events){
 }
  
 function eventCardHTML(ev){
-  const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + " km" : "";
+  const distTxt = ev.distance != null ? ev.distance.toFixed(1).replace(".", ",") + (state.userPos ? " km" : " km du centre") : "";
    const dateTimeTxt = ev.isPlace ? (ev.recurring || "Toujours ouvert") : (formatDate(ev.date) + " · " + ev.time);
   const metaTxt = distTxt ? ("📍 " + distTxt + "  ·  🕐 " + dateTimeTxt) : ("🕐 " + dateTimeTxt);
   const thumbHTML = eventPhotoHTML(ev);
@@ -8821,7 +8822,7 @@ function openDetail(id){
     document.getElementById("detail-time").textContent = "";
   } 
   document.getElementById("detail-place").textContent = ev.place;
-document.getElementById("detail-distance").textContent = "🚶 " + walkMinutes(distanceToEvent(ev)) + " min à pied";
+document.getElementById("detail-distance").textContent = window.__wzDistLine ? window.__wzDistLine(ev) : "🚶 " + walkMinutes(distanceToEvent(ev)) + " min à pied";
   const detailPriceEl = document.getElementById("detail-price");
   detailPriceEl.textContent = ev.price;
   const detailPriceType = eventPriceType(ev);
