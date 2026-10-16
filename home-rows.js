@@ -29,7 +29,7 @@
     "#wz-rows .wzr-all{border:0;background:rgba(255,255,255,.1);color:#fff;width:32px;height:32px;border-radius:50%;font-size:17px;cursor:pointer;font-family:inherit}",
     "#wz-rows .wzr-s{display:flex;align-items:flex-start;gap:12px;overflow-x:auto;padding:0 16px 4px;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}",
     "#wz-rows .wzr-s::-webkit-scrollbar{display:none}",
-    "#wz-rows .wzr-c{flex:0 0 156px;display:block;scroll-snap-align:start;border:0;background:none;padding:0;text-align:left;color:#fff;cursor:pointer;font-family:inherit}",
+    "#wz-rows .wzr-c{flex:0 0 156px;width:156px;min-width:156px;max-width:156px;box-sizing:border-box;overflow:hidden;display:block;scroll-snap-align:start;border:0;background:none;padding:0;text-align:left;color:#fff;cursor:pointer;font-family:inherit}",
     "#wz-rows .wzr-i{display:block;width:156px;height:156px;border-radius:18px;object-fit:cover;background:#1b2a4d}",
     "#wz-rows .wzr-t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:8px;font-size:14px;font-weight:700;line-height:1.25}",
     "#wz-rows .wzr-m{display:block;margin-top:3px;font-size:12.5px;line-height:1.3;color:#aeb5c8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
