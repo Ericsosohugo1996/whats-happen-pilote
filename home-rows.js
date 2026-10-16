@@ -182,7 +182,10 @@
         }
       }
       // très peu de sorties dans cette ville : message honnête + les grandes villes les plus proches
-      if (!html && nb > 0 && !window.__wzDataLoading) html = quietNote();
+      // (pas quand un filtre est actif : « Musées » donne peu de résultats, mais Paris n'a pas peu de sorties)
+      var filt = false;
+      try { filt = !!(state.selectedPeriod || (state.selectedCategories && state.selectedCategories.size) || (typeof __searchQuery !== "undefined" && __searchQuery)); } catch (e3) {}
+      if (!html && nb > 0 && !filt && !window.__wzDataLoading) html = quietNote();
       if (!wrap) {
         if (!document.getElementById("wz-rows-css")) { var st = document.createElement("style"); st.id = "wz-rows-css"; st.textContent = CSS; document.head.appendChild(st); }
         wrap = document.createElement("div"); wrap.id = "wz-rows";
@@ -240,3 +243,4 @@
   if (document.readyState === "complete") setTimeout(boot, 100);
   else window.addEventListener("load", function () { setTimeout(boot, 100); });
 })();
+
