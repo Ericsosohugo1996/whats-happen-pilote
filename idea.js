@@ -130,7 +130,7 @@
     }
     r.innerHTML = head(3) + '<div class="wz-i-k">Tes idées · ' + esc(wl) + "</div><h1>" + (lst.length > 1 ? "On a trouvé " + lst.length + " sorties pour toi" : "On a trouvé une sortie pour toi") + "</h1>" +
       lst.map(function (x, i) { return card(x, i === 0); }).join("") +
-      (S.ranked.length > S.offset + 3 ? '<button type="button" class="wz-i-alt" data-i="more">🔄 Une autre idée</button>' : "") +
+      (S.ranked.length > S.offset + 3 ? '<button type="button" class="wz-i-alt" data-i="more">🔄 Voir 3 autres idées</button>' : "") +
       '<button type="button" class="wz-i-alt ghost" data-i="again">Changer mes réponses</button>';
     r.scrollTop = 0;
   }
