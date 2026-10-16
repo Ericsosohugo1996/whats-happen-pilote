@@ -73,32 +73,83 @@
   });
 })();
 
-// ---- Étape 1 « accueil simple » : les catégories remontent sous « Je ne sais pas quoi faire », avec un raccourci vers la grande liste.
-// POUR ANNULER : supprimer ce bloc (de « Étape 1 » jusqu'à la fin du fichier) : rien d'autre n'est touché.
+// ---- « Accueil simple » : les catégories sont en haut ; la grande liste (Carte/Liste, jours, recherche, 8 000 événements) reste repliée
+// derrière un bouton « Voir tous les événements », et s'ouvre toute seule dès qu'on filtre (catégorie, Ce soir/Demain, recherche…).
+// POUR ANNULER : supprimer ce bloc (de « Accueil simple » jusqu'à la fin du fichier) : rien d'autre n'est touché.
 (function () {
   "use strict";
+  var B = "html body.wz-v2:not(.wz-nocity)";
   var st = document.createElement("style"); st.id = "wz-flow-css";
   st.textContent = [
-    "html body.wz-v2:not(.wz-nocity) #view-discover > .home-quickbar-section{order:2 !important;margin:2px 0 10px !important}",
-    "html body.wz-v2:not(.wz-nocity) #view-discover > .home-quickbar-section .home-quickbar-title{display:flex !important;align-items:center;justify-content:space-between;gap:10px;margin:0 16px 8px !important;font-size:16px !important}",
+    B + " #view-discover > .home-quickbar-section{order:2 !important;margin:2px 0 10px !important}",
+    B + " #view-discover > .home-quickbar-section .home-quickbar-title{display:flex !important;align-items:center;justify-content:space-between;gap:10px;margin:0 16px 8px !important;font-size:16px !important}",
     "#wz-all-btn{border:0;background:none;color:#C2410C;font:700 13.5px/1 inherit;font-family:inherit;cursor:pointer;padding:6px 2px;white-space:nowrap}",
-    "#wz-all-btn:focus-visible{outline:2px solid #14213D;outline-offset:2px;border-radius:8px}"
+    "#wz-all-btn:focus-visible,#wz-all-list:focus-visible{outline:2px solid #14213D;outline-offset:2px;border-radius:12px}",
+    // liste repliée
+    B + ".wz-lc #view-discover > :is(.toolbar,#filters-panel,#map-mock,#btn-see-list,#week-strip-banner,#free-search-wrap,#event-list-featured,#event-list,#wz-more){display:none !important}",
+    "#wz-all-list{display:none}",
+    B + ".wz-lc #view-discover > #wz-all-list{display:flex;order:5;align-self:center;align-items:center;justify-content:center;gap:8px;box-sizing:border-box;width:min(560px,calc(100% - 32px));margin:6px 16px 16px;padding:14px 18px;border-radius:999px;border:1.5px solid #E85D3D;background:#fff;color:#C2410C;font:800 15px/1.2 inherit;font-family:inherit;cursor:pointer;box-shadow:0 4px 14px rgba(232,93,61,.14)}",
+    // cases de chargement des photos : teinte chaude et claire (et non bleu nuit)
+    "#wz-rows .wzr-i{background:#EFE3D2 !important}"
   ].join("\n");
   document.head.appendChild(st);
-  function add() {
+
+  var body = document.body;
+  function collapse() { body.classList.add("wz-lc"); }
+  function expand() { body.classList.remove("wz-lc"); }
+  function isCollapsed() { return body.classList.contains("wz-lc"); }
+  collapse();
+
+  function addAll() {
     try {
+      var host = document.getElementById("view-discover"); if (!host) return;
+      if (!document.getElementById("wz-all-list")) {
+        var b = document.createElement("button");
+        b.type = "button"; b.id = "wz-all-list"; b.textContent = "Voir tous les événements ↓";
+        host.appendChild(b);
+      }
       var t = document.querySelector(".home-quickbar-section .home-quickbar-title");
-      if (!t || document.getElementById("wz-all-btn")) return;
-      var b = document.createElement("button");
-      b.type = "button"; b.id = "wz-all-btn"; b.textContent = "Tout voir ↓";
-      b.setAttribute("aria-label", "Voir tous les événements");
-      b.addEventListener("click", function () {
-        var el = document.querySelector("#view-discover > .toolbar") || document.getElementById("event-list-featured") || document.getElementById("event-list");
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-      t.appendChild(b);
+      if (t && !document.getElementById("wz-all-btn")) {
+        var a = document.createElement("button");
+        a.type = "button"; a.id = "wz-all-btn"; a.textContent = "Tout voir ↓";
+        a.setAttribute("aria-label", "Voir tous les événements");
+        t.appendChild(a);
+      }
     } catch (e) {}
   }
-  add();
-  var n = 0, iv = setInterval(function () { add(); if (++n > 20) clearInterval(iv); }, 500);
+  addAll();
+  var n = 0, iv = setInterval(function () { addAll(); if (++n > 30) clearInterval(iv); }, 500);
+
+  function openAndGo() {
+    expand();
+    setTimeout(function () {
+      var el = document.querySelector("#view-discover > .toolbar") || document.getElementById("event-list-featured") || document.getElementById("event-list");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 60);
+  }
+
+  // dès qu'on utilise un filtre, la liste s'ouvre
+  document.addEventListener("click", function (e) {
+    var t = e.target; if (!t || !t.closest) return;
+    if (t.closest("#wz-all-list,#wz-all-btn")) { e.preventDefault(); return openAndGo(); }
+    if (!isCollapsed()) return;
+    if (t.closest(".quick-cat,#home-category-quickbar,#wz-chips .wz-chip")) { setTimeout(openAndGo, 250); return; }  // on t'emmène aux résultats
+    if (t.closest(".wzr-all,#wz-sheet .go,.stat[data-filter]")) expand();                                            // ces boutons font déjà défiler vers la liste
+  }, true);
+
+  // sécurité : si un filtre est actif (recherche, période, catégorie), on ne cache jamais le résultat
+  function filtered() {
+    try {
+      if (state.selectedPeriod) return true;
+      if (state.selectedCategories && state.selectedCategories.size) return true;
+      if (typeof __searchQuery !== "undefined" && __searchQuery) return true;
+    } catch (e) {}
+    return false;
+  }
+  try {
+    if (typeof renderDiscover === "function") {
+      var orig = renderDiscover;
+      renderDiscover = function () { var r = orig.apply(this, arguments); if (filtered()) expand(); return r; };
+    }
+  } catch (e) {}
 })();
