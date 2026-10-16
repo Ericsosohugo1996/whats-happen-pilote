@@ -1,0 +1,152 @@
+/* warm-theme.css — thème clair et chaleureux (chargé par warm-theme.js, APRÈS home-v2.css).
+   POUR TOUT ANNULER : supprimer la ligne <script src="warm-theme.js"> dans index.html (ou supprimer warm-theme.js). */
+:root{--wm-bg:#FBF6EE;--wm-card:#fff;--wm-line:#EADFCF;--wm-ink:#2A2233;--wm-soft:#6F6678;--wm-faint:#8F8696;--wm-accent:#E85D3D;--wm-accent-t:#C9482A;--wm-chip:#F4EBDD;--wm-sh:0 10px 24px -14px rgba(90,60,30,.28)}
+
+/* fonds */
+html body.wz-v2:has(#view-discover:not(.hidden)),html body.wz-v2 #view-discover{background:var(--wm-bg)!important;color:var(--wm-ink)!important}
+html body.wz-v2:has(#view-detail:not(.hidden)),html body.wz-v2 #view-detail{background:var(--wm-bg)!important;color:var(--wm-ink)!important}
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar,html body.wz-v2:has(#view-detail:not(.hidden)) .topbar{background:rgba(251,246,238,.94)!important;box-shadow:0 1px 0 var(--wm-line)!important}
+html body.wz-v2 .topbar .brand-word{color:var(--wm-ink)!important}
+html body.wz-v2 .topbar .brand-word .accent{color:var(--wm-accent)!important}
+html body.wz-v2 .topbar .btn-ghost{background:#fff!important;color:var(--wm-ink)!important;box-shadow:0 1px 3px rgba(90,60,30,.15)!important}
+
+/* barre ville */
+html body.wz-v2 #view-discover .locate-bar{background:#fff!important;box-shadow:var(--wm-sh)!important;border:1px solid var(--wm-line)!important}
+html body.wz-v2 #view-discover .locate-label{color:var(--wm-accent-t)!important}
+html body.wz-v2 #view-discover .locate-value{color:var(--wm-ink)!important}
+html body.wz-v2 #view-discover .locate-bar .locate-sub,html body.wz-v2 #view-discover .locate-bar [class*="sub"]{color:var(--wm-soft)!important}
+html body.wz-v2 #view-discover .wz-tagline,html body.wz-v2 #view-discover #weather-mini{color:var(--wm-soft)!important}
+html body.wz-v2 #wz-slogan{color:var(--wm-soft)!important}
+html body.wz-v2 #wz-slogan .sl-s{color:var(--wm-accent-t)!important}
+
+/* puces Aujourd'hui / Ce soir… */
+#wz-chips .wz-chip{background:var(--wm-chip)!important;color:var(--wm-ink)!important;border-color:transparent!important}
+#wz-chips .wz-chip .wz-chip-n{background:rgba(42,34,51,.08)!important;color:var(--wm-soft)!important}
+#wz-chips .wz-chip.on{color:#fff!important;background:linear-gradient(135deg,#F2864B,#E85D3D)!important}
+#wz-chips .wz-chip.on .wz-chip-n{background:rgba(255,255,255,.28)!important;color:#fff!important}
+
+/* rangées d'accueil */
+html body #view-discover #wz-rows .wzr-h h2,#wz-rows .wzq-box h2{color:var(--wm-ink)!important}
+#wz-rows .wzq-box p{color:var(--wm-soft)!important}
+#wz-rows .wzr-all{background:#fff!important;color:var(--wm-ink)!important;box-shadow:0 1px 4px rgba(90,60,30,.2)}
+#wz-rows .wzr-c{color:var(--wm-ink)!important}
+#wz-rows .wzr-t{color:var(--wm-ink)!important}
+#wz-rows .wzr-m{color:var(--wm-soft)!important}
+#wz-rows .wzr-m b{color:var(--wm-accent-t)!important}
+#wz-rows .wzr-c img,#wz-rows .wzr-c .wzr-i{box-shadow:0 8px 18px -10px rgba(90,60,30,.45)}
+
+/* cartes, panneaux, champs */
+html body.wz-v2 #view-discover .event-card,html body.wz-v2:not(.wz-nocity) #view-discover .event-card{background:#fff!important;color:var(--wm-ink)!important;box-shadow:var(--wm-sh)!important;border-color:var(--wm-line)!important}
+html body.wz-v2 #view-discover .event-card .title{color:var(--wm-ink)!important}
+html body.wz-v2 #view-discover .event-card .venue{color:var(--wm-soft)!important}
+html body.wz-v2 #view-discover .event-card .meta,html body.wz-v2:not(.wz-nocity) #view-discover .event-card .meta{color:var(--wm-accent-t)!important}
+html body.wz-v2 #view-discover .event-card .info>div[style*="font-size:10.5px"]{color:var(--wm-soft)!important}
+html body.wz-v2 #view-discover .segmented,html body.wz-v2 #view-discover .toolbar .chip-btn,html body.wz-v2 #view-discover .filters-panel,html body.wz-v2 #view-discover .city-info,html body.wz-v2 #view-discover #wz-ci-toggle,html body.wz-v2 #view-discover #btn-newsletter,html body.wz-v2 #view-discover #btn-discover-back,html body.wz-v2 #view-discover .empty-state,html body.wz-v2 #view-discover #free-search-wrap input,html body.wz-v2 #view-discover .week-day-btn,html body.wz-v2 #view-discover .week-strip-banner button,html body.wz-v2 #view-discover .week-strip-banner [class*="day"]{background:#fff!important;color:var(--wm-ink)!important;border-color:var(--wm-line)!important;box-shadow:none!important}
+html body.wz-v2 #view-discover .segmented .seg{color:var(--wm-soft)!important}
+html body.wz-v2 #view-discover .segmented .seg.active{color:#fff!important}
+html body.wz-v2 #view-discover .filters-panel .filters-label,html body.wz-v2 #view-discover .city-info,html body.wz-v2 #view-discover .empty-state{color:var(--wm-soft)!important}
+html body.wz-v2 #view-discover .city-info .ci-name,html body.wz-v2 #view-discover .home-quickbar-title{color:var(--wm-ink)!important}
+html body.wz-v2 #view-discover .filters-panel .chip-btn{background:var(--wm-chip)!important;color:var(--wm-ink)!important}
+html body.wz-v2 #view-discover .filters-panel .chip-btn.active{color:#fff!important}
+html body.wz-v2 #view-discover .filters-panel select,html body.wz-v2 #view-discover .filters-panel input[type=text]{background:#fff!important;color:var(--wm-ink)!important;border-color:var(--wm-line)!important}
+html body.wz-v2 #view-discover #free-search-wrap input::placeholder{color:var(--wm-faint)!important}
+html body.wz-v2 #view-discover .week-day-btn .week-day-label,html body.wz-v2 #view-discover .week-day-btn .week-day-date,html body.wz-v2 #view-discover .week-strip-hint,html body.wz-v2 #view-discover .home-category-quickbar *{color:var(--wm-soft)!important}
+html body.wz-v2 #view-discover .week-day-btn .week-day-count,html body.wz-v2 #view-discover .week-strip-banner b{color:var(--wm-accent-t)!important}
+html body.wz-v2 #view-discover .week-day-btn.active *,html body.wz-v2 #view-discover .week-day-btn.selected *{color:#fff!important}
+html body.wz-v2 #view-discover #wz-more{background:#fff!important;color:var(--wm-accent-t)!important;border:1px solid var(--wm-line)!important}
+html body.wz-v2 #view-discover .quick-cat,html body.wz-v2 #view-discover .quick-cat-circle{background:#fff!important;border-color:var(--wm-line)!important}
+html body.wz-v2 #view-discover .quick-cat-label{color:var(--wm-ink)!important}
+html body.wz-v2 #view-discover #sejour-block button,html body.wz-v2 #view-discover #sejour-block a,html body.wz-v2 #view-discover #sejour-btn{background:#fff3df!important;color:var(--wm-accent-t)!important}
+
+/* raccourcis et sections (Ce soir, carnet, surprise…) */
+#wz-ctabs button{background:var(--wm-chip)!important;color:var(--wm-ink)!important}
+#wz-ctabs button.on{color:#fff!important}
+#wz-soir .wz-soir-h,.wz-soir-h2,.wz-empty-t{color:var(--wm-ink)!important}
+#wz-soir .wz-soir-s,#wz-soir .wz-soir-n,#wz-soir .wz-soir-e,.wz-empty-d,.wz-fp-b small{color:var(--wm-soft)!important}
+#wz-soir .wz-soir-n2,.wz-fp,.wz-sc{background:#fff!important;color:var(--wm-ink)!important;box-shadow:var(--wm-sh)}
+.wz-fp-b{color:var(--wm-ink)!important}
+#wz-publink{color:var(--wm-soft)!important}
+.wz-empty-b button+button{background:var(--wm-chip)!important;color:var(--wm-accent-t)!important}
+html body.wz-v2 #newfinds-result{background:#fff!important}
+html body.wz-v2 #newfinds-result .explore-pick div[style*="font-family"]{color:var(--wm-ink)!important}
+html body.wz-v2 #newfinds-result .explore-pick div[style*="color:#"],html body.wz-v2 #newfinds-result p{color:var(--wm-soft)!important}
+.wz-skel-card{background:#fff!important}
+
+/* barres du bas */
+html body.wz-v2:has(#view-discover:not(.hidden)) .bottomnav,html body.wz-v2 #wz-nav{background:rgba(255,255,255,.96)!important;box-shadow:0 -6px 20px rgba(90,60,30,.12)!important}
+html body.wz-v2:has(#view-discover:not(.hidden)) .bottomnav .nav-item,html body.wz-v2 #wz-nav .nav-item .nav-label{color:var(--wm-soft)!important}
+html body.wz-v2:has(#view-discover:not(.hidden)) .bottomnav .nav-item.active,html body.wz-v2 #wz-nav .nav-item.active .nav-label,html body.wz-v2 #wz-nav .nav-item.wz-cam .nav-label,html body.wz-v2:has(#view-discover:not(.hidden)) #wz-nav .nav-item.wz-cam .nav-label,html body.wz-v2 #wz-nav #nav-idea .nav-label{color:var(--wm-accent-t)!important}
+html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item .nav-label{color:var(--wm-soft)!important}
+
+/* page « ville » (sans ville choisie) */
+html body.wz-v2.wz-nocity #bonhomme-banner .brand-word,html body.wz-v2.wz-nocity .region-toggle span,html body.wz-v2.wz-nocity .wz-pop-row .wz-pop{color:var(--wm-ink)!important}
+html body.wz-v2.wz-nocity #bonhomme-banner>div:last-child,html body.wz-v2.wz-nocity .wz-pop-label,html body.wz-v2.wz-nocity #wz-regions-btn{color:var(--wm-soft)!important}
+html body.wz-v2.wz-nocity .wz-pop-row .wz-pop,html body.wz-v2.wz-nocity #wz-pop-cities .chip-btn.wz-pop,html body.wz-v2.wz-nocity .city-search-input,html body.wz-v2.wz-nocity .region-toggle,html body.wz-v2.wz-nocity .region-block>.region-toggle,html body.wz-v2.wz-nocity #wz-regions-btn{background:#fff!important;color:var(--wm-ink)!important;border-color:var(--wm-line)!important;box-shadow:none!important}
+html body.wz-v2.wz-nocity .city-search-input{color:var(--wm-ink)!important}
+html body.wz-v2.wz-nocity .city-search-input::placeholder{color:var(--wm-faint)!important}
+html body.wz-v2.wz-nocity .region-toggle .chevron{color:var(--wm-accent-t)!important}
+html body.wz-v2.wz-nocity #bonhomme-banner>div:last-child::before{color:var(--wm-ink)!important}
+html body.wz-v2.wz-nocity #bonhomme-banner>div:last-child::after{color:var(--wm-accent-t)!important}
+
+/* fiche d'un événement */
+html body.wz-v2 #view-detail .detail-body h1,html body.wz-v2 #view-detail .info-main{color:var(--wm-ink)!important}
+html body.wz-v2 #view-detail .info-card,html body.wz-v2 #view-detail .action-tile{background:#fff!important;border-color:var(--wm-line)!important;box-shadow:var(--wm-sh)!important}
+html body.wz-v2 #view-detail .info-sub,html body.wz-v2 #view-detail #detail-interest-count,html body.wz-v2 #view-detail .detail-desc,html body.wz-v2 #view-detail .action-tile .tile-label,html body.wz-v2 #view-detail #wz-ev-links a,html body.wz-v2 #view-detail a{color:var(--wm-soft)!important}
+html body.wz-v2 #view-detail .info-sub.accent,html body.wz-v2 #view-detail #wz-ev-links a[href^="tel"]{color:var(--wm-accent-t)!important}
+html body.wz-v2 #view-detail .detail-desc{color:#4A4252!important}
+html body.wz-v2 #view-detail .info-divider{background:var(--wm-line)!important}
+html body.wz-v2 #view-detail .info-row-new .ico{background:#FCEAE3!important}
+html body.wz-v2 #view-detail .action-tile .tile-icon{background:var(--wm-chip)!important}
+html body.wz-v2 #view-detail .action-tile.active{background:#FDE3DA!important}
+html body.wz-v2 #view-detail #btn-interested{color:#fff!important}
+html body.wz-v2:has(#view-detail:not(.hidden)) .topbar .btn-ghost,html body.wz-v2:has(#view-detail:not(.hidden)) .topbar .brand-word{color:var(--wm-ink)!important}
+
+/* « Une idée ? » et carnet */
+#wz-idea{background:var(--wm-bg)!important;color:var(--wm-ink)!important}
+#wz-idea h1,#wz-idea .wz-i-card{color:var(--wm-ink)!important}
+#wz-idea .wz-i-x{background:#fff!important;color:var(--wm-ink)!important}
+#wz-idea .wz-i-k,#wz-idea .wz-i-why{color:var(--wm-accent-t)!important}
+#wz-idea .wz-i-sub,#wz-idea .wz-i-lab small,#wz-idea .wz-i-v,#wz-idea .wz-i-alt.ghost{color:var(--wm-soft)!important}
+#wz-idea .wz-i-steps i{background:#E7DCCB!important}
+#wz-idea .wz-i-steps i.on{background:#F2864B!important}
+#wz-idea .wz-i-c,#wz-idea .wz-i-card{background:#fff!important;color:var(--wm-ink)!important;box-shadow:var(--wm-sh)!important}
+#wz-idea .wz-i-c.on{color:#fff!important}
+#wz-idea .wz-i-alt{background:var(--wm-chip)!important;color:var(--wm-accent-t)!important}
+#wz-idea .wz-i-ph{background:var(--wm-chip)!important}
+#wz-carnet-promo h2,#wz-carnet-promo .wz-cp-lab,#wz-carnet-promo .wz-cp-steps span{color:var(--wm-ink)!important}
+#wz-carnet-promo p,#wz-carnet-promo .wz-cp-count{color:var(--wm-soft)!important}
+#wz-carnet-promo .wz-cp-k,#wz-carnet-promo .wz-cp-lab button,#wz-carnet-promo .wz-cp-addtile{color:var(--wm-accent-t)!important}
+#wz-carnet-promo.wz-cp-pitch{background:#FFF3E3!important;color:var(--wm-ink)!important}
+#wz-carnet-promo .wz-cp-steps b{background:rgba(42,34,51,.08)!important;color:var(--wm-ink)!important}
+#wz-after{background:#fff!important;color:var(--wm-ink)!important;box-shadow:0 18px 40px -10px rgba(90,60,30,.35)!important}
+
+/* barre « Où ? Quand ? » et feuille de choix ville / date */
+html body.wz-v2 #view-discover > #wz-searchbar{background:#fff!important;color:var(--wm-ink)!important;border:1px solid var(--wm-line)!important;box-shadow:var(--wm-sh)!important}
+#wz-searchbar .sp-b{color:var(--wm-soft)!important}
+#wz-sheet{background:var(--wm-bg)!important;color:var(--wm-ink)!important}
+#wz-sheet .sh-x{background:#fff!important;color:var(--wm-ink)!important}
+#wz-sheet .card{background:#fff!important;box-shadow:var(--wm-sh)}
+#wz-sheet .card h3{color:var(--wm-accent-t)!important}
+#wz-sheet input[type=search]{background:#fff!important;color:var(--wm-ink)!important;border-color:var(--wm-line)!important}
+#wz-sheet .row{background:var(--wm-chip)!important;color:var(--wm-ink)!important}
+#wz-sheet .row small{color:var(--wm-soft)!important}
+#wz-sheet .row.on{border-color:var(--wm-accent)!important;background:#FFE9DD!important}
+#wz-sheet .chip{border-color:var(--wm-line)!important;color:var(--wm-ink)!important;background:#fff!important}
+#wz-sheet .chip.on{color:#1a1030!important;background:linear-gradient(90deg,#f0c878,#e85d3d)!important}
+#wz-sheet .sh-foot{background:#fff!important;border-top-color:var(--wm-line)!important}
+#wz-sheet .clr{color:var(--wm-soft)!important}
+#wz-sheet .err{color:#B3321A!important}
+
+/* corrections de priorité (barre du haut / barre du bas) */
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .brand-word,html body.wz-v2:has(#view-detail:not(.hidden)) .topbar .brand-word{color:var(--wm-ink)!important}
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .brand-word .accent,html body.wz-v2:has(#view-detail:not(.hidden)) .topbar .brand-word .accent{color:var(--wm-accent)!important}
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .btn-ghost,html body.wz-v2:has(#view-detail:not(.hidden)) .topbar .btn-ghost{background:#fff!important;color:var(--wm-ink)!important}
+html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav,html body.wz-v2:has(#view-detail:not(.hidden)) .bottomnav,html body.wz-v2:has(#view-discover.hidden) #wz-nav{background:rgba(255,255,255,.96)!important;box-shadow:0 -6px 20px rgba(90,60,30,.12)!important}
+html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item .nav-label{color:var(--wm-soft)!important}
+html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item.wz-cam .nav-label,html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav #nav-idea .nav-label{color:var(--wm-accent-t)!important}
+
+/* fiche : le titre se pose sur un fondu crème (au lieu du fondu bleu nuit) */
+html body.wz-v2 #view-detail .detail-hero::after{background:linear-gradient(to top,rgba(251,246,238,.97),rgba(251,246,238,0))!important}
+html body.wz-v2 #view-detail .detail-hero{background:var(--wm-chip)!important}
+html body.wz-v2 #view-detail .detail-body{margin-top:-30px!important}
+#wz-locate-sep{color:var(--wm-soft)!important}
