@@ -92,17 +92,30 @@ async function main() {
   const queues = Object.entries(todo).map(([h, s]) => [h, [...s]]);
   console.log("sites :", queues.length, "pages à regarder :", queues.reduce((a, q) => a + q[1].length, 0));
   let tried = 0, found = 0; const last = {}; const reasons = {};
-  outer: while (queues.some((q) => q[1].length)) {
-    for (const q of queues) {
-      if (!q[1].length) continue;
-      if (TIME_UP() || tried >= MAX_PER_RUN) { console.log("on s'arrête ici (relance pour continuer)"); break outer; }
-      const wait = (last[q[0]] || 0) + 1000 - Date.now(); if (wait > 0) await sleep(wait);
-      const link = q[1].shift(); last[q[0]] = Date.now(); tried++;
+  // 12 « ouvriers » en parallèle : chacun prend la page suivante d'un site ; un même site n'est jamais sollicité plus d'une fois par seconde
+  let qi = 0, stop = false;
+  function nextJob() {
+    for (let n = 0; n < queues.length; n++) {
+      const q = queues[qi++ % queues.length];
+      if (q[1].length) return [q[0], q[1].shift()];
+    }
+    return null;
+  }
+  async function worker() {
+    while (!stop) {
+      if (TIME_UP() || tried >= MAX_PER_RUN) { stop = true; break; }
+      const job = nextJob(); if (!job) break;
+      const [h, link] = job;
+      const wait = (last[h] || 0) + 1000 - Date.now(); last[h] = Math.max(Date.now(), (last[h] || 0) + 1000);
+      if (wait > 0) await sleep(wait);
+      tried++;
       try { const r = await lookup(link); cache[link] = r; if (r.u) found++; else reasons[r.n] = (reasons[r.n] || 0) + 1; }
       catch (e) { cache[link] = { n: "err" }; reasons.err = (reasons.err || 0) + 1; }
       if (tried % 200 === 0) console.log("…", tried, "pages,", found, "images");
     }
   }
+  await Promise.all(Array.from({ length: 12 }, worker));
+  if (stop) console.log("on s'arrête ici (relance pour continuer)");
   // image identique sur beaucoup de pages d'un même site = logo du site
   const perImg = {};
   for (const [k, v] of Object.entries(cache)) if (v && v.u) (perImg[v.d + "|" + v.u] = perImg[v.d + "|" + v.u] || []).push(k);
