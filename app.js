@@ -8029,7 +8029,8 @@ function matchesPeriod(ev, period){
  
 function baseVisibleEvents(){
   const ref = referencePoint();
-  const preFiltered = state.userPos ? allEvents() : allEvents().filter(ev => ev.city === state.city);
+  const nbTowns = (!state.userPos && window.__wzNeighbors) ? window.__wzNeighbors(state.city) : [];
+  const preFiltered = state.userPos ? allEvents() : allEvents().filter(ev => ev.city === state.city || (nbTowns.length && !ev.isPlace && !ev.isBar && nbTowns.indexOf(ev.city) >= 0 && haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) <= 45));
   return preFiltered
     .map(ev => ({ ...ev, distance: haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) }))
     .filter(ev => state.userPos ? ev.distance <= state.radiusKm : true)

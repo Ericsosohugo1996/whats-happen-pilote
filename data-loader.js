@@ -56,10 +56,28 @@
     })).then(function () { pending--; setLoading(); rerender(); });
   }
 
+  // petites villes (moins de 60 événements) : on y ajoute les événements des grandes villes voisines (moins de 45 km, 3 au plus)
+  var nbCache = {};
+  window.__wzNeighbors = function (cityKey) {
+    try {
+      if (nbCache[cityKey]) return nbCache[cityKey];
+      if (!index || !index.events || !CITIES[cityKey]) return [];
+      if ((index.events[cityKey] || 0) >= 60) return (nbCache[cityKey] = []);
+      var me = CITIES[cityKey], list = [];
+      Object.keys(CITIES).forEach(function (k) {
+        if (k === cityKey || (index.events[k] || 0) < 60) return;
+        var d = haversineKm(me.lat, me.lng, CITIES[k].lat, CITIES[k].lng);
+        if (d <= 45) list.push({ k: k, d: d });
+      });
+      list.sort(function (a, b) { return a.d - b.d; });
+      return (nbCache[cityKey] = list.slice(0, 3).map(function (x) { return x.k; }));
+    } catch (e) { return []; }
+  };
+
   function neededKeys() {
     var keys = [];
     try {
-      if (!state.userPos) keys.push(state.city);
+      if (!state.userPos) { keys.push(state.city); (window.__wzNeighbors(state.city) || []).forEach(function (k) { keys.push(k); }); }
       else {
         var r = (state.radiusKm || 20) + 25, list = [];
         Object.keys(CITIES).forEach(function (k) {
