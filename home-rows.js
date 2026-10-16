@@ -78,8 +78,9 @@
       if (seen[k]) return;
       seen[k] = 1; res.push(e);
     });
-    return res.slice(0, MAX_CARDS);
+    return res.slice(0, MAX_CARDS + 25); // les 25 de plus servent de remplaçants si une photo ne charge pas
   }
+  var EXTRA = {};
 
   function when(ev) {
     var p = String(ev.date).split("-"), d = new Date(+p[0], +p[1] - 1, +p[2]);
@@ -145,8 +146,10 @@
       var order = ROWS.filter(function (d) { return !d.onlySelected || d.id === want; });
       order.sort(function (x, y) { return (y.id === want ? 1 : 0) - (x.id === want ? 1 : 0); });
       order.forEach(function (def) {
-        var list = pick(def, evs, today, used);
-        if (list.length < MIN_CARDS) return;
+        var full = pick(def, evs, today, used);
+        if (full.length < MIN_CARDS) return;
+        var list = full.slice(0, MAX_CARDS);
+        EXTRA[def.id] = full.slice(MAX_CARDS);
         list.forEach(function (e) { used[e.id] = 1; });
         shown.push(def);
         html += '<section class="wzr" data-row="' + def.id + '"><div class="wzr-h"><h2>' + esc(def.title) + '</h2><button type="button" class="wzr-all" aria-label="Tout voir : ' + esc(def.title) + '">›</button></div>' +
@@ -193,10 +196,21 @@
             ROWS.forEach(function (d) { if (d.id === id) goAll(d); });
           }
         });
-        // une photo qui ne charge pas : on retire la carte plutôt que d'afficher un trou
+        // une photo qui ne charge pas : on la remplace par la sortie suivante (jamais de rangée qui fond à une seule carte) ;
+        // s'il n'y a plus de remplaçant, la carte reste avec l'illustration de la sortie
         wrap.addEventListener("error", function (e) {
           var t = e.target;
-          if (t && t.classList && t.classList.contains("wzr-i")) { var c = t.closest(".wzr-c"); if (c) c.remove(); }
+          if (!(t && t.classList && t.classList.contains("wzr-i"))) return;
+          var c = t.closest(".wzr-c"); if (!c) return;
+          var row = c.closest(".wzr"), strip = c.parentNode, id = row ? row.getAttribute("data-row") : "";
+          var ex = EXTRA[id];
+          if (ex && ex.length) { var nx = ex.shift(); c.insertAdjacentHTML("afterend", cardHTML(nx)); c.remove(); return; }
+          try {
+            var ev = allEvents().filter(function (x) { return x.id === c.getAttribute("data-id"); })[0] || {};
+            var box = document.createElement("div"); box.className = "wzr-i";
+            box.innerHTML = typeof window.sceneSVG === "function" ? window.sceneSVG(ev.scene) : "";
+            t.replaceWith(box);
+          } catch (x) { c.remove(); }
         }, true);
       }
       wrap.innerHTML = html;
