@@ -1,0 +1,51 @@
+/* desktop-wide.css — affichage pleine largeur sur ordinateur (écrans de 1000 px et plus).
+   Chargé avec media="(min-width:1000px)" : sur téléphone et tablette, ce fichier n'est même pas appliqué.
+   POUR TOUT ANNULER : supprimer ce fichier (ou la ligne qui le charge dans warm-theme.js). */
+@media (min-width:1000px){
+  html body,html body.wz-v2:has(#view-discover:not(.hidden)),html body.wz-v2:has(#view-detail:not(.hidden)){background:#FBF6EE!important}
+
+  /* pages pleine largeur */
+  html body.wz-v2 #view-discover{max-width:1280px!important;width:100%;box-sizing:border-box;box-shadow:none!important;padding-left:28px!important;padding-right:28px!important}
+  html body.wz-v2 #view-detail{max-width:980px!important;margin-left:auto!important;margin-right:auto!important;box-shadow:none!important}
+  html body.wz-v2 #view-detail .cta-row{max-width:none!important}
+  html body.wz-v2 #view-detail .detail-desc{max-width:760px}
+  html body.wz-v2 #view-favorites,html body.wz-v2 #view-publish,html body.wz-v2 #view-confirm{max-width:860px!important;margin-left:auto!important;margin-right:auto!important;box-shadow:none!important}
+
+  /* barre du haut : logo à gauche, boutons à droite, dans la même largeur que la page */
+  html body.wz-v2 .topbar{padding-left:max(20px,calc(50% - 612px))!important;padding-right:max(20px,calc(50% - 612px))!important}
+
+    html body.wz-v2 .topbar{display:flex!important;justify-content:flex-start!important;gap:12px}
+  html body.wz-v2 .topbar .brand,html body.wz-v2 .topbar #brand-home{margin-right:auto!important}
+
+  /* bloc d'en-tête centré (recherche, slogan, chiffre, boutons du jour) */
+  html body.wz-v2 #view-discover > #wz-searchbar,html body.wz-v2 #view-discover > #wz-slogan,html body.wz-v2 #view-discover > #wz-count,html body.wz-v2 #view-discover > #wz-chips,html body.wz-v2 #view-discover > #sc-surprise,html body.wz-v2 #view-discover > #surprise-block,html body.wz-v2 #view-discover > #wz-shortcuts,html body.wz-v2 #view-discover > #free-search-wrap,html body.wz-v2 #view-discover > .toolbar,html body.wz-v2 #view-discover > #week-strip-banner{max-width:780px!important;width:calc(100% - 32px)!important;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box}
+  html body.wz-v2:not(.wz-nocity) #view-discover > #wz-searchbar,html body.wz-v2:not(.wz-nocity) #view-discover > #wz-slogan,html body.wz-v2:not(.wz-nocity) #view-discover > #wz-count,html body.wz-v2:not(.wz-nocity) #view-discover > #wz-chips,html body.wz-v2:not(.wz-nocity) #view-discover > #sc-surprise,html body.wz-v2:not(.wz-nocity) #view-discover > #surprise-block,html body.wz-v2:not(.wz-nocity) #view-discover > #wz-shortcuts,html body.wz-v2:not(.wz-nocity) #view-discover > #free-search-wrap,html body.wz-v2:not(.wz-nocity) #view-discover > .toolbar,html body.wz-v2:not(.wz-nocity) #view-discover > #week-strip-banner{max-width:780px!important;width:calc(100% - 32px)!important;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box}
+  html body.wz-v2 #view-discover > #wz-slogan,html body.wz-v2 #view-discover > #wz-count{width:calc(100% - 32px)!important;padding-left:6px;padding-right:6px}
+
+  /* choix de ville (premier écran) : contenu centré, largeur de lecture */
+  html body.wz-v2.wz-nocity #view-discover > :not(#event-list):not(#event-list-featured):not(.hidden){max-width:760px;width:calc(100% - 32px);margin-left:auto!important;margin-right:auto!important;box-sizing:border-box}
+
+  /* rangées : cartes plus grandes, on voit 5 ou 6 sorties d'un coup */
+  html body.wz-v2 #view-discover #wz-rows .wzr-h{max-width:none;padding:0 6px}
+  html body.wz-v2 #view-discover #wz-rows .wzr-h h2{font-size:24px}
+  html body.wz-v2 #view-discover #wz-rows .wzr-s{padding:0 6px 8px;gap:20px}
+  html body.wz-v2 #view-discover #wz-rows .wzr-c{flex:0 0 220px!important;width:220px!important;min-width:220px!important;max-width:220px!important}
+  html body.wz-v2 #view-discover #wz-rows .wzr-i{width:220px!important;height:220px!important;border-radius:22px}
+  html body.wz-v2 #view-discover #wz-rows .wzr-t{font-size:15.5px}
+  html body.wz-v2 #view-discover #wz-rows .wzr-m{font-size:13.5px}
+  html body.wz-v2 #view-discover #wz-rows .wzr-c:hover .wzr-i{transform:translateY(-3px);transition:transform .25s ease}
+
+  /* liste d'événements : 3 colonnes, le titre du jour sur toute la largeur */
+  html body.wz-v2 #view-discover > #event-list,html body.wz-v2 #view-discover > #event-list-featured{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:0 6px!important}
+  html body.wz-v2 #view-discover > #event-list > .wz-day,html body.wz-v2 #view-discover > #event-list > :not(.event-card){grid-column:1/-1}
+  html body.wz-v2 #view-discover #event-list .event-card{margin:0!important;height:100%}
+
+  /* le reste du contenu garde une largeur de lecture confortable */
+  html body.wz-v2 #view-discover > #city-info,html body.wz-v2 #view-discover > #wz-ci-toggle,html body.wz-v2 #view-discover > #sejour-block,html body.wz-v2 #view-discover > #btn-newsletter,html body.wz-v2 #view-discover > #wz-more{max-width:780px;width:calc(100% - 32px);margin-left:auto!important;margin-right:auto!important;box-sizing:border-box}
+
+  /* barre du bas : centrée, un peu plus large */
+  .bottomnav,#wz-nav{max-width:560px!important}
+}
+@media (min-width:1500px){
+  html body.wz-v2 #view-discover > #event-list,html body.wz-v2 #view-discover > #event-list-featured{grid-template-columns:repeat(4,minmax(0,1fr))}
+}

@@ -35,6 +35,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style id="wz-veil-css">html.wz-boot #view-discover{visibility:hidden !important}</style>
+<script id="wz-veil-js">
+/* Voile de démarrage : l'accueil reste invisible tant que son habillage n'est pas prêt (évite de voir défiler plusieurs versions). Filet : 5,5 s maximum.
+   POUR ANNULER : supprimer ces 2 balises (wz-veil-css et wz-veil-js) dans index.html. */
+(function(){
+  var d=document.documentElement; d.classList.add("wz-boot");
+  var t0=Date.now(), done=false;
+  function ready(){
+    var b=document.body; if(!b||!b.classList.contains("wz-v2")) return false;
+    if(document.getElementById("splash-screen")) return false;   /* le bonhomme de départ dure ~3,4 s : on attend qu'il ait disparu */
+    var l=document.getElementById("wz-home-v2-css"); if(!l||!l.sheet) return false;
+    if(b.classList.contains("wz-nocity")) return !!document.getElementById("wz-locate-top");
+    return !!document.getElementById("wz-searchbar")&&!!document.getElementById("wz-chips");
+  }
+  function go(){ if(done) return; done=true; d.classList.remove("wz-boot"); }
+  (function loop(){ if(done) return; try{ if(ready()||Date.now()-t0>5500) return setTimeout(go,60); }catch(e){ return go(); } setTimeout(loop,50); })();
+  setTimeout(go,6000);
+})();
+</script>
+
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
