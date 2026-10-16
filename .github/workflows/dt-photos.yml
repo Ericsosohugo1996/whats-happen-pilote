@@ -1,7 +1,7 @@
 name: Photos DATAtourisme
 
 on:
-  workflow_dispatch:
+     workflow_dispatch:
      schedule:
        - cron: "35 5 * * *"  
 
