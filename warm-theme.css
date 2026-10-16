@@ -181,3 +181,17 @@ html body.wz-v2 #view-detail .detail-body{margin-top:-30px!important}
 #friends-screen [style*="rgba(255,255,255,0.05)"],#friends-screen [style*="rgba(255, 255, 255, 0.05)"]{background:#fff!important;border-color:var(--wm-line)!important}
 #friend-search-input{background:var(--wm-chip)!important;color:var(--wm-ink)!important}
 body:has(#view-discover:not(.hidden)) #unified-explore-btn{box-shadow:0 0 0 100vmax var(--wm-bg)!important}
+
+/* jour choisi (VEN / SAM / DIM…) : même orange que « Ce soir », « Demain » */
+html body.wz-v2 #view-discover .week-day-btn.active,html body.wz-v2 #view-discover .week-day-btn.selected,html body.wz-v2 #view-discover .week-day-btn[aria-pressed="true"],html body.wz-v2 #view-discover .week-day-btn[aria-selected="true"]{background:linear-gradient(135deg,#F2864B,#E85D3D)!important;border-color:transparent!important;box-shadow:0 8px 18px -8px rgba(232,93,61,.7)!important}
+html body.wz-v2 #view-discover .week-day-btn.active *,html body.wz-v2 #view-discover .week-day-btn.selected *,html body.wz-v2 #view-discover .week-day-btn[aria-pressed="true"] *,html body.wz-v2 #view-discover .week-day-btn[aria-selected="true"] *{color:#fff!important}
+
+/* états « choisi » : l'orange doit gagner sur le fond blanc des autres boutons */
+html body.wz-v2 #view-discover .week-day-btn *,html body.wz-v2 #view-discover .week-strip-banner [class*="day"] *{background:transparent!important;box-shadow:none!important;border:0!important}
+html body.wz-v2 #view-discover .filters-panel .chip-btn.active,html body.wz-v2 #view-discover .toolbar .chip-btn.active{background:linear-gradient(135deg,#F2864B,#E85D3D)!important;color:#fff!important;border-color:transparent!important}
+#wz-idea .wz-i-c.on{background:linear-gradient(135deg,#F2864B,#E85D3D)!important;color:#fff!important;border-color:transparent!important}
+.wz-sc.on{background:linear-gradient(135deg,#F2864B,#E85D3D)!important;color:#fff!important}
+html body.wz-v2 #view-discover .segmented .seg.active{background:linear-gradient(135deg,#F2864B,#E85D3D)!important;color:#fff!important}
+html body.wz-v2 #view-discover .quick-cat.active .quick-cat-label,html body.wz-v2 #view-discover .quick-cat.active .quick-cat-label *{color:var(--wm-accent-t)!important}
+html body.wz-v2 #view-discover .quick-cat.active{background:#FFF1E8!important;border-color:var(--wm-accent)!important}
+html body.wz-v2 #view-discover .quick-cat.active .quick-cat-circle{background:#fff!important}
