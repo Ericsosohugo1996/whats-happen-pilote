@@ -205,12 +205,9 @@
           var row = c.closest(".wzr"), strip = c.parentNode, id = row ? row.getAttribute("data-row") : "";
           var ex = EXTRA[id];
           if (ex && ex.length) { var nx = ex.shift(); c.insertAdjacentHTML("afterend", cardHTML(nx)); c.remove(); return; }
-          try {
-            var ev = allEvents().filter(function (x) { return x.id === c.getAttribute("data-id"); })[0] || {};
-            var box = document.createElement("div"); box.className = "wzr-i";
-            box.innerHTML = typeof window.sceneSVG === "function" ? window.sceneSVG(ev.scene) : "";
-            t.replaceWith(box);
-          } catch (x) { c.remove(); }
+          // plus de remplaçant : on retire la carte (pas d'illustration répétée) ; sous 3 cartes, la rangée disparaît
+          c.remove();
+          if (row && strip.querySelectorAll(".wzr-c").length < MIN_CARDS) row.remove();
         }, true);
       }
       wrap.innerHTML = html;
