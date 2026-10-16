@@ -76,13 +76,13 @@
       end = ymd(addDays(now, def.days || 21));
       out = evs.filter(function (e) { return e.date <= end && def.cats.indexOf(e.category) >= 0; });
     }
-    out = out.filter(function (e) { return !used[e.id]; }).sort(function (a, b) { return sortKey(a) < sortKey(b) ? -1 : 1; });
+    out = out.filter(function (e) { return !used[e.id] && !used["p:" + String(e.photo || "").split("?")[0]]; }).sort(function (a, b) { return sortKey(a) < sortKey(b) ? -1 : 1; });
     // une seule fois par titre (séries d'ateliers, séances répétées)
     var seen = {}, res = [];
     out.forEach(function (e) {
-      var k = dkey(e);
-      if (seen[k]) return;
-      seen[k] = 1; res.push(e);
+      var k = dkey(e), pk = "p:" + String(e.photo || "").split("?")[0];
+      if (seen[k] || seen[pk]) return;            // même spectacle, ou même photo déjà dans la rangée
+      seen[k] = 1; seen[pk] = 1; res.push(e);
     });
     return res.slice(0, MAX_CARDS + 25); // les 25 de plus servent de remplaçants si une photo ne charge pas
   }
@@ -156,7 +156,7 @@
         if (full.length < MIN_CARDS) return;
         var list = full.slice(0, MAX_CARDS);
         EXTRA[def.id] = full.slice(MAX_CARDS);
-        list.forEach(function (e) { used[e.id] = 1; });
+        list.forEach(function (e) { used[e.id] = 1; used["p:" + String(e.photo || "").split("?")[0]] = 1; });
         shown.push(def);
         html += '<section class="wzr" data-row="' + def.id + '"><div class="wzr-h"><h2>' + esc(def.title) + '</h2><button type="button" class="wzr-all" aria-label="Tout voir : ' + esc(def.title) + '">›</button></div>' +
           '<div class="wzr-s">' + list.map(cardHTML).join("") + "</div></section>";
