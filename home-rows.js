@@ -19,6 +19,11 @@
   var CSS = [
     "html body.wz-v2 #view-discover > #wz-rows{order:4;margin:4px 0 10px}",
     "#wz-rows .wzr{margin:0 0 18px}",
+    "#wz-rows .wzq-box{margin:0 16px;padding:18px;border-radius:20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}",
+    "#wz-rows .wzq-box h2{margin:0 0 6px;font-family:Fraunces,Georgia,serif;font-size:18px;color:#fff !important}",
+    "#wz-rows .wzq-box p{margin:0 0 12px;font-size:14px;line-height:1.45;color:#c3c8d6}",
+    "#wz-rows .wzq-chips{display:flex;flex-wrap:wrap;gap:8px}",
+    "#wz-rows .wzq-chip{border:0;cursor:pointer;font:inherit;font-weight:700;font-size:14px;color:#14213D;background:linear-gradient(135deg,#F2C879,#E85D3D);padding:10px 14px;border-radius:999px}",
     "#wz-rows .wzr-h{display:flex;align-items:center;justify-content:space-between;padding:0 16px;margin:0 0 10px}",
     "html body #view-discover #wz-rows .wzr-h h2{margin:0;font-family:Fraunces,Georgia,serif;font-size:19px;font-weight:600;color:#fff !important;opacity:1 !important;padding:0 !important;text-align:left}",
     "#wz-rows .wzr-all{border:0;background:rgba(255,255,255,.1);color:#fff;width:32px;height:32px;border-radius:50%;font-size:17px;cursor:pointer;font-family:inherit}",
@@ -106,6 +111,20 @@
     } catch (e) {}
   }
 
+  var BIG = ["paris", "lyon", "marseille", "toulouse", "nice", "nantes", "montpellier", "strasbourg", "bordeaux", "lille", "rennes", "reims", "grenoble", "dijon", "toulon", "angers", "nimes", "aix", "clermont", "tours", "rouen", "caen", "metz", "nancy", "limoges", "perpignan", "avignon", "brest"];
+  function quietNote() {
+    try {
+      var C = CITIES, here = state.userPos ? state.userPos : C[state.city];
+      if (!here || !C[state.city]) return "";
+      var cur = state.userPos ? (typeof nearestCityKey === "function" ? nearestCityKey() : state.city) : state.city;
+      var ranked = BIG.filter(function (k) { return C[k] && k !== cur; }).map(function (k) { return { k: k, d: haversineKm(here.lat, here.lng, C[k].lat, C[k].lng) }; })
+        .sort(function (a, b) { return a.d - b.d; }).slice(0, 3);
+      if (!ranked.length) return "";
+      var chips = ranked.map(function (r) { return '<button type="button" class="wzq-chip" data-wzq="' + esc(r.k) + '">' + esc(C[r.k].name) + " · " + Math.round(r.d / 10) * 10 + " km</button>"; }).join("");
+      return '<section class="wzr wzq" data-row="quiet"><div class="wzq-box"><h2>Peu de sorties à ' + esc(C[cur].name) + ' pour l’instant</h2>' +
+        '<p>On en ajoute régulièrement. En attendant, voici les grandes villes les plus proches :</p><div class="wzq-chips">' + chips + "</div></div></section>";
+    } catch (e) { return ""; }
+  }
   var lastSig = "";
   function build() {
     try {
@@ -115,7 +134,8 @@
       var evs = pool();
       var now = new Date(), today = ymd(now);
       var sel = state.selectedPeriod || "";
-      var sig = state.city + "|" + (state.userPos ? "p" : "c") + "|" + evs.length + "|" + today + "|" + sel;
+      var nb = 0; try { nb = baseVisibleEvents().length; } catch (e0) {}
+      var sig = state.city + "|" + (state.userPos ? "p" : "c") + "|" + evs.length + "|" + nb + "|" + today + "|" + sel;
       var wrap = document.getElementById("wz-rows");
       if (wrap && sig === lastSig) return;
       lastSig = sig;
@@ -152,12 +172,19 @@
             '<div class="wzr-s">' + pick2.map(cardHTML).join("") + "</div></section>";
         }
       }
+      // très peu de sorties dans cette ville : message honnête + les grandes villes les plus proches
+      if (!html && nb > 0 && !window.__wzDataLoading) html = quietNote();
       if (!wrap) {
         if (!document.getElementById("wz-rows-css")) { var st = document.createElement("style"); st.id = "wz-rows-css"; st.textContent = CSS; document.head.appendChild(st); }
         wrap = document.createElement("div"); wrap.id = "wz-rows";
         var before = host.querySelector(".home-quickbar-section");
         if (before) host.insertBefore(wrap, before); else host.appendChild(wrap);
         wrap.addEventListener("click", function (e) {
+          var q = e.target.closest ? e.target.closest("[data-wzq]") : null;
+          if (q) {
+            try { state.city = q.getAttribute("data-wzq"); state.userPos = null; state.selectedPeriod = null; try { __hasPickedCity = true; } catch (e1) {} renderDiscover(); window.scrollTo({ top: 0, behavior: "smooth" }); } catch (e2) {}
+            return;
+          }
           var c = e.target.closest ? e.target.closest(".wzr-c") : null;
           if (c) { try { openDetail(c.getAttribute("data-id")); } catch (x) {} return; }
           var a = e.target.closest ? e.target.closest(".wzr-all") : null;
