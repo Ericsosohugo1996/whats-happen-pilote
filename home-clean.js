@@ -31,7 +31,9 @@
     "html body.wz-v2:has(#view-detail:not(.hidden)) #unified-explore-btn{display:none !important}",
     "html body.wz-v2:not(.wz-nocity) #unified-explore-btn{display:none !important}",
     "html body.wz-v2 #view-detail .detail-hero{height:200px !important}",
-    "html body.wz-v2 #view-detail .detail-body h1{font-size:26px !important;margin:8px 0 12px !important}"
+    "html body.wz-v2 #view-detail .detail-body h1{font-size:26px !important;margin:8px 0 12px !important}",
+    // grand écran : la barre du haut (logo et icônes) reste dans la même colonne que le contenu (560 px)
+    "@media (min-width:700px){html body.wz-v2 .topbar{padding-left:max(12px,calc(50% - 280px)) !important;padding-right:max(12px,calc(50% - 280px)) !important}}"
   ].join("\n");
 
   function hideChangeCity() {
