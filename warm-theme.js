@@ -72,3 +72,33 @@
     try { document.documentElement.scrollTop = 0; } catch (y) {}
   });
 })();
+
+// ---- Étape 1 « accueil simple » : les catégories remontent sous « Je ne sais pas quoi faire », avec un raccourci vers la grande liste.
+// POUR ANNULER : supprimer ce bloc (de « Étape 1 » jusqu'à la fin du fichier) : rien d'autre n'est touché.
+(function () {
+  "use strict";
+  var st = document.createElement("style"); st.id = "wz-flow-css";
+  st.textContent = [
+    "html body.wz-v2:not(.wz-nocity) #view-discover > .home-quickbar-section{order:2 !important;margin:2px 0 10px !important}",
+    "html body.wz-v2:not(.wz-nocity) #view-discover > .home-quickbar-section .home-quickbar-title{display:flex !important;align-items:center;justify-content:space-between;gap:10px;margin:0 16px 8px !important;font-size:16px !important}",
+    "#wz-all-btn{border:0;background:none;color:#C2410C;font:700 13.5px/1 inherit;font-family:inherit;cursor:pointer;padding:6px 2px;white-space:nowrap}",
+    "#wz-all-btn:focus-visible{outline:2px solid #14213D;outline-offset:2px;border-radius:8px}"
+  ].join("\n");
+  document.head.appendChild(st);
+  function add() {
+    try {
+      var t = document.querySelector(".home-quickbar-section .home-quickbar-title");
+      if (!t || document.getElementById("wz-all-btn")) return;
+      var b = document.createElement("button");
+      b.type = "button"; b.id = "wz-all-btn"; b.textContent = "Tout voir ↓";
+      b.setAttribute("aria-label", "Voir tous les événements");
+      b.addEventListener("click", function () {
+        var el = document.querySelector("#view-discover > .toolbar") || document.getElementById("event-list-featured") || document.getElementById("event-list");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      t.appendChild(b);
+    } catch (e) {}
+  }
+  add();
+  var n = 0, iv = setInterval(function () { add(); if (++n > 20) clearInterval(iv); }, 500);
+})();
