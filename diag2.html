@@ -1,0 +1,15 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Test des rangées</title>
+<style>body{font:14px/1.45 -apple-system,system-ui,sans-serif;margin:0;padding:16px;background:#0e1730;color:#fff}h1{font-size:19px}pre{white-space:pre-wrap;word-break:break-all;background:#16224a;padding:10px;border-radius:10px;font-size:12px}iframe{width:375px;height:500px;border:0;position:absolute;left:-9999px}</style></head><body>
+<h1>Test des rangées d'accueil</h1><p>Attends 35 secondes sans toucher à l'écran, puis fais une capture de toute la page (ou plusieurs) et envoie-la.</p>
+<pre id="o">démarrage…</pre><iframe id="f" src="/"></iframe>
+<script>
+var o=document.getElementById("o"),f=document.getElementById("f"),L=[],t0=Date.now(),errs=[];
+function log(s){L.push(((Date.now()-t0)/1000).toFixed(1)+" s  "+s);o.textContent=L.join("\n")}
+function snap(){try{var d=f.contentDocument,w=f.contentWindow;var rows=[].map.call(d.querySelectorAll("#wz-rows .wzr"),function(r){return r.getAttribute("data-row")+"="+r.querySelectorAll(".wzr-c").length+"c/"+r.querySelectorAll("img.wzr-i").length+"i"});
+log("rangées : "+(rows.join("  ")||"aucune")+" | ville="+w.eval("state.city")+" | chargement="+w.__wzDataLoading+" | événements="+w.eval("allEvents().length"))}catch(e){log("lecture impossible : "+e.message)}}
+f.addEventListener("load",function(){try{f.contentWindow.addEventListener("error",function(e){var t=e.target;if(t&&t.tagName==="IMG"&&errs.length<40){errs.push(t.src);log("PHOTO EN ECHEC : "+t.src.slice(0,80))}},true)}catch(e){log("pas d'écoute des erreurs")}});
+[2,5,8,12,16,22,30,35].forEach(function(s){setTimeout(snap,s*1000)});
+setTimeout(function(){try{var d=f.contentDocument;var r=d.querySelector('#wz-rows [data-row="tonight"]');log("HTML Ce soir : "+(r?r.querySelector(".wzr-s").children.length+" cartes ; largeur zone="+r.querySelector(".wzr-s").clientWidth+" ; défilement="+r.querySelector(".wzr-s").scrollWidth:"absente"));
+log("scripts : "+[].map.call(d.scripts,function(s){return s.src.split("/").pop()}).filter(function(x){return /home-rows|home-polish|bar-places|perf-boost|fast-open/.test(x)}).join(", "));
+log("navigateur : "+navigator.userAgent.slice(0,110))}catch(e){log("fin : "+e.message)}},36000);
+</script></body></html>
