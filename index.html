@@ -41,6 +41,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 </head>
 <body>
+<noscript>
+  <main style="font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;padding:24px 16px;line-height:1.5;color:#14213D">
+    <h1>Whazup — Les sorties près de chez toi, partout en France</h1>
+    <p><em>Si j’avais su, j’y serais allé.</em></p>
+    <p>Whazup rassemble les concerts, expositions, spectacles, marchés, festivals et soirées de plus de 130 villes de France : Paris, Lyon, Marseille, Toulouse, Bordeaux, Nantes, Lille, Nice, Strasbourg, Montpellier, Rennes et bien d’autres. Choisis ta ville ou active ta position pour voir ce qui se passe ce soir, demain ou ce week-end, avec la distance, le temps à pied ou à vélo et un itinéraire.</p>
+    <p>Cette application a besoin de JavaScript pour afficher les sorties. Active-le dans ton navigateur, puis recharge la page.</p>
+    <p><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></p>
+  </main>
+</noscript>
 <div id="splash-screen" class="splash-screen">
     <svg class="splash-logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -341,7 +350,7 @@
  <button class="chip-btn" id="btn-notif-follow">🔕 Suivre cette ville</button>
 
         </div>
-        <p class="locate-hint" id="locate-hint">Toutes les villes de France sont accessibles via la recherche ci-dessus. Les villes avec un <span class="city-dot" style="display:inline-block; vertical-align:middle;"></span> point vert ont déjà des événements actifs ; les autres arrivent progressivement. Le bouton « Ma position » utilise votre géolocalisation réelle et calcule la distance jusqu'à chaque événement dans un rayon de 20 km.</p>
+        <p class="locate-hint" id="locate-hint">Toutes les villes de France sont accessibles via la recherche ci-dessus. Le bouton « Ma position » utilise ta géolocalisation pour calculer la distance jusqu'à chaque sortie.</p>
       </div>
     </section>
 <div class="stats-banner" id="stats-banner">
@@ -409,7 +418,7 @@
 <button type="button" id="btn-see-list" class="btn-see-list hidden" data-i18n="☰ Voir la liste">☰ Voir la liste</button>
        <section id="event-list-featured"></section> 
    <section id="event-list" class="event-list"></section>
-    <div id="empty-state" class="empty-state hidden">Aucun événement ne correspond à ces filtres pour le moment. Essayez d'élargir le rayon ou les catégories.</div>
+    <div id="empty-state" class="empty-state hidden"></div>
   </main>
   <!-- ===================== VUE : FICHE ÉVÉNEMENT ===================== -->
   <main id="view-detail" class="view hidden">
