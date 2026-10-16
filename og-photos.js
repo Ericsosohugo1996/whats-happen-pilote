@@ -23,6 +23,22 @@ async function get(url, ms) {
   finally { clearTimeout(t); }
 }
 
+// lit au plus `max` octets d'une réponse, et au plus `ms` millisecondes (un site qui n'en finit pas ne bloque plus le robot)
+async function readCapped(r, max, ms) {
+  if (!r.body || !r.body.getReader) { return (await r.text()).slice(0, max); }
+  const reader = r.body.getReader(); const dec = new TextDecoder("utf-8", { fatal: false });
+  let out = "", got = 0; const end = Date.now() + (ms || 10000);
+  try {
+    while (got < max && Date.now() < end) {
+      const left = end - Date.now();
+      const chunk = await Promise.race([reader.read(), new Promise((res) => setTimeout(() => res({ timeout: true }), left))]);
+      if (!chunk || chunk.timeout || chunk.done) break;
+      got += chunk.value.length; out += dec.decode(chunk.value, { stream: true });
+    }
+  } finally { try { await reader.cancel(); } catch (e) {} }
+  return out.slice(0, max);
+}
+
 const robotsCache = {};
 async function allowed(u) {
   const h = new URL(u).origin;
@@ -31,7 +47,7 @@ async function allowed(u) {
     try {
       const r = await get(h + "/robots.txt", 6000);
       if (r.ok) {
-        const txt = (await r.text()).slice(0, 100000);
+        const txt = await readCapped(r, 100000, 6000);
         let mine = false, any = false; const star = [], ours = [];
         for (const raw of txt.split(/\r?\n/)) {
           const line = raw.replace(/#.*/, "").trim(); if (!line) continue;
@@ -66,7 +82,7 @@ async function lookup(link) {
   const r = await get(link, 9000);
   if (!r.ok) return { n: "http" + r.status };
   if (!/text\/html/i.test(r.headers.get("content-type") || "")) return { n: "nothtml" };
-  const html = await r.text();
+  const html = await readCapped(r, 300000, 10000);
   const img = metaImage(html, r.url || link);
   if (!img || !/^https:\/\//i.test(img) || BAD_IMG.test(img)) return { n: "noimg" };
   return { u: img, d: host(r.url || link) };
@@ -91,8 +107,11 @@ async function main() {
   // un site après l'autre en alternance, pour ne jamais en solliciter un seul trop vite
   const queues = Object.entries(todo).map(([h, s]) => [h, [...s]]);
   console.log("sites :", queues.length, "pages à regarder :", queues.reduce((a, q) => a + q[1].length, 0));
+  const saveNow = () => { try { fs.writeFileSync(CACHE, JSON.stringify(cache)); } catch (e) {} };
+  process.on("SIGTERM", () => { saveNow(); process.exit(1); }); process.on("SIGINT", () => { saveNow(); process.exit(1); });
+  process.on("unhandledRejection", (e) => console.log("erreur ignorée :", e && e.message));
   let tried = 0, found = 0; const last = {}; const reasons = {};
-  // 12 « ouvriers » en parallèle : chacun prend la page suivante d'un site ; un même site n'est jamais sollicité plus d'une fois par seconde
+  // 8 « ouvriers » en parallèle : chacun prend la page suivante d'un site ; un même site n'est jamais sollicité plus d'une fois par seconde
   let qi = 0, stop = false;
   function nextJob() {
     for (let n = 0; n < queues.length; n++) {
@@ -111,10 +130,10 @@ async function main() {
       tried++;
       try { const r = await lookup(link); cache[link] = r; if (r.u) found++; else reasons[r.n] = (reasons[r.n] || 0) + 1; }
       catch (e) { cache[link] = { n: "err" }; reasons.err = (reasons.err || 0) + 1; }
-      if (tried % 200 === 0) console.log("…", tried, "pages,", found, "images");
+      if (tried % 200 === 0) { console.log("…", tried, "pages,", found, "images, mémoire", Math.round(process.memoryUsage().rss / 1048576), "Mo"); saveNow(); }
     }
   }
-  await Promise.all(Array.from({ length: 12 }, worker));
+  await Promise.all(Array.from({ length: 8 }, worker));
   if (stop) console.log("on s'arrête ici (relance pour continuer)");
   // image identique sur beaucoup de pages d'un même site = logo du site
   const perImg = {};
