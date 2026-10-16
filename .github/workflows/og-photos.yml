@@ -2,6 +2,8 @@ name: Photos des organisateurs
 
 on:
   workflow_dispatch:
+       schedule:
+       - cron: "35 5 * * *"
 
 permissions:
   contents: write
