@@ -5,13 +5,14 @@ const __baseVisibleEventsOriginal = baseVisibleEvents;
 baseVisibleEvents = function () {
   const events = __baseVisibleEventsOriginal();
   if (!__searchQuery) return events;
-  const q = __searchQuery.toLowerCase();
+  const fold = function (x) { return String(x || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); };
+  const q = fold(__searchQuery);
   return events.filter(function (ev) {
     return (
-      (ev.title && ev.title.toLowerCase().includes(q)) ||
-      (ev.category && ev.category.toLowerCase().includes(q)) ||
-      (ev.description && ev.description.toLowerCase().includes(q)) ||
-      (ev.place && ev.place.toLowerCase().includes(q))
+      fold(ev.title).includes(q) ||
+      fold(ev.category).includes(q) ||
+      fold(ev.description).includes(q) ||
+      fold(ev.place).includes(q)
     );
   });
 };

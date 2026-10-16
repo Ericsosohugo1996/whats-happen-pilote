@@ -56,7 +56,7 @@
     "#wz-sheet button:focus-visible,#wz-sheet input:focus-visible,#wz-searchbar:focus-visible{outline:2px solid #f0c878;outline-offset:2px}"
   ].join("\n");
 
-  var sel = { city: null, near: false, when: null, what: "all", q: "", err: "" };
+  var sel = { city: null, near: false, when: null, what: "all", q: "", kw: "", err: "" };
   var sheet = null;
 
   function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
@@ -86,7 +86,9 @@
     var parts = [];
     parts.push(w || "Quand tu veux");
     parts.push(k === "all" ? "Toutes les sorties" : whatOf(k).label.replace(/^[^\wÀ-ÿ]+\s*/, ""));
-    var dflt = !w && k === "all";
+    var kw = ""; try { kw = (typeof __searchQuery !== "undefined" && __searchQuery) ? __searchQuery : ""; } catch (e) {}
+    if (kw) parts.push("« " + kw + " »");
+    var dflt = !w && k === "all" && !kw;
     return { a: where, b: dflt ? "Changer de ville ou de date" : parts.join(" · ") };
   }
 
@@ -130,6 +132,7 @@
       '<div class="sh-body">' +
       '<div class="card"><h3>Où ?</h3><input type="search" id="sh-q" placeholder="Chercher une ville…" value="' + esc(sel.q) + '" autocomplete="off" aria-label="Chercher une ville"><div class="rows" id="sh-rows">' + cityRows() + "</div>" + (sel.err ? '<div class="err" role="alert">' + esc(sel.err) + "</div>" : "") + "</div>" +
       '<div class="card"><h3>Quand ?</h3><div class="chips">' + WHEN.map(function (w) { return '<button type="button" class="chip' + (sel.when === w.key ? " on" : "") + '" data-when="' + esc(w.key || "") + '">' + esc(w.label) + "</button>"; }).join("") + "</div></div>" +
+      '<div class="card"><h3>Un mot ?</h3><input type="search" id="sh-kw" placeholder="concert, brocante, enfants, jazz…" value="' + esc(sel.kw) + '" autocomplete="off" aria-label="Chercher un mot dans les sorties"></div>' +
       '<div class="card"><h3>Quoi ?</h3><div class="chips">' + WHAT.map(function (w) { return '<button type="button" class="chip' + (sel.what === w.id ? " on" : "") + '" data-what="' + w.id + '">' + esc(w.label) + "</button>"; }).join("") + "</div></div>" +
       "</div>" +
       '<div class="sh-foot"><button type="button" class="clr" data-act="clear">Tout effacer</button><button type="button" class="go" data-act="go">Voir les sorties</button></div>';
@@ -141,11 +144,13 @@
     try {
       if (sheet) return;
       sel.near = !!state.userPos; sel.city = state.city; sel.when = state.selectedPeriod || null; sel.what = currentWhat(); sel.q = ""; sel.err = "";
+      try { sel.kw = (typeof __searchQuery !== "undefined" && __searchQuery) ? __searchQuery : ""; } catch (e) { sel.kw = ""; }
       sheet = document.createElement("div");
       sheet.id = "wz-sheet"; sheet.setAttribute("role", "dialog"); sheet.setAttribute("aria-modal", "true"); sheet.setAttribute("aria-label", "Chercher une sortie");
       document.body.appendChild(sheet);
       sheet.addEventListener("click", onClick);
       sheet.addEventListener("input", function (e) {
+        if (e.target && e.target.id === "sh-kw") { sel.kw = e.target.value; return; }
         if (e.target && e.target.id === "sh-q") { sel.q = e.target.value; var r = sheet.querySelector("#sh-rows"); if (r) r.innerHTML = cityRows(); }
       });
       document.addEventListener("keydown", onKey);
@@ -165,7 +170,7 @@
     if (!t || !sheet || !sheet.contains(t)) return;
     var act = t.getAttribute("data-act");
     if (act === "close") return closeSheet();
-    if (act === "clear") { sel.city = sel.near ? null : sel.city; sel.when = null; sel.what = "all"; sel.q = ""; sel.err = ""; return render(); }
+    if (act === "clear") { sel.city = sel.near ? null : sel.city; sel.when = null; sel.what = "all"; sel.q = ""; sel.kw = ""; sel.err = ""; return render(); }
     if (act === "go") return apply();
     if (t.hasAttribute("data-all")) { sel.all = !sel.all; return render(); }
     if (t.hasAttribute("data-near")) { sel.near = true; sel.err = ""; return render(); }
@@ -182,6 +187,7 @@
       state.selectedPeriod = sel.when || null;
       state.selectedCategories = new Set(whatOf(sel.what).cats);
       state.selectedArrondissement = null;
+      try { __searchQuery = String(sel.kw || "").trim(); if (__searchQuery && typeof __toggleResultsContent === "function") __toggleResultsContent(true); } catch (e) {}
       state.radiusKm = 20;
       try { __hasPickedCity = true; } catch (e) {}
       try { __hasPickedFilter = true; } catch (e) {}
