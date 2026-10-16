@@ -53,6 +53,12 @@
     return base.filter(function (ev) { return ev && ev.date && ev.date >= today && real(ev) && !isPlace(ev) && ev.title; });
   }
 
+  // clé anti-doublon : titre sans accents/ponctuation/numéro de séance + lieu + jour
+  function dkey(e) {
+    var t = String(e.title || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s*\(\d+\)\s*$/, "").replace(/[^a-z0-9]+/g, "").slice(0, 45);
+    var p = String(e.place || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "").slice(0, 20);
+    return t + "|" + p + "|" + (e.date || "");
+  }
   function pick(def, evs, today, used) {
     var now = new Date(), end, out;
     if (def.id === "tonight") {
@@ -74,7 +80,7 @@
     // une seule fois par titre (séries d'ateliers, séances répétées)
     var seen = {}, res = [];
     out.forEach(function (e) {
-      var k = String(e.title).toLowerCase().replace(/\s*\(\d+\)\s*$/, "").slice(0, 40);
+      var k = dkey(e);
       if (seen[k]) return;
       seen[k] = 1; res.push(e);
     });
@@ -165,7 +171,7 @@
         cand.sort(function (x, y) { return tier(x) - tier(y) || (sortKey(x) < sortKey(y) ? -1 : 1); });
         var seen2 = {}, pick2 = [];
         cand.forEach(function (e) {
-          var k = String(e.title).toLowerCase().replace(/\s*\(\d+\)\s*$/, "").slice(0, 40);
+          var k = dkey(e);
           if (seen2[k] || pick2.length >= MAX_CARDS) return;
           seen2[k] = 1; pick2.push(e);
         });
