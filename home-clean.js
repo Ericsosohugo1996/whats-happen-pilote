@@ -23,6 +23,7 @@
     // fiche d'un événement : barres du haut et du bas en bleu nuit, comme le reste de la fiche
     "html body.wz-v2:has(#view-detail:not(.hidden)) .topbar{background:rgba(14,23,48,.94) !important;box-shadow:0 1px 0 rgba(255,255,255,.06) !important}",
     "html body.wz-v2:has(#view-detail:not(.hidden)) .topbar .btn-ghost{background:rgba(255,255,255,.12) !important;border:0 !important;color:#fff !important}",
+    "html body.wz-v2:has(#view-detail:not(.hidden)) .topbar .brand-word{color:#fff !important}",
     "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav{background:rgba(14,23,48,.97) !important}",
     "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav .nav-item .nav-label{color:#c3c8d6 !important}",
     "html body.wz-v2:has(#view-detail:not(.hidden)) #wz-nav #nav-idea .nav-label{color:#F2C879 !important}",
