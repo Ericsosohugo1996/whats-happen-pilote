@@ -56,6 +56,11 @@
     if (!ev.photo || ev.photoGeneric) return 2;
     return ev.photoVenue ? 1 : 0;
   }
+  // lieux (musées, sites à voir) : les plus célèbres d'abord (donc les plus sûrs d'avoir une belle photo), puis ceux qui ont une vraie photo
+  var FAMOUS = /louvre|orsay|pompidou|orangerie|rodin|quai branly|picasso|carnavalet|cluny|grand palais|arts decoratifs|palais de tokyo|petit palais|cite des sciences|louis vuitton|invalides|armee|jacquemart|marmottan|guimet|musee de l.homme|arts et metiers|palais de la decouverte|sainte.chapelle|pantheon|arc de triomphe|tour eiffel|notre.dame|sacre.coeur|opera garnier|conciergerie|catacombes|moulin rouge|chateau de versailles|fondation cartier|bourse de commerce|centre pompidou|mucem|fabre|beaux.arts|confluences|cathedrale|basilique|musee d.orsay/;
+  function fold(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
+  function fame(ev) { return FAMOUS.test(fold(ev.title)) ? 0 : 1; }
+  function placePhoto(ev) { return (!ev.photo || ev.photoGeneric) ? 2 : (ev.photoVenue ? 1 : 0); }
   // moment de la journée : 0 matin, 1 après-midi, 2 soirée, 3 marchés du matin et sans heure (toujours en dernier)
   function dayBucket(ev) {
     var k = dayKey(ev);
@@ -119,6 +124,10 @@
           var aD = !a.isPlace && a.date ? a.date : "9999-99-99";
           var bD = !b.isPlace && b.date ? b.date : "9999-99-99";
           if (aD !== bD) return aD < bD ? -1 : 1;
+          if (a.isPlace && b.isPlace && !nightMode) {
+            var fm = fame(a) - fame(b); if (fm) return fm;
+            var pp = placePhoto(a) - placePhoto(b); if (pp) return pp;
+          }
           if (nightMode) {
             if (rank(a) !== rank(b)) return rank(a) - rank(b);
             var dt = photoTier(a) - photoTier(b); // à moment égal, les événements avec une vraie photo d'abord
