@@ -56,10 +56,25 @@
 
   // quand on choisit une ville, l'accueil de la ville s'affiche depuis le HAUT de la page (et non à mi-hauteur)
   function toTop() { try { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; } catch (e) {} }
+  try {
+    var origSIV2 = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function () {
+      try {
+        if ((this.id === "event-list-featured" || this.id === "event-list") &&
+            window.__wzCityAt && Date.now() - window.__wzCityAt < 8000) { toTop(); return; }
+      } catch (e) {}
+      return origSIV2.apply(this, arguments);
+    };
+  } catch (e) {}
   document.addEventListener("click", function (e) {
     try {
       if (!e.target.closest(".chip-btn[data-city]")) return;
-      [0, 60, 200, 500, 1000].forEach(function (ms) { setTimeout(toTop, ms); });
+      window.__wzCityAt = Date.now();
+      var stop = false;
+      function halt() { stop = true; }
+      window.addEventListener("wheel", halt, { once: true, passive: true });
+      window.addEventListener("touchmove", halt, { once: true, passive: true });
+      [0, 60, 200, 500, 1000, 1600, 2400, 3500, 5000, 7000].forEach(function (ms) { setTimeout(function () { if (!stop) toTop(); }, ms); });
     } catch (x) {}
   }, true);
 })();
