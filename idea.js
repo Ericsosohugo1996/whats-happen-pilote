@@ -1,12 +1,21 @@
 // « Je ne sais pas quoi faire » : 2 questions (quand ? quoi ?) -> 3 idées classées (pas tirées au hasard).
 (function () {
   var WHEN = [["now", "Maintenant"], ["tonight", "Ce soir"], ["tomorrow", "Demain"], ["weekend", "Ce week-end"]];
+  // mêmes catégories que « Que se passe-t-il ? » sur l'accueil, Musées en premier
   var WANT = [
-    ["verre", "🍻 Boire un verre", ["Bar", "Soirée"]],
-    ["musique", "🎵 Musique", ["Musique", "Festival"]],
-    ["spectacle", "🎭 Spectacle", ["Spectacles"]],
-    ["famille", "👨‍👩‍👧 En famille", ["Famille"]],
-    ["lieu", "🏛️ Découvrir un lieu", ["À voir", "Expo"]],
+    ["musee", "🏛️ Musées", ["À voir"]],
+    ["musique", "🎵 Musique", ["Musique"]],
+    ["soiree", "🎟️ Soirées", ["Soirée"]],
+    ["spectacle", "🎭 Spectacles", ["Spectacles"]],
+    ["famille", "👨‍👩‍👧 Famille", ["Famille"]],
+    ["marche", "🛍️ Marché", ["Marché"]],
+    ["brocante", "🧺 Brocante", ["Brocante"]],
+    ["festival", "🎪 Festival", ["Festival"]],
+    ["sport", "⚽ Sport", ["Sport"]],
+    ["bar", "🍸 Bar", ["Bar"]],
+    ["expo", "🖼️ Expos & visites", ["Expo"]],
+    ["autres", "✨ Autres sorties", ["Divers"]],
+    ["bons", "🏷️ Bons plans", ["Bons plans"]],
     ["any", "🎲 Peu importe", null]
   ];
   var S = { when: null, want: [], zone: "city", offset: 0, ranked: [] };
@@ -46,6 +55,7 @@
     if (ev.isPlace || !ev.date) {
       // lieux ouverts (bars, sites à visiter) : seulement pour maintenant / ce soir
       if (S.when === "now" || S.when === "tonight") return { label: "Toujours ouvert", score: 200 };
+      if (ev.category === "À voir") return { label: "À visiter · vérifie les horaires", score: 350 };   // musées : proposés aussi demain et ce week-end
       return null;
     }
     var m = mins(ev.time);
