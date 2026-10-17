@@ -144,6 +144,28 @@
           return (a.distance || 0) - (b.distance || 0);
         });
     };
+    // séries répétitives (ex. « Les Samedis en Famille · Crèche A / B / C… » avec la même photo) :
+    // on en montre 2 par jour et le reste passe en fin de journée, pour ne pas noyer le reste
+    var baseReorder = window.__wzReorder;
+    function fold2(t) { return String(t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+    function spread(list) {
+      if (!Array.isArray(list)) return list;
+      var out = [], keep = [], over = [], curDay = null, c1 = {}, c2 = {};
+      function flush() { out.push.apply(out, keep); out.push.apply(out, over); keep = []; over = []; c1 = {}; c2 = {}; }
+      list.forEach(function (ev) {
+        var day = !ev.isPlace && ev.date ? ev.date : "~";
+        if (day !== curDay) { flush(); curDay = day; }
+        if (ev.isPlace || !ev.date) { keep.push(ev); return; }
+        var pre = fold2(ev.title).split(/ [·\-–:|] /)[0].trim().slice(0, 40);
+        var ph = ev.photo ? String(ev.photo).split("?")[0] : "";
+        var k1 = pre + "|" + ev.date, k2 = ph ? ph + "|" + ev.date : "";
+        c1[k1] = (c1[k1] || 0) + 1; if (k2) c2[k2] = (c2[k2] || 0) + 1;
+        if (c1[k1] > 2 || (k2 && c2[k2] > 3)) over.push(ev); else keep.push(ev);
+      });
+      flush();
+      return out;
+    }
+    window.__wzReorder = function (all) { return spread(baseReorder(all)); };
     return true;
   }
 
