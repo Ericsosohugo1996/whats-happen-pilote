@@ -133,7 +133,7 @@
     var venue = ev.place ? String(ev.place).split(",")[0] : "";
     return '<button type="button" class="wz-i-card' + (big ? " big" : "") + '" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-i-ph">' + eventPhotoHTML(ev) +
       '<span class="wz-i-pill" style="--c:' + color + '">' + icon + " " + esc(String(ev.category).toUpperCase()) + (price === "free" ? " · Gratuit" : "") + '</span></div>' +
-      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div><div class="wz-i-why">' + esc(x.label) + "</div></div></button>";
+      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div><div class="wz-i-why">' + esc(x.label) + '</div>' + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
   }
   function screenResult() {
     var r = root(), lst = S.ranked.slice(S.offset, S.offset + 3);
@@ -153,7 +153,50 @@
   }
   function go() { S.ranked = rank(); S.offset = 0; screenResult(); }
 
+  // ---- itinéraire à pied, affiché dans le site (carte Leaflet + tracé) ----
+  var rmap = null;
+  function killMap() { if (rmap) { try { rmap.remove(); } catch (e) {} rmap = null; } }
+  function findEv(id) { try { return allEvents().filter(function (e) { return String(e.id) === String(id); })[0]; } catch (e) { return null; } }
+  function screenRoute(id) {
+    var ev = findEv(id), r = root();
+    if (!ev || !ev.lat || !ev.lng) return screenResult();
+    killMap();
+    r.innerHTML = head(3) + '<div class="wz-i-k">Itinéraire à pied</div><h1 style="font-size:22px">' + esc(ev.title) + '</h1>' +
+      '<div id="wz-i-map" style="height:300px;border-radius:18px;overflow:hidden;background:#EEF0F4;margin:8px 0 10px"></div>' +
+      '<div id="wz-i-rinfo" class="wz-i-sub" style="font-weight:700">Calcul du trajet…</div>' +
+      '<button type="button" class="wz-i-alt ghost" data-i="back">← Retour aux idées</button>';
+    r.scrollTop = 0;
+    var box = document.getElementById("wz-i-map"), info = document.getElementById("wz-i-rinfo");
+    if (typeof L === "undefined" || !L.map) { box.innerHTML = '<div style="padding:18px;font:13px system-ui;color:#6B7280">La carte n’a pas pu se charger. Vérifie ta connexion.</div>'; info.textContent = ""; return; }
+    var to = [+ev.lat, +ev.lng], from = null;
+    try { var ref = referencePoint(); if (ref && ref.lat && ref.lng) from = [+ref.lat, +ref.lng]; } catch (e) {}
+    try {
+      rmap = L.map(box, { zoomControl: true, attributionControl: false, scrollWheelZoom: false });
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19 }).addTo(rmap);
+      L.marker(to, { icon: L.divIcon({ className: "", iconSize: [32, 32], iconAnchor: [16, 16], html: '<div style="width:32px;height:32px;border-radius:50%;background:#E85D3D;color:#fff;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:15px">📍</div>' }) }).addTo(rmap);
+      if (from) L.circleMarker(from, { radius: 8, color: "#fff", weight: 3, fillColor: "#2563EB", fillOpacity: 1 }).addTo(rmap);
+      rmap.setView(to, 15);
+      setTimeout(function () { try { rmap.invalidateSize(); } catch (e) {} }, 250);
+    } catch (e) { box.innerHTML = '<div style="padding:18px;font:13px system-ui;color:#6B7280">La carte n’a pas pu se charger.</div>'; return; }
+    if (!from) { info.textContent = "Active ta position pour voir le trajet à pied."; return; }
+    function draw(coords, txt) {
+      try { var pl = L.polyline(coords, { color: "#2563EB", weight: 6, opacity: .9 }).addTo(rmap); rmap.fitBounds(pl.getBounds(), { padding: [30, 30], maxZoom: 17 }); } catch (e) {}
+      info.textContent = txt;
+    }
+    fetch("https://router.project-osrm.org/route/v1/foot/" + from[1] + "," + from[0] + ";" + to[1] + "," + to[0] + "?overview=full&geometries=geojson")
+      .then(function (x) { return x.json(); })
+      .then(function (d) {
+        var rt = d && d.routes && d.routes[0]; if (!rt) throw new Error("no route");
+        draw(rt.geometry.coordinates.map(function (c) { return [c[1], c[0]]; }), "🚶 " + Math.max(1, Math.round(rt.distance / 80)) + " min à pied · " + (rt.distance / 1000).toFixed(1).replace(".", ",") + " km");
+      })
+      .catch(function () {
+        var R = Math.PI / 180, dl = (to[0] - from[0]) * R, dn = (to[1] - from[1]) * R, aa = Math.sin(dl / 2) * Math.sin(dl / 2) + Math.cos(from[0] * R) * Math.cos(to[0] * R) * Math.sin(dn / 2) * Math.sin(dn / 2), m = 12742000 * Math.asin(Math.sqrt(aa));
+        draw([from, to], "🚶 environ " + Math.max(1, Math.round(m * 1.3 / 80)) + " min à pied (à vol d’oiseau)");
+      });
+  }
+
   function openIdea() {
+    try { var av = document.getElementById("arrival-screen-overlay"); if (av) av.remove(); } catch (e) {}
     var h = new Date().getHours();
     S = { when: h >= 18 ? "tonight" : "now", want: [], zone: "city", offset: 0, ranked: [] };
     try { showView("discover"); } catch (e) {}
@@ -164,7 +207,9 @@
     if (t) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); return openIdea(); }
     var b = e.target.closest("#wz-idea [data-i]"); if (!b) return;
     var a = b.dataset.i, v = b.dataset.v;
-    if (a === "close") return close();
+    if (a === "close") { killMap(); return close(); }
+    if (a === "route") { e.preventDefault(); return screenRoute(b.dataset.id); }
+    if (a === "back") { killMap(); return screenResult(); }
     if (a === "when") { S.when = v; return screenAsk(); }
     if (a === "when2") { S.when = v; return go(); }
     if (a === "zone") { S.zone = v; return screenAsk(); }
@@ -180,4 +225,6 @@
   }, true);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   window.__wzIdeaOpen = openIdea;
+  // l'ancien parcours « Étape 1/2 » (guided-quest.js) est remplacé : ses accès ouvrent maintenant celui-ci
+  try { Object.defineProperty(window, "__questOpen", { configurable: true, get: function () { return openIdea; }, set: function () {} }); } catch (e) {}
 })();
