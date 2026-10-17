@@ -68,6 +68,21 @@
     return k < 720 ? 0 : k < 1020 ? 1 : 2;
   }
 
+  // contrôle de cohérence : un événement n'apparaît dans Marché / Expos / Brocante que si son titre colle vraiment
+  var CATQ = {
+    "Marché": { yes: /\bmarch(e|es)\b|foire|puces|producteur|vide.?grenier|brocante|artisan|noel|bio\b|halles/, no: /marche (nordique|culturelle|sportive|aquatique|active|d.eveil)|photograph|dictionnaire|theatre|guerre des|reseau lux|sport seniors/ },
+    "Brocante": { yes: /brocante|vide.?grenier|troc|bourse|puces|vente|braderie|occasion|seconde main|friperie|echange/, no: /exposition|\bexpo\b|atelier/ },
+    "Expo": { yes: /expo|visite|musee|galerie|vernissage|parcours|patrimoine|accrochage|collection|retrospective|biennale|photo|peinture|sculpture|art\b|artiste|decouverte|balade|promenade|monument|jardin/, no: /atelier|\bjeux?\b|\bia\b|genealogie|conference|couture|reparation|initiation|yoga|cours\b|stage|resistances/ }
+  };
+  function catOk(ev, cat) {
+    if (!ev || ev.isPlace) return true;
+    var q = CATQ[cat]; if (!q) return true;
+    var t = fold(ev.title);
+    if (q.no && q.no.test(t)) return false;
+    return q.yes.test(t);
+  }
+  window.__wzCatOk = catOk;
+
   var F = window.__wzF = { when: null, kind: null, free: false };
   var KINDS = {
     club: /\bclub\b|\bdj\b|party|\brave\b|techno|\bhouse\b|electro|clubbing|\bafters?\b|\bnuit\b|night|disco|boiler/i,
@@ -108,6 +123,7 @@
       var nightMode = cats && cats.size > 0 && Array.from(cats).every(function (c) { return NIGHT.indexOf(c) >= 0; });
       return all
         .filter(passF)
+        .filter(function (ev) { if (cats && cats.size === 1) return catOk(ev, Array.from(cats)[0]); return true; })
         .filter(function (ev) {
           // « Autres sorties » n'apparaît que dans sa propre case, pas dans « Tout »
           if (ev.category === "Divers" && !(cats && cats.has("Divers"))) return false;
@@ -155,7 +171,11 @@
       list.forEach(function (ev) {
         var day = !ev.isPlace && ev.date ? ev.date : "~";
         if (day !== curDay) { flush(); curDay = day; }
-        if (ev.isPlace || !ev.date) { keep.push(ev); return; }
+        if (ev.isPlace || !ev.date) {
+          var fm = fold(ev.title).match(FAMOUS);
+          if (ev.isPlace && fm) { var fk = "F:" + fm[0]; if (c1[fk]) { over.push(ev); return; } c1[fk] = 1; }
+          keep.push(ev); return;
+        }
         var pre = fold2(ev.title).split(/ [·\-–:|] /)[0].trim().slice(0, 40);
         var ph = ev.photo ? String(ev.photo).split("?")[0] : "";
         var k1 = pre + "|" + ev.date, k2 = ph ? ph + "|" + ev.date : "";
@@ -166,6 +186,16 @@
       return out;
     }
     window.__wzReorder = function (all) { return spread(baseReorder(all)); };
+    setInterval(function () {
+      try {
+        var ev = allEvents(), has = {};
+        ev.forEach(function (e) { has[e.category] = 1; });
+        document.querySelectorAll(".quick-cat").forEach(function (b) {
+          var t = (b.textContent || "").trim();
+          if (/Bons plans/.test(t) && !has["Bons plans"]) b.style.display = "none";
+        });
+      } catch (e) {}
+    }, 1500);
     return true;
   }
 
