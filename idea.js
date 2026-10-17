@@ -15,7 +15,6 @@
     ["bar", "🍸 Bar", ["Bar"]],
     ["expo", "🖼️ Expos & visites", ["Expo"]],
     ["autres", "✨ Autres sorties", ["Divers"]],
-    ["bons", "🏷️ Bons plans", ["Bons plans"]],
     ["any", "🎲 Peu importe", null]
   ];
   var S = { when: null, want: [], zone: "city", offset: 0, ranked: [] };
@@ -46,8 +45,8 @@
     return out;
   }
   function wantOk(ev) {
-    if (!S.want.length || S.want.indexOf("any") !== -1) return ev.category !== "Divers" && ev.category !== "Brocante";
-    return S.want.some(function (k) { var w = WANT.filter(function (x) { return x[0] === k; })[0]; if (!(w && w[2] && w[2].indexOf(ev.category) !== -1)) return false; if (k === "musee") return isMuseum(ev); return true; });
+    if (!S.want.length || S.want.indexOf("any") !== -1) if (ev.category === "Divers" || ev.category === "Brocante") return false; try { if (window.__wzCatOk && !window.__wzCatOk(ev, ev.category)) return false; } catch (e) {} return true;
+    return S.want.some(function (k) { var w = WANT.filter(function (x) { return x[0] === k; })[0]; if (!(w && w[2] && w[2].indexOf(ev.category) !== -1)) return false; if (k === "musee") return isMuseum(ev); try { if (window.__wzCatOk && !window.__wzCatOk(ev, ev.category)) return false; } catch (e) {} return true; });
   }
   // « Musées » = vrais musées et grands monuments (pas les églises, salles de sport, boutiques…)
   var MUSEUM_RE = /(mus[eé]e|museum|mus[eé]um|galerie|fondation|centre d.art|ch[aâ]teau|panth[eé]on|catacombes|tour eiffel|arc de triomphe|sainte.chapelle|cath[eé]drale|basilique|abbaye|conciergerie|invalides|op[eé]ra garnier)/i;
@@ -63,7 +62,8 @@
     if (ev.isPlace || !ev.date) {
       // lieux ouverts (bars, sites à visiter) : seulement pour maintenant / ce soir
       if (S.when === "now" || S.when === "tonight") return { label: "Toujours ouvert", score: 200 };
-      if (ev.category === "À voir") return { label: "À visiter · vérifie les horaires", score: 350 };   // musées : proposés aussi demain et ce week-end
+      if (ev.category === "À voir") return { label: "À visiter · vérifie les horaires", score: 350 };
+      if (ev.category === "Bar") return { label: "Ouvert en soirée · vérifie les horaires", score: 360 };   // musées : proposés aussi demain et ce week-end
       return null;
     }
     var m = mins(ev.time);
@@ -107,6 +107,8 @@
     res = res.filter(function (r) {
       var e = r.ev, lk = e.lat && e.lng ? (+e.lat).toFixed(3) + "," + (+e.lng).toFixed(3) : "t:" + String(e.title || "").toLowerCase().slice(0, 30);
       var pk = e.photo ? String(e.photo).split("?")[0] : "";
+      var fm = e.isPlace ? String(e.title || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").match(FAMOUS_RE) : null;
+      if (fm) { if (locSeen["F:" + fm[0]]) return false; locSeen["F:" + fm[0]] = 1; }
       if (locSeen[lk] || (pk && phSeen[pk])) return false;
       locSeen[lk] = 1; if (pk) phSeen[pk] = 1; return true;
     });
