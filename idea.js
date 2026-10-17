@@ -51,6 +51,7 @@
   }
   // « Musées » = vrais musées et grands monuments (pas les églises, salles de sport, boutiques…)
   var MUSEUM_RE = /(mus[eé]e|museum|mus[eé]um|galerie|fondation|centre d.art|ch[aâ]teau|panth[eé]on|catacombes|tour eiffel|arc de triomphe|sainte.chapelle|cath[eé]drale|basilique|abbaye|conciergerie|invalides|op[eé]ra garnier)/i;
+  var FAMOUS_RE = /(louvre|orsay|pompidou|orangerie|rodin|quai branly|picasso|carnavalet|cluny|grand palais|notre.dame|tour eiffel|arc de triomphe|sainte.chapelle|panth[eé]on|invalides|conciergerie|catacombes|versailles|op[eé]ra garnier)/i;
   var NOT_MUSEUM_RE = /(librairie|boutique|caf[eé]|restaurant|parking|h[oô]tel|office de tourisme)/i;
   function isMuseum(ev) {
     var t = String(ev.title || "");
@@ -98,7 +99,17 @@
       var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25);
       res.push({ ev: ev, label: tm.label, score: sc });
     });
+    // lieux très connus : ils passent devant (Louvre, Orsay, Notre-Dame…)
+    res.forEach(function (r) { if (r.ev.isPlace && FAMOUS_RE.test(String(r.ev.title || ""))) r.score -= 90; });
     res.sort(function (a, b) { return a.score - b.score; });
+    // pas deux fois le même endroit ni la même photo (ex. « Musée X » et « Jardin du musée X »)
+    var locSeen = {}, phSeen = {};
+    res = res.filter(function (r) {
+      var e = r.ev, lk = e.lat && e.lng ? (+e.lat).toFixed(3) + "," + (+e.lng).toFixed(3) : "t:" + String(e.title || "").toLowerCase().slice(0, 30);
+      var pk = e.photo ? String(e.photo).split("?")[0] : "";
+      if (locSeen[lk] || (pk && phSeen[pk])) return false;
+      locSeen[lk] = 1; if (pk) phSeen[pk] = 1; return true;
+    });
     // variété : on évite 3 fois la même catégorie quand on peut
     var out = [], seen = {};
     res.forEach(function (r) { var c = r.ev.category; if ((seen[c] || 0) < 2) { out.push(r); seen[c] = (seen[c] || 0) + 1; } });
