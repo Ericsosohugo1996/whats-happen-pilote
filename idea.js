@@ -47,7 +47,14 @@
   }
   function wantOk(ev) {
     if (!S.want.length || S.want.indexOf("any") !== -1) return ev.category !== "Divers" && ev.category !== "Brocante";
-    return S.want.some(function (k) { var w = WANT.filter(function (x) { return x[0] === k; })[0]; return w && w[2] && w[2].indexOf(ev.category) !== -1; });
+    return S.want.some(function (k) { var w = WANT.filter(function (x) { return x[0] === k; })[0]; if (!(w && w[2] && w[2].indexOf(ev.category) !== -1)) return false; if (k === "musee") return isMuseum(ev); return true; });
+  }
+  // « Musées » = vrais musées et grands monuments (pas les églises, salles de sport, boutiques…)
+  var MUSEUM_RE = /(mus[eé]e|museum|mus[eé]um|galerie|fondation|centre d.art|ch[aâ]teau|panth[eé]on|catacombes|tour eiffel|arc de triomphe|sainte.chapelle|cath[eé]drale|basilique|abbaye|conciergerie|invalides|op[eé]ra garnier)/i;
+  var NOT_MUSEUM_RE = /(librairie|boutique|caf[eé]|restaurant|parking|h[oô]tel|office de tourisme)/i;
+  function isMuseum(ev) {
+    var t = String(ev.title || "");
+    return MUSEUM_RE.test(t) && !NOT_MUSEUM_RE.test(t);
   }
   // renvoie { label, score } ou null si la sortie ne convient pas au moment choisi
   function timing(ev) {
