@@ -90,7 +90,9 @@
     "#wz-all-list{display:none}",
     B + ".wz-lc #view-discover > #wz-all-list{display:flex;order:5;align-self:center;align-items:center;justify-content:center;gap:8px;box-sizing:border-box;width:min(560px,calc(100% - 32px));margin:6px 16px 16px;padding:14px 18px;border-radius:999px;border:1.5px solid #E85D3D;background:#fff;color:#C2410C;font:800 15px/1.2 inherit;font-family:inherit;cursor:pointer;box-shadow:0 4px 14px rgba(232,93,61,.14)}",
     // cases de chargement des photos : teinte chaude et claire (et non bleu nuit)
-    "#wz-rows .wzr-i{background:#EFE3D2 !important}"
+    "#wz-rows .wzr-i{background:#EFE3D2 !important}",
+    // cartes « lieux » (musées…) : la case photo faisait 188 px au lieu de 150 px et masquait le titre derrière une bande grise
+    B + " #view-discover .event-card.event-card--place .thumb-wrap .thumb{height:150px !important}"
   ].join("\n");
   document.head.appendChild(st);
 
@@ -160,10 +162,15 @@
 (function () {
   "use strict";
   var d = document.documentElement, t0 = Date.now(), stop = false;
+  var geoOk = false;
+  try { navigator.permissions.query({ name: "geolocation" }).then(function (r) { geoOk = r.state === "granted"; }).catch(function () {}); } catch (e) {}
   function ready() {
     var b = document.body;
     if (!b || !b.classList.contains("wz-v2")) return false;
-    if (b.classList.contains("wz-nocity")) return !!document.getElementById("wz-locate-top");
+    if (b.classList.contains("wz-nocity")) {
+      if (geoOk) return false;   // position déjà autorisée : l'appli va trouver la ville toute seule, on attend l'accueil
+      return !!document.getElementById("wz-locate-top");
+    }
     return !!document.getElementById("wz-searchbar") && !!document.getElementById("wz-chips");
   }
   function over() { return stop || Date.now() - t0 > 12000; }
