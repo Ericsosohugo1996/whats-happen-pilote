@@ -50,7 +50,7 @@
     var base = [];
     try { base = baseVisibleEvents(); } catch (e) { base = []; }
     var now = new Date(), today = ymd(now);
-    return base.filter(function (ev) { return ev && ev.date && ev.date >= today && real(ev) && !isPlace(ev) && ev.title; });
+    return base.filter(function (ev) { return ev && ev.date && ev.date >= today && real(ev) && !isPlace(ev) && ev.title && (!window.__wzCatOk || window.__wzCatOk(ev, ev.category)); });
   }
 
   // clé anti-doublon : titre sans accents/ponctuation/numéro de séance + lieu + jour
@@ -214,9 +214,15 @@
           var row = c.closest(".wzr"), strip = c.parentNode, id = row ? row.getAttribute("data-row") : "";
           var ex = EXTRA[id];
           if (ex && ex.length) { var nx = ex.shift(); c.insertAdjacentHTML("afterend", cardHTML(nx)); c.remove(); return; }
-          // plus de remplaçant : on retire la carte (pas d'illustration répétée) ; sous 3 cartes, la rangée disparaît
-          c.remove();
-          if (row && strip.querySelectorAll(".wzr-c").length < MIN_CARDS) row.remove();
+          // plus de remplaçant : s'il reste assez d'autres cartes, on retire celle-ci (pas d'illustration répétée) ;
+          // sinon elle reste avec l'illustration de la sortie (une rangée ne disparaît jamais à cause de photos lentes)
+          if (strip.querySelectorAll(".wzr-c").length > MIN_CARDS) { c.remove(); return; }
+          try {
+            var ev = allEvents().filter(function (x) { return x.id === c.getAttribute("data-id"); })[0] || {};
+            var box = document.createElement("div"); box.className = "wzr-i";
+            box.innerHTML = typeof window.sceneSVG === "function" ? window.sceneSVG(ev.scene) : "";
+            t.replaceWith(box);
+          } catch (x) {}
         }, true);
       }
       wrap.innerHTML = html;
@@ -243,4 +249,3 @@
   if (document.readyState === "complete") setTimeout(boot, 100);
   else window.addEventListener("load", function () { setTimeout(boot, 100); });
 })();
-
