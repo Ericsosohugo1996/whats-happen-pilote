@@ -168,7 +168,14 @@
       if (!Array.isArray(list)) return list;
       var out = [], keep = [], over = [], curDay = null, c1 = {}, c2 = {};
       function flush() { out.push.apply(out, keep); out.push.apply(out, over); keep = []; over = []; c1 = {}; c2 = {}; }
+      var dupSeen = {};
       list.forEach(function (ev) {
+        // même événement présent deux fois (même titre, même lieu, même jour, même heure) : une seule carte
+        if (!ev.isPlace && ev.date) {
+          var dk = fold2(ev.title).replace(/[^a-z0-9]+/g, "").slice(0, 45) + "|" + fold2(ev.place).replace(/[^a-z0-9]+/g, "").slice(0, 20) + "|" + ev.date + "|" + (ev.time || "");
+          if (dupSeen[dk]) return;
+          dupSeen[dk] = 1;
+        }
         var day = !ev.isPlace && ev.date ? ev.date : "~";
         if (day !== curDay) { flush(); curDay = day; }
         if (ev.isPlace || !ev.date) {
@@ -247,10 +254,21 @@
       list.querySelectorAll(".wz-day").forEach(function (n) { n.remove(); });
       var byId = {};
       (typeof allEvents === "function" ? allEvents() : []).forEach(function (e) { byId[e.id] = e; });
-      var last = null, n = 0;
+      var last = null, n = 0, undatedHdr = false;
       list.querySelectorAll(".event-card").forEach(function (card) {
         var ev = byId[card.dataset.id];
-        if (!ev || ev.isPlace || !ev.date) return;
+        if (!ev) return;
+        // lieux / marchés réguliers (sans date) : leur propre titre, pour ne pas les ranger sous la dernière date
+        if (ev.isPlace || !ev.date) {
+          if (n > 0 && !undatedHdr) {
+            undatedHdr = true;
+            var h2 = document.createElement("div");
+            h2.className = "wz-day";
+            h2.textContent = "Ouvert toute l’année";
+            card.parentNode.insertBefore(h2, card);
+          }
+          return;
+        }
         if (ev.date !== last) {
           last = ev.date; n++;
           var h = document.createElement("div");
