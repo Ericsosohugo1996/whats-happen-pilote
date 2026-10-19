@@ -80,7 +80,7 @@
   }
   function summary() {
     var where = "Où ?";
-    try { where = state.userPos ? "Autour de moi · " + cname(typeof nearestCityKey === "function" ? nearestCityKey() : state.city) : cname(state.city); } catch (e) {}
+    try { where = state.userPos ? "Autour de moi · " + ((window.__wzLocal && state.userPos && window.__wzLocal.lat === state.userPos.lat && window.__wzLocal.lng === state.userPos.lng) ? window.__wzLocal.label : cname(typeof nearestCityKey === "function" ? nearestCityKey() : state.city)) : cname(state.city); } catch (e) {}
     var w = ""; try { w = state.selectedPeriod ? whenLabel(state.selectedPeriod) : ""; } catch (e) {}
     var k = currentWhat();
     var parts = [];
