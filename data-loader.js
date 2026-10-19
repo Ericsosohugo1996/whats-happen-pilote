@@ -79,7 +79,7 @@
     try {
       if (!state.userPos) { keys.push(state.city); (window.__wzNeighbors(state.city) || []).forEach(function (k) { keys.push(k); }); }
       else {
-        var r = (state.radiusKm || 20) + 25, list = [];
+        var r = (state.radiusKm || 20) + 45, list = [];
         Object.keys(CITIES).forEach(function (k) {
           var c = CITIES[k];
           var d = haversineKm(state.userPos.lat, state.userPos.lng, c.lat, c.lng);
@@ -123,8 +123,12 @@
             loaded[id] = true;
             rerender(); // les événements des prochains jours s'affichent tout de suite
             // le reste arrive en arrière-plan puis on redessine
-            addFull(soon).catch(function (e) { console.error("Chargement complet de " + id + " impossible", e); })
-              .then(function () { rerender(); });
+            // on laisse d'abord le site respirer (affichage, photos) : le gros fichier arrive ~4 s plus tard
+            var later = function (f) { setTimeout(f, 4000); };
+            later(function () {
+              addFull(soon).catch(function (e) { console.error("Chargement complet de " + id + " impossible", e); })
+                .then(function () { rerender(); });
+            });
           } else {
             return addFull(null).then(function () { loaded[id] = true; });
           }
