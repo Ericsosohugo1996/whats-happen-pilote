@@ -27,22 +27,24 @@
       state.userPos = { lat: lat, lng: lng };
       window.__wzLocal = { lat: lat, lng: lng, label: label };
       if (typeof __nearMeShow === "function") __nearMeShow();
-      [100, 700, 1800].forEach(function (ms, i) {
+      [100, 700, 1800, 3500].forEach(function (ms, i) {
         setTimeout(function () {
           try {
             var k = km;
-            if (i === 2) {
+            if (i >= 2) {
               var n = baseVisibleEvents().length;
-              var m = document.querySelector(".wz-l-msg");
-              if (n < 6 && km < 30) { k = 30; if (m) m.textContent = "Peu de sorties à " + km + " km : j'élargis à 30 km."; }
-              else if (m) m.textContent = "";
+              k = state.radiusKm;
+              if (n < 6 && k < 30) k = 30;
+              else if (i === 3 && n < 6 && k < 50) k = 50;
             }
             if (state.radiusKm !== k || i === 0) {
+              var wider = k > state.radiusKm && i >= 2;
               state.radiusKm = k;
               var r = document.getElementById("radius-range"); if (r) r.value = k;
               var v = document.getElementById("radius-value"); if (v && typeof formatRadius === "function") v.textContent = formatRadius(k);
               document.querySelectorAll("#radius-presets .chip-btn").forEach(function (b) { b.classList.toggle("active", Number(b.dataset.radius) === k); });
               renderDiscover();
+              if (wider && typeof showShareToast === "function") showShareToast("Peu de sorties tout près : j'ai élargi à " + k + " km autour de " + label + ".");
             }
             label2(label);
           } catch (e) {}
@@ -132,4 +134,3 @@
   }
   setInterval(build, 500);
 })();
-
