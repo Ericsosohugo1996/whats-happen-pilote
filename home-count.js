@@ -33,6 +33,10 @@
     try { if (typeof CITIES !== "undefined" && state && state.city && CITIES[state.city]) return CITIES[state.city].name; } catch (e) {}
     return "";
   }
+  function whereName() {
+    try { if (state && state.userPos && window.__wzLocal && window.__wzLocal.lat === state.userPos.lat && window.__wzLocal.lng === state.userPos.lng) return window.__wzLocal.label; } catch (e) {}
+    return cityName();
+  }
 
   function paint() {
     var host = document.getElementById("view-discover");
@@ -44,7 +48,7 @@
       box = document.createElement("div"); box.id = "wz-count"; box.setAttribute("aria-live", "polite");
       slogan.parentNode.insertBefore(box, slogan.nextSibling);
     }
-    var n = weekCount(), c = cityName();
+    var n = weekCount(), c = whereName();
     if (n < 20 || !c) { box.style.display = "none"; return; }
     box.style.display = "";
     var html = "✨ <b>" + n.toLocaleString("fr-FR") + "</b> sorties cette semaine autour de " + c.replace(/[<>&]/g, "");
