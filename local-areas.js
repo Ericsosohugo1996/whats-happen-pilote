@@ -72,6 +72,7 @@
     inp.addEventListener("input", function () {
       clearTimeout(tm); var q = inp.value.trim();
       if (q.length < 2) { res.innerHTML = ""; return; }
+      res.textContent = "Recherche…";
       tm = setTimeout(function () {
         fetch("https://api-adresse.data.gouv.fr/search/?type=municipality&limit=6&q=" + encodeURIComponent(q))
           .then(function (r) { return r.json(); })
@@ -85,7 +86,7 @@
               res.appendChild(b);
             });
             if (!res.children.length) res.textContent = "Commune introuvable.";
-          }).catch(function () { res.textContent = "Recherche indisponible, choisis un département."; });
+          }).catch(function (err) { res.textContent = "Recherche indisponible (" + (err && err.message || "réseau") + "), choisis un département."; });
       }, 250);
     });
     return box;
