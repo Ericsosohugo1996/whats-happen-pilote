@@ -9,7 +9,7 @@ const REPORT = "ticketmaster-report.txt";
 const KEY = process.env.TICKETMASTER_KEY || "";
 const BASE = process.env.TM_BASE || "https://app.ticketmaster.com/discovery/v2/events.json";
 const DAYS_AHEAD = 60;
-const RADIUS_KM = 20;
+const RADIUS_KM = 40; // élargi : couvre aussi les petites communes autour des villes
 const report = [];
 const log = (...a) => { const s = a.join(" "); console.log(s); report.push(s); };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
