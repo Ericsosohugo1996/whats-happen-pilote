@@ -128,7 +128,7 @@
         .sort(function (a, b) { return a.d - b.d; }).slice(0, 3);
       if (!ranked.length) return "";
       var chips = ranked.map(function (r) { return '<button type="button" class="wzq-chip" data-wzq="' + esc(r.k) + '">' + esc(C[r.k].name) + " · " + Math.round(r.d / 10) * 10 + " km</button>"; }).join("");
-      return '<section class="wzr wzq" data-row="quiet"><div class="wzq-box"><h2>Peu de sorties ' + (window.__wzLocal && state.userPos && state.userPos.lat===window.__wzLocal.lat ? 'autour de ' + esc(window.__wzLocal.label) : 'à ' + esc(C[cur].name)) + ' pour l’instant</h2>' +
+      return '<section class="wzr wzq" data-row="quiet"><div class="wzq-box"><h2>Peu de sorties ' + (window.__wzLocal && state.userPos && Math.abs(state.userPos.lat-window.__wzLocal.lat)<0.05 ? 'autour de ' + esc(window.__wzLocal.label) : 'à ' + esc(C[cur].name)) + ' pour l’instant</h2>' +
         '<p>On en ajoute régulièrement. En attendant, voici les grandes villes les plus proches :</p><div class="wzq-chips">' + chips + "</div></div></section>";
     } catch (e) { return ""; }
   }
@@ -142,7 +142,7 @@
       var now = new Date(), today = ymd(now);
       var sel = state.selectedPeriod || "";
       var nb = 0; try { nb = baseVisibleEvents().length; } catch (e0) {}
-      var sig = state.city + "|" + (state.userPos ? "p" : "c") + "|" + evs.length + "|" + nb + "|" + today + "|" + sel;
+      var sig = (window.__wzLocal ? window.__wzLocal.label : "") + "|" + state.city + "|" + (state.userPos ? "p" : "c") + "|" + evs.length + "|" + nb + "|" + today + "|" + sel;
       var wrap = document.getElementById("wz-rows");
       if (wrap && sig === lastSig) return;
       lastSig = sig;
