@@ -33,8 +33,15 @@
   } catch (e) {}
 
   // ---- dates (même logique « UTC » que le reste de l'appli, pour rester cohérent) ----
-  function isoPlus(days) { return new Date(Date.now() + days * 86400000).toISOString().slice(0, 10); }
-  function dow(iso) { return new Date(iso + "T12:00:00").getDay(); } // 0 = dimanche, 6 = samedi
+  var __isoC = {}, __isoT = 0, __dowC = {};
+  function isoPlus(days) {
+    var now = Date.now();
+    if (now - __isoT > 1000) { __isoC = {}; __isoT = now; }
+    var v = __isoC[days];
+    if (v === undefined) v = __isoC[days] = new Date(now + days * 86400000).toISOString().slice(0, 10);
+    return v;
+  }
+  function dow(iso) { var v = __dowC[iso]; if (v === undefined) v = __dowC[iso] = new Date(iso + "T12:00:00").getDay(); return v; } // 0 = dimanche, 6 = samedi
   function weekendDates() {
     var out = [];
     for (var i = 0; i <= 7; i++) {
