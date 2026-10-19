@@ -19,7 +19,9 @@
     ".wz-local-box .wz-l-res{display:flex;flex-direction:column;gap:4px;margin-top:6px}" +
     ".wz-local-box .wz-l-res button{text-align:left;padding:10px 12px;border-radius:10px;border:1px solid #eadccd;background:#fff;font-size:14px;cursor:pointer}" +
     ".wz-local-box .wz-l-msg{margin-top:8px;font-size:13px;color:#8a4b1f}";
-  css += "body:not(.wz-nocity) #wz-local{display:none}";
+  css += "body:not(.wz-nocity) #wz-local{display:none}html body.wz-v2.wz-nocity #view-discover > #event-list,html body.wz-v2.wz-nocity #view-discover > #event-list-featured{display:none!important}";
+  css += ".wz-local-box summary{cursor:pointer;font-size:14px;font-weight:600;list-style:none;color:#3a2a1e}.wz-local-box summary::-webkit-details-marker{display:none}.wz-local-box details[open] summary{margin-bottom:10px}";
+  css += ".wz-com-res{display:flex;flex-direction:column;gap:6px;margin-top:10px}.wz-com-h{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8a4b1f}.wz-com-b{text-align:left;padding:11px 12px;border-radius:12px;border:1px solid #eadccd;background:#fff;font-size:15px;cursor:pointer}";
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
 
   function go(lat, lng, label, km) {
@@ -61,68 +63,62 @@
   try { fetch("idf-communes.json").then(function (r) { return r.json(); }).then(function (j) { COM = j; }).catch(function () {}); } catch (e) {}
   function makeBox(idp) {
     var box = document.createElement("div"); box.id = "wz-local" + idp; box.className = "wz-local-box";
-    box.innerHTML = "<h3>🏘️ Autour de chez moi</h3><p>Île-de-France : choisis ton département ou tape ta commune, sans passer par Paris.</p>" +
-      "<div class='wz-l-row'></div>" +
-      "<input id='wz-l-in" + idp + "' type='search' autocomplete='off' placeholder='Ta commune (ex. Viry-Châtillon, Longjumeau…)'>" +
-      "<div class='wz-l-res'></div><div class='wz-l-msg' id='wz-l-msg" + idp + "'></div>";
+    box.innerHTML = "<details><summary>🏘️ Île-de-France : choisis ton département</summary><div class='wz-l-row'></div></details>";
     var row = box.querySelector(".wz-l-row");
-    function after() { var x = document.querySelector("#wz-sheet .sh-x"); if (x) x.click(); }
     DEPS.forEach(function (d) {
       var b = document.createElement("button"); b.type = "button"; b.className = "wz-l-chip";
       b.textContent = d[0] + " · " + d[1];
       b.onclick = function () {
         if (d[0] === "75" && typeof CITIES !== "undefined" && CITIES.paris) {
-          // Paris = la ville Paris habituelle (plus rapide que le mode « autour de moi »)
           try { state.userPos = null; window.__wzLocal = null; state.city = "paris"; state.radiusKm = 20; if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true; renderDiscover(); } catch (e) {}
         } else go(d[2], d[3], d[1] + " (" + d[0] + ")", d[4]);
-        after();
+        closeSheet();
       };
       row.appendChild(b);
     });
-    var inp = box.querySelector("input"), res = box.querySelector(".wz-l-res"), tm;
-    inp.addEventListener("input", function () {
-      clearTimeout(tm); var q = inp.value.trim();
-      if (q.length < 2) { res.innerHTML = ""; return; }
-      res.textContent = "Recherche…";
-      var mine = ++seq;
-      tm = setTimeout(function () {
-        function show(list) {
-          if (mine !== seq) return;
-          res.innerHTML = "";
-          list.forEach(function (it) {
-            var b = document.createElement("button"); b.type = "button";
-            b.textContent = it.name + " (" + it.dep + ")";
-            b.onclick = function () { res.innerHTML = ""; inp.value = it.name; go(it.lat, it.lng, it.name, 15); after(); };
-            res.appendChild(b);
-          });
-          if (!list.length) res.textContent = "Commune introuvable.";
-        }
-        function getJ(url) {
-          return new Promise(function (ok, ko) {
-            var t = setTimeout(function () { ko(new Error("trop long")); }, 6000);
-            fetch(url).then(function (r) { return r.json(); }).then(function (j) { clearTimeout(t); ok(j); }, function (e) { clearTimeout(t); ko(e); });
-          });
-        }
-        var qn = fold(q), hits = (COM || []).filter(function (c) { return fold(c[0]).indexOf(qn) >= 0; })
-          .sort(function (a, b) { return (fold(a[0]).indexOf(qn) === 0 ? 0 : 1) - (fold(b[0]).indexOf(qn) === 0 ? 0 : 1) || a[0].localeCompare(b[0], "fr"); }).slice(0, 8);
-        if (hits.length) { show(hits.map(function (c) { return { name: c[0], dep: c[1], lat: c[2], lng: c[3] }; })); return; }
-        getJ("https://geo.api.gouv.fr/communes?nom=" + encodeURIComponent(q) + "&fields=nom,centre,codeDepartement&boost=population&limit=6")
-          .then(function (j) {
-            show((j || []).filter(function (c) { return c.centre; }).map(function (c) {
-              return { name: c.nom, dep: c.codeDepartement, lat: c.centre.coordinates[1], lng: c.centre.coordinates[0] };
-            }));
-          })
-          .catch(function () {
-            getJ("https://api-adresse.data.gouv.fr/search/?type=municipality&limit=6&q=" + encodeURIComponent(q)).then(function (j) {
-              show((j.features || []).map(function (f) {
-                return { name: f.properties.city, dep: (f.properties.postcode || "").slice(0, 2), lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0] };
-              }));
-            }).catch(function (err) { if (mine === seq) res.textContent = "Recherche indisponible (" + ((err && err.message) || "réseau") + "). Choisis un département."; });
-          });
-      }, 250);
-    });
     return box;
   }
+  function closeSheet() { var x = document.querySelector("#wz-sheet .sh-x"); if (x) x.click(); }
+
+  // ---- les communes apparaissent dans les cases de recherche existantes ----
+  function communeHits(q) {
+    var qn = fold(q); if (qn.length < 2 || !COM) return [];
+    var known = {};
+    try { Object.keys(CITIES).forEach(function (k) { known[fold(CITIES[k].name)] = 1; }); } catch (e) {}
+    return COM.filter(function (c) { var n = fold(c[0]); return n.indexOf(qn) >= 0 && !known[n]; })
+      .sort(function (a, b) { return (fold(a[0]).indexOf(qn) === 0 ? 0 : 1) - (fold(b[0]).indexOf(qn) === 0 ? 0 : 1) || a[0].localeCompare(b[0], "fr"); }).slice(0, 8);
+  }
+  function paintCommunes(host, q, after) {
+    var old = host.querySelector(".wz-com-res"); if (old) old.remove();
+    var hits = communeHits(q); if (!hits.length) return;
+    var box = document.createElement("div"); box.className = "wz-com-res";
+    var h = document.createElement("div"); h.className = "wz-com-h"; h.textContent = "Communes";
+    box.appendChild(h);
+    hits.forEach(function (c) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "wz-com-b";
+      b.textContent = "📍 " + c[0] + " (" + c[1] + ")";
+      b.onclick = function () { go(c[2], c[3], c[0], 15); if (after) after(); };
+      box.appendChild(b);
+    });
+    host.appendChild(box);
+  }
+  document.addEventListener("input", function (e) {
+    var t = e.target; if (!t || !t.id) return;
+    if (t.id === "city-search-input") {
+      setTimeout(function () {
+        var res = document.getElementById("city-search-results"); if (!res) return;
+        if (!t.value.trim()) { var o = res.querySelector(".wz-com-res"); if (o) o.remove(); return; }
+        res.classList.remove("hidden");
+        var empty = res.querySelector(".city-search-empty"); if (empty && communeHits(t.value).length) empty.remove();
+        paintCommunes(res, t.value, null);
+      }, 30);
+    } else if (t.id === "sh-q") {
+      setTimeout(function () {
+        var rows = document.getElementById("sh-rows"); if (!rows) return;
+        paintCommunes(rows, t.value, closeSheet);
+      }, 30);
+    }
+  }, true);
   function build() {
     // 1) écran de départ
     var si = document.getElementById("city-search-input");
