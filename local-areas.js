@@ -54,6 +54,7 @@
     var el = document.getElementById("locate-value");
     if (el) el.textContent = "📍 " + label;
   }
+  var seq = 0;
   function makeBox(idp) {
     var box = document.createElement("div"); box.id = "wz-local" + idp; box.className = "wz-local-box";
     box.innerHTML = "<h3>🏘️ Autour de chez moi</h3><p>Île-de-France : choisis ton département ou tape ta commune, sans passer par Paris.</p>" +
@@ -73,20 +74,38 @@
       clearTimeout(tm); var q = inp.value.trim();
       if (q.length < 2) { res.innerHTML = ""; return; }
       res.textContent = "Recherche…";
+      var mine = ++seq;
       tm = setTimeout(function () {
-        fetch("https://api-adresse.data.gouv.fr/search/?type=municipality&limit=6&q=" + encodeURIComponent(q))
-          .then(function (r) { return r.json(); })
+        function show(list) {
+          if (mine !== seq) return;
+          res.innerHTML = "";
+          list.forEach(function (it) {
+            var b = document.createElement("button"); b.type = "button";
+            b.textContent = it.name + " (" + it.dep + ")";
+            b.onclick = function () { res.innerHTML = ""; inp.value = it.name; go(it.lat, it.lng, it.name, 15); after(); };
+            res.appendChild(b);
+          });
+          if (!list.length) res.textContent = "Commune introuvable.";
+        }
+        function getJ(url) {
+          return new Promise(function (ok, ko) {
+            var t = setTimeout(function () { ko(new Error("trop long")); }, 6000);
+            fetch(url).then(function (r) { return r.json(); }).then(function (j) { clearTimeout(t); ok(j); }, function (e) { clearTimeout(t); ko(e); });
+          });
+        }
+        getJ("https://geo.api.gouv.fr/communes?nom=" + encodeURIComponent(q) + "&fields=nom,centre,codeDepartement&boost=population&limit=6")
           .then(function (j) {
-            res.innerHTML = "";
-            (j.features || []).forEach(function (f) {
-              var p = f.properties, c = f.geometry.coordinates;
-              var b = document.createElement("button"); b.type = "button";
-              b.textContent = p.city + " (" + (p.postcode || "").slice(0, 2) + ")";
-              b.onclick = function () { res.innerHTML = ""; inp.value = p.city; go(c[1], c[0], p.city, 15); after(); };
-              res.appendChild(b);
-            });
-            if (!res.children.length) res.textContent = "Commune introuvable.";
-          }).catch(function (err) { res.textContent = "Recherche indisponible (" + (err && err.message || "réseau") + "), choisis un département."; });
+            show((j || []).filter(function (c) { return c.centre; }).map(function (c) {
+              return { name: c.nom, dep: c.codeDepartement, lat: c.centre.coordinates[1], lng: c.centre.coordinates[0] };
+            }));
+          })
+          .catch(function () {
+            getJ("https://api-adresse.data.gouv.fr/search/?type=municipality&limit=6&q=" + encodeURIComponent(q)).then(function (j) {
+              show((j.features || []).map(function (f) {
+                return { name: f.properties.city, dep: (f.properties.postcode || "").slice(0, 2), lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0] };
+              }));
+            }).catch(function (err) { if (mine === seq) res.textContent = "Recherche indisponible (" + ((err && err.message) || "réseau") + "). Choisis un département."; });
+          });
       }, 250);
     });
     return box;
