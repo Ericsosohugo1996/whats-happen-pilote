@@ -68,7 +68,13 @@
     DEPS.forEach(function (d) {
       var b = document.createElement("button"); b.type = "button"; b.className = "wz-l-chip";
       b.textContent = d[0] + " · " + d[1];
-      b.onclick = function () { go(d[2], d[3], d[1] + " (" + d[0] + ")", d[4]); after(); };
+      b.onclick = function () {
+        if (d[0] === "75" && typeof CITIES !== "undefined" && CITIES.paris) {
+          // Paris = la ville Paris habituelle (plus rapide que le mode « autour de moi »)
+          try { state.userPos = null; window.__wzLocal = null; state.city = "paris"; state.radiusKm = 20; if (typeof __hasPickedCity !== "undefined") __hasPickedCity = true; renderDiscover(); } catch (e) {}
+        } else go(d[2], d[3], d[1] + " (" + d[0] + ")", d[4]);
+        after();
+      };
       row.appendChild(b);
     });
     var inp = box.querySelector("input"), res = box.querySelector(".wz-l-res"), tm;
@@ -126,3 +132,4 @@
   }
   setInterval(build, 500);
 })();
+
