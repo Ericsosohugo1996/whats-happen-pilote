@@ -10,15 +10,15 @@
     ["95", "Val-d'Oise", 49.05, 2.15, 25],
     ["77", "Seine-et-Marne", 48.70, 2.90, 30]
   ];
-  var css = "#wz-local{margin:14px 0;padding:14px;border-radius:16px;background:#fff7ef;border:1px solid #f0d9c4}" +
-    "#wz-local h3{margin:0 0 4px;font-size:16px}#wz-local p{margin:0 0 10px;font-size:13px;color:#6b5a4c}" +
-    "#wz-local .wz-l-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}" +
-    "#wz-local .wz-l-chip{border:1px solid #e3c9b0;background:#fff;border-radius:999px;padding:7px 12px;font-size:13px;cursor:pointer}" +
-    "#wz-local .wz-l-chip.on{background:#c1440e;color:#fff;border-color:#c1440e}" +
-    "#wz-local input{width:100%;box-sizing:border-box;padding:11px 12px;border-radius:12px;border:1px solid #e3c9b0;font-size:15px}" +
-    "#wz-l-res{display:flex;flex-direction:column;gap:4px;margin-top:6px}" +
-    "#wz-l-res button{text-align:left;padding:10px 12px;border-radius:10px;border:1px solid #eadccd;background:#fff;font-size:14px;cursor:pointer}" +
-    "#wz-l-msg{margin-top:8px;font-size:13px;color:#8a4b1f}";
+  var css = ".wz-local-box{margin:14px 0;padding:14px;border-radius:16px;background:#fff7ef;border:1px solid #f0d9c4}" +
+    ".wz-local-box h3{margin:0 0 4px;font-size:16px}.wz-local-box p{margin:0 0 10px;font-size:13px;color:#6b5a4c}" +
+    ".wz-local-box .wz-l-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}" +
+    ".wz-local-box .wz-l-chip{border:1px solid #e3c9b0;background:#fff;border-radius:999px;padding:7px 12px;font-size:13px;cursor:pointer}" +
+    ".wz-local-box .wz-l-chip.on{background:#c1440e;color:#fff;border-color:#c1440e}" +
+    ".wz-local-box input{width:100%;box-sizing:border-box;padding:11px 12px;border-radius:12px;border:1px solid #e3c9b0;font-size:15px}" +
+    ".wz-local-box .wz-l-res{display:flex;flex-direction:column;gap:4px;margin-top:6px}" +
+    ".wz-local-box .wz-l-res button{text-align:left;padding:10px 12px;border-radius:10px;border:1px solid #eadccd;background:#fff;font-size:14px;cursor:pointer}" +
+    ".wz-local-box .wz-l-msg{margin-top:8px;font-size:13px;color:#8a4b1f}";
   css += "body:not(.wz-nocity) #wz-local{display:none}";
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
 
@@ -33,7 +33,7 @@
             var k = km;
             if (i === 2) {
               var n = baseVisibleEvents().length;
-              var m = document.getElementById("wz-l-msg");
+              var m = document.querySelector(".wz-l-msg");
               if (n < 6 && km < 30) { k = 30; if (m) m.textContent = "Peu de sorties à " + km + " km : j'élargis à 30 km."; }
               else if (m) m.textContent = "";
             }
@@ -54,29 +54,21 @@
     var el = document.getElementById("locate-value");
     if (el) el.textContent = "📍 " + label;
   }
-  function build() {
-    if (document.getElementById("wz-local")) return;
-    var si = document.getElementById("city-search-input");
-    var anchor = si && si.parentNode;
-    if (!anchor || !anchor.parentNode) return;
-    var box = document.createElement("div"); box.id = "wz-local";
+  function makeBox(idp) {
+    var box = document.createElement("div"); box.id = "wz-local" + idp; box.className = "wz-local-box";
     box.innerHTML = "<h3>🏘️ Autour de chez moi</h3><p>Île-de-France : choisis ton département ou tape ta commune, sans passer par Paris.</p>" +
-      "<div class='wz-l-row' id='wz-l-deps'></div>" +
-      "<input id='wz-l-in' type='search' autocomplete='off' placeholder='Ta commune (ex. Viry-Châtillon, Longjumeau…)'>" +
-      "<div id='wz-l-res'></div><div id='wz-l-msg'></div>";
-    anchor.parentNode.insertBefore(box, anchor.nextSibling);
-    window.__wzLocalHost = anchor;
-    var row = box.querySelector("#wz-l-deps");
+      "<div class='wz-l-row'></div>" +
+      "<input id='wz-l-in" + idp + "' type='search' autocomplete='off' placeholder='Ta commune (ex. Viry-Châtillon, Longjumeau…)'>" +
+      "<div class='wz-l-res'></div><div class='wz-l-msg' id='wz-l-msg" + idp + "'></div>";
+    var row = box.querySelector(".wz-l-row");
+    function after() { var x = document.querySelector("#wz-sheet .sh-x"); if (x) x.click(); }
     DEPS.forEach(function (d) {
       var b = document.createElement("button"); b.type = "button"; b.className = "wz-l-chip";
       b.textContent = d[0] + " · " + d[1];
-      b.onclick = function () {
-        row.querySelectorAll(".wz-l-chip").forEach(function (x) { x.classList.remove("on"); });
-        b.classList.add("on"); go(d[2], d[3], d[1] + " (" + d[0] + ")", d[4]);
-      };
+      b.onclick = function () { go(d[2], d[3], d[1] + " (" + d[0] + ")", d[4]); after(); };
       row.appendChild(b);
     });
-    var inp = box.querySelector("#wz-l-in"), res = box.querySelector("#wz-l-res"), tm;
+    var inp = box.querySelector("input"), res = box.querySelector(".wz-l-res"), tm;
     inp.addEventListener("input", function () {
       clearTimeout(tm); var q = inp.value.trim();
       if (q.length < 2) { res.innerHTML = ""; return; }
@@ -89,13 +81,23 @@
               var p = f.properties, c = f.geometry.coordinates;
               var b = document.createElement("button"); b.type = "button";
               b.textContent = p.city + " (" + (p.postcode || "").slice(0, 2) + ")";
-              b.onclick = function () { res.innerHTML = ""; inp.value = p.city; go(c[1], c[0], p.city, 15); };
+              b.onclick = function () { res.innerHTML = ""; inp.value = p.city; go(c[1], c[0], p.city, 15); after(); };
               res.appendChild(b);
             });
             if (!res.children.length) res.textContent = "Commune introuvable.";
           }).catch(function () { res.textContent = "Recherche indisponible, choisis un département."; });
       }, 250);
     });
+    return box;
   }
-  setInterval(build, 800);
+  function build() {
+    // 1) écran de départ
+    var si = document.getElementById("city-search-input");
+    var anchor = si && si.parentNode;
+    if (anchor && anchor.parentNode && !document.getElementById("wz-local")) anchor.parentNode.insertBefore(makeBox(""), anchor.nextSibling);
+    // 2) fenêtre « Changer de ville ou de date »
+    var body = document.querySelector("#wz-sheet .sh-body");
+    if (body && !body.querySelector("#wz-local-s")) body.insertBefore(makeBox("-s"), body.firstChild);
+  }
+  setInterval(build, 500);
 })();
