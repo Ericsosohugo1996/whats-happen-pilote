@@ -5,7 +5,7 @@ const fs = require("fs");
 const KEY = process.env.OPENAGENDA_KEY || "";
 const BASE = process.env.OA_BASE || "https://api.openagenda.com/v2";
 const OUT = "openagenda-events.json", REPORT = "openagenda-events-report.txt";
-const DAYS_AHEAD = 60, MAX_KM = 25, MAX_LOCAL_KM = 40;
+const DAYS_AHEAD = 60, MAX_KM = 45, MAX_LOCAL_KM = 50;
 // agendas retenus (voir openagenda-report.txt) : [uid, nom, conserver tout (true) ou seulement les titres musique/soirée (false)]
 const AGENDAS = [
   [9969608, "Shotgun", true],
