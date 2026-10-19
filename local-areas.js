@@ -54,7 +54,9 @@
     var el = document.getElementById("locate-value");
     if (el) el.textContent = "📍 " + label;
   }
-  var seq = 0;
+  var seq = 0, COM = null;
+  function fold(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[-']/g, " "); }
+  try { fetch("idf-communes.json").then(function (r) { return r.json(); }).then(function (j) { COM = j; }).catch(function () {}); } catch (e) {}
   function makeBox(idp) {
     var box = document.createElement("div"); box.id = "wz-local" + idp; box.className = "wz-local-box";
     box.innerHTML = "<h3>🏘️ Autour de chez moi</h3><p>Île-de-France : choisis ton département ou tape ta commune, sans passer par Paris.</p>" +
@@ -93,6 +95,9 @@
             fetch(url).then(function (r) { return r.json(); }).then(function (j) { clearTimeout(t); ok(j); }, function (e) { clearTimeout(t); ko(e); });
           });
         }
+        var qn = fold(q), hits = (COM || []).filter(function (c) { return fold(c[0]).indexOf(qn) >= 0; })
+          .sort(function (a, b) { return (fold(a[0]).indexOf(qn) === 0 ? 0 : 1) - (fold(b[0]).indexOf(qn) === 0 ? 0 : 1) || a[0].localeCompare(b[0], "fr"); }).slice(0, 8);
+        if (hits.length) { show(hits.map(function (c) { return { name: c[0], dep: c[1], lat: c[2], lng: c[3] }; })); return; }
         getJ("https://geo.api.gouv.fr/communes?nom=" + encodeURIComponent(q) + "&fields=nom,centre,codeDepartement&boost=population&limit=6")
           .then(function (j) {
             show((j || []).filter(function (c) { return c.centre; }).map(function (c) {
