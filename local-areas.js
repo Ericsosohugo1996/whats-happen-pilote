@@ -58,9 +58,19 @@
     var el = document.getElementById("locate-value");
     if (el) el.textContent = "📍 " + label;
   }
-  var seq = 0, COM = null;
-  function fold(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[-']/g, " "); }
-  try { fetch("idf-communes.json").then(function (r) { return r.json(); }).then(function (j) { COM = j; }).catch(function () {}); } catch (e) {}
+  var COM = null, COMF = null, comLoading = false;
+  function fold(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[-'’]/g, " "); }
+  // la liste des communes (≈1,2 Mo) ne se télécharge qu'à la première recherche, pas à l'ouverture du site
+  function loadCom(cb) {
+    if (COM) { if (cb) cb(); return; }
+    if (comLoading) return; comLoading = true;
+    try {
+      fetch("communes.json").then(function (r) { return r.json(); }).then(function (j) {
+        COM = j; COMF = j.map(function (c) { return fold(c[0]); }); comLoading = false; if (cb) cb();
+      }).catch(function () { comLoading = false; });
+    } catch (e) { comLoading = false; }
+  }
+  document.addEventListener("focusin", function (e) { var t = e.target; if (t && (t.id === "city-search-input" || t.id === "sh-q")) loadCom(); }, true);
   function makeBox(idp) {
     var box = document.createElement("div"); box.id = "wz-local" + idp; box.className = "wz-local-box";
     box.innerHTML = "<details><summary>🏘️ Île-de-France : choisis ton département</summary><div class='wz-l-row'></div></details>";
@@ -82,11 +92,18 @@
 
   // ---- les communes apparaissent dans les cases de recherche existantes ----
   function communeHits(q) {
-    var qn = fold(q); if (qn.length < 2 || !COM) return [];
+    var qn = fold(q).trim(); if (qn.length < 2 || !COM) return [];
     var known = {};
     try { Object.keys(CITIES).forEach(function (k) { known[fold(CITIES[k].name)] = 1; }); } catch (e) {}
-    return COM.filter(function (c) { var n = fold(c[0]); return n.indexOf(qn) >= 0 && !known[n]; })
-      .sort(function (a, b) { return (fold(a[0]).indexOf(qn) === 0 ? 0 : 1) - (fold(b[0]).indexOf(qn) === 0 ? 0 : 1) || a[0].localeCompare(b[0], "fr"); }).slice(0, 8);
+    var pre = [], mid = [];
+    for (var i = 0; i < COM.length; i++) {
+      var n = COMF[i], at = n.indexOf(qn);
+      if (at < 0 || known[n]) continue;
+      (at === 0 ? pre : mid).push(COM[i]);
+      if (pre.length >= 40 && mid.length >= 40) break;
+    }
+    var cmp = function (a, b) { return (b[4] || 0) - (a[4] || 0) || a[0].length - b[0].length || a[0].localeCompare(b[0], "fr"); };
+    return pre.sort(cmp).concat(mid.sort(cmp)).slice(0, 8);
   }
   function paintCommunes(host, q, after) {
     var old = host.querySelector(".wz-com-res"); if (old) old.remove();
@@ -102,22 +119,22 @@
     });
     host.appendChild(box);
   }
-  document.addEventListener("input", function (e) {
-    var t = e.target; if (!t || !t.id) return;
+  function paintFor(t) {
     if (t.id === "city-search-input") {
-      setTimeout(function () {
-        var res = document.getElementById("city-search-results"); if (!res) return;
-        if (!t.value.trim()) { var o = res.querySelector(".wz-com-res"); if (o) o.remove(); return; }
-        res.classList.remove("hidden");
-        var empty = res.querySelector(".city-search-empty"); if (empty && communeHits(t.value).length) empty.remove();
-        paintCommunes(res, t.value, null);
-      }, 30);
+      var res = document.getElementById("city-search-results"); if (!res) return;
+      if (!t.value.trim()) { var o = res.querySelector(".wz-com-res"); if (o) o.remove(); return; }
+      res.classList.remove("hidden");
+      var empty = res.querySelector(".city-search-empty"); if (empty && communeHits(t.value).length) empty.remove();
+      paintCommunes(res, t.value, null);
     } else if (t.id === "sh-q") {
-      setTimeout(function () {
-        var rows = document.getElementById("sh-rows"); if (!rows) return;
-        paintCommunes(rows, t.value, closeSheet);
-      }, 30);
+      var rows = document.getElementById("sh-rows"); if (!rows) return;
+      paintCommunes(rows, t.value, closeSheet);
     }
+  }
+  document.addEventListener("input", function (e) {
+    var t = e.target; if (!t || (t.id !== "city-search-input" && t.id !== "sh-q")) return;
+    setTimeout(function () { paintFor(t); }, 30);
+    if (!COM) loadCom(function () { paintFor(t); });
   }, true);
   function build() {
     // 1) écran de départ
