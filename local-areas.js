@@ -29,15 +29,18 @@
       state.userPos = { lat: lat, lng: lng };
       window.__wzLocal = { lat: lat, lng: lng, label: label };
       if (typeof __nearMeShow === "function") __nearMeShow();
-      [100, 700, 1800, 3500].forEach(function (ms, i) {
+      [100, 700, 1800, 3500, 6500, 9500].forEach(function (ms, i) {
         setTimeout(function () {
           try {
             var k = km;
             if (i >= 2) {
-              var n = baseVisibleEvents().length;
               k = state.radiusKm;
-              if (n < 6 && k < 30) k = 30;
-              else if (i === 3 && n < 6 && k < 50) k = 50;
+              if (!window.__wzDataLoading) {
+                // on ne compte que les vraies sorties (pas « Divers », lieux, bars)
+                var n = baseVisibleEvents().filter(function (e) { return e && e.category !== "Divers" && e.category !== "À voir" && e.category !== "Bar"; }).length;
+                if (n < 6 && k < 30) k = 30;
+                else if (n < 6 && k < 50) k = 50;
+              }
             }
             if (state.radiusKm !== k || i === 0) {
               var wider = k > state.radiusKm && i >= 2;
