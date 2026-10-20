@@ -64,7 +64,7 @@
   function cities() { try { return CITIES; } catch (e) { return {}; } }
   function cname(k) { var c = cities()[k]; return c ? c.name : k; }
   function whatOf(id) { for (var i = 0; i < WHAT.length; i++) if (WHAT[i].id === id) return WHAT[i]; return WHAT[0]; }
-  function whenLabel(k) { for (var i = 0; i < WHEN.length; i++) if (WHEN[i].key === k) return WHEN[i].label; return ""; }
+  function whenLabel(k) { for (var i = 0; i < WHEN.length; i++) if (WHEN[i].key === k) return WHEN[i].label; try { return (window.__wzWhenLabel && window.__wzWhenLabel(k)) || ""; } catch (e) { return ""; } }
 
   // ---- ce que l'appli affiche actuellement ----
   function currentWhat() {
