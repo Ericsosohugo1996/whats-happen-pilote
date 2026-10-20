@@ -55,6 +55,13 @@
     while (pushed < d) { pushed++; try { history.pushState({ wz: pushed }, "", location.href); } catch (e) { pushed--; break; } }
     if (pushed > d) { var diff = pushed - d; pushed = d; ignore += 1; try { history.go(-diff); } catch (e) { ignore = 0; } }
   }
+  // filet de sécurité : si, après une fermeture, aucun écran n'est visible (page blanche), on réaffiche l'accueil
+  function rescue() {
+    try {
+      var any = ["discover"].concat(VIEWS).some(function (v) { var el = document.getElementById("view-" + v); return el && !el.classList.contains("hidden"); });
+      if (!any && typeof showView === "function") { showView("discover"); try { renderDiscover(); } catch (e) {} }
+    } catch (e) {}
+  }
   function schedule() { if (!raf) raf = requestAnimationFrame(sync); }
 
   function closeBtn(root) {
@@ -95,6 +102,7 @@
     setTimeout(function () {
       var still = current();
       if (still.indexOf(top) >= 0) { bad[top] = 1; }   // impossible à fermer : on ne la suit plus
+      rescue();
       schedule();
     }, 150);
     if (!ok) { bad[top] = 1; schedule(); }
