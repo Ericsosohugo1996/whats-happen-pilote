@@ -198,7 +198,7 @@
     setTimeout(function () {
       try {
         var t = document.getElementById("event-list-featured") || document.getElementById("event-list");
-        if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); else window.scrollTo({ top: 0, behavior: "smooth" });
+        if (t && String(sel.kw || "").trim()) t.scrollIntoView({ behavior: "smooth", block: "start" }); else window.scrollTo({ top: 0, behavior: "smooth" });
       } catch (e) {}
     }, 150);
   }
