@@ -197,7 +197,7 @@
           });
           row.appendChild(c);
         }
-        c.querySelector(".wz-chip-l").textContent = "📅 " + (lab || "Date");
+        c.querySelector(".wz-chip-l").textContent = (lab || "Date");
         c.classList.toggle("on", !!lab);
         var xx = c.querySelector(".wz-cal-x"); if (xx) xx.hidden = !lab;
       }
