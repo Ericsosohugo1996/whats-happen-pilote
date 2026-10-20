@@ -125,6 +125,10 @@
   function openAndGo() {
     expand();
     setTimeout(function () {
+      var ch = document.getElementById("wz-chips");
+      if (ch && ch.getBoundingClientRect().height > 0) {   // on reste en haut : les ronds de date restent visibles, la liste est juste dessous
+        try { window.scrollTo({ top: Math.max(0, ch.getBoundingClientRect().top + (window.pageYOffset || 0) - 70), behavior: "smooth" }); return; } catch (e) {}
+      }
       var el = document.querySelector("#view-discover > .toolbar") || document.getElementById("event-list-featured") || document.getElementById("event-list");
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 60);
