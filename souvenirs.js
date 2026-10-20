@@ -640,6 +640,7 @@
     });
 
        const list = await loadSouvenirs();
+    window.__souvenirsList = list; // lu par le bandeau profil du carnet (carnet-profile.js)
     const listEl = document.getElementById("souvenirs-list");
     const tabsEl = document.getElementById("souvenirs-city-tabs");
 
