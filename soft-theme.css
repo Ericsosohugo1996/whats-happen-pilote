@@ -82,3 +82,10 @@ html body #wz-idea#wz-idea .wz-i-go { background: var(--wz-acc) !important; colo
 html body #wz-idea#wz-idea .wz-i-alt { background: #fff !important; color: var(--wz-acc-d) !important; border: 1px solid var(--wz-line) !important; }
 html body #wz-idea#wz-idea .wz-i-ph { background: var(--wz-tint) !important; }
 html body #wz-idea#wz-idea .wz-i-route { background: var(--wz-acc) !important; }
+
+/* v6 : page « Nouveautés à … » : fond bleu pastel au lieu du bleu nuit */
+html body #newfinds-overlay { background: var(--wz-bg) !important; }
+html body #newfinds-overlay > div > div:first-child > div:first-child { color: var(--wz-mut) !important; }
+html body #newfinds-overlay > div > div:first-child > div:nth-child(2) { color: var(--wz-ink) !important; }
+html body #newfinds-overlay #newfinds-back, html body #newfinds-overlay #newfinds-close { background: #fff !important; color: var(--wz-ink) !important; border: 1px solid var(--wz-line) !important; }
+html body #newfinds-overlay #newfinds-result { border: 1px solid var(--wz-line); box-shadow: 0 12px 24px -20px rgba(20,33,61,.5); }
