@@ -28,13 +28,14 @@
 
   function ensure() {
     var body = document.querySelector(".locate-body");
+    var ci = document.getElementById("city-search-input"); if (ci && ci.placeholder.indexOf("35 000") < 0) ci.placeholder = "🔍 Chercher parmi plus de 35 000 villes…";
     if (!body || document.getElementById("wz-locate-top")) return;
     var b = document.createElement("button");
     b.type = "button"; b.id = "wz-locate-top";
     b.innerHTML = '<span style="font-size:22px">📍</span><span style="text-align:left">Me localiser<small>Les sorties autour de moi, tout de suite</small></span>';
     b.onclick = function () { var g = document.getElementById("btn-geoloc"); if (g) g.click(); };
     var sep = document.createElement("div");
-    sep.id = "wz-locate-sep"; sep.textContent = "ou choisis une ville";
+    sep.id = "wz-locate-sep"; sep.textContent = "ou choisis parmi plus de 35 000 villes";
     body.insertBefore(sep, body.firstChild);
     body.insertBefore(b, body.firstChild);
   }
