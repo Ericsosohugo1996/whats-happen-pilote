@@ -1,0 +1,23 @@
+/* Whazup — étape 1 « façon Instagram » : les boutons de date deviennent des ronds.
+   Pour revenir à l'ancien aspect : retirer la ligne <link ... insta-home.css> dans index.html. */
+html body.wz-v2 #view-discover #wz-chips { display: flex !important; gap: 4px !important; padding: 10px 14px 6px !important; overflow-x: auto !important; justify-content: space-between; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip,
+html body.wz-v2 #view-discover #wz-chips .wz-cal-chip {
+  flex: 1 1 0 !important; min-width: 58px; position: relative; display: flex !important; flex-direction: column; align-items: center; justify-content: flex-start;
+  gap: 6px; padding: 0 !important; background: transparent !important; border: 0 !important; box-shadow: none !important;
+  color: var(--wz-ink) !important; font: 700 11.5px 'Plus Jakarta Sans', system-ui, sans-serif !important; white-space: nowrap;
+}
+html body.wz-v2 #view-discover #wz-chips .wz-chip::before {
+  content: "•"; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%;
+  background: #fff; font-size: 26px; border: 3px solid var(--wz-acc); box-shadow: 0 0 0 3px var(--wz-bg) inset, 0 8px 16px -12px rgba(20,33,61,.5);
+}
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="today"]::before { content: "☀️"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="wz-tonight"]::before { content: "🌙"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="tomorrow"]::before { content: "🌅"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="wz-weekend"]::before { content: "🎉"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="cal"]::before { content: "📅"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip.on { background: transparent !important; color: var(--wz-acc-d) !important; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip.on::before { background: var(--wz-navy2); border-color: var(--wz-acc); box-shadow: 0 0 0 3px #fff inset; }
+html body.wz-v2 #view-discover #wz-chips .wz-cal-x { position: absolute; top: -2px; right: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--wz-acc); color: #fff; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+html body.wz-v2 #view-discover #wz-chips .wz-cal-x[hidden] { display: none !important; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip-n { display: none !important; }
