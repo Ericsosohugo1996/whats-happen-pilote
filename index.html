@@ -270,6 +270,10 @@ html.wz-boot body::after{content:"Whazup";position:fixed;left:0;right:0;top:42%;
       <div id="account-logged-in" class="hidden">
              <h2 style="margin-top:0;">Mon compte</h2>
         <p id="account-user-email" style="font-size:14px;"></p>
+        <div id="account-firstname-row" style="display:flex; gap:8px; margin:6px 0 4px;">
+          <input type="text" id="account-firstname" maxlength="20" placeholder="Mon prénom (vu par tes amis)" autocomplete="given-name" style="flex:1; min-width:0; border:1px solid #DCE3E6; border-radius:999px; padding:10px 14px; font-size:13px; font-family:inherit;">
+          <button type="button" id="account-firstname-save" style="border:none; background:#14213D; color:#fff; border-radius:999px; padding:10px 16px; font-size:13px; font-weight:700; cursor:pointer;">OK</button>
+        </div>
         <div id="account-stats-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0 16px;">
           <div style="background:#f7f7f7; border-radius:12px; padding:10px 8px; text-align:center;">
             <div id="account-stat-villes" style="font-size:18px; font-weight:800; color:#14213D;">–</div>
