@@ -89,3 +89,22 @@ html body #newfinds-overlay > div > div:first-child > div:first-child { color: v
 html body #newfinds-overlay > div > div:first-child > div:nth-child(2) { color: var(--wz-ink) !important; }
 html body #newfinds-overlay #newfinds-back, html body #newfinds-overlay #newfinds-close { background: #fff !important; color: var(--wz-ink) !important; border: 1px solid var(--wz-line) !important; }
 html body #newfinds-overlay #newfinds-result { border: 1px solid var(--wz-line); box-shadow: 0 12px 24px -20px rgba(20,33,61,.5); }
+
+/* v7 : carnet, amis, passeport, compte, fiche d'un événement → même style (bleu pastel, marine, corail) */
+html body #souvenirs-screen, html body #passport-screen, html body #friends-screen { background: var(--wz-bg) !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #view-detail, html body.wz-v2:has(#view-detail:not(.hidden)) { background: var(--wz-bg) !important; }
+html body.wz-v2 #view-detail .detail-hero { background: var(--wz-tint) !important; }
+html body.wz-v2 #view-detail .detail-hero::after { background: linear-gradient(to top, rgba(240,246,251,.97), rgba(240,246,251,0)) !important; }
+html body.wz-v2 #view-detail #btn-interested, html body.wz-v2 #view-detail #btn-interested:not(.active) { background: var(--wz-acc) !important; color: #fff !important; box-shadow: 0 12px 22px -16px rgba(201,72,63,.8) !important; }
+html body.wz-v2 #view-detail .action-tile .tile-icon, html body.wz-v2 #view-detail .info-row-new .ico { background: var(--wz-bg) !important; }
+html body.wz-v2 #view-detail .action-tile.active { background: #FDECEA !important; }
+html body.wz-v2 #view-detail .info-sub.accent { color: var(--wz-acc-d) !important; }
+html body #wz-ctabs button { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body #wz-ctabs button.on { background: var(--wz-navy2) !important; border-color: var(--wz-navy2) !important; color: #fff !important; }
+html body #souvenirs-screen [style*="linear-gradient(90deg"], html body #friends-screen [style*="linear-gradient(90deg"], html body #passport-screen [style*="linear-gradient(90deg"] { background: var(--wz-acc) !important; color: #fff !important; }
+html body #friends-screen input, html body #friends-screen input[type=email], html body #friends-screen input[type=text] { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body #account-modal .account-hero { background: linear-gradient(135deg, var(--wz-ink), var(--wz-navy2)) !important; }
+html body #account-modal .account-hero-title { color: #fff !important; }
+html body #account-modal .account-hero-sub { color: rgba(255,255,255,.8) !important; }
+html body #account-modal .btn-primary, html body #account-modal [style*="linear-gradient"]:not(.account-hero) { background: var(--wz-acc) !important; color: #fff !important; }
+html body #account-modal .modal-content { background: #fff !important; }
