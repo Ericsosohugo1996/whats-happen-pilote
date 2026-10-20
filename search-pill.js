@@ -130,7 +130,7 @@
     sheet.innerHTML =
       '<div class="sh-top"><h2>Où sors-tu ?</h2><button type="button" class="sh-x" data-act="close" aria-label="Fermer">✕</button></div>' +
       '<div class="sh-body">' +
-      '<div class="card"><h3>Où ?</h3><input type="search" id="sh-q" placeholder="Chercher une ville…" value="' + esc(sel.q) + '" autocomplete="off" aria-label="Chercher une ville"><div class="rows" id="sh-rows">' + cityRows() + "</div>" + (sel.err ? '<div class="err" role="alert">' + esc(sel.err) + "</div>" : "") + "</div>" +
+      '<div class="card"><h3>Où ?</h3><input type="search" id="sh-q" placeholder="Chercher parmi plus de 35 000 villes…" value="' + esc(sel.q) + '" autocomplete="off" aria-label="Chercher une ville"><div class="rows" id="sh-rows">' + cityRows() + "</div>" + (sel.err ? '<div class="err" role="alert">' + esc(sel.err) + "</div>" : "") + "</div>" +
       '<div class="card"><h3>Quand ?</h3><div class="chips">' + WHEN.map(function (w) { return '<button type="button" class="chip' + (sel.when === w.key ? " on" : "") + '" data-when="' + esc(w.key || "") + '">' + esc(w.label) + "</button>"; }).join("") + "</div></div>" +
       '<div class="card"><h3>Un mot ?</h3><input type="search" id="sh-kw" placeholder="concert, brocante, enfants, jazz…" value="' + esc(sel.kw) + '" autocomplete="off" aria-label="Chercher un mot dans les sorties"></div>' +
       '<div class="card"><h3>Quoi ?</h3><div class="chips">' + WHAT.map(function (w) { return '<button type="button" class="chip' + (sel.what === w.id ? " on" : "") + '" data-what="' + w.id + '">' + esc(w.label) + "</button>"; }).join("") + "</div></div>" +
