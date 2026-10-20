@@ -212,7 +212,9 @@
     var tm = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
     if (iso === t) return "Aujourd’hui";
     if (iso === tm) return "Demain";
-    var s = new Date(iso + "T12:00:00").toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
+    var dd = new Date(iso + "T12:00:00"), o = { weekday: "long", day: "numeric", month: "long" };
+    if (Math.abs(dd - now) > 150 * 86400000) o.year = "numeric";
+    var s = dd.toLocaleDateString("fr-FR", o);
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
