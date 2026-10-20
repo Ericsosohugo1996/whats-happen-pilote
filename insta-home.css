@@ -23,3 +23,14 @@ html body.wz-v2 #view-discover #wz-chips .wz-cal-x[hidden] { display: none !impo
 html body.wz-v2 #view-discover #wz-chips .wz-chip-n { display: none !important; }
 /* largeur alignée sur la barre de ville (grand écran) */
 html body.wz-v2 #view-discover #wz-chips { max-width: 780px; margin-left: auto !important; margin-right: auto !important; width: 100%; box-sizing: border-box; }
+
+/* ===== Étape 2 : grandes cartes façon Instagram ===== */
+html body.wz-v2 #view-discover #wz-rows .wzr-s { gap: 14px !important; scroll-snap-type: x mandatory !important; padding: 0 16px 8px !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-c {
+  flex: 0 0 min(74vw, 280px) !important; width: min(74vw, 280px) !important; min-width: min(74vw, 280px) !important; max-width: min(74vw, 280px) !important;
+  background: #fff !important; border-radius: 22px !important; box-shadow: 0 14px 28px -20px rgba(20,33,61,.55) !important; padding-bottom: 12px !important; scroll-snap-align: start;
+}
+html body.wz-v2 #view-discover #wz-rows .wzr-i { width: 100% !important; height: auto !important; aspect-ratio: 1 / 1; border-radius: 22px 22px 0 0 !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-t { margin: 10px 14px 0 !important; font-size: 16px !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-m { margin: 4px 14px 0 !important; font-size: 13px !important; color: var(--wz-mut) !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-m b { color: var(--wz-acc-d) !important; }
