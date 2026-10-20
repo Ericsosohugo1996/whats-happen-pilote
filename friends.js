@@ -467,4 +467,35 @@
   window.__renderFriendsScreen = renderFriendsScreen;
   window.__loadFriendsList = loadFriends;
   window.__createFriendship = createFriendship;
+
+  // ---- « Mon prénom » dans Mon compte : sert à l'écran d'invitation de tes amis ----
+  (function () {
+    function setup() {
+      var box = document.getElementById("account-logged-in");
+      var inp = document.getElementById("account-firstname");
+      var btn = document.getElementById("account-firstname-save");
+      if (!box || !inp || !btn || btn.__wz) return;
+      btn.__wz = true;
+      function fill() {
+        try {
+          var u = auth.currentUser;
+          if (u && !u.isAnonymous && !inp.value) inp.value = niceName(u) || "";
+        } catch (e) {}
+      }
+      new MutationObserver(fill).observe(box, { attributes: true, attributeFilter: ["class"] });
+      fill();
+      btn.addEventListener("click", async function () {
+        var v = inp.value.trim().slice(0, 20);
+        if (!v) return;
+        btn.textContent = "…";
+        try {
+          if (window.__authReady) await window.__authReady;
+          await auth.currentUser.updateProfile({ displayName: v });
+          btn.textContent = "✓";
+        } catch (e) { btn.textContent = "OK"; alert("Impossible d'enregistrer le prénom pour le moment."); return; }
+        setTimeout(function () { btn.textContent = "OK"; }, 1500);
+      });
+    }
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setup); else setup();
+  })();
 })();
