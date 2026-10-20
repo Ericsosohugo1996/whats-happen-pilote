@@ -8066,7 +8066,9 @@ function formatRadius(km){
 }
 function formatDate(iso){
   const d = new Date(iso + "T00:00:00");
-  return d.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
+  const o = { weekday: "long", day: "numeric", month: "long" };
+  if (Math.abs(d - Date.now()) > 150 * 86400000) o.year = "numeric"; // année affichée si l'événement est loin
+  return d.toLocaleDateString("fr-FR", o);
 }
  
 // ---- rendering ----
@@ -8467,8 +8469,10 @@ function renderDiscover(){
   const emptyEl = document.getElementById("empty-state");
   updateStatsBanner(baseVisibleEvents());
 
-  const featuredEvents = events.filter(ev => ev.featured);
-  const restEvents = events.filter(ev => !ev.featured);
+  const __farIso = new Date(Date.now() + 60 * 86400000).toISOString().slice(0, 10);
+  const isFeat = ev => ev.featured && (ev.isPlace || !ev.date || ev.date <= __farIso); // « À la une » = proche dans le temps
+  const featuredEvents = events.filter(isFeat);
+  const restEvents = events.filter(ev => !isFeat(ev));
 
   if (featuredEl) {
     featuredEl.innerHTML = featuredEvents.map(featuredCardHTML).join("");
