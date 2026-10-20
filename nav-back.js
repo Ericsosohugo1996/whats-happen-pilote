@@ -53,6 +53,7 @@
     now.forEach(function (k) { if (open.indexOf(k) < 0) open.push(k); });
     var d = open.length;
     while (pushed < d) { pushed++; try { history.pushState({ wz: pushed }, "", location.href); } catch (e) { pushed--; break; } }
+    if (d === 0) rescue();
     if (pushed > d) { var diff = pushed - d; pushed = d; ignore += 1; try { history.go(-diff); } catch (e) { ignore = 0; } }
   }
   // filet de sécurité : si, après une fermeture, aucun écran n'est visible (page blanche), on réaffiche l'accueil
