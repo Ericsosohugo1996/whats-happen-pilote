@@ -21,3 +21,5 @@ html body.wz-v2 #view-discover #wz-chips .wz-chip.on::before { background: var(-
 html body.wz-v2 #view-discover #wz-chips .wz-cal-x { position: absolute; top: -2px; right: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--wz-acc); color: #fff; font-size: 11px; display: flex; align-items: center; justify-content: center; }
 html body.wz-v2 #view-discover #wz-chips .wz-cal-x[hidden] { display: none !important; }
 html body.wz-v2 #view-discover #wz-chips .wz-chip-n { display: none !important; }
+/* largeur alignée sur la barre de ville (grand écran) */
+html body.wz-v2 #view-discover #wz-chips { max-width: 780px; margin-left: auto !important; margin-right: auto !important; width: 100%; box-sizing: border-box; }
