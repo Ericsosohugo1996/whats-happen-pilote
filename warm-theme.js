@@ -88,6 +88,8 @@
     // liste repliée
     B + ".wz-lc #view-discover > :is(.toolbar,#filters-panel,#map-mock,#btn-see-list,#week-strip-banner,#free-search-wrap,#event-list-featured,#event-list,#wz-more){display:none !important}",
     "#wz-all-list{display:none}",
+    // « Voir tous les événements » : on n'affiche que la liste complète, pas les rangées en double
+    B + ".wz-showall #view-discover #wz-rows{display:none !important}",
     B + ".wz-lc #view-discover > #wz-all-list{display:flex;order:5;align-self:center;align-items:center;justify-content:center;gap:8px;box-sizing:border-box;width:min(560px,calc(100% - 32px));margin:6px 16px 16px;padding:14px 18px;border-radius:999px;border:1.5px solid #E85D3D;background:#fff;color:#C2410C;font:800 15px/1.2 inherit;font-family:inherit;cursor:pointer;box-shadow:0 4px 14px rgba(232,93,61,.14)}",
     // cases de chargement des photos : teinte chaude et claire (et non bleu nuit)
     "#wz-rows .wzr-i{background:#EFE3D2 !important}",
@@ -97,7 +99,7 @@
   document.head.appendChild(st);
 
   var body = document.body;
-  function collapse() { body.classList.add("wz-lc"); }
+  function collapse() { body.classList.add("wz-lc"); body.classList.remove("wz-showall"); }
   function expand() { body.classList.remove("wz-lc"); }
   function isCollapsed() { return body.classList.contains("wz-lc"); }
   collapse();
@@ -137,7 +139,8 @@
   // dès qu'on utilise un filtre, la liste s'ouvre
   document.addEventListener("click", function (e) {
     var t = e.target; if (!t || !t.closest) return;
-    if (t.closest("#wz-all-list,#wz-all-btn")) { e.preventDefault(); return openAndGo(); }
+    if (t.closest("#wz-all-list,#wz-all-btn")) { e.preventDefault(); body.classList.add("wz-showall"); return openAndGo(); }
+    if (t.closest(".quick-cat,#home-category-quickbar,#wz-chips .wz-chip,.stat[data-filter]")) body.classList.remove("wz-showall");
     if (!isCollapsed()) return;
     if (t.closest(".quick-cat,#home-category-quickbar,#wz-chips .wz-chip")) { setTimeout(openAndGo, 250); return; }  // on t'emmène aux résultats
     if (t.closest(".wzr-all,#wz-sheet .go,.stat[data-filter]")) expand();                                            // ces boutons font déjà défiler vers la liste
