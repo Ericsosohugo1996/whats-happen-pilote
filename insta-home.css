@@ -58,7 +58,7 @@ html body.wz-v2 #view-discover #wz-carnet-promo .wz-cp-go { background: var(--wz
 html body.wz-v2 #view-discover #sejour-block button, html body.wz-v2 #view-discover #sejour-block a, html body.wz-v2 #view-discover #sejour-btn { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
 html body.wz-v2 #view-discover #btn-newsletter, html body.wz-v2 #view-discover #wz-publink, html body.wz-v2 #view-discover #wz-all-list { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
 /* « Mon carnet » existe déjà dans la barre du bas : on enlève le doublon des raccourcis */
-html body.wz-v2 #view-discover #wz-shortcuts #sc-carnet { display: none !important; }
+html body.wz-v2 #view-discover #wz-shortcuts #sc-carnet, html body.wz-v2 #view-discover #wz-shortcuts #sc-carnet2 { display: none !important; }
 
 /* ===== Étape 3.3 : derniers détails ===== */
 html body.wz-v2 #view-discover #btn-discover-back, html body.wz-v2 #view-discover #btn-newsletter { max-width: 780px !important; margin-left: auto !important; margin-right: auto !important; box-sizing: border-box; }
@@ -81,3 +81,12 @@ html body.wz-v2 #view-discover #category-chips > .chip-btn { background: #fff !i
 html body.wz-v2 #view-discover .filters-panel .chip-btn.active { background: var(--wz-navy2) !important; border-color: var(--wz-navy2) !important; color: #fff !important; }
 html body.wz-v2 #view-discover .filters-panel select { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
 html body.wz-v2 #view-discover .filters-panel input[type=range] { accent-color: var(--wz-acc); }
+
+/* Ordinateur : la barre Carte/Liste, les dates et la recherche ont la même largeur que la liste en dessous */
+@media (min-width: 1000px) {
+  html body.wz-v2:not(.wz-nocity) #view-discover#view-discover > .toolbar,
+  html body.wz-v2:not(.wz-nocity) #view-discover#view-discover > #week-strip-banner,
+  html body.wz-v2:not(.wz-nocity) #view-discover#view-discover > #free-search-wrap { max-width: 1224px !important; width: 100% !important; }
+}
+/* titres de jour (« Aujourd'hui », « Demain »…) : corail uni */
+html body.wz-v2 #view-discover #event-list .wz-day { background: var(--wz-acc) !important; color: #fff !important; box-shadow: none !important; }
