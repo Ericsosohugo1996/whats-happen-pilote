@@ -1,0 +1,52 @@
+/* Whazup — thème « Marine & corail » : plus de contraste, un orange adouci (corail), des filtres bleu clair.
+   Pour tout annuler : retirer la ligne <link ... soft-theme.css> dans index.html. */
+:root { --wz-bg:#F0F6FB; --wz-ink:#14213D; --wz-mut:#5B6B7A; --wz-line:#DCE3E6; --wz-acc:#E8655A; --wz-acc-d:#C9483F; --wz-tint:#D7ECEF; --wz-teal:#1F7A8C; --wz-navy2:#22355F; }
+
+/* fond et texte (sélecteurs renforcés pour passer devant le thème chaud) */
+html body.wz-v2.wz-v2, html body.wz-v2.wz-v2 #view-discover, html body.wz-v2.wz-v2 main.view { background: var(--wz-bg) !important; color: var(--wz-ink) !important; }
+html body.wz-v2.wz-v2 .topbar { background: rgba(255,255,255,.88) !important; border-bottom: 1px solid var(--wz-line) !important; backdrop-filter: blur(8px); }
+html body.wz-v2.wz-v2 #wz-slogan, html body.wz-v2.wz-v2 #wz-count { color: var(--wz-mut) !important; }
+html body.wz-v2.wz-v2 #wz-count b { color: var(--wz-acc-d) !important; }
+html body.wz-v2.wz-v2 #wz-rows .wzr-i { background: #DCE8F2 !important; }
+
+/* case de recherche : une carte nette */
+html body.wz-v2 #wz-searchbar { border-color: var(--wz-line) !important; box-shadow: 0 6px 18px -14px rgba(20,33,61,.45) !important; }
+
+/* raccourcis de date et filtres : blancs, puis bleu clair quand ils sont choisis */
+html body.wz-v2 #wz-chips .wz-chip,
+html body.wz-v2 #wz-chips .wz-cal-chip { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #wz-chips .wz-chip.on {
+  background: var(--wz-tint) !important; border-color: var(--wz-teal) !important; color: var(--wz-ink) !important;
+  box-shadow: inset 0 0 0 1px var(--wz-teal) !important;
+}
+html body.wz-v2 .home-quickbar-section button:not(#wz-all-btn), html body.wz-v2 .quick-cat { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+
+/* bannière « Je ne sais pas quoi faire » : bleu marine, texte clair, icône corail */
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise {
+  background: linear-gradient(135deg, var(--wz-ink), var(--wz-navy2)) !important; color: #fff !important;
+  box-shadow: 0 10px 22px -16px rgba(20,33,61,.7) !important;
+}
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise,
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise * { color: #fff !important; }
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-e { background: var(--wz-acc) !important; }
+
+/* gros bouton « Me localiser » et boutons principaux : corail uni */
+html body #wz-locate-top { background: var(--wz-acc) !important; box-shadow: 0 8px 18px -12px rgba(201,72,63,.65) !important; }
+[style*="linear-gradient"][style*="E85D3D" i], [style*="linear-gradient"][style*="F2864B" i] {
+  background: var(--wz-acc) !important; box-shadow: none !important;
+}
+
+/* titres de rangées, dates, liens : corail foncé lisible */
+html body #view-discover #wz-rows .wzr-h h2 em.wz-em { color: var(--wz-acc) !important; }
+html body.wz-v2 #wz-rows .wzr-m b { color: var(--wz-acc-d) !important; }
+html body.wz-v2 #wz-all-btn, html body.wz-v2 #wz-all-list { color: var(--wz-acc-d) !important; }
+html body.wz-v2 #wz-nav .nav-item, html body.wz-v2 #wz-nav .nav-label { color: var(--wz-mut) !important; }
+html body.wz-v2 #wz-nav .nav-item.active, html body.wz-v2 #wz-nav .nav-item.active .nav-label { color: var(--wz-ink) !important; }
+
+/* calendrier */
+#wz-cal .cal-box { background: #fff !important; color: var(--wz-ink) !important; }
+#wz-cal .cal-ok, #wz-cal .cal-d.cal-start, #wz-cal .cal-d.cal-end { background: var(--wz-acc) !important; color: #fff !important; }
+#wz-cal .cal-d.cal-in { background: var(--wz-tint) !important; }
+#wz-cal .cal-d.cal-today { box-shadow: inset 0 0 0 1.5px var(--wz-teal) !important; }
+#wz-cal .cal-d i { background: var(--wz-teal) !important; }
+
