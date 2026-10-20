@@ -109,3 +109,10 @@ html body.wz-v2:has(#view-discover:not(.hidden)) .topbar, html body.wz-v2 .topba
 html body #wz-top { width: 42px !important; height: 42px !important; right: 12px !important; bottom: 118px !important; opacity: .92; }
 html body.wz-v2 #wz-nav .wz-new { top: -12px !important; right: -6px !important; }
 html body.wz-v2 #wz-nav #nav-carnet-btn { position: relative; }
+
+/* ===== À LA UNE sur PC : une grande carte pleine largeur, plus seule dans une colonne ===== */
+@media (min-width:1000px){
+  html body.wz-v2 #view-discover > #event-list-featured{grid-template-columns:1fr!important}
+  html body.wz-v2 #view-discover #event-list-featured .featured-card{width:100%!important;max-width:none!important}
+  html body.wz-v2:not(.wz-nocity) #event-list-featured .featured-photo{min-height:320px!important}
+}
