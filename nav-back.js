@@ -109,7 +109,13 @@
     if (!ok) { bad[top] = 1; schedule(); }
   });
 
+  // à l'ouverture, on part toujours du haut de la page (le navigateur ne doit pas restaurer l'ancienne position)
+  try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+  function toTop() { try { if (!location.hash) window.scrollTo(0, 0); } catch (e) {} }
+  toTop();
+
   function start() {
+    toTop(); setTimeout(toTop, 600); setTimeout(toTop, 1600);
     try { history.replaceState({ wz: 0 }, "", location.href); } catch (e) {}
     MODALS.concat(VIEWS.map(function (v) { return "view-" + v; })).forEach(function (id) {
       var el = document.getElementById(id); if (el) watch(el);
