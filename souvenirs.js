@@ -623,7 +623,7 @@
 
                  document.getElementById("souvenirs-close-btn").addEventListener("click", function () {
       screen.remove();
-      if (window.__arrivalShow) __arrivalShow();
+      if (window.__arrivalShow && document.body.classList.contains("wz-nocity")) __arrivalShow();
     });   
 
     wzNavbarBind(screen, function () { screen.remove(); });
