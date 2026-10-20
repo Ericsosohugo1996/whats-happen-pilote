@@ -71,3 +71,13 @@ html body.wz-v2 #wz-nav .wz-new { background: var(--wz-acc) !important; }
 html body.wz-v2 #view-discover .toolbar .seg.active, html body.wz-v2 #view-discover .segmented .seg.active { background: var(--wz-navy2) !important; color: #fff !important; box-shadow: none !important; }
 html body.wz-v2 #view-discover .filters-panel .chip-btn.active, html body.wz-v2 #view-discover .toolbar .chip-btn.active { background: var(--wz-navy2) !important; border-color: var(--wz-navy2) !important; color: #fff !important; }
 
+/* « Voir la liste » : corail uni */
+html body.wz-v2 #view-discover #btn-see-list, html body #btn-see-list { background: var(--wz-acc) !important; color: #fff !important; box-shadow: 0 10px 20px -14px rgba(201,72,63,.7) !important; border: 0 !important; }
+
+/* Panneau « Filtres » : boutons blancs, sélection marine */
+html body.wz-v2 #view-discover .filters-panel .chip-btn,
+html body.wz-v2 #view-discover #category-chips > button:not(.active),
+html body.wz-v2 #view-discover #category-chips > .chip-btn { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover .filters-panel .chip-btn.active { background: var(--wz-navy2) !important; border-color: var(--wz-navy2) !important; color: #fff !important; }
+html body.wz-v2 #view-discover .filters-panel select { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover .filters-panel input[type=range] { accent-color: var(--wz-acc); }
