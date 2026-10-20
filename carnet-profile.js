@@ -1,51 +1,154 @@
-// Bandeau « profil » en haut du carnet : initiale, prénom, nombre de souvenirs et de villes.
-// Style dans insta-home.css (#wz-prof). Pour le retirer : supprimer la ligne carnet-profile.js dans index.html.
-(function () {
-  "use strict";
-  function esc(s) { return String(s || "").replace(/[<>&"]/g, ""); }
-  function who() {
-    try {
-      var u = firebase.auth().currentUser;
-      if (!u || u.isAnonymous) return "";
-      var n = u.displayName ? String(u.displayName).trim().split(/\s+/)[0] : "";
-      if (!n) {
-        var e = String(u.email || "").split("@")[0];
-        n = (e.match(/^[A-Za-zÀ-ÿ]+/) || [""])[0];
-        if (n.length > 9 && n.length === e.length) n = "";
-      }
-      return n ? n.charAt(0).toUpperCase() + n.slice(1).toLowerCase() : "";
-    } catch (e) { return ""; }
-  }
-  function fill(box) {
-    var list = window.__souvenirsList;
-    var name = who() || "Mon carnet";
-    var w = who(); var ini = w ? w.charAt(0).toUpperCase() : "🙂";
-    var nb = Array.isArray(list) ? list.length : "–";
-    var villes = "–";
-    if (Array.isArray(list)) {
-      var set = {};
-      list.forEach(function (s) { if (s.city && s.city !== "autre") set[s.city] = 1; });
-      villes = Object.keys(set).length;
-    }
-    box.innerHTML =
-      '<div class="wz-prof-av"><div>' + esc(ini) + '</div></div>' +
-      '<div class="wz-prof-main"><div class="wz-prof-name">' + esc(name) + '</div>' +
-      '<div class="wz-prof-st"><span><b>' + nb + '</b> souvenir' + (nb === 1 ? "" : "s") + '</span>' +
-      '<span><b>' + villes + '</b> ville' + (villes === 1 ? "" : "s") + '</span></div></div>';
-  }
-  function inject() {
-    var scr = document.getElementById("souvenirs-screen");
-    if (!scr || scr.querySelector("#wz-prof")) return;
-    var tabs = scr.querySelector("#wz-ctabs");
-    if (!tabs) return;
-    var box = document.createElement("div");
-    box.id = "wz-prof";
-    tabs.parentNode.insertBefore(box, tabs);
-    fill(box);
-    var n = 0, iv = setInterval(function () { // la liste arrive un peu après l'ouverture
-      n++; if (!document.body.contains(box) || n > 20) return clearInterval(iv);
-      fill(box);
-    }, 400);
-  }
-  try { new MutationObserver(inject).observe(document.body, { childList: true, subtree: true }); } catch (e) {}
-})();
+/* Whazup — étape 1 « façon Instagram » : les boutons de date deviennent des ronds.
+   Pour revenir à l'ancien aspect : retirer la ligne <link ... insta-home.css> dans index.html. */
+html body.wz-v2 #view-discover #wz-chips { display: flex !important; gap: 4px !important; padding: 10px 14px 6px !important; overflow-x: auto !important; justify-content: space-between; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip,
+html body.wz-v2 #view-discover #wz-chips .wz-cal-chip {
+  flex: 1 1 0 !important; min-width: 58px; position: relative; display: flex !important; flex-direction: column; align-items: center; justify-content: flex-start;
+  gap: 6px; padding: 0 !important; background: transparent !important; border: 0 !important; box-shadow: none !important;
+  color: var(--wz-ink) !important; font: 700 11.5px 'Plus Jakarta Sans', system-ui, sans-serif !important; white-space: nowrap;
+}
+html body.wz-v2 #view-discover #wz-chips .wz-chip::before {
+  content: "•"; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%;
+  background: #fff; font-size: 26px; border: 3px solid var(--wz-acc); box-shadow: 0 0 0 3px var(--wz-bg) inset, 0 8px 16px -12px rgba(20,33,61,.5);
+}
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="today"]::before { content: "☀️"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="wz-tonight"]::before { content: "🌙"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="tomorrow"]::before { content: "🌅"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="wz-weekend"]::before { content: "🎉"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip[data-key="cal"]::before { content: "📅"; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip.on { background: transparent !important; color: var(--wz-acc-d) !important; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip.on::before { background: var(--wz-navy2); border-color: var(--wz-acc); box-shadow: 0 0 0 3px #fff inset; }
+html body.wz-v2 #view-discover #wz-chips .wz-cal-x { position: absolute; top: -2px; right: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--wz-acc); color: #fff; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+html body.wz-v2 #view-discover #wz-chips .wz-cal-x[hidden] { display: none !important; }
+html body.wz-v2 #view-discover #wz-chips .wz-chip-n { display: none !important; }
+/* largeur alignée sur la barre de ville (grand écran) */
+html body.wz-v2 #view-discover #wz-chips { max-width: 780px; margin-left: auto !important; margin-right: auto !important; width: 100%; box-sizing: border-box; }
+
+/* ===== Étape 2 : grandes cartes façon Instagram ===== */
+html body.wz-v2 #view-discover #wz-rows .wzr-s { gap: 14px !important; scroll-snap-type: x mandatory !important; padding: 0 16px 8px !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-c {
+  flex: 0 0 min(74vw, 280px) !important; width: min(74vw, 280px) !important; min-width: min(74vw, 280px) !important; max-width: min(74vw, 280px) !important;
+  background: #fff !important; border-radius: 22px !important; box-shadow: 0 14px 28px -20px rgba(20,33,61,.55) !important; padding-bottom: 12px !important; scroll-snap-align: start;
+}
+html body.wz-v2 #view-discover #wz-rows .wzr-i { width: 100% !important; height: auto !important; aspect-ratio: 1 / 1; border-radius: 22px 22px 0 0 !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-t { margin: 10px 14px 0 !important; font-size: 16px !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-m { margin: 4px 14px 0 !important; font-size: 13px !important; color: var(--wz-mut) !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-m b { color: var(--wz-acc-d) !important; }
+
+/* ===== Étape 3 : « Je ne sais pas quoi faire » devient une ligne discrète ===== */
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise {
+  background: #fff !important; border: 1px solid var(--wz-line) !important; box-shadow: none !important; border-radius: 16px !important;
+  min-height: 0 !important; height: auto !important; padding: 8px 14px 8px 52px !important; margin-top: 2px !important; margin-bottom: 8px !important;
+  max-width: 780px; margin-left: auto !important; margin-right: auto !important; width: calc(100% - 32px) !important;
+}
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise,
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise * { color: var(--wz-ink) !important; }
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-e { width: 30px !important; height: 30px !important; left: 12px !important; font-size: 15px !important; }
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::before { font: 700 14px/1.2 'Plus Jakarta Sans', system-ui, sans-serif !important; color: var(--wz-ink) !important; }
+html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::after { font: 500 11.5px/1.3 'Plus Jakarta Sans', system-ui, sans-serif !important; color: var(--wz-mut) !important; }
+
+/* ===== Étape 3.2 : bas de l'accueil homogène (blanc, marine, corail) ===== */
+html body.wz-v2 #view-discover #wz-carnet-promo.wz-cp-pitch { background: #fff !important; border: 1px solid var(--wz-line) !important; box-shadow: 0 12px 24px -20px rgba(20,33,61,.5) !important; max-width: 780px; margin-left: auto !important; margin-right: auto !important; width: calc(100% - 32px); box-sizing: border-box; }
+html body.wz-v2 #view-discover #wz-carnet-promo.wz-cp-pitch::before { background: var(--wz-tint) !important; }
+html body.wz-v2 #view-discover #wz-carnet-promo .wz-cp-k { color: var(--wz-acc-d) !important; }
+html body.wz-v2 #view-discover #wz-carnet-promo h2 { color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover #wz-carnet-promo p, html body.wz-v2 #view-discover #wz-carnet-promo .wz-cp-steps span { color: var(--wz-mut) !important; }
+html body.wz-v2 #view-discover #wz-carnet-promo .wz-cp-steps b { background: var(--wz-bg) !important; }
+html body.wz-v2 #view-discover #wz-carnet-promo .wz-cp-go { background: var(--wz-acc) !important; color: #fff !important; }
+html body.wz-v2 #view-discover #sejour-block button, html body.wz-v2 #view-discover #sejour-block a, html body.wz-v2 #view-discover #sejour-btn { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover #btn-newsletter, html body.wz-v2 #view-discover #wz-publink, html body.wz-v2 #view-discover #wz-all-list { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+/* « Mon carnet » existe déjà dans la barre du bas : on enlève le doublon des raccourcis */
+html body.wz-v2 #view-discover #wz-shortcuts #sc-carnet, html body.wz-v2 #view-discover #wz-shortcuts #sc-carnet2 { display: none !important; }
+
+/* ===== Étape 3.3 : derniers détails ===== */
+html body.wz-v2 #view-discover #btn-discover-back, html body.wz-v2 #view-discover #btn-newsletter { max-width: 780px !important; margin-left: auto !important; margin-right: auto !important; box-sizing: border-box; }
+html body #wz-top { background: var(--wz-acc) !important; color: #fff !important; }
+html body.wz-v2 #wz-nav #nav-idea .nav-label, html body.wz-v2 #wz-nav .nav-label { color: var(--wz-mut) !important; }
+html body.wz-v2 #wz-nav .nav-item.active .nav-label { color: var(--wz-acc-d) !important; }
+html body.wz-v2 #wz-nav .wz-new { background: var(--wz-acc) !important; }
+
+/* Carte / Liste et filtres : actif en marine, comme le reste */
+html body.wz-v2 #view-discover .toolbar .seg.active, html body.wz-v2 #view-discover .segmented .seg.active { background: var(--wz-navy2) !important; color: #fff !important; box-shadow: none !important; }
+html body.wz-v2 #view-discover .filters-panel .chip-btn.active, html body.wz-v2 #view-discover .toolbar .chip-btn.active { background: var(--wz-navy2) !important; border-color: var(--wz-navy2) !important; color: #fff !important; }
+
+/* « Voir la liste » : corail uni */
+html body.wz-v2 #view-discover #btn-see-list, html body #btn-see-list { background: var(--wz-acc) !important; color: #fff !important; box-shadow: 0 10px 20px -14px rgba(201,72,63,.7) !important; border: 0 !important; }
+
+/* Panneau « Filtres » : boutons blancs, sélection marine */
+html body.wz-v2 #view-discover .filters-panel .chip-btn,
+html body.wz-v2 #view-discover #category-chips > button:not(.active),
+html body.wz-v2 #view-discover #category-chips > .chip-btn { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover .filters-panel .chip-btn.active { background: var(--wz-navy2) !important; border-color: var(--wz-navy2) !important; color: #fff !important; }
+html body.wz-v2 #view-discover .filters-panel select { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover .filters-panel input[type=range] { accent-color: var(--wz-acc); }
+
+/* Ordinateur : la barre Carte/Liste, les dates et la recherche ont la même largeur que la liste en dessous */
+@media (min-width: 1000px) {
+  html body.wz-v2:not(.wz-nocity) #view-discover#view-discover > .toolbar,
+  html body.wz-v2:not(.wz-nocity) #view-discover#view-discover > #week-strip-banner,
+  html body.wz-v2:not(.wz-nocity) #view-discover#view-discover > #free-search-wrap { max-width: 1224px !important; width: 100% !important; }
+}
+/* titres de jour (« Aujourd'hui », « Demain »…) : corail uni */
+html body.wz-v2 #view-discover #event-list .wz-day { background: var(--wz-acc) !important; color: #fff !important; box-shadow: none !important; }
+
+/* « Nouveautés / Mes envies » : en bas de l'accueil avec les autres blocs secondaires, centrés */
+html body.wz-v2:not(.wz-nocity) #view-discover > #wz-shortcuts { order: 11 !important; justify-content: center !important; margin-top: 8px !important; margin-bottom: 4px !important; }
+
+/* ===== Téléphone : titres lisibles, bandeau opaque, ronds un peu plus petits ===== */
+html body.wz-v2 #view-discover #wz-rows .wzr-h h2, html body #view-discover #wz-rows .wzr-h h2 { color: var(--wz-ink) !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-h h2 em { color: var(--wz-acc) !important; }
+html body.wz-v2 #view-discover #wz-rows .wzr-all { background: #fff !important; color: var(--wz-ink) !important; border: 1px solid var(--wz-line) !important; }
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar, html body.wz-v2 .topbar, html body header.topbar { background: var(--wz-bg) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+@media (max-width: 600px) {
+  html body.wz-v2 #view-discover #wz-chips { gap: 2px !important; padding-left: 10px !important; padding-right: 10px !important; }
+  html body.wz-v2 #view-discover #wz-chips .wz-chip, html body.wz-v2 #view-discover #wz-chips .wz-cal-chip { min-width: 0; font-size: 11px !important; }
+  html body.wz-v2 #view-discover #wz-chips .wz-chip::before { width: 54px; height: 54px; font-size: 23px; }
+}
+
+/* Téléphone : la flèche ↑ plus haut et plus petite ; le badge « nouveau » ne cache plus l'icône du carnet */
+html body #wz-top { width: 42px !important; height: 42px !important; right: 12px !important; bottom: 118px !important; opacity: .92; }
+html body.wz-v2 #wz-nav .wz-new { top: -12px !important; right: -6px !important; }
+html body.wz-v2 #wz-nav #nav-carnet-btn { position: relative; }
+
+/* ===== À LA UNE sur PC : une grande carte pleine largeur, plus seule dans une colonne ===== */
+@media (min-width:1000px){
+  html body.wz-v2 #view-discover > #event-list-featured{grid-template-columns:1fr!important}
+  html body.wz-v2 #view-discover #event-list-featured .featured-card{width:100%!important;max-width:none!important}
+  html body.wz-v2:not(.wz-nocity) #event-list-featured .featured-photo{min-height:320px!important}
+}
+
+/* ===== Carnet : grille carrée façon profil Instagram (3 colonnes) ===== */
+html body #souvenirs-list > div[style*="grid-template-columns"]{
+  grid-template-columns:repeat(3,1fr)!important;gap:3px!important;
+}
+html body #souvenirs-list .souvenir-card{
+  position:relative!important;aspect-ratio:1/1!important;padding:0!important;border-radius:0!important;
+  transform:none!important;box-shadow:none!important;background:#D7ECEF!important;overflow:hidden!important;
+}
+html body #souvenirs-list .souvenir-card:active{opacity:.85}
+html body #souvenirs-list .souvenir-card > div:first-child{
+  position:absolute!important;inset:0!important;height:100%!important;border-radius:0!important;
+}
+/* légende : petit bandeau en bas de la photo ; la date en dessous est masquée */
+html body #souvenirs-list .souvenir-card > div:nth-child(2){
+  position:absolute!important;left:0;right:0;bottom:0;padding:16px 6px 5px!important;text-align:left!important;
+  background:linear-gradient(to top,rgba(10,18,40,.72),rgba(10,18,40,0))!important;
+}
+html body #souvenirs-list .souvenir-card > div:nth-child(2) > div:first-child{
+  color:#fff!important;font-family:inherit!important;font-size:11px!important;font-weight:700!important;text-shadow:0 1px 3px rgba(0,0,0,.5);
+}
+html body #souvenirs-list .souvenir-card > div:nth-child(2) > div:nth-child(2){display:none!important}
+@media (min-width:700px){
+  html body #souvenirs-list > div[style*="grid-template-columns"]{grid-template-columns:repeat(4,1fr)!important}
+}
+
+/* ===== Carnet : l'ancienne barre sombre à 5 onglets est masquée (on sort par « ← Retour ») ===== */
+html body #souvenirs-screen .wz-navbar{display:none!important}
+
+/* ===== Carnet : bandeau profil ===== */
+html body #wz-prof{display:flex;align-items:center;gap:14px;margin:2px 0 12px}
+html body #wz-prof .wz-prof-av{width:64px;height:64px;border-radius:50%;padding:3px;flex:none;background:linear-gradient(135deg,#E8655A,#F2A65A)}
+html body #wz-prof .wz-prof-av div{width:100%;height:100%;border-radius:50%;background:var(--wz-tint);border:3px solid var(--wz-bg);display:flex;align-items:center;justify-content:center;font:700 26px Georgia,serif;color:var(--wz-ink)}
+html body #wz-prof .wz-prof-name{font:700 18px Georgia,serif;color:var(--wz-ink);margin-bottom:4px}
+html body #wz-prof .wz-prof-st{display:flex;gap:16px;font-size:12px;color:var(--wz-mut)}
+html body #wz-prof .wz-prof-st b{color:var(--wz-ink);font-size:15px;margin-right:3px}
