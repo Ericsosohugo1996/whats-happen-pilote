@@ -50,3 +50,18 @@ html body.wz-v2 #wz-nav .nav-item.active, html body.wz-v2 #wz-nav .nav-item.acti
 #wz-cal .cal-d.cal-today { box-shadow: inset 0 0 0 1.5px var(--wz-teal) !important; }
 #wz-cal .cal-d i { background: var(--wz-teal) !important; }
 
+/* v2 : fond bleu partout (marges + bandeau du haut) */
+html body, html body.wz-v2:has(#view-discover:not(.hidden)), html body.wz-v2:has(#view-detail:not(.hidden)) { background: var(--wz-bg) !important; }
+html, html body.wz-v2 .topbar, html body .topbar, html body header.topbar { background-color: var(--wz-bg) !important; }
+html body header.topbar { background: rgba(240,246,251,.94) !important; border-bottom: 1px solid var(--wz-line) !important; }
+
+/* v3 : fenêtre « Où sors-tu ? » */
+html body #wz-sheet { background: var(--wz-bg) !important; color: var(--wz-ink) !important; }
+html body #wz-sheet .card h3 { color: var(--wz-acc-d) !important; }
+html body #wz-sheet .row { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body #wz-sheet .row.on { background: #FDECEA !important; border-color: var(--wz-acc) !important; }
+html body #wz-sheet .chip { background: #fff !important; border-color: var(--wz-line) !important; color: var(--wz-ink) !important; }
+html body #wz-sheet .chip.on { background: var(--wz-navy2) !important; border-color: var(--wz-navy2) !important; color: #fff !important; }
+html body #wz-sheet .sh-foot { background: var(--wz-bg) !important; border-top-color: var(--wz-line) !important; }
+html body #wz-sheet .go, html body #wz-sheet button.go { background: var(--wz-acc) !important; color: #fff !important; }
+html body #wz-sheet input[type=search], html body #wz-sheet input { border-color: var(--wz-line) !important; }
