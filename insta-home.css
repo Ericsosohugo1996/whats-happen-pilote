@@ -141,3 +141,6 @@ html body #souvenirs-list .souvenir-card > div:nth-child(2) > div:nth-child(2){d
 @media (min-width:700px){
   html body #souvenirs-list > div[style*="grid-template-columns"]{grid-template-columns:repeat(4,1fr)!important}
 }
+
+/* ===== Carnet : l'ancienne barre sombre à 5 onglets est masquée (on sort par « ← Retour ») ===== */
+html body #souvenirs-screen .wz-navbar{display:none!important}
