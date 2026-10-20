@@ -623,6 +623,11 @@
 
                  document.getElementById("souvenirs-close-btn").addEventListener("click", function () {
       screen.remove();
+      // le bouton « Souvenirs » de la barre du bas masque tous les écrans : à la fermeture du carnet, on réaffiche l'accueil
+      try {
+        var anyView = ["discover", "detail", "publish", "confirm", "favorites", "photos"].some(function (v) { var el = document.getElementById("view-" + v); return el && !el.classList.contains("hidden"); });
+        if (!anyView && typeof showView === "function") showView("discover");
+      } catch (e) {}
       if (window.__arrivalShow && document.body.classList.contains("wz-nocity")) __arrivalShow();
     });   
 
