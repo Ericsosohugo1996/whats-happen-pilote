@@ -104,3 +104,8 @@ html body.wz-v2:has(#view-discover:not(.hidden)) .topbar, html body.wz-v2 .topba
   html body.wz-v2 #view-discover #wz-chips .wz-chip, html body.wz-v2 #view-discover #wz-chips .wz-cal-chip { min-width: 0; font-size: 11px !important; }
   html body.wz-v2 #view-discover #wz-chips .wz-chip::before { width: 54px; height: 54px; font-size: 23px; }
 }
+
+/* Téléphone : la flèche ↑ plus haut et plus petite ; le badge « nouveau » ne cache plus l'icône du carnet */
+html body #wz-top { width: 42px !important; height: 42px !important; right: 12px !important; bottom: 118px !important; opacity: .92; }
+html body.wz-v2 #wz-nav .wz-new { top: -12px !important; right: -6px !important; }
+html body.wz-v2 #wz-nav #nav-carnet-btn { position: relative; }
