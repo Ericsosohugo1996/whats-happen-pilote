@@ -65,3 +65,8 @@ html body #wz-sheet .chip.on { background: var(--wz-navy2) !important; border-co
 html body #wz-sheet .sh-foot { background: var(--wz-bg) !important; border-top-color: var(--wz-line) !important; }
 html body #wz-sheet .go, html body #wz-sheet button.go { background: var(--wz-acc) !important; color: #fff !important; }
 html body #wz-sheet input[type=search], html body #wz-sheet input { border-color: var(--wz-line) !important; }
+
+/* v4 : bandeau du haut bleu pastel (même spécificité que le thème chaud) */
+html body.wz-v2:has(#view-discover:not(.hidden)) .topbar,
+html body.wz-v2:has(#view-detail:not(.hidden)) .topbar { background: rgba(240,246,251,.96) !important; box-shadow: 0 1px 0 var(--wz-line) !important; }
+html body.wz-v2 .topbar .brand-word .accent, html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .brand-word .accent { color: var(--wz-acc) !important; }
