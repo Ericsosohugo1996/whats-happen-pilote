@@ -76,6 +76,8 @@
     "#wz-cal .cal-foot .cal-ok{border:0;background:#e0623f;color:#fff}",
     "#wz-cal .cal-foot .cal-ok:disabled{opacity:.4;cursor:default}",
     ".wz-cal-chip{cursor:pointer}",
+    ".wz-cal-x{margin-left:6px;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(20,33,61,.2);font-size:11px;line-height:1}",
+    ".wz-cal-x[hidden]{display:none !important}",
     "#wz-chips .wz-cal-chip{flex:0 0 auto !important;white-space:nowrap}",
     "#wz-chips .wz-cal-chip .wz-chip-n{display:none !important}"
   ].join("\n");
@@ -188,12 +190,16 @@
         if (!c) {
           c = document.createElement("button"); c.type = "button"; c.className = "wz-chip wz-cal-chip"; c.dataset.key = "cal";
           c.setAttribute("aria-label", "Choisir une date");
-          c.innerHTML = '<span class="wz-chip-l"></span><span class="wz-chip-n"></span>';
-          c.addEventListener("click", open);
+          c.innerHTML = '<span class="wz-chip-l"></span><span class="wz-chip-n"></span><span class="wz-cal-x" role="button" aria-label="Effacer la date" title="Effacer la date" hidden>✕</span>';
+          c.addEventListener("click", function (e) {
+            if (e.target && e.target.closest && e.target.closest(".wz-cal-x")) { e.stopPropagation(); state.selectedPeriod = null; try { renderDiscover(); } catch (x) {} return; }
+            open();
+          });
           row.appendChild(c);
         }
         c.querySelector(".wz-chip-l").textContent = "📅 " + (lab || "Date");
         c.classList.toggle("on", !!lab);
+        var xx = c.querySelector(".wz-cal-x"); if (xx) xx.hidden = !lab;
       }
       var sh = document.getElementById("wz-sheet");
       if (sh) {
