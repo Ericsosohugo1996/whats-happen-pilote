@@ -141,11 +141,23 @@
   }
 
   // ---- lien d'invitation (alternative à la recherche par email) ----
+  // prénom affichable : nom du compte s'il existe, sinon début de l'e-mail (avant . _ - ou un chiffre)
+  function niceName(user, email) {
+    var n = (user && user.displayName ? String(user.displayName).trim().split(/\s+/)[0] : "");
+    if (!n) {
+      var e = String(email || (user && user.email) || "").split("@")[0];
+      n = (e.match(/^[A-Za-zÀ-ÿ]+/) || [""])[0];
+      if (n.length > 9 && n.length === e.length) n = ""; // « ericbrunebarbe » : pas un prénom lisible
+    }
+    if (!n) return "";
+    return n.charAt(0).toUpperCase() + n.slice(1).toLowerCase();
+  }
   function inviteLink() {
     const user = auth.currentUser;
     if (!user) return null;
     const email = encodeURIComponent(user.email || "");
-    return "https://whazup.fr/?ami=" + user.uid + (email ? "&nom=" + email : "");
+    const p = encodeURIComponent(niceName(user));
+    return "https://whazup.fr/?ami=" + user.uid + (email ? "&nom=" + email : "") + (p ? "&p=" + p : "");
   }
 
   function shareInviteLink() {
@@ -155,7 +167,7 @@
       return;
     }
     const link = inviteLink();
-    const text = tt("Rejoins-moi sur Whazup pour qu'on organise nos sorties ensemble ! ") + link;
+    const text = tt("Salut ! Je viens de découvrir Whazup 🎉 Toutes les sorties près de chez toi, et on se partage nos photos souvenirs.") + "\n\n" + tt("Rejoins-moi, c'est gratuit : ") + link;
     if (navigator.share) {
       navigator.share({ title: "Whazup", text: text }).catch(function () {});
     } else if (navigator.clipboard) {
@@ -216,6 +228,7 @@
     const otherUid = params.get("ami");
     if (!otherUid) return;
     const otherEmail = params.get("nom") || "";
+    const otherName = params.get("p") || niceName(null, otherEmail) || tt("Un ami");
     const user = auth.currentUser;
     if (user && otherUid === user.uid) {
       history.replaceState({}, "", window.location.pathname);
@@ -223,12 +236,13 @@
     }
     const overlay = document.createElement("div");
     overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;";
-    overlay.innerHTML = '<div style="background:#fff;border-radius:20px;padding:20px;max-width:380px;width:100%;text-align:center;">' +
-      '<div style="font-size:32px;margin-bottom:10px;">👋</div>' +
-      '<div style="font-size:15px;font-weight:700;color:#14213D;margin-bottom:6px;">' + (otherEmail || tt("Un utilisateur Whazup")) + '</div>' +
-      '<div style="font-size:13px;color:#666;margin-bottom:16px;">' + tt("souhaite devenir ton ami sur Whazup, pour organiser des sorties ensemble.") + '</div>' +
-      '<button id="friend-invite-accept" style="width:100%;padding:12px;border-radius:999px;border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;cursor:pointer;">' + tt("Accepter") + '</button>' +
-      '<button id="friend-invite-dismiss" style="width:100%;padding:12px;border-radius:999px;border:1px solid #ddd;background:#fff;color:#666;font-size:13px;cursor:pointer;">' + tt("Plus tard") + '</button>' +
+    overlay.innerHTML = '<div style="background:#fff;border-radius:24px;padding:26px 22px 20px;max-width:360px;width:100%;text-align:center;font-family:inherit;">' +
+      '<div style="font-family:Georgia,serif;font-weight:700;font-size:20px;color:#14213D;margin-bottom:10px;">Wha<span style="color:#E8655A">zup</span></div>' +
+      '<div style="font-size:38px;margin-bottom:6px;">🎉</div>' +
+      '<div style="font-family:Georgia,serif;font-size:22px;font-weight:700;color:#14213D;margin-bottom:8px;">' + otherName.replace(/[<>&"]/g, "") + ' ' + tt("t'invite !") + '</div>' +
+      '<div style="font-size:13px;color:#5B6B7A;line-height:1.5;margin-bottom:18px;">' + tt("Retrouve toutes les sorties près de chez toi et partage tes souvenirs avec") + ' ' + otherName.replace(/[<>&"]/g, "") + '.</div>' +
+      '<button id="friend-invite-accept" style="width:100%;padding:13px;border-radius:999px;border:none;background:#E8655A;color:#fff;font-size:14px;font-weight:700;margin-bottom:8px;cursor:pointer;">' + tt("Accepter et rejoindre") + '</button>' +
+      '<button id="friend-invite-dismiss" style="width:100%;padding:10px;border:none;background:none;color:#5B6B7A;font-size:12.5px;cursor:pointer;">' + tt("Voir d'abord les sorties") + '</button>' +
       '</div>';
     document.body.appendChild(overlay);
     function closeOverlay() {
@@ -275,6 +289,12 @@
         '<div style="font-family:\'Fraunces\', Georgia, serif; font-size:17px;font-weight:600;color:#fff;flex:1;">👥 ' + tt("Mes amis") + '</div>' +
         '<button id="friends-invite-btn" style="border:none;background:linear-gradient(90deg,#F2864B,#E85D3D);color:#fff;border-radius:999px;padding:8px 12px;font-size:11.5px;font-weight:700;white-space:nowrap;">🔗 ' + tt("Lien") + '</button>' +
       '</div>' +
+      '<div style="background:linear-gradient(135deg,#22355F,#14213D);border-radius:20px;padding:20px 16px;margin-bottom:16px;text-align:center;color:#fff;">' +
+        '<div style="font-size:30px;">🎉</div>' +
+        '<div style="font-family:Georgia,serif;font-size:18px;font-weight:700;margin:4px 0 6px;color:#fff;">' + tt("Sortez ensemble") + '</div>' +
+        '<div style="font-size:12.5px;opacity:.85;line-height:1.45;color:#fff;">' + tt("Invite un ami : vous partagez vos souvenirs et vous vous proposez des sorties.") + '</div>' +
+        '<button id="friends-invite-big" style="margin-top:14px;width:100%;border:none;background:#E8655A;color:#fff;border-radius:999px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;">✉️ ' + tt("Inviter un ami") + '</button>' +
+      '</div>' +
       '<div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px;margin-bottom:16px;">' +
         '<div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:8px;">' + tt("Ajouter un ami par email") + '</div>' +
         '<div style="display:flex;gap:8px;">' +
@@ -294,6 +314,7 @@
 
     document.getElementById("friends-close-btn").addEventListener("click", function () { screen.remove(); });
     document.getElementById("friends-invite-btn").addEventListener("click", shareInviteLink);
+    document.getElementById("friends-invite-big").addEventListener("click", shareInviteLink);
 
     if (typeof window.__renderProposalsBlock === "function") {
       window.__renderProposalsBlock(document.getElementById("proposals-block"));
