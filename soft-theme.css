@@ -70,3 +70,15 @@ html body #wz-sheet input[type=search], html body #wz-sheet input { border-color
 html body.wz-v2:has(#view-discover:not(.hidden)) .topbar,
 html body.wz-v2:has(#view-detail:not(.hidden)) .topbar { background: rgba(240,246,251,.96) !important; box-shadow: 0 1px 0 var(--wz-line) !important; }
 html body.wz-v2 .topbar .brand-word .accent, html body.wz-v2:has(#view-discover:not(.hidden)) .topbar .brand-word .accent { color: var(--wz-acc) !important; }
+
+/* v5 : fenêtre « Je ne sais pas quoi faire » aux couleurs du thème */
+html body #wz-idea { background: var(--wz-bg) !important; color: var(--wz-ink) !important; }
+html body #wz-idea .wz-i-k, html body #wz-idea .wz-i-why { color: var(--wz-acc-d) !important; }
+html body #wz-idea .wz-i-steps i { background: var(--wz-line) !important; }
+html body #wz-idea .wz-i-steps i.on { background: var(--wz-acc) !important; }
+html body #wz-idea .wz-i-c { background: #fff !important; border: 1px solid var(--wz-line) !important; box-shadow: none !important; color: var(--wz-ink) !important; }
+html body #wz-idea .wz-i-c.on { background: var(--wz-navy2) !important; border-color: var(--wz-navy2) !important; color: #fff !important; }
+html body #wz-idea .wz-i-go { background: var(--wz-acc) !important; color: #fff !important; }
+html body #wz-idea .wz-i-alt { background: #fff !important; color: var(--wz-acc-d) !important; border: 1px solid var(--wz-line) !important; }
+html body #wz-idea .wz-i-ph { background: var(--wz-tint) !important; }
+html body #wz-idea .wz-i-route { background: var(--wz-acc) !important; }
