@@ -90,3 +90,6 @@ html body.wz-v2 #view-discover .filters-panel input[type=range] { accent-color: 
 }
 /* titres de jour (« Aujourd'hui », « Demain »…) : corail uni */
 html body.wz-v2 #view-discover #event-list .wz-day { background: var(--wz-acc) !important; color: #fff !important; box-shadow: none !important; }
+
+/* « Nouveautés / Mes envies » : en bas de l'accueil avec les autres blocs secondaires, centrés */
+html body.wz-v2:not(.wz-nocity) #view-discover > #wz-shortcuts { order: 11 !important; justify-content: center !important; margin-top: 8px !important; margin-bottom: 4px !important; }
