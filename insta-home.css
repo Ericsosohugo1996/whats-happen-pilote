@@ -59,3 +59,10 @@ html body.wz-v2 #view-discover #sejour-block button, html body.wz-v2 #view-disco
 html body.wz-v2 #view-discover #btn-newsletter, html body.wz-v2 #view-discover #wz-publink, html body.wz-v2 #view-discover #wz-all-list { background: #fff !important; border: 1px solid var(--wz-line) !important; color: var(--wz-ink) !important; }
 /* « Mon carnet » existe déjà dans la barre du bas : on enlève le doublon des raccourcis */
 html body.wz-v2 #view-discover #wz-shortcuts #sc-carnet { display: none !important; }
+
+/* ===== Étape 3.3 : derniers détails ===== */
+html body.wz-v2 #view-discover #btn-discover-back, html body.wz-v2 #view-discover #btn-newsletter { max-width: 780px !important; margin-left: auto !important; margin-right: auto !important; box-sizing: border-box; }
+html body #wz-top { background: var(--wz-acc) !important; color: #fff !important; }
+html body.wz-v2 #wz-nav #nav-idea .nav-label, html body.wz-v2 #wz-nav .nav-label { color: var(--wz-mut) !important; }
+html body.wz-v2 #wz-nav .nav-item.active .nav-label { color: var(--wz-acc-d) !important; }
+html body.wz-v2 #wz-nav .wz-new { background: var(--wz-acc) !important; }
