@@ -212,10 +212,21 @@
   // ---------- démarrage ----------
   function start() {
     render();
-    try { if (window.__authReady) window.__authReady.then(function () { render(true); }); } catch (e) {}
-    try { auth.onAuthStateChanged(function () { cache = null; render(true); }); } catch (e) {}
+    var hooked = false;
+    function hook() {
+      if (hooked) return;
+      try { auth.onAuthStateChanged(function () { cache = null; render(true); }); hooked = true; } catch (e) {}
+      try { if (window.__authReady) { window.__authReady.then(function () { render(true); }); } } catch (e) {}
+    }
+    hook();
     document.addEventListener("visibilitychange", function () { if (!document.hidden) render(); });
-    var n = 0, t = setInterval(function () { n++; if (!document.getElementById("wz-friends-row") || n < 4) render(); if (n > 12) clearInterval(t); }, 1500);
+    // La connexion peut se rétablir lentement : on réessaie jusqu'à 2 minutes, tant que la rangée n'est pas visible.
+    var n = 0, t = setInterval(function () {
+      n++; hook();
+      var row = document.getElementById("wz-friends-row");
+      if (me() && (!row || row.hidden)) render(true);
+      if (n > 80) clearInterval(t);
+    }, 1500);
   }
   if (document.readyState !== "loading") start(); else document.addEventListener("DOMContentLoaded", start);
 })();
