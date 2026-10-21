@@ -156,3 +156,16 @@ html body #wz-prof .wz-prof-st b{color:var(--wz-ink);font-size:15px;margin-right
 /* ===== Retouches : en-têtes de jour sans chevauchement ; fenêtre de partage de photo en bleu pastel ===== */
 html body #event-list .wz-day,html body .wz-day{position:static!important;top:auto!important}
 html body #souvenir-detail-modal{background:var(--wz-bg)!important}
+
+/* ===== Identité Whazup : dates en carrés arrondis (au lieu de ronds) ===== */
+html body.wz-v2 #view-discover #wz-chips .wz-chip::before {
+  width: calc(100% - 10px) !important; max-width: 70px; height: 58px !important; border-radius: 18px !important; border: 0 !important;
+  border-bottom: 3px solid var(--wz-acc) !important; background: #fff; font-size: 25px;
+  box-shadow: 0 4px 12px rgba(20,33,61,.12) !important;
+}
+html body.wz-v2 #view-discover #wz-chips .wz-chip.on::before {
+  background: var(--wz-ink) !important; border-bottom-color: var(--wz-ink) !important; box-shadow: 0 4px 12px rgba(20,33,61,.3) !important;
+}
+@media (max-width: 380px) {
+  html body.wz-v2 #view-discover #wz-chips .wz-chip::before { height: 52px !important; font-size: 22px; border-radius: 16px !important; }
+}
