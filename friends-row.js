@@ -72,7 +72,8 @@
     await Promise.all(friends.map(async function (f) {
       f.photos = by[f.uid] || [];
       f.name = (f.photos[0] && f.photos[0].ownerName) || "";
-      try { var pd = await db.collection("publicProfiles").doc(f.uid).get(); var x = pd && pd.exists ? pd.data() : null; if (x) { if (x.name) f.name = x.name; if (x.photo) f.avatar = x.photo; } } catch (e) {}
+      try { var pd = await db.collection("publicProfiles").doc(f.uid).get(); var x = pd && pd.exists ? pd.data() : null; if (x && x.name) f.name = x.name; } catch (e) {}
+      try { var pp = await db.collection("profilePhotos").doc(f.uid).get(); var y = pp && pp.exists ? pp.data() : null; if (y && y.photo) f.avatar = y.photo; } catch (e) {}
     }));
     friends.sort(function (a, b) { return (b.photos.length ? 1 : 0) - (a.photos.length ? 1 : 0); });
     cache = { friends: friends }; cacheAt = Date.now();
