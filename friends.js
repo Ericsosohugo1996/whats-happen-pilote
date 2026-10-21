@@ -16,7 +16,7 @@
     if (!user || user.isAnonymous || !user.email) return;
     try {
       await db.collection("publicProfiles").doc(user.uid).set(
-        { email: user.email, updatedAt: Date.now() },
+        { email: user.email, name: niceName(user, user.email) || "", updatedAt: Date.now() },
         { merge: true }
       );
     } catch (err) {
@@ -465,6 +465,8 @@
   }
 
   window.__renderFriendsScreen = renderFriendsScreen;
+  window.__shareInviteLink = shareInviteLink;
+  window.__niceName = niceName;
   window.__loadFriendsList = loadFriends;
   window.__createFriendship = createFriendship;
 
@@ -491,6 +493,7 @@
         try {
           if (window.__authReady) await window.__authReady;
           await auth.currentUser.updateProfile({ displayName: v });
+          try { upsertPublicProfile(auth.currentUser); } catch (e2) {}
           btn.textContent = "✓";
         } catch (e) { btn.textContent = "OK"; alert("Impossible d'enregistrer le prénom pour le moment."); return; }
         setTimeout(function () { btn.textContent = "OK"; }, 1500);
