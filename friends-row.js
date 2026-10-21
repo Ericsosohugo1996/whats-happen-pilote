@@ -18,8 +18,8 @@
   function toast(m) { try { if (typeof showShareToast === "function") return showShareToast(m); } catch (e) {} }
 
   var css = [
-    "html body.wz-v2 #view-discover > #wz-friends-row{order:1}",
-    "html body.wz-v2 #view-discover > #wz-friends-hint{order:1}",
+    "html body.wz-v2 #view-discover > #wz-friends-row{order:1;max-width:780px;width:100%;box-sizing:border-box;margin-left:auto;margin-right:auto}",
+    "html body.wz-v2 #view-discover > #wz-friends-hint{order:1;max-width:780px;width:100%;box-sizing:border-box;margin:4px auto 6px;padding:0 18px}",
     "#wz-friends-row{order:1;display:flex;gap:14px;padding:10px 16px 2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}",
     "#wz-friends-row::-webkit-scrollbar{display:none}",
     "body.wz-nocity #wz-friends-row{display:none!important}",
