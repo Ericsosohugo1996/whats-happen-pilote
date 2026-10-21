@@ -169,3 +169,18 @@ html body.wz-v2 #view-discover #wz-chips .wz-chip.on::before {
 @media (max-width: 380px) {
   html body.wz-v2 #view-discover #wz-chips .wz-chip::before { height: 52px !important; font-size: 22px; border-radius: 16px !important; }
 }
+
+/* ===== Identité Whazup : boutons du haut, « remonter » et « Photo souvenir » ===== */
+html body.wz-v2 header.topbar #btn-fav-header, html body.wz-v2 header.topbar #btn-friends-header, html body.wz-v2 header.topbar #btn-account,
+html body.wz-v2:has(#view-discover:not(.hidden)) header.topbar #btn-fav-header, html body.wz-v2:has(#view-discover:not(.hidden)) header.topbar #btn-friends-header, html body.wz-v2:has(#view-discover:not(.hidden)) header.topbar #btn-account {
+  border-radius: 11px !important; width: 36px !important; height: 36px !important;
+}
+html body #wz-top { border-radius: 16px !important; }
+/* Photo souvenir : repère (la goutte Whazup) */
+html body.wz-v2 #wz-nav .nav-item.wz-cam .dot {
+  width: 54px !important; height: 54px !important; border-radius: 50% 50% 50% 0 !important; transform: rotate(-45deg);
+  margin: -36px auto 6px !important; border: 4px solid #fff !important; box-shadow: 0 8px 18px -6px rgba(232,93,61,.7) !important;
+  font-size: 0 !important;
+}
+html body.wz-v2 #wz-nav .nav-item.wz-cam .dot::before { content: "📸"; font-size: 24px; transform: rotate(45deg); display: block; line-height: 1; }
+html body.wz-v2:not(:has(#view-discover:not(.hidden))) #wz-nav .nav-item.wz-cam .dot { border-color: #fff !important; }
