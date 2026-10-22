@@ -304,4 +304,34 @@
   window.__wzIdeaOpen = openIdea; window.__wzSurpriseOpen = openSurprise; surpriseCss();
   // l'ancien parcours « Étape 1/2 » (guided-quest.js) est remplacé : ses accès ouvrent maintenant celui-ci
   try { Object.defineProperty(window, "__questOpen", { configurable: true, get: function () { return openIdea; }, set: function () {} }); } catch (e) {}
+
+  // ---- ♥ sans compte : un nouveau visiteur garde ses favoris tout de suite ; le compte lui est proposé après le 3e ----
+  function favNudge() {
+    try {
+      if (state.favorites.size < 3 || localStorage.getItem("wz-fav-nudge")) return;
+      localStorage.setItem("wz-fav-nudge", "1");
+    } catch (e) { return; }
+    var old = document.getElementById("wz-fav-nudge"); if (old) old.remove();
+    var d = document.createElement("div"); d.id = "wz-fav-nudge"; d.setAttribute("role", "status");
+    d.style.cssText = "position:fixed;left:16px;right:16px;bottom:96px;z-index:100000;background:#14213D;color:#fff;border-radius:18px;padding:14px 16px;box-shadow:0 14px 34px rgba(0,0,0,.35);font:600 14px/1.35 system-ui,-apple-system,sans-serif;max-width:520px;margin:0 auto";
+    d.innerHTML = '<div>❤️ Tes favoris sont gardés sur cet appareil. Crée un compte (10 secondes) pour ne pas les perdre si tu changes de téléphone.</div><div style="display:flex;gap:10px;margin-top:12px"><button type="button" data-n="go" style="flex:1;padding:11px;border:0;border-radius:12px;background:#E8655A;color:#fff;font:800 14px inherit;cursor:pointer">Créer mon compte</button><button type="button" data-n="x" style="flex:1;padding:11px;border:0;border-radius:12px;background:rgba(255,255,255,.14);color:#fff;font:700 14px inherit;cursor:pointer">Plus tard</button></div>';
+    d.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-n]"); if (!b) return;
+      if (b.dataset.n === "go") { try { var m = document.getElementById("account-modal"); if (m) m.classList.remove("hidden"); } catch (x) {} track("fav_nudge_go"); }
+      d.remove();
+    });
+    document.body.appendChild(d);
+    track("fav_nudge_show");
+    setTimeout(function () { if (d.parentNode) d.remove(); }, 20000);
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("#btn-favorite"); if (!b) return;
+    var u = null; try { u = auth.currentUser; } catch (x) {}
+    if (u && !u.isAnonymous) return; // avec un compte : comportement habituel
+    e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+    var id = state.currentEventId; if (!id) return;
+    if (state.favorites.has(id)) state.favorites.delete(id); else state.favorites.add(id);
+    saveFavorites(); openDetail(id); track("fav_guest");
+    favNudge();
+  }, true);
 })();
