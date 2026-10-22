@@ -45,7 +45,7 @@
     return out;
   }
   function wantOk(ev) {
-    if (!S.want.length || S.want.indexOf("any") !== -1) if (ev.category === "Divers" || ev.category === "Brocante") return false; try { if (window.__wzCatOk && !window.__wzCatOk(ev, ev.category)) return false; } catch (e) {} return true;
+    if (!S.want.length || S.want.indexOf("any") !== -1) { if (ev.category === "Divers" || ev.category === "Brocante") return false; try { if (window.__wzCatOk && !window.__wzCatOk(ev, ev.category)) return false; } catch (e) {} return true; }
     return S.want.some(function (k) { var w = WANT.filter(function (x) { return x[0] === k; })[0]; if (!(w && w[2] && w[2].indexOf(ev.category) !== -1)) return false; if (k === "musee") return isMuseum(ev); try { if (window.__wzCatOk && !window.__wzCatOk(ev, ev.category)) return false; } catch (e) {} return true; });
   }
   // « Musées » = vrais musées et grands monuments (pas les églises, salles de sport, boutiques…)
@@ -208,6 +208,65 @@
       });
   }
 
+  // ---- « Surprends-moi » : 1 toucher = 1 sortie, qu'on peut affiner par envie et par moment ----
+  var SW = [["now", "Maintenant"], ["tonight", "Ce soir"], ["tomorrow", "Demain"], ["weekend", "Ce week-end"]];
+  var SWANT = ["any", "musique", "soiree", "spectacle", "bar", "expo", "musee", "sport", "marche", "famille", "festival"];
+  function track(n, p) { try { if (typeof analytics !== "undefined" && analytics && analytics.logEvent) analytics.logEvent(n, p || {}); } catch (e) {} }
+  function loadWant() { try { var v = localStorage.getItem("wz-surprise-want"); if (v && SWANT.indexOf(v) !== -1) return v; } catch (e) {} return "any"; }
+  function saveWant(v) { try { localStorage.setItem("wz-surprise-want", v); } catch (e) {} }
+  function surpriseCss() {
+    if (document.getElementById("wz-s-css")) return;
+    var st = document.createElement("style"); st.id = "wz-s-css";
+    st.textContent = '#wz-idea .wz-s-row{display:flex;gap:8px;overflow-x:auto;margin:0 0 10px;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}#wz-idea .wz-s-row::-webkit-scrollbar{display:none}#wz-idea .wz-s-row .wz-i-c{flex:none;padding:9px 13px;font-size:13px;white-space:nowrap}' +
+      '#wz-idea .wz-s-btns{display:flex;gap:10px;margin-top:2px}#wz-idea .wz-s-btns .wz-i-go,#wz-idea .wz-s-btns .wz-i-alt{flex:1;width:auto;margin:0;padding:15px 8px}' +
+      '#wz-idea .wz-s-send{margin-top:10px}' +
+      'html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::before{content:"Surprends-moi" !important}html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::after{content:"Une sortie près de toi, en 1 toucher" !important}';
+    document.head.appendChild(st);
+  }
+  function surpriseRank() {
+    S.want = S.sw === "any" ? ["any"] : [S.sw]; S.zone = "city";
+    S.ranked = rank(); S.offset = 0;
+  }
+  function screenSurprise() {
+    var r = root(), x = S.ranked[S.offset];
+    var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🎲 Ta surprise</div>';
+    h += '<div class="wz-s-row">';
+    SWANT.forEach(function (k) { var w = WANT.filter(function (y) { return y[0] === k; })[0]; if (!w) return; h += '<button type="button" class="wz-i-c' + (S.sw === k ? " on" : "") + '" data-i="swant" data-v="' + k + '">' + (k === "any" ? "✨ Peu importe" : w[1]) + "</button>"; });
+    h += '</div><div class="wz-s-row">';
+    SW.forEach(function (w) { h += '<button type="button" class="wz-i-c' + (S.when === w[0] ? " on" : "") + '" data-i="swhen" data-v="' + w[0] + '">' + w[1] + "</button>"; });
+    h += "</div>";
+    if (!x) {
+      h += '<h1 style="font-size:24px">Rien de prévu pour ce choix</h1><div class="wz-i-sub">Essaie un autre moment ou « Peu importe » : on ne te propose que de vraies sorties.</div>';
+    } else {
+      h += card(x, true);
+      h += '<div class="wz-s-btns"><button type="button" class="wz-i-go" data-i="open" data-id="' + esc(x.ev.id) + '">J’y vais</button><button type="button" class="wz-i-alt" data-i="snext">🎲 Une autre</button></div>' +
+        '<button type="button" class="wz-i-alt wz-s-send" data-i="sshare" data-id="' + esc(x.ev.id) + '">✈ Envoyer à un ami</button>';
+    }
+    h += '<button type="button" class="wz-i-alt ghost" data-i="full">Plus de choix →</button>';
+    r.innerHTML = h; r.scrollTop = 0;
+  }
+  function openSurprise() {
+    try { var av = document.getElementById("arrival-screen-overlay"); if (av) av.remove(); } catch (e) {}
+    surpriseCss();
+    var h = new Date().getHours();
+    S = { when: h >= 22 ? "tomorrow" : "tonight", want: [], sw: loadWant(), zone: "city", offset: 0, ranked: [] };
+    try { showView("discover"); } catch (e) {}
+    document.body.classList.add("wz-idea-open");
+    surpriseRank();
+    // rien ce soir ? on regarde demain, puis le week-end
+    var order = ["tonight", "tomorrow", "weekend"], i = order.indexOf(S.when);
+    while (!S.ranked.length && i < order.length - 1) { i++; S.when = order[i]; surpriseRank(); }
+    track("surprise_open", { when: S.when, want: S.sw });
+    screenSurprise();
+  }
+  function shareEv(id) {
+    var ev = findEv(id); if (!ev) return;
+    var url = typeof eventShareUrl === "function" ? eventShareUrl(ev) : "https://whazup.fr";
+    var txt = ev.title + " : ça te dit ?";
+    if (navigator.share) { navigator.share({ title: ev.title, text: txt, url: url }).catch(function () {}); }
+    else if (navigator.clipboard) { navigator.clipboard.writeText(txt + " " + url).then(function () { try { showShareToast("Lien copié"); } catch (e) {} }); }
+  }
+
   function openIdea() {
     try { var av = document.getElementById("arrival-screen-overlay"); if (av) av.remove(); } catch (e) {}
     var h = new Date().getHours();
@@ -217,7 +276,7 @@
   }
   document.addEventListener("click", function (e) {
     var t = e.target.closest("#sc-surprise, #nav-idea");
-    if (t) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); return openIdea(); }
+    if (t) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); return t.id === "sc-surprise" ? openSurprise() : openIdea(); }
     var b = e.target.closest("#wz-idea [data-i]"); if (!b) return;
     var a = b.dataset.i, v = b.dataset.v;
     if (a === "close") { killMap(); return close(); }
@@ -231,13 +290,18 @@
       else { S.want = S.want.filter(function (x) { return x !== "any"; }); var i = S.want.indexOf(v); if (i === -1) S.want.push(v); else S.want.splice(i, 1); }
       return screenAsk();
     }
+    if (a === "swant") { track("surprise_filter", { want: v }); S.sw = v; saveWant(v); surpriseRank(); return screenSurprise(); }
+    if (a === "swhen") { track("surprise_when", { when: v }); S.when = v; surpriseRank(); return screenSurprise(); }
+    if (a === "snext") { track("surprise_next"); S.offset = S.ranked.length ? (S.offset + 1) % S.ranked.length : 0; return screenSurprise(); }
+    if (a === "sshare") { track("surprise_share"); return shareEv(b.dataset.id); }
+    if (a === "full") { killMap(); return openIdea(); }
     if (a === "go") return go();
     if (a === "more") { S.offset += 3; return screenResult(); }
     if (a === "again") return screenAsk();
-    if (a === "open") { var id = b.dataset.id; close(); try { openDetail(id); } catch (x) {} }
+    if (a === "open") { var id = b.dataset.id; if (root().querySelector(".wz-s-btns")) track("surprise_go"); close(); try { openDetail(id); } catch (x) {} }
   }, true);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
-  window.__wzIdeaOpen = openIdea;
+  window.__wzIdeaOpen = openIdea; window.__wzSurpriseOpen = openSurprise; surpriseCss();
   // l'ancien parcours « Étape 1/2 » (guided-quest.js) est remplacé : ses accès ouvrent maintenant celui-ci
   try { Object.defineProperty(window, "__questOpen", { configurable: true, get: function () { return openIdea; }, set: function () {} }); } catch (e) {}
 })();
