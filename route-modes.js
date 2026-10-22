@@ -51,14 +51,14 @@
     css.textContent = "#wz-rt-tabs{display:flex;gap:6px;margin:0 0 10px}#wz-rt-tabs button{flex:1;padding:10px 4px;border-radius:12px;border:1.5px solid #D5DAE6;background:#fff;color:#14213D;font:700 13px/1.2 inherit;cursor:pointer}#wz-rt-tabs button.on{background:#E85D3D;border-color:#E85D3D;color:#fff}" +
       "";
     css.textContent += "#wz-rt-loc{display:block;width:100%;margin:0 0 10px;padding:12px;border-radius:14px;border:0;background:#E8655A;color:#fff;font:700 14px/1.2 inherit;cursor:pointer}#wz-rt-loc[disabled]{opacity:.6}#wz-rt-loc[hidden]{display:none}";
-    css.textContent += "#itinerary-gmaps-btn{display:none!important}";
+    css.textContent += "#itinerary-gmaps-btn{display:none!important}body.wz-mapfull #wz-top{display:none!important}";
     css.textContent += "#wz-rt-full{position:absolute;top:10px;right:10px;z-index:1000;width:40px;height:40px;border-radius:12px;border:0;background:#fff;color:#14213D;font-size:20px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,.28);cursor:pointer}#itinerary-map{position:relative}#itinerary-map.wz-full{position:fixed!important;top:0;left:0;right:0;bottom:0;width:100%!important;height:100%!important;max-height:none!important;margin:0!important;border-radius:0!important;z-index:2147483000}#itinerary-map.wz-full #wz-rt-full{top:calc(env(safe-area-inset-top,0px) + 12px);right:12px;width:auto;padding:0 14px;font:700 14px/40px inherit}";
     document.head.appendChild(css);
     var fb = document.createElement("button");
     fb.type = "button"; fb.id = "wz-rt-full"; fb.setAttribute("aria-label", "Agrandir la carte"); fb.textContent = "⤢";
-    function fixFs() { setTimeout(function () { if (typeof __itineraryMap !== "undefined" && __itineraryMap) __itineraryMap.invalidateSize(); }, 120); }
+    function fixFs() { [60, 250, 600, 1200].forEach(function (d) { setTimeout(function () { if (typeof __itineraryMap !== "undefined" && __itineraryMap) { __itineraryMap.invalidateSize({ animate: false }); } }, d); }); }
     function setFull(on) {
-      map.classList.toggle("wz-full", on);
+      map.classList.toggle("wz-full", on); document.body.classList.toggle("wz-mapfull", on);
       fb.textContent = on ? "✕ Réduire" : "⤢";
       fb.setAttribute("aria-label", on ? "Réduire la carte" : "Agrandir la carte");
       fixFs();
