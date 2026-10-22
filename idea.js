@@ -334,4 +334,35 @@
     saveFavorites(); openDetail(id); track("fav_guest");
     favNudge();
   }, true);
+  // ---- points & fidélité : masqués pour l'instant (ils continuent de se compter en arrière-plan, rien n'est supprimé) ----
+  var BTN_TXT = "📤 Inviter un ami";
+  var MODAL_TXT = "Connecte-toi pour retrouver tes favoris et tes souvenirs sur tous tes appareils.";
+  function noPoints() {
+    try {
+      var b = document.getElementById("btn-invite-friend");
+      if (b && /pts|point/i.test(b.textContent + (b.dataset.i18n || ""))) { b.dataset.i18n = BTN_TXT; b.textContent = BTN_TXT; }
+      var m = document.getElementById("account-modal");
+      if (m) {
+        var ps = m.querySelectorAll("p");
+        for (var i = 0; i < ps.length; i++) if (/points/i.test(ps[i].textContent) && ps[i].children.length === 0) ps[i].textContent = MODAL_TXT;
+      }
+      var lb = document.getElementById("loyalty-badge"); if (lb) lb.style.display = "none";
+    } catch (e) {}
+  }
+  noPoints(); setInterval(noPoints, 2000);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("#btn-invite-friend"); if (!b) return;
+    e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+    var url = location.origin + location.pathname + "?ref=1";
+    function copy() {
+      try {
+        navigator.clipboard.writeText(url).then(function () {
+          if (typeof showShareToast === "function") showShareToast("Lien copié ! Envoie-le à un ami."); else alert("Lien copié ! Envoie-le à un ami.");
+        }, function () { prompt("Copie ce lien et envoie-le à un ami :", url); });
+      } catch (x) { prompt("Copie ce lien et envoie-le à un ami :", url); }
+    }
+    track("invite_click");
+    if (navigator.share) { navigator.share({ title: "Whazup", text: "Découvre les sorties près de chez toi !", url: url }).catch(function (er) { if (!er || er.name !== "AbortError") copy(); }); return; }
+    copy();
+  }, true);
 })();
