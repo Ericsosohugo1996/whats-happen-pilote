@@ -42,9 +42,15 @@
     tabs.id = "wz-rt-tabs";
     tabs.innerHTML = '<button type="button" data-m="foot" class="on">🚶 À pied</button><button type="button" data-m="bike">🚲 Vélo</button>';
     var map = el("itinerary-map"); map.parentNode.insertBefore(tabs, map);
+    var loc = document.createElement("button");
+    loc.type = "button"; loc.id = "wz-rt-loc"; loc.hidden = true;
+    loc.textContent = "📍 Me localiser";
+    loc.addEventListener("click", locate);
+    map.parentNode.insertBefore(loc, map);
     var css = document.createElement("style");
     css.textContent = "#wz-rt-tabs{display:flex;gap:6px;margin:0 0 10px}#wz-rt-tabs button{flex:1;padding:10px 4px;border-radius:12px;border:1.5px solid #D5DAE6;background:#fff;color:#14213D;font:700 13px/1.2 inherit;cursor:pointer}#wz-rt-tabs button.on{background:#E85D3D;border-color:#E85D3D;color:#fff}" +
       "";
+    css.textContent += "#wz-rt-loc{display:block;width:100%;margin:0 0 10px;padding:12px;border-radius:14px;border:0;background:#E8655A;color:#fff;font:700 14px/1.2 inherit;cursor:pointer}#wz-rt-loc[disabled]{opacity:.6}#wz-rt-loc[hidden]{display:none}";
     document.head.appendChild(css);
     tabs.addEventListener("click", function (e) {
       var b = e.target.closest("button[data-m]"); if (!b) return;
@@ -73,8 +79,27 @@
     status((why ? why + " " : "") + "À vol d'oiseau : " + fmtKm(d) + " (~" + fmtMin(est(d, m)) + " " + (m === "bike" ? "à vélo" : "à pied") + ").");
   }
 
+  function showLoc() { var b = el("wz-rt-loc"); if (b) b.hidden = !!from; }
+  function locate() {
+    var b = el("wz-rt-loc");
+    if (!navigator.geolocation) { status("Ton appareil ne permet pas la localisation."); return; }
+    if (b) { b.disabled = true; b.textContent = "📍 Localisation…"; }
+    navigator.geolocation.getCurrentPosition(function (p) {
+      state.userPos = { lat: p.coords.latitude, lng: p.coords.longitude };
+      from = state.userPos;
+      if (b) { b.disabled = false; b.textContent = "📍 Me localiser"; }
+      select(cur);
+    }, function (err) {
+      if (b) { b.disabled = false; b.textContent = "📍 Me localiser"; }
+      status(err && err.code === 1
+        ? "Localisation refusée. Sur iPhone : Réglages > Confidentialité et sécurité > Service de localisation > Safari, puis réessaie."
+        : "Position introuvable pour le moment. Réessaie dans un endroit dégagé.");
+    }, { timeout: 10000, enableHighAccuracy: true });
+  }
+
   function draw(m) {
     var my = ++token;
+    showLoc();
     if (!from) { lineFallback(m, "Active ta position pour voir le trajet exact."); return; }
     status("Calcul de l'itinéraire…");
     var u = "https://routing.openstreetmap.de/" + MODES[m].srv + "/route/v1/driving/" + from.lng + "," + from.lat + ";" + ev.lng + "," + ev.lat + "?overview=full&geometries=geojson";
