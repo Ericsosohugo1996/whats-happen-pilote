@@ -1,7 +1,7 @@
-Date (Paris) : 2026-10-21T11:18 — fenêtre : 2026-10-21 → 2026-12-20
+Date (Paris) : 2026-10-22T11:21 — fenêtre : 2026-10-22 → 2026-12-21
 HTTP 200
-Lignes reçues : 2910
+Lignes reçues : 2906
 Champs : id, event_id, url, title, lead_text, description, date_start, date_end, occurrences, date_description, cover_url, cover_alt, cover_credit, locations, address_name, address_street, address_zipcode, address_city, lat_lon, pmr, blind, deaf, sign_language, mental, transport, contact_url, contact_phone, contact_mail, contact_facebook, contact_twitter, price_type, price_detail, access_type, access_link, access_link_text, updated_at, image_couverture, programs, address_url, address_url_text, address_text, title_event, audience, childrens, group, locale, rank, weight, qfap_tags, universe_tags, event_indoor, event_pets_allowed, contact_organisation_name, contact_url_text, contact_vimeo, contact_deezer, contact_tiktok, contact_twitch, contact_spotify, contact_youtube, contact_bandcamp, contact_linkedin, contact_snapchat, contact_whatsapp, contact_instagram, contact_messenger, contact_pinterest, contact_soundcloud, univers
-Résultat : {"sansPosition":32,"horsFenetre":9,"ok":2856}
-Par catégorie : {"Musique":643,"Festival":1445,"Soirée":87,"Expo":444,"Sport":223,"Marché":10,"Brocante":4}
-Gratuits : 1580 — avec photo : 2856
+Résultat : {"sansPosition":32,"horsFenetre":10,"ok":2851}
+Par catégorie : {"Expo":444,"Festival":1442,"Sport":222,"Musique":643,"Soirée":86,"Marché":10,"Brocante":4}
+Gratuits : 1593 — avec photo : 2851
