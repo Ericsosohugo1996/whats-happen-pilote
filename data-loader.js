@@ -23,8 +23,32 @@
     if (BIG[path] && !(init && init.__wzReal)) {
       return Promise.resolve(new Response("[]", { status: 200, headers: { "Content-Type": "application/json" } }));
     }
+    if (BG_RE.test(url) && !(init && init.__wzNow)) return deferBg(input, init);
     return origFetch(input, init);
   };
+
+  // ---- appels « bonus » du démarrage (brocantes de toutes les villes, OpenAgenda, Paris Data) ----
+  // Avant : ~125 demandes partaient d'un coup à l'ouverture et ralentissaient l'affichage des sorties.
+  // Maintenant : elles attendent que l'accueil soit affiché, puis partent par petits groupes. Rien n'est supprimé.
+  // Pour tout annuler : retirer ce bloc (ou remettre l'ancien data-loader.js).
+  var BG_RE = /^https:\/\/(tight-hill-1359\.ericbrunebarbe\.workers\.dev\/\?city=|api\.openagenda\.com\/|opendata\.paris\.fr\/)/;
+  var bgQueue = [], bgActive = 0, bgOpen = false, BG_MAX = 6;
+  function bgPump() {
+    while (bgOpen && bgActive < BG_MAX && bgQueue.length) {
+      var j = bgQueue.shift(); bgActive++;
+      origFetch(j.input, j.init).then(j.res, j.rej).then(function () { bgActive--; bgPump(); }, function () { bgActive--; bgPump(); });
+    }
+  }
+  function deferBg(input, init) {
+    return new Promise(function (res, rej) { bgQueue.push({ input: input, init: init, res: res, rej: rej }); bgPump(); });
+  }
+  function openBg() { if (bgOpen) return; bgOpen = true; bgPump(); }
+  (function () {
+    var done = false;
+    function go() { if (done) return; done = true; setTimeout(openBg, 1200); }
+    if (document.readyState === "complete") go(); else window.addEventListener("load", go);
+    setTimeout(openBg, 9000); // filet de sécurité
+  })();
 
   function setLoading() { window.__wzDataLoading = pending > 0 || (!index && !fallbackDone); }
   function getIndex() {
