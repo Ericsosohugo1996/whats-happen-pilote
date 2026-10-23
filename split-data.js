@@ -216,8 +216,9 @@ for (const { kind, file } of SOURCES) {
         const t = String(ev.title + " " + ev.place).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
         if (/concert|tribute|chanson|orchestre|jazz|rock|chorale|symphon|recital|dj |live/.test(t)) return tp.concert;
         if (/theatre|spectacle|comedie|humour|danse|cirque|magie|cabaret|opera|ballet|conte|marionnette|clown/.test(t)) return tp.theatre;
-        if (/chateau|abbaye|manoir|forteresse|citadelle/.test(t)) return tp.chateau;
-        if (/eglise|cathedrale|chapelle|basilique|collegiale/.test(t)) return tp.eglise;
+        const tt = String(ev.title).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); // titre seul : une adresse « parking de l'Église » ne fait pas une sortie d'église
+        if (/chateau|abbaye|manoir|forteresse|citadelle/.test(tt)) return tp.chateau;
+        if (/eglise|cathedrale|chapelle|basilique|collegiale/.test(tt)) return tp.eglise;
         if (/visite|histoire|patrimoine|fouille|archeolog|jeu de piste|croisade|resistance|bicentenaire|monument/.test(t)) return tp.monument;
         if (/musee|museum|exposition|photographie/.test(t)) return tp.musee;
         if (/jardin|nature|oiseau|safari|biodiversite|foret|randonnee|balade|ferme/.test(t)) return tp.jardin;
