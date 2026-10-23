@@ -1,5 +1,5 @@
 Villes lues dans app.js : 139
-Appels : 499 — erreurs : 0 — événements distincts : 9460
-Résultat : {"annule":96,"horsCategorie":1938,"ok":6812}
-Par catégorie : {"Spectacles":4272,"Musique":2373,"Soirée":98,"Sport":69}
-Villes couvertes : 122 — top : [["paris",1324],["bordeaux",517],["nantes",431],["lyon",400],["lille",355],["toulouse",299],["melun",261],["strasbourg",128]]
+Appels : 498 — erreurs : 0 — événements distincts : 9297
+Résultat : {"annule":92,"horsCategorie":1844,"ok":6749}
+Par catégorie : {"Spectacles":4245,"Musique":2336,"Soirée":98,"Sport":70}
+Villes couvertes : 122 — top : [["paris",1320],["bordeaux",507],["nantes",428],["lyon",395],["lille",353],["toulouse",297],["melun",259],["strasbourg",125]]
