@@ -211,10 +211,24 @@ for (const { kind, file } of SOURCES) {
         if (/bibliotheque|mediatheque|livre|lecture|librairie/.test(t)) return tp.livre;
         return tp.galerie;
       };
+      // « Divers » : on devine le type d'après le titre et le lieu ; sinon photo neutre d'un monument de France — jamais d'événement sans photo
+      const diversPool = (ev) => {
+        const t = String(ev.title + " " + ev.place).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+        if (/concert|tribute|chanson|orchestre|jazz|rock|chorale|symphon|recital|dj |live/.test(t)) return tp.concert;
+        if (/theatre|spectacle|comedie|humour|danse|cirque|magie|cabaret|opera|ballet|conte|marionnette|clown/.test(t)) return tp.theatre;
+        if (/chateau|abbaye|manoir|forteresse|citadelle/.test(t)) return tp.chateau;
+        if (/eglise|cathedrale|chapelle|basilique|collegiale/.test(t)) return tp.eglise;
+        if (/visite|histoire|patrimoine|fouille|archeolog|jeu de piste|croisade|resistance|bicentenaire|monument/.test(t)) return tp.monument;
+        if (/musee|museum|exposition|photographie/.test(t)) return tp.musee;
+        if (/jardin|nature|oiseau|safari|biodiversite|foret|randonnee|balade|ferme/.test(t)) return tp.jardin;
+        if (/sport|trail|course|corrida|peche|fishing|match|rugby|foot|yoga|croisiere|regate|voile|velo/.test(t)) return tp.sport;
+        if (/bibliotheque|mediatheque|lecture|livre|conference|rencontre|dedicace|jeu de role|jeu video/.test(t)) return tp.livre;
+        return tp.monument; // photo neutre d'un lieu de France
+      };
       const pools = { "Spectacles": tp.theatre, "Musique": tp.concert, "Soirée": tp.club, "Marché": tp.marche, "Sport": tp.sport, "Brocante": tp.brocante, "Festival": tp.festival, "Famille": tp.jardin };
       let g = 0;
       for (const ev of items) {
-        const pool = ev.category === "Expo" ? expoPool(ev) : pools[ev.category];
+        const pool = ev.category === "Expo" ? expoPool(ev) : ev.category === "Divers" ? diversPool(ev) : pools[ev.category];
         if (ev.photo || !pool || !pool.length) continue;
         let h = 0; for (const ch of String(ev.id)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
         const p = pool[h % pool.length];
