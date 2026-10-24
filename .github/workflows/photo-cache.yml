@@ -1,0 +1,56 @@
+name: Photos hébergées
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "55 7 * * *"
+  push:
+    branches: [main]
+    paths:
+      - photo-cache.js
+      - .github/workflows/photo-cache.yml
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: split-data
+  cancel-in-progress: false
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer l'outil de réduction d'images
+        run: npm install --no-save --no-audit --no-fund sharp
+
+      - name: Télécharger et réduire les photos
+        run: node photo-cache.js
+
+      - name: Enregistrer
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add photos-local
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau à enregistrer"
+          else
+            git commit -m "Photos hébergées (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Relancer la publication du site
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds || true
