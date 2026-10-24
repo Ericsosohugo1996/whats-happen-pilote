@@ -240,6 +240,31 @@ renderLocateBar = function () {
   function track(n) { try { if (typeof analytics !== "undefined" && analytics && analytics.logEvent) analytics.logEvent(n, { city: state.city }); } catch (e) {} }
   function cityName() { return (typeof CITIES !== "undefined" && CITIES[state.city] && CITIES[state.city].name) || "ici"; }
 
+  var THEMES = { musique: ["Musique"], soiree: ["Soirée"], spectacle: ["Spectacles"], famille: ["Famille"], marche: ["Marché"], festival: ["Festival"], sport: ["Sport"], bar: ["Bar"], expo: ["Expo"], musee: ["À voir"] };
+  var MUSEUM_RE = /mus[eé]e|museum|mus[eé]um|galerie|fondation|centre d.art|ch[aâ]teau|panth[eé]on|catacombes|tour eiffel|arc de triomphe|sainte.chapelle|cath[eé]drale|basilique|abbaye|conciergerie|invalides|op[eé]ra/i;
+  // thème choisi dans « Ta surprise » (puce allumée) ; null = « Peu importe »
+  function theme() {
+    var on = document.querySelector('#wz-idea [data-i="swant"].on');
+    var k = on && on.getAttribute("data-v");
+    if (!k || !THEMES[k]) return null;
+    return { key: k, cats: THEMES[k], label: on.textContent.trim() };
+  }
+  function isoDay(off) { return new Date(Date.now() + off * 86400000).toISOString().slice(0, 10); }
+  // les meilleures sorties à venir (14 jours) du thème : avec photo, description, une seule par titre
+  function themeEvents(th) {
+    var from = isoDay(0), to = isoDay(14), ref = (typeof referencePoint === "function") ? referencePoint() : null, seen = {};
+    return allEvents().filter(function (e) { return !e.isPlace && th.cats.indexOf(e.category) !== -1 && e.date && e.date >= from && e.date <= to && (state.userPos ? true : e.city === state.city); })
+      .map(function (e) {
+        var d = (ref && e.lat && e.lng) ? haversineKm(ref.lat, ref.lng, e.lat, e.lng) : 0;
+        var days = Math.max(0, (new Date(e.date) - new Date(from)) / 86400000);
+        var sc = (e.photo || e.thumb ? 300 : 0) + Math.min(String(e.description || "").length, 300) + (/gratuit|libre/i.test(e.price || "") ? 40 : 0) - days * 12 - Math.min(d, 20) * 4;
+        return { e: e, sc: sc };
+      })
+      .sort(function (a, b) { return b.sc - a.sc; })
+      .filter(function (x) { var k = norm(x.e.title); if (seen[k]) return false; seen[k] = 1; return true; })
+      .slice(0, 8).map(function (x) { return x.e; });
+  }
+
   function css() {
     if (document.getElementById("wz-m-css")) return;
     var st = document.createElement("style"); st.id = "wz-m-css";
@@ -276,15 +301,24 @@ renderLocateBar = function () {
       .sort(function (a, b) { return b.s - a.s; }).slice(0, 8).map(function (x) { return x.ev; });
   }
 
-  function load(cb) {
-    var key = state.city;
-    if (wdCache[key]) return cb(wdCache[key]);
+  function load(th, cb) {
+    if (th && th.key !== "musee") {
+      var ev = themeEvents(th);
+      if (ev.length >= 2) return cb({ items: ev, src: false, th: th, events: true });
+      if (th.key === "bar" || th.key === "expo") th = null;   // peu de résultats : retour aux incontournables de la ville
+    }
+    var key = state.city, wantMus = th && th.key === "musee";
+    function fin(res) { res.th = th && th.key === "musee" ? th : null; cb(res); }
+    var cached = wdCache[key];
+    if (cached) return fin(wantMus ? { items: cached.items.filter(function (e) { return MUSEUM_RE.test(e.title); }).concat(cached.items.filter(function (e) { return !MUSEUM_RE.test(e.title); })).slice(0, 8), src: cached.src } : cached);
     fetch("data/wikidata/" + encodeURIComponent(key) + ".json").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }).then(function (wd) {
       var items = [], src = false;
-      if (Array.isArray(wd) && wd.length >= 3) { items = wd.slice(0, 8).map(resolve); src = true; }
+      if (Array.isArray(wd) && wd.length >= 3) { items = wd.slice(0, 12).map(resolve); src = true; }
       else items = dt();
-      wdCache[key] = { items: items, src: src };
-      cb(wdCache[key]);
+      wdCache[key] = { items: items.slice(0, 8), src: src };
+      var all = items;
+      if (wantMus) all = items.filter(function (e) { return MUSEUM_RE.test(e.title); }).concat(items.filter(function (e) { return !MUSEUM_RE.test(e.title); }));
+      fin({ items: all.slice(0, 8), src: src });
     });
   }
 
@@ -295,22 +329,22 @@ renderLocateBar = function () {
     var desc = String(ev.description || "").replace(/\s+/g, " ").trim();
     if (desc.length > 120) desc = desc.slice(0, 120).replace(/\s+\S*$/, "") + "…";
     return '<button type="button" class="wz-i-card" data-i="open" data-id="' + esc(ev.id) + '" data-m="1"><div class="wz-i-ph">' + (typeof eventPhotoHTML === "function" ? eventPhotoHTML(ev) : "") +
-      '<span class="wz-i-pill" style="--c:#457B9D">🏛️ À VOIR</span></div><div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div>' +
-      (dist ? '<div class="wz-i-v">' + esc(dist) + '</div>' : "") + (desc ? '<div class="wz-i-why" style="font-weight:600;color:#C9D2EA">' + esc(desc) + '</div>' : "") + '</div></button>';
+      '<span class="wz-i-pill" style="--c:#457B9D">' + (ev.isPlace ? "🏛️ À VOIR" : esc(String(ev.category || "").toUpperCase())) + '</span></div><div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div>' +
+      ((ev.date && !ev.isPlace) ? '<div class="wz-i-v">' + esc(formatDate(ev.date) + (ev.time ? " · " + ev.time : "") + (dist ? " · " + dist : "")) + '</div>' : (dist ? '<div class="wz-i-v">' + esc(dist) + '</div>' : "")) + (desc ? '<div class="wz-i-why" style="font-weight:600;color:#C9D2EA">' + esc(desc) + '</div>' : "") + '</div></button>';
   }
 
   function screen() {
     var r = document.getElementById("wz-idea"); if (!r) return;
-    css(); track("surprise_must_open");
+    var th0 = theme(); css(); track("surprise_must_open");
     r.innerHTML = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🏛️ À ne pas manquer</div><div class="wz-m-sub">Chargement…</div>';
     r.scrollTop = 0;
-    load(function (res) {
+    load(th0, function (res) {
       var rr = document.getElementById("wz-idea"); if (!rr) return;
       var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🏛️ À ne pas manquer</div>';
       if (!res.items.length) {
         h += '<div class="wz-m-sub">Pas encore de lieux à te recommander ici. Reviens bientôt !</div>';
       } else {
-        h += '<div class="wz-m-sub">Les incontournables de ' + esc(cityName()) + '</div>' + res.items.map(function (ev, i) { return cardHtml(ev, i === 0); }).join("");
+        h += '<div class="wz-m-sub">' + (res.events ? esc(res.th.label.replace(/^\S+\s*/, "")) + " à ne pas manquer, dans les 14 prochains jours" : res.th ? "Les musées et lieux à ne pas manquer à " + esc(cityName()) : "Les incontournables de " + esc(cityName())) + '</div>' + res.items.map(function (ev, i) { return cardHtml(ev, i === 0); }).join("");
         if (res.src) h += '<div class="wz-m-src">Sélection établie à partir de Wikidata (données libres).</div>';
       }
       h += '<button type="button" class="wz-i-alt ghost" data-i="must-back">← Retour à ma surprise</button>';
@@ -328,7 +362,8 @@ renderLocateBar = function () {
     b.type = "button"; b.className = "wz-i-alt wz-s-send"; b.setAttribute("data-i", "must");
     var n = cityName(), prep = "à " + n;
     if (/^Le /.test(n)) prep = "au " + n.slice(3); else if (/^Les /.test(n)) prep = "aux " + n.slice(4);
-    b.textContent = "🏛️ À ne pas manquer " + prep;
+    var th = theme();
+    b.textContent = th ? (th.label + " à ne pas manquer " + prep) : ("🏛️ À ne pas manquer " + prep);
     b.style.fontWeight = "800";
     full.parentNode.insertBefore(b, full);
   }
