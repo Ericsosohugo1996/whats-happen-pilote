@@ -253,8 +253,8 @@ renderLocateBar = function () {
   // sorties municipales, ateliers, conférences… : utiles, mais pas « à ne pas manquer »
   var NOISE_RE = /s[ée]nior|biblioth[èe]que|m[ée]diath[èe]que|paris anim|centre social|atelier|stage|cours |cours$|initiation|conf[ée]rence|r[ée]union|permanence|inscription|remise d[eu]|projection|caf[ée] (?:ciné|philo)|th[ée]s? dansants?|visite guid|jeu de piste|assembl[ée]e|club de|mairie|salle des f|portes? ouvertes?/i;
   // les meilleures sorties à venir (14 jours) du thème : billetterie et lieux connus d'abord, une seule par titre, 2 par lieu
-  function themeEvents(th) {
-    var nowD = new Date(), from = isoDay(0), to = isoDay(14), hm = ("0" + nowD.getHours()).slice(-2) + ":" + ("0" + nowD.getMinutes()).slice(-2);
+  function themeEvents(th, days) {
+    var nowD = new Date(), from = isoDay(0), to = isoDay(days || 14), hm = ("0" + nowD.getHours()).slice(-2) + ":" + ("0" + nowD.getMinutes()).slice(-2);
     var ref = (typeof referencePoint === "function") ? referencePoint() : null, seen = {}, venues = {};
     return allEvents().filter(function (e) {
       if (e.isPlace || th.cats.indexOf(e.category) === -1 || !e.date || e.date < from || e.date > to) return false;
@@ -262,6 +262,9 @@ renderLocateBar = function () {
       if (e.date === from && e.time && /^\d\d:\d\d/.test(e.time) && e.time.slice(0, 5) < hm) return false;   // déjà commencé
       var t = String(e.title || "");
       if (NOISE_RE.test(t)) return false;
+      if (th.key === "expo") {
+        if (!/expo|visite|galerie|photo|peinture|sculpture|art |arts|mus[ée]e|biennale|d[ée]couverte/i.test(t) || /film|atelier|parution|prix |cin[ée]ma|projection|conf[ée]rence|rencontre|lecture|dédicace|biblioth|m[ée]diath/i.test(t + " " + String(e.place || ""))) return false;
+      }
       if (th.key === "marche") return /march[ée]|brocante|puces|foire|salon/i.test(t) && !/sportive|nordique|entretien|paris sport/i.test(t);
       if (th.key === "sport") return !/paris sport|sportives?\b|multisports|baby/i.test(t) && (e.source === "ticketmaster" || /match|tournoi|coupe|championnat|course|marathon|trail|finale|open|gala/i.test(t));
       if (th.key === "festival") return /festival|f[êe]te|salon|nuit de/i.test(t) || e.source === "ticketmaster";
@@ -272,7 +275,7 @@ renderLocateBar = function () {
         var days = Math.max(0, (new Date(e.date) - new Date(from)) / 86400000);
         var pr = String(e.price || "");
         var sc = (e.source === "ticketmaster" ? 500 : 0) + (/billetterie/i.test(pr) ? 150 : 0) + (e.photo || e.thumb ? 150 : 0) + (e.time ? 60 : 0) +
-          Math.min(String(e.description || "").length, 120) + (/gratuit|libre/i.test(pr) ? 30 : 0) + (e.source === "paris-opendata" ? -120 : 0) - days * 10 - Math.min(d, 20) * 4;
+          Math.min(String(e.description || "").length, 120) + (/gratuit|libre/i.test(pr) ? 30 : 0) + (e.source === "paris-opendata" ? -120 : 0) + (th.key === "expo" && /mus[ée]e|palais|fondation|galerie|centre pompidou|grand palais|orangerie|louvre|institut|monnaie|cité/i.test(String(e.place || "") + " " + String(e.title || "")) ? 350 : 0) - days * 10 - Math.min(d, 20) * 4;
         return { e: e, sc: sc };
       })
       .sort(function (a, b) { return b.sc - a.sc; })
@@ -285,6 +288,32 @@ renderLocateBar = function () {
       .slice(0, 8).map(function (x) { return x.e; });
   }
 
+  // Bar : soirées dans des bars/clubs (14 jours), complétées par les bars les plus proches
+  var BARVENUE_RE = /\b(bar|pub|caf[ée]|club|cabaret|rooftop|brasserie|taverne|guinguette|comptoir|badaboum|rex|sacr[ée]|jump in|corcoran|oz|machine du moulin rouge|baiser sal[ée]|38riv|duc des lombards|sunset|sunside|melville|dorothy)\b/i;
+  var BARGENERIC_RE = /pmu|tabac|loto|^(le |la |l')?(bar|caf[ée]|brasserie|restaurant)$|^caf[ée][- ]/i;
+  function barItems() {
+    var from = isoDay(0), to = isoDay(14), ref = (typeof referencePoint === "function") ? referencePoint() : null, seen = {};
+    var evs = allEvents().filter(function (e) {
+      return !e.isPlace && (e.category === "Soirée" || e.category === "Musique") && e.date >= from && e.date <= to && (state.userPos ? true : e.city === state.city) && BARVENUE_RE.test(String(e.place || "").split(",")[0]) && !NOISE_RE.test(String(e.title || ""));
+    }).map(function (e) { return { e: e, sc: (e.source === "ticketmaster" ? 300 : 0) + (e.photo || e.thumb ? 120 : 0) + (e.time ? 40 : 0) - Math.max(0, (new Date(e.date) - new Date(from)) / 86400000) * 10 }; })
+      .sort(function (a, b) { return b.sc - a.sc; })
+      .filter(function (x) { var k = norm(String(x.e.place || "").split(",")[0]); if (seen[k]) return false; seen[k] = 1; return true; })
+      .slice(0, 5).map(function (x) { return x.e; });
+    var ids = {}; evs.forEach(function (e) { ids[e.id] = 1; });
+    var near = allEvents().filter(function (e) { return e.isPlace && e.category === "Bar" && e.title && e.title.length > 3 && !BARGENERIC_RE.test(e.title) && e.lat && e.lng && (state.userPos ? true : e.city === state.city); })
+      .map(function (e) { return { e: e, d: ref ? haversineKm(ref.lat, ref.lng, e.lat, e.lng) : 0 }; })
+      .sort(function (a, b) { return a.d - b.d; }).slice(0, 8 - evs.length).map(function (x) { return x.e; });
+    return { items: evs.concat(near), nEvents: evs.length };
+  }
+
+  // le thème choisi a-t-il assez de vraies sorties ici ? sinon le bouton reste « À ne pas manquer » (incontournables)
+  function hasTheme(th) {
+    try {
+      if (th.key === "musee") return true;
+      if (th.key === "bar") return barItems().items.length >= 2;
+      return themeEvents(th, 14).length >= 2 || themeEvents(th, 45).length >= 2;
+    } catch (e) { return false; }
+  }
   function css() {
     if (document.getElementById("wz-m-css")) return;
     var st = document.createElement("style"); st.id = "wz-m-css";
@@ -322,9 +351,14 @@ renderLocateBar = function () {
   }
 
   function load(th, cb) {
-    if (th && th.key !== "musee") {
-      var ev = themeEvents(th);
-      if (ev.length >= 2) return cb({ items: ev, src: false, th: th, events: true });
+    if (th && th.key === "bar") {
+      var bi = barItems();
+      if (bi.items.length >= 2) return cb({ items: bi.items, src: false, th: th, events: true, sub: bi.nEvents ? "Soirées dans les bars et clubs, puis les bars les plus proches" : "Les bars les plus proches de toi" });
+    }
+    if (th && th.key !== "musee" && th.key !== "bar") {
+      var days = 14, ev = themeEvents(th, days);
+      if (ev.length < 4) { var ev2 = themeEvents(th, 45); if (ev2.length > ev.length) { ev = ev2; days = 45; } }
+      if (ev.length >= 2) return cb({ items: ev, src: false, th: th, events: true, days: days });
       if (th.key === "bar" || th.key === "expo") th = null;   // peu de résultats : retour aux incontournables de la ville
     }
     var key = state.city, wantMus = th && th.key === "musee";
@@ -349,7 +383,7 @@ renderLocateBar = function () {
     var desc = String(ev.description || "").replace(/\s+/g, " ").trim();
     if (desc.length > 120) desc = desc.slice(0, 120).replace(/\s+\S*$/, "") + "…";
     return '<button type="button" class="wz-i-card" data-i="open" data-id="' + esc(ev.id) + '" data-m="1"><div class="wz-i-ph">' + (typeof eventPhotoHTML === "function" ? eventPhotoHTML(ev) : "") +
-      '<span class="wz-i-pill" style="--c:#457B9D">' + (ev.isPlace ? "🏛️ À VOIR" : esc(String(ev.category || "").toUpperCase())) + '</span></div><div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div>' +
+      '<span class="wz-i-pill" style="--c:#457B9D">' + (ev.isPlace ? (ev.category === "Bar" ? "🍸 BAR" : "🏛️ À VOIR") : esc(String(ev.category || "").toUpperCase())) + '</span></div><div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div>' +
       ((ev.date && !ev.isPlace) ? '<div class="wz-i-v">' + esc(formatDate(ev.date) + (ev.time ? " · " + ev.time : "") + (dist ? " · " + dist : "")) + '</div>' : (dist ? '<div class="wz-i-v">' + esc(dist) + '</div>' : "")) + (desc ? '<div class="wz-i-why" style="font-weight:600;color:#C9D2EA">' + esc(desc) + '</div>' : "") + '</div></button>';
   }
 
@@ -364,7 +398,7 @@ renderLocateBar = function () {
       if (!res.items.length) {
         h += '<div class="wz-m-sub">Pas encore de lieux à te recommander ici. Reviens bientôt !</div>';
       } else {
-        h += '<div class="wz-m-sub">' + (res.events ? esc(res.th.label.replace(/^\S+\s*/, "")) + " à ne pas manquer, dans les 14 prochains jours" : res.th ? "Les musées et lieux à ne pas manquer à " + esc(cityName()) : "Les incontournables de " + esc(cityName())) + '</div>' + res.items.map(function (ev, i) { return cardHtml(ev, i === 0); }).join("");
+        h += '<div class="wz-m-sub">' + (res.sub ? esc(res.sub) : res.events ? esc(res.th.label.replace(/^\S+\s*/, "")) + " à ne pas manquer, dans les " + (res.days === 45 ? "prochaines semaines" : "14 prochains jours") : res.th ? "Les musées et lieux à ne pas manquer à " + esc(cityName()) : "Les incontournables de " + esc(cityName())) + '</div>' + res.items.map(function (ev, i) { return cardHtml(ev, i === 0); }).join("");
         if (res.src) h += '<div class="wz-m-src">Sélection établie à partir de Wikidata (données libres).</div>';
       }
       h += '<button type="button" class="wz-i-alt ghost" data-i="must-back">← Retour à ma surprise</button>';
@@ -383,6 +417,7 @@ renderLocateBar = function () {
     var n = cityName(), prep = "à " + n;
     if (/^Le /.test(n)) prep = "au " + n.slice(3); else if (/^Les /.test(n)) prep = "aux " + n.slice(4);
     var th = theme();
+    if (th && !hasTheme(th)) th = null;
     b.textContent = th ? (th.label + " à ne pas manquer " + prep) : ("🏛️ À ne pas manquer " + prep);
     b.style.fontWeight = "800";
     full.parentNode.insertBefore(b, full);
