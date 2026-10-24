@@ -125,13 +125,29 @@ const prep = (s) => (/^[AEIOUYÉÈÊH]/i.test(s) && !/^(Hy|Hu)/i.test(s) ? "à "
 
 function readPlaces(key, name) {
   let l = [];
-  try { l = JSON.parse(fs.readFileSync(path.join("data", "places", key + ".json"), "utf8")); } catch (e) { return []; }
-  if (!Array.isArray(l)) return [];
+  try { l = JSON.parse(fs.readFileSync(path.join("data", "places", key + ".json"), "utf8")); } catch (e) { l = []; }
+  if (!Array.isArray(l)) l = [];
   const nk = nameKey(name);
   const seen = new Set();
-  return l.filter((p) => p && p.title && (p.description || "").length > 60 && !seen.has(nameKey(p.title)) && seen.add(nameKey(p.title)))
-    .map((p) => ({ p, s: (nameKey(p.place || "").includes(nk) ? 1000 : 0) + Math.min(String(p.description).length, 400) + (p.thumb ? 150 : 0) + (/mus[ée]e|ch[âa]teau|cath[ée]drale|basilique|abbaye|jardin|parc |palais|tour |monument|forteresse|citadelle|fort |grotte|panorama|remparts|op[ée]ra|[ée]glise|chapelle|hôtel de ville|vieux|historique|patrimoine/i.test(p.title) ? 400 : 0) - (/cours |atelier|stage|boutique|restaurant|location|vente|h[ôo]tel(?! de ville)|gîte|camping|salle des f/i.test(p.title) ? 900 : 0) }))
-    .sort((a, b) => b.s - a.s).slice(0, MAX_PLACES).map((x) => x.p);
+  const dt = l.filter((p) => p && p.title && (p.description || "").length > 60 && !seen.has(nameKey(p.title)) && seen.add(nameKey(p.title)))
+    .map((p) => ({ p, s: (nameKey(p.place || "").includes(nk) ? 1000 : 0) + Math.min(String(p.description).length, 400) + (p.thumb ? 150 : 0) + (/mus[ée]e|ch[âa]teau|cath[ée]drale|basilique|abbaye|jardin|parc |palais|tour |monument|forteresse|citadelle|fort |grotte|panorama|remparts|op[ée]ra|[ée]glise|chapelle|hôtel de ville|vieux|historique|patrimoine/i.test(p.title) ? 400 : 0) - (/biblioth[èe]que|m[ée]diath[èe]que|archives|cours |atelier|stage|boutique|restaurant|location|vente|h[ôo]tel(?! de ville)|gîte|camping|salle des f/i.test(p.title) ? 900 : 0) }))
+    .sort((a, b) => b.s - a.s).map((x) => x.p);
+  // lieux les plus célèbres (Wikidata, mis à jour chaque mois) ; les textes détaillés de DATAtourisme les complètent
+  let wd = [];
+  try { wd = JSON.parse(fs.readFileSync(path.join("data", "wikidata", key + ".json"), "utf8")); } catch (e) { wd = []; }
+  if (Array.isArray(wd) && wd.length >= MIN_PLACES) {
+    const cap = (t) => { t = String(t || "").trim(); return t ? t.charAt(0).toUpperCase() + t.slice(1) + (/[.!?]$/.test(t) ? "" : ".") : ""; };
+    const used = new Set();
+    const out = wd.slice(0, MAX_PLACES).map((w) => {
+      const b = nameKey(w.title);
+      const m = b.length >= 6 ? dt.find((p) => { const a = nameKey(p.title); return a === b || a.includes(b) || b.includes(a); }) : null;
+      if (m) used.add(m);
+      return { title: w.title.charAt(0).toUpperCase() + w.title.slice(1), place: name, description: m ? m.description : cap(w.description), wd: true };
+    });
+    out.wikidata = true;
+    return out;
+  }
+  return dt.slice(0, MAX_PLACES);
 }
 const clip = (t, n) => { t = String(t).replace(/\s+/g, " ").trim(); if (t.length <= n) return t; t = t.slice(0, n); return t.replace(/\s+\S*$/, "") + "…"; };
 function placesHtml(pl, max) {
@@ -242,7 +258,7 @@ function main() {
     for (const { T, sub, from, to } of tp) {
       if (T.places) {
         const can = SITE + "/" + OUT + "/" + slug + "/a-voir/";
-        const body = "<p class=\"crumb\"><a href=\"/" + OUT + "/\">Sorties</a> › <a href=\"/" + OUT + "/" + slug + "/\">" + esc(name) + "</a></p>\n<h1>Que visiter à " + esc(name) + " ? Les lieux à ne pas manquer</h1>\n<p class=\"lead\">" + sub.length + " lieux à voir à " + esc(name) + " et autour : monuments, musées, patrimoine et sites remarquables.</p>\n" + chips("a-voir") + placesHtml(sub, MAX_PLACES) +
+        const body = "<p class=\"crumb\"><a href=\"/" + OUT + "/\">Sorties</a> › <a href=\"/" + OUT + "/" + slug + "/\">" + esc(name) + "</a></p>\n<h1>Que visiter à " + esc(name) + " ? Les lieux à ne pas manquer</h1>\n<p class=\"lead\">" + sub.length + " lieux à voir à " + esc(name) + " et autour : monuments, musées, patrimoine et sites remarquables.</p>\n" + chips("a-voir") + placesHtml(sub, MAX_PLACES) + (sub.wikidata ? "<p class=\"lead\">Sélection établie à partir de Wikidata (données libres) et de DATAtourisme.</p>\n" : "") +
           "<a class=\"cta\" href=\"" + cta + "\">Voir les sorties à " + esc(name) + " sur Whazup</a>\n";
         const ld = { "@context": "https://schema.org", "@type": "ItemList", name: "À voir à " + name, itemListElement: sub.slice(0, MAX_LD).map((p, i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "TouristAttraction", name: String(p.title).slice(0, 100), description: clip(p.description, 200), address: String(p.place || "").slice(0, 160) } })) };
         write(slug + "/a-voir", shell({ title: "Que visiter à " + name + " ? " + sub.length + " lieux à ne pas manquer | Whazup", desc: "Que voir à " + name + " : " + sub.slice(0, 3).map((p) => p.title).join(", ") + " et " + (sub.length - 3) + " autres lieux à visiter.", canonical: can, body, ld }));
