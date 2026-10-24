@@ -1,125 +1,5 @@
 [
  {
-  "id": "Q456",
-  "title": "Lyon",
-  "description": "commune française (chef-lieu du département du Rhône et de la région Auvergne-Rhone-Alpes)",
-  "langs": 197,
-  "types": "commune française à statut particulier, ville universitaire, grande ville, commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/01.%20Panorama%20de%20Lyon%20pris%20depuis%20le%20toit%20de%20la%20Basilique%20de%20Fourvi%C3%A8re.jpg"
- },
- {
-  "id": "Q463",
-  "title": "Rhône-Alpes",
-  "description": "ancienne région administrative française",
-  "langs": 104,
-  "types": "région historique, région de France",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/SNCF%20TGV%20Duplex%20Viaduc%20de%20Cize%20-%20Bolozon.jpg"
- },
- {
-  "id": "Q582",
-  "title": "Villeurbanne",
-  "description": "commune française de la métropole de Lyon",
-  "langs": 85,
-  "types": "grande ville, commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Place%20lazare%20goujon.jpg"
- },
- {
-  "id": "Q187834",
-  "title": "Saône",
-  "description": "rivière de France",
-  "langs": 68,
-  "types": "fleuve ou rivière",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sa%C3%B4ne%20Tournus1.JPG"
- },
- {
-  "id": "Q244717",
-  "title": "Caluire-et-Cuire",
-  "description": "commune française de la métropole de Lyon",
-  "langs": 50,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hotel.de.ville.Caluire.et.Cuire.001.JPG"
- },
- {
-  "id": "Q16665897",
-  "title": "Métropole de Lyon",
-  "description": "collectivité territoriale française à statut particulier",
-  "langs": 49,
-  "types": "collectivité à statut particulier, métropole",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vue%20du%20Mont%20Thou.JPG"
- },
- {
-  "id": "Q387460",
-  "title": "Sainte-Foy-lès-Lyon",
-  "description": "commune française de la métropole de Lyon",
-  "langs": 46,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tour%20rive%20Saone.JPG"
- },
- {
-  "id": "Q10971",
-  "title": "Gaule lyonnaise",
-  "description": "province romaine",
-  "langs": 42,
-  "types": "province romaine",
-  "image": ""
- },
- {
-  "id": "Q1795504",
-  "title": "EM Lyon Business School",
-  "description": "établissement d'enseignement français",
-  "langs": 41,
-  "types": "entreprise, grande école",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/EmLyon%20BusinessSchool.jpg"
- },
- {
-  "id": "Q1552",
-  "title": "métro de Lyon",
-  "description": "réseau métropolitain à Lyon",
-  "langs": 39,
-  "types": "réseau de transport en commun, métro",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/MPL85%20-%20Rame%20346%20-%20Gorge%20de%20Loup.jpg"
- },
- {
-  "id": "Q1980",
-  "title": "stade de Gerland",
-  "description": "stade lyonnais",
-  "langs": 39,
-  "types": "stade multifonction",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Matmut%20stadium%20de%20gerland.jpg"
- },
- {
-  "id": "Q8665",
-  "title": "La Sortie de l'usine Lumière à Lyon",
-  "description": "court-métrage en noir et blanc réalisé par Auguste et Louis Lumière en 1895",
-  "langs": 37,
-  "types": "court métrage",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20sortie%20des%20usines%20Lumiere.jpg"
- },
- {
-  "id": "Q273748",
-  "title": "Écully",
-  "description": "commune française de la métropole de Lyon",
-  "langs": 36,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ecully%20vivier.jpg"
- },
- {
-  "id": "Q1617133",
-  "title": "Champagne-au-Mont-d'Or",
-  "description": "commune française de la métropole de Lyon",
-  "langs": 35,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Champagne%20-%20Mairie%20en%20juillet%202010.JPG"
- },
- {
-  "id": "Q10176",
-  "title": "université de Lyon (ComUE)",
-  "description": "regroupement d'établissements d'enseignement supérieur dans la région de Lyon Saint-Étienne, prenant la forme d'une « communauté d'universités et d'établissements », créée en 2015",
-  "langs": 34,
-  "types": "communauté d'universités et d'établissements, université en France",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bandeau-www%20palais-hirsch-nocturne.jpg"
- },
- {
   "id": "Q665",
   "title": "Lugdunum",
   "description": "ancienne cité romaine, capitale des Gaules, dont les ruines se trouvent dans la ville de Lyon",
@@ -128,44 +8,12 @@
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Roman%20theatre%20in%20Lyon.jpg"
  },
  {
-  "id": "Q772460",
-  "title": "La Mulatière",
-  "description": "commune française de la métropole de Lyon",
-  "langs": 33,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20Mulati%C3%A8re%20038.JPG"
- },
- {
-  "id": "Q535140",
-  "title": "arrondissement de Lyon",
-  "description": "arrondissement français",
-  "langs": 32,
-  "types": "arrondissement français",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Arrondissement%20of%20Lyon.jpg"
- },
- {
-  "id": "Q1647506",
-  "title": "Tassin-la-Demi-Lune",
-  "description": "commune française de la métropole de Lyon",
-  "langs": 31,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/01.%20Place%20Pierre%20Vauboin%20Horloge%20Tassin-la-Demie-Lune.JPG"
- },
- {
   "id": "Q511",
   "title": "musée des Beaux-Arts de Lyon",
   "description": "musée des Beaux-arts de Lyon, France",
   "langs": 29,
   "types": "musée d'art",
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Facade%20Musee%20des%20Beaux-Arts%20de%20Lyon%20n02.jpg"
- },
- {
-  "id": "Q10159",
-  "title": "École normale supérieure de Lyon",
-  "description": "grande école publique française à caractère scientifique, culturel et professionnel, située à Lyon",
-  "langs": 28,
-  "types": "grande école, école normale supérieure, établissement d'enseignement supérieur",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/ENS%20Lyon.jpg"
  },
  {
   "id": "Q1521",
@@ -184,59 +32,291 @@
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/France-003038%20-%20Basilica%20of%20Notre-Dame%20de%20Fourvi%C3%A8re%20%2815939822990%29.jpg"
  },
  {
-  "id": "Q1142571",
-  "title": "Lyonnais",
-  "description": "ancienne province française",
-  "langs": 23,
-  "types": "province de France",
-  "image": ""
- },
- {
-  "id": "Q653482",
-  "title": "bataille de Lugdunum",
-  "description": "bataille de Lyon",
-  "langs": 22,
-  "types": "bataille",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Aureus-Clodius%20Albinus-RIC%200009b.jpg"
- },
- {
-  "id": "Q1274566",
-  "title": "bataille de l'Arar",
-  "description": "bataille entre les Romains et les Helvètes",
-  "langs": 22,
-  "types": "bataille",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Campagne%20Helv%C3%A8tes%20-58.png"
- },
- {
-  "id": "Q1583964",
-  "title": "championnat du monde d'échecs 1990",
-  "description": "",
-  "langs": 22,
-  "types": "saison sportive",
-  "image": ""
- },
- {
-  "id": "Q1633859",
-  "title": "Institut national des sciences appliquées de Lyon",
-  "description": "grande école d'ingénieurs française",
-  "langs": 21,
-  "types": "grande école",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Biblioth%C3%A8que%20Marie%20Curie%20%28INSA%20Lyon%29%2C%20rayonnage%20%281%29.jpg"
- },
- {
-  "id": "Q4032",
-  "title": "université Claude-Bernard-Lyon-I",
-  "description": "université française créée en 1970",
-  "langs": 20,
-  "types": "université en France",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/IUFM%20Croix%20Rousse.JPG"
- },
- {
-  "id": "Q2008",
-  "title": "Lyon-Part-Dieu",
-  "description": "gare ferroviaire française",
+  "id": "Q8399",
+  "title": "Vieux Lyon",
+  "description": "quartier lyonnais",
   "langs": 19,
-  "types": "bâtiment voyageurs, gare ferroviaire",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gare%20Part-Dieu%20%28Lyon%2C%202025%29.jpg"
+  "types": "aire urbaine, centre historique, quartier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vieuxlyon%20saintjean%20toits.jpg"
+ },
+ {
+  "id": "Q614",
+  "title": "place Bellecour",
+  "description": "grande place de la ville de Lyon (France)",
+  "langs": 15,
+  "types": "place",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Place%20Bellecour%20%28Lyon%2C%202024%2C%20version%20recentr%C3%A9e%202%29.jpg"
+ },
+ {
+  "id": "Q3991",
+  "title": "parc de la Tête d'Or",
+  "description": "parc urbain public de 117 hectares à Lyon, France",
+  "langs": 14,
+  "types": "jardin public, parc",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/General%20view%20-%20Parc%20de%20la%20T%C3%AAte%20d%27Or%20-%20DSC05262.jpg"
+ },
+ {
+  "id": "Q3124",
+  "title": "amphithéâtre des Trois Gaules",
+  "description": "ancien amphithéâtre romain de Lyon",
+  "langs": 14,
+  "types": "site archéologique romain, amphithéâtre romain, structure archéologique romaine, site archéologique, amphithéâtre",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/03.%20Amphith%C3%A9atre%20des%20Trois%20Gaules.JPG"
+ },
+ {
+  "id": "Q8656",
+  "title": "La Croix-Rousse",
+  "description": "colline et quartier lyonnais",
+  "langs": 14,
+  "types": "quartier, colline",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Croix-Rousse.jpg"
+ },
+ {
+  "id": "Q1510",
+  "title": "théâtre antique de Lyon",
+  "description": "théâtre Gallo-Romain de Lyon",
+  "langs": 13,
+  "types": "site archéologique romain, structure archéologique romaine, théâtre, théâtre romain",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20Lugdunum%20-%20Th%C3%A9atre%20Romain.jpg"
+ },
+ {
+  "id": "Q728123",
+  "title": "La Part-Dieu",
+  "description": "quartier lyonnais",
+  "langs": 13,
+  "types": "quartier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20La%20Part-Dieu%20de%20nuit%20-%2007-12-2009.jpg"
+ },
+ {
+  "id": "Q764519",
+  "title": "Fourvière",
+  "description": "quartier de Lyon",
+  "langs": 13,
+  "types": "quartier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20Colline%20de%20Fourvi%C3%A8re%20depuis%20les%20Jardins%20de%20Perrache%20%28mars%202019%29.jpg"
+ },
+ {
+  "id": "Q625",
+  "title": "tour métallique de Fourvière",
+  "description": "monument de Lyon",
+  "langs": 12,
+  "types": "tour en treillis",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tour%20m%C3%A9tallique%20%28Lyon%2C%202026%2C%202%29.jpg"
+ },
+ {
+  "id": "Q5278",
+  "title": "sanctuaire fédéral des Trois Gaules",
+  "description": "sanctuaire romain à Lyon, France",
+  "langs": 12,
+  "types": "site archéologique romain, temple romain",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Dupondius%20Auguste%20Autel%20de%20Lyon.jpg"
+ },
+ {
+  "id": "Q8291",
+  "title": "Presqu'île",
+  "description": "quartier lyonnais",
+  "langs": 12,
+  "types": "établissement humain",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Presqu%27%C3%AEle%20de%20Lyon%20depuis%20un%20vol%20Londres%20-%20Lyon.jpg"
+ },
+ {
+  "id": "Q1506",
+  "title": "place des Terreaux",
+  "description": "place du premier arrondissement de Lyon",
+  "langs": 11,
+  "types": "place",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Place%20des%20Terreaux%20%28Lyon%2C%202025%29.jpg"
+ },
+ {
+  "id": "Q9496",
+  "title": "opéra de Lyon",
+  "description": "bâtiment lyonnais",
+  "langs": 11,
+  "types": "opéra",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Place%20de%20la%20Com%C3%A9die%20%28Lyon%2C%202025%29.jpg"
+ },
+ {
+  "id": "Q8250",
+  "title": "église Saint-Nizier de Lyon",
+  "description": "église catholique à Lyon",
+  "langs": 10,
+  "types": "église catholique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20St%20Nizier%20Lyon%205.jpg"
+ },
+ {
+  "id": "Q3246",
+  "title": "basilique Saint-Martin d'Ainay",
+  "description": "basilique ancienne abbatiale située à Lyon",
+  "langs": 10,
+  "types": "basilique mineure",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lyon%202e%20-%20Basilique%20Saint-Martin%20d%27Ainay%20depuis%20la%20rue%20Bourgelat%20%28mars%202019%29.jpg"
+ },
+ {
+  "id": "Q8600",
+  "title": "église Saint-Bruno des Chartreux",
+  "description": "église située à Lyon, en France",
+  "langs": 10,
+  "types": "église catholique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Exterieur%20StBruno.JPG"
+ },
+ {
+  "id": "Q8638",
+  "title": "théâtre national populaire",
+  "description": "institution théâtrale française fondée à Paris en 1920, déplacée à Villeurbanne en 1972",
+  "langs": 10,
+  "types": "groupe des arts du spectacle, compagnie de théâtre",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/TNP%20renove%202011.JPG"
+ },
+ {
+  "id": "Q3175",
+  "title": "odéon antique de Lyon",
+  "description": "odéon antique romain en France",
+  "langs": 9,
+  "types": "site archéologique romain, odéon, site archéologique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lyon%205%20-%20Od%C3%A9on%20antique%2001.jpg"
+ },
+ {
+  "id": "Q3581819",
+  "title": "église Saint-Irénée",
+  "description": "église située dans le Rhône, en France",
+  "langs": 9,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eglisesaintireneelyon.JPG"
+ },
+ {
+  "id": "Q7902722",
+  "title": "mosquée de Othmane",
+  "description": "mosquée située dans le Rhône, en France",
+  "langs": 9,
+  "types": "mosquée",
+  "image": ""
+ },
+ {
+  "id": "Q8352",
+  "title": "musée des Confluences",
+  "description": "musée de sciences naturelles, sciences humaines et sciences et techniques",
+  "langs": 9,
+  "types": "musée scientifique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20Mus%C3%A9e%20des%20Confluences%20%2849525806051%29.jpg"
+ },
+ {
+  "id": "Q8668",
+  "title": "jardin botanique de Lyon",
+  "description": "jardin lyonnais",
+  "langs": 9,
+  "types": "jardin botanique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Grandes%20serres%20du%20Parc%20de%20la%20T%C3%AAte%20d%27Or%20-%203.JPG"
+ },
+ {
+  "id": "Q10181",
+  "title": "église Saint-Georges de Lyon",
+  "description": "bâtiment lyonnais",
+  "langs": 9,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Georges%2C%20Lyon.jpg"
+ },
+ {
+  "id": "Q8238",
+  "title": "basilique Saint-Bonaventure",
+  "description": "église dans le 2ᵉ arrondissement de Lyon (Rhône)",
+  "langs": 8,
+  "types": "église catholique, sanctuaire catholique, basilique mineure",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Exterior%20of%20%C3%89glise%20Saint-Bonaventure%2003.jpg"
+ },
+ {
+  "id": "Q8330",
+  "title": "musée d'Art contemporain de Lyon",
+  "description": "musée d'Art contemporain de Lyon, France",
+  "langs": 8,
+  "types": "musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/General%20view%20-%20Parc%20de%20la%20T%C3%AAte%20d%27Or%20-%20DSC05248.jpg"
+ },
+ {
+  "id": "Q8397",
+  "title": "Gadagne",
+  "description": "musée d'histoire de Lyon et Musée des arts de la marionnette",
+  "langs": 8,
+  "types": "musée",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Cour-gadagne%20Photo%20Service-communication-Gadagne%202021%20%285%29.jpg"
+ },
+ {
+  "id": "Q9494",
+  "title": "musée africain de Lyon",
+  "description": "musée de Lyon, France",
+  "langs": 8,
+  "types": "musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20africain%20Lyon%20130909%2004.jpg"
+ },
+ {
+  "id": "Q9528",
+  "title": "église Saint-Paul de Lyon",
+  "description": "église située à Lyon, en France",
+  "langs": 8,
+  "types": "église catholique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Paul%20de%20Lyon.jpg"
+ },
+ {
+  "id": "Q10144",
+  "title": "fontaine Bartholdi",
+  "description": "fontaine lyonnaise",
+  "langs": 8,
+  "types": "sculpture, fontaine",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lyon%201er%20-%20Fontaine%20Bartholdi%20-%20Statue%20et%20bassin.jpg"
+ },
+ {
+  "id": "Q5273",
+  "title": "cité internationale de Lyon",
+  "description": "quartier de congrès de Lyon",
+  "langs": 7,
+  "types": "quartier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vue%20Salle3000%20Lyon%20Helicoptere.jpg"
+ },
+ {
+  "id": "Q1531",
+  "title": "grande synagogue de Lyon",
+  "description": "lieu de culte juif de Lyon",
+  "langs": 7,
+  "types": "synagogue principale, synagogue",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Synagogue%20Lyon2%20fr%20facade.JPG"
+ },
+ {
+  "id": "Q8220",
+  "title": "rue de la République",
+  "description": "rue de Lyon, en France",
+  "langs": 7,
+  "types": "rue",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Rue%20de%20la%20R%C3%A9publique%20%28Lyon%2C%202025%29.jpg"
+ },
+ {
+  "id": "Q3151766",
+  "title": "Institut Lumière",
+  "description": "institution académique française basée à Lyon, à la fois musée et cinémathèque",
+  "langs": 7,
+  "types": "cinémathèque, musée",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Institut%20Lumi%C3%A8re%20Lyon.jpg"
+ },
+ {
+  "id": "Q8592",
+  "title": "château de Pierre Scize",
+  "description": "ancien château lyonnais aujourd'hui rasé",
+  "langs": 7,
+  "types": "bâtiment ou structure détruit, château fort",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20de%20Pierre%20Scize%201.jpg"
+ },
+ {
+  "id": "Q9526",
+  "title": "église du Bon-Pasteur de Lyon",
+  "description": "église située à Lyon, en France",
+  "langs": 7,
+  "types": "église catholique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20bon%20pasteur.JPG"
+ },
+ {
+  "id": "Q10182",
+  "title": "église Saint-Polycarpe de Lyon",
+  "description": "église située dans le Rhône, en France",
+  "langs": 7,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Polycarpe.jpg"
  }
 ]

@@ -1,123 +1,11 @@
 [
  {
-  "id": "Q6602",
-  "title": "Strasbourg",
-  "description": "capitale de la région historique d'Alsace, préfecture du Bas-Rhin et de la région Grand Est",
-  "langs": 194,
-  "types": "grande ville, ville frontalière, commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasburg.jpg"
- },
- {
-  "id": "Q8908",
-  "title": "Conseil de l'Europe",
-  "description": "organisation européenne intergouvernementale pour la défense des droits de l'homme",
-  "langs": 129,
-  "types": "organisation intergouvernementale, organisation",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Council%20of%20Europe%20Palais%20de%20l%27Europe%20aerial%20view.JPG"
- },
- {
-  "id": "Q18677983",
-  "title": "Grand Est",
-  "description": "région administrative française",
-  "langs": 108,
-  "types": "région de France",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20-%202016%20%2829947544886%29.jpg"
- },
- {
-  "id": "Q122880",
-  "title": "Cour européenne des droits de l'homme",
-  "description": "juridiction internationale liée au Conseil de l'Europe",
-  "langs": 88,
-  "types": "juridiction internationale",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/European%20Court%20of%20Human%20Rights%2C%20courtroom%2C%202014%20%28cropped%29.JPG"
- },
- {
-  "id": "Q22639",
-  "title": "Schiltigheim",
-  "description": "commune française du département du Bas-Rhin",
-  "langs": 60,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Schiltigheim%20rPrincipale%2057%20%281%29.jpg"
- },
- {
-  "id": "Q157575",
-  "title": "université de Strasbourg",
-  "description": "nom générique depuis 2009 réunissant les trois universités de Strasbourg-I, Strasbourg-II et Strasbourg-III mais en existence depuis 1621",
-  "langs": 57,
-  "types": "université en France",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Neustadt%20%2852297125377%29.jpg"
- },
- {
   "id": "Q745460",
   "title": "cathédrale Notre-Dame de Strasbourg",
   "description": "cathédrale située dans le Bas-Rhin, en France",
   "langs": 51,
   "types": "cathédrale catholique",
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Cathedral%20Exterior%20-%20Diliff.jpg"
- },
- {
-  "id": "Q21354",
-  "title": "Ostwald",
-  "description": "commune française du département du Bas-Rhin",
-  "langs": 47,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ostwald05.jpg"
- },
- {
-  "id": "Q8073",
-  "title": "Arte",
-  "description": "chaîne de service public franco-allemande",
-  "langs": 46,
-  "types": "chaîne de télévision généraliste, station de télévision, réseau de télévision, organisation",
-  "image": ""
- },
- {
-  "id": "Q273579",
-  "title": "École nationale d'administration",
-  "description": "grande école française (1945–2021)",
-  "langs": 42,
-  "types": "école d'application",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/100528ena%20paris06.jpg"
- },
- {
-  "id": "Q59647120",
-  "title": "attentat du marché de Noël de Strasbourg",
-  "description": "tuerie de masse par arme à feu, le 11 décembre 2018, par Chérif Chekatt au marché de Noël de Strasbourg, en France, revendiqué par l'organisation terroriste État islamique",
-  "langs": 34,
-  "types": "fusillade de masse, attaque terroriste au couteau",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fusillade%20de%20Strasbourg%2C%20intervention%20police%20route%20de%20l%27h%C3%B4pital%20Neudorf%2C%2011%20d%C3%A9cembre%202018%20-%207.jpg"
- },
- {
-  "id": "Q1275285",
-  "title": "EM Strasbourg Business School",
-  "description": "établissement d'enseignement français",
-  "langs": 30,
-  "types": "école de commerce",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Absolute%20pege%20strasbourg%2001.JPG"
- },
- {
-  "id": "Q19243038",
-  "title": "arrondissement de Strasbourg",
-  "description": "arrondissement du Bas-Rhin",
-  "langs": 30,
-  "types": "arrondissement français",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Locator%20map%20of%20Arrondissement%20Strasbourg%202018.png"
- },
- {
-  "id": "Q374883",
-  "title": "stade de la Meinau",
-  "description": "stade français situé à Strasbourg",
-  "langs": 29,
-  "types": "installation sportive, stade",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20Meinau%20en%20National.jpg"
- },
- {
-  "id": "Q1054195",
-  "title": "Centre de données astronomiques de Strasbourg",
-  "description": "centre de données",
-  "langs": 25,
-  "types": "centre de données, organisation",
-  "image": ""
  },
  {
   "id": "Q1895943",
@@ -128,92 +16,28 @@
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Petite%20France.jpg"
  },
  {
-  "id": "Q660855",
-  "title": "arrondissement de Strasbourg-Campagne",
-  "description": "ancien arrondissement du Bas-Rhin, en France",
-  "langs": 23,
-  "types": "entité territoriale disparue, arrondissement français",
-  "image": ""
- },
- {
-  "id": "Q465591",
-  "title": "palais de l'Europe",
-  "description": "bâtiment à Strasbourg, France",
-  "langs": 20,
-  "types": "bâtiment parlementaire",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Council%20of%20Europe%20Palais%20de%20l%27Europe.JPG"
- },
- {
-  "id": "Q620012",
-  "title": "siège de Strasbourg",
-  "description": "siège durant la guerre franco-prussienne de 1870",
-  "langs": 19,
-  "types": "siège militaire, bataille",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bresche%20beim%20Steintor.jpg"
- },
- {
-  "id": "Q620012",
-  "title": "siège de Strasbourg",
-  "description": "siège durant la guerre franco-prussienne de 1870",
-  "langs": 19,
-  "types": "siège militaire, bataille",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stra%C3%9Fburg%20Belagerung%201.jpg"
- },
- {
-  "id": "Q620012",
-  "title": "siège de Strasbourg",
-  "description": "siège durant la guerre franco-prussienne de 1870",
-  "langs": 19,
-  "types": "siège militaire, bataille",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/StrasbourgSiege.png"
- },
- {
-  "id": "Q620012",
-  "title": "siège de Strasbourg",
-  "description": "siège durant la guerre franco-prussienne de 1870",
-  "langs": 19,
-  "types": "siège militaire, bataille",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strassburg%20vom%20Steintor%20aus%2028%20Sept%201870.jpg"
- },
- {
-  "id": "Q702564",
-  "title": "arrondissement de Strasbourg-Ville",
-  "description": "ancien arrondissement français",
-  "langs": 19,
-  "types": "entité territoriale disparue, arrondissement français",
-  "image": ""
- },
- {
-  "id": "Q947985",
-  "title": "observatoire astronomique de Strasbourg",
-  "description": "observatoire astronomique",
-  "langs": 18,
-  "types": "observatoire astronomique",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/L%27observatoire%20astronomique%20de%20Strasbourg%20%2841534417322%29.jpg"
- },
- {
-  "id": "Q801473",
-  "title": "Strasbourg-Ville",
-  "description": "gare ferroviaire française",
-  "langs": 17,
-  "types": "gare ferroviaire",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gare%20de%20Strasbourg%20IMG%203679.JPG"
- },
- {
-  "id": "Q2060490",
-  "title": "tramway de Strasbourg",
-  "description": "tramways exploités par la CTS desservant Strasbourg et son agglomération",
-  "langs": 17,
-  "types": "réseau de tramway",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/TramStrasbourg%20lineA%20HommeFer%20versIllkirch.JPG"
- },
- {
   "id": "Q965606",
   "title": "Petite France",
   "description": "quartier historique de la ville de Strasbourg",
   "langs": 16,
   "types": "quartier",
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Petite-France%20place%20Benjamin-Zix%20septembre%202015.jpg"
+ },
+ {
+  "id": "Q1535963",
+  "title": "musée des Beaux-Arts de Strasbourg",
+  "description": "musée de Strasbourg, France",
+  "langs": 15,
+  "types": "musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Rohan%20Jan%202020%20%28cropped%29.jpg"
+ },
+ {
+  "id": "Q1785858",
+  "title": "église Saint-Thomas de Strasbourg",
+  "description": "église située dans le Bas-Rhin, en France",
+  "langs": 15,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%2C%20d%C3%A9cembre%202018%20%2845432700325%29.jpg"
  },
  {
   "id": "Q565125",
@@ -224,19 +48,275 @@
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Mus%C3%A9e%20alsacien%2001.jpg"
  },
  {
-  "id": "Q630461",
-  "title": "Bibliothèque nationale et universitaire de Strasbourg",
-  "description": "bibliothèque publique française à Strasbourg",
-  "langs": 15,
-  "types": "bibliothèque universitaire, organisation, bibliothèque nationale",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bnu-2018-01.jpg"
+  "id": "Q1561438",
+  "title": "palais Rohan",
+  "description": "palais à Strasbourg (Bas-Rhin)",
+  "langs": 14,
+  "types": "palais urbain",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Rohan%20Jan%202020%20%28cropped%29.jpg"
  },
  {
-  "id": "Q1398462",
-  "title": "canton de Schiltigheim",
-  "description": "canton français",
-  "langs": 15,
-  "types": "canton français",
+  "id": "Q3338708",
+  "title": "Neustadt",
+  "description": "extension de la ville de Strasbourg réalisée par les autorités allemandes pendant la période du Reichsland Elsass-Lothringen",
+  "langs": 13,
+  "types": "quartier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Rhin%20Strasbourg%206.jpg"
+ },
+ {
+  "id": "Q845468",
+  "title": "musée d'Art moderne et contemporain de Strasbourg",
+  "description": "musée de Strasbourg, France",
+  "langs": 13,
+  "types": "musée d'art",
   "image": ""
+ },
+ {
+  "id": "Q1504491",
+  "title": "église Saint-Paul de Strasbourg",
+  "description": "église située dans le Bas-Rhin, en France",
+  "langs": 12,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Neustadt%20%2852297126552%29.jpg"
+ },
+ {
+  "id": "Q2212725",
+  "title": "église Saint-Pierre-le-Vieux de Strasbourg",
+  "description": "église située dans le Bas-Rhin, en France",
+  "langs": 12,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/StPierreVieux%2012.jpg"
+ },
+ {
+  "id": "Q2716513",
+  "title": "horloge astronomique de Strasbourg",
+  "description": "horloge astronomique de la cathédrale Notre-Dame de Strasbourg",
+  "langs": 12,
+  "types": "horloge astronomique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/00%201012%20Stra%C3%9Fburger%20M%C3%BCnster%20-%20Astronomische%20Uhr.jpg"
+ },
+ {
+  "id": "Q2361353",
+  "title": "Argentoratum",
+  "description": "ancienne cité romaine, actuelle Strasbourg",
+  "langs": 11,
+  "types": "camp romain, site archéologique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Plan%20mur%20et%20tours%20Argentoratum.jpg"
+ },
+ {
+  "id": "Q1534869",
+  "title": "église protestante Saint-Pierre-le-Jeune de Strasbourg",
+  "description": "église ancienne de Strasbourg",
+  "langs": 11,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20protestante%20Saint%20Pierre%20le%20Jeune%20%28Strasbourg%29.jpg"
+ },
+ {
+  "id": "Q3330600",
+  "title": "musée historique de Strasbourg",
+  "description": "musée à Strasbourg, France",
+  "langs": 11,
+  "types": "musée historique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%2C%20d%C3%A9cembre%202018%20%2831398917577%29.jpg"
+ },
+ {
+  "id": "Q740045",
+  "title": "église Saint-Guillaume de Strasbourg",
+  "description": "église gothique située à Strasbourg",
+  "langs": 10,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Absolute%20Eglise%20St%20Guillaume%2001.jpg"
+ },
+ {
+  "id": "Q1955722",
+  "title": "musée des Arts décoratifs de Strasbourg",
+  "description": "musée consacré aux arts décoratifs à Strasbourg, France",
+  "langs": 10,
+  "types": "musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/D%C3%A9tail%20du%20salon%20des%20%C3%A9v%C3%AAques%20du%20Palais%20des%20Rohans%2C%20%C3%A0%20Strasbourg.jpg"
+ },
+ {
+  "id": "Q2212718",
+  "title": "église Saint-Pierre-le-Jeune catholique de Strasbourg",
+  "description": "église située dans le Bas-Rhin, en France",
+  "langs": 10,
+  "types": "église catholique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20catholique%20St%20Pierre%20Jeune%20Strasbourg%206.jpg"
+ },
+ {
+  "id": "Q571330",
+  "title": "église Saint-Nicolas de Strasbourg",
+  "description": "église située dans le Bas-Rhin, en France",
+  "langs": 10,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Nicolas%20de%20Strasbourg%20from%20Quai%20Saint-Nicolas.jpg"
+ },
+ {
+  "id": "Q643186",
+  "title": "palais du Rhin",
+  "description": "palais à Strasbourg (Bas-Rhin)",
+  "langs": 9,
+  "types": "palais",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Rhin%20Strasbourg%206.jpg"
+ },
+ {
+  "id": "Q692407",
+  "title": "église Sainte-Madeleine de Strasbourg",
+  "description": "église située dans le Bas-Rhin, en France",
+  "langs": 9,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Ste%20Madeleine%20%28Strasbourg%29.jpg"
+ },
+ {
+  "id": "Q2335112",
+  "title": "église Sainte-Aurélie de Strasbourg",
+  "description": "église située dans le Bas-Rhin, en France",
+  "langs": 9,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20Sainte-Aur%C3%A9lie%20de%20Strasbourg-Vue.jpg"
+ },
+ {
+  "id": "Q3115094",
+  "title": "Grande mosquée de Strasbourg",
+  "description": "mosquée située dans le Bas-Rhin, en France",
+  "langs": 9,
+  "types": "mosquée",
+  "image": ""
+ },
+ {
+  "id": "Q1753950",
+  "title": "place Kléber",
+  "description": "place de Strasbourg, en France",
+  "langs": 9,
+  "types": "place",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Place%20Kl%C3%A9ber%20on%20a%20rainy%20day.jpg"
+ },
+ {
+  "id": "Q436323",
+  "title": "synagogue consistoriale du quai Kléber",
+  "description": "synagogue située dans le Bas-Rhin, en France",
+  "langs": 9,
+  "types": "synagogue détruite",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20synagogue%20quai%20Kl%C3%A9ber%20vue%20%C3%A9l%C3%A9vation%20fa%C3%A7ade%201898-1940.jpg"
+ },
+ {
+  "id": "Q584771",
+  "title": "Temple-Neuf de Strasbourg",
+  "description": "église située dans le Bas-Rhin, en France",
+  "langs": 9,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Temple%20Neuf%20%28Strasbourg%29.jpg"
+ },
+ {
+  "id": "Q847007",
+  "title": "musée de l'Œuvre Notre-Dame",
+  "description": "musée de Strasbourg, France",
+  "langs": 9,
+  "types": "musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20de%20l%27%C5%92uvre%20Notre-Dame%20-%20panoramio.jpg"
+ },
+ {
+  "id": "Q220280",
+  "title": "musée zoologique de la ville de Strasbourg",
+  "description": "musée à Strasbourg, France",
+  "langs": 9,
+  "types": "musée de zoologie",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20zoologique%20de%20Strasbourg.JPG"
+ },
+ {
+  "id": "Q649614",
+  "title": "église Saint-Étienne de Strasbourg",
+  "description": "église française située à Strasbourg",
+  "langs": 8,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-%C3%89tienne%20de%20Strasbourg%20ao%C3%BBt%202018.jpg"
+ },
+ {
+  "id": "Q3354564",
+  "title": "opéra de Strasbourg",
+  "description": "salle d'opéra située en France",
+  "langs": 8,
+  "types": "opéra",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Opera%20of%20Strasbourg%20front%20view.jpg"
+ },
+ {
+  "id": "Q663612",
+  "title": "Opéra national du Rhin",
+  "description": "compagnie d'opéra d'Alsace, en France",
+  "langs": 7,
+  "types": "compagnie d'opéra",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/L%27Op%C3%A9ra%20de%20Strasbourg.jpg"
+ },
+ {
+  "id": "Q782003",
+  "title": "musée archéologique de Strasbourg",
+  "description": "musée à Strasbourg, France",
+  "langs": 7,
+  "types": "musée archéologique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20arch%C3%A9ologique%20de%20Strasbourg-Galerie%20centrale.jpg"
+ },
+ {
+  "id": "Q655668",
+  "title": "cabinet des estampes et des dessins",
+  "description": "musée d'art à Strasbourg",
+  "langs": 6,
+  "types": "musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg-Cabinet%20des%20Estampes%20et%20des%20Dessins.jpg"
+ },
+ {
+  "id": "Q2743795",
+  "title": "jardin botanique de l'université de Strasbourg",
+  "description": "jardin botanique à Strasbourg, en France",
+  "langs": 6,
+  "types": "jardin botanique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Observatoire-Strasbourg.JPG"
+ },
+ {
+  "id": "Q2885001",
+  "title": "barrage Vauban",
+  "description": "pont à Strasbourg, en France",
+  "langs": 6,
+  "types": "pont fortifié, écluse",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Barrage%20Vauban%20apr%C3%A8s%20restauration%202012-01.jpg"
+ },
+ {
+  "id": "Q3115137",
+  "title": "grande synagogue de la Paix",
+  "description": "synagogue située dans le Bas-Rhin, en France",
+  "langs": 6,
+  "types": "synagogue",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20synagogue%20de%20la%20Paix%20f%C3%A9vrier%202014.jpg"
+ },
+ {
+  "id": "Q3389841",
+  "title": "place Gutenberg",
+  "description": "place de Strasbourg, en France",
+  "langs": 6,
+  "types": "place",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20place%20Gutenberg%20novembre%202013%2004.jpg"
+ },
+ {
+  "id": "Q3390435",
+  "title": "place de la République",
+  "description": "place de Strasbourg, en France",
+  "langs": 6,
+  "types": "place",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Espace%20vert%20de%20la%20Place%20de%20la%20R%C3%A9publique%2C%20Strasbourg.jpg"
+ },
+ {
+  "id": "Q960259",
+  "title": "église Saint-Maurice",
+  "description": "église de Strasbourg, France",
+  "langs": 6,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Maurice%20de%20Strasbourg.jpg"
+ },
+ {
+  "id": "Q24342866",
+  "title": "mosquée Eyyûb Sultan de Strasbourg",
+  "description": "mosquée située dans le Bas-Rhin, en France",
+  "langs": 6,
+  "types": "mosquée",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20mosqu%C3%A9e%20Eyy%C3%BBb%20Sultan%20de%20Strasbourg.jpg"
  }
 ]

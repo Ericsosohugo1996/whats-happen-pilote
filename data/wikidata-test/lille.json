@@ -1,163 +1,11 @@
 [
  {
-  "id": "Q648",
-  "title": "Lille",
-  "description": "ville et commune française (chef-lieu du département du Nord et de la région des Hauts-de-France)",
-  "langs": 162,
-  "types": "grande ville, commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20vue%20gd%20place.JPG"
- },
- {
-  "id": "Q12661",
-  "title": "Nord",
-  "description": "département français numéro 59, de la région Hauts-de-France",
-  "langs": 104,
-  "types": "département français",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/2009-05-03%20in%20Lille%2001.jpg"
- },
- {
-  "id": "Q244311",
-  "title": "Lambersart",
-  "description": "commune française du département du Nord",
-  "langs": 57,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lambersart-canal-de-la-de%C3%BBle-passerelle-r%C3%A9publique.jpg"
- },
- {
-  "id": "Q842003",
-  "title": "La Madeleine",
-  "description": "commune française du département du Nord",
-  "langs": 56,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20madeleine%20hotel%20de%20ville.JPG"
- },
- {
-  "id": "Q841686",
-  "title": "Mons-en-Barœul",
-  "description": "commune française du département du Nord",
-  "langs": 55,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20Saint-Pierre%20%C3%A0%20Mons-en-Baroeul.JPG"
- },
- {
-  "id": "Q274325",
-  "title": "Loos",
-  "description": "commune française du département du Nord",
-  "langs": 54,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Beffroi%20de%20Loos%20%283%29.JPG"
- },
- {
-  "id": "Q640115",
-  "title": "Faches-Thumesnil",
-  "description": "commune française du département du Nord",
-  "langs": 49,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mairie%20de%20Faches-Thumesnil.jpg"
- },
- {
-  "id": "Q728517",
-  "title": "Saint-André-lez-Lille",
-  "description": "commune française du département du Nord",
-  "langs": 46,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20St%20Andr%C3%A9.Photo%20Ph.BRIZARD.jpg"
- },
- {
-  "id": "Q548574",
-  "title": "Ronchin",
-  "description": "commune française du département du Nord",
-  "langs": 44,
-  "types": "commune française",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ronchin%20Villas%20Lebrun.JPG"
- },
- {
-  "id": "Q701510",
-  "title": "arrondissement de Lille",
-  "description": "arrondissement français",
-  "langs": 37,
-  "types": "arrondissement français",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Locator%20map%20of%20Arrondissement%20Lille%202019.png"
- },
- {
-  "id": "Q3156522",
-  "title": "IÉSEG School of Management",
-  "description": "établissement d'enseignement français",
-  "langs": 35,
-  "types": "école de commerce",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ancienne%20piscine%20ISEG.jpg"
- },
- {
-  "id": "Q3156522",
-  "title": "IÉSEG School of Management",
-  "description": "établissement d'enseignement français",
-  "langs": 35,
-  "types": "école de commerce",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/I%C3%89SEG%20School%20of%20Management%20Paris%20La%20D%C3%A9fense%20Campus.jpg"
- },
- {
-  "id": "Q610729",
-  "title": "métro de Lille Métropole",
-  "description": "réseau métropolitain à Lille",
-  "langs": 34,
-  "types": "métro automatique",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ligne%202%20du%20m%C3%A9tro%20de%20Lille%20M%C3%A9tropole%20-%20Garage-atelier%20du%20Grand%20But%20%2806%29.JPG"
- },
- {
-  "id": "Q3551621",
-  "title": "université de Lille",
-  "description": "université française située à Lille, fondée en 1559 à Douai, scindée entre 1970 et 2017 en trois universités indépendantes (Lille-I, Lille-II et Lille-III).",
-  "langs": 21,
-  "types": "université en France, université de recherche publique",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Villeneuve%20d%27Ascq.-%20Communaut%C3%A9%20d%27universit%C3%A9s%20et%20%C3%A9tablissements%20Lille-Nord-de-France.jpg"
- },
- {
-  "id": "Q801099",
-  "title": "Lille-Europe",
-  "description": "gare ferroviaire française",
-  "langs": 20,
-  "types": "gare frontière ou poste frontière ferroviaire, gare ferroviaire",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tour%20de%20Lille%202.jpg"
- },
- {
-  "id": "Q801098",
-  "title": "Lille-Flandres",
-  "description": "gare ferroviaire française",
-  "langs": 19,
-  "types": "gare ferroviaire, gare ferroviaire en cul-de-sac",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20gare%20flandres.jpg"
- },
- {
-  "id": "Q714207",
-  "title": "Poche de Lille",
-  "description": "",
-  "langs": 19,
-  "types": "siège militaire",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/21May-4June1940-Fall%20Gelb.svg"
- },
- {
   "id": "Q2628596",
   "title": "palais des Beaux-Arts de Lille",
   "description": "musée de Lille, France",
   "langs": 17,
   "types": "musée d'art",
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20palais%20des%20beaux%20arts%20face%202.jpg"
- },
- {
-  "id": "Q694492",
-  "title": "siège de Lille",
-  "description": "",
-  "langs": 17,
-  "types": "siège militaire",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20PdBA%20plan%20relief%20lille.JPG"
- },
- {
-  "id": "Q901844",
-  "title": "stade Henri-Jooris",
-  "description": "ancien stade de football",
-  "langs": 16,
-  "types": "installation sportive",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/LilleOM-1937.jpg"
  },
  {
   "id": "Q1671011",
@@ -168,75 +16,83 @@
   "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre-Dame-de-la-Treille%20de%20Lille%2012.jpg"
  },
  {
-  "id": "Q1233709",
-  "title": "canton de Lille-Sud",
-  "description": "ancien canton français",
-  "langs": 13,
-  "types": "canton français (avant 2015)",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Canton%20de%20lille%20Sud.jpg"
+  "id": "Q206252",
+  "title": "citadelle de Lille",
+  "description": "fort à Lille (Nord)",
+  "langs": 10,
+  "types": "fort, citadelle",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vue%20satellite%20Citadelle%20de%20Lille.jpg"
  },
  {
-  "id": "Q1284955",
-  "title": "canton de Lille-Sud-Ouest",
-  "description": "ancien canton français",
-  "langs": 13,
-  "types": "canton français (avant 2015)",
-  "image": ""
+  "id": "Q3583114",
+  "title": "église Saint-Maurice",
+  "description": "église située à Lille dans le Nord, en France",
+  "langs": 9,
+  "types": "église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20st%20maurice%202.jpg"
  },
  {
-  "id": "Q1374129",
-  "title": "canton de Lille-Sud-Est",
-  "description": "ancien canton français",
-  "langs": 13,
-  "types": "canton français (avant 2015)",
-  "image": ""
+  "id": "Q3329688",
+  "title": "musée d'Histoire naturelle de Lille",
+  "description": "musée français",
+  "langs": 8,
+  "types": "musée",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20Mus%C3%A9e%20histoire%20naturelle.jpg"
  },
  {
-  "id": "Q1384813",
-  "title": "canton de Lille-Nord-Est",
-  "description": "ancien canton français",
-  "langs": 13,
-  "types": "canton français (avant 2015)",
-  "image": ""
+  "id": "Q3354558",
+  "title": "opéra de Lille",
+  "description": "compagnie d'opéra à Lille (Nord)",
+  "langs": 8,
+  "types": "compagnie d'opéra",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20opera%20face.JPG"
  },
  {
-  "id": "Q1661825",
-  "title": "canton de Lille-Ouest",
-  "description": "ancien canton français",
-  "langs": 13,
-  "types": "canton français (avant 2015)",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Canton%20de%20Lille%20nord-ouest.jpg"
+  "id": "Q3508056",
+  "title": "synagogue de Lille",
+  "description": "synagogue située dans le Nord, en France",
+  "langs": 8,
+  "types": "synagogue",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20synagogue%20ter.jpg"
  },
  {
-  "id": "Q1725908",
-  "title": "canton de Lille-Centre",
-  "description": "ancien canton français",
-  "langs": 13,
-  "types": "canton français (avant 2015)",
-  "image": ""
+  "id": "Q663930",
+  "title": "Fives",
+  "description": "quartier de la ville de Lille",
+  "langs": 7,
+  "types": "quartier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20Et%C3%A92016-%20%C3%89glise%20Notre-Dame%20de%20Fives.jpg"
  },
  {
-  "id": "Q1725909",
-  "title": "canton de Lille-Est",
-  "description": "ancien canton français",
-  "langs": 13,
-  "types": "canton français (avant 2015)",
-  "image": ""
+  "id": "Q3584804",
+  "title": "église Saint-Étienne de Lille",
+  "description": "église située dans le Nord, en France",
+  "langs": 7,
+  "types": "église paroissiale catholique, chapelle",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20Eglise%20Saint%20Etienne.jpg"
  },
  {
-  "id": "Q1725912",
-  "title": "canton de Lille-Nord",
-  "description": "ancien canton français",
-  "langs": 13,
-  "types": "canton français (avant 2015)",
-  "image": ""
+  "id": "Q2984019",
+  "title": "collégiale Saint-Pierre de Lille",
+  "description": "collégiale détruite située dans le Nord, en France",
+  "langs": 7,
+  "types": "église détruite, collégiale",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Illustration%20de%20la%20Coll%C3%A9giale%20Saint-Pierre%20de%20Lille.jpg"
  },
  {
-  "id": "Q973076",
-  "title": "tramway de Lille - Roubaix - Tourcoing",
-  "description": "",
-  "langs": 12,
-  "types": "réseau de tramway",
-  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tourcoing%20tram%20a%20Victoire.jpg"
+  "id": "Q1359548",
+  "title": "porte de Paris",
+  "description": "ancienne porte de Lille",
+  "langs": 6,
+  "types": "porte de ville, arc de triomphe",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20porte%20paris%20face%20vue%20exterieure.JPG"
+ },
+ {
+  "id": "Q3390627",
+  "title": "place du Général-de-Gaulle",
+  "description": "espace public urbain de Lille",
+  "langs": 6,
+  "types": "place",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lille%20gd%20place.jpg"
  }
 ]
