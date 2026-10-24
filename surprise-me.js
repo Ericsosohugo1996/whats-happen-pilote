@@ -275,7 +275,7 @@ renderLocateBar = function () {
         var days = Math.max(0, (new Date(e.date) - new Date(from)) / 86400000);
         var pr = String(e.price || "");
         var sc = (e.source === "ticketmaster" ? 500 : 0) + (/billetterie/i.test(pr) ? 150 : 0) + (e.photo || e.thumb ? 150 : 0) + (e.time ? 60 : 0) +
-          Math.min(String(e.description || "").length, 120) + (/gratuit|libre/i.test(pr) ? 30 : 0) + (e.source === "paris-opendata" ? -120 : 0) + (th.key === "expo" && /mus[ée]e|palais|fondation|galerie|centre pompidou|grand palais|orangerie|louvre|institut|monnaie|cité/i.test(String(e.place || "") + " " + String(e.title || "")) ? 350 : 0) - days * 10 - Math.min(d, 20) * 4;
+          Math.min(String(e.description || "").length, 120) + (/gratuit|libre/i.test(pr) ? 30 : 0) + (e.source === "paris-opendata" ? -120 : 0) - (/calendrier|programme complet|toute la saison|la saison/i.test(String(e.title || "")) ? 400 : 0) + (th.key === "expo" && /mus[ée]e|palais|fondation|galerie|centre pompidou|grand palais|orangerie|louvre|institut|monnaie|cité/i.test(String(e.place || "") + " " + String(e.title || "")) ? 350 : 0) - days * 10 - Math.min(d, 20) * 4;
         return { e: e, sc: sc };
       })
       .sort(function (a, b) { return b.sc - a.sc; })
