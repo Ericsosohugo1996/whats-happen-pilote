@@ -195,6 +195,7 @@ for (const { kind, file } of SOURCES) {
       for (const ev of items) {
         if (ev.photo && !ev.photoGeneric && !ev.photoVenue) continue; // vraie affiche ou photo d'artiste
         const r = og[ev.link] || og[ev.ticket]; if (!r || !r.u) continue;
+        if (/man-user|avatar|placeholder|no[-_]?image|noimage|no[-_]?photo|silhouette|pixel\.|spacer|gravatar|unknown\.|dummy/i.test(r.u.split("?")[0])) continue; // image « par défaut » d'un site (silhouette, pixel vide…) : pas une vraie photo
         ev.photo = r.u; ev.photoCredit = "Image : " + r.d; ev.photoOrganizer = true; delete ev.photoGeneric; delete ev.photoVenue; o++;
       }
       console.log("événements : image de l'organisateur :", o);
