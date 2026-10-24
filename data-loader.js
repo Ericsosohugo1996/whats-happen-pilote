@@ -218,3 +218,57 @@
   else window.addEventListener("load", function () { setTimeout(install, 0); });
   getIndex();
 })();
+
+// ---- photos fiables : copie hébergée chez nous → image réduite → image d'origine → nouvel essai → illustration (dernier recours) ----
+(function () {
+  var PROXY = "https://wsrv.nl/?url=";
+  var SKIP = /wsrv\.nl|whazup\.fr|github|pexels\.com|google|gstatic|firebase|openstreetmap|tile|^data:|^blob:/i;
+  var local = null; // liste des photos hébergées chez nous (photos-local/index.json)
+  function hash(s) { var x = 0x811c9dc5; for (var i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 0x01000193) >>> 0; } return ("00000000" + x.toString(16)).slice(-8); }
+  function eligible(u) { return /^https?:\/\//i.test(u) && !SKIP.test(u); }
+  function prox(u, w, extra) { return PROXY + encodeURIComponent(u) + "&w=" + w + "&output=webp&q=75" + (extra || ""); }
+  function width(img) { return (img.closest && img.closest("#detail-hero")) ? 1000 : 640; }
+  function candidates(img, u) {
+    var c = [], w = width(img), h = hash(u);
+    if (local && local[h]) c.push("photos-local/" + h + ".webp");
+    c.push(prox(u, w), u, prox(u, w, "&r=" + Date.now()));
+    return c;
+  }
+  function prep(img) {
+    try {
+      if (!img || img.tagName !== "IMG" || img._wz) return;
+      var u = img.getAttribute("src");
+      if (!u || !eligible(u)) return;
+      var c = candidates(img, u);
+      img._wz = { o: u, c: c, i: 0 };
+      img.setAttribute("src", c[0]);
+    } catch (e) {}
+  }
+  function scan(node) {
+    if (!node || node.nodeType !== 1) return;
+    if (node.tagName === "IMG") prep(node);
+    else if (node.querySelectorAll) { var l = node.querySelectorAll("img"); for (var i = 0; i < l.length; i++) prep(l[i]); }
+  }
+  // en phase de capture : on intercepte l'erreur avant que l'appli n'affiche l'illustration
+  document.addEventListener("error", function (e) {
+    var img = e.target;
+    if (!img || img.tagName !== "IMG" || !img._wz) return;
+    var z = img._wz, n = z.i + 1;
+    if (n >= z.c.length) return; // tout a échoué : l'appli affiche son illustration
+    e.stopImmediatePropagation();
+    z.i = n;
+    var go = function () { img.src = z.c[n]; };
+    if (n === z.c.length - 1) setTimeout(go, 2500); else go();
+  }, true);
+  try {
+    new MutationObserver(function (ms) {
+      for (var i = 0; i < ms.length; i++) { var a = ms[i].addedNodes; for (var j = 0; j < a.length; j++) scan(a[j]); }
+    }).observe(document.documentElement, { childList: true, subtree: true });
+  } catch (e) {}
+  scan(document.documentElement);
+  try {
+    fetch("photos-local/index.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || !j.h) return; var m = {}; for (var i = 0; i < j.h.length; i++) m[j.h[i]] = 1; local = m;
+    }).catch(function () {});
+  } catch (e) {}
+})();
