@@ -12,8 +12,8 @@ const CITIES = [
   { key: "lille", name: "Lille", lat: 50.6292, lng: 3.0573, km: 4 },
   { key: "strasbourg", name: "Strasbourg", lat: 48.5734, lng: 7.7521, km: 4 }
 ];
-const MIN_LANGS = 12;   // un lieu doit avoir une page Wikipédia dans au moins 12 langues
-const MAX = 30;
+const MIN_LANGS = 6;    // un lieu doit avoir une page Wikipédia dans au moins 6 langues
+const MAX = 40;
 const OUT = path.join("data", "wikidata-test");
 
 function sparql(c) {
@@ -25,7 +25,20 @@ function sparql(c) {
   OPTIONAL { ?item wdt:P31 ?t . ?t rdfs:label ?tl . FILTER(LANG(?tl) = "fr") }
   ?item rdfs:label ?label . FILTER(LANG(?label) = "fr")
   OPTIONAL { ?item schema:description ?desc . FILTER(LANG(?desc) = "fr") }
-} GROUP BY ?item ?label ?desc ?sl ?img ORDER BY DESC(?sl) LIMIT 80`;
+} GROUP BY ?item ?label ?desc ?sl ?img ORDER BY DESC(?sl) LIMIT 600`;
+}
+
+// on garde ce qu'un visiteur va voir ; on écarte communes, écoles, gares, batailles, cantons, tournois…
+const KEEP = /mus[ée]e|cath[ée]drale|basilique|[ée]glise|chapelle|abbaye|ch[âa]teau|forteresse|\bfort\b|palais|\btour\b|monument|\bpont\b|\bplace\b|\bparc\b|jardin|quartier|plage|\bîle\b|th[ée][âa]tre|op[ée]ra|cimeti[èe]re|arc de triomphe|site touristique|point d'int[ée]r[êe]t|lieu d'int[ée]r[êe]t|ruines|amphith[ée][âa]tre|avenue|\bport\b|synagogue|mosqu[ée]e|temple|secteur sauvegard[ée]|patrimoine mondial|site arch[ée]ologique|colline|belv[ée]d[èe]re|fontaine|hôtel de ville|panorama|funiculaire|halle|grotte|cascade|\blac\b|for[êe]t|\brue\b|passage|traboule|statue|escalier|citadelle|remparts|\bporte\b/i;
+const DROP = /commune|canton|arrondissement|universit[ée]|[ée]cole|gare|m[ée]tro|tramway|si[èe]ge|bataille|tournoi|championnat|r[ée]gion|d[ée]partement|entreprise|organisation|attentat|massacre|m[ée]tropole|province|[ée]tat historique|r[ée]gime|conf[ée]rence|accord|trait[ée]|court[- ]m[ée]trage|film|langue|jeux olympiques|saison|stade|observatoire|biblioth[èe]que nationale|institution|[ée]tablissement d'enseignement|intercommunalit[ée]|communaut[ée]|chaîne|r[ée]seau/i;
+function pertinent(x) {
+  const t = (x.types || "") + " | " + (x.description || "");
+  if (DROP.test(x.types || "") && !/mus[ée]e|cath[ée]drale|basilique|ch[âa]teau|monument|palais|th[ée][âa]tre|op[ée]ra|quartier|site touristique/i.test(x.types || "")) return false;
+  return KEEP.test(t);
+}
+function clean(rows) {
+  const seen = new Set();
+  return rows.filter((x) => pertinent(x) && !seen.has(x.title.toLowerCase()) && seen.add(x.title.toLowerCase()));
 }
 
 async function run(c) {
@@ -39,14 +52,15 @@ async function run(c) {
   }));
 }
 
-(async () => {
+if (require.main === module) (async () => {
   fs.mkdirSync(OUT, { recursive: true });
   const lines = [];
   for (const c of CITIES) {
     try {
-      const rows = await run(c);
+      const all = await run(c);
+      const rows = clean(all);
       fs.writeFileSync(path.join(OUT, c.key + ".json"), JSON.stringify(rows.slice(0, MAX), null, 1));
-      lines.push("== " + c.name + " (" + rows.length + " lieux) ==");
+      lines.push("== " + c.name + " (" + rows.length + " lieux retenus sur " + all.length + ") ==");
       rows.slice(0, MAX).forEach((x, i) => lines.push((i + 1) + ". " + x.title + " [" + x.langs + " langues] — " + (x.types || "?") + (x.description ? " — " + x.description : "")));
     } catch (e) {
       lines.push("== " + c.name + " : ÉCHEC (" + e.message + ") ==");
@@ -56,3 +70,5 @@ async function run(c) {
   fs.writeFileSync(path.join(OUT, "_resume.txt"), lines.join("\n") + "\n");
   console.log(lines.join("\n"));
 })();
+
+module.exports = { clean, pertinent };
