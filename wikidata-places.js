@@ -84,7 +84,8 @@ if (require.main === module) (async () => {
     if (only && !only.has(c.key)) continue;
     try {
       const big = BIG.has(c.key);
-      const rows = clean(await query(c, big ? 8 : 5, big ? 4 : 3)).slice(0, MAX);
+      const paris = c.key === "paris";
+      const rows = clean(await query(c, paris ? 12 : big ? 8 : 3, paris ? 8 : big ? 5 : 4)).slice(0, MAX);
       if (rows.length >= 3) { fs.writeFileSync(path.join(OUT, c.key + ".json"), JSON.stringify(rows)); ok++; console.log(c.name + " : " + rows.length + " lieux"); }
       else { console.log(c.name + " : trop peu de lieux (" + rows.length + "), on garde l'ancien fichier"); }
     } catch (e) { ko++; console.log(c.name + " : échec (" + e.message + "), on garde l'ancien fichier"); }
