@@ -326,7 +326,10 @@ renderLocateBar = function () {
     if (!full || !r.querySelector(".wz-s-row")) return;   // seulement dans « Ta surprise »
     var b = document.createElement("button");
     b.type = "button"; b.className = "wz-i-alt wz-s-send"; b.setAttribute("data-i", "must");
-    b.textContent = "🏛️ À ne pas manquer ici";
+    var n = cityName(), prep = "à " + n;
+    if (/^Le /.test(n)) prep = "au " + n.slice(3); else if (/^Les /.test(n)) prep = "aux " + n.slice(4);
+    b.textContent = "🏛️ À ne pas manquer " + prep;
+    b.style.fontWeight = "800";
     full.parentNode.insertBefore(b, full);
   }
   var timer = null;
