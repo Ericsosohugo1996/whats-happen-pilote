@@ -250,18 +250,38 @@ renderLocateBar = function () {
     return { key: k, cats: THEMES[k], label: on.textContent.trim() };
   }
   function isoDay(off) { return new Date(Date.now() + off * 86400000).toISOString().slice(0, 10); }
-  // les meilleures sorties à venir (14 jours) du thème : avec photo, description, une seule par titre
+  // sorties municipales, ateliers, conférences… : utiles, mais pas « à ne pas manquer »
+  var NOISE_RE = /s[ée]nior|biblioth[èe]que|m[ée]diath[èe]que|paris anim|centre social|atelier|stage|cours |cours$|initiation|conf[ée]rence|r[ée]union|permanence|inscription|remise d[eu]|projection|caf[ée] (?:ciné|philo)|th[ée]s? dansants?|visite guid|jeu de piste|assembl[ée]e|club de|mairie|salle des f|portes? ouvertes?/i;
+  // les meilleures sorties à venir (14 jours) du thème : billetterie et lieux connus d'abord, une seule par titre, 2 par lieu
   function themeEvents(th) {
-    var from = isoDay(0), to = isoDay(14), ref = (typeof referencePoint === "function") ? referencePoint() : null, seen = {};
-    return allEvents().filter(function (e) { return !e.isPlace && th.cats.indexOf(e.category) !== -1 && e.date && e.date >= from && e.date <= to && (state.userPos ? true : e.city === state.city); })
+    var nowD = new Date(), from = isoDay(0), to = isoDay(14), hm = ("0" + nowD.getHours()).slice(-2) + ":" + ("0" + nowD.getMinutes()).slice(-2);
+    var ref = (typeof referencePoint === "function") ? referencePoint() : null, seen = {}, venues = {};
+    return allEvents().filter(function (e) {
+      if (e.isPlace || th.cats.indexOf(e.category) === -1 || !e.date || e.date < from || e.date > to) return false;
+      if (!(state.userPos ? true : e.city === state.city)) return false;
+      if (e.date === from && e.time && /^\d\d:\d\d/.test(e.time) && e.time.slice(0, 5) < hm) return false;   // déjà commencé
+      var t = String(e.title || "");
+      if (NOISE_RE.test(t)) return false;
+      if (th.key === "marche") return /march[ée]|brocante|puces|foire|salon/i.test(t) && !/sportive|nordique|entretien|paris sport/i.test(t);
+      if (th.key === "sport") return !/paris sport|sportives?\b|multisports|baby/i.test(t) && (e.source === "ticketmaster" || /match|tournoi|coupe|championnat|course|marathon|trail|finale|open|gala/i.test(t));
+      if (th.key === "festival") return /festival|f[êe]te|salon|nuit de/i.test(t) || e.source === "ticketmaster";
+      return true;
+    })
       .map(function (e) {
         var d = (ref && e.lat && e.lng) ? haversineKm(ref.lat, ref.lng, e.lat, e.lng) : 0;
         var days = Math.max(0, (new Date(e.date) - new Date(from)) / 86400000);
-        var sc = (e.photo || e.thumb ? 300 : 0) + Math.min(String(e.description || "").length, 300) + (/gratuit|libre/i.test(e.price || "") ? 40 : 0) - days * 12 - Math.min(d, 20) * 4;
+        var pr = String(e.price || "");
+        var sc = (e.source === "ticketmaster" ? 500 : 0) + (/billetterie/i.test(pr) ? 150 : 0) + (e.photo || e.thumb ? 150 : 0) + (e.time ? 60 : 0) +
+          Math.min(String(e.description || "").length, 120) + (/gratuit|libre/i.test(pr) ? 30 : 0) + (e.source === "paris-opendata" ? -120 : 0) - days * 10 - Math.min(d, 20) * 4;
         return { e: e, sc: sc };
       })
       .sort(function (a, b) { return b.sc - a.sc; })
-      .filter(function (x) { var k = norm(x.e.title); if (seen[k]) return false; seen[k] = 1; return true; })
+      .filter(function (x) {
+        var k = norm(x.e.title), v = norm(String(x.e.place || "").split(",")[0]);
+        if (seen[k]) return false; seen[k] = 1;
+        if (v) { venues[v] = (venues[v] || 0) + 1; if (venues[v] > 2) return false; }
+        return true;
+      })
       .slice(0, 8).map(function (x) { return x.e; });
   }
 
