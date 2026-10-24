@@ -228,3 +228,115 @@ renderLocateBar = function () {
     __ensureSurpriseUI();
   }
 };
+
+
+// ---- « À ne pas manquer » dans l'écran « Ta surprise » (le panneau de l'accueil) ----
+// Se greffe sur le panneau existant (#wz-idea) : ajoute un bouton au-dessus de « Plus de choix », sans toucher à ce panneau.
+(function () {
+  "use strict";
+  var wdCache = {};
+  function esc(t) { return String(t == null ? "" : t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function norm(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); }
+  function track(n) { try { if (typeof analytics !== "undefined" && analytics && analytics.logEvent) analytics.logEvent(n, { city: state.city }); } catch (e) {} }
+  function cityName() { return (typeof CITIES !== "undefined" && CITIES[state.city] && CITIES[state.city].name) || "ici"; }
+
+  function css() {
+    if (document.getElementById("wz-m-css")) return;
+    var st = document.createElement("style"); st.id = "wz-m-css";
+    st.textContent = "#wz-idea .wz-m-sub{color:#9BA5C2;font-size:14px;margin:-6px 0 14px}#wz-idea .wz-m-src{color:#9BA5C2;font-size:11.5px;margin:6px 0 14px}#wz-idea .wz-i-card .wz-i-ph{height:132px}";
+    document.head.appendChild(st);
+  }
+
+  // fiche utilisable dans l'appli : le lieu existe déjà (lieux « À voir »), sinon on l'ajoute à la liste des lieux
+  function resolve(w) {
+    var b = norm(w.title), found = null;
+    if (b.length >= 6) found = allEvents().filter(function (e) { if (!e.isPlace || !(state.userPos ? true : e.city === state.city)) return false; var a = norm(e.title); return a === b || a.indexOf(b) !== -1 || b.indexOf(a) !== -1; })[0];
+    if (found) return found;
+    var id = "wd-" + (w.id || b.replace(/ /g, "-"));
+    var ex = allEvents().filter(function (e) { return e.id === id; })[0];
+    if (ex) return ex;
+    var ev = {
+      id: id, isPlace: true, scene: "expo", city: state.city, category: "À voir",
+      title: w.title.charAt(0).toUpperCase() + w.title.slice(1), date: null, time: "", place: cityName(),
+      lat: w.lat, lng: w.lng, price: "Voir sur place", thumb: "", source: "wikidata",
+      description: w.description ? w.description.charAt(0).toUpperCase() + w.description.slice(1) + "." : "",
+      photo: w.image ? w.image + (w.image.indexOf("?") < 0 ? "?width=800" : "") : "", photoCredit: w.image ? "Wikimedia Commons" : ""
+    };
+    if (Array.isArray(state.dataTourismePlaces)) state.dataTourismePlaces.push(ev);
+    return ev;
+  }
+
+  function dt() {
+    var GOOD = /mus[ée]e|ch[âa]teau|cath[ée]drale|basilique|abbaye|jardin|parc |palais|tour |monument|forteresse|citadelle|fort |grotte|panorama|remparts|op[ée]ra|[ée]glise|chapelle|vieux|historique|patrimoine|place |pont /i;
+    var BAD = /biblioth[èe]que|m[ée]diath[èe]que|archives|cours |atelier|stage|boutique|restaurant|location|vente|gîte|camping|salle des f/i;
+    var seen = {};
+    return allEvents().filter(function (e) { return e.isPlace && e.category === "À voir" && e.title && (state.userPos ? true : e.city === state.city); })
+      .filter(function (e) { var k = norm(e.title); if (seen[k]) return false; seen[k] = 1; return true; })
+      .map(function (e) { return { ev: e, s: Math.min(String(e.description || "").length, 400) + (e.photo || e.thumb ? 150 : 0) + (GOOD.test(e.title) ? 400 : 0) - (BAD.test(e.title) ? 900 : 0) }; })
+      .sort(function (a, b) { return b.s - a.s; }).slice(0, 8).map(function (x) { return x.ev; });
+  }
+
+  function load(cb) {
+    var key = state.city;
+    if (wdCache[key]) return cb(wdCache[key]);
+    fetch("data/wikidata/" + encodeURIComponent(key) + ".json").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }).then(function (wd) {
+      var items = [], src = false;
+      if (Array.isArray(wd) && wd.length >= 3) { items = wd.slice(0, 8).map(resolve); src = true; }
+      else items = dt();
+      wdCache[key] = { items: items, src: src };
+      cb(wdCache[key]);
+    });
+  }
+
+  function cardHtml(ev, first) {
+    var ref = (typeof referencePoint === "function") ? referencePoint() : null;
+    var d = (ref && ev.lat && ev.lng) ? haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) : null;
+    var dist = d == null ? "" : (d <= 3 ? Math.max(2, Math.round(d * 12 / 5) * 5) + " min à pied" : d.toFixed(1).replace(".", ",") + " km");
+    var desc = String(ev.description || "").replace(/\s+/g, " ").trim();
+    if (desc.length > 120) desc = desc.slice(0, 120).replace(/\s+\S*$/, "") + "…";
+    return '<button type="button" class="wz-i-card" data-i="open" data-id="' + esc(ev.id) + '" data-m="1"><div class="wz-i-ph">' + (typeof eventPhotoHTML === "function" ? eventPhotoHTML(ev) : "") +
+      '<span class="wz-i-pill" style="--c:#457B9D">🏛️ À VOIR</span></div><div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div>' +
+      (dist ? '<div class="wz-i-v">' + esc(dist) + '</div>' : "") + (desc ? '<div class="wz-i-why" style="font-weight:600;color:#C9D2EA">' + esc(desc) + '</div>' : "") + '</div></button>';
+  }
+
+  function screen() {
+    var r = document.getElementById("wz-idea"); if (!r) return;
+    css(); track("surprise_must_open");
+    r.innerHTML = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🏛️ À ne pas manquer</div><div class="wz-m-sub">Chargement…</div>';
+    r.scrollTop = 0;
+    load(function (res) {
+      var rr = document.getElementById("wz-idea"); if (!rr) return;
+      var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🏛️ À ne pas manquer</div>';
+      if (!res.items.length) {
+        h += '<div class="wz-m-sub">Pas encore de lieux à te recommander ici. Reviens bientôt !</div>';
+      } else {
+        h += '<div class="wz-m-sub">Les incontournables de ' + esc(cityName()) + '</div>' + res.items.map(function (ev, i) { return cardHtml(ev, i === 0); }).join("");
+        if (res.src) h += '<div class="wz-m-src">Sélection établie à partir de Wikidata (données libres).</div>';
+      }
+      h += '<button type="button" class="wz-i-alt ghost" data-i="must-back">← Retour à ma surprise</button>';
+      rr.innerHTML = h; rr.scrollTop = 0;
+    });
+  }
+
+  // ajoute le bouton dans l'écran « Ta surprise » dès qu'il s'affiche
+  function inject() {
+    var r = document.getElementById("wz-idea");
+    if (!r || r.querySelector('[data-i="must"]')) return;
+    var full = r.querySelector('[data-i="full"]');
+    if (!full || !r.querySelector(".wz-s-row")) return;   // seulement dans « Ta surprise »
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "wz-i-alt wz-s-send"; b.setAttribute("data-i", "must");
+    b.textContent = "🏛️ À ne pas manquer ici";
+    full.parentNode.insertBefore(b, full);
+  }
+  var timer = null;
+  new MutationObserver(function () { if (timer) return; timer = setTimeout(function () { timer = null; try { inject(); } catch (e) {} }, 60); })
+    .observe(document.body, { childList: true, subtree: true });
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest('#wz-idea [data-i="must"], #wz-idea [data-i="must-back"]');
+    if (b) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); if (b.getAttribute("data-i") === "must") screen(); else if (typeof window.__wzSurpriseOpen === "function") window.__wzSurpriseOpen(); return; }
+    var m = e.target.closest && e.target.closest('#wz-idea [data-m="1"]');
+    if (m) track("surprise_must_go");
+  }, true);
+})();
