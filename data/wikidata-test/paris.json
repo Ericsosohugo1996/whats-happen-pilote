@@ -1,0 +1,242 @@
+[
+ {
+  "id": "Q90",
+  "title": "Paris",
+  "description": "capitale et ville la plus peuplée de France",
+  "langs": 366,
+  "types": "collectivité à statut particulier, capitale nationale, plus grande ville, ville mondiale, métropole, mégapole",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20Tour%20Eiffel%20vue%20de%20la%20Tour%20Saint-Jacques%2C%20Paris%20ao%C3%BBt%202014%20%282%29.jpg"
+ },
+ {
+  "id": "Q150",
+  "title": "français",
+  "description": "langue romane",
+  "langs": 352,
+  "types": "langue vivante, langue naturelle, langue",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/JO199411392.png"
+ },
+ {
+  "id": "Q7809",
+  "title": "Organisation des Nations unies pour l'éducation, la science et la culture",
+  "description": "agence spécialisée des Nations unies pour l'éducation, les sciences et la culture",
+  "langs": 222,
+  "types": "institution spécialisée des Nations unies, organisation intergouvernementale",
+  "image": ""
+ },
+ {
+  "id": "Q243",
+  "title": "tour Eiffel",
+  "description": "tour de fer puddlé de 330 mètres à Paris, France",
+  "langs": 191,
+  "types": "tour en treillis, tour d'observation, lieu d'intérêt",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tour%20Eiffel%20Wikimedia%20Commons.jpg"
+ },
+ {
+  "id": "Q19675",
+  "title": "Musée du Louvre",
+  "description": "musée d'art et d'archéologie à Paris, France",
+  "langs": 170,
+  "types": "musée archéologique, musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Cour%20Napol%C3%A9on%20at%20night%20-%20Louvre.jpg"
+ },
+ {
+  "id": "Q13917",
+  "title": "Île-de-France",
+  "description": "région administrative française",
+  "langs": 146,
+  "types": "région de France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eiffel%20Tower%20from%20the%20Tour%20Montparnasse%203%2C%20Paris%20May%202014.jpg"
+ },
+ {
+  "id": "Q2981",
+  "title": "cathédrale Notre-Dame de Paris",
+  "description": "cathédrale située à Paris, en France",
+  "langs": 125,
+  "types": "cathédrale catholique, basilique mineure",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame%20de%20Paris%202013-07-24.jpg"
+ },
+ {
+  "id": "Q23402",
+  "title": "musée d'Orsay",
+  "description": "musée de Paris, France",
+  "langs": 122,
+  "types": "musée national, musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gare%20d%27Orsay%20%2849570190081%29.jpg"
+ },
+ {
+  "id": "Q995653",
+  "title": "Jeux olympiques d'été de 2024",
+  "description": "édition des JO d'été à Paris",
+  "langs": 118,
+  "types": "édition des Jeux olympiques d'été",
+  "image": ""
+ },
+ {
+  "id": "Q21479779",
+  "title": "attentats du 13 novembre 2015 en Île-de-France",
+  "description": "série d'attentats islamistes ayant eu lieu en Île-de-France",
+  "langs": 101,
+  "types": "attaque terroriste coordonnée",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Shootings%20-%20The%20day%20after%20%2822593744177%29.jpg"
+ },
+ {
+  "id": "Q550",
+  "title": "avenue des Champs-Élysées",
+  "description": "avenue de Paris (France)",
+  "langs": 95,
+  "types": "avenue, boulevard",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Avenue%20des%20Champs-%C3%89lys%C3%A9es%2C%20Paris%203%20October%202010.jpg"
+ },
+ {
+  "id": "Q193563",
+  "title": "Bibliothèque nationale de France",
+  "description": "bibliothèque nationale",
+  "langs": 92,
+  "types": "catalogue, maison d'édition, organisation, bibliothèque nationale",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Biblioth%C3%A8que%20Mitterrand%20Mai%202022.jpg"
+ },
+ {
+  "id": "Q21707860",
+  "title": "accord universel des négociations climatiques de Paris",
+  "description": "premier accord international ratifié sur le climat",
+  "langs": 90,
+  "types": "protocole environnemental, traité",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/ParisAgreement.svg"
+ },
+ {
+  "id": "Q133132",
+  "title": "Commune de Paris",
+  "description": "période insurrectionnelle de l'histoire de Paris, 1871",
+  "langs": 88,
+  "types": "commune insurrectionnelle, action de groupe, expérience sociale, insurrection, entité territoriale administrative, organisation",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Barricade%20de%20la%20rue%20de%20Flandre%20%28%20Salle%20de%20la%20Marseillaise%29%2C%2018%20mars%201871.%20PH4142-167%281%29.jpg"
+ },
+ {
+  "id": "Q71084",
+  "title": "Premier Empire français",
+  "description": "premier des deux empires français établis au profit de la dynastie des Bonaparte, de 1804 à 1814",
+  "langs": 87,
+  "types": "régime politique, État historique, empire",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Jean-Louis-Ernest%20Meissonier-Campagne%20de%20France.jpg"
+ },
+ {
+  "id": "Q209842",
+  "title": "université de Paris",
+  "description": "université française regroupant les facultés parisiennes reconstituées au XIXe siècle (1896-1970)",
+  "langs": 87,
+  "types": "entité qui n'existe plus, institution universitaire, université en France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Universite%20Paris%20I%20Pantheon-Sorbonne.jpg"
+ },
+ {
+  "id": "Q1865480",
+  "title": "Bastille",
+  "description": "ancienne forteresse parisienne",
+  "langs": 86,
+  "types": "bâtiment ou structure détruit, château fort, prison",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bastille%20Exterior%201790%20or%201791.jpg"
+ },
+ {
+  "id": "Q64436",
+  "title": "arc de triomphe de l'Étoile",
+  "description": "arc de triomphe à la jonction des 8e, 16e et 17e arrondissements de Paris",
+  "langs": 86,
+  "types": "arc de triomphe",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Arc%20de%20Triomphe%20-%20Ao%C3%BBt%202026.jpg"
+ },
+ {
+  "id": "Q70802",
+  "title": "Troisième République française",
+  "description": "régime politique et période de l'histoire de France",
+  "langs": 83,
+  "types": "État historique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/JulesDidierJacquesGuiaudAbolitionEmpire4septembre1870.JPG"
+ },
+ {
+  "id": "Q199820",
+  "title": "conférence de paix de Paris",
+  "description": "conférence internationale organisée afin de négocier les traités de paix à la fin de la Première Guerre mondiale",
+  "langs": 83,
+  "types": "conférence de paix",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Big%20four.jpg"
+ },
+ {
+  "id": "Q50716",
+  "title": "métro de Paris",
+  "description": "système de transport en commun ferroviaire de Paris et sa proche banlieue",
+  "langs": 82,
+  "types": "métro",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Pont%20de%20Bir-Hakeim%2C%20may%202025.jpg"
+ },
+ {
+  "id": "Q183213",
+  "title": "Institut polytechnique des sciences avancées",
+  "description": "grande école d'ingénieurs en aéronautique",
+  "langs": 81,
+  "types": "école d'ingénieurs, grande école, établissement d'enseignement supérieur",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A2timent%20Campus%20IPSA%20Paris%20%C3%A0%20Ivry-sur-Seine%20-%20novembre%202025.jpg"
+ },
+ {
+  "id": "Q18718876",
+  "title": "attentat contre Charlie Hebdo",
+  "description": "attentat commis le 7 janvier 2015",
+  "langs": 75,
+  "types": "fusillade de masse, attaque terroriste",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Charlie-Hebdo-2015-11.JPG"
+ },
+ {
+  "id": "Q71092",
+  "title": "Second Empire",
+  "description": "régime politique et période de l'histoire de France",
+  "langs": 74,
+  "types": "régime politique, État historique",
+  "image": ""
+ },
+ {
+  "id": "Q163891",
+  "title": "massacre de la Saint-Barthélemy",
+  "description": "massacre de protestants déclenché à Paris, le 24 août 1572",
+  "langs": 74,
+  "types": "massacre, génocide",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20masacre%20de%20San%20Bartolom%C3%A9%2C%20por%20Fran%C3%A7ois%20Dubois.jpg"
+ },
+ {
+  "id": "Q134102",
+  "title": "Organisation internationale de la francophonie",
+  "description": "institution intergouvernementale rassemblant des nations utilisant la langue française",
+  "langs": 72,
+  "types": "organisation intergouvernementale",
+  "image": ""
+ },
+ {
+  "id": "Q151952",
+  "title": "Vénus de Milo",
+  "description": "sculpture grecque de la fin de l'époque hellénistique",
+  "langs": 72,
+  "types": "artefact archéologique, statue",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/V%C3%A9nus%20de%20Milo%20-%20Mus%C3%A9e%20du%20Louvre%20AGER%20LL%20299%20%3B%20N%20527%20%3B%20Ma%20399.jpg"
+ },
+ {
+  "id": "Q58296",
+  "title": "Première République française",
+  "description": "nom donné à l'ensemble des régimes parlementaires de la France entre septembre 1792 et mai 1804",
+  "langs": 72,
+  "types": "État historique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/France%20Departement%201801.svg"
+ },
+ {
+  "id": "Q202660",
+  "title": "Collège de France",
+  "description": "établissement français d'enseignement et de recherche (Paris)",
+  "langs": 71,
+  "types": "établissement d'enseignement supérieur, archives, bibliothèque",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Coll%C3%A8ge%20de%20France%2C%20place%20Marcelin-Berthelot%2C%20Paris%205e.jpg"
+ },
+ {
+  "id": "Q311",
+  "title": "cimetière du Père-Lachaise",
+  "description": "cimetière situé à Paris",
+  "langs": 71,
+  "types": "cimetière",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Main%20gate%20of%20the%20P%C3%A8re-Lachaise%20Cemetery%2C%20Paris%2013%20June%202014.jpg"
+ }
+]

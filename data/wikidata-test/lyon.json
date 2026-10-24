@@ -1,0 +1,242 @@
+[
+ {
+  "id": "Q456",
+  "title": "Lyon",
+  "description": "commune française (chef-lieu du département du Rhône et de la région Auvergne-Rhone-Alpes)",
+  "langs": 197,
+  "types": "commune française à statut particulier, ville universitaire, grande ville, commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/01.%20Panorama%20de%20Lyon%20pris%20depuis%20le%20toit%20de%20la%20Basilique%20de%20Fourvi%C3%A8re.jpg"
+ },
+ {
+  "id": "Q463",
+  "title": "Rhône-Alpes",
+  "description": "ancienne région administrative française",
+  "langs": 104,
+  "types": "région historique, région de France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/SNCF%20TGV%20Duplex%20Viaduc%20de%20Cize%20-%20Bolozon.jpg"
+ },
+ {
+  "id": "Q582",
+  "title": "Villeurbanne",
+  "description": "commune française de la métropole de Lyon",
+  "langs": 85,
+  "types": "grande ville, commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Place%20lazare%20goujon.jpg"
+ },
+ {
+  "id": "Q187834",
+  "title": "Saône",
+  "description": "rivière de France",
+  "langs": 68,
+  "types": "fleuve ou rivière",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sa%C3%B4ne%20Tournus1.JPG"
+ },
+ {
+  "id": "Q244717",
+  "title": "Caluire-et-Cuire",
+  "description": "commune française de la métropole de Lyon",
+  "langs": 50,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hotel.de.ville.Caluire.et.Cuire.001.JPG"
+ },
+ {
+  "id": "Q16665897",
+  "title": "Métropole de Lyon",
+  "description": "collectivité territoriale française à statut particulier",
+  "langs": 49,
+  "types": "collectivité à statut particulier, métropole",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vue%20du%20Mont%20Thou.JPG"
+ },
+ {
+  "id": "Q387460",
+  "title": "Sainte-Foy-lès-Lyon",
+  "description": "commune française de la métropole de Lyon",
+  "langs": 46,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tour%20rive%20Saone.JPG"
+ },
+ {
+  "id": "Q10971",
+  "title": "Gaule lyonnaise",
+  "description": "province romaine",
+  "langs": 42,
+  "types": "province romaine",
+  "image": ""
+ },
+ {
+  "id": "Q1795504",
+  "title": "EM Lyon Business School",
+  "description": "établissement d'enseignement français",
+  "langs": 41,
+  "types": "entreprise, grande école",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/EmLyon%20BusinessSchool.jpg"
+ },
+ {
+  "id": "Q1552",
+  "title": "métro de Lyon",
+  "description": "réseau métropolitain à Lyon",
+  "langs": 39,
+  "types": "réseau de transport en commun, métro",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/MPL85%20-%20Rame%20346%20-%20Gorge%20de%20Loup.jpg"
+ },
+ {
+  "id": "Q1980",
+  "title": "stade de Gerland",
+  "description": "stade lyonnais",
+  "langs": 39,
+  "types": "stade multifonction",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Matmut%20stadium%20de%20gerland.jpg"
+ },
+ {
+  "id": "Q8665",
+  "title": "La Sortie de l'usine Lumière à Lyon",
+  "description": "court-métrage en noir et blanc réalisé par Auguste et Louis Lumière en 1895",
+  "langs": 37,
+  "types": "court métrage",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20sortie%20des%20usines%20Lumiere.jpg"
+ },
+ {
+  "id": "Q273748",
+  "title": "Écully",
+  "description": "commune française de la métropole de Lyon",
+  "langs": 36,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ecully%20vivier.jpg"
+ },
+ {
+  "id": "Q1617133",
+  "title": "Champagne-au-Mont-d'Or",
+  "description": "commune française de la métropole de Lyon",
+  "langs": 35,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Champagne%20-%20Mairie%20en%20juillet%202010.JPG"
+ },
+ {
+  "id": "Q10176",
+  "title": "université de Lyon (ComUE)",
+  "description": "regroupement d'établissements d'enseignement supérieur dans la région de Lyon Saint-Étienne, prenant la forme d'une « communauté d'universités et d'établissements », créée en 2015",
+  "langs": 34,
+  "types": "communauté d'universités et d'établissements, université en France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bandeau-www%20palais-hirsch-nocturne.jpg"
+ },
+ {
+  "id": "Q665",
+  "title": "Lugdunum",
+  "description": "ancienne cité romaine, capitale des Gaules, dont les ruines se trouvent dans la ville de Lyon",
+  "langs": 33,
+  "types": "cité romaine, colonie romaine",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Roman%20theatre%20in%20Lyon.jpg"
+ },
+ {
+  "id": "Q772460",
+  "title": "La Mulatière",
+  "description": "commune française de la métropole de Lyon",
+  "langs": 33,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20Mulati%C3%A8re%20038.JPG"
+ },
+ {
+  "id": "Q535140",
+  "title": "arrondissement de Lyon",
+  "description": "arrondissement français",
+  "langs": 32,
+  "types": "arrondissement français",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Arrondissement%20of%20Lyon.jpg"
+ },
+ {
+  "id": "Q1647506",
+  "title": "Tassin-la-Demi-Lune",
+  "description": "commune française de la métropole de Lyon",
+  "langs": 31,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/01.%20Place%20Pierre%20Vauboin%20Horloge%20Tassin-la-Demie-Lune.JPG"
+ },
+ {
+  "id": "Q511",
+  "title": "musée des Beaux-Arts de Lyon",
+  "description": "musée des Beaux-arts de Lyon, France",
+  "langs": 29,
+  "types": "musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Facade%20Musee%20des%20Beaux-Arts%20de%20Lyon%20n02.jpg"
+ },
+ {
+  "id": "Q10159",
+  "title": "École normale supérieure de Lyon",
+  "description": "grande école publique française à caractère scientifique, culturel et professionnel, située à Lyon",
+  "langs": 28,
+  "types": "grande école, école normale supérieure, établissement d'enseignement supérieur",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/ENS%20Lyon.jpg"
+ },
+ {
+  "id": "Q1521",
+  "title": "primatiale Saint-Jean de Lyon",
+  "description": "cathédrale à Lyon",
+  "langs": 27,
+  "types": "cathédrale catholique, siège de diocèse",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/007.%20Photo%20prise%20depuis%20les%20toits%20de%20la%20Basilique%20Notre-Dame%20de%20Fourvi%C3%A8re.JPG"
+ },
+ {
+  "id": "Q1516",
+  "title": "basilique Notre-Dame de Fourvière",
+  "description": "basilique située à Lyon, France",
+  "langs": 26,
+  "types": "basilique mineure",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/France-003038%20-%20Basilica%20of%20Notre-Dame%20de%20Fourvi%C3%A8re%20%2815939822990%29.jpg"
+ },
+ {
+  "id": "Q1142571",
+  "title": "Lyonnais",
+  "description": "ancienne province française",
+  "langs": 23,
+  "types": "province de France",
+  "image": ""
+ },
+ {
+  "id": "Q653482",
+  "title": "bataille de Lugdunum",
+  "description": "bataille de Lyon",
+  "langs": 22,
+  "types": "bataille",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Aureus-Clodius%20Albinus-RIC%200009b.jpg"
+ },
+ {
+  "id": "Q1274566",
+  "title": "bataille de l'Arar",
+  "description": "bataille entre les Romains et les Helvètes",
+  "langs": 22,
+  "types": "bataille",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Campagne%20Helv%C3%A8tes%20-58.png"
+ },
+ {
+  "id": "Q1583964",
+  "title": "championnat du monde d'échecs 1990",
+  "description": "",
+  "langs": 22,
+  "types": "saison sportive",
+  "image": ""
+ },
+ {
+  "id": "Q1633859",
+  "title": "Institut national des sciences appliquées de Lyon",
+  "description": "grande école d'ingénieurs française",
+  "langs": 21,
+  "types": "grande école",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Biblioth%C3%A8que%20Marie%20Curie%20%28INSA%20Lyon%29%2C%20rayonnage%20%281%29.jpg"
+ },
+ {
+  "id": "Q4032",
+  "title": "université Claude-Bernard-Lyon-I",
+  "description": "université française créée en 1970",
+  "langs": 20,
+  "types": "université en France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/IUFM%20Croix%20Rousse.JPG"
+ },
+ {
+  "id": "Q2008",
+  "title": "Lyon-Part-Dieu",
+  "description": "gare ferroviaire française",
+  "langs": 19,
+  "types": "bâtiment voyageurs, gare ferroviaire",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gare%20Part-Dieu%20%28Lyon%2C%202025%29.jpg"
+ }
+]

@@ -1,0 +1,242 @@
+[
+ {
+  "id": "Q6602",
+  "title": "Strasbourg",
+  "description": "capitale de la région historique d'Alsace, préfecture du Bas-Rhin et de la région Grand Est",
+  "langs": 194,
+  "types": "grande ville, ville frontalière, commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasburg.jpg"
+ },
+ {
+  "id": "Q8908",
+  "title": "Conseil de l'Europe",
+  "description": "organisation européenne intergouvernementale pour la défense des droits de l'homme",
+  "langs": 129,
+  "types": "organisation intergouvernementale, organisation",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Council%20of%20Europe%20Palais%20de%20l%27Europe%20aerial%20view.JPG"
+ },
+ {
+  "id": "Q18677983",
+  "title": "Grand Est",
+  "description": "région administrative française",
+  "langs": 108,
+  "types": "région de France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20-%202016%20%2829947544886%29.jpg"
+ },
+ {
+  "id": "Q122880",
+  "title": "Cour européenne des droits de l'homme",
+  "description": "juridiction internationale liée au Conseil de l'Europe",
+  "langs": 88,
+  "types": "juridiction internationale",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/European%20Court%20of%20Human%20Rights%2C%20courtroom%2C%202014%20%28cropped%29.JPG"
+ },
+ {
+  "id": "Q22639",
+  "title": "Schiltigheim",
+  "description": "commune française du département du Bas-Rhin",
+  "langs": 60,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Schiltigheim%20rPrincipale%2057%20%281%29.jpg"
+ },
+ {
+  "id": "Q157575",
+  "title": "université de Strasbourg",
+  "description": "nom générique depuis 2009 réunissant les trois universités de Strasbourg-I, Strasbourg-II et Strasbourg-III mais en existence depuis 1621",
+  "langs": 57,
+  "types": "université en France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Neustadt%20%2852297125377%29.jpg"
+ },
+ {
+  "id": "Q745460",
+  "title": "cathédrale Notre-Dame de Strasbourg",
+  "description": "cathédrale située dans le Bas-Rhin, en France",
+  "langs": 51,
+  "types": "cathédrale catholique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Cathedral%20Exterior%20-%20Diliff.jpg"
+ },
+ {
+  "id": "Q21354",
+  "title": "Ostwald",
+  "description": "commune française du département du Bas-Rhin",
+  "langs": 47,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ostwald05.jpg"
+ },
+ {
+  "id": "Q8073",
+  "title": "Arte",
+  "description": "chaîne de service public franco-allemande",
+  "langs": 46,
+  "types": "chaîne de télévision généraliste, station de télévision, réseau de télévision, organisation",
+  "image": ""
+ },
+ {
+  "id": "Q273579",
+  "title": "École nationale d'administration",
+  "description": "grande école française (1945–2021)",
+  "langs": 42,
+  "types": "école d'application",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/100528ena%20paris06.jpg"
+ },
+ {
+  "id": "Q59647120",
+  "title": "attentat du marché de Noël de Strasbourg",
+  "description": "tuerie de masse par arme à feu, le 11 décembre 2018, par Chérif Chekatt au marché de Noël de Strasbourg, en France, revendiqué par l'organisation terroriste État islamique",
+  "langs": 34,
+  "types": "fusillade de masse, attaque terroriste au couteau",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fusillade%20de%20Strasbourg%2C%20intervention%20police%20route%20de%20l%27h%C3%B4pital%20Neudorf%2C%2011%20d%C3%A9cembre%202018%20-%207.jpg"
+ },
+ {
+  "id": "Q1275285",
+  "title": "EM Strasbourg Business School",
+  "description": "établissement d'enseignement français",
+  "langs": 30,
+  "types": "école de commerce",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Absolute%20pege%20strasbourg%2001.JPG"
+ },
+ {
+  "id": "Q19243038",
+  "title": "arrondissement de Strasbourg",
+  "description": "arrondissement du Bas-Rhin",
+  "langs": 30,
+  "types": "arrondissement français",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Locator%20map%20of%20Arrondissement%20Strasbourg%202018.png"
+ },
+ {
+  "id": "Q374883",
+  "title": "stade de la Meinau",
+  "description": "stade français situé à Strasbourg",
+  "langs": 29,
+  "types": "installation sportive, stade",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20Meinau%20en%20National.jpg"
+ },
+ {
+  "id": "Q1054195",
+  "title": "Centre de données astronomiques de Strasbourg",
+  "description": "centre de données",
+  "langs": 25,
+  "types": "centre de données, organisation",
+  "image": ""
+ },
+ {
+  "id": "Q1895943",
+  "title": "Grande Île de Strasbourg",
+  "description": "île du Bas-Rhin, France",
+  "langs": 25,
+  "types": "île fluviale, quartier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Petite%20France.jpg"
+ },
+ {
+  "id": "Q660855",
+  "title": "arrondissement de Strasbourg-Campagne",
+  "description": "ancien arrondissement du Bas-Rhin, en France",
+  "langs": 23,
+  "types": "entité territoriale disparue, arrondissement français",
+  "image": ""
+ },
+ {
+  "id": "Q465591",
+  "title": "palais de l'Europe",
+  "description": "bâtiment à Strasbourg, France",
+  "langs": 20,
+  "types": "bâtiment parlementaire",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Council%20of%20Europe%20Palais%20de%20l%27Europe.JPG"
+ },
+ {
+  "id": "Q620012",
+  "title": "siège de Strasbourg",
+  "description": "siège durant la guerre franco-prussienne de 1870",
+  "langs": 19,
+  "types": "siège militaire, bataille",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bresche%20beim%20Steintor.jpg"
+ },
+ {
+  "id": "Q620012",
+  "title": "siège de Strasbourg",
+  "description": "siège durant la guerre franco-prussienne de 1870",
+  "langs": 19,
+  "types": "siège militaire, bataille",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stra%C3%9Fburg%20Belagerung%201.jpg"
+ },
+ {
+  "id": "Q620012",
+  "title": "siège de Strasbourg",
+  "description": "siège durant la guerre franco-prussienne de 1870",
+  "langs": 19,
+  "types": "siège militaire, bataille",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/StrasbourgSiege.png"
+ },
+ {
+  "id": "Q620012",
+  "title": "siège de Strasbourg",
+  "description": "siège durant la guerre franco-prussienne de 1870",
+  "langs": 19,
+  "types": "siège militaire, bataille",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strassburg%20vom%20Steintor%20aus%2028%20Sept%201870.jpg"
+ },
+ {
+  "id": "Q702564",
+  "title": "arrondissement de Strasbourg-Ville",
+  "description": "ancien arrondissement français",
+  "langs": 19,
+  "types": "entité territoriale disparue, arrondissement français",
+  "image": ""
+ },
+ {
+  "id": "Q947985",
+  "title": "observatoire astronomique de Strasbourg",
+  "description": "observatoire astronomique",
+  "langs": 18,
+  "types": "observatoire astronomique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/L%27observatoire%20astronomique%20de%20Strasbourg%20%2841534417322%29.jpg"
+ },
+ {
+  "id": "Q801473",
+  "title": "Strasbourg-Ville",
+  "description": "gare ferroviaire française",
+  "langs": 17,
+  "types": "gare ferroviaire",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gare%20de%20Strasbourg%20IMG%203679.JPG"
+ },
+ {
+  "id": "Q2060490",
+  "title": "tramway de Strasbourg",
+  "description": "tramways exploités par la CTS desservant Strasbourg et son agglomération",
+  "langs": 17,
+  "types": "réseau de tramway",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/TramStrasbourg%20lineA%20HommeFer%20versIllkirch.JPG"
+ },
+ {
+  "id": "Q965606",
+  "title": "Petite France",
+  "description": "quartier historique de la ville de Strasbourg",
+  "langs": 16,
+  "types": "quartier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Petite-France%20place%20Benjamin-Zix%20septembre%202015.jpg"
+ },
+ {
+  "id": "Q565125",
+  "title": "musée alsacien",
+  "description": "musée situé à Strasbourg",
+  "langs": 15,
+  "types": "musée",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Mus%C3%A9e%20alsacien%2001.jpg"
+ },
+ {
+  "id": "Q630461",
+  "title": "Bibliothèque nationale et universitaire de Strasbourg",
+  "description": "bibliothèque publique française à Strasbourg",
+  "langs": 15,
+  "types": "bibliothèque universitaire, organisation, bibliothèque nationale",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bnu-2018-01.jpg"
+ },
+ {
+  "id": "Q1398462",
+  "title": "canton de Schiltigheim",
+  "description": "canton français",
+  "langs": 15,
+  "types": "canton français",
+  "image": ""
+ }
+]

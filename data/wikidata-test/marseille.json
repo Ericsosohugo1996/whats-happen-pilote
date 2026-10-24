@@ -1,0 +1,242 @@
+[
+ {
+  "id": "Q23482",
+  "title": "Marseille",
+  "description": "ville et commune française (chef-lieu du département des Bouches-du-Rhône et de la région Provence-Alpes-Côte d'Azur) et 2e plus grande ville de France",
+  "langs": 192,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20Marseille%20from%20Notre-Dame%20de%20la%20Garde%204.jpg"
+ },
+ {
+  "id": "Q202150",
+  "title": "stade Vélodrome",
+  "description": "stade de football situé à Marseille, en France",
+  "langs": 56,
+  "types": "stade de rugby à XV, stade de football, installation sportive, stade",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stade%20V%C3%A9lodrome%20closeup.jpg"
+ },
+ {
+  "id": "Q622500",
+  "title": "château d'If",
+  "description": "forteresse française sur l'îlot d'If de l'archipel du Frioul au centre de la rade de Marseille",
+  "langs": 41,
+  "types": "forteresse",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20d%27If%20%40%20Baie%20de%20Marseille%2001.jpg"
+ },
+ {
+  "id": "Q2302586",
+  "title": "université d'Aix-Marseille",
+  "description": "université française fondée le 1er janvier 2012 à partir de la fusion de l’université de Provence (Aix-Marseille-I), l'université de la Méditerranée (Aix-Marseille-II) et l’université Paul-Cézanne (Aix-Marseille-III)",
+  "langs": 40,
+  "types": "université en France, université de recherche publique, éditeur en accès libre",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Aix-Marseille%20Universit%C3%A9.jpg"
+ },
+ {
+  "id": "Q275267",
+  "title": "métro de Marseille",
+  "description": "réseau de transport en commun ferroviaire de Marseille",
+  "langs": 37,
+  "types": "métro sur pneumatiques, métro",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/MarseilleM%C3%A9tro-Collage.png"
+ },
+ {
+  "id": "Q701646",
+  "title": "arrondissement de Marseille",
+  "description": "arrondissement des Bouches-du-Rhône en France",
+  "langs": 36,
+  "types": "arrondissement français",
+  "image": ""
+ },
+ {
+  "id": "Q975925",
+  "title": "basilique Notre-Dame-de-la-Garde",
+  "description": "basilique située à Marseille dans les Bouches-du-Rhône, en France",
+  "langs": 30,
+  "types": "basilique mineure, église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Notre%20Dame%20de%20la%20Garde%20%E5%AE%88%E8%AD%B7%E8%81%96%E6%AF%8D%E9%99%A2%20-%20panoramio%20%281%29.jpg"
+ },
+ {
+  "id": "Q1419757",
+  "title": "cathédrale Sainte-Marie-Majeure",
+  "description": "cathédrale située à Marseille dans les Bouches-du-Rhône, en France",
+  "langs": 27,
+  "types": "cathédrale catholique, basilique mineure",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Marie-Majeure%20de%20Marseille.%20Vue%20g%C3%A9n%C3%A9rale..JPG"
+ },
+ {
+  "id": "Q1103949",
+  "title": "observatoire de Marseille",
+  "description": "",
+  "langs": 27,
+  "types": "observatoire astronomique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Int%C3%A9rieur%20du%20Pr%C3%A9au%20des%20Accoules.jpg"
+ },
+ {
+  "id": "Q299561",
+  "title": "Open 13",
+  "description": "tournoi de tennis",
+  "langs": 26,
+  "types": "tournoi récurrent",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vieux-Port%20de%20Marseille.jpg"
+ },
+ {
+  "id": "Q2808698",
+  "title": "musée des civilisations de l'Europe et de la Méditerranée",
+  "description": "musée français installé à Marseille",
+  "langs": 23,
+  "types": "musée",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mucem%20et%20Cath%C3%A9drale%20Sainte-Marie-Majeure%20de%20Marseille.jpg"
+ },
+ {
+  "id": "Q1412364",
+  "title": "unité d'habitation",
+  "description": "Principe d'urbanisme développé par Le Corbusier",
+  "langs": 22,
+  "types": "concept architectural corbuséen, groupe d'œuvres, principe, concept",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/France%2C%20Bouches-du-Rh%C3%B4ne%20%2813%29%2C%20Marseille%2C%208%C3%A8me%20arr.%20jardin%20de%20la%20Magalone.jpg"
+ },
+ {
+  "id": "Q371217",
+  "title": "Marseille-Saint-Charles",
+  "description": "gare ferroviaire en France",
+  "langs": 22,
+  "types": "gare ferroviaire, gare ferroviaire en cul-de-sac",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/L04%20176%20Bf%20Marseille%20Saint-Charles%2C%20Kopfbau.jpg"
+ },
+ {
+  "id": "Q1464953",
+  "title": "îles du Frioul",
+  "description": "archipel méditerranéen et quartier administratif du 7e arrondissement de Marseille, France",
+  "langs": 19,
+  "types": "quartier administratif de Marseille, archipel",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Marseille-iles-frioul.jpg"
+ },
+ {
+  "id": "Q2566850",
+  "title": "Massalia",
+  "description": "colonie grecque puis cité romaine",
+  "langs": 19,
+  "types": "colonie grecque, polis",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Heavy%20drachm%20Massilia%20reverse%20CdM%20Paris.jpg"
+ },
+ {
+  "id": "Q437959",
+  "title": "Vieux-Port de Marseille",
+  "description": "plus ancien port de Marseille, France",
+  "langs": 17,
+  "types": "port maritime",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Old%20Port.jpg"
+ },
+ {
+  "id": "Q1858504",
+  "title": "abbaye Saint-Victor de Marseille",
+  "description": "abbaye située dans les Bouches-du-Rhône, en France",
+  "langs": 17,
+  "types": "communauté religieuse, abbaye, basilique mineure, monastère",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Marseille-Saint-Victor-bjs180810-01.jpg"
+ },
+ {
+  "id": "Q2127400",
+  "title": "siège de Massilia",
+  "description": "blocus militaire et bataille navale en 49 av. J.-C. durant la guerre civile de César contre Pompée",
+  "langs": 16,
+  "types": "bataille navale, siège militaire",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Siege%20of%20Massilia%2049%20BC.jpg"
+ },
+ {
+  "id": "Q58208336",
+  "title": "Tour La Marseillaise",
+  "description": "gratte-ciel à Marseille (France)",
+  "langs": 15,
+  "types": "immeuble de bureaux, gratte-ciel",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bassin%20de%20la%20Joliette%20%40%20Rade%20de%20Marseille.jpg"
+ },
+ {
+  "id": "Q2428599",
+  "title": "assassinat d’Alexandre Ier de Yougoslavie",
+  "description": "assassinat du roi de Yougoslavie, à Marseille en 1934",
+  "langs": 15,
+  "types": "magnicide",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Atentat%20u%20Marseju.jpg"
+ },
+ {
+  "id": "Q116732045",
+  "title": "tournoi de tennis de Marseille (ATP 2023)",
+  "description": "",
+  "langs": 15,
+  "types": "édition d'un tournoi de tennis, Open 13",
+  "image": ""
+ },
+ {
+  "id": "Q83013",
+  "title": "musée des Beaux-Arts de Marseille",
+  "description": "musée de Marseille, France",
+  "langs": 14,
+  "types": "musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Palais%20Longchamp%20At%20Night%20JD%2022052007.jpg"
+ },
+ {
+  "id": "Q1561155",
+  "title": "championnats du monde de cyclisme sur piste 1972",
+  "description": "compétition de cyclisme",
+  "langs": 14,
+  "types": "saison sportive, championnats du monde de cyclisme sur piste",
+  "image": ""
+ },
+ {
+  "id": "Q1687719",
+  "title": "université de Provence Aix-Marseille-I",
+  "description": "université publique française spécialisée en sciences exactes et lettres et sciences humaines (1970-2012)",
+  "langs": 14,
+  "types": "université en France, éditeur en accès libre, université publique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Universit%C3%A9-Saint-Charles20.jpg"
+ },
+ {
+  "id": "Q61718319",
+  "title": "tournoi de tennis de Marseille 2019",
+  "description": "",
+  "langs": 14,
+  "types": "édition d'un tournoi de tennis",
+  "image": ""
+ },
+ {
+  "id": "Q1726137",
+  "title": "canton de Marseille-Saint-Just",
+  "description": "ancien canton français",
+  "langs": 13,
+  "types": "canton français (avant 2015)",
+  "image": ""
+ },
+ {
+  "id": "Q1905802",
+  "title": "fort Saint-Jean",
+  "description": "fort dans le 2e arrondissement de Marseille (Bouches-du-Rhône)",
+  "langs": 13,
+  "types": "fort",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Marseille-Fort%20Saint-Jean.JPG"
+ },
+ {
+  "id": "Q28766469",
+  "title": "tournoi de tennis de Marseille 2017",
+  "description": "tournoi de tennis",
+  "langs": 13,
+  "types": "édition d'un tournoi de tennis, Open 13",
+  "image": ""
+ },
+ {
+  "id": "Q2037477",
+  "title": "plages du Prado",
+  "description": "plages à Marseille",
+  "langs": 13,
+  "types": "plage de Marseille, site de baignade, plage",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mistral%20gagnant%20Plages%20du%20Prado%2C%20Marseille.jpg"
+ },
+ {
+  "id": "Q47883024",
+  "title": "tournoi de tennis de Marseille 2018",
+  "description": "",
+  "langs": 13,
+  "types": "édition d'un tournoi de tennis, Open 13",
+  "image": ""
+ }
+]

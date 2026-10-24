@@ -1,0 +1,242 @@
+[
+ {
+  "id": "Q1479",
+  "title": "Bordeaux",
+  "description": "ville et commune française, chef-lieu du département de la Gironde",
+  "langs": 184,
+  "types": "grande ville, commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/138%20-%20Place%20de%20la%20Bourse%20et%20le%20miroir%20d%27eau%20-%20Bordeaux.jpg"
+ },
+ {
+  "id": "Q18678082",
+  "title": "Nouvelle-Aquitaine",
+  "description": "région administrative de France",
+  "langs": 109,
+  "types": "région de France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20c%C3%B4te%20%C3%A0%20St%20Denis%20d%27Ol%C3%A9ron.JPG"
+ },
+ {
+  "id": "Q192481",
+  "title": "Talence",
+  "description": "commune française du département de la Gironde",
+  "langs": 59,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20de%20Talence.jpg"
+ },
+ {
+  "id": "Q192438",
+  "title": "Bègles",
+  "description": "commune française du département de la Gironde",
+  "langs": 58,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Chateau%20de%20francs.jpg"
+ },
+ {
+  "id": "Q1053472",
+  "title": "Cenon",
+  "description": "commune française du département de la Gironde",
+  "langs": 56,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gare%20de%20Cenon%20-%20Mai%202025.png"
+ },
+ {
+  "id": "Q192461",
+  "title": "Le Bouscat",
+  "description": "commune française du département de la Gironde",
+  "langs": 55,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mairie%20Bouscat.jpg"
+ },
+ {
+  "id": "Q715376",
+  "title": "Gaule aquitaine",
+  "description": "province romaine",
+  "langs": 49,
+  "types": "province romaine",
+  "image": ""
+ },
+ {
+  "id": "Q199682",
+  "title": "Floirac",
+  "description": "commune française du département de la Gironde",
+  "langs": 41,
+  "types": "commune française",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Floirac-Gironde-mairie-01.jpg"
+ },
+ {
+  "id": "Q386547",
+  "title": "stade Chaban-Delmas",
+  "description": "stade situé à Bordeaux",
+  "langs": 34,
+  "types": "stade de rugby à XV, stade de football, stade",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Chaban-Delmas%20Rugby.jpg"
+ },
+ {
+  "id": "Q13338",
+  "title": "université Bordeaux-I",
+  "description": "université française fondée en 1971, remplacée et supprimée en 2014",
+  "langs": 33,
+  "types": "université en France, université",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux%20observatory%20grand%20%C3%A9quatorial%20telescope%20img%204099.jpg"
+ },
+ {
+  "id": "Q700697",
+  "title": "arrondissement de Bordeaux",
+  "description": "arrondissement de la Gironde, en France",
+  "langs": 33,
+  "types": "arrondissement français",
+  "image": ""
+ },
+ {
+  "id": "Q13344",
+  "title": "université de Bordeaux",
+  "description": "université française créée en 1441",
+  "langs": 29,
+  "types": "université en France",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/University%20of%20Bordeaux%20Pey%20Berland%20Building.png"
+ },
+ {
+  "id": "Q656738",
+  "title": "cathédrale Saint-André de Bordeaux",
+  "description": "cathédrale située à Bordeaux en Gironde, en France",
+  "langs": 25,
+  "types": "cathédrale catholique",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20St%20Andr%C3%A9%20Bordeaux%203.jpg"
+ },
+ {
+  "id": "Q2249113",
+  "title": "port de la Lune",
+  "description": "port historique de Bordeaux",
+  "langs": 25,
+  "types": "aire urbaine, centre historique, port",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/La%20Grosse%20Cloche%20%28Bordeaux%29.JPG"
+ },
+ {
+  "id": "Q606304",
+  "title": "tramway de Bordeaux",
+  "description": "système de transport en commun ferroviaire à Bordeaux",
+  "langs": 20,
+  "types": "réseau de tramway",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux%20Tram%20R01.jpg"
+ },
+ {
+  "id": "Q800564",
+  "title": "Bordeaux-Saint-Jean",
+  "description": "gare ferroviaire française",
+  "langs": 18,
+  "types": "gare ferroviaire",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux%20gare%20st%20jean.JPG"
+ },
+ {
+  "id": "Q2887024",
+  "title": "basilique Saint-Michel de Bordeaux",
+  "description": "basilique située en Gironde, France",
+  "langs": 17,
+  "types": "basilique mineure, église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/10-Bordeaux%20-%20basilique%20Saint-Michel%20%283%29.JPG"
+ },
+ {
+  "id": "Q26826",
+  "title": "canton de Talence",
+  "description": "canton français",
+  "langs": 15,
+  "types": "canton français",
+  "image": ""
+ },
+ {
+  "id": "Q518582",
+  "title": "château Haut-Brion",
+  "description": "domaine viticole français",
+  "langs": 15,
+  "types": "domaine viticole",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Haut%20Brion%20exterior.jpg"
+ },
+ {
+  "id": "Q1316358",
+  "title": "grande synagogue de Bordeaux",
+  "description": "synagogue située en Gironde, en France",
+  "langs": 15,
+  "types": "synagogue",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Synagogue%20Bx%204.jpg"
+ },
+ {
+  "id": "Q1541186",
+  "title": "Grand-Théâtre de Bordeaux",
+  "description": "théâtre à Bordeaux (Gironde)",
+  "langs": 14,
+  "types": "opéra, théâtre",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Grand%20Theatre%20Bordeaux.JPG"
+ },
+ {
+  "id": "Q1724831",
+  "title": "canton de Cenon",
+  "description": "canton français",
+  "langs": 14,
+  "types": "canton français",
+  "image": ""
+ },
+ {
+  "id": "Q1725775",
+  "title": "canton du Bouscat",
+  "description": "canton français",
+  "langs": 14,
+  "types": "canton français",
+  "image": ""
+ },
+ {
+  "id": "Q1773424",
+  "title": "pont de pierre",
+  "description": "pont français à Bordeaux",
+  "langs": 14,
+  "types": "pont tramway, pont routier",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux%20-%20Pont%20de%20Pierre%20vu%20depuis%20la%20fl%C3%A8che%20Saint%20Michel%20V2.jpg"
+ },
+ {
+  "id": "Q954222",
+  "title": "musée des Beaux-Arts de Bordeaux",
+  "description": "musée de Bordeaux, France",
+  "langs": 14,
+  "types": "point d'intérêt, site touristique, musée d'art",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Beaux%20arts%20bordeaux.jpg"
+ },
+ {
+  "id": "Q2887041",
+  "title": "basilique Saint-Seurin de Bordeaux",
+  "description": "basilique située en Gironde, en France",
+  "langs": 14,
+  "types": "basilique mineure, église",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux%20fa%C3%A7ade%20%C3%A9glise%20Saint-Seurin%20a.jpg"
+ },
+ {
+  "id": "Q1117116",
+  "title": "Bordeaux Métropole",
+  "description": "intercommunalité française de la Gironde",
+  "langs": 12,
+  "types": "entité territoriale administrative d'un unique pays, communauté urbaine, métropole",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux%20-%20Pont%20Chaban%20Delmas%20sur%20la%20Garonne.jpg"
+ },
+ {
+  "id": "Q1431600",
+  "title": "place des Quinconces",
+  "description": "place de Bordeaux, en France",
+  "langs": 12,
+  "types": "place",
+  "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bordeaux%20Quinconces.jpg"
+ },
+ {
+  "id": "Q1724519",
+  "title": "canton de Bordeaux-2",
+  "description": "canton français",
+  "langs": 12,
+  "types": "canton français",
+  "image": ""
+ },
+ {
+  "id": "Q1724517",
+  "title": "canton de Bordeaux-1",
+  "description": "canton français",
+  "langs": 12,
+  "types": "canton français",
+  "image": ""
+ }
+]
