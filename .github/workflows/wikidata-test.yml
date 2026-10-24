@@ -1,0 +1,36 @@
+name: Essai Wikidata
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: split-data
+  cancel-in-progress: false
+
+jobs:
+  essai:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Interroger Wikidata (essai, sans effet sur le site)
+        run: node wikidata-test.js
+
+      - name: Enregistrer les fichiers de test
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add data/wikidata-test
+          if git diff --cached --quiet; then
+            echo "Rien à enregistrer"
+          else
+            git commit -m "Essai Wikidata (fichiers de test)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
