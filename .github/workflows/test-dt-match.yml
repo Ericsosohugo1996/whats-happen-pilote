@@ -1,0 +1,38 @@
+name: Photos officielles des bars (DATAtourisme)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bars-sympa
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Chercher les photos officielles
+        env:
+          DATATOURISME_API_KEY: ${{ secrets.DATATOURISME_API_KEY }}
+        run: node test-dt-match.js
+
+      - name: Enregistrer le compte rendu
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add data/bars-plus/_dt-resume.txt data/bars-plus/_dt-matches.json data/bars-plus/_dt-bars-cache.json
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau"
+          else
+            git commit -m "Photos officielles des bars (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
