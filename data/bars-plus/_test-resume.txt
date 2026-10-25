@@ -1,0 +1,16 @@
+Bars lus : 2440 dans 136 villes
+Bars qui ont déjà une photo (Wikimedia/Wikidata) : 38
+OpenStreetMap : 2434 bars relus, dont 51 avec un lien photo (étiquette image ou wikimedia_commons)
+  - avec wikimedia_commons : 5 ; avec image : 46
+  exemple : beauvais / Baraka Jeux Beauvais -> https://www.barakajeux.com/img/st/14.jpg
+  exemple : caen / O'Donnell's Irish Pub -> https://storage11.openstreetcam.org/files/photo/2019/2/24/lth/1344089_6_df2ea_30.jpg
+  exemple : chambery / Archimalt -> https://image.jimcdn.com/app/cms/image/transf/dimension=397x10000:format=jpg/path/s350cbe8
+  exemple : clermont / Baraka Jeux -> https://www.barakajeux.com/img/st/5.jpg
+  exemple : bobigny / Aux Ours -> https://tinyurl.com/2y4p4hcw,https://tinyurl.com/3yh7z9kb,https://tinyurl.com/59pbewkk,htt
+  exemple : lyon / Le City -> File:Restaurant Pepperoni, rue Moncey (Lyon).jpg
+  exemple : lyon / La Feria (Lyon) -> https://laferialyon.fr/wp-content/uploads/2020/01/la-feria-08-hd.jpg
+  exemple : grenoble / Quiz Room & Baraka Jeux -> https://www.barakajeux.com/img/st/15.jpg
+DATAtourisme /v1/catalog -> HTTP 200 : {"objects":[{"hasBeenCreatedBy":{"legalName":"Haute Maurienne Vanoise Tourisme","identifier":"582","homepage":["https:\/\/www.haute-maurienne-vanoise.com\/"]},"isLocatedAt":[{"geo":{"elevation":2002,"
+DATAtourisme /v1/place -> HTTP 404 : <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="robots" content="noindex,nofollow,noarchive" /> <title>An Error Occurred: Not Found</title> <link rel="icon" href="data:ima
+DATAtourisme /v1/foodEstablishment -> HTTP 404 : <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="robots" content="noindex,nofollow,noarchive" /> <title>An Error Occurred: Not Found</title> <link rel="icon" href="data:ima
+DATAtourisme /v1/placeOfInterest -> HTTP 200 : {"objects":[{"hasBeenCreatedBy":{"legalName":"Haute Maurienne Vanoise Tourisme","identifier":"582","homepage":["https:\/\/www.haute-maurienne-vanoise.com\/"]},"isLocatedAt":[{"geo":{"elevation":2002,"
