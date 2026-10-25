@@ -79,7 +79,7 @@ function km(a, b, c, d) {
   if (!KEY) { console.log("Pas de clé DATATOURISME_API_KEY."); return; }
   let cache = { ti: 0, next: "", pages: 0, seen: 0, rows: [] };
   try { cache = JSON.parse(fs.readFileSync(CACHE, "utf8")); } catch (e) {}
-  if (cache.v !== 4) cache = { v: 4, ti: 0, next: "", pages: 0, seen: 0, rows: [], withImg: 0, withGeo: 0, keys: "" };
+  if (cache.v !== 5) cache = { v: 5, ti: 0, next: "", pages: 0, seen: 0, rows: [], withImg: 0, withGeo: 0, keys: "" };
   let req = 0, fails = 0;
   while (cache.ti < TYPES.length && req < MAX_REQ && !TIME_UP()) {
     const url = cache.next || BASE + "/v1/placeOfInterest?page_size=100&lang=fr&type=" + TYPES[cache.ti] + "";
@@ -119,7 +119,28 @@ function km(a, b, c, d) {
     }
     if (best) matches.push({ id: b.id, city: b.city, title: b.title, dt: best.n, photo: best.u, author: best.a, source: best.s, had: b.has });
   }
+  // ---- application : on ajoute la photo officielle aux bars qui n'en ont pas (jamais d'écrasement) ----
+  let applied = 0;
+  const byCityM = {};
+  for (const m of matches) (byCityM[m.city] = byCityM[m.city] || []).push(m);
+  for (const [city, ms] of Object.entries(byCityM)) {
+    const p = DIR + "/" + city + ".json";
+    try {
+      const rows = JSON.parse(fs.readFileSync(p, "utf8"));
+      let ch = false;
+      for (const m of ms) {
+        const r = rows.find((x) => x.id === m.id);
+        if (r && !r.photo && /^https:\/\//.test(m.photo)) {
+          r.photo = m.photo;
+          r.photoCredit = (m.author ? m.author.replace(/^©\s*/, "© ") : "") + (m.source ? (m.author ? " — " : "") + m.source : "") + " (DATAtourisme)";
+          ch = true; applied++;
+        }
+      }
+      if (ch) fs.writeFileSync(p, JSON.stringify(rows));
+    } catch (e) {}
+  }
   const lines = [];
+  lines.push("Photos ajoutées aux fiches de bars : " + applied);
   lines.push("DATAtourisme : " + cache.pages + " pages lues, " + cache.seen + " lieux vus, " + cache.rows.length + " avec photo et position (photo : " + cache.withImg + ", position : " + cache.withGeo + "). Champs : " + cache.keys + ". Exemple de lieu sans position : " + (cache.loc || "aucun") + ". " + (done ? "TERMINÉ." : "PAS FINI : relance le robot."));
   lines.push("Nos bars : " + ours.length + ". Rapprochés avec une photo officielle : " + matches.length + " (dont " + matches.filter((m) => !m.had).length + " sans photo aujourd'hui).");
   const byCity = {}; for (const m of matches) byCity[m.city] = (byCity[m.city] || 0) + 1;
