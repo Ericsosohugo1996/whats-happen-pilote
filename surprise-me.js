@@ -415,13 +415,27 @@ renderLocateBar = function () {
     tail(th);
   }
 
+  var BAR_LOOK = [
+    [/cocktail/i, "🍸", "#5B1E6E", "#C2377E", "Bar à cocktails"],
+    [/vins?/i, "🍷", "#4A0F1F", "#A8324A", "Bar à vins"],
+    [/brasserie/i, "🍻", "#4A2A0A", "#C77A1E", "Brasserie artisanale"],
+    [/biergarten/i, "🍺", "#1F4A2B", "#C9A227", "Biergarten"],
+    [/pub/i, "🍺", "#3B2410", "#D08A1E", "Pub"]
+  ];
+  function barVisual(ev) {
+    var d = String(ev.description || ""), k = BAR_LOOK[0], i, look = null;
+    for (i = 0; i < BAR_LOOK.length; i++) { if (BAR_LOOK[i][0].test(d.split(" · ")[0])) { look = BAR_LOOK[i]; break; } }
+    if (!look) look = [null, "🥃", "#14213D", "#3A5A9B", "Bar"];
+    return '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,' + look[2] + ',' + look[3] + ');color:#fff"><span style="font-size:44px;line-height:1">' + look[1] + '</span><span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.9">' + look[4] + '</span></div>';
+  }
+
   function cardHtml(ev, first) {
     var ref = (typeof referencePoint === "function") ? referencePoint() : null;
     var d = (ref && ev.lat && ev.lng) ? haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) : null;
     var dist = d == null ? "" : (d <= 3 ? Math.max(2, Math.round(d * 12 / 5) * 5) + " min à pied" : d.toFixed(1).replace(".", ",") + " km");
     var desc = String(ev.description || "").replace(/\s+/g, " ").trim();
     if (desc.length > 120) desc = desc.slice(0, 120).replace(/\s+\S*$/, "") + "…";
-    return '<button type="button" class="wz-i-card" data-i="open" data-id="' + esc(ev.id) + '" data-m="1"><div class="wz-i-ph">' + (typeof eventPhotoHTML === "function" ? eventPhotoHTML(ev) : "") +
+    return '<button type="button" class="wz-i-card" data-i="open" data-id="' + esc(ev.id) + '" data-m="1"><div class="wz-i-ph">' + ((ev.isPlace && ev.category === "Bar" && !ev.photo) ? barVisual(ev) : (typeof eventPhotoHTML === "function" ? eventPhotoHTML(ev) : "")) +
       '<span class="wz-i-pill" style="--c:#457B9D">' + (ev.isPlace ? (ev.category === "Bar" ? "🍸 BAR" : "🏛️ À VOIR") : esc(String(ev.category || "").toUpperCase())) + '</span></div><div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div>' +
       ((ev.date && !ev.isPlace) ? '<div class="wz-i-v">' + esc(formatDate(ev.date) + (ev.time ? " · " + ev.time : "") + (dist ? " · " + dist : "")) + '</div>' : (dist ? '<div class="wz-i-v">' + esc(dist) + '</div>' : "")) + (desc ? '<div class="wz-i-why" style="font-weight:600;color:#C9D2EA">' + esc(desc) + '</div>' : "") + '</div></button>';
   }
