@@ -108,3 +108,7 @@ html body #account-modal .account-hero-title { color: #fff !important; }
 html body #account-modal .account-hero-sub { color: rgba(255,255,255,.8) !important; }
 html body #account-modal .btn-primary, html body #account-modal [style*="linear-gradient"]:not(.account-hero) { background: var(--wz-acc) !important; color: #fff !important; }
 html body #account-modal .modal-content { background: #fff !important; }
+
+/* v8 : page « Nouveautés à … » : titres et infos lisibles (étaient blanc sur blanc) */
+html body.wz-v2 #newfinds-overlay #newfinds-result .explore-pick div[style*="font-family"][style*="font-family"][style*="font-family"] { color: #14213D !important; }
+html body.wz-v2 #newfinds-overlay #newfinds-result .explore-pick div[style*="color:#999"], html body.wz-v2 #newfinds-overlay #newfinds-result .explore-pick span[style*="color:#888"] { color: #6B7691 !important; }
