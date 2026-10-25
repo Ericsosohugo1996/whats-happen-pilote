@@ -73,9 +73,10 @@ function km(a, b, c, d) {
   if (!KEY) { console.log("Pas de clé DATATOURISME_API_KEY."); return; }
   let cache = { ti: 0, next: "", pages: 0, seen: 0, rows: [] };
   try { cache = JSON.parse(fs.readFileSync(CACHE, "utf8")); } catch (e) {}
+  if (cache.v !== 2) cache = { v: 2, ti: 0, next: "", pages: 0, seen: 0, rows: [], withImg: 0, withGeo: 0, keys: "" };
   let req = 0, fails = 0;
   while (cache.ti < TYPES.length && req < MAX_REQ && !TIME_UP()) {
-    const url = cache.next || BASE + "/v1/placeOfInterest?page_size=100&lang=fr&type=" + TYPES[cache.ti] + "&fields=uri,label,type,isLocatedAt,hasMainRepresentation,hasBeenCreatedBy";
+    const url = cache.next || BASE + "/v1/placeOfInterest?page_size=100&lang=fr&type=" + TYPES[cache.ti] + "";
     let j;
     try { j = await api(url); } catch (e) { console.log("échec :", e.message); req++; if (++fails > 5) break; await sleep(3000); continue; }
     req++; cache.pages++;
@@ -84,6 +85,9 @@ function km(a, b, c, d) {
       const rep = o.hasMainRepresentation || o.hasRepresentation;
       const img = findImage(rep);
       const g = findGeo(o);
+      if (img) cache.withImg = (cache.withImg || 0) + 1;
+      if (g) cache.withGeo = (cache.withGeo || 0) + 1;
+      if (!cache.keys) cache.keys = Object.keys(o).join(",");
       if (img && /^https:\/\//i.test(img) && g) cache.rows.push({ n: firstText(o.label).slice(0, 80), la: g[0], lo: g[1], u: img, a: findRights(rep), s: firstText(o.hasBeenCreatedBy).slice(0, 60) });
     }
     const nx = j.meta && j.meta.next;
@@ -109,7 +113,7 @@ function km(a, b, c, d) {
     if (best) matches.push({ id: b.id, city: b.city, title: b.title, dt: best.n, photo: best.u, author: best.a, source: best.s, had: b.has });
   }
   const lines = [];
-  lines.push("DATAtourisme : " + cache.pages + " pages lues, " + cache.seen + " lieux vus, " + cache.rows.length + " avec photo et position. " + (done ? "TERMINÉ." : "PAS FINI : relance le robot."));
+  lines.push("DATAtourisme : " + cache.pages + " pages lues, " + cache.seen + " lieux vus, " + cache.rows.length + " avec photo et position (photo : " + cache.withImg + ", position : " + cache.withGeo + "). Champs : " + cache.keys + ". " + (done ? "TERMINÉ." : "PAS FINI : relance le robot."));
   lines.push("Nos bars : " + ours.length + ". Rapprochés avec une photo officielle : " + matches.length + " (dont " + matches.filter((m) => !m.had).length + " sans photo aujourd'hui).");
   const byCity = {}; for (const m of matches) byCity[m.city] = (byCity[m.city] || 0) + 1;
   lines.push("Par ville : " + Object.entries(byCity).sort((a, b) => b[1] - a[1]).slice(0, 12).map((e) => e[0] + " " + e[1]).join(", "));
