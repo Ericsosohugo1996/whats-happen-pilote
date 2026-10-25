@@ -1,3 +1,3 @@
-DATAtourisme : 59 pages lues, 5789 lieux vus, 0 avec photo et position (photo : 2180, position : 0). Champs : hasBeenCreatedBy,isLocatedAt,lastUpdate,hasDescription,label,type,lastUpdateDatatourisme,hasContact,uri,uuid. TERMINÉ.
+DATAtourisme : 59 pages lues, 5789 lieux vus, 0 avec photo et position (photo : 2180, position : 0). Champs : hasBeenCreatedBy,isLocatedAt,lastUpdate,hasDescription,label,type,lastUpdateDatatourisme,hasContact,uri,uuid. Exemple de lieu sans position : [{"geo":{"latitude":49.5693,"longitude":3.62691271},"address":[{"hasAddressCity":{"insee":"02408","label":{"@fr":"Laon"}},"streetAddress":["11 Rue Bonnot"],"postalCode":"02000","addressLocality":"Laon"}]}]. TERMINÉ.
 Nos bars : 2440. Rapprochés avec une photo officielle : 0 (dont 0 sans photo aujourd'hui).
 Par ville : 
