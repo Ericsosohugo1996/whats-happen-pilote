@@ -1,0 +1,17 @@
+placeOfInterest -> HTTP 200
+Clés de la réponse : objects, meta
+meta : {"total":373848,"page":1,"page_size":3,"total_pages":124616,"next":"https://api.datatourisme.fr/v1/placeOfInterest?page_size=3&lang=fr&crs=i45WMgACY9PEVN0kkzQTXePk1BRdyxSTFF0jYyMLcwsDg7QUy1SlWB1DHSMdY3NjCxOLWAA"}
+Clés d'un lieu : hasBeenCreatedBy, isLocatedAt, lastUpdate, hasDescription, label, type, lastUpdateDatatourisme, hasContact, uri, uuid
+Types d'un lieu : ["PointOfInterest","CulturalSite","PlaceOfInterest"]
+essai filters=type[eq]=BarOrPub -> HTTP 200 ; 1er lieu : ["FoodEstablishment","BarOrPub","PlaceOfInterest","PointOfInterest"]
+essai filters=rdf:type[eq]=BarOrPub -> HTTP 400 ; 1er lieu : {"error":"Invalid parameter: Syntax error at 1:4 - extraneous input \u0027type\u0027 expecting {\u0027[\u0027, \u0027=\u
+essai filters=@type[eq]=BarOrPub -> HTTP 200 ; 1er lieu : {"objects":[],"meta":{"total":0,"page":1,"page_size":3,"total_pages":0}}
+essai search=bar -> HTTP 200 ; 1er lieu : ["FoodEstablishment","PlaceOfInterest","PointOfInterest","BistroOrWineBar","Winery"]
+essai q=bar -> HTTP 200 ; 1er lieu : ["PointOfInterest","CulturalSite","PlaceOfInterest"]
+essai type=BarOrPub -> HTTP 200 ; 1er lieu : ["FoodEstablishment","BarOrPub","PlaceOfInterest","PointOfInterest"]
+Échantillon : 6000 lieux lus, dont 134 bars/cafés/boîtes, dont 57 avec photo
+  type : FastFoodRestaurant CafeOrCoffeeShop CafeOrTeahouse Restaurant PointOfInterest Fo
+  type : BarOrPub PlaceOfInterest FoodEstablishment PointOfInterest
+  type : Winery PointOfInterest Restaurant FoodEstablishment PlaceOfInterest BistroOrWine
+  type : FastFoodRestaurant Winery Restaurant CafeOrTeahouse CafeOrCoffeeShop PointOfInte
+  type : Restaurant PointOfInterest FoodEstablishment PlaceOfInterest CafeOrTeahouse Cafe
