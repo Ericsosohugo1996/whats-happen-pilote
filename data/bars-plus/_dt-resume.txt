@@ -1,3 +1,11 @@
-DATAtourisme : 59 pages lues, 5789 lieux vus, 0 avec photo et position (photo : 2180, position : 0). Champs : hasBeenCreatedBy,isLocatedAt,lastUpdate,hasDescription,label,type,lastUpdateDatatourisme,hasContact,uri,uuid. Exemple de lieu sans position : [{"geo":{"latitude":49.5693,"longitude":3.62691271},"address":[{"hasAddressCity":{"insee":"02408","label":{"@fr":"Laon"}},"streetAddress":["11 Rue Bonnot"],"postalCode":"02000","addressLocality":"Laon"}]}]. TERMINÉ.
-Nos bars : 2440. Rapprochés avec une photo officielle : 0 (dont 0 sans photo aujourd'hui).
-Par ville : 
+DATAtourisme : 59 pages lues, 5789 lieux vus, 2115 avec photo et position (photo : 2180, position : 5789). Champs : hasBeenCreatedBy,isLocatedAt,lastUpdate,hasDescription,label,type,lastUpdateDatatourisme,hasContact,uri,uuid. Exemple de lieu sans position : aucun. TERMINÉ.
+Nos bars : 2440. Rapprochés avec une photo officielle : 57 (dont 57 sans photo aujourd'hui).
+Par ville : pau 10, limoges 7, bayonne 6, bourges 5, dijon 4, nancy 4, agen 2, besancon 2, montdemarsan 2, nevers 2, orleans 2, perigueux 2
+exemple : agen / L'Indé = L'indé (auteur : L'indé ; fournisseur : OT Destination Agen)
+exemple : agen / Abri 111 = Abri 111 (auteur : abri 111 ; fournisseur : OT Destination Agen)
+exemple : bayonne / Pub Mulligan = Pub Mulligan (auteur : Pub Mulligan ; fournisseur : OT Anglet)
+exemple : bayonne / La guinguette du canal = La Guinguette du Canal (auteur : La Guinguette du Canal ; fournisseur : OT Anglet)
+exemple : bayonne / Apérock Café = Apérock Café (auteur : Apérock Café ; fournisseur : OT Anglet)
+exemple : bayonne / Katie Daly's = Katie Daly's (auteur : © Katie Daly's ; fournisseur : OT Bayonne)
+exemple : bayonne / La Chope = La Chope (auteur : ©Pablo Ordas ; fournisseur : OT Anglet)
+exemple : bayonne / Big Moustache = Big Moustache (auteur : Big Moustache 64 ; fournisseur : OT Anglet)
