@@ -39,7 +39,7 @@ function findRights(rep) {
 }
 function findGeo(o) {
   let la = null, lo = null;
-  function num(v) { const t = parseFloat(firstText(v)); return isFinite(t) ? t : null; }
+  function num(v) { const t = typeof v === "number" ? v : parseFloat(firstText(v)); return isFinite(t) ? t : null; }
   (function walk(v) {
     if (v == null || (la != null && lo != null)) return;
     if (Array.isArray(v)) { for (const x of v) walk(x); return; }
@@ -79,7 +79,7 @@ function km(a, b, c, d) {
   if (!KEY) { console.log("Pas de clé DATATOURISME_API_KEY."); return; }
   let cache = { ti: 0, next: "", pages: 0, seen: 0, rows: [] };
   try { cache = JSON.parse(fs.readFileSync(CACHE, "utf8")); } catch (e) {}
-  if (cache.v !== 3) cache = { v: 3, ti: 0, next: "", pages: 0, seen: 0, rows: [], withImg: 0, withGeo: 0, keys: "" };
+  if (cache.v !== 4) cache = { v: 4, ti: 0, next: "", pages: 0, seen: 0, rows: [], withImg: 0, withGeo: 0, keys: "" };
   let req = 0, fails = 0;
   while (cache.ti < TYPES.length && req < MAX_REQ && !TIME_UP()) {
     const url = cache.next || BASE + "/v1/placeOfInterest?page_size=100&lang=fr&type=" + TYPES[cache.ti] + "";
