@@ -39,15 +39,21 @@ function findRights(rep) {
 }
 function findGeo(o) {
   let la = null, lo = null;
+  function num(v) { const t = parseFloat(firstText(v)); return isFinite(t) ? t : null; }
   (function walk(v) {
     if (v == null || (la != null && lo != null)) return;
     if (Array.isArray(v)) { for (const x of v) walk(x); return; }
     if (typeof v === "object") {
-      if (v.latitude != null && v.longitude != null && la == null) { la = parseFloat(firstText(v.latitude)); lo = parseFloat(firstText(v.longitude)); return; }
+      let a = null, b = null;
+      for (const [k, x] of Object.entries(v)) {
+        if (/^(schema:|geo:|wgs84:)?(lat|latitude)$/i.test(k)) a = num(x);
+        if (/^(schema:|geo:|wgs84:)?(lon|lng|long|longitude)$/i.test(k)) b = num(x);
+      }
+      if (a != null && b != null && la == null) { la = a; lo = b; return; }
       for (const x of Object.values(v)) walk(x);
     }
   })(o.isLocatedAt);
-  return isFinite(la) && isFinite(lo) ? [la, lo] : null;
+  return la != null && lo != null ? [la, lo] : null;
 }
 async function api(url) {
   const r = await fetch(url, { headers: { "X-API-Key": KEY, Accept: "application/json" } });
@@ -73,7 +79,7 @@ function km(a, b, c, d) {
   if (!KEY) { console.log("Pas de clé DATATOURISME_API_KEY."); return; }
   let cache = { ti: 0, next: "", pages: 0, seen: 0, rows: [] };
   try { cache = JSON.parse(fs.readFileSync(CACHE, "utf8")); } catch (e) {}
-  if (cache.v !== 2) cache = { v: 2, ti: 0, next: "", pages: 0, seen: 0, rows: [], withImg: 0, withGeo: 0, keys: "" };
+  if (cache.v !== 3) cache = { v: 3, ti: 0, next: "", pages: 0, seen: 0, rows: [], withImg: 0, withGeo: 0, keys: "" };
   let req = 0, fails = 0;
   while (cache.ti < TYPES.length && req < MAX_REQ && !TIME_UP()) {
     const url = cache.next || BASE + "/v1/placeOfInterest?page_size=100&lang=fr&type=" + TYPES[cache.ti] + "";
@@ -88,6 +94,7 @@ function km(a, b, c, d) {
       if (img) cache.withImg = (cache.withImg || 0) + 1;
       if (g) cache.withGeo = (cache.withGeo || 0) + 1;
       if (!cache.keys) cache.keys = Object.keys(o).join(",");
+      if (!g && !cache.loc) cache.loc = JSON.stringify(o.isLocatedAt).slice(0, 600);
       if (img && /^https:\/\//i.test(img) && g) cache.rows.push({ n: firstText(o.label).slice(0, 80), la: g[0], lo: g[1], u: img, a: findRights(rep), s: firstText(o.hasBeenCreatedBy).slice(0, 60) });
     }
     const nx = j.meta && j.meta.next;
@@ -113,7 +120,7 @@ function km(a, b, c, d) {
     if (best) matches.push({ id: b.id, city: b.city, title: b.title, dt: best.n, photo: best.u, author: best.a, source: best.s, had: b.has });
   }
   const lines = [];
-  lines.push("DATAtourisme : " + cache.pages + " pages lues, " + cache.seen + " lieux vus, " + cache.rows.length + " avec photo et position (photo : " + cache.withImg + ", position : " + cache.withGeo + "). Champs : " + cache.keys + ". " + (done ? "TERMINÉ." : "PAS FINI : relance le robot."));
+  lines.push("DATAtourisme : " + cache.pages + " pages lues, " + cache.seen + " lieux vus, " + cache.rows.length + " avec photo et position (photo : " + cache.withImg + ", position : " + cache.withGeo + "). Champs : " + cache.keys + ". Exemple de lieu sans position : " + (cache.loc || "aucun") + ". " + (done ? "TERMINÉ." : "PAS FINI : relance le robot."));
   lines.push("Nos bars : " + ours.length + ". Rapprochés avec une photo officielle : " + matches.length + " (dont " + matches.filter((m) => !m.had).length + " sans photo aujourd'hui).");
   const byCity = {}; for (const m of matches) byCity[m.city] = (byCity[m.city] || 0) + 1;
   lines.push("Par ville : " + Object.entries(byCity).sort((a, b) => b[1] - a[1]).slice(0, 12).map((e) => e[0] + " " + e[1]).join(", "));
