@@ -314,6 +314,35 @@ renderLocateBar = function () {
       return themeEvents(th, 14).length >= 2 || themeEvents(th, 45).length >= 2;
     } catch (e) { return false; }
   }
+  // bars « bien renseignés » (data/bars-plus/<ville>.json, OpenStreetMap) : chaînes et faux bars écartés
+  var CHAIN_RE = /v and b|levrette|o'?sullivan|au bureau|caf[ée] leffe|delirium|hippopotamus|columbus|ninkasi|frog and rosbif|pmu|tabac/i;
+  var NOTBAR_RE = /laser|bowling|h[ôo]tel|cin[ée]ma|casino|golf|camping|restaurant|pizz|kebab/i;
+  var barPlusCache = {};
+  function barsPlus(cb) {
+    var key = state.city;
+    if (barPlusCache[key]) return cb(barPlusCache[key]);
+    fetch("data/bars-plus/" + encodeURIComponent(key) + ".json").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }).then(function (rows) {
+      rows = (Array.isArray(rows) ? rows : []).filter(function (r) { return r && r.title && r.lat && r.lng && !NOTBAR_RE.test(r.title); });
+      var good = rows.filter(function (r) { return !CHAIN_RE.test(r.title); });
+      if (good.length >= 3) rows = good;
+      var out = rows.slice(0, 8).map(function (r) {
+        var ex = allEvents().filter(function (e) { return e.id === r.id; })[0];
+        var tags = (r.tags || []).filter(function (t) { return t !== "Bière artisanale" || r.kind === "Brasserie artisanale"; });
+        var desc = [r.kind].concat(tags).join(" · ");
+        if (ex) { if (!ex.photo && r.photo) { ex.photo = r.photo; ex.photoCredit = r.photoCredit || "Wikimedia Commons"; } if (desc) ex.description = desc; return ex; }
+        var ev = {
+          id: r.id, isPlace: true, scene: "village", city: state.city, category: "Bar", title: r.title, date: null, time: "",
+          place: r.address ? r.address + ", " + cityName() : cityName(), lat: r.lat, lng: r.lng, price: "Voir sur place", thumb: "", source: "openstreetmap",
+          description: desc, photo: r.photo || "", photoCredit: r.photo ? (r.photoCredit || "Wikimedia Commons") : ""
+        };
+        if (Array.isArray(state.dataTourismePlaces)) state.dataTourismePlaces.push(ev);
+        return ev;
+      });
+      barPlusCache[key] = out;
+      cb(out);
+    });
+  }
+
   function css() {
     if (document.getElementById("wz-m-css")) return;
     var st = document.createElement("style"); st.id = "wz-m-css";
@@ -353,14 +382,22 @@ renderLocateBar = function () {
   function load(th, cb) {
     if (th && th.key === "bar") {
       var bi = barItems();
-      if (bi.items.length >= 2) return cb({ items: bi.items, src: false, th: th, events: true, sub: bi.nEvents ? "Soirées dans les bars et clubs, puis les bars les plus proches" : "Les bars les plus proches de toi" });
+      return barsPlus(function (plus) {
+        if (plus.length >= 3) {
+          var evs = bi.items.filter(function (e) { return !e.isPlace; }).slice(0, 3);
+          return cb({ items: evs.concat(plus).slice(0, 8), src: false, th: th, events: true, sub: evs.length ? "Soirées dans les bars et clubs, puis les bars les mieux renseignés" : "Les bars les mieux renseignés de " + cityName() });
+        }
+        if (bi.items.length >= 2) return cb({ items: bi.items, src: false, th: th, events: true, sub: bi.nEvents ? "Soirées dans les bars et clubs, puis les bars les plus proches" : "Les bars les plus proches de toi" });
+        tail(null);
+      });
     }
     if (th && th.key !== "musee" && th.key !== "bar") {
       var days = 14, ev = themeEvents(th, days);
       if (ev.length < 4) { var ev2 = themeEvents(th, 45); if (ev2.length > ev.length) { ev = ev2; days = 45; } }
       if (ev.length >= 2) return cb({ items: ev, src: false, th: th, events: true, days: days });
-      if (th.key === "bar" || th.key === "expo") th = null;   // peu de résultats : retour aux incontournables de la ville
+      th = null;   // peu de résultats : retour aux incontournables de la ville
     }
+    function tail(th) {
     var key = state.city, wantMus = th && th.key === "musee";
     function fin(res) { res.th = th && th.key === "musee" ? th : null; cb(res); }
     var cached = wdCache[key];
@@ -374,6 +411,8 @@ renderLocateBar = function () {
       if (wantMus) all = items.filter(function (e) { return MUSEUM_RE.test(e.title); }).concat(items.filter(function (e) { return !MUSEUM_RE.test(e.title); }));
       fin({ items: all.slice(0, 8), src: src });
     });
+    }
+    tail(th);
   }
 
   function cardHtml(ev, first) {
