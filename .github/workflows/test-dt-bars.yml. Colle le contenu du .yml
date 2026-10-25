@@ -1,0 +1,38 @@
+name: Test DATAtourisme bars
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bars-sympa
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Compter les photos libres
+        env:
+          DATATOURISME_API_KEY: ${{ secrets.DATATOURISME_API_KEY }}
+        run: node test-dt-bars.js
+
+      - name: Enregistrer le compte rendu
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add data/bars-plus/_test-dt-resume.txt
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau"
+          else
+            git commit -m "Test DATAtourisme bars (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
