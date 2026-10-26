@@ -220,7 +220,7 @@
     st.textContent = '#wz-idea .wz-s-row{display:flex;gap:8px;overflow-x:auto;margin:0 0 10px;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}#wz-idea .wz-s-row::-webkit-scrollbar{display:none}#wz-idea .wz-s-row .wz-i-c{flex:none;padding:9px 13px;font-size:13px;white-space:nowrap}' +
       '#wz-idea .wz-s-btns{display:flex;gap:10px;margin-top:2px}#wz-idea .wz-s-btns .wz-i-go,#wz-idea .wz-s-btns .wz-i-alt{flex:1;width:auto;margin:0;padding:15px 8px}' +
       '#wz-idea .wz-s-send{margin-top:10px}' +
-      'html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::before{content:"Surprends-moi" !important}html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::after{content:"Une sortie près de toi, en 1 toucher" !important}';
+      'html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::before{content:"Surprends-moi" !important}html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::after{content:"Une sortie près de toi, en 1 clic" !important}';
     document.head.appendChild(st);
   }
   function surpriseRank() {
