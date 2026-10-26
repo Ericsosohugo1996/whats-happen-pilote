@@ -38,6 +38,7 @@ function pertinent(x) {
   if (DROP.test(ty) && !SAVE.test(ty)) return false;
   if (/d[ée]truit|disparu|rasé|ancien château|ancienne? (compagnie|institution)/i.test(ty + " " + (x.description || ""))) return false;
   if (/compagnie|institution th[ée]âtrale|palais de justice|cour d'assises/i.test(ty + " " + (x.description || ""))) return false;
+  if (/artefact|objet d.art|tableau|peinture/i.test(ty) || /conserv[ée]e? (au|à|dans)/i.test(x.description || "")) return false;   // œuvres de musée (Vénus de Milo…)
   return KEEP.test(ty + " | " + (x.description || ""));
 }
 const RELIG = /[ée]glise|basilique|cath[ée]drale|chapelle|abbaye|abbatiale|synagogue|mosqu[ée]e|temple|collégiale|sanctuaire/i;

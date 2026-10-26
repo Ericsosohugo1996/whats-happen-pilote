@@ -69,6 +69,20 @@ function mustSeeList(max) {
     .slice(0, max);
 }
 
+// distance affichée sur les lieux « À ne pas manquer »
+// - tu es dans la ville (moins de 20 km du centre) : distance depuis toi → « 15 min à pied de toi »
+// - tu regardes une autre ville (ou position inconnue) : distance depuis le centre-ville → « 10 min à pied du centre », « 4,5 km du centre »
+window.__wzDistLabel = function (lat, lng) {
+  try {
+    var c = CITIES[state.city];
+    if (!c || lat == null || lng == null || !lat || !lng) return "";
+    var me = state.userPos && haversineKm(state.userPos.lat, state.userPos.lng, c.lat, c.lng) <= 20 ? state.userPos : null;
+    var from = me || c, d = haversineKm(from.lat, from.lng, lat, lng);
+    var txt = d <= 3 ? Math.max(2, Math.round(d * 12 / 5) * 5) + " min à pied" : d.toFixed(1).replace(".", ",") + " km";
+    return txt + (me ? " de toi" : " du centre");
+  } catch (e) { return ""; }
+};
+
 function __wdOpen(w, cityName) {
   const norm = (t) => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   const b = norm(w.title);
@@ -180,7 +194,7 @@ function __ensureSurpriseUI() {
             title: w.title.charAt(0).toUpperCase() + w.title.slice(1),
             desc: w.description ? w.description.charAt(0).toUpperCase() + w.description.slice(1) : "",
             photo: w.image ? w.image + (w.image.indexOf("?") < 0 ? "?width=240" : "") : "",
-            d: (w.lat != null && w.lng != null) ? haversineKm(ref.lat, ref.lng, w.lat, w.lng) : null,
+            d: (w.lat != null && w.lng != null) ? haversineKm(ref.lat, ref.lng, w.lat, w.lng) : null, lat: w.lat, lng: w.lng,
             w
           }));
         }
@@ -191,7 +205,7 @@ function __ensureSurpriseUI() {
         title: x.ev.title,
         desc: String(x.ev.description || "").replace(/\s+/g, " ").trim(),
         photo: x.ev.photo || x.ev.thumb || "",
-        d: x.d, id: x.ev.id
+        d: x.d, id: x.ev.id, lat: x.ev.lat, lng: x.ev.lng
       }));
     }
     if (!items.length) {
@@ -207,7 +221,7 @@ function __ensureSurpriseUI() {
           (x.photo ? '<div style="flex:0 0 84px; background-color:#14213D; background-image:url(\'' + esc(x.photo) + '\'); background-size:cover; background-position:center;"></div>' : '<div style="flex:0 0 84px; background:#14213D; color:#fff; display:flex; align-items:center; justify-content:center; font-size:26px;">🏛️</div>') +
           '<div style="padding:10px 12px 10px 0; min-width:0; flex:1;">' +
             '<div style="font-weight:700; font-size:14px; line-height:1.25;">' + esc(x.title) + '</div>' +
-            (x.d != null ? '<div style="font-size:11.5px; color:#777; margin:2px 0 4px;">' + (Math.round(x.d * 10) / 10) + ' km</div>' : '<div style="height:4px;"></div>') +
+            (window.__wzDistLabel(x.lat, x.lng) ? '<div style="font-size:11.5px; color:#777; margin:2px 0 4px;">' + window.__wzDistLabel(x.lat, x.lng) + '</div>' : '<div style="height:4px;"></div>') +
             (desc ? '<div style="font-size:12px; color:#555; line-height:1.35;">' + esc(desc.length > 110 ? desc.slice(0, 110).replace(/\s+\S*$/, "") + "…" : desc) + '</div>' : "") +
           '</div></div>';
       }).join("");
@@ -351,9 +365,19 @@ renderLocateBar = function () {
   }
 
   // fiche utilisable dans l'appli : le lieu existe déjà (lieux « À voir »), sinon on l'ajoute à la liste des lieux
+  // un lieu « À voir » de l'appli correspond-il vraiment au lieu Wikidata ? (même nom, ou nom très proche, et à moins de 1,5 km)
+  var NOTSIGHT_RE = /appartement|studio|chambre|g[îi]te|location|h[ôo]tel|r[ée]sidence|camping|restaurant|caf[ée]|bar |boutique|randonn[ée]e|balade|visite guid|direction|service|p[ôo]le|mairie|office/i;
+  function sameSight(e, w, b) {
+    var a = norm(e.title);
+    if (!a || a.length < 4 || NOTSIGHT_RE.test(e.title)) return false;
+    if (w.lat != null && e.lat && haversineKm(w.lat, w.lng, e.lat, e.lng) > 1.5) return false;
+    if (a === b) return true;
+    var s = a.length < b.length ? a : b, l = a.length < b.length ? b : a;
+    return (l.indexOf(s + " ") === 0 || l.indexOf(" " + s) !== -1) && s.length >= 0.5 * l.length;
+  }
   function resolve(w) {
     var b = norm(w.title), found = null;
-    if (b.length >= 6) found = allEvents().filter(function (e) { if (!e.isPlace || !(state.userPos ? true : e.city === state.city)) return false; var a = norm(e.title); return a === b || a.indexOf(b) !== -1 || b.indexOf(a) !== -1; })[0];
+    if (b.length >= 6) found = allEvents().filter(function (e) { return e.isPlace && e.city === state.city && sameSight(e, w, b); })[0];
     if (found) return found;
     var id = "wd-" + (w.id || b.replace(/ /g, "-"));
     var ex = allEvents().filter(function (e) { return e.id === id; })[0];
@@ -371,11 +395,11 @@ renderLocateBar = function () {
 
   function dt() {
     var GOOD = /mus[ée]e|ch[âa]teau|cath[ée]drale|basilique|abbaye|jardin|parc |palais|tour |monument|forteresse|citadelle|fort |grotte|panorama|remparts|op[ée]ra|[ée]glise|chapelle|vieux|historique|patrimoine|place |pont /i;
-    var BAD = /biblioth[èe]que|m[ée]diath[èe]que|archives|cours |atelier|stage|boutique|restaurant|location|vente|gîte|camping|salle des f/i;
-    var seen = {};
-    return allEvents().filter(function (e) { return e.isPlace && e.category === "À voir" && e.title && (state.userPos ? true : e.city === state.city); })
+    var BAD = /biblioth[èe]que|m[ée]diath[èe]que|archives|cours |atelier|stage|boutique|restaurant|location|vente|gîte|camping|salle des f|direction|service|p[ôo]le |mairie|office|caf[ée]|\bbar\b|brasserie|appartement|chambre|h[ôo]tel|randonn[ée]e/i;
+    var c = CITIES[state.city], seen = {};
+    return allEvents().filter(function (e) { return e.isPlace && e.category === "À voir" && e.title && e.city === state.city && !BAD.test(e.title) && (!c || !e.lat || haversineKm(c.lat, c.lng, e.lat, e.lng) <= 10); })
       .filter(function (e) { var k = norm(e.title); if (seen[k]) return false; seen[k] = 1; return true; })
-      .map(function (e) { return { ev: e, s: Math.min(String(e.description || "").length, 400) + (e.photo || e.thumb ? 150 : 0) + (GOOD.test(e.title) ? 400 : 0) - (BAD.test(e.title) ? 900 : 0) }; })
+      .map(function (e) { return { ev: e, s: Math.min(String(e.description || "").length, 400) + (e.photo || e.thumb ? 150 : 0) + (GOOD.test(e.title) ? 400 : 0) }; })
       .sort(function (a, b) { return b.s - a.s; }).slice(0, 8).map(function (x) { return x.ev; });
   }
 
@@ -402,11 +426,13 @@ renderLocateBar = function () {
     function fin(res) { res.th = th && th.key === "musee" ? th : null; cb(res); }
     var cached = wdCache[key];
     if (cached) return fin(wantMus ? { items: cached.items.filter(function (e) { return MUSEUM_RE.test(e.title); }).concat(cached.items.filter(function (e) { return !MUSEUM_RE.test(e.title); })).slice(0, 8), src: cached.src } : cached);
-    fetch("data/wikidata/" + encodeURIComponent(key) + ".json").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }).then(function (wd) {
+    function get() { return fetch("data/wikidata/" + encodeURIComponent(key) + ".json", { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+    get().catch(function () { return new Promise(function (ok) { setTimeout(ok, 800); }).then(get); }).catch(function () { return []; }).then(function (wd) {
       var items = [], src = false;
-      if (Array.isArray(wd) && wd.length >= 3) { items = wd.slice(0, 12).map(resolve); src = true; }
+      // œuvres exposées dans un musée (Vénus de Milo, Victoire de Samothrace…) : ce sont des objets, pas des lieux
+      if (Array.isArray(wd)) wd = wd.filter(function (w) { return w && w.title && !/artefact|objet d.art|tableau|peinture/i.test(w.types || "") && !/conserv[ée]e? (au|à|dans)/i.test(w.description || ""); });
+      if (Array.isArray(wd) && wd.length >= 3) { items = wd.slice(0, 12).map(resolve); src = true; wdCache[key] = { items: items.slice(0, 8), src: src }; }
       else items = dt();
-      wdCache[key] = { items: items.slice(0, 8), src: src };
       var all = items;
       if (wantMus) all = items.filter(function (e) { return MUSEUM_RE.test(e.title); }).concat(items.filter(function (e) { return !MUSEUM_RE.test(e.title); }));
       fin({ items: all.slice(0, 8), src: src });
@@ -430,9 +456,7 @@ renderLocateBar = function () {
   }
 
   function cardHtml(ev, first) {
-    var ref = (typeof referencePoint === "function") ? referencePoint() : null;
-    var d = (ref && ev.lat && ev.lng) ? haversineKm(ref.lat, ref.lng, ev.lat, ev.lng) : null;
-    var dist = d == null ? "" : (d <= 3 ? Math.max(2, Math.round(d * 12 / 5) * 5) + " min à pied" : d.toFixed(1).replace(".", ",") + " km");
+    var dist = (typeof window.__wzDistLabel === "function") ? window.__wzDistLabel(ev.lat, ev.lng) : "";
     var desc = String(ev.description || "").replace(/\s+/g, " ").trim();
     if (desc.length > 120) desc = desc.slice(0, 120).replace(/\s+\S*$/, "") + "…";
     return '<button type="button" class="wz-i-card" data-i="open" data-id="' + esc(ev.id) + '" data-m="1"><div class="wz-i-ph">' + ((ev.isPlace && ev.category === "Bar" && !ev.photo) ? barVisual(ev) : (typeof eventPhotoHTML === "function" ? eventPhotoHTML(ev) : "")) +
