@@ -378,6 +378,8 @@ renderLocateBar = function () {
   function resolve(w) {
     var b = norm(w.title), found = null;
     if (b.length >= 6) found = allEvents().filter(function (e) { return e.isPlace && e.city === state.city && sameSight(e, w, b); })[0];
+    // la photo Wikidata est celle du vrai lieu : elle remplace une photo trouvée au hasard (ex. Belcastel pour le Château d'If)
+    if (found && w.image) { found.photo = w.image + (w.image.indexOf("?") < 0 ? "?width=800" : ""); found.thumb = ""; found.photoCredit = "Wikimedia Commons"; }
     if (found) return found;
     var id = "wd-" + (w.id || b.replace(/ /g, "-"));
     var ex = allEvents().filter(function (e) { return e.id === id; })[0];
