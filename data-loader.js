@@ -231,8 +231,47 @@
   function candidates(img, u) {
     var c = [], w = width(img), h = hash(u);
     if (local && local[h]) c.push("photos-local/" + h + ".webp");
-    c.push(prox(u, w), u, prox(u, w, "&r=" + Date.now()));
+    c.push(prox(u, w), u, prox(u, w, "&r=" + Date.now()), bust(u));
     return c;
+  }
+  // même adresse avec un petit paramètre en plus : le navigateur ne réutilise pas un échec gardé en mémoire
+  function bust(u) { return u + (u.indexOf("?") < 0 ? "?" : "&") + "wz=" + Date.now(); }
+  // dernier recours affiché (illustration) : on retente discrètement plus tard (4 s, 12 s, 30 s) et on remet la vraie photo dès qu'elle répond
+  function rescue(img) {
+    try {
+      var p = img.parentNode, z = img._wz; if (!p || !z) return;
+      var idx = Array.prototype.indexOf.call(p.childNodes, img);
+      var keep = {}; ["alt", "style", "referrerpolicy", "data-scene"].forEach(function (a) { if (img.hasAttribute(a)) keep[a] = img.getAttribute(a); });
+      var cls = String(img.className || "").replace(/\bwz-ld\b/g, "").trim(), w = width(img);
+      var delays = [4000, 12000, 30000];
+      function put(url) {
+        var cur = p.childNodes[idx];
+        if (!cur || !p.isConnected || (cur.tagName === "IMG" && cur.complete && cur.naturalWidth)) return;
+        var ni = document.createElement("img");
+        for (var a in keep) ni.setAttribute(a, keep[a]);
+        ni.className = (cls + " wz-in").trim();
+        ni._wz = { o: z.o, c: [url], i: 0, h: z.h, L: true, ok: true };
+        ni.src = url;
+        p.replaceChild(ni, cur);
+      }
+      function attempt(k) {
+        if (k >= delays.length) return;
+        setTimeout(function () {
+          if (!p.isConnected) return;
+          var u1 = (local && local[z.h]) ? "photos-local/" + z.h + ".webp" : prox(z.o, w, "&r=" + Date.now());
+          var t = new Image(); t.referrerPolicy = "no-referrer";
+          t.onload = function () { put(u1); };
+          t.onerror = function () {
+            var u2 = bust(z.o), t2 = new Image(); t2.referrerPolicy = "no-referrer";
+            t2.onload = function () { put(u2); };
+            t2.onerror = function () { attempt(k + 1); };
+            t2.src = u2;
+          };
+          t.src = u1;
+        }, delays[k]);
+      }
+      attempt(0);
+    } catch (e) {}
   }
   // pendant le chargement : zone grise qui scintille (au lieu d'une illustration), puis la photo apparaît en fondu
   try {
@@ -267,11 +306,11 @@
     // la liste des copies hébergées chez nous est arrivée entre-temps : on essaie la copie avant d'abandonner
     if (!z.L && local && local[z.h]) { z.L = true; z.c.splice(z.i + 1, 0, "photos-local/" + z.h + ".webp"); }
     var n = z.i + 1;
-    if (n >= z.c.length) { if (!local && !z.W) { z.W = true; e.stopImmediatePropagation(); localReady.then(function () { if (local && local[z.h]) { z.L = true; z.c.push("photos-local/" + z.h + ".webp"); z.i = z.c.length - 1; img.src = z.c[z.i]; } else if (img.onerror) img.onerror(); }); } return; } // tout a échoué : l'appli affiche son illustration
+    if (n >= z.c.length) { if (!local && !z.W) { z.W = true; e.stopImmediatePropagation(); localReady.then(function () { if (local && local[z.h]) { z.L = true; z.c.push("photos-local/" + z.h + ".webp"); z.i = z.c.length - 1; img.src = z.c[z.i]; } else { rescue(img); if (img.onerror) img.onerror(); } }); return; } if (!z.ok) rescue(img); return; } // tout a échoué : l'appli affiche son illustration (et on retente plus tard)
     e.stopImmediatePropagation();
     z.i = n;
     var go = function () { img.src = z.c[n]; };
-    if (n === z.c.length - 1) setTimeout(go, 2500); else go();
+    if (n >= z.c.length - 2) setTimeout(go, n === z.c.length - 1 ? 3000 : 1500); else go();
   }, true);
   try {
     new MutationObserver(function (ms) {
