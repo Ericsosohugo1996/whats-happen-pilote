@@ -1,7 +1,7 @@
 // Whazup — pages « Sorties » lisibles par Google, mises à jour chaque nuit.
 // Pour chaque ville (et chaque commune qui a assez de sorties) :
 //   sorties/<ville>/                    → sorties des 14 prochains jours
-//   sorties/<ville>/concerts/ expos/ spectacles/ marches/ gratuit/ ce-week-end/   → pages ciblées
+//   sorties/<ville>/soirees/ halloween/ (en saison) concerts/ expos/ spectacles/ marches/ gratuit/ ce-week-end/   → pages ciblées
 // Lit data/events/*.json (créé par split-data.js) et écrit sorties/, sitemap.xml.
 // Une page avec trop peu de sorties n'est pas créée (Google n'aime pas les pages vides).
 // Pour tout retirer : supprimer le dossier sorties/, ce fichier, son workflow, et remettre l'ancien sitemap.xml.
@@ -19,7 +19,11 @@ const DAYS = 14;
 const MAX_LISTED = 40, MAX_THEME_LISTED = 30, MAX_LD = 15;
 const OUT = "sorties";
 
+// Halloween : page de saison, générée seulement du 10 octobre au 1er novembre (le dossier est reconstruit chaque nuit, elle disparaît ensuite toute seule)
+const NOW_D = new Date(), HW_SEASON = (NOW_D.getMonth() === 9 && NOW_D.getDate() >= 10) || (NOW_D.getMonth() === 10 && NOW_D.getDate() <= 1);
 const THEMES = [
+  ...(HW_SEASON ? [{ slug: "halloween", label: "Halloween", one: "soirées et sorties Halloween", test: (e) => /hallowe.?en/i.test(String(e.title || "")) }] : []),
+  { slug: "soirees", label: "Soirées", one: "soirées", test: (e) => e.category === "Soirée" },
   { slug: "concerts", label: "Concerts", one: "concerts", test: (e) => e.category === "Musique" },
   { slug: "expos", label: "Expos", one: "expositions", test: (e) => e.category === "Expo" },
   { slug: "spectacles", label: "Spectacles", one: "spectacles", test: (e) => e.category === "Spectacles" },
@@ -274,6 +278,17 @@ function main() {
         title = "Que faire à " + name + " ce week-end (" + shortDate(from) + " au " + shortDate(to) + ") | Whazup";
         desc = n + " sorties à " + name + " ce week-end, du " + shortDate(from) + " au " + shortDate(to) + " : concerts, expos, spectacles, marchés, sorties gratuites.";
         intro2 = n + " sorties à " + name + " du " + shortDate(from) + " au " + shortDate(to) + (places.length ? ", notamment " + joinFr(places) : "") + ".";
+      } else if (T.slug === "soirees") {
+        h1 = "Soirées à " + name + " : clubs, DJ, bars";
+        title = "Soirées à " + name + " ce soir et ce week-end : " + n + " soirées | Whazup";
+        desc = n + " soirées à " + name + " dans les " + DAYS + " prochains jours : clubs, DJ sets, techno, house, rap, afro, bars et afterworks. Mis à jour chaque jour.";
+        intro2 = n + " soirées à " + name + " dans les " + DAYS + " prochains jours, réparties sur " + days + " jour" + (days > 1 ? "s" : "") + (places.length ? ", notamment " + joinFr(places) : "") + ".";
+      } else if (T.slug === "halloween") {
+        const yr = NOW_D.getFullYear();
+        h1 = "Halloween " + yr + " à " + name + " : soirées et sorties";
+        title = "Halloween " + yr + " à " + name + " : " + n + " soirées et sorties | Whazup";
+        desc = "Que faire pour Halloween à " + name + " ? " + n + " soirées, fêtes et sorties Halloween jusqu'au 1er novembre : clubs, bars, animations en famille.";
+        intro2 = n + " soirées et sorties Halloween à " + name + (places.length ? ", notamment " + joinFr(places) : "") + ".";
       } else if (T.slug === "gratuit") {
         h1 = "Sorties gratuites à " + name;
         title = "Sorties gratuites à " + name + " : " + n + " idées à venir | Whazup";
