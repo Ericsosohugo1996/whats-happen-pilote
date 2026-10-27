@@ -44,7 +44,11 @@ function parisParts(s) {
 function imageOf(e) {
   let v = first(e, ["coverUrl", "cover_url", "imageUrl", "image_url", "image.url", "image", "cover.url", "cover", "images.0.url", "images.0", "picture", "poster", "flyer", "visual"]);
   if (v && typeof v === "object") v = v.url || v.src || v.original || v.large || "";
-  return /^https?:\/\//.test(String(v || "")) ? String(v) : "";
+  v = /^https?:\/\//.test(String(v || "")) ? String(v) : "";
+  // affiches Shotgun (Cloudinary) : souvent très lourdes (PNG 1920 px, plusieurs Mo) → on demande une version légère à Cloudinary
+  if (/^https:\/\/res\.cloudinary\.com\/[^/]+\/image\/upload\//.test(v) && !/\/upload\/[a-z]_[^/]*\//.test(v)) v = v.replace(/\/image\/upload\//, "/image/upload/c_limit,w_800,f_auto,q_auto/");
+  if (/^https:\/\/assets\.shotgun\.live\/image\/upload\//.test(v)) v = v.replace(/w_(1920|1080|2048)/, "w_800");
+  return v;
 }
 function linkOf(e) {
   const v = first(e, ["url", "link", "shotgunUrl", "shotgun_url", "ticketUrl", "ticket_url", "ticketingUrl", "eventUrl", "event_url", "permalink"]);
