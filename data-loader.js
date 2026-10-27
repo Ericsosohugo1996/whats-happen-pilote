@@ -234,13 +234,23 @@
     c.push(prox(u, w), u, prox(u, w, "&r=" + Date.now()));
     return c;
   }
+  // pendant le chargement : zone grise qui scintille (au lieu d'une illustration), puis la photo apparaît en fondu
+  try {
+    var st = document.createElement("style");
+    st.textContent = "img.wz-ld{background:linear-gradient(100deg,#E6EBF2 30%,#F4F6FA 50%,#E6EBF2 70%) 0 0/300% 100%;animation:wzsh 1.3s linear infinite;color:transparent;font-size:0}" +
+      "@keyframes wzsh{0%{background-position:100% 0}100%{background-position:0 0}}img.wz-in{animation:wzfade .35s ease}@keyframes wzfade{from{opacity:0}to{opacity:1}}";
+    (document.head || document.documentElement).appendChild(st);
+  } catch (e) {}
+  function done(img) { img.classList.remove("wz-ld"); img.classList.add("wz-in"); }
   function prep(img) {
     try {
       if (!img || img.tagName !== "IMG" || img._wz) return;
       var u = img.getAttribute("src");
       if (!u || !eligible(u)) return;
-      var c = candidates(img, u);
-      img._wz = { o: u, c: c, i: 0 };
+      var c = candidates(img, u), h = hash(u);
+      img._wz = { o: u, c: c, i: 0, h: h, L: !!(local && local[h]) };
+      if (!(img.complete && img.naturalWidth)) img.classList.add("wz-ld");
+      img.addEventListener("load", function () { done(img); });
       img.setAttribute("src", c[0]);
     } catch (e) {}
   }
@@ -253,8 +263,11 @@
   document.addEventListener("error", function (e) {
     var img = e.target;
     if (!img || img.tagName !== "IMG" || !img._wz) return;
-    var z = img._wz, n = z.i + 1;
-    if (n >= z.c.length) return; // tout a échoué : l'appli affiche son illustration
+    var z = img._wz;
+    // la liste des copies hébergées chez nous est arrivée entre-temps : on essaie la copie avant d'abandonner
+    if (!z.L && local && local[z.h]) { z.L = true; z.c.splice(z.i + 1, 0, "photos-local/" + z.h + ".webp"); }
+    var n = z.i + 1;
+    if (n >= z.c.length) { if (!local && !z.W) { z.W = true; e.stopImmediatePropagation(); localReady.then(function () { if (local && local[z.h]) { z.L = true; z.c.push("photos-local/" + z.h + ".webp"); z.i = z.c.length - 1; img.src = z.c[z.i]; } else if (img.onerror) img.onerror(); }); } return; } // tout a échoué : l'appli affiche son illustration
     e.stopImmediatePropagation();
     z.i = n;
     var go = function () { img.src = z.c[n]; };
@@ -266,8 +279,9 @@
     }).observe(document.documentElement, { childList: true, subtree: true });
   } catch (e) {}
   scan(document.documentElement);
+  var localReady = Promise.resolve();
   try {
-    fetch("photos-local/index.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+    localReady = fetch("photos-local/index.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
       if (!j || !j.h) return; var m = {}; for (var i = 0; i < j.h.length; i++) m[j.h[i]] = 1; local = m;
     }).catch(function () {});
   } catch (e) {}
