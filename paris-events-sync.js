@@ -39,7 +39,7 @@ function pickDate(r) {
       if (s.date > LIMIT) continue;
       const date = s.date > TODAY ? s.date : TODAY;
       const time = date === s.date && s.time >= "06:00" ? s.time : "";
-      return { date, time };
+      return { date, time, end: e.date };
     }
     if (occ.includes("_")) return null; // occurrences connues mais aucune à venir dans la fenêtre
   }
@@ -48,7 +48,7 @@ function pickDate(r) {
   if (e && e.date < TODAY) return null;
   if (s.date > LIMIT) return null;
   const date = s.date > TODAY ? s.date : TODAY;
-  return { date, time: date === s.date && s.time >= "06:00" ? s.time : "" };
+  return { date, time: date === s.date && s.time >= "06:00" ? s.time : "", end: e ? e.date : s.date };
 }
 
 function classify(r) {
@@ -121,6 +121,8 @@ function latlon(r) {
       createdAt: prev[id] || Date.now(),
       description: strip(r.lead_text || r.description).slice(0, 400),
     };
+    // expo / événement sur plusieurs jours : on garde la date de fin, l'appli l'affiche chaque jour jusqu'à cette date
+    if (d.end && d.end > d.date) ev.dateEnd = d.end;
     if (r.url) ev.link = r.url;
     if (r.cover_url) { ev.photo = r.cover_url; if (r.cover_credit) ev.photoCredit = strip(r.cover_credit).slice(0, 80); }
     out.push(ev); stats.ok++;
