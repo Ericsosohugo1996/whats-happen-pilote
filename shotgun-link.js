@@ -6,7 +6,7 @@
   "use strict";
   if (typeof openDetail !== "function") return;
   var css = document.createElement("style");
-  css.textContent = "#wz-sg-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin:14px 0 6px;padding:14px;border:none;border-radius:14px;background:#111;color:#fff;font-weight:800;font-size:15px;font-family:inherit;cursor:pointer;text-decoration:none;box-sizing:border-box}#wz-sg-btn small{font-weight:600;opacity:.75;font-size:12px}";
+  css.textContent = "#wz-sg-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin:14px 0 6px;padding:14px;border:none;border-radius:14px;background:#111 !important;color:#fff !important;font-weight:800;font-size:15px;font-family:inherit;cursor:pointer;text-decoration:none;box-sizing:border-box}#wz-sg-btn small{font-weight:600;opacity:.8;font-size:12px;color:#fff !important}#wz-sg-btn *{color:#fff !important}";
   document.head.appendChild(css);
   var base = openDetail;
   openDetail = function (id) {   // eslint-disable-line no-global-assign

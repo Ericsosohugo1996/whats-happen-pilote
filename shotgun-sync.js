@@ -58,7 +58,7 @@ function priceOf(e) {
   let p = first(e, ["ticketing.minimumPrice", "minPrice", "min_price", "lowestPrice", "lowest_price", "price", "priceMin", "price_min", "tickets.0.price", "deals.0.price"]);
   if (p && typeof p === "object") p = p.amount != null ? p.amount : p.value;
   p = Number(p);
-  if (isFinite(p) && p > 0) { if (p > 500) p = p / 100; return "Dès " + (Math.round(p * 100) / 100).toString().replace(".", ",") + " €"; }
+  if (isFinite(p) && p > 0) { if (p > 500) p = p / 100; return "Dès " + (Number.isInteger(p) ? String(p) : p.toFixed(2).replace(".", ",")) + " €"; }
   if (isFinite(p) && p === 0) return "Gratuit";
   return "Billetterie Shotgun";
 }
