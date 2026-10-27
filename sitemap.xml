@@ -1051,6 +1051,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/angers/marches/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/angers/gratuit/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1454,6 +1460,12 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/nice/expos/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/nice/spectacles/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2156,6 +2168,12 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/valence/marches/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/valence/gratuit/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -3361,6 +3379,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/arras/halloween/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/arras/soirees/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/arras/concerts/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -4105,6 +4135,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/albi/gratuit/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/albi/a-voir/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -4747,6 +4783,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/fort-de-france/ce-week-end/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/saint-denis-la-reunion/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -5072,6 +5114,18 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/dunkerque/a-voir/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/calais/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/calais/a-voir/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -5563,6 +5617,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/hyeres/ce-week-end/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/arles/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -5881,6 +5941,42 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/biarritz/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/biarritz/soirees/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/biarritz/concerts/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/biarritz/expos/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/biarritz/spectacles/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/biarritz/ce-week-end/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/romans-sur-isere/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -5924,42 +6020,6 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/romans-sur-isere/ce-week-end/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/biarritz/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/biarritz/soirees/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/biarritz/concerts/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/biarritz/expos/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/biarritz/spectacles/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/biarritz/ce-week-end/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -6043,6 +6103,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/ales/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/ales/gratuit/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/ales/ce-week-end/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/saint-brevin-les-pins/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -6092,24 +6170,6 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/guerande/ce-week-end/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/ales/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/ales/gratuit/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/ales/ce-week-end/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -6469,6 +6529,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/issy-les-moulineaux/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/issy-les-moulineaux/spectacles/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/issy-les-moulineaux/gratuit/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/ornans/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -6589,6 +6667,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/lens/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/pont-l-eveque/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -6608,24 +6692,6 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/ares/expos/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/issy-les-moulineaux/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/issy-les-moulineaux/spectacles/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/issy-les-moulineaux/gratuit/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -6691,12 +6757,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/lens/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://whazup.fr/sorties/saint-denis/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -6710,6 +6770,18 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/saint-denis/ce-week-end/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/batz-sur-mer/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/batz-sur-mer/halloween/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -6793,18 +6865,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/batz-sur-mer/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/batz-sur-mer/halloween/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://whazup.fr/sorties/dives-sur-mer/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -6857,12 +6917,6 @@
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/colomiers/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whazup.fr/sorties/saint-jean-de-vedas/</loc>
@@ -6967,6 +7021,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/colomiers/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/saint-quay-portrieux/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -7015,6 +7075,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/caluire-et-cuire/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/caluire-et-cuire/concerts/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/caluire-et-cuire/spectacles/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/cusset/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -7055,24 +7133,6 @@
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/caluire-et-cuire/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/caluire-et-cuire/concerts/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/caluire-et-cuire/spectacles/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://whazup.fr/sorties/cluny/</loc>
@@ -7573,6 +7633,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/bonnat/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/loctudy/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -7613,12 +7679,6 @@
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/six-fours-les-plages/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whazup.fr/sorties/etel/</loc>
@@ -7699,12 +7759,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/bonnat/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://whazup.fr/sorties/tocane-saint-apre/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -7741,13 +7795,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/penestin/</loc>
+    <loc>https://whazup.fr/sorties/argeles-sur-mer/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/argeles-sur-mer/</loc>
+    <loc>https://whazup.fr/sorties/six-fours-les-plages/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
