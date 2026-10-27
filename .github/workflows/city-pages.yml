@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - city-pages.js
+      - indexnow.js
       - .github/workflows/city-pages.yml
 
 permissions:
@@ -33,6 +34,7 @@ jobs:
           git config user.name "whazup-bot"
           git config user.email "bot@whazup.fr"
           git add sorties sitemap.xml
+          git diff --cached --name-only --diff-filter=AM -- sorties > changed.txt || true
           if git diff --cached --quiet; then
             echo "Rien de nouveau à enregistrer"
           else
@@ -47,3 +49,6 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             https://api.github.com/repos/${{ github.repository }}/pages/builds || true
+
+      - name: Prévenir Bing et les autres moteurs (IndexNow)
+        run: sleep 60 && node indexnow.js changed.txt || true
