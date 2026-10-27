@@ -66,6 +66,21 @@ for (const { kind, file } of SOURCES) {
       console.log("événements Ticketmaster ajoutés :", added2);
     } catch (e) { console.log("ticketmaster-events.json illisible :", e.message); }
   }
+  // soirées et concerts via l'API officielle Shotgun (shotgun-sync.js) : ajoutés AVANT OpenAgenda, pour que la version Shotgun (avec le lien billetterie) passe en premier
+  if (kind === "events" && fs.existsSync("shotgun-events.json")) {
+    try {
+      const extraS = JSON.parse(fs.readFileSync("shotgun-events.json", "utf8"));
+      const foldS = (x) => String(x || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+      const haveS = new Set(items.map((e) => e.city + "|" + foldS(e.title) + "|" + e.date));
+      let addedS = 0;
+      if (Array.isArray(extraS)) for (const e of extraS) {
+        const k = e.city + "|" + foldS(e.title) + "|" + e.date;
+        if (haveS.has(k)) continue;
+        haveS.add(k); items.push(e); addedS++;
+      }
+      console.log("événements Shotgun ajoutés :", addedS);
+    } catch (e) { console.log("shotgun-events.json illisible :", e.message); }
+  }
   // concerts et soirées via OpenAgenda (openagenda-sync.js, dont l'agenda Shotgun) : on les ajoute, sans doublon (même ville, même titre, même jour)
   if (kind === "events" && fs.existsSync("openagenda-events.json")) {
     try {
