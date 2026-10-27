@@ -55,7 +55,7 @@ function linkOf(e) {
 function priceOf(e) {
   const free = first(e, ["isFree", "is_free", "free"]);
   if (free === true) return "Gratuit";
-  let p = first(e, ["minPrice", "min_price", "lowestPrice", "lowest_price", "price", "priceMin", "price_min", "tickets.0.price", "deals.0.price"]);
+  let p = first(e, ["ticketing.minimumPrice", "minPrice", "min_price", "lowestPrice", "lowest_price", "price", "priceMin", "price_min", "tickets.0.price", "deals.0.price"]);
   if (p && typeof p === "object") p = p.amount != null ? p.amount : p.value;
   p = Number(p);
   if (isFinite(p) && p > 0) { if (p > 500) p = p / 100; return "Dès " + (Math.round(p * 100) / 100).toString().replace(".", ",") + " €"; }
@@ -63,9 +63,10 @@ function priceOf(e) {
   return "Billetterie Shotgun";
 }
 function categoryOf(e, title) {
-  const tags = [].concat(first(e, ["tags"]) || [], first(e, ["genres"]) || [], first(e, ["categories"]) || [], first(e, ["type"]) || [], first(e, ["category"]) || [])
+  const tags = [].concat(first(e, ["eventTags"]) || [], first(e, ["typeOfPlace"]) || [], first(e, ["tags"]) || [], first(e, ["genres"]) || [], first(e, ["categories"]) || [], first(e, ["type"]) || [], first(e, ["category"]) || [])
     .map((t) => str(t)).join(" ");
   const t = fold(tags + " " + title);
+  if (/\b(immersion|orientation|portes? ouvertes?|casting|shooting|recrutement|formation|webinar|masterclass|conference|salon de l.etudiant|job ?dating)\b/.test(fold(title))) return ["festival", "Divers"];
   if (/\b(concert|live|showcase|tournee|tour)\b/.test(t) && !/\b(dj|club|techno|house|party|soiree|rave)\b/.test(t)) return ["musique", "Musique"];
   if (/\b(stand.?up|humour|comedy|spectacle|theatre)\b/.test(t)) return ["spectacle", "Spectacles"];
   return ["village", "Soirée"];
@@ -114,6 +115,14 @@ const hide = (u) => String(u).replace(/key=[^&]+/, "key=***");
     await sleep(700); // < 100 appels par minute
   }
   log("Pages lues :", pages, "— événements reçus :", raw.length);
+  // aide au réglage : quelques prix bruts, les types de lieu et les étiquettes les plus fréquents
+  try {
+    const prices = raw.map((e) => get(e, "ticketing.minimumPrice")).filter((x) => x != null).slice(0, 25);
+    log("Exemples de prix bruts (ticketing.minimumPrice) :", JSON.stringify(prices), "— devise :", JSON.stringify(get(raw.find((e) => get(e, "ticketing.currency")) || {}, "ticketing.currency")));
+    const cnt = (arr) => Object.entries(arr.reduce((m, k) => (m[k] = (m[k] || 0) + 1, m), {})).sort((x, y) => y[1] - x[1]).slice(0, 15);
+    log("Types de lieu :", JSON.stringify(cnt(raw.map((e) => str(e.typeOfPlace) || "?"))));
+    log("Étiquettes :", JSON.stringify(cnt([].concat(...raw.map((e) => (e.eventTags || []).map((t) => str(t)))))));
+  } catch (e) {}
 
   const out = [], seen = new Set();
   const stats = { sansDate: 0, sansPosition: 0, horsVille: 0, passe: 0, annule: 0, ok: 0 };
@@ -126,7 +135,7 @@ const hide = (u) => String(u).replace(/key=[^&]+/, "key=***");
     if (!sp) { stats.sansDate++; continue; }
     const ep = parisParts(first(e, ["endTime", "end_time", "endDate", "end_date", "endsAt", "ends_at", "end"]));
     if ((ep ? ep.date : sp.date) < today) { stats.passe++; continue; }
-    const v = first(e, ["venue", "location", "place", "venues.0", "address"]) || {};
+    const v = first(e, ["geolocation", "venue", "location", "place", "venues.0", "address"]) || {};
     let lat = Number(first(e, ["venue.latitude", "venue.lat", "venue.geolocation.lat", "venue.geo.lat", "venue.location.lat", "venue.coordinates.lat", "location.latitude", "location.lat", "place.latitude", "place.lat", "latitude", "lat", "geolocation.lat", "geo.lat"]));
     let lng = Number(first(e, ["venue.longitude", "venue.lng", "venue.lon", "venue.geolocation.lng", "venue.geolocation.lon", "venue.geo.lng", "venue.geo.lon", "venue.location.lng", "venue.location.lon", "venue.coordinates.lng", "venue.coordinates.lon", "location.longitude", "location.lng", "location.lon", "place.longitude", "place.lng", "longitude", "lng", "lon", "geolocation.lng", "geolocation.lon", "geo.lng", "geo.lon"]));
     if (!isFinite(lat) || !isFinite(lng) || (!lat && !lng)) { stats.sansPosition++; continue; }
@@ -141,8 +150,11 @@ const hide = (u) => String(u).replace(/key=[^&]+/, "key=***");
     const date = sp.date < today ? today : sp.date;
     const key = fold(title) + "|" + date + "|" + lat.toFixed(3);
     if (seen.has(key)) continue; seen.add(key);
-    const vname = str(first(v, ["name", "title"])) || str(first(e, ["venueName", "venue_name", "placeName"]));
-    const addr = [str(first(v, ["address", "street", "address1", "formattedAddress", "formatted_address"])), [str(first(v, ["zipCode", "zip_code", "postalCode", "postal_code", "zip"])), str(first(v, ["city", "cityName", "city_name"]))].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+    const vname = str(first(v, ["placeName", "name", "title"])) || str(first(e, ["venueName", "venue_name", "placeName"]));
+    // adresse : « 12 rue X, 75011 Paris » (sans le pays ni le nom du lieu répétés)
+    let street = str(first(v, ["street", "rawStreet", "address", "address1", "formattedAddress", "formatted_address"]));
+    street = street.replace(/,?\s*(France|Belgique|Suisse|Portugal|Espagne)(,\s*\1)?\s*$/i, "").replace(vname ? new RegExp("^" + vname.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ",\\s*", "i") : /^$/, "").trim();
+    const addr = street || [str(first(v, ["zipCode", "zip_code", "postalCode", "postal_code", "zip"])), str(first(v, ["city", "cityName", "city_name"]))].filter(Boolean).join(" ");
     const [scene, category] = categoryOf(e, title);
     const sid = first(e, ["id", "eventId", "event_id", "uuid"]);
     const id = "sg-" + (sid != null ? sid : fold(title).replace(/[^a-z0-9]+/g, "-") + "-" + date);
