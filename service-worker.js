@@ -29,7 +29,7 @@ try {
   console.error("Erreur messagerie push (arrière-plan) :", e);
 }
 
-const CACHE_NAME = "whazup-cache-v18";
+const CACHE_NAME = "whazup-cache-v19";
 
 const FILES_TO_CACHE = [
   "/",
@@ -37,6 +37,7 @@ const FILES_TO_CACHE = [
   "/styles.css",
   "/app.js",
   "/logo.svg",
+   "/offline.html",
 ];
 
 self.addEventListener("install", (event) => {
@@ -71,7 +72,7 @@ self.addEventListener("fetch", (event) => {
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
         return response;
       })
-      .catch(() => caches.match(event.request))
+     .catch(() => caches.match(event.request).then((r) => r || (event.request.mode === "navigate" ? caches.match("/offline.html") : Response.error()))) 
   );
 });
 
