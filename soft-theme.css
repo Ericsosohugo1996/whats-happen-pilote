@@ -32,7 +32,7 @@ html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-e { background: 
 
 /* gros bouton « Me localiser » et boutons principaux : corail uni */
 html body #wz-locate-top { background: var(--wz-acc) !important; box-shadow: 0 8px 18px -12px rgba(201,72,63,.65) !important; }
-[style*="linear-gradient"][style*="E85D3D" i], [style*="linear-gradient"][style*="F2864B" i] {
+   [style*="linear-gradient"][style*="E85D3D" i]:not([style*="background-image"]), [style*="linear-gradient"][style*="F2864B" i]:not([style*="background-image"]) {
   background: var(--wz-acc) !important; box-shadow: none !important;
 }
 
