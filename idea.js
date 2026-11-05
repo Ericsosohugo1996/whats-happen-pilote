@@ -169,6 +169,23 @@
     try { res = rank(); } catch (e) { res = S.ranked; }
     S.when = w; return res;
   }
+  // en soirée : on termine par un verre dans un bar tout proche (horaires à vérifier : on ne les connaît pas)
+  function withDrink(st, pool) {
+    var last = st[st.length - 1], lm = mins(last.ev.time);
+    if (!last || last.ev.isPlace || lm == null || lm < 19 * 60 || lm > 21 * 60 + 30 || last.ev.category === "Soirée") return st;   // pas après une soirée en club : le verre, c'est après un concert, un spectacle, une expo…
+    var skip = S.planSkip || [], pick = null, km = 0;
+    for (var i = 0; i < pool.length; i++) {
+      var c = pool[i].ev;
+      if (!c.isPlace || c.category !== "Bar" || !c.lat || !c.lng || skip.indexOf(c.id) !== -1) continue;
+      if (JUNK_PLACE_RE.test(String(c.title || ""))) continue;
+      km = haversineKm(last.ev.lat, last.ev.lng, c.lat, c.lng);
+      if (km > 0.8 || km < 0.02) continue;
+      pick = c; break;
+    }
+    if (!pick) return st;
+    return st.concat([{ ev: pick, label: "Un verre pour finir", walk: walkMin(km), drink: true }]);
+  }
+  function planStops(x) { var pool = planPool(), st = planFrom(x, pool); return st.length < 2 ? st : withDrink(st, pool); }
   function planFrom(first, ranked) {
     var stops = [{ ev: first.ev, label: first.label, walk: 0 }];
     var seen = {}; seen[first.ev.category] = 1;
@@ -392,7 +409,7 @@
   }
   function screenPlan() {
     var r = root(), x = S.ranked[S.offset]; if (!x) return screenSurprise();
-    var st = planFrom(x, planPool()); if (st.length < 2) return screenSurprise();
+    var st = planStops(x); if (st.length < 2) return screenSurprise();
     var wl = (SW.filter(function (w) { return w[0] === S.when; })[0] || [0, ""])[1].toLowerCase();
     var f = mins(st[0].ev.time), word = (S.when === "tonight" || (f != null && f >= 17 * 60)) ? "soirée" : "journée";
     var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button>' + tabsHtml("plan") + '<div class="wz-i-k" style="margin:2px 0 6px">🎁 Ton programme · ' + word + (wl ? " · " + esc(wl) : "") + '</div>' +
@@ -400,10 +417,11 @@
     st.forEach(function (s, i) {
       var ev = s.ev, col = planColor(ev.category), venue = ev.place ? String(ev.place).split(",")[0] : "", m = mins(ev.time);
       var tm = m != null ? String(Math.floor(m / 60)).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0") : "";
+      if (s.drink) tm = "Après";
       if (i) h += '<div class="wz-q-hop">↓ à environ ' + s.walk + ' min à pied</div>';
-      h += '<div class="wz-q-stop"><div class="wz-q-when"><b>' + esc(tm) + '</b><i>' + (ev.category === "Expo" ? "ouverture" : "heure fixe") + '</i></div><div class="wz-q-bar" style="background:' + col + '"></div>' +
-        '<div class="wz-q-body"><div class="wz-q-ph">' + eventPhotoHTML(ev) + '</div><div class="wz-q-kind" style="color:' + col + '">' + esc(catLabel(ev).toUpperCase()) + '</div>' +
-        '<div class="wz-q-ttl">' + esc(ev.title) + '</div><div class="wz-q-v">' + esc(venue) + '</div><div class="wz-q-acts">' +
+      h += '<div class="wz-q-stop"><div class="wz-q-when"><b>' + esc(tm) + '</b><i>' + (s.drink ? "à ta guise" : ev.category === "Expo" ? "ouverture" : "heure fixe") + '</i></div><div class="wz-q-bar" style="background:' + col + '"></div>' +
+        '<div class="wz-q-body"><div class="wz-q-ph">' + eventPhotoHTML(ev) + '</div><div class="wz-q-kind" style="color:' + col + '">' + (s.drink ? "POUR FINIR · UN VERRE" : esc(catLabel(ev).toUpperCase())) + '</div>' +
+        '<div class="wz-q-ttl">' + esc(ev.title) + '</div><div class="wz-q-v">' + (s.drink ? (venue ? esc(venue) + " · " : "") + "vérifie les horaires" : esc(venue)) + '</div><div class="wz-q-acts">' +
         '<button type="button" class="wz-q-lnk" data-i="open" data-id="' + esc(ev.id) + '">Voir la fiche</button>' +
         (i ? '<button type="button" class="wz-q-lnk dim" data-i="pswap" data-id="' + esc(ev.id) + '">Autre idée</button>' : "") + '</div>' +
         (S.swapNone === ev.id ? '<div class="wz-q-none">Pas d’autre idée proche à cette heure. Essaie « Un autre programme ».</div>' : "") + '</div></div>';
@@ -430,11 +448,11 @@
   }
   function sharePlan() {
     var x = S.ranked[S.offset]; if (!x) return;
-    var st = planFrom(x, planPool()); if (st.length < 2) return;
+    var st = planStops(x); if (st.length < 2) return;
     var f = mins(st[0].ev.time), word = (S.when === "tonight" || (f != null && f >= 17 * 60)) ? "soirée" : "journée";
     var lines = st.map(function (s) {
       var ev = s.ev, venue = ev.place ? String(ev.place).split(",")[0] : "";
-      return (ev.time ? hh(ev.time) + " · " : "") + ev.title + (venue ? " (" + venue + ")" : "");
+      return (s.drink ? "Pour finir · " : ev.time ? hh(ev.time) + " · " : "") + ev.title + (venue && !s.drink ? " (" + venue + ")" : "");
     });
     var txt = "Ma " + word + " avec Whazup, ça te dit ?\n" + lines.join("\n");
     var url = "https://whazup.fr";
