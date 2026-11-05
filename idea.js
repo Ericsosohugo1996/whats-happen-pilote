@@ -136,6 +136,33 @@
     return out;
   }
 
+  // ---- « Voir ma soirée / journée complète » : on enchaîne, à pied, ce qui suit la première idée ----
+  var PLAN_MAX_STOPS = 3, PLAN_MAX_KM = 1.5, PLAN_LAST_START = 23 * 60 + 30;
+  function durOf(ev) { var c = ev.category; return c === "Expo" ? 60 : (c === "Musique" || c === "Spectacles" || c === "Soirée" || c === "Festival") ? 120 : 90; }
+  function walkMin(km) { return Math.max(2, Math.round(km * 1.3 / 0.08)); }
+  function planFrom(first, ranked) {
+    var stops = [{ ev: first.ev, label: first.label, walk: 0 }];
+    var seen = {}; seen[first.ev.category] = 1;
+    while (stops.length < PLAN_MAX_STOPS) {
+      var prev = stops[stops.length - 1].ev, pm = mins(prev.time), pick = null;
+      if (pm == null) break;
+      var endPrev = pm + durOf(prev);
+      for (var i = 0; i < ranked.length; i++) {
+        var c = ranked[i].ev;
+        if (c.isPlace || c.id === prev.id || stops.some(function (s) { return s.ev.id === c.id; })) continue;
+        if (c.date !== prev.date || seen[c.category]) continue;
+        var cm = mins(c.time); if (cm == null || cm > PLAN_LAST_START) continue;
+        var km = haversineKm(prev.lat, prev.lng, c.lat, c.lng);
+        if (km > PLAN_MAX_KM || km < 0.02) continue;
+        var w = walkMin(km);
+        if (cm < endPrev + w) continue;
+        if (!pick || cm < pick.cm || (cm === pick.cm && ranked[i].score < pick.r.score)) pick = { r: ranked[i], cm: cm, w: w };
+      }
+      if (!pick) break;
+      stops.push({ ev: pick.r.ev, label: pick.r.label, walk: pick.w }); seen[pick.r.ev.category] = 1;
+    }
+    return stops;
+  }
   function root() {
     var r = document.getElementById("wz-idea");
     if (!r) { r = document.createElement("div"); r.id = "wz-idea"; r.setAttribute("role", "dialog"); r.setAttribute("aria-label", "Je ne sais pas quoi faire"); document.body.appendChild(r); }
@@ -248,6 +275,13 @@
     st.textContent = '#wz-idea .wz-s-row{display:flex;gap:8px;overflow-x:auto;margin:0 0 10px;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}#wz-idea .wz-s-row::-webkit-scrollbar{display:none}#wz-idea .wz-s-row .wz-i-c{flex:none;padding:9px 13px;font-size:13px;white-space:nowrap}' +
       '#wz-idea .wz-s-btns{display:flex;gap:10px;margin-top:2px}#wz-idea .wz-s-btns .wz-i-go,#wz-idea .wz-s-btns .wz-i-alt{flex:1;width:auto;margin:0;padding:15px 8px}' +
       '#wz-idea .wz-s-send{margin-top:10px}' +
+      '#wz-idea .wz-p-tl{margin:4px 0 12px}#wz-idea .wz-p-card{display:block;width:100%;margin:0;padding:12px;border:1px solid #DDE4F0;border-radius:18px;background:#fff;color:#14213D;text-align:left;font-family:inherit;cursor:pointer;box-shadow:0 10px 22px -18px rgba(20,33,61,.5)}' +
+      '#wz-idea .wz-p-t{font-size:12px;font-weight:800;letter-spacing:.4px;color:#C2492F;margin:0 0 8px}' +
+      '#wz-idea .wz-p-b{display:flex;gap:12px;align-items:center}#wz-idea .wz-p-ph{flex:none;width:84px;height:84px;border-radius:14px;overflow:hidden;background:#EEF2F9}#wz-idea .wz-p-ph img,#wz-idea .wz-p-ph svg{width:100%;height:100%;object-fit:cover;display:block}' +
+      '#wz-idea .wz-p-x{min-width:0}#wz-idea .wz-p-cat{font-size:11px;font-weight:800;letter-spacing:1.1px;color:#1F8F86;margin:0 0 3px}#wz-idea .wz-p-n{font-size:16px;font-weight:700;line-height:1.25;margin:0 0 3px;overflow-wrap:anywhere}#wz-idea .wz-p-v{font-size:12.5px;color:#5B6786;line-height:1.35}' +
+      '#wz-idea .wz-p-walk{margin:6px 0 6px 14px;padding-left:12px;border-left:2px dotted #B9C3D6;font-size:12.5px;font-weight:600;color:#5B6786;min-height:22px;display:flex;align-items:center}' +
+      '#wz-idea .wz-p-note{margin:12px 0 4px;padding:11px 13px;border-radius:14px;background:#EEF2F9;color:#5B6786;font-size:12.5px;line-height:1.45}' +
+      '#wz-idea .wz-s-plan{margin-top:10px}' +
       'html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::before{content:"Surprends-moi" !important}html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::after{content:"Une sortie près de toi, en 1 clic" !important}';
     document.head.appendChild(st);
   }
@@ -275,8 +309,24 @@
       h += '<div class="wz-s-btns"><button type="button" class="wz-i-go" data-i="open" data-id="' + esc(x.ev.id) + '">J’y vais</button><button type="button" class="wz-i-alt" data-i="snext">🎲 Une autre</button></div>' +
         '<button type="button" class="wz-i-alt wz-s-send" data-i="sshare" data-id="' + esc(x.ev.id) + '">✈ Envoyer à un ami</button>';
     }
+    if (x && !showRows) { var pl = planFrom(x, S.ranked); if (pl.length > 1) { var pf = mins(pl[0].ev.time); h += '<button type="button" class="wz-i-alt wz-s-plan" data-i="plan">Voir ma ' + ((S.when === "tonight" || (pf != null && pf >= 17 * 60)) ? "soirée" : "journée") + ' complète →</button>'; } }
     if (!showRows) h += '<button type="button" class="wz-i-alt ghost" data-i="refine">Affiner ma surprise' + (wsel ? " (" + esc(wsel) + ")" : "") + '</button>';
     h += '<button type="button" class="wz-i-alt ghost" data-i="full">Plus de choix →</button>';
+    r.innerHTML = h; r.scrollTop = 0;
+  }
+  function screenPlan() {
+    var r = root(), x = S.ranked[S.offset]; if (!x) return screenSurprise();
+    var st = planFrom(x, S.ranked); if (st.length < 2) return screenSurprise();
+    var wl = (SW.filter(function (w) { return w[0] === S.when; })[0] || [0, ""])[1].toLowerCase();
+    var f = mins(st[0].ev.time), word = (S.when === "tonight" || (f != null && f >= 17 * 60)) ? "soirée" : "journée";
+    var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🎲 Ta ' + word + (wl ? " · " + esc(wl) : "") + '</div><div class="wz-p-tl">';
+    st.forEach(function (s, i) {
+      var ev = s.ev, venue = ev.place ? String(ev.place).split(",")[0] : "", tl = ev.category === "Expo" ? "Ouverte dès " + String(ev.time || "") : String(ev.time || "");
+      if (i) h += '<div class="wz-p-walk">🚶 à environ ' + s.walk + ' min à pied</div>';
+      h += '<button type="button" class="wz-p-card" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-p-t">' + esc(tl) + '</div><div class="wz-p-b"><div class="wz-p-ph">' + eventPhotoHTML(ev) + '</div><div class="wz-p-x"><div class="wz-p-cat">' + esc(String(ev.category).toUpperCase()) + '</div><div class="wz-p-n">' + esc(ev.title) + '</div><div class="wz-p-v">' + esc(venue) + '</div></div></div></button>';
+    });
+    h += '</div><div class="wz-p-note">Il reste à prévoir de ton côté : comment y aller et où manger. Distances à vol d’oiseau, vérifie les horaires avant de partir.</div>' +
+      '<button type="button" class="wz-i-alt ghost" data-i="planback">← Retour à l’idée</button>';
     r.innerHTML = h; r.scrollTop = 0;
   }
   function openSurprise() {
@@ -324,6 +374,8 @@
       else { S.want = S.want.filter(function (x) { return x !== "any"; }); var i = S.want.indexOf(v); if (i === -1) S.want.push(v); else S.want.splice(i, 1); }
       return screenAsk();
     }
+    if (a === "plan") { track("surprise_plan"); return screenPlan(); }
+    if (a === "planback") return screenSurprise();
     if (a === "refine") { track("surprise_refine"); S.refine = true; return screenSurprise(); }
     if (a === "swant") { track("surprise_filter", { want: v }); S.sw = v; saveWant(v); surpriseRank(); return screenSurprise(); }
     if (a === "swhen") { track("surprise_when", { when: v }); S.when = v; surpriseRank(); return screenSurprise(); }
