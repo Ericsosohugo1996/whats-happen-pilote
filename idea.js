@@ -61,7 +61,11 @@
     var n = nowMin(), t = today();
     if (ev.isPlace || !ev.date) {
       // lieux ouverts (bars, sites à visiter) : seulement pour maintenant / ce soir
-      if (S.when === "now" || S.when === "tonight") return { label: "Toujours ouvert", score: 200 };
+      if (S.when === "now" || S.when === "tonight") {
+        // un monument n'est pas une idée de soirée ; et on ne peut pas promettre qu'un lieu est ouvert : on dit « vérifie les horaires »
+        if (ev.category === "À voir") return S.when === "now" ? { label: "À visiter · vérifie les horaires", score: 200 } : null;
+        return { label: (ev.category === "Bar" ? "Bar" : "Lieu") + " · vérifie les horaires", score: 200 };
+      }
       if (ev.category === "À voir") return { label: "À visiter · vérifie les horaires", score: 350 };
       if (ev.category === "Bar") return { label: "Ouvert en soirée · vérifie les horaires", score: 360 };   // musées : proposés aussi demain et ce week-end
       return null;
