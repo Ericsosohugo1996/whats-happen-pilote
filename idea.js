@@ -105,6 +105,8 @@
     pool().forEach(function (ev) {
       if (!wantOk(ev) || !surpriseOk(ev)) return;
       var tm = timing(ev); if (!tm) return;
+            // une expo « ouvre » plutôt qu'elle ne « commence » : on le dit honnêtement
+      if (ev.category === "Expo" && !ev.isPlace && mins(ev.time) != null) tm = { label: (S.when === "now" ? "" : String(tm.label).split(" · ")[0] + " · ") + "Ouverte dès " + hh(ev.time).replace(/ h 00$/, " h"), score: tm.score };
       var real = ev.photo && !ev.photoGeneric && !ev.photoVenue;
       var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25);
       res.push({ ev: ev, label: tm.label, score: sc });
