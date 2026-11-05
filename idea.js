@@ -13,6 +13,7 @@
     ["festival", "🎪 Festival", ["Festival"]],
     ["sport", "⚽ Sport", ["Sport"]],
     ["bar", "🍸 Bar", ["Bar"]],
+    ["social", "🤝 Rencontrer du monde", []],
     ["expo", "🖼️ Expos & visites", ["Expo"]],
     ["autres", "✨ Autres sorties", ["Divers"]],
     ["any", "🎲 Peu importe", null]
@@ -46,6 +47,7 @@
   }
   function wantOk(ev) {
     if (!S.want.length || S.want.indexOf("any") !== -1) { if (ev.category === "Divers" || ev.category === "Brocante") return false; try { if (window.__wzCatOk && !window.__wzCatOk(ev, ev.category)) return false; } catch (e) {} return true; }
+    if (S.want.indexOf("social") !== -1) { if (ev.isPlace || !isSocial(ev)) return false; try { if (window.__wzCatOk && !window.__wzCatOk(ev, ev.category)) return false; } catch (e) {} return true; }
     return S.want.some(function (k) { var w = WANT.filter(function (x) { return x[0] === k; })[0]; if (!(w && w[2] && w[2].indexOf(ev.category) !== -1)) return false; if (k === "musee") return isMuseum(ev); try { if (window.__wzCatOk && !window.__wzCatOk(ev, ev.category)) return false; } catch (e) {} return true; });
   }
   // « Musées » = vrais musées et grands monuments (pas les églises, salles de sport, boutiques…)
@@ -252,7 +254,7 @@
     var venue = ev.place ? String(ev.place).split(",")[0] : "";
     return '<button type="button" class="wz-i-card' + (big ? " big" : "") + '" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-i-ph">' + eventPhotoHTML(ev) +
       '<span class="wz-i-pill" style="--c:' + color + '">' + icon + " " + esc(catLabel(ev).toUpperCase()) + (price === "free" ? " · Gratuit" : "") + '</span></div>' +
-      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div>' + (isSocial(ev) ? '<div class="wz-i-soc" style="display:inline-block;margin:6px 0 0;padding:4px 10px;border-radius:999px;background:#E6F4F2;color:#13655F;font:800 12px inherit;font-family:inherit">🤝 On y rencontre du monde</div>' : '') + '<div class="wz-i-why">' + esc(x.label) + '</div>' + (big && whyText(x, price) ? '<div class="wz-i-why2" style="margin-top:6px;font-size:12.5px;font-weight:600;line-height:1.4;opacity:.85">Pourquoi cette idée : ' + esc(whyText(x, price)) + '</div>' : '') + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
+      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div>' + (isSocial(ev) ? '<div class="wz-i-soc" style="display:inline-block;margin:6px 0 0;padding:4px 10px;border-radius:999px;background:#E6F4F2;color:#13655F;font:800 12px inherit;font-family:inherit">🤝 Facile d’y aller seul(e)</div>' : '') + '<div class="wz-i-why">' + esc(x.label) + '</div>' + (big && whyText(x, price) ? '<div class="wz-i-why2" style="margin-top:6px;font-size:12.5px;font-weight:600;line-height:1.4;opacity:.85">Pourquoi cette idée : ' + esc(whyText(x, price)) + '</div>' : '') + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
   }
   function screenResult() {
     var r = root(), lst = S.ranked.slice(S.offset, S.offset + 3);
@@ -316,7 +318,7 @@
 
   // ---- « Surprends-moi » : 1 toucher = 1 sortie, qu'on peut affiner par envie et par moment ----
   var SW = [["now", "Maintenant"], ["tonight", "Ce soir"], ["tomorrow", "Demain"], ["weekend", "Ce week-end"]];
-  var SWANT = ["any", "musique", "soiree", "spectacle", "bar", "expo", "musee", "sport", "marche", "famille", "festival"];
+  var SWANT = ["any", "musique", "soiree", "spectacle", "bar", "expo", "musee", "sport", "marche", "famille", "festival", "social"];
   function track(n, p) { try { if (typeof analytics !== "undefined" && analytics && analytics.logEvent) analytics.logEvent(n, p || {}); } catch (e) {} }
   function loadWant() { try { var v = localStorage.getItem("wz-surprise-want"); if (v && SWANT.indexOf(v) !== -1) return v; } catch (e) {} return "any"; }
   function saveWant(v) { try { localStorage.setItem("wz-surprise-want", v); } catch (e) {} }
@@ -371,7 +373,7 @@
     h += "</div>";
     }
     if (!x) {
-      h += '<h1 style="font-size:24px">Rien de prévu pour ce choix</h1><div class="wz-i-sub">Essaie un autre moment ou « Peu importe » : on ne te propose que de vraies sorties.</div>';
+      h += '<h1 style="font-size:24px">Rien de prévu pour ce choix</h1><div class="wz-i-sub">' + (S.sw === "social" ? "Rien de convivial de prévu pour ce moment. Essaie un autre moment (le soir ou le week-end, c’est plus animé) ou « Peu importe »." : "Essaie un autre moment ou « Peu importe » : on ne te propose que de vraies sorties.") + '</div>';
     } else {
       h += card(x, true);
       h += '<div class="wz-s-btns"><button type="button" class="wz-i-go" data-i="open" data-id="' + esc(x.ev.id) + '">J’y vais</button><button type="button" class="wz-i-alt" data-i="snext">🎲 Une autre</button></div>' +
@@ -464,9 +466,16 @@
   // repère « on y rencontre du monde » : soirées dansantes, quiz, jeux, conversation, impro… (aucun profil, aucun message : juste une indication)
   var SOCIAL_RE = /(after.?work|\bquiz+\b|blind.?test|\bbal\b|soir[ée]es? jeux|jeux de soci[ée]t[ée]|karaok[ée]|open.?mic|sc[eè]ne ouverte|jam session|\bap[ée]ro\b|caf[ée] (philo|langue|d[ée]bat|rencontre)|conversation|tandem|salsa|bachata|kizomba|tango|lindy|rock.?n.?roll|randonn[ée]e|run club|tournoi|impro\b)/i;
   var SOCIAL_EXC_RE = /(c[ée]libataires?|speed.?dating|enfants?|minots?|kids?|b[ée]b[ée]|seniors?|s[ée]ance|stage|formation|r[ée]union|assembl|complet)/i;
+  var SOCIAL2_RE = /(march[ée]s? de nuit|night.?market|nocturne (du|de|des) march|guinguette|soir[ée]e (dansante|[ée]tudiante|latino|afro|disco|r[ée]tro)|dancehall|afrobeat|zouk)/i;
+  var BARVENUE_RE = /(\bbar\b|\bpub\b|brasserie|guinguette|taverne|caf[ée]-concert|rooftop)/i;
+  var SALLE_RE = /(caf[ée] de la danse|caf[ée] de la gare|caf[ée]-th[ée][âa]tre)/i;
   function isSocial(ev) {
     if (!ev || ev.isPlace || ev.category === "Famille" || ev.category === "Brocante") return false;
-    var t = String(ev.title || ""); return SOCIAL_RE.test(t) && !SOCIAL_EXC_RE.test(t) && !isClosed(t);
+    var t = String(ev.title || ""), p = String(ev.place || "");
+    if (SOCIAL_EXC_RE.test(t) || isClosed(t)) return false;
+    if (SOCIAL_RE.test(t) || SOCIAL2_RE.test(t)) return true;
+    // concert ou DJ set dans un bar, un pub ou une guinguette (pas dans une salle de spectacle)
+    return (ev.category === "Musique" || ev.category === "Soirée") && ((BARVENUE_RE.test(p) && !SALLE_RE.test(p)) || /dj set/i.test(t));
   }
   function decorateAfter(id) {
     try {
@@ -476,8 +485,8 @@
       if (isSocial(ev0)) {
         var ttl = document.getElementById("detail-title");
         if (ttl && ttl.parentNode) {
-          var sp = document.createElement("div"); sp.id = "wz-social-tag"; sp.textContent = "🤝 Sortie où l’on rencontre du monde";
-          sp.style.cssText = "display:inline-block;margin:8px 0 2px;padding:6px 12px;border-radius:999px;background:#E6F4F2;color:#13655F;font:800 12.5px inherit;font-family:inherit";
+          var sp = document.createElement("div"); sp.id = "wz-social-tag"; sp.innerHTML = '<b style="display:block;font-size:15px;color:#0E4F4A">🤝 Idéal pour venir seul(e)</b><span style="display:block;font-size:13px;line-height:1.45;color:#215B56;margin-top:3px">Ambiance conviviale : on discute facilement et on croise du monde.</span>';
+          sp.style.cssText = "display:block;margin:10px 0 6px;padding:12px 14px;border-radius:16px;background:#E6F4F2;border:1.5px solid #13655F;font-family:inherit";
           ttl.parentNode.insertBefore(sp, ttl.nextSibling);
         }
       }
