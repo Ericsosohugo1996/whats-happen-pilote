@@ -643,5 +643,5 @@
 (function(){try{var s=document.createElement("script");s.src="soiree-order.js?v=1";document.body.appendChild(s);}catch(e){}})();
 (function(){try{var s=document.createElement("script");s.src="city-picker.js?v=1";document.body.appendChild(s);}catch(e){}})();
 (function(){try{var s=document.createElement("script");s.src="finish.js?v=1";document.body.appendChild(s);}catch(e){}})();
-(function(){try{var s=document.createElement("script");s.src="idea.js?v=23";document.body.appendChild(s);}catch(e){}})();
+(function(){try{var s=document.createElement("script");s.src="idea.js?v=24";document.body.appendChild(s);}catch(e){}})();
 (function(){try{var s=document.createElement("script");s.src="carnet-promo.js?v=1";document.body.appendChild(s);}catch(e){}})();
