@@ -150,7 +150,18 @@
     h += '<div class="wz-i-spacer"></div><button type="button" class="wz-i-go" data-i="go"' + (S.when ? "" : " disabled") + ">Trouve-moi une idée ✨</button>";
     r.innerHTML = h;
   }
-
+// « Pourquoi cette idée » : une phrase courte, seulement avec des faits sûrs (distance, prix, moment, lieu connu)
+  function whyText(x, price) {
+    var ev = x.ev, p = [], l = String(x.label || "");
+    if (ev.distance != null && ev.distance <= 1) p.push("tout près de toi");
+    if (price === "free") p.push("gratuit");
+    if (ev.isPlace && FAMOUS_RE.test(String(ev.title || ""))) p.push("un incontournable de la ville");
+    var mm = l.match(/^Commence dans (\d+) min/);
+    if (mm && +mm[1] <= 90) p.push("ça commence bientôt");
+    else if (/^En ce moment/.test(l)) p.push("c'est en cours");
+    if (!p.length) return "";
+    return p.join(", ").replace(/^./, function (c) { return c.toUpperCase(); }) + ".";
+  }
   function card(x, big) {
     var ev = x.ev, color = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[ev.category]) || "#6C757D", icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[ev.category]) || "📍";
     var price = typeof eventPriceType === "function" ? eventPriceType(ev) : "";
@@ -158,7 +169,7 @@
     var venue = ev.place ? String(ev.place).split(",")[0] : "";
     return '<button type="button" class="wz-i-card' + (big ? " big" : "") + '" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-i-ph">' + eventPhotoHTML(ev) +
       '<span class="wz-i-pill" style="--c:' + color + '">' + icon + " " + esc(String(ev.category).toUpperCase()) + (price === "free" ? " · Gratuit" : "") + '</span></div>' +
-      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div><div class="wz-i-why">' + esc(x.label) + '</div>' + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
+      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div> (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
   }
   function screenResult() {
     var r = root(), lst = S.ranked.slice(S.offset, S.offset + 3);
