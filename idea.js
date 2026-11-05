@@ -259,7 +259,7 @@
     try { var av = document.getElementById("arrival-screen-overlay"); if (av) av.remove(); } catch (e) {}
     surpriseCss();
     var h = new Date().getHours();
-    S = { when: h >= 22 ? "tomorrow" : "tonight", want: [], sw: loadWant(), zone: "city", offset: 0, ranked: [] };
+    S = { when: (h >= 22 || h < 5) ? "tomorrow" : h >= 17 ? "tonight" : "now" , want: [], sw: loadWant(), zone: "city", offset: 0, ranked: [] };
     try { showView("discover"); } catch (e) {}
     document.body.classList.add("wz-idea-open");
     surpriseRank();
