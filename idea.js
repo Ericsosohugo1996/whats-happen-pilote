@@ -122,7 +122,7 @@
       res.push({ ev: ev, label: tm.label, score: sc });
     });
     // lieux très connus : ils passent devant (Louvre, Orsay, Notre-Dame…)
-    res.forEach(function (r) { if (r.ev.isPlace && FAMOUS_RE.test(String(r.ev.title || ""))) r.score -= 90; });
+    res.forEach(function (r) { if (r.ev.isPlace && S.when === "now" && FAMOUS_RE.test(String(r.ev.title || ""))) r.score -= 90; });
     res.sort(function (a, b) { return a.score - b.score; });
     // pas deux fois le même endroit ni la même photo (ex. « Musée X » et « Jardin du musée X »)
     var locSeen = {}, phSeen = {};
