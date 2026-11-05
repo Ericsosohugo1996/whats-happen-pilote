@@ -100,10 +100,14 @@
   var JUNK_PLACE_RE = /(g[îi]tes?\b|appart.?city|apparth[oô]tel|camping|auberge de jeunesse|chambres? d.h[oô]tes?|piscine|parking)/i;
   var DATING_RE = /c[ée]libataires?|speed.?dating/i;
   var STAGE_RE = /\b(stages?|formations?)\b/i;
+  // activités du quotidien (yoga, bébés, bricolage, débats…) : pas des « top, on y va » : elles passent après
+  var PRATIQUE_RE = /(yoga|m[ée]ditati|pilates|gym douce|baby.?gym|reprise des? s[ée]ances?|portage|b[ée]b[ée]s?\b|0.3 ans|\bpapas?\b|\bmamans?\b|parentalit|r[ée]par|jardinage|disco.?soupe|cyclofficine|permanence|d[ée]bat|groupe de parole|m[ée]diation|lutte contre)/i;
+  var BENEV_RE = /(b[ée]n[ée]vol|cherche (son|ses) |recherche de volontaires|\bstaff\b)/i;
   var SLOW_RE = /\b(ateliers?|cours|conf[eé]rences?|initiation|assembl[eé]e|r[eé]union|cycle)\b/i;
   function surpriseOk(ev) {
     if (ev.isPlace) return !JUNK_PLACE_RE.test(String(ev.title || ""));
     if (ev.category === "Divers" && JOB_RE.test(String(ev.title || "") + " " + String(ev.place || ""))) return false;
+    if (BENEV_RE.test(String(ev.title || ""))) return false;
     if (STAGE_RE.test(String(ev.title || ""))) return false;
     if (DATING_RE.test(String(ev.title || ""))) return false;
     var m = mins(ev.time);
@@ -118,7 +122,7 @@
             // une expo « ouvre » plutôt qu'elle ne « commence » : on le dit honnêtement
       if (ev.category === "Expo" && !ev.isPlace && mins(ev.time) != null) tm = { label: (S.when === "now" ? "" : String(tm.label).split(" · ")[0] + " · ") + "Ouverte dès " + hh(ev.time).replace(/ h 00$/, " h"), score: tm.score };
       var real = ev.photo && !ev.photoGeneric && !ev.photoVenue;
-      var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25) + (!ev.isPlace && SLOW_RE.test(String(ev.title || "")) ? 70 : 0) + (ev.category === "Famille" && S.want.indexOf("famille") === -1 ? 80 : 0);
+      var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25) + (!ev.isPlace && SLOW_RE.test(String(ev.title || "")) ? 70 : 0) + (ev.category === "Famille" && S.want.indexOf("famille") === -1 ? 80 : 0) + (!ev.isPlace && PRATIQUE_RE.test(String(ev.title || "")) && S.want.indexOf("any") !== -1 ? 90 : 0);
       res.push({ ev: ev, label: tm.label, score: sc });
     });
     // lieux très connus : ils passent devant (Louvre, Orsay, Notre-Dame…)
