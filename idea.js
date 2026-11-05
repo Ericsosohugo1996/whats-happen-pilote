@@ -101,13 +101,16 @@
   var DATING_RE = /c[ée]libataires?|speed.?dating/i;
   var STAGE_RE = /\b(stages?|formations?)\b/i;
   // activités du quotidien (yoga, bébés, bricolage, débats…) : pas des « top, on y va » : elles passent après
-  var PRATIQUE_RE = /(yoga|m[ée]ditati|pilates|gym douce|baby.?gym|reprise des? s[ée]ances?|portage|b[ée]b[ée]s?\b|0.3 ans|\bpapas?\b|\bmamans?\b|parentalit|r[ée]par|jardinage|disco.?soupe|cyclofficine|permanence|d[ée]bat|groupe de parole|m[ée]diation|lutte contre)/i;
+  var PRATIQUE_RE = /(yoga|m[ée]ditati|pilates|gym douce|baby.?gym|reprise des? s[ée]ances?|portage|b[ée]b[ée]s?\b|0.3 ans|\bpapas?\b|\bmamans?\b|parentalit|r[ée]par|jardinage|disco.?soupe|cyclofficine|permanence|d[ée]bat|groupe de parole|m[ée]diation|lutte contre|seniors?)/i;
+  // complet / annulé / reporté : on ne propose pas une sortie qu'on ne peut pas faire
+  var CLOSED_START_RE = /^\s*\W*(complet|annul[ée]e?|report[ée]e?|sold.?out)\b/i, CLOSED_CAPS_RE = /\b(COMPLET|ANNUL[ÉE]E?|REPORT[ÉE]E?)\b/;
+  function isClosed(t) { t = String(t || ""); return CLOSED_START_RE.test(t) || CLOSED_CAPS_RE.test(t); }
   var BENEV_RE = /(b[ée]n[ée]vol|cherche (son|ses) |recherche de volontaires|\bstaff\b)/i;
   var SLOW_RE = /\b(ateliers?|cours|conf[eé]rences?|initiation|assembl[eé]e|r[eé]union|cycle)\b/i;
   function surpriseOk(ev) {
     if (ev.isPlace) return !JUNK_PLACE_RE.test(String(ev.title || ""));
     if (ev.category === "Divers" && JOB_RE.test(String(ev.title || "") + " " + String(ev.place || ""))) return false;
-    if (BENEV_RE.test(String(ev.title || ""))) return false;
+    if (BENEV_RE.test(String(ev.title || "")) || isClosed(ev.title)) return false;
     if (STAGE_RE.test(String(ev.title || ""))) return false;
     if (DATING_RE.test(String(ev.title || ""))) return false;
     var m = mins(ev.time);
@@ -146,7 +149,7 @@
   }
 
   // ---- « Voir ma soirée / journée complète » : on enchaîne, à pied, ce qui suit la première idée ----
-  var PLAN_MAX_STOPS = 3, PLAN_MAX_KM = 1.5, PLAN_LAST_START = 23 * 60 + 30;
+  var PLAN_MAX_STOPS = 4, PLAN_MAX_KM = 2.0, PLAN_LAST_START = 23 * 60 + 30;
   function durOf(ev) { var c = ev.category; return c === "Expo" ? 60 : (c === "Musique" || c === "Spectacles" || c === "Soirée" || c === "Festival") ? 120 : 90; }
   function walkMin(km) { return Math.max(2, Math.round(km * 1.3 / 0.08)); }
   // une « soirée » avant 18 h s'appelle plutôt un événement de l'après-midi
@@ -165,8 +168,9 @@
       for (var i = 0; i < ranked.length; i++) {
         var c = ranked[i].ev;
         if (c.isPlace || c.id === prev.id || stops.some(function (s) { return s.ev.id === c.id; })) continue;
-        if (c.date !== prev.date || seen[c.category]) continue;
+        if (c.date !== prev.date || c.category === prev.category || (seen[c.category] || 0) >= 2) continue;
         if ((S.planSkip || []).indexOf(c.id) !== -1) continue;
+        if (PRATIQUE_RE.test(String(c.title || ""))) continue;   // pas d'étape « yoga / séniors / bébés » dans un programme
         var cm = mins(c.time); if (cm == null || cm > PLAN_LAST_START) continue;
         var km = haversineKm(prev.lat, prev.lng, c.lat, c.lng);
         if (km > PLAN_MAX_KM || km < 0.02) continue;
@@ -175,7 +179,7 @@
         if (!pick || cm < pick.cm || (cm === pick.cm && ranked[i].score < pick.r.score)) pick = { r: ranked[i], cm: cm, w: w };
       }
       if (!pick) break;
-      stops.push({ ev: pick.r.ev, label: pick.r.label, walk: pick.w }); seen[pick.r.ev.category] = 1;
+      stops.push({ ev: pick.r.ev, label: pick.r.label, walk: pick.w }); seen[pick.r.ev.category] = (seen[pick.r.ev.category] || 0) + 1;
     }
     return stops;
   }
