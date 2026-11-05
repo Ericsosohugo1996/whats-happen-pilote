@@ -318,7 +318,7 @@
 
   // ---- « Surprends-moi » : 1 toucher = 1 sortie, qu'on peut affiner par envie et par moment ----
   var SW = [["now", "Maintenant"], ["tonight", "Ce soir"], ["tomorrow", "Demain"], ["weekend", "Ce week-end"]];
-  var SWANT = ["any", "musique", "soiree", "spectacle", "bar", "expo", "musee", "sport", "marche", "famille", "festival", "social"];
+  var SWANT = ["any", "social", "musique", "soiree", "spectacle", "bar", "expo", "musee", "sport", "marche", "famille", "festival"];
   function track(n, p) { try { if (typeof analytics !== "undefined" && analytics && analytics.logEvent) analytics.logEvent(n, p || {}); } catch (e) {} }
   function loadWant() { try { var v = localStorage.getItem("wz-surprise-want"); if (v && SWANT.indexOf(v) !== -1) return v; } catch (e) {} return "any"; }
   function saveWant(v) { try { localStorage.setItem("wz-surprise-want", v); } catch (e) {} }
