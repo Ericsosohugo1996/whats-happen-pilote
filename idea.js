@@ -93,9 +93,12 @@
  // Règles de qualité des surprises (ajout) : rien avant 10 h (sauf marché / brocante / vide-grenier), pas d'ateliers d'agences pour l'emploi
   var JOB_RE = /(agence|candidature|emploi|carri[eè]re|recrut|inclusion|france travail|p[ôo]le emploi|handicap|employeur|qualifi)/i;
   var EARLY_OK_RE = /(vide[- ]?grenier|brocante|marché)/i;
+  var STAGE_RE = /\b(stages?|formations?)\b/i;
+  var SLOW_RE = /\b(ateliers?|cours|conf[eé]rences?|initiation|assembl[eé]e|r[eé]union|cycle)\b/i;
   function surpriseOk(ev) {
     if (ev.isPlace) return true;
     if (ev.category === "Divers" && JOB_RE.test(String(ev.title || "") + " " + String(ev.place || ""))) return false;
+    if (STAGE_RE.test(String(ev.title || ""))) return false;
     var m = mins(ev.time);
     if (m != null && m < 10 * 60 && ev.category !== "Marché" && ev.category !== "Brocante" && !EARLY_OK_RE.test(String(ev.title || ""))) return false;
     return true;
@@ -108,7 +111,7 @@
             // une expo « ouvre » plutôt qu'elle ne « commence » : on le dit honnêtement
       if (ev.category === "Expo" && !ev.isPlace && mins(ev.time) != null) tm = { label: (S.when === "now" ? "" : String(tm.label).split(" · ")[0] + " · ") + "Ouverte dès " + hh(ev.time).replace(/ h 00$/, " h"), score: tm.score };
       var real = ev.photo && !ev.photoGeneric && !ev.photoVenue;
-      var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25);
+      var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25) + (!ev.isPlace && SLOW_RE.test(String(ev.title || "")) ? 70 : 0);
       res.push({ ev: ev, label: tm.label, score: sc });
     });
     // lieux très connus : ils passent devant (Louvre, Orsay, Notre-Dame…)
