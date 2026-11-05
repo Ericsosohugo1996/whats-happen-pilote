@@ -252,7 +252,7 @@
     var venue = ev.place ? String(ev.place).split(",")[0] : "";
     return '<button type="button" class="wz-i-card' + (big ? " big" : "") + '" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-i-ph">' + eventPhotoHTML(ev) +
       '<span class="wz-i-pill" style="--c:' + color + '">' + icon + " " + esc(catLabel(ev).toUpperCase()) + (price === "free" ? " · Gratuit" : "") + '</span></div>' +
-      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div><div class="wz-i-why">' + esc(x.label) + '</div>' + (big && whyText(x, price) ? '<div class="wz-i-why2" style="margin-top:6px;font-size:12.5px;font-weight:600;line-height:1.4;opacity:.85">Pourquoi cette idée : ' + esc(whyText(x, price)) + '</div>' : '') + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
+      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div>' + (isSocial(ev) ? '<div class="wz-i-soc" style="display:inline-block;margin:6px 0 0;padding:4px 10px;border-radius:999px;background:#E6F4F2;color:#13655F;font:800 12px inherit;font-family:inherit">🤝 On y rencontre du monde</div>' : '') + '<div class="wz-i-why">' + esc(x.label) + '</div>' + (big && whyText(x, price) ? '<div class="wz-i-why2" style="margin-top:6px;font-size:12.5px;font-weight:600;line-height:1.4;opacity:.85">Pourquoi cette idée : ' + esc(whyText(x, price)) + '</div>' : '') + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
   }
   function screenResult() {
     var r = root(), lst = S.ranked.slice(S.offset, S.offset + 3);
@@ -461,10 +461,27 @@
     try { document.body.classList.add("wz-idea-open"); } catch (e) {}
     screenSurprise();
   }
+  // repère « on y rencontre du monde » : soirées dansantes, quiz, jeux, conversation, impro… (aucun profil, aucun message : juste une indication)
+  var SOCIAL_RE = /(after.?work|\bquiz+\b|blind.?test|\bbal\b|soir[ée]es? jeux|jeux de soci[ée]t[ée]|karaok[ée]|open.?mic|sc[eè]ne ouverte|jam session|\bap[ée]ro\b|caf[ée] (philo|langue|d[ée]bat|rencontre)|conversation|tandem|salsa|bachata|kizomba|tango|lindy|rock.?n.?roll|randonn[ée]e|run club|tournoi|impro\b)/i;
+  var SOCIAL_EXC_RE = /(c[ée]libataires?|speed.?dating|enfants?|minots?|kids?|b[ée]b[ée]|seniors?|s[ée]ance|stage|formation|r[ée]union|assembl|complet)/i;
+  function isSocial(ev) {
+    if (!ev || ev.isPlace || ev.category === "Famille" || ev.category === "Brocante") return false;
+    var t = String(ev.title || ""); return SOCIAL_RE.test(t) && !SOCIAL_EXC_RE.test(t) && !isClosed(t);
+  }
   function decorateAfter(id) {
     try {
       var old = document.getElementById("wz-after-btn"); if (old) old.remove();
-      var ev = findEv(id); if (!ev || !afterIdeas(ev).length) return;
+      var oldS = document.getElementById("wz-social-tag"); if (oldS) oldS.remove();
+      var ev0 = findEv(id);
+      if (isSocial(ev0)) {
+        var ttl = document.getElementById("detail-title");
+        if (ttl && ttl.parentNode) {
+          var sp = document.createElement("div"); sp.id = "wz-social-tag"; sp.textContent = "🤝 Sortie où l’on rencontre du monde";
+          sp.style.cssText = "display:inline-block;margin:8px 0 2px;padding:6px 12px;border-radius:999px;background:#E6F4F2;color:#13655F;font:800 12.5px inherit;font-family:inherit";
+          ttl.parentNode.insertBefore(sp, ttl.nextSibling);
+        }
+      }
+      var ev = ev0; if (!ev || !afterIdeas(ev).length) return;
       var card = document.querySelector("#view-detail .info-card"); if (!card || !card.parentNode) return;
       var b = document.createElement("button"); b.type = "button"; b.id = "wz-after-btn"; b.dataset.id = String(id);
       b.textContent = "🎲 Et après ? Une idée tout près";
