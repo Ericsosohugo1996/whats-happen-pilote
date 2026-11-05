@@ -90,10 +90,20 @@
     }
     return null;
   }
+ // Règles de qualité des surprises (ajout) : rien avant 10 h (sauf marché / brocante / vide-grenier), pas d'ateliers d'agences pour l'emploi
+  var JOB_RE = /(agence|candidature|emploi|carri[eè]re|recrut|inclusion|france travail|p[ôo]le emploi|handicap|employeur|qualifi)/i;
+  var EARLY_OK_RE = /(vide[- ]?grenier|brocante|marché)/i;
+  function surpriseOk(ev) {
+    if (ev.isPlace) return true;
+    if (ev.category === "Divers" && JOB_RE.test(String(ev.title || "") + " " + String(ev.place || ""))) return false;
+    var m = mins(ev.time);
+    if (m != null && m < 10 * 60 && ev.category !== "Marché" && ev.category !== "Brocante" && !EARLY_OK_RE.test(String(ev.title || ""))) return false;
+    return true;
+  }
   function rank() {
     var res = [];
     pool().forEach(function (ev) {
-      if (!wantOk(ev)) return;
+      if (!wantOk(ev) || !surpriseOk(ev)) return;
       var tm = timing(ev); if (!tm) return;
       var real = ev.photo && !ev.photoGeneric && !ev.photoVenue;
       var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25);
