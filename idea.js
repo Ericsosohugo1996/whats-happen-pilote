@@ -156,6 +156,7 @@
         var c = ranked[i].ev;
         if (c.isPlace || c.id === prev.id || stops.some(function (s) { return s.ev.id === c.id; })) continue;
         if (c.date !== prev.date || seen[c.category]) continue;
+        if ((S.planSkip || []).indexOf(c.id) !== -1) continue;
         var cm = mins(c.time); if (cm == null || cm > PLAN_LAST_START) continue;
         var km = haversineKm(prev.lat, prev.lng, c.lat, c.lng);
         if (km > PLAN_MAX_KM || km < 0.02) continue;
@@ -285,7 +286,7 @@
       '#wz-idea .wz-p-b{display:flex;gap:12px;align-items:center}#wz-idea .wz-p-ph{flex:none;width:84px;height:84px;border-radius:14px;overflow:hidden;background:#EEF2F9}#wz-idea .wz-p-ph img,#wz-idea .wz-p-ph svg{width:100%;height:100%;object-fit:cover;display:block}' +
       '#wz-idea .wz-p-x{min-width:0}#wz-idea .wz-p-cat{font-size:11px;font-weight:800;letter-spacing:1.1px;color:#1F8F86;margin:0 0 3px}#wz-idea .wz-p-n{font-size:16px;font-weight:700;line-height:1.25;margin:0 0 3px;overflow-wrap:anywhere}#wz-idea .wz-p-v{font-size:12.5px;color:#5B6786;line-height:1.35}' +
       '#wz-idea .wz-p-walk{margin:6px 0 6px 14px;padding-left:12px;border-left:2px dotted #B9C3D6;font-size:12.5px;font-weight:600;color:#5B6786;min-height:22px;display:flex;align-items:center}' +
-      '#wz-idea .wz-p-note{margin:12px 0 4px;padding:11px 13px;border-radius:14px;background:#EEF2F9;color:#5B6786;font-size:12.5px;line-height:1.45}' +
+      '#wz-idea .wz-p-sw{display:block;margin:8px 0 0 auto;padding:7px 12px;border:0;border-radius:999px;background:transparent;color:#C2492F;font:700 12.5px/1.2 inherit;font-family:inherit;cursor:pointer}#wz-idea .wz-p-share{width:100%;margin:12px 0 6px}#wz-idea .wz-p-note{margin:12px 0 4px;padding:11px 13px;border-radius:14px;background:#EEF2F9;color:#5B6786;font-size:12.5px;line-height:1.45}' +
       '#wz-idea .wz-s-plan{margin-top:10px}' +
       'html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::before{content:"Surprends-moi" !important}html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::after{content:"Une sortie près de toi, en 1 clic" !important}';
     document.head.appendChild(st);
@@ -329,8 +330,10 @@
       var ev = s.ev, venue = ev.place ? String(ev.place).split(",")[0] : "", tl = ev.category === "Expo" ? "Ouverte dès " + String(ev.time || "") : String(ev.time || "");
       if (i) h += '<div class="wz-p-walk">🚶 à environ ' + s.walk + ' min à pied</div>';
       h += '<button type="button" class="wz-p-card" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-p-t">' + esc(tl) + '</div><div class="wz-p-b"><div class="wz-p-ph">' + eventPhotoHTML(ev) + '</div><div class="wz-p-x"><div class="wz-p-cat">' + esc(String(ev.category).toUpperCase()) + '</div><div class="wz-p-n">' + esc(ev.title) + '</div><div class="wz-p-v">' + esc(venue) + '</div></div></div></button>';
+      if (i) h += '<button type="button" class="wz-p-sw" data-i="pswap" data-id="' + esc(ev.id) + '">↻ Une autre idée pour cette étape</button>';
     });
     h += '</div><div class="wz-p-note">Il reste à prévoir de ton côté : comment y aller et où manger. Distances à vol d’oiseau, vérifie les horaires avant de partir.</div>' +
+      '<button type="button" class="wz-i-go wz-p-share" data-i="pshare">✈ Envoyer ' + (word === "soirée" ? "ma soirée" : "ma journée") + ' à un ami</button>' +
       '<button type="button" class="wz-i-alt ghost" data-i="planback">← Retour à l’idée</button>';
     r.innerHTML = h; r.scrollTop = 0;
   }
@@ -347,6 +350,19 @@
     while (!S.ranked.length && i < order.length - 1) { i++; S.when = order[i]; surpriseRank(); }
     track("surprise_open", { when: S.when, want: S.sw });
     screenSurprise();
+  }
+  function sharePlan() {
+    var x = S.ranked[S.offset]; if (!x) return;
+    var st = planFrom(x, S.ranked); if (st.length < 2) return;
+    var f = mins(st[0].ev.time), word = (S.when === "tonight" || (f != null && f >= 17 * 60)) ? "soirée" : "journée";
+    var lines = st.map(function (s) {
+      var ev = s.ev, venue = ev.place ? String(ev.place).split(",")[0] : "";
+      return (ev.time ? hh(ev.time) + " · " : "") + ev.title + (venue ? " (" + venue + ")" : "");
+    });
+    var txt = "Ma " + word + " avec Whazup, ça te dit ?\n" + lines.join("\n");
+    var url = "https://whazup.fr";
+    if (navigator.share) { navigator.share({ title: "Ma " + word + " avec Whazup", text: txt, url: url }).catch(function () {}); }
+    else if (navigator.clipboard) { navigator.clipboard.writeText(txt + "\n" + url).then(function () { try { showShareToast("Programme copié"); } catch (e) {} }); }
   }
   function shareEv(id) {
     var ev = findEv(id); if (!ev) return;
@@ -379,7 +395,13 @@
       else { S.want = S.want.filter(function (x) { return x !== "any"; }); var i = S.want.indexOf(v); if (i === -1) S.want.push(v); else S.want.splice(i, 1); }
       return screenAsk();
     }
-    if (a === "plan") { track("surprise_plan"); return screenPlan(); }
+    if (a === "plan") { track("surprise_plan"); S.planSkip = []; return screenPlan(); }
+    if (a === "pswap") {
+      track("surprise_plan_swap"); var px = S.ranked[S.offset];
+      if (px) { S.planSkip = (S.planSkip || []).concat([b.dataset.id]); if (planFrom(px, S.ranked).length < 2) S.planSkip.pop(); }
+      return screenPlan();
+    }
+    if (a === "pshare") { track("surprise_plan_share"); return sharePlan(); }
     if (a === "planback") return screenSurprise();
     if (a === "refine") { track("surprise_refine"); S.refine = true; return screenSurprise(); }
     if (a === "swant") { track("surprise_filter", { want: v }); S.sw = v; saveWant(v); surpriseRank(); return screenSurprise(); }
