@@ -66,8 +66,8 @@
         if (ev.category === "À voir") return S.when === "now" ? { label: "À visiter · vérifie les horaires", score: 200 } : null;
         return { label: (ev.category === "Bar" ? "Bar" : "Lieu") + " · vérifie les horaires", score: 200 };
       }
-      if (ev.category === "À voir") return { label: "À visiter · vérifie les horaires", score: 350 };
-      if (ev.category === "Bar") return { label: "Ouvert en soirée · vérifie les horaires", score: 360 };   // musées : proposés aussi demain et ce week-end
+      if (ev.category === "À voir") return { label: "À visiter · vérifie les horaires", score: 470 };
+      if (ev.category === "Bar") return { label: "Ouvert en soirée · vérifie les horaires", score: 480 };   // musées : proposés aussi demain et ce week-end
       return null;
     }
     var m = mins(ev.time);
@@ -97,11 +97,12 @@
  // Règles de qualité des surprises (ajout) : rien avant 10 h (sauf marché / brocante / vide-grenier), pas d'ateliers d'agences pour l'emploi
   var JOB_RE = /(agence|candidature|emploi|carri[eè]re|recrut|inclusion|france travail|p[ôo]le emploi|handicap|employeur|qualifi)/i;
   var EARLY_OK_RE = /(vide[- ]?grenier|brocante|marché)/i;
+  var JUNK_PLACE_RE = /(g[îi]tes?\b|appart.?city|apparth[oô]tel|camping|auberge de jeunesse|chambres? d.h[oô]tes?|piscine|parking)/i;
   var DATING_RE = /c[ée]libataires?|speed.?dating/i;
   var STAGE_RE = /\b(stages?|formations?)\b/i;
   var SLOW_RE = /\b(ateliers?|cours|conf[eé]rences?|initiation|assembl[eé]e|r[eé]union|cycle)\b/i;
   function surpriseOk(ev) {
-    if (ev.isPlace) return true;
+    if (ev.isPlace) return !JUNK_PLACE_RE.test(String(ev.title || ""));
     if (ev.category === "Divers" && JOB_RE.test(String(ev.title || "") + " " + String(ev.place || ""))) return false;
     if (STAGE_RE.test(String(ev.title || ""))) return false;
     if (DATING_RE.test(String(ev.title || ""))) return false;
