@@ -77,6 +77,10 @@
       var d = m - n;
       return { label: d > 5 ? "Commence dans " + d + " min · " + hh(ev.time) : "En ce moment · depuis " + hh(ev.time), score: Math.max(0, d) };
     }
+    if (S.when === "today") {   // pour composer un programme : tout le reste de la journée
+      if (ev.date !== t || m == null || m < n - 30 || m > 23 * 60 + 30) return null;
+      return { label: "Aujourd’hui · " + hh(ev.time), score: Math.max(0, m - n) };
+    }
     if (S.when === "tonight") {
       if (ev.date !== t || m == null) return null;
       if (m < Math.max(n - 30, 17 * 60)) return null;
@@ -158,9 +162,19 @@
     if (c === "Soirée" && m != null && m < 18 * 60) return m < 12 * 60 ? "Matinée" : "Après-midi";
     return c;
   }
+  // « Maintenant » ne regarde que les 3 prochaines heures ; un programme, lui, peut piocher dans tout le reste de la journée
+  function planPool() {
+    if (S.when !== "now") return S.ranked;
+    var w = S.when, res; S.when = "today";
+    try { res = rank(); } catch (e) { res = S.ranked; }
+    S.when = w; return res;
+  }
   function planFrom(first, ranked) {
     var stops = [{ ev: first.ev, label: first.label, walk: 0 }];
     var seen = {}; seen[first.ev.category] = 1;
+    var nt = function (t) { return String(t || "").toLowerCase().replace(/[^a-z0-9àâçéèêëîïôûù]+/g, " ").trim(); };
+    var skipTitles = {}; skipTitles[nt(first.ev.title)] = 1;
+    (S.planSkip || []).forEach(function (id) { ranked.forEach(function (r) { if (r.ev.id === id) skipTitles[nt(r.ev.title)] = 1; }); });
     while (stops.length < PLAN_MAX_STOPS) {
       var prev = stops[stops.length - 1].ev, pm = mins(prev.time), pick = null;
       if (pm == null) break;
@@ -170,7 +184,7 @@
         if (c.isPlace || c.id === prev.id || stops.some(function (s) { return s.ev.id === c.id; })) continue;
         if (c.date !== prev.date || c.category === prev.category || (seen[c.category] || 0) >= 2) continue;
         if ((S.planSkip || []).indexOf(c.id) !== -1) continue;
-        if (PRATIQUE_RE.test(String(c.title || ""))) continue;   // pas d'étape « yoga / séniors / bébés » dans un programme
+        if (PRATIQUE_RE.test(String(c.title || "")) || skipTitles[nt(c.title)]) continue;   // pas d'étape « yoga / séniors / bébés » dans un programme
         var cm = mins(c.time); if (cm == null || cm > PLAN_LAST_START) continue;
         var km = haversineKm(prev.lat, prev.lng, c.lat, c.lng);
         if (km > PLAN_MAX_KM || km < 0.02) continue;
@@ -303,6 +317,7 @@
       '#wz-idea .wz-q-ph{height:104px;background:#EEF2F9;overflow:hidden}#wz-idea .wz-q-ph img,#wz-idea .wz-q-ph svg{width:100%;height:100%;object-fit:cover;display:block}' +
       '#wz-idea .wz-q-kind{font-size:11.5px;letter-spacing:.06em;font-weight:800;margin:10px 14px 0}#wz-idea .wz-q-ttl{font-family:Georgia,"Times New Roman",serif;font-size:17px;font-weight:700;line-height:1.25;color:#14213D;margin:3px 14px}#wz-idea .wz-q-v{font-size:13px;color:#4B5563;margin:0 14px;line-height:1.35}' +
       '#wz-idea .wz-q-acts{display:flex;gap:14px;margin:8px 14px 0;flex-wrap:wrap}#wz-idea .wz-q-lnk{border:0;background:none;padding:2px 0;color:#E85D3D;font:800 13px inherit;font-family:inherit;cursor:pointer}#wz-idea .wz-q-lnk.dim{color:#6B7280;font-weight:700}' +
+      '#wz-idea .wz-q-none{margin:8px 14px 0;font-size:12.5px;color:#C2492F;font-weight:700}' +
       '#wz-idea .wz-q-hop{margin:-2px 0 8px 60px;font-size:12px;color:#6B7280}' +
       '#wz-idea .wz-q-exp{display:flex;gap:10px;margin:14px 0 10px}#wz-idea .wz-q-exp button{flex:1;border-radius:14px;padding:14px 6px;font-size:14.5px;font-weight:800;cursor:pointer;font-family:inherit}#wz-idea .wz-q-b1{border:0;background:#1f6f78;color:#fff}#wz-idea .wz-q-b2{border:1.5px solid #E85D3D;background:transparent;color:#E85D3D}' +
       '#wz-idea .wz-q-note{border-radius:14px;padding:12px 14px;background:#F1F3F7;font-size:13.5px;line-height:1.45;color:#4B5563;margin:0 0 6px}#wz-idea .wz-q-note b{display:block;font-size:12px;color:#6B7280;letter-spacing:.04em;margin-bottom:4px}' +
@@ -368,7 +383,7 @@
   }
   function downloadPlanIcs() {
     var x = S.ranked[S.offset]; if (!x) return;
-    var st = planFrom(x, S.ranked); if (st.length < 2) return;
+    var st = planFrom(x, planPool()); if (st.length < 2) return;
     try {
       var blob = new Blob([planIcs(st)], { type: "text/calendar;charset=utf-8" }), a = document.createElement("a");
       a.href = URL.createObjectURL(blob); a.download = "ma-sortie-whazup.ics"; document.body.appendChild(a); a.click();
@@ -377,7 +392,7 @@
   }
   function screenPlan() {
     var r = root(), x = S.ranked[S.offset]; if (!x) return screenSurprise();
-    var st = planFrom(x, S.ranked); if (st.length < 2) return screenSurprise();
+    var st = planFrom(x, planPool()); if (st.length < 2) return screenSurprise();
     var wl = (SW.filter(function (w) { return w[0] === S.when; })[0] || [0, ""])[1].toLowerCase();
     var f = mins(st[0].ev.time), word = (S.when === "tonight" || (f != null && f >= 17 * 60)) ? "soirée" : "journée";
     var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button>' + tabsHtml("plan") + '<div class="wz-i-k" style="margin:2px 0 6px">🎁 Ton programme · ' + word + (wl ? " · " + esc(wl) : "") + '</div>' +
@@ -390,7 +405,8 @@
         '<div class="wz-q-body"><div class="wz-q-ph">' + eventPhotoHTML(ev) + '</div><div class="wz-q-kind" style="color:' + col + '">' + esc(catLabel(ev).toUpperCase()) + '</div>' +
         '<div class="wz-q-ttl">' + esc(ev.title) + '</div><div class="wz-q-v">' + esc(venue) + '</div><div class="wz-q-acts">' +
         '<button type="button" class="wz-q-lnk" data-i="open" data-id="' + esc(ev.id) + '">Voir la fiche</button>' +
-        (i ? '<button type="button" class="wz-q-lnk dim" data-i="pswap" data-id="' + esc(ev.id) + '">Autre idée</button>' : "") + '</div></div></div>';
+        (i ? '<button type="button" class="wz-q-lnk dim" data-i="pswap" data-id="' + esc(ev.id) + '">Autre idée</button>' : "") + '</div>' +
+        (S.swapNone === ev.id ? '<div class="wz-q-none">Pas d’autre idée proche à cette heure. Essaie « Un autre programme ».</div>' : "") + '</div></div>';
     });
     h += '</div><div class="wz-q-exp"><button type="button" class="wz-q-b1" data-i="pics">Ajouter au calendrier</button><button type="button" class="wz-q-b2" data-i="pshare">Partager</button></div>' +
       '<div class="wz-q-note"><b>IL RESTE À PRÉVOIR DE TON CÔTÉ</b>Comment y aller et où manger. Distances à vol d’oiseau, vérifie les horaires avant de partir.</div>' +
@@ -414,7 +430,7 @@
   }
   function sharePlan() {
     var x = S.ranked[S.offset]; if (!x) return;
-    var st = planFrom(x, S.ranked); if (st.length < 2) return;
+    var st = planFrom(x, planPool()); if (st.length < 2) return;
     var f = mins(st[0].ev.time), word = (S.when === "tonight" || (f != null && f >= 17 * 60)) ? "soirée" : "journée";
     var lines = st.map(function (s) {
       var ev = s.ev, venue = ev.place ? String(ev.place).split(",")[0] : "";
@@ -457,20 +473,23 @@
       return screenAsk();
     }
     if (a === "tab") {
+      S.swapNone = null;
       if (v === "idea") return screenSurprise();
       track("surprise_plan"); S.planSkip = []; var tx = S.ranked[S.offset];
-      if (!tx || planFrom(tx, S.ranked).length < 2) { S.planMsg = true; return screenSurprise(); }
+      if (!tx || planFrom(tx, planPool()).length < 2) { S.planMsg = true; return screenSurprise(); }
       return screenPlan();
     }
     if (a === "pnext") {
+      S.swapNone = null;
       track("surprise_plan_next"); var n0 = S.ranked.length, k;
-      for (k = 1; k < n0; k++) { var o2 = (S.offset + k) % n0; if (planFrom(S.ranked[o2], S.ranked).length > 1) { S.offset = o2; S.planSkip = []; break; } }
+      for (k = 1; k < n0; k++) { var o2 = (S.offset + k) % n0; if (planFrom(S.ranked[o2], planPool()).length > 1) { S.offset = o2; S.planSkip = []; break; } }
       return screenPlan();
     }
     if (a === "plan") { track("surprise_plan"); S.planSkip = []; return screenPlan(); }
     if (a === "pswap") {
       track("surprise_plan_swap"); var px = S.ranked[S.offset];
-      if (px) { S.planSkip = (S.planSkip || []).concat([b.dataset.id]); if (planFrom(px, S.ranked).length < 2) S.planSkip.pop(); }
+      S.swapNone = null;
+      if (px) { S.planSkip = (S.planSkip || []).concat([b.dataset.id]); if (planFrom(px, planPool()).length < 2) { S.planSkip.pop(); S.swapNone = b.dataset.id; } }
       return screenPlan();
     }
     if (a === "pics") { track("surprise_plan_ics"); return downloadPlanIcs(); }
