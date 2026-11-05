@@ -255,12 +255,17 @@
   }
   function screenSurprise() {
     var r = root(), x = S.ranked[S.offset];
-    var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🎲 Ta surprise</div>';
+    var wl = (SW.filter(function (w) { return w[0] === S.when; })[0] || [0, ""])[1].toLowerCase();
+    var wsel = S.sw && S.sw !== "any" ? (WANT.filter(function (y) { return y[0] === S.sw; })[0] || [0, ""])[1] : "";
+    var showRows = S.refine || !x;
+    var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🎲 Ta surprise' + (wl ? " · " + esc(wl) : "") + '</div>';
+    if (showRows) {
     h += '<div class="wz-s-row">';
     SWANT.forEach(function (k) { var w = WANT.filter(function (y) { return y[0] === k; })[0]; if (!w) return; h += '<button type="button" class="wz-i-c' + (S.sw === k ? " on" : "") + '" data-i="swant" data-v="' + k + '">' + (k === "any" ? "✨ Peu importe" : w[1]) + "</button>"; });
     h += '</div><div class="wz-s-row">';
     SW.forEach(function (w) { h += '<button type="button" class="wz-i-c' + (S.when === w[0] ? " on" : "") + '" data-i="swhen" data-v="' + w[0] + '">' + w[1] + "</button>"; });
     h += "</div>";
+    }
     if (!x) {
       h += '<h1 style="font-size:24px">Rien de prévu pour ce choix</h1><div class="wz-i-sub">Essaie un autre moment ou « Peu importe » : on ne te propose que de vraies sorties.</div>';
     } else {
@@ -268,6 +273,7 @@
       h += '<div class="wz-s-btns"><button type="button" class="wz-i-go" data-i="open" data-id="' + esc(x.ev.id) + '">J’y vais</button><button type="button" class="wz-i-alt" data-i="snext">🎲 Une autre</button></div>' +
         '<button type="button" class="wz-i-alt wz-s-send" data-i="sshare" data-id="' + esc(x.ev.id) + '">✈ Envoyer à un ami</button>';
     }
+    if (!showRows) h += '<button type="button" class="wz-i-alt ghost" data-i="refine">Affiner ma surprise' + (wsel ? " (" + esc(wsel) + ")" : "") + '</button>';
     h += '<button type="button" class="wz-i-alt ghost" data-i="full">Plus de choix →</button>';
     r.innerHTML = h; r.scrollTop = 0;
   }
@@ -275,7 +281,7 @@
     try { var av = document.getElementById("arrival-screen-overlay"); if (av) av.remove(); } catch (e) {}
     surpriseCss();
     var h = new Date().getHours();
-    S = { when: (h >= 22 || h < 5) ? "tomorrow" : h >= 17 ? "tonight" : "now" , want: [], sw: loadWant(), zone: "city", offset: 0, ranked: [] };
+    S = { when: (h >= 22 || h < 5) ? "tomorrow" : h >= 17 ? "tonight" : "now" , want: [], sw: loadWant(), zone: "city", offset: 0, ranked: [], refine: false };
     try { showView("discover"); } catch (e) {}
     document.body.classList.add("wz-idea-open");
     surpriseRank();
@@ -316,6 +322,7 @@
       else { S.want = S.want.filter(function (x) { return x !== "any"; }); var i = S.want.indexOf(v); if (i === -1) S.want.push(v); else S.want.splice(i, 1); }
       return screenAsk();
     }
+    if (a === "refine") { track("surprise_refine"); S.refine = true; return screenSurprise(); }
     if (a === "swant") { track("surprise_filter", { want: v }); S.sw = v; saveWant(v); surpriseRank(); return screenSurprise(); }
     if (a === "swhen") { track("surprise_when", { when: v }); S.when = v; surpriseRank(); return screenSurprise(); }
     if (a === "snext") { track("surprise_next"); S.offset = S.ranked.length ? (S.offset + 1) % S.ranked.length : 0; return screenSurprise(); }
