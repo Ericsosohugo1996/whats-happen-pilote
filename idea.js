@@ -360,7 +360,7 @@
     var wl = (SW.filter(function (w) { return w[0] === S.when; })[0] || [0, ""])[1].toLowerCase();
     var wsel = S.sw && S.sw !== "any" ? (WANT.filter(function (y) { return y[0] === S.sw; })[0] || [0, ""])[1] : "";
     var showRows = S.refine || !x;
-    var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button>' + tabsHtml("idea") + '<div class="wz-i-k" style="margin:2px 0 14px">🎲 Ta surprise' + (wl ? " · " + esc(wl) : "") + '</div>' +
+    var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button>' + (S.after ? "" : tabsHtml("idea")) + '<div class="wz-i-k" style="margin:2px 0 14px">' + (S.after ? "🎲 Et après · " + esc(String(S.after).slice(0, 40)) : "🎲 Ta surprise" + (wl ? " · " + esc(wl) : "")) + '</div>' +
       (S.planMsg ? '<div class="wz-q-note" style="margin:0 0 12px"><b>PAS ASSEZ DE SORTIES POUR UN PROGRAMME</b>Il n’y a pas assez de sorties proches et bien placées dans la journée. Voici une idée à la place.</div>' : "");
     S.planMsg = false;
     if (showRows) {
@@ -377,7 +377,7 @@
       h += '<div class="wz-s-btns"><button type="button" class="wz-i-go" data-i="open" data-id="' + esc(x.ev.id) + '">J’y vais</button><button type="button" class="wz-i-alt" data-i="snext">🎲 Une autre</button></div>' +
         '<button type="button" class="wz-i-alt wz-s-send" data-i="sshare" data-id="' + esc(x.ev.id) + '">✈ Envoyer à un ami</button>';
     }
-    if (!showRows) h += '<button type="button" class="wz-i-alt ghost" data-i="refine">Affiner ma surprise' + (wsel ? " (" + esc(wsel) + ")" : "") + '</button>';
+    if (!showRows && !S.after) h += '<button type="button" class="wz-i-alt ghost" data-i="refine">Affiner ma surprise' + (wsel ? " (" + esc(wsel) + ")" : "") + '</button>';
     if (showRows) h += '<button type="button" class="wz-i-alt ghost" data-i="full">Voir toutes les idées →</button>';   // un seul lien à la fois : « Affiner », puis « Voir toutes les idées »
     r.innerHTML = h; r.scrollTop = 0;
   }
@@ -432,6 +432,57 @@
       '<button type="button" class="wz-i-alt ghost" data-i="planback">← Retour à l’idée</button>';
     r.innerHTML = h; r.scrollTop = 0;
   }
+  // « Et après ? » : depuis la fiche d'une sortie, une idée qui commence après elle, tout près
+  function afterIdeas(ev) {
+    var em = mins(ev.time); if (!ev.date || em == null || ev.isPlace) return [];
+    var endM = em + durOf(ev), ref = null, out = [], t0 = String(ev.title || "").toLowerCase();
+    try { ref = referencePoint(); } catch (e) {}
+    allEvents().forEach(function (c) {
+      if (!c.lat || !c.lng || c.isPlace || c.id === ev.id || c.date !== ev.date) return;
+      if (String(c.title || "").toLowerCase() === t0) return;
+      var cm = mins(c.time); if (cm == null || cm > PLAN_LAST_START) return;
+      var km = haversineKm(ev.lat, ev.lng, c.lat, c.lng);
+      if (km > PLAN_MAX_KM || km < 0.02 || cm < endM + walkMin(km)) return;
+      if (!surpriseOk(c) || PRATIQUE_RE.test(String(c.title || "")) || c.category === "Divers" || c.category === "Brocante") return;
+      var o = {}; for (var k in c) o[k] = c[k];
+      o.distance = ref ? haversineKm(ref.lat, ref.lng, c.lat, c.lng) : km;
+      var real = c.photo && !c.photoGeneric && !c.photoVenue;
+      out.push({ ev: o, label: "Ensuite · " + hh(c.time), score: (cm - endM) / 10 + km * 12 - (real ? 60 : c.photoVenue ? 30 : 0) });
+    });
+    out.sort(function (a, b) { return a.score - b.score; });
+    return out.slice(0, 12);
+  }
+  function openAfter(id) {
+    var ev = findEv(id); if (!ev) return;
+    var items = afterIdeas(ev); if (!items.length) return;
+    track("surprise_after");
+    surpriseCss();
+    S = { when: "tonight", want: [], sw: "any", zone: "city", offset: 0, ranked: items, refine: false, after: ev.title };
+    try { document.body.classList.add("wz-idea-open"); } catch (e) {}
+    screenSurprise();
+  }
+  function decorateAfter(id) {
+    try {
+      var old = document.getElementById("wz-after-btn"); if (old) old.remove();
+      var ev = findEv(id); if (!ev || !afterIdeas(ev).length) return;
+      var card = document.querySelector("#view-detail .info-card"); if (!card || !card.parentNode) return;
+      var b = document.createElement("button"); b.type = "button"; b.id = "wz-after-btn"; b.dataset.id = String(id);
+      b.textContent = "🎲 Et après ? Une idée tout près";
+      b.style.cssText = "display:block;width:100%;margin:12px 0 0;padding:13px 14px;border-radius:14px;border:1.5px solid #E85D3D;background:#fff;color:#E85D3D;font:800 14.5px inherit;font-family:inherit;cursor:pointer";
+      card.parentNode.insertBefore(b, card.nextSibling);
+    } catch (e) {}
+  }
+  function wrapDetail() {
+    if (typeof window.openDetail !== "function" || window.openDetail.__wzAfter) return;
+    var orig = window.openDetail;
+    var w = function (id) { var r = orig.apply(this, arguments); setTimeout(function () { decorateAfter(id); }, 60); return r; };
+    w.__wzAfter = true; window.openDetail = w;
+  }
+  wrapDetail(); document.addEventListener("DOMContentLoaded", wrapDetail); setTimeout(wrapDetail, 1600);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("#wz-after-btn"); if (!b) return;
+    e.preventDefault(); e.stopPropagation(); openAfter(b.dataset.id);
+  });
   function openSurprise() {
     try { var av = document.getElementById("arrival-screen-overlay"); if (av) av.remove(); } catch (e) {}
     surpriseCss();
