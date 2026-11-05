@@ -327,7 +327,7 @@
     }
     if (x && !showRows) { var pl = planFrom(x, S.ranked); if (pl.length > 1) { var pf = mins(pl[0].ev.time); h += '<button type="button" class="wz-i-alt wz-s-plan" data-i="plan">Voir ma ' + ((S.when === "tonight" || (pf != null && pf >= 17 * 60)) ? "soirée" : "journée") + ' complète →</button>'; } }
     if (!showRows) h += '<button type="button" class="wz-i-alt ghost" data-i="refine">Affiner ma surprise' + (wsel ? " (" + esc(wsel) + ")" : "") + '</button>';
-    h += '<button type="button" class="wz-i-alt ghost" data-i="full">Plus de choix →</button>';
+    if (showRows) h += '<button type="button" class="wz-i-alt ghost" data-i="full">Voir toutes les idées →</button>';   // un seul lien à la fois : « Affiner », puis « Voir toutes les idées »
     r.innerHTML = h; r.scrollTop = 0;
   }
   function screenPlan() {
