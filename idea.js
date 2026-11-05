@@ -145,6 +145,12 @@
   var PLAN_MAX_STOPS = 3, PLAN_MAX_KM = 1.5, PLAN_LAST_START = 23 * 60 + 30;
   function durOf(ev) { var c = ev.category; return c === "Expo" ? 60 : (c === "Musique" || c === "Spectacles" || c === "Soirée" || c === "Festival") ? 120 : 90; }
   function walkMin(km) { return Math.max(2, Math.round(km * 1.3 / 0.08)); }
+  // une « soirée » avant 18 h s'appelle plutôt un événement de l'après-midi
+  function catLabel(ev) {
+    var c = String(ev.category || ""), m = mins(ev.time);
+    if (c === "Soirée" && m != null && m < 18 * 60) return m < 12 * 60 ? "Matinée" : "Après-midi";
+    return c;
+  }
   function planFrom(first, ranked) {
     var stops = [{ ev: first.ev, label: first.label, walk: 0 }];
     var seen = {}; seen[first.ev.category] = 1;
@@ -206,7 +212,7 @@
     var dist = ev.distance <= 3 ? Math.max(2, Math.round(ev.distance * 12 / 5) * 5) + " min à pied" : ev.distance.toFixed(1).replace(".", ",") + " km";
     var venue = ev.place ? String(ev.place).split(",")[0] : "";
     return '<button type="button" class="wz-i-card' + (big ? " big" : "") + '" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-i-ph">' + eventPhotoHTML(ev) +
-      '<span class="wz-i-pill" style="--c:' + color + '">' + icon + " " + esc(String(ev.category).toUpperCase()) + (price === "free" ? " · Gratuit" : "") + '</span></div>' +
+      '<span class="wz-i-pill" style="--c:' + color + '">' + icon + " " + esc(catLabel(ev).toUpperCase()) + (price === "free" ? " · Gratuit" : "") + '</span></div>' +
       '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div><div class="wz-i-why">' + esc(x.label) + '</div>' + (big && whyText(x, price) ? '<div class="wz-i-why2" style="margin-top:6px;font-size:12.5px;font-weight:600;line-height:1.4;opacity:.85">Pourquoi cette idée : ' + esc(whyText(x, price)) + '</div>' : '') + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
   }
   function screenResult() {
@@ -286,7 +292,7 @@
       '#wz-idea .wz-p-b{display:flex;gap:12px;align-items:center}#wz-idea .wz-p-ph{flex:none;width:84px;height:84px;border-radius:14px;overflow:hidden;background:#EEF2F9}#wz-idea .wz-p-ph img,#wz-idea .wz-p-ph svg{width:100%;height:100%;object-fit:cover;display:block}' +
       '#wz-idea .wz-p-x{min-width:0}#wz-idea .wz-p-cat{font-size:11px;font-weight:800;letter-spacing:1.1px;color:#1F8F86;margin:0 0 3px}#wz-idea .wz-p-n{font-size:16px;font-weight:700;line-height:1.25;margin:0 0 3px;overflow-wrap:anywhere}#wz-idea .wz-p-v{font-size:12.5px;color:#5B6786;line-height:1.35}' +
       '#wz-idea .wz-p-walk{margin:6px 0 6px 14px;padding-left:12px;border-left:2px dotted #B9C3D6;font-size:12.5px;font-weight:600;color:#5B6786;min-height:22px;display:flex;align-items:center}' +
-      '#wz-idea .wz-p-sw{display:block;margin:8px 0 0 auto;padding:7px 12px;border:0;border-radius:999px;background:transparent;color:#C2492F;font:700 12.5px/1.2 inherit;font-family:inherit;cursor:pointer}#wz-idea .wz-p-share{width:100%;margin:12px 0 6px}#wz-idea .wz-p-note{margin:12px 0 4px;padding:11px 13px;border-radius:14px;background:#EEF2F9;color:#5B6786;font-size:12.5px;line-height:1.45}' +
+      '#wz-idea .wz-p-sw{display:block;margin:8px 0 0 auto;padding:8px 14px;border:1px solid #F0C9BE;border-radius:999px;background:#FFF4F0;color:#C2492F;font:700 12.5px/1.2 inherit;font-family:inherit;cursor:pointer}#wz-idea .wz-p-share{width:100%;margin:12px 0 6px}#wz-idea .wz-p-note{margin:12px 0 4px;padding:11px 13px;border-radius:14px;background:#EEF2F9;color:#5B6786;font-size:12.5px;line-height:1.45}' +
       '#wz-idea .wz-s-plan{margin-top:10px}' +
       'html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::before{content:"Surprends-moi" !important}html body.wz-v2:not(.wz-nocity) #view-discover #sc-surprise .wz-l::after{content:"Une sortie près de toi, en 1 clic" !important}';
     document.head.appendChild(st);
@@ -329,7 +335,7 @@
     st.forEach(function (s, i) {
       var ev = s.ev, venue = ev.place ? String(ev.place).split(",")[0] : "", tl = ev.category === "Expo" ? "Ouverte dès " + String(ev.time || "") : String(ev.time || "");
       if (i) h += '<div class="wz-p-walk">🚶 à environ ' + s.walk + ' min à pied</div>';
-      h += '<button type="button" class="wz-p-card" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-p-t">' + esc(tl) + '</div><div class="wz-p-b"><div class="wz-p-ph">' + eventPhotoHTML(ev) + '</div><div class="wz-p-x"><div class="wz-p-cat">' + esc(String(ev.category).toUpperCase()) + '</div><div class="wz-p-n">' + esc(ev.title) + '</div><div class="wz-p-v">' + esc(venue) + '</div></div></div></button>';
+      h += '<button type="button" class="wz-p-card" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-p-t">' + esc(tl) + '</div><div class="wz-p-b"><div class="wz-p-ph">' + eventPhotoHTML(ev) + '</div><div class="wz-p-x"><div class="wz-p-cat">' + esc(catLabel(ev).toUpperCase()) + '</div><div class="wz-p-n">' + esc(ev.title) + '</div><div class="wz-p-v">' + esc(venue) + '</div></div></div></button>';
       if (i) h += '<button type="button" class="wz-p-sw" data-i="pswap" data-id="' + esc(ev.id) + '">↻ Une autre idée pour cette étape</button>';
     });
     h += '</div><div class="wz-p-note">Il reste à prévoir de ton côté : comment y aller et où manger. Distances à vol d’oiseau, vérifie les horaires avant de partir.</div>' +
