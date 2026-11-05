@@ -64,7 +64,7 @@
       if (S.when === "now" || S.when === "tonight") {
         // un monument n'est pas une idée de soirée ; et on ne peut pas promettre qu'un lieu est ouvert : on dit « vérifie les horaires »
         if (ev.category === "À voir") return S.when === "now" ? { label: "À visiter · vérifie les horaires", score: 200 } : null;
-        return { label: (ev.category === "Bar" ? "Bar" : "Lieu") + " · vérifie les horaires", score: 200 };
+        return { label: (ev.category === "Bar" ? "Bar" : "Lieu") + " · vérifie les horaires", score: S.when === "tonight" ? 650 : 200 };   // ce soir : les vrais événements d'abord, les bars ensuite
       }
       if (ev.category === "À voir") return { label: "À visiter · vérifie les horaires", score: 470 };
       if (ev.category === "Bar") return { label: "Ouvert en soirée · vérifie les horaires", score: 480 };   // musées : proposés aussi demain et ce week-end
