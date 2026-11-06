@@ -1,7 +1,7 @@
 // Whazup — pages « Sorties » lisibles par Google, mises à jour chaque nuit.
 // Pour chaque ville (et chaque commune qui a assez de sorties) :
 //   sorties/<ville>/                    → sorties des 14 prochains jours
-//   sorties/<ville>/soirees/ halloween/ (en saison) concerts/ expos/ spectacles/ marches/ gratuit/ ce-week-end/   → pages ciblées
+//   sorties/<ville>/soirees/ halloween/ noel/ nouvel-an/ (en saison) concerts/ expos/ spectacles/ marches/ gratuit/ ce-week-end/   → pages ciblées
 // Lit data/events/*.json (créé par split-data.js) et écrit sorties/, sitemap.xml.
 // Une page avec trop peu de sorties n'est pas créée (Google n'aime pas les pages vides).
 // Pour tout retirer : supprimer le dossier sorties/, ce fichier, son workflow, et remettre l'ancien sitemap.xml.
@@ -21,7 +21,17 @@ const OUT = "sorties";
 
 // Halloween : page de saison, générée seulement du 10 octobre au 1er novembre (le dossier est reconstruit chaque nuit, elle disparaît ensuite toute seule)
 const NOW_D = new Date(), HW_SEASON = (NOW_D.getMonth() === 9 && NOW_D.getDate() >= 10) || (NOW_D.getMonth() === 10 && NOW_D.getDate() <= 1);
+// Noël : page de saison, de début novembre au 26 décembre ; Nouvel An : du 15 novembre au 1er janvier (elles disparaissent toutes seules ensuite).
+// Ces pages regardent plus loin que les 14 jours habituels, car les marchés de Noël sont annoncés bien à l'avance.
+const NOEL_SEASON = NOW_D.getMonth() === 10 || (NOW_D.getMonth() === 11 && NOW_D.getDate() <= 26);
+const NA_SEASON = (NOW_D.getMonth() === 10 && NOW_D.getDate() >= 15) || NOW_D.getMonth() === 11 || (NOW_D.getMonth() === 0 && NOW_D.getDate() <= 1);
+const NOEL_END = NOW_D.getFullYear() + "-12-31", NA_END = (NOW_D.getFullYear() + (NOW_D.getMonth() === 0 ? 0 : 1)) + "-01-02";
+const NOEL_RE = /\bno[eë]l\b|march[ée]s? (de )?(no[eë]l|d.hiver)|village (de )?no[eë]l|f[ée]eries? (de )?no[eë]l|illuminations?|\bpatinoire|p[èe]re no[eë]l/i;
+const NOEL_EXC_RE = /recherche d.(artisans|exposants|cr[ée]ateurs)|appel (à|a) (candidatures?|exposants)|inscriptions? (des )?exposants|r[ée]servation (des )?emplacements|candidatures? exposants|compl(et|ète)|\\bstage\\b|^agenda /i;
+const NA_RE = /r[ée]veillon|nouvel.?an|saint.?sylvestre|\bnye\b|31 d[ée]cembre|countdown|new year/i;
 const THEMES = [
+  ...(NOEL_SEASON ? [{ slug: "noel", label: "Noël", one: "marchés de Noël et sorties de Noël", long: NOEL_END, test: (e) => NOEL_RE.test(String(e.title || "")) && !NOEL_EXC_RE.test(String(e.title || "")) }] : []),
+  ...(NA_SEASON ? [{ slug: "nouvel-an", label: "Nouvel An", one: "soirées et sorties du Nouvel An", long: NA_END, test: (e) => NA_RE.test(String(e.title || "")) && !NOEL_EXC_RE.test(String(e.title || "")) }] : []),
   ...(HW_SEASON ? [{ slug: "halloween", label: "Halloween", one: "soirées et sorties Halloween", test: (e) => /hallowe.?en/i.test(String(e.title || "")) }] : []),
   { slug: "soirees", label: "Soirées", one: "soirées", test: (e) => e.category === "Soirée" },
   { slug: "concerts", label: "Concerts", one: "concerts", test: (e) => e.category === "Musique" },
@@ -167,13 +177,15 @@ function main() {
   fs.writeFileSync(path.join(OUT, "s.css"), CSS + "\n");
 
   // 1. lecture de tous les fichiers de villes
-  const hubs = {}; const all = new Map(); // all : événements dédoublonnés, avec la ville source
+  const hubs = {}, hubsLong = {}; const all = new Map(); // all : événements dédoublonnés, avec la ville source
   for (const key of Object.keys(cities)) {
     let list = [];
     try { list = JSON.parse(fs.readFileSync(path.join("data", "events", key + ".json"), "utf8")); } catch (e) { continue; }
     if (!Array.isArray(list)) continue;
     const ev = sortEv(list.filter((e) => e && e.title && e.date && e.date >= today && e.date <= last));
     hubs[key] = ev;
+    const lend = [NOEL_SEASON ? NOEL_END : "", NA_SEASON ? NA_END : ""].sort().pop();
+    hubsLong[key] = lend ? sortEv(list.filter((e) => e && e.title && e.date && e.date >= today && e.date <= lend)) : [];
     for (const e of ev) { const id = e.id || (e.title + "|" + e.date + "|" + e.place); if (!all.has(id)) all.set(id, { e, src: key }); }
   }
 
@@ -209,7 +221,7 @@ function main() {
   for (const key of Object.keys(hubs)) {
     if (hubs[key].length < MIN_EVENTS) continue;
     const slug = take(cities[key], key); if (!slug) continue;
-    ents.push({ kind: "ville", slug, name: cities[key], key, ev: hubs[key] });
+    ents.push({ kind: "ville", slug, name: cities[key], key, ev: hubs[key], evLong: hubsLong[key] || [] });
   }
   for (const o of [...com.values()].sort((a, b) => b.ev.length - a.ev.length)) {
     if (o.ev.length < MIN_COMMUNE) continue;
@@ -232,6 +244,7 @@ function main() {
       if (T.places) { if (pl.length >= MIN_PLACES) tp.push({ T, sub: pl, from: today, to: last }); continue; }
       let sub, from = today, to = last;
       if (T.weekend) { sub = ev.filter((e) => e.date >= wkA && e.date <= wkB); from = wkA; to = wkB; }
+      else if (T.long) { if (E.kind !== "ville") continue; const seenT = new Set(); sub = E.evLong.filter((e) => e.date <= T.long && T.test(e)).filter((e) => { const k = nameKey(e.title) + "|" + nameKey(String(e.place || "").split(",")[0]); if (seenT.has(k)) return false; seenT.add(k); return true; }); to = T.long; }   // un marché qui dure 20 jours n'apparaît qu'une fois (à sa première date)
       else sub = ev.filter(T.test);
       if (sub.length < (T.weekend ? MIN_WEEKEND : MIN_THEME)) continue;
       tp.push({ T, sub, from, to });
@@ -283,6 +296,23 @@ function main() {
         title = "Soirées à " + name + " ce soir et ce week-end : " + n + " soirées | Whazup";
         desc = n + " soirées à " + name + " dans les " + DAYS + " prochains jours : clubs, DJ sets, techno, house, rap, afro, bars et afterworks. Mis à jour chaque jour.";
         intro2 = n + " soirées à " + name + " dans les " + DAYS + " prochains jours, réparties sur " + days + " jour" + (days > 1 ? "s" : "") + (places.length ? ", notamment " + joinFr(places) : "") + ".";
+      } else if (T.slug === "noel" || T.slug === "nouvel-an") {
+        const yr = NOW_D.getFullYear(), isN = T.slug === "noel";
+        const mk = isN ? sub.filter((e) => /march[ée]s? (de )?(no[eë]l|d.hiver)|village (de )?no[eë]l|chalets?/i.test(String(e.title || ""))).length : 0;
+        const first = sub[0] && sub[0].date, lastD = sub[sub.length - 1] && sub[sub.length - 1].date;
+        const span = first && lastD ? "du " + shortDate(first) + " au " + shortDate(lastD) : "";
+        if (isN) {
+          h1 = (mk >= 5 ? "Marchés de Noël " : "Noël ") + yr + " à " + name + " : " + (mk >= 5 ? "marchés, concerts et animations" : "sorties et animations");
+          title = (mk >= 5 ? "Marchés de Noël " : "Noël ") + yr + " à " + name + " : " + n + " sorties et animations | Whazup";
+          desc = "Que faire pour Noël à " + name + " ? " + n + " " + (mk >= 5 ? "marchés de Noël, " : "") + "spectacles, concerts et animations de Noël " + span + ". Dates, horaires et lieux.";
+          intro2 = n + " sorties de Noël à " + name + (span ? " " + span : "") + (mk ? ", dont " + mk + " marché" + (mk > 1 ? "s" : "") + " de Noël" : "") + ".";
+        } else {
+          const yn = NOW_D.getMonth() === 0 ? yr - 1 : yr;
+          h1 = "Nouvel An " + (yn + 1) + " à " + name + " : réveillons et soirées";
+          title = "Nouvel An " + (yn + 1) + " à " + name + " : " + n + " réveillons et soirées | Whazup";
+          desc = "Où fêter le Nouvel An à " + name + " ? " + n + " réveillons, soirées et sorties de la Saint-Sylvestre. Dates, horaires et lieux.";
+          intro2 = n + " réveillons et soirées du Nouvel An à " + name + ".";
+        }
       } else if (T.slug === "halloween") {
         const yr = NOW_D.getFullYear();
         h1 = "Halloween " + yr + " à " + name + " : soirées et sorties";
