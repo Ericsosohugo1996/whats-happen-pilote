@@ -102,6 +102,7 @@ function shell({ title, desc, canonical, body, ld }) {
     "<meta property=\"og:url\" content=\"" + esc(canonical) + "\">\n<meta property=\"og:image\" content=\"" + SITE + "/680cfd7d-7105-4e25-bff2-1826063c32d9.jpg\">\n" +
     "<meta name=\"theme-color\" content=\"#14213D\">\n<link rel=\"icon\" href=\"/favicon.ico\">\n<link rel=\"stylesheet\" href=\"/" + OUT + "/s.css\">\n" +
     (ld ? "<script type=\"application/ld+json\">" + JSON.stringify(ld).replace(/</g, "\\u003c") + "</script>\n" : "") +
+    "<script defer src=\"https://static.cloudflareinsights.com/beacon.min.js\" data-cf-beacon='{\"token\": \"ad121ae2ee3c49eab1b791fd877d0009\"}'></script>\n" +
     "</head>\n<body>\n<header><a href=\"/\">Wha<span>zup</span></a></header>\n<main>\n" + body +
     "\n<footer>Whazup rassemble les sorties de toute la France. <a href=\"/sorties/\">Toutes les villes</a> · <a href=\"/mentions-legales.html\">Mentions légales</a> · <a href=\"/confidentialite.html\">Confidentialité</a></footer>\n</main>\n</body>\n</html>\n";
 }
