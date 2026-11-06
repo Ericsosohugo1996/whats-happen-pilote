@@ -16,7 +16,8 @@ const MIN_PLACES = 5;           // page « à voir » : minimum de lieux
 const MAX_PLACES = 24;
 const MIN_WEEKEND = 8;          // page « ce week-end » : minimum de sorties
 const DAYS = 14;
-const MAX_LISTED = 40, MAX_THEME_LISTED = 30, MAX_LD = 15;
+const MAX_LISTED = 40, MAX_THEME_LISTED = 30, MAX_LD = 15, MAX_MARKETS = 25, MAX_OTHERS = 20;
+const MKT_RE = /march[ée]s? (de )?(no[eë]l|d.hiver)|village (de )?no[eë]l|chalets?/i;
 const OUT = "sorties";
 
 // Halloween : page de saison, générée seulement du 10 octobre au 1er novembre (le dossier est reconstruit chaque nuit, elle disparaît ensuite toute seule)
@@ -332,11 +333,25 @@ function main() {
         desc = n + " " + T.one + " à " + name + " dans les " + DAYS + " prochains jours, avec dates, horaires et lieux. Mis à jour chaque jour.";
         intro2 = n + " " + T.one + " à " + name + " dans les " + DAYS + " prochains jours, répartis sur " + days + " jour" + (days > 1 ? "s" : "") + (places.length ? ", notamment " + joinFr(places) : "") + ".";
       }
+      // Noël : les marchés d'abord, puis les autres animations.
+      let listing, rest, ordered = sub;
+      const mkts = T.slug === "noel" ? sub.filter((e) => MKT_RE.test(String(e.title || ""))) : [];
+      if (mkts.length >= 5) {
+        const others = sub.filter((e) => !MKT_RE.test(String(e.title || "")));
+        const a = Math.min(mkts.length, MAX_MARKETS), b = Math.min(others.length, MAX_OTHERS);
+        listing = "<h2>Marchés de Noël à " + esc(name) + "</h2>\n" + itemsHtml(mkts, today, a) +
+          (others.length ? "<h2>Autres animations de Noël</h2>\n" + itemsHtml(others, today, b) : "");
+        rest = n - a - b;
+        ordered = mkts.concat(others);
+      } else {
+        listing = itemsHtml(sub, today, MAX_THEME_LISTED);
+        rest = n - MAX_THEME_LISTED;
+      }
       const body = "<p class=\"crumb\"><a href=\"/" + OUT + "/\">Sorties</a> › <a href=\"/" + OUT + "/" + slug + "/\">" + esc(name) + "</a></p>\n<h1>" + esc(h1) + "</h1>\n<p class=\"lead\">" + esc(intro2) + " Mise à jour chaque jour.</p>\n" + chips(T.slug) +
-        "<a class=\"cta\" href=\"" + cta + "\">Voir les sorties à " + esc(name) + " sur Whazup</a>\n" + itemsHtml(sub, today, MAX_THEME_LISTED) +
-        (n > MAX_THEME_LISTED ? "<p class=\"lead\">… et " + (n - MAX_THEME_LISTED) + " autres sur Whazup.</p>\n<a class=\"cta\" href=\"" + cta + "\">Tout voir sur Whazup</a>\n" : "");
+        "<a class=\"cta\" href=\"" + cta + "\">Voir les sorties à " + esc(name) + " sur Whazup</a>\n" + listing +
+        (rest > 0 ? "<p class=\"lead\">… et " + rest + " autres sur Whazup.</p>\n<a class=\"cta\" href=\"" + cta + "\">Tout voir sur Whazup</a>\n" : "");
       const can = SITE + "/" + OUT + "/" + slug + "/" + T.slug + "/";
-      write(slug + "/" + T.slug, shell({ title, desc, canonical: can, body, ld: ldList(name, sub, T.label + " à") }));
+      write(slug + "/" + T.slug, shell({ title, desc, canonical: can, body, ld: ldList(name, ordered, T.label + " à") }));
       urls.push({ u: can, p: "0.6" }); nTheme++;
     }
     E.themes = tp.length;
