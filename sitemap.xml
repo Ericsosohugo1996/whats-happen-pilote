@@ -1531,6 +1531,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/gap/expos/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/gap/marches/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -1574,6 +1580,12 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/nice/expos/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/nice/spectacles/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -3680,6 +3692,12 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/arras/spectacles/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/arras/gratuit/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -5995,6 +6013,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/cannes/soirees/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/cannes/spectacles/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -6685,24 +6709,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/begles/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/begles/concerts/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/begles/gratuit/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://whazup.fr/sorties/pantin/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -6728,6 +6734,24 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/pantin/ce-week-end/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/begles/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/begles/concerts/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/begles/gratuit/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -6853,6 +6877,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/eckbolsheim/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/eckbolsheim/expos/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/eckbolsheim/spectacles/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/saint-denis/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -6889,37 +6931,25 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/colomiers/</loc>
+    <loc>https://whazup.fr/sorties/montreuil/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/colomiers/spectacles/</loc>
+    <loc>https://whazup.fr/sorties/montreuil/soirees/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/colomiers/ce-week-end/</loc>
+    <loc>https://whazup.fr/sorties/montreuil/concerts/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/eckbolsheim/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/eckbolsheim/expos/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/eckbolsheim/spectacles/</loc>
+    <loc>https://whazup.fr/sorties/montreuil/ce-week-end/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -6938,6 +6968,18 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/honfleur/ce-week-end/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/colomiers/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/colomiers/spectacles/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -7016,30 +7058,6 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/montbeliard/ce-week-end/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/montreuil/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/montreuil/soirees/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/montreuil/concerts/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/montreuil/ce-week-end/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -7147,6 +7165,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/boulogne-billancourt/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/boulogne-billancourt/concerts/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/boulogne-billancourt/spectacles/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/boulogne-billancourt/ce-week-end/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/ramonville-saint-agne/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -7201,30 +7243,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/boulogne-billancourt/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/boulogne-billancourt/concerts/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/boulogne-billancourt/spectacles/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/boulogne-billancourt/ce-week-end/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://whazup.fr/sorties/merignac/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -7238,6 +7256,18 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/merignac/spectacles/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/cenon/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/cenon/concerts/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -7267,18 +7297,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/cenon/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/cenon/concerts/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://whazup.fr/sorties/saint-remy-de-provence/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -7292,6 +7310,24 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/saint-remy-de-provence/ce-week-end/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/senlis/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/senlis/gratuit/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/senlis/ce-week-end/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -7327,18 +7363,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/senlis/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/senlis/gratuit/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://whazup.fr/sorties/aubagne/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -7352,6 +7376,36 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/aubagne/ce-week-end/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/soirees/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/concerts/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/gratuit/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/ce-week-end/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -7400,36 +7454,6 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/carvin/ce-week-end/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/soirees/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/concerts/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/gratuit/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/saint-jean-de-vedas/ce-week-end/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -7675,24 +7699,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/cugnaux/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/cugnaux/gratuit/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/cugnaux/ce-week-end/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://whazup.fr/sorties/herouville-saint-clair/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -7718,18 +7724,6 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/clohars-carnoet/expos/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/guerande/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/guerande/ce-week-end/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -7771,6 +7765,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whazup.fr/sorties/cugnaux/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/cugnaux/gratuit/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://whazup.fr/sorties/nay/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
@@ -7784,6 +7790,18 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/nay/ce-week-end/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/guerande/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/guerande/ce-week-end/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -7823,6 +7841,18 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/lattes/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/lattes/soirees/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://whazup.fr/sorties/castelnau-le-lez/</loc>
@@ -7951,16 +7981,10 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/lattes/</loc>
+    <loc>https://whazup.fr/sorties/blagnac/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/lattes/soirees/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://whazup.fr/sorties/courseulles-sur-mer/</loc>
@@ -7997,6 +8021,12 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/bethune/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whazup.fr/sorties/cournon-d-auvergne/</loc>
@@ -8107,10 +8137,28 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://whazup.fr/sorties/blagnac/</loc>
+    <loc>https://whazup.fr/sorties/lormont/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/lormont/gratuit/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/saint-etienne-du-rouvray/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whazup.fr/sorties/saint-etienne-du-rouvray/gratuit/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://whazup.fr/sorties/saint-quentin/</loc>
@@ -8138,12 +8186,6 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/mont-lozere-et-goulet/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/bethune/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -8228,18 +8270,6 @@
   </url>
   <url>
     <loc>https://whazup.fr/sorties/suce-sur-erdre/expos/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/lormont/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/lormont/gratuit/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -8333,12 +8363,6 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://whazup.fr/sorties/riom/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whazup.fr/sorties/saint-cyprien/</loc>
