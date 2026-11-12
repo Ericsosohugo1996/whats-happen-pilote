@@ -1,144 +1,144 @@
 Villes lues dans app.js : 139
-Agenda Shotgun — reçus : 1188 — gardés : 1173 — écartés (hors villes / sans position / pas musique-soirée) : 14
+Agenda Shotgun — reçus : 1179 — gardés : 1164 — écartés (hors villes / sans position / pas musique-soirée) : 14
 Agenda Festival Culture Bar-Bars (Nantes) — reçus : 555 — gardés : 532 — écartés (hors villes / sans position / pas musique-soirée) : 22
-Agenda JASS CLUB PARIS — reçus : 54 — gardés : 54 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Rocher de Palmer — reçus : 37 — gardés : 35 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda JASS CLUB PARIS — reçus : 53 — gardés : 53 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Rocher de Palmer — reçus : 35 — gardés : 33 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Le Tamanoir — reçus : 4 — gardés : 4 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda En Soirée Je Danse Pas — reçus : 94 — gardés : 93 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Sortie 13 — reçus : 6 — gardés : 5 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda En Soirée Je Danse Pas — reçus : 95 — gardés : 94 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Sortie 13 — reçus : 5 — gardés : 5 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Le Plan — reçus : 5 — gardés : 5 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Rock School Barbey — reçus : 1 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Agenda de concerts (Tremblay-en-France) — reçus : 9 — gardés : 4 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda OpenAgenda et les événements musicaux — reçus : 79 — gardés : 77 — écartés (hors villes / sans position / pas musique-soirée) : 2
-Agenda La Sirène (La Rochelle) — reçus : 13 — gardés : 13 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Le Musical (Lille) — reçus : 8 — gardés : 8 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Mar'mousse - Kav, Bar & Resto — reçus : 20 — gardés : 20 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda OpenAgenda et les événements musicaux — reçus : 80 — gardés : 78 — écartés (hors villes / sans position / pas musique-soirée) : 2
+Agenda La Sirène (La Rochelle) — reçus : 14 — gardés : 14 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Le Musical (Lille) — reçus : 7 — gardés : 7 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Mar'mousse - Kav, Bar & Resto — reçus : 21 — gardés : 21 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Cabaret Sauvage (Paris) — reçus : 7 — gardés : 7 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda L'Estaminet (Magny-les-Hameaux) — reçus : 14 — gardés : 14 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda L'Estaminet (Magny-les-Hameaux) — reçus : 13 — gardés : 13 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Éclats d'émail jazz (Limoges) — reçus : 28 — gardés : 22 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Tourcoing Jazz (office de tourisme) — reçus : 247 — gardés : 21 — écartés (hors villes / sans position / pas musique-soirée) : 218
+Agenda Tourcoing Jazz (office de tourisme) — reçus : 248 — gardés : 21 — écartés (hors villes / sans position / pas musique-soirée) : 220
 Agenda Tourcoing Jazz Festival — reçus : 116 — gardés : 110 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda AgendaTrad (bals) — reçus : 814 — gardés : 634 — écartés (hors villes / sans position / pas musique-soirée) : 179
-Agenda Métropole européenne de Lille — reçus : 1099 — gardés : 853 — écartés (hors villes / sans position / pas musique-soirée) : 80
-Agenda Ville de Lille — reçus : 393 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 20
-Agenda La culture en continu (Lille) — reçus : 217 — gardés : 2 — écartés (hors villes / sans position / pas musique-soirée) : 4
-Agenda Bordeaux Métropole — reçus : 1185 — gardés : 1024 — écartés (hors villes / sans position / pas musique-soirée) : 109
-Agenda Ville de Bordeaux — reçus : 845 — gardés : 34 — écartés (hors villes / sans position / pas musique-soirée) : 60
-Agenda Ville de Bordeaux - contributeurs — reçus : 348 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 28
-Agenda Carte jeune Bordeaux Métropole — reçus : 201 — gardés : 12 — écartés (hors villes / sans position / pas musique-soirée) : 2
-Agenda Bordeaux Tourisme — reçus : 70 — gardés : 26 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Toulouse Métropole — reçus : 1047 — gardés : 915 — écartés (hors villes / sans position / pas musique-soirée) : 103
-Agenda Toulouse — reçus : 637 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 36
-Agenda Festival Estiv'Oc (Toulouse) — reçus : 145 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 36
-Agenda Nantes Métropole — reçus : 1219 — gardés : 839 — écartés (hors villes / sans position / pas musique-soirée) : 106
+Agenda AgendaTrad (bals) — reçus : 830 — gardés : 647 — écartés (hors villes / sans position / pas musique-soirée) : 182
+Agenda Métropole européenne de Lille — reçus : 1098 — gardés : 852 — écartés (hors villes / sans position / pas musique-soirée) : 79
+Agenda Ville de Lille — reçus : 399 — gardés : 7 — écartés (hors villes / sans position / pas musique-soirée) : 20
+Agenda La culture en continu (Lille) — reçus : 225 — gardés : 2 — écartés (hors villes / sans position / pas musique-soirée) : 4
+Agenda Bordeaux Métropole — reçus : 1178 — gardés : 1021 — écartés (hors villes / sans position / pas musique-soirée) : 107
+Agenda Ville de Bordeaux — reçus : 831 — gardés : 34 — écartés (hors villes / sans position / pas musique-soirée) : 59
+Agenda Ville de Bordeaux - contributeurs — reçus : 342 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 28
+Agenda Carte jeune Bordeaux Métropole — reçus : 197 — gardés : 12 — écartés (hors villes / sans position / pas musique-soirée) : 2
+Agenda Bordeaux Tourisme — reçus : 72 — gardés : 28 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Toulouse Métropole — reçus : 1049 — gardés : 917 — écartés (hors villes / sans position / pas musique-soirée) : 103
+Agenda Toulouse — reçus : 638 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 36
+Agenda Festival Estiv'Oc (Toulouse) — reçus : 150 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 37
+Agenda Nantes Métropole — reçus : 1226 — gardés : 846 — écartés (hors villes / sans position / pas musique-soirée) : 106
 Agenda Contributions Nantes et métropole — reçus : 20 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 3
-Agenda Rennes Métropole — reçus : 688 — gardés : 502 — écartés (hors villes / sans position / pas musique-soirée) : 119
-Agenda Carte Sortir ! (Rennes) — reçus : 259 — gardés : 3 — écartés (hors villes / sans position / pas musique-soirée) : 15
-Agenda Mon agenda des métropoles — reçus : 85 — gardés : 3 — écartés (hors villes / sans position / pas musique-soirée) : 16
-Agenda Aix-Marseille-Provence Métropole — reçus : 369 — gardés : 139 — écartés (hors villes / sans position / pas musique-soirée) : 225
-Agenda Métropole Rouen Normandie — reçus : 430 — gardés : 349 — écartés (hors villes / sans position / pas musique-soirée) : 72
-Agenda Rouen — reçus : 333 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 69
-Agenda La Murmure (musiques actuelles de Normandie) — reçus : 32 — gardés : 6 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Agenda de sorties de la métropole orléanaise — reçus : 497 — gardés : 425 — écartés (hors villes / sans position / pas musique-soirée) : 46
-Agenda Ville de Limoges — reçus : 231 — gardés : 116 — écartés (hors villes / sans position / pas musique-soirée) : 16
-Agenda Villeurbanne — reçus : 218 — gardés : 204 — écartés (hors villes / sans position / pas musique-soirée) : 9
-Agenda Ville de Cenon — reçus : 88 — gardés : 21 — écartés (hors villes / sans position / pas musique-soirée) : 5
-Agenda Petit Agenda (Perpignan) — reçus : 220 — gardés : 151 — écartés (hors villes / sans position / pas musique-soirée) : 13
-Agenda Unidivers (Bayonne) — reçus : 47 — gardés : 26 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Rennes Métropole — reçus : 678 — gardés : 496 — écartés (hors villes / sans position / pas musique-soirée) : 117
+Agenda Carte Sortir ! (Rennes) — reçus : 253 — gardés : 3 — écartés (hors villes / sans position / pas musique-soirée) : 15
+Agenda Mon agenda des métropoles — reçus : 101 — gardés : 4 — écartés (hors villes / sans position / pas musique-soirée) : 16
+Agenda Aix-Marseille-Provence Métropole — reçus : 350 — gardés : 138 — écartés (hors villes / sans position / pas musique-soirée) : 207
+Agenda Métropole Rouen Normandie — reçus : 435 — gardés : 354 — écartés (hors villes / sans position / pas musique-soirée) : 71
+Agenda Rouen — reçus : 335 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 68
+Agenda La Murmure (musiques actuelles de Normandie) — reçus : 37 — gardés : 11 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Agenda de sorties de la métropole orléanaise — reçus : 492 — gardés : 420 — écartés (hors villes / sans position / pas musique-soirée) : 46
+Agenda Ville de Limoges — reçus : 233 — gardés : 118 — écartés (hors villes / sans position / pas musique-soirée) : 16
+Agenda Villeurbanne — reçus : 216 — gardés : 202 — écartés (hors villes / sans position / pas musique-soirée) : 9
+Agenda Ville de Cenon — reçus : 88 — gardés : 23 — écartés (hors villes / sans position / pas musique-soirée) : 5
+Agenda Petit Agenda (Perpignan) — reçus : 230 — gardés : 159 — écartés (hors villes / sans position / pas musique-soirée) : 14
+Agenda Unidivers (Bayonne) — reçus : 46 — gardés : 25 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Office de tourisme La Baule — reçus : 239 — gardés : 222 — écartés (hors villes / sans position / pas musique-soirée) : 17
-Agenda Alsace Destination Tourisme — reçus : 70 — gardés : 68 — écartés (hors villes / sans position / pas musique-soirée) : 2
-Agenda Agenda culturel Grand-Est — reçus : 317 — gardés : 230 — écartés (hors villes / sans position / pas musique-soirée) : 19
-Agenda Alès Agglomération — reçus : 301 — gardés : 229 — écartés (hors villes / sans position / pas musique-soirée) : 71
-Agenda Mains d'Œuvres (Saint-Ouen) — reçus : 103 — gardés : 52 — écartés (hors villes / sans position / pas musique-soirée) : 47
-Agenda Comédie de Rennes — reçus : 80 — gardés : 80 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Théâtre National de Bretagne (Rennes) — reçus : 30 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Comédie du Finistère (Brest) — reçus : 59 — gardés : 57 — écartés (hors villes / sans position / pas musique-soirée) : 2
+Agenda Alsace Destination Tourisme — reçus : 64 — gardés : 62 — écartés (hors villes / sans position / pas musique-soirée) : 2
+Agenda Agenda culturel Grand-Est — reçus : 310 — gardés : 229 — écartés (hors villes / sans position / pas musique-soirée) : 19
+Agenda Alès Agglomération — reçus : 297 — gardés : 227 — écartés (hors villes / sans position / pas musique-soirée) : 69
+Agenda Mains d'Œuvres (Saint-Ouen) — reçus : 104 — gardés : 53 — écartés (hors villes / sans position / pas musique-soirée) : 47
+Agenda Comédie de Rennes — reçus : 79 — gardés : 79 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Théâtre National de Bretagne (Rennes) — reçus : 29 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Comédie du Finistère (Brest) — reçus : 58 — gardés : 56 — écartés (hors villes / sans position / pas musique-soirée) : 2
 Agenda Comédie de Besançon — reçus : 38 — gardés : 38 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Comédie de Metz — reçus : 48 — gardés : 47 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Comédie de Metz — reçus : 47 — gardés : 46 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Mystère Comedy Club (Nantes) — reçus : 13 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Zénith Toulouse Métropole — reçus : 20 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda Zénith Métropole Rouen Normandie — reçus : 18 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Zénith Métropole Rouen Normandie — reçus : 19 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Krakatoa (Mérignac) — reçus : 9 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Le Colisée (Roubaix) — reçus : 17 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Théâtre municipal de Nevers — reçus : 14 — gardés : 14 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Théâtre municipal de Nevers — reçus : 15 — gardés : 15 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Opéra National de Bordeaux — reçus : 30 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda Les Concerts Classiques (Bordeaux) — reçus : 49 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 5
+Agenda Les Concerts Classiques (Bordeaux) — reçus : 50 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 4
 Agenda Le Cratère - Scène nationale d'Alès — reçus : 14 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 3
 Agenda Théâtre de Laval — reçus : 17 — gardés : 16 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda La Verrerie - Pôle National Cirque Occitanie — reçus : 14 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda Haute-Garonne Culture — reçus : 94 — gardés : 70 — écartés (hors villes / sans position / pas musique-soirée) : 24
+Agenda La Verrerie - Pôle National Cirque Occitanie — reçus : 13 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Haute-Garonne Culture — reçus : 92 — gardés : 69 — écartés (hors villes / sans position / pas musique-soirée) : 23
 Agenda Toulouse - Sport — reçus : 13 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Ville de Roubaix — reçus : 123 — gardés : 9 — écartés (hors villes / sans position / pas musique-soirée) : 9
+Agenda Ville de Roubaix — reçus : 124 — gardés : 11 — écartés (hors villes / sans position / pas musique-soirée) : 8
 Agenda Ville de Boulogne-sur-Mer — reçus : 57 — gardés : 54 — écartés (hors villes / sans position / pas musique-soirée) : 3
 Agenda Ville de Charleville-Mézières — reçus : 31 — gardés : 31 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Albi — reçus : 97 — gardés : 96 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Albi — reçus : 99 — gardés : 98 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Ville de Draguignan — reçus : 117 — gardés : 111 — écartés (hors villes / sans position / pas musique-soirée) : 5
-Agenda Arles agenda — reçus : 72 — gardés : 70 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda Ville d'Avignon — reçus : 72 — gardés : 70 — écartés (hors villes / sans position / pas musique-soirée) : 2
+Agenda Arles agenda — reçus : 77 — gardés : 75 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Ville d'Avignon — reçus : 71 — gardés : 69 — écartés (hors villes / sans position / pas musique-soirée) : 2
 Agenda Digne-les-Bains - On sort — reçus : 38 — gardés : 34 — écartés (hors villes / sans position / pas musique-soirée) : 2
 Agenda Sarthe Tourisme (Le Mans) — reçus : 26 — gardés : 26 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Montpellier Tourisme — reçus : 0 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Var Tourisme (Toulon) — reçus : 0 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Tourisme en Champagne (Reims) — reçus : 3 — gardés : 3 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Pyrénées Orientales Tourisme — reçus : 26 — gardés : 22 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Café-Théâtre Défonce de rire (Clermont-Ferrand) — reçus : 39 — gardés : 38 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Pyrénées Orientales Tourisme — reçus : 25 — gardés : 21 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Café-Théâtre Défonce de rire (Clermont-Ferrand) — reçus : 37 — gardés : 36 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Comédie - CDN de Reims — reçus : 16 — gardés : 15 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Théâtre de l'Union (Limoges) — reçus : 8 — gardés : 2 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda La Vapeur (Dijon) — reçus : 10 — gardés : 10 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Opéra de Dijon — reçus : 12 — gardés : 12 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Opéra de Dijon — reçus : 13 — gardés : 13 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Angers Nantes Opéra — reçus : 6 — gardés : 3 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Zone Franche (Orléans) — reçus : 95 — gardés : 35 — écartés (hors villes / sans position / pas musique-soirée) : 10
-Agenda La Rochelle et ses environs - Culture — reçus : 13 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Zone Franche (Orléans) — reçus : 93 — gardés : 35 — écartés (hors villes / sans position / pas musique-soirée) : 10
+Agenda La Rochelle et ses environs - Culture — reçus : 14 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda POLE-SUD (Strasbourg) — reçus : 10 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Le Nautilus (Perpignan) — reçus : 22 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Le Nautilus (Perpignan) — reçus : 21 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Le Train Théâtre (Portes-lès-Valence) — reçus : 11 — gardés : 11 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Mon Petit Ponant (Brest) — reçus : 17 — gardés : 17 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Mon Petit Ponant (Brest) — reçus : 19 — gardés : 19 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Centres Culturels Limoges — reçus : 21 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Musées de Limoges — reçus : 23 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Versailles Grand Parc — reçus : 352 — gardés : 317 — écartés (hors villes / sans position / pas musique-soirée) : 25
-Agenda Ville de Versailles — reçus : 286 — gardés : 5 — écartés (hors villes / sans position / pas musique-soirée) : 14
-Agenda Culture Versailles — reçus : 215 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 9
-Agenda Ville d'Issy-les-Moulineaux — reçus : 203 — gardés : 180 — écartés (hors villes / sans position / pas musique-soirée) : 12
-Agenda Ville de Meudon — reçus : 117 — gardés : 99 — écartés (hors villes / sans position / pas musique-soirée) : 17
-Agenda Département du Calvados — reçus : 16 — gardés : 15 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda Agenda culturel tourquennois — reçus : 163 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 10
-Agenda Office de Tourisme de Roubaix — reçus : 117 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 4
-Agenda Ville de Villeneuve d'Ascq — reçus : 112 — gardés : 10 — écartés (hors villes / sans position / pas musique-soirée) : 14
+Agenda Versailles Grand Parc — reçus : 353 — gardés : 317 — écartés (hors villes / sans position / pas musique-soirée) : 25
+Agenda Ville de Versailles — reçus : 287 — gardés : 5 — écartés (hors villes / sans position / pas musique-soirée) : 14
+Agenda Culture Versailles — reçus : 219 — gardés : 2 — écartés (hors villes / sans position / pas musique-soirée) : 9
+Agenda Ville d'Issy-les-Moulineaux — reçus : 256 — gardés : 230 — écartés (hors villes / sans position / pas musique-soirée) : 12
+Agenda Ville de Meudon — reçus : 113 — gardés : 96 — écartés (hors villes / sans position / pas musique-soirée) : 16
+Agenda Département du Calvados — reçus : 17 — gardés : 16 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Agenda culturel tourquennois — reçus : 160 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 9
+Agenda Office de Tourisme de Roubaix — reçus : 118 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 3
+Agenda Ville de Villeneuve d'Ascq — reçus : 112 — gardés : 9 — écartés (hors villes / sans position / pas musique-soirée) : 15
 Agenda Agenda du Sicoval (Toulouse sud-est) — reçus : 137 — gardés : 123 — écartés (hors villes / sans position / pas musique-soirée) : 2
-Agenda Ville de Grande-Synthe — reçus : 112 — gardés : 95 — écartés (hors villes / sans position / pas musique-soirée) : 16
-Agenda Ville de Saint-Médard-en-Jalles — reçus : 134 — gardés : 102 — écartés (hors villes / sans position / pas musique-soirée) : 13
-Agenda Saint-Quentin-en-Yvelines — reçus : 125 — gardés : 96 — écartés (hors villes / sans position / pas musique-soirée) : 10
-Agenda Sortir à SQY — reçus : 98 — gardés : 2 — écartés (hors villes / sans position / pas musique-soirée) : 3
-Agenda Culture Châtellerault — reçus : 114 — gardés : 106 — écartés (hors villes / sans position / pas musique-soirée) : 8
-Agenda Saint-Dizier — reçus : 140 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 13
-Agenda Culture Nevers — reçus : 62 — gardés : 42 — écartés (hors villes / sans position / pas musique-soirée) : 3
+Agenda Ville de Grande-Synthe — reçus : 110 — gardés : 94 — écartés (hors villes / sans position / pas musique-soirée) : 15
+Agenda Ville de Saint-Médard-en-Jalles — reçus : 131 — gardés : 100 — écartés (hors villes / sans position / pas musique-soirée) : 13
+Agenda Saint-Quentin-en-Yvelines — reçus : 122 — gardés : 94 — écartés (hors villes / sans position / pas musique-soirée) : 10
+Agenda Sortir à SQY — reçus : 96 — gardés : 2 — écartés (hors villes / sans position / pas musique-soirée) : 3
+Agenda Culture Châtellerault — reçus : 111 — gardés : 103 — écartés (hors villes / sans position / pas musique-soirée) : 8
+Agenda Saint-Dizier — reçus : 139 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 13
+Agenda Culture Nevers — reçus : 62 — gardés : 41 — écartés (hors villes / sans position / pas musique-soirée) : 3
 Agenda Ville de Nevers — reçus : 60 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 3
-Agenda Martigues - L'agenda — reçus : 78 — gardés : 3 — écartés (hors villes / sans position / pas musique-soirée) : 7
-Agenda Ville de Guérande — reçus : 41 — gardés : 22 — écartés (hors villes / sans position / pas musique-soirée) : 9
-Agenda Senlis — reçus : 84 — gardés : 70 — écartés (hors villes / sans position / pas musique-soirée) : 13
+Agenda Martigues - L'agenda — reçus : 80 — gardés : 3 — écartés (hors villes / sans position / pas musique-soirée) : 7
+Agenda Ville de Guérande — reçus : 49 — gardés : 30 — écartés (hors villes / sans position / pas musique-soirée) : 9
+Agenda Senlis — reçus : 83 — gardés : 69 — écartés (hors villes / sans position / pas musique-soirée) : 13
 Agenda Roissy Pays de France — reçus : 61 — gardés : 56 — écartés (hors villes / sans position / pas musique-soirée) : 5
-Agenda L'Agenda du Vernet (Haute-Garonne) — reçus : 68 — gardés : 60 — écartés (hors villes / sans position / pas musique-soirée) : 4
-Agenda Lisieux Normandie — reçus : 63 — gardés : 56 — écartés (hors villes / sans position / pas musique-soirée) : 5
-Agenda Ville de Bègles — reçus : 94 — gardés : 18 — écartés (hors villes / sans position / pas musique-soirée) : 7
+Agenda L'Agenda du Vernet (Haute-Garonne) — reçus : 64 — gardés : 57 — écartés (hors villes / sans position / pas musique-soirée) : 3
+Agenda Lisieux Normandie — reçus : 62 — gardés : 55 — écartés (hors villes / sans position / pas musique-soirée) : 5
+Agenda Ville de Bègles — reçus : 95 — gardés : 16 — écartés (hors villes / sans position / pas musique-soirée) : 7
 Agenda Ville de Talence — reçus : 41 — gardés : 4 — écartés (hors villes / sans position / pas musique-soirée) : 4
-Agenda Lo CalenDiari (Toulouse, en occitan) — reçus : 41 — gardés : 19 — écartés (hors villes / sans position / pas musique-soirée) : 6
-Agenda L'agenda différent de la Seine-Maritime — reçus : 32 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Sortie Lille — reçus : 31 — gardés : 2 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda L'Estive (Foix) — reçus : 16 — gardés : 15 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda ADT Ariège Pyrénées — reçus : 15 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda Mougins — reçus : 19 — gardés : 19 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Scène 55 (Mougins) — reçus : 11 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Lo CalenDiari (Toulouse, en occitan) — reçus : 40 — gardés : 18 — écartés (hors villes / sans position / pas musique-soirée) : 6
+Agenda L'agenda différent de la Seine-Maritime — reçus : 37 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Sortie Lille — reçus : 30 — gardés : 2 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda L'Estive (Foix) — reçus : 15 — gardés : 14 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda ADT Ariège Pyrénées — reçus : 14 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Mougins — reçus : 18 — gardés : 18 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Scène 55 (Mougins) — reçus : 10 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Agenda du Frontonnais — reçus : 32 — gardés : 30 — écartés (hors villes / sans position / pas musique-soirée) : 2
 Agenda Ville de Fronton — reçus : 28 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 2
-Agenda Val'Aïgo (Layrac-sur-Tarn) — reçus : 16 — gardés : 11 — écartés (hors villes / sans position / pas musique-soirée) : 5
+Agenda Val'Aïgo (Layrac-sur-Tarn) — reçus : 23 — gardés : 15 — écartés (hors villes / sans position / pas musique-soirée) : 8
 Agenda Théâtres en Dracénie — reçus : 13 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Marionnette et arts associés (Agen) — reçus : 25 — gardés : 25 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda CLB Production (Niort) — reçus : 65 — gardés : 58 — écartés (hors villes / sans position / pas musique-soirée) : 7
 Agenda Théâtre Monsigny (Boulogne-sur-Mer) — reçus : 11 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Collectif Récits Vagabonds 62 — reçus : 24 — gardés : 23 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Collectif Récits Vagabonds 62 — reçus : 22 — gardés : 22 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Tambour Sorcier — reçus : 15 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Mille mots, contes et musique — reçus : 10 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 1
-Agenda Ville de Beaugency — reçus : 18 — gardés : 17 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Mille mots, contes et musique — reçus : 9 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
+Agenda Ville de Beaugency — reçus : 15 — gardés : 14 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Cie Beluette (Mer) — reçus : 10 — gardés : 10 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Agenda du Pays du Coquelicot (Albert) — reçus : 18 — gardés : 17 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Sport Grand Châtellerault — reçus : 5 — gardés : 5 — écartés (hors villes / sans position / pas musique-soirée) : 0
@@ -146,23 +146,23 @@ Agenda Ville de Brunoy — reçus : 26 — gardés : 26 — écartés (hors vill
 Agenda Saison culturelle Val d'Yerres Val de Seine — reçus : 26 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Agenda des événements bretons (Vannes) — reçus : 70 — gardés : 60 — écartés (hors villes / sans position / pas musique-soirée) : 10
 Agenda Morbihan Tourisme — reçus : 0 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
-Agenda Agenda collaboratif (Baden) — reçus : 46 — gardés : 36 — écartés (hors villes / sans position / pas musique-soirée) : 10
-Agenda De la suite dans les images (Dunkerque) — reçus : 18 — gardés : 17 — écartés (hors villes / sans position / pas musique-soirée) : 1
+Agenda Agenda collaboratif (Baden) — reçus : 50 — gardés : 39 — écartés (hors villes / sans position / pas musique-soirée) : 11
+Agenda De la suite dans les images (Dunkerque) — reçus : 17 — gardés : 16 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Ville de Carvin — reçus : 42 — gardés : 41 — écartés (hors villes / sans position / pas musique-soirée) : 1
 Agenda Culture et événements, ville de Carvin — reçus : 18 — gardés : 0 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Agenda Estevelles Direct — reçus : 11 — gardés : 1 — écartés (hors villes / sans position / pas musique-soirée) : 0
 Brocantes — champs reçus : uid, slug, canonicalurl, title_fr, description_fr, longdescription_fr, conditions_fr, keywords_fr, image, imagecredits, thumbnail, originalimage, updatedat, daterange_fr, firstdate_begin, firstdate_end, lastdate_begin, lastdate_end, timings, accessibility, accessibility_label_fr, location_uid, location_coordinates, location_name, location_address, location_district, location_insee, location_postalcode, location_city, location_department, location_region, location_countrycode, location_image, location_imagecredits, location_phone, location_website, location_links, location_tags, location_description_fr, location_access_fr, attendancemode, onlineaccesslink, status, age_min, age_max, originagenda_title, originagenda_uid, contributor_email, contributor_contactnumber, contributor_contactname, contributor_contactposition, contributor_organization, category, country_fr, registration, links
-Brocantes / vide-greniers — trouvés : 84 — lus : 84 — gardés : 7 — écartés : 62
+Brocantes / vide-greniers — trouvés : 83 — lus : 83 — gardés : 6 — écartés : 62
 Sorties locales : jour 0 — gardés jusqu'ici : 0 — appels : 0
-Sorties locales : jour 10 — gardés jusqu'ici : 4796 — appels : 133
-Sorties locales : jour 20 — gardés jusqu'ici : 6763 — appels : 205
-Sorties locales : jour 30 — gardés jusqu'ici : 7881 — appels : 251
-Sorties locales : jour 40 — gardés jusqu'ici : 8858 — appels : 283
-Sorties locales : jour 50 — gardés jusqu'ici : 8973 — appels : 293
-Sorties locales — jours lus : 60 — appels : 303 — lus : 26900 — hors villes : 1021 — écartés (bruit / divers) : 10042 — erreurs : 0 — gardés : 9064
+Sorties locales : jour 10 — gardés jusqu'ici : 5055 — appels : 139
+Sorties locales : jour 20 — gardés jusqu'ici : 7173 — appels : 213
+Sorties locales : jour 30 — gardés jusqu'ici : 8233 — appels : 255
+Sorties locales : jour 40 — gardés jusqu'ici : 9141 — appels : 285
+Sorties locales : jour 50 — gardés jusqu'ici : 9241 — appels : 295
+Sorties locales — jours lus : 60 — appels : 305 — lus : 27136 — hors villes : 1045 — écartés (bruit / divers) : 10034 — erreurs : 0 — gardés : 9340
 Nice : objets 200 — types : {"FETE_ET_MANIFESTATION":200}
 Nice : exemple brut : {"type":"FETE_ET_MANIFESTATION","id":6240542,"nom":{"libelleFr":"Carnaval de Nice 2027 \"Vive l'Amour\""},"identifier":"SITRA2_EVE_6240542","state":"PUBLISHED","gestion":{"dateCreation":"2022-08-24T14:11:59.248+00:00","dateModification":"2026-10-28T12:58:59.266+00:00","dateExportModification":"2026-11-04T16:52:58.067+00:00","membreProprietaire":{"type":{"elementReferenceType":"MembreSitraType","id":233,"libelleFr":"Contributeur Généraliste","ordre":1},"nom":"Office de Tourisme Métropolitain Nice Côte d'Azur","dateCreation":"2020-04-10T06:45:14.418+00:00","dateModification":"2026-08-21T08:02:13.260+00:00","id":2013,"siteWeb":"https://www.explorenicecotedazur.com/"},"signalerUnProblemeMails":["sylvie.ardino@explorenca.com","jonathan.durussel@explorenca.com"]},"informations":{"moyensCommunication":[{"identifiant":102562053,"type":{"elementReferenceType":"MoyenCommunicationType","id":201,"libelleFr":"Téléphone","ordre":1},"coordonnees":{"fr":"04 97 13 36 66"}},{"identifiant":102562054,"type":{"elementReferenceType":"MoyenCommunicationType","id":204,"libelleFr":"Mél","ordre":2},"coordonnees":{"fr":"info.carnaval@ville-nice.fr"}},{"identifiant":102562055,"type":{"elementReferenceType":"MoyenCommunicationType","id":205,"libelleFr":"Site web (URL)","ordre":3},"coordonnees":{"fr":"https://www.nicecarnaval.com/edition-2027/programme-officiel/"}},{"identifiant":102562056,"type":{"elementReferenceType":"MoyenCommunicationType","id":3755,"libelleFr":"X","ordre":9,"description":"Réseau social ex-Twitter"},"coordonnees":{"fr":"http://twitter.com/nice_carnaval"}}],"structureGestion":{"type":"STRUCTURE","id":5005489,"nom":{"libelleFr":"Mairie de Nice"},"identifier":"SITRA2_STR_5005489","state":"PUBLISHED","adresse":{"adresse1":"Mairie de Nice - 5 rue de l'Hôtel de Ville","codePostal":"0
-Nice : événements gardés : 154 — sans date : 116 — sans position : 12 — écartés (bruit) : 3
-Résultat : 21416 événements — par catégorie : {"Divers":8562,"Spectacles":1729,"Brocante":90,"Expo":1334,"Famille":1891,"Festival":238,"Marché":1244,"Musique":3231,"Sport":1552,"Soirée":1545}
-Villes couvertes : 137 — top : [["bordeaux",1621],["toulouse",1517],["lille",1451],["nantes",1361],["paris",1040],["rennes",801],["versailles",747],["annemasse",612],["lyon",528],["orleans",505]]
-Exemple brut (pour vérifier la structure) : {"longDescription":"Horaire de concert : 19h\n\nMario Canonge piano, \nMichel Zenino cbasse  \n\nAprès près de deux décennies de complicité musicale, Mario Canonge et Michel Zenino relancent leur célèbre résidence au Baiser Salé, comme un rituel attendu chaque mercredi par un public fidèle et passionné. Depuis 2006, ce duo unique piano-contrebasse a su imposer un format aussi exigeant qu’intense, sans artifice ni compromis, où chaque note, chaque silence compte. L’absence de batterie, loin d’être une contrainte, devient un terrain de jeu où la concentration, l’écoute mutuelle et la sensibilité atteignent leur paroxysme. Sur scène, Canonge, figure incontournable du jazz caribéen, et Zenino, contrebassiste au phrasé d’une précision redoutable, revisitent avec inventivité les grands standards du jazz – de Thelonious Monk à Ornette Coleman – tout en y infusant leurs racines créoles, latines, et leur goût du métissage. Cette résidence, véritable laboratoire d’improvisation, mêle tradition et modernité dans une forme d’alchimie rare, nourrie par des années de dialogue musical ininterrompu. Chaque semaine, ils accueillent également des invités complices, prolongeant cette dynamique d’échange et d’exploration. Revenir assister à ces soirées, c’est plonger dans un moment suspendu, où la maîtrise technique s’efface au profit de l’émotion brute et de l’instant partagé. Un rendez-vous incontournable pour les amateurs de jazz vivant, libre, incarné.","country":"France","featured":false,"p
+Nice : événements gardés : 153 — sans date : 116 — sans position : 12 — écartés (bruit) : 3
+Résultat : 21752 événements — par catégorie : {"Divers":8556,"Spectacles":1719,"Expo":1334,"Sport":1864,"Marché":1250,"Festival":238,"Famille":1909,"Musique":3233,"Soirée":1558,"Brocante":91}
+Villes couvertes : 137 — top : [["bordeaux",1629],["toulouse",1514],["lille",1450],["nantes",1371],["paris",1087],["rennes",800],["versailles",746],["annemasse",598],["lyon",522],["orleans",500]]
+Exemple brut (pour vérifier la structure) : {"longDescription":"Horaire de concert : 19h\n\nEtienne Mbappé guitare/voix lead,\nValerie Belinga voix lead/chœurs, \nPhil Desbois guitare/mandoline \n\nSeul à la guitare acoustique et au chant, parfois accompagné d’un(e) ou deux invités instrumentistes ou voix complices, Etienne Mbappé vous invite à passer une Petite Heure avec lui...   \n\nDes chansons nouvelles, d’autres revisitées, et surtout quelques grands standards de son Cameroun natal, réinventés avec audace, virtuosité et surprise. \n\nParce qu’un excellent concert peut aussi être à prix doux, simple et ouvert à toutes les curiosités musicales, La Petite Heure by... propose une programmation de qualité, entre découvertes et artistes confirmés, pensé pour tous les publics, à un prix abordable et une heure idéale ...","country":"France","featured":false,"private":0,"keywords":["jazz"],"accessibility":{"ii":false,"hi":false,"vi":false,"pi":false,"mi":false},"dateRange":"Jeudi 12 novembre, 18h00","timezone":"Europe/Paris","organisateur":"Le Baiser Salé","imageCredits":null,"originAgenda":{"image":"3476288f110d40eeac5e9178c4da58f8.full.image.jpg?__ts=1790934006452","private":0,"locationSetUid":null,"official":true,"description":"Billets de concerts, festivals, open air, club & raves\nImport quotidien du catalogue Shotgun.","title":"Shotgun","url":"https://shotgun.live/fr","_agg":"eyJ1aWQiOjk5Njk2MDgsInRpdGxlIjoiU2hvdGd1biIsImltYWdlIjoiMzQ3NjI4OGYxMTBkNDBlZWFjNWU5MTc4YzRkYTU4ZjguZnVsbC5pbWFnZS5qcGc/X190cz0xNzkwOTM0MDA2ND
