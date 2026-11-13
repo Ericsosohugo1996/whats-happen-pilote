@@ -190,29 +190,6 @@
   "v": 1
  },
  {
-  "id": "perle-paris-megie",
-  "t": "Mégie",
-  "q": "Mégie quai de la Mégisserie Paris",
-  "k": "Cantine botanique",
-  "e": [
-   "dejeuner",
-   "gouter"
-  ],
-  "d": "Une cantine végétale, avec fleuriste et ateliers floraux, sur le quai de la Mégisserie.",
-  "v": 1
- },
- {
-  "id": "perle-paris-cafe-de-l-usine",
-  "t": "Café de l'Usine",
-  "q": "Café de l'Usine Belleville Paris",
-  "k": "Ancienne usine",
-  "e": [
-   "dejeuner"
-  ],
-  "d": "Une carte courte qui change, dans une ancienne usine de chaussures de Belleville.",
-  "v": 1
- },
- {
   "id": "perle-paris-vecchio",
   "t": "Vecchio",
   "q": "14 rue Crespin du Gast, 75011 Paris",
@@ -343,17 +320,6 @@
   "v": 1
  },
  {
-  "id": "perle-paris-le-jardin-de-mademoiselle",
-  "t": "Le Jardin de Mademoiselle",
-  "q": "Le Jardin de Mademoiselle Paris 7e",
-  "k": "Salon de thé enchanté",
-  "e": [
-   "gouter"
-  ],
-  "d": "Une boutique-salon de thé au décor féerique, près des Invalides.",
-  "v": 1
- },
- {
   "id": "perle-paris-bouillon-chartier",
   "t": "Bouillon Chartier",
   "q": "7 rue du Faubourg Montmartre, 75009 Paris",
@@ -476,7 +442,7 @@
  {
   "id": "perle-paris-les-petites-mains-palais-galliera",
   "t": "Les Petites Mains - Palais Galliera",
-  "q": "10 avenue Pierre-Ier-de-Serbie, 75116 Paris",
+  "q": "Palais Galliera Paris",
   "k": "Terrasse face à la tour Eiffel",
   "e": [
    "dejeuner",
@@ -734,18 +700,6 @@
   "v": 0
  },
  {
-  "id": "perle-paris-maison-revka",
-  "t": "Maison Revka",
-  "q": "Maison Revka avenue Raymond Poincaré Paris 16e",
-  "k": "Jardin caché slave",
-  "e": [
-   "brunch",
-   "dejeuner"
-  ],
-  "d": "Des spécialités slaves dans un jardin caché, avec des animations pour les enfants.",
-  "v": 1
- },
- {
   "id": "perle-paris-secret-garden",
   "t": "Secret Garden",
   "q": "Secret Garden brunch Paris 13e",
@@ -922,18 +876,6 @@
   "v": 1
  },
  {
-  "id": "perle-paris-le-faust",
-  "t": "Le Faust",
-  "q": "Le Faust pont Alexandre III Paris",
-  "k": "Entrepôt de la marine",
-  "e": [
-   "dejeuner",
-   "diner"
-  ],
-  "d": "Une brasserie dans un ancien entrepôt de la marine, sous le pont Alexandre III, avec grande terrasse.",
-  "v": 1
- },
- {
   "id": "perle-paris-la-balle-au-bond",
   "t": "La Balle au Bond",
   "q": "La Balle au Bond Paris promenade Marceline Loridan-Ivens",
@@ -958,18 +900,6 @@
   "v": 1
  },
  {
-  "id": "perle-paris-mademoiselle-mouche",
-  "t": "Mademoiselle Mouche",
-  "q": "Mademoiselle Mouche pont de la Conférence Paris",
-  "k": "Terrasse tropicale",
-  "e": [
-   "dejeuner",
-   "diner"
-  ],
-  "d": "Une terrasse de style tropical au bord de l'eau, avec vue sur la tour Eiffel.",
-  "v": 1
- },
- {
   "id": "perle-paris-le-chalet-des-iles",
   "t": "Le Chalet des Îles",
   "q": "14 chemin de Ceinture du Lac Inférieur, 75016 Paris",
@@ -979,18 +909,6 @@
    "gouter"
   ],
   "d": "Un chalet rustique sur une île du bois de Boulogne : on y arrive en barque.",
-  "v": 1
- },
- {
-  "id": "perle-paris-le-nouveau-chalet-du-lac",
-  "t": "Le Nouveau Chalet du Lac",
-  "q": "Chalet du Lac Bois de Vincennes Paris",
-  "k": "Plage au bois",
-  "e": [
-   "dejeuner",
-   "gouter"
-  ],
-  "d": "Au bord du lac de Vincennes, du sable, des chaises longues et des buffets à l'italienne.",
   "v": 1
  },
  {
@@ -1042,19 +960,6 @@
    "diner"
   ],
   "d": "Un chalet au bord du lac des Minimes, avec grande terrasse et pizzas au feu de bois.",
-  "v": 1
- },
- {
-  "id": "perle-paris-laduree-au-pavillon-gravelle",
-  "t": "Ladurée au Pavillon Gravelle",
-  "q": "Ladurée Pavillon Gravelle Bois de Vincennes",
-  "k": "Thé au bois",
-  "e": [
-   "gouter",
-   "brunch",
-   "dejeuner"
-  ],
-  "d": "Un salon de thé et restaurant bucolique, au cœur du bois de Vincennes.",
   "v": 1
  },
  {
