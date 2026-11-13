@@ -1,0 +1,41 @@
+name: Bars de caractère (construction)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bars-caractere
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Construire la sélection de bars de caractère
+        env:
+          DATATOURISME_API_KEY: ${{ secrets.DATATOURISME_API_KEY }}
+        run: node build-bars-caractere.js
+
+      - name: Enregistrer le compte rendu
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add data/bars-caractere.json data/bars-test
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau"
+          else
+            git commit -m "Bars de caractère (construction) (automatique)"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              echo "Nouvel essai ($i)"; sleep 20
+            done
+            exit 1
+          fi
