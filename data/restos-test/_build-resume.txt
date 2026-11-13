@@ -1,1 +1,1 @@
-Adresses de caractère : 716 retenues par le score, 716 gardées (aucune limite par ville), 526 villes
+Adresses de caractère : 328 retenues par le score, 328 gardées (aucune limite par ville), 272 villes
