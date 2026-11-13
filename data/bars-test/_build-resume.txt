@@ -1,0 +1,3 @@
+Type BarOrPub : 2419 fiches lues
+Type NightClub : 363 fiches lues
+Bars de caractère : 108 retenus, 82 villes
