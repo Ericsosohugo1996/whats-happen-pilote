@@ -34,6 +34,21 @@ function photoOf(o) {
   const m = s.match(/https?:\\?\/\\?\/[^"\\]+?\.(?:jpe?g|png|webp)/i) || s.match(/https?:\\?\/\\?\/[^"\\]+/);
   return m ? m[0].replace(/\\\//g, "/") : "";
 }
+// parcourt toute la structure : renvoie les textes (chemin, valeur)
+function leaves(o, path, acc, depth) {
+  depth = depth || 0; acc = acc || [];
+  if (depth > 9 || o == null) return acc;
+  if (typeof o === "string") { acc.push([path, o]); return acc; }
+  if (Array.isArray(o)) { o.forEach((x) => leaves(x, path, acc, depth + 1)); return acc; }
+  if (typeof o === "object") Object.keys(o).forEach((k) => leaves(o[k], path + "/" + k, acc, depth + 1));
+  return acc;
+}
+function titleOf(o) { const l = leaves(o.label, "label"); return (l[0] || ["", ""])[1] || fr(o.label); }
+function descOf(o) {
+  const l = leaves(o.hasDescription || {}, "d").filter((x) => !/short/i.test(x[0]) && !/^https?:/.test(x[1]));
+  l.sort((a, b) => b[1].length - a[1].length);
+  return l[0] ? l[0][1] : "";
+}
 const ATYP = /(guinguette|p[eé]niche|bateau|ferme[- ]auberge|table d.h[oô]tes|insolite|atypique|rooftop|toit[- ]terrasse|cabane|troglodyt|moulin|ch[aâ]teau|manoir|abbaye|chapelle|prieur[eé]|vignoble|domaine|jardin|verger|panorama|vue (sur|imprenable)|bord de (l.eau|mer|rivi[eè]re|lac|seine|loire)|au bord|en pleine nature|secret|cach[eé]|confidentiel|hors du commun|d[eé]cor|cadre (exceptionnel|magnifique|unique|idyllique|verdoyant|authentique)|ambiance (chaleureuse|intimiste|cosy|conviviale)|maison (de caract[eè]re|ancienne|bourgeoise)|ancien(ne)? (moulin|ferme|grange|couvent|atelier|usine|gare|cin[eé]ma|[eé]glise)|cave vo[uû]t[eé]e|vo[uû]te|grange|phare|[iî]le|falaise|lac\b|plage|sur l.eau)/i;
 const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|cantine|restauration rapide|friterie|d[oö]ner)/i;
 (async () => {
@@ -41,6 +56,7 @@ const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|can
   if (!KEY) { say("Pas de clé DATAtourisme dans les secrets."); fs.writeFileSync("data/restos-test/_resume.txt", out.join("\n") + "\n"); return; }
   let url = "/v1/placeOfInterest?page_size=100&lang=fr&type=Restaurant", pages = 0, total = 0, ok = 0;
   const cand = [], byCity = {};
+  const dump = [];
   let shown = false, withPhoto = 0, withDesc = 0, atyp = 0, atypPhoto = 0, atypPhotoDesc = 0, noCoords = 0;
   while (url && pages < MAX_PAGES) {
     const r = await get(url);
@@ -49,9 +65,10 @@ const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|can
       total++;
       if (!/Restaurant/.test(typesOf(o).join(" "))) continue;
       ok++;
+      if (dump.length < 2) dump.push(o);
       if (!shown) { shown = true; say("Exemple de structure (clés) : " + Object.keys(o).join(", ")); say("Types : " + typesOf(o).join(" ")); }
-      const title = fr(o.label) || fr(findKey(o, "label"));
-      const desc = fr(findKey(o.hasDescription || o, "description")) || fr(o.hasDescription);
+      const title = titleOf(o);
+      const desc = descOf(o);
       const city = fr(findKey(o.isLocatedAt, "addressLocality")) || "";
       const lat = parseFloat(findKey(o.isLocatedAt, "latitude")), lng = parseFloat(findKey(o.isLocatedAt, "longitude"));
       const photo = photoOf(o);
@@ -77,5 +94,6 @@ const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|can
   say("Villes avec le plus de candidats : " + top.map((c) => c + " " + byCity[c]).join(", "));
   say("Villes différentes avec au moins 1 candidat : " + Object.keys(byCity).length);
   fs.writeFileSync("data/restos-test/_resume.txt", out.join("\n") + "\n");
+  fs.writeFileSync("data/restos-test/_structure.json", JSON.stringify(dump, null, 1).slice(0, 12000));
   fs.writeFileSync("data/restos-test/_exemples.json", JSON.stringify(cand.slice(0, 120), null, 1));
 })();
