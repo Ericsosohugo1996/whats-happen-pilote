@@ -4,7 +4,7 @@
 const fs = require("fs");
 const BASE = "https://api.datatourisme.fr";
 const KEY = process.env.DATATOURISME_API_KEY || "";
-const MAX_PAGES = parseInt(process.env.MAX_PAGES || "80", 10);
+const MAX_PAGES = parseInt(process.env.MAX_PAGES || "400", 10);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const out = [];
 const say = (s) => { console.log(s); out.push(s); };
@@ -49,8 +49,9 @@ function descOf(o) {
   l.sort((a, b) => b[1].length - a[1].length);
   return l[0] ? l[0][1] : "";
 }
-const ATYP = /(guinguette|p[eé]niche|bateau|ferme[- ]auberge|table d.h[oô]tes|insolite|atypique|rooftop|toit[- ]terrasse|cabane|troglodyt|moulin|ch[aâ]teau|manoir|abbaye|chapelle|prieur[eé]|vignoble|domaine|jardin|verger|panorama|vue (sur|imprenable)|bord de (l.eau|mer|rivi[eè]re|lac|seine|loire)|au bord|en pleine nature|secret|cach[eé]|confidentiel|hors du commun|d[eé]cor|cadre (exceptionnel|magnifique|unique|idyllique|verdoyant|authentique)|ambiance (chaleureuse|intimiste|cosy|conviviale)|maison (de caract[eè]re|ancienne|bourgeoise)|ancien(ne)? (moulin|ferme|grange|couvent|atelier|usine|gare|cin[eé]ma|[eé]glise)|cave vo[uû]t[eé]e|vo[uû]te|grange|phare|[iî]le|falaise|lac\b|plage|sur l.eau)/i;
-const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|cantine|restauration rapide|friterie|d[oö]ner)/i;
+// Critères stricts : un cadre, un lieu, une ambiance qui sortent de l'ordinaire. Les chaînes, hôtels et « groupes » sont écartés.
+const STRONG = /(guinguette|p[eé]niche|ferme[- ]auberge|table d.h[oô]tes|insolite|atypique|rooftop|toit[- ]terrasse|cabane|troglodyt|moulin|ch[aâ]teau|manoir|abbaye|chapelle|prieur[eé]|bastide|grange|phare|vue imprenable|vue panoramique|au bord (de l.eau|du lac|du canal|de la rivi[eè]re|de la mer)|fortifi|si[eè]cle|tentes? |ancienne? (ferme|moulin|grange|couvent|usine|gare|cin[eé]ma|atelier|[eé]glise|bergerie|chapelle|maison)|cave vo[uû]t[eé]e|pierres? apparentes?|poutres|jardin secret|secret|cach[eé]|hors du commun|au c[oœ]ur d.un (parc|jardin|verger|vignoble))/i;
+const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|cantine|restauration rapide|friterie|d[oö]ner|h[oô]tel|campanile|balladins|kyriad|ibis|mercure|au bureau|buffalo|hippopotamus|flunch|courtepaille|domino|mcdo|logis|camping|village vacances|\(groupes?\)|traiteur|livraison|[aà] emporter)/i;
 (async () => {
   fs.mkdirSync("data/restos-test", { recursive: true });
   if (!KEY) { say("Pas de clé DATAtourisme dans les secrets."); fs.writeFileSync("data/restos-test/_resume.txt", out.join("\n") + "\n"); return; }
@@ -76,11 +77,11 @@ const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|can
       if (photo) withPhoto++;
       if (desc && desc.length >= 120) withDesc++;
       const hay = title + " " + desc + " " + typesOf(o).join(" ");
-      const isAtyp = ATYP.test(hay) && !BANAL.test(title);
+      const isAtyp = STRONG.test(hay) && !BANAL.test(title) && !/(groupes?)/i.test(title);
       if (isAtyp) { atyp++; if (photo) { atypPhoto++; if (desc.length >= 120) atypPhotoDesc++; } }
       if (isAtyp && photo && desc.length >= 120) {
         byCity[city] = (byCity[city] || 0) + 1;
-        if (cand.length < 400) cand.push({ title, city, lat, lng, photo, desc: desc.slice(0, 260), uri: o.uri || "" });
+        cand.push({ title, city, lat, lng, photo, desc: desc.slice(0, 260), uri: o.uri || "" });
       }
     }
     url = r.json.meta && r.json.meta.next ? r.json.meta.next : "";
@@ -95,5 +96,10 @@ const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|can
   say("Villes différentes avec au moins 1 candidat : " + Object.keys(byCity).length);
   fs.writeFileSync("data/restos-test/_resume.txt", out.join("\n") + "\n");
   fs.writeFileSync("data/restos-test/_structure.json", JSON.stringify(dump, null, 1).slice(0, 12000));
-  fs.writeFileSync("data/restos-test/_exemples.json", JSON.stringify(cand.slice(0, 120), null, 1));
+  // échantillon varié : au plus 2 par ville, réparti dans toute la liste
+  const perCity = {}, pick = [];
+  cand.forEach((c) => { perCity[c.city] = (perCity[c.city] || 0) + 1; if (perCity[c.city] <= 2) pick.push(c); });
+  const step = Math.max(1, Math.floor(pick.length / 120)), sample = pick.filter((_, i) => i % step === 0).slice(0, 120);
+  fs.writeFileSync("data/restos-test/_exemples.json", JSON.stringify(sample, null, 1));
+  fs.writeFileSync("data/restos-test/_candidats-complets.json", JSON.stringify(cand));
 })();
