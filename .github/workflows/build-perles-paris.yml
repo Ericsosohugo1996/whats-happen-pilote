@@ -1,0 +1,36 @@
+name: Perles de Paris (construction)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: perles-paris
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Vérifier les adresses et chercher les photos libres
+        run: node build-perles-paris.js
+
+      - name: Enregistrer le résultat
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add data/perles-paris.json data/perles-test
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau"
+          else
+            git commit -m "Perles de Paris (construction) (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
