@@ -43,8 +43,9 @@ function descOf(o) {
   l.sort((a, b) => b[1].length - a[1].length);
   return l[0] ? l[0][1] : "";
 }
-const CORE = /(speakeasy|bar cach[eé]|cach[eé]|secret|derri[eè]re (une|la|le)|p[eé]niche|bateau|rooftop|toit[- ]terrasse|cave vo[uû]t[eé]e|cave|troglodyt|insolite|atypique|hors du commun|cabane|guinguette|ancienne? (ferme|moulin|grange|couvent|usine|gare|cin[eé]ma|atelier|[eé]glise|bergerie|chapelle|maison|banque|prison|imprimerie|brasserie)|ch[aâ]teau|manoir|abbaye|chapelle|moulin|phare|fortifi|cocktails? (d.auteur|signature|maison|cr[eé]atifs?)|mixolog|bar [aà] vins|vignerons?|vins? nature|jazz|live music|concerts?)/i;
-const BANAL = /(pmu|tabac|sports? bar|karaok[eé]|bowling|casino|kebab|burger|pizza|snack|fast.?food|sandwich|friterie|h[oô]tel|campanile|ibis|mercure|au bureau|buffalo|flunch|logis|camping|village vacances|\(groupes?\)|traiteur|livraison|billard|jeux vid[eé]o|shisha|chicha|strip|cabaret de nuit|libertin|coffee|tea room)/i;
+const CORE = /(speakeasy|bar cach[eé]|cach[eé]|secret|derri[eè]re (une|la|le)|p[eé]niche|rooftop|toit[- ]terrasse|cave vo[uû]t[eé]e|ancienne cave|troglodyt|insolite|atypique|hors du commun|cabane|guinguette|ancienne? (ferme|moulin|grange|couvent|usine|gare|cin[eé]ma|atelier|[eé]glise|bergerie|chapelle|maison|banque|prison|imprimerie|brasserie)|ch[aâ]teau|manoir|abbaye|chapelle|moulin|phare|fortifi|cocktails? (d.auteur|signature|maison|cr[eé]atifs?)|mixolog|bar [aà] vins|vignerons?|vins? nature|jazz|live music)/i;
+const DESCBAN = /(burger|snack|restauration rapide|h[oô]stel|hostel|traiteur|franchise|base nautique|activit[eé]s nautiques|salle de concerts?|SMAC|[eé]picerie|glaces?|halles?)/i;
+const BANAL = /(pmu|tabac|sports? bar|karaok[eé]|bowling|casino|kebab|burger|pizza|snack|fast.?food|sandwich|friterie|h[oô]tel|campanile|ibis|mercure|au bureau|buffalo|flunch|logis|camping|village vacances|\(groupes?\)|traiteur|livraison|billard|jeux vid[eé]o|shisha|chicha|strip|cabaret de nuit|libertin|coffee|tea room|v and b|v&b|base nautique|chai et|halles|march[eé])/i;
 const HOTELISH = /(chambres?|\bspa\b|s[ée]minaires?|mariages?|gîte|camping|r[ée]sidence|h[ée]bergement)/i;
 const PLUS = /(speakeasy|cach[eé]|secret|p[eé]niche|rooftop|toit[- ]terrasse|cave vo[uû]t[eé]e|insolite|atypique|hors du commun|mixolog|cocktails? (d.auteur|signature|maison)|vins? nature|bar [aà] vins|jazz|d[eé]cor (unique|original)|ancienne? (usine|gare|cin[eé]ma|banque|prison|imprimerie|chapelle|[eé]glise))/gi;
 function score(title, desc) {
@@ -71,7 +72,7 @@ function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s
         const lat = parseFloat(findKey(o.isLocatedAt, "latitude")), lng = parseFloat(findKey(o.isLocatedAt, "longitude"));
         const city = fr(findKey(o.isLocatedAt, "addressLocality")) || "";
         if (!title || !photo || desc.length < 100 || isNaN(lat) || isNaN(lng) || !city) continue;
-        if (BANAL.test(title) || /(groupes?)/i.test(title) || !CORE.test(title + " " + desc)) continue;
+               if (BANAL.test(title) || DESCBAN.test(desc) || /(groupes?)/i.test(title) || !CORE.test(title + " " + desc)) continue;
         const s = score(title, desc); if (s < MIN) continue;
         const id = "bar-" + hash(o.uri || title + city); if (seen[id]) continue; seen[id] = 1;
         cand.push({ s, id, t: title.replace(/\s+/g, " ").trim(), c: city, la: +lat.toFixed(5), lo: +lng.toFixed(5), p: photo, d: desc.replace(/\s+/g, " ").trim().slice(0, 240), k: (kindOf(title) !== "Bar de caractère" ? kindOf(title) : kindOf(desc)), sc: s, u: o.uri || "" });
