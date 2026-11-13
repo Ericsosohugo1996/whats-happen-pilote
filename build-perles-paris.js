@@ -31,22 +31,38 @@ async function osmQuery(q) {
   await sleep(1100);
   return Array.isArray(j) ? j.map((x) => ({ x, la: +x.lat, lo: +x.lon })).filter((h) => inParis(h.la, h.lo)) : [];
 }
+const dist = (a, b) => { const R = 6371000, r = Math.PI / 180, dLa = (b.la - a.la) * r, dLo = (b.lo - a.lo) * r; const h = Math.sin(dLa / 2) ** 2 + Math.cos(a.la * r) * Math.cos(b.la * r) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
+// le nom du lieu trouvé doit vraiment ressembler au titre (pas un seul mot en commun par hasard)
+function sameName(title, found) {
+  const t = tokens(title), f = " " + norm(found) + " ";
+  if (!t.length) return true;
+  if (t.length === 1) return f.indexOf(" " + t[0] + " ") >= 0 && f.trim().split(/\s+/).length <= 4;
+  const n = t.filter((w) => f.indexOf(" " + w) >= 0).length;
+  return n >= Math.min(2, t.length) && n >= Math.ceil(t.length * 0.6);
+}
+const isPoi = (h) => !/^(highway|place|boundary|landuse|natural)$/.test(h.x.category || h.x.class);
 async function osm(item) {
   const short = item.t.replace(/ - .*/, "").replace(/\s*\?$/, "");
+  let poi = null, adr = null, note = "";
   // 1) par le nom : si OpenStreetMap connaît le lieu, c'est la meilleure preuve qu'il existe
   const byName = await osmQuery(short + " Paris");
-  const poi = byName.find((h) => !/^(highway|place|boundary|landuse)$/.test(h.x.category || h.x.class) && shares(short, (h.x.name || "") + " " + (h.x.display_name || "").split(",")[0]));
-  if (poi) return { kind: "lieu", la: poi.la, lo: poi.lo, name: poi.x.name || "", tags: poi.x.extratags || {}, disp: poi.x.display_name };
-  // 2) sinon par l'adresse donnée (si elle commence par un numéro de rue) : l'adresse existe, mais le lieu n'est pas confirmé
+  const hp = byName.find((h) => isPoi(h) && sameName(short, h.x.name || ""));
+  if (hp) poi = { la: hp.la, lo: hp.lo, tags: hp.x.extratags || {} };
+  // 2) par l'adresse donnée (si elle commence par un numéro de rue)
   if (/^\d/.test(item.q)) {
+    const num = item.q.match(/^\d+\w*/)[0].toLowerCase();
     const byAdr = await osmQuery(item.q);
-    const adr = byAdr.find((h) => /house|building|yes|residential|commercial|apartments/.test(h.x.type || "") || h.x.addresstype === "building");
-    if (adr) return { kind: "adresse", la: adr.la, lo: adr.lo, name: adr.x.name || "", tags: adr.x.extratags || {}, disp: adr.x.display_name };
-  } else if (item.q !== short + " Paris") {
+    const best = byAdr.find((h) => /house|building|yes|residential|commercial|apartments/.test(h.x.type || "") || h.x.addresstype === "building") ||
+      byAdr.find((h) => String(h.x.display_name || "").toLowerCase().startsWith(num + ",")) || byAdr[0];
+    if (best) adr = { la: best.la, lo: best.lo, tags: best.x.extratags || {} };
+  } else if (!poi && item.q !== short + " Paris") {
     const byQ = await osmQuery(item.q);
-    const p2 = byQ.find((h) => !/^(highway|place|boundary|landuse)$/.test(h.x.category || h.x.class) && shares(short, (h.x.name || "") + " " + (h.x.display_name || "").split(",")[0]));
-    if (p2) return { kind: "lieu", la: p2.la, lo: p2.lo, name: p2.x.name || "", tags: p2.x.extratags || {}, disp: p2.x.display_name };
+    const p2 = byQ.find((h) => isPoi(h) && sameName(short, h.x.name || ""));
+    if (p2) poi = { la: p2.la, lo: p2.lo, tags: p2.x.extratags || {} };
   }
+  if (poi && adr && dist(poi, adr) > 700) { note = "conflit : le lieu trouvé est à " + Math.round(dist(poi, adr)) + " m de l'adresse donnée, on garde l'adresse"; poi = null; }
+  if (poi) return { kind: "lieu", la: poi.la, lo: poi.lo, tags: poi.tags, note };
+  if (adr) return { kind: "adresse", la: adr.la, lo: adr.lo, tags: adr.tags, note };
   return null;
 }
 
@@ -80,26 +96,45 @@ async function fromWikidata(q) {
   const c = j && j.claims && j.claims.P18 && j.claims.P18[0]; const v = c && c.mainsnak && c.mainsnak.datavalue && c.mainsnak.datavalue.value;
   return v ? imgInfo("File:" + v) : null;
 }
-async function fromSearch(item) {
-  const key = tokens(item.t).slice(0, 3).join(" ");
-  if (!key) return null;
-  const u = "https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&list=search&srnamespace=6&srlimit=8&srsearch=" + encodeURIComponent(item.t.replace(/ - .*/, "") + " Paris");
+const BAD = /(15|16|17|18)\d\d|19[0-8]\d|btv|bpt|\(\d+ of \d+\)|estampe|gravure|dessin|\bMET\b|painting|tableau|gallica|affiche/i;
+// photos géolocalisées à moins de 120 m du lieu et dont le nom de fichier contient un mot du lieu : très fiable
+async function fromGeo(item, o) {
+  const u = "https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&list=geosearch&gsnamespace=6&gsradius=120&gslimit=40&gscoord=" + o.la + "%7C" + o.lo;
+  const j = await getJson(u); await sleep(300);
+  const short = item.t.replace(/ - .*/, "");
+  for (const f of ((j && j.query && j.query.geosearch) || [])) {
+    if (!/\.jpe?g$/i.test(f.title) || BAD.test(f.title)) continue;
+    if (!shares(short, f.title)) continue;
+    const r = await imgInfo(f.title); if (r) return r;
+  }
+  return null;
+}
+// candidat par recherche de nom : jamais utilisé tel quel, seulement proposé pour contrôle
+async function candidate(item) {
+  const short = item.t.replace(/ - .*/, ""), t = tokens(short);
+  if (t.length < 2) return null;
+  const u = "https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&list=search&srnamespace=6&srlimit=8&srsearch=" + encodeURIComponent(short + " Paris");
   const j = await getJson(u); await sleep(300);
   for (const f of ((j && j.query && j.query.search) || [])) {
-    if (!/\.(jpe?g)$/i.test(f.title)) continue;
-    if (!shares(item.t.replace(/ - .*/, ""), f.title)) continue;       // le nom du lieu doit figurer dans le nom du fichier
-    const r = await imgInfo(f.title); if (r) { r.guess = true; return r; }
+    if (!/\.jpe?g$/i.test(f.title) || BAD.test(f.title)) continue;
+    const x = " " + norm(f.title) + " ";
+    if (!t.every((w) => x.indexOf(" " + w) >= 0)) continue;
+    const r = await imgInfo(f.title); if (r) return r;
   }
   return null;
 }
 async function photo(item, o) {
   const t = (o && o.tags) || {};
   try {
-    if (t.wikimedia_commons) { const c = t.wikimedia_commons; const r = /^Category:/i.test(c) ? await fromCategory(c) : await imgInfo(c); if (r) return r; }
-    if (t.image && /commons\.wikimedia\.org\/wiki\/File:/.test(t.image)) { const r = await imgInfo(decodeURIComponent(t.image.split("/wiki/")[1])); if (r) return r; }
-    if (t.wikidata) { const r = await fromWikidata(t.wikidata); if (r) return r; }
+    if (o.kind === "lieu") {
+      if (t.wikimedia_commons) { const c = t.wikimedia_commons; const r = /^Category:/i.test(c) ? await fromCategory(c) : await imgInfo(c); if (r && !BAD.test(r.title)) return { strong: r }; }
+      if (t.image && /commons\.wikimedia\.org\/wiki\/File:/.test(t.image)) { const r = await imgInfo(decodeURIComponent(t.image.split("/wiki/")[1])); if (r && !BAD.test(r.title)) return { strong: r }; }
+      if (t.wikidata) { const r = await fromWikidata(t.wikidata); if (r && !BAD.test(r.title)) return { strong: r }; }
+    }
+    const g = await fromGeo(item, o); if (g) return { strong: g };
   } catch (e) {}
-  try { return await fromSearch(item); } catch (e) { return null; }
+  try { const c = await candidate(item); if (c) return { cand: c }; } catch (e) {}
+  return {};
 }
 
 (async () => {
@@ -107,19 +142,23 @@ async function photo(item, o) {
   say("Perles de Paris : " + seed.length + " adresses à vérifier");
   const ok = [], lost = [];
   let withPhoto = 0, poiCount = 0;
+  const cands = [];
   for (const it of seed) {
     const o = await osm(it);
     if (!o) { lost.push(it); say("✗ introuvable : " + it.t + "  (" + it.q + ")"); continue; }
     const ph = await photo(it, o);
+    const st = ph.strong || null;
     if (o.kind === "lieu") poiCount++;
-    if (ph) withPhoto++;
+    if (st) withPhoto++;
+    if (!st && ph.cand) cands.push(it.t + " : " + ph.cand.page);
     ok.push({
       id: it.id, t: it.t, c: "Paris", la: +o.la.toFixed(6), lo: +o.lo.toFixed(6), k: it.k, e: it.e, d: it.d,
-      p: ph ? ph.url : "", cr: ph ? "Photo : " + ph.art + " · " + ph.lic + " · Wikimedia Commons" : "", cu: ph ? ph.page : "",
+      p: st ? st.url : "", cr: st ? "Photo : " + st.art + " · " + st.lic + " · Wikimedia Commons" : "", cu: st ? st.page : "",
       s: o.kind, v: it.v
     });
-    say("✓ " + it.t + " [" + o.kind + (it.v ? "" : " · source ancienne") + "] " + (ph ? "photo " + (ph.guess ? "(à contrôler) " : "") + ph.page : "sans photo"));
+    say("✓ " + it.t + " [" + o.kind + (it.v ? "" : " · source ancienne") + "] " + (st ? "photo fiable " + st.page : ph.cand ? "sans photo fiable (candidate à regarder : " + ph.cand.page + ")" : "sans photo") + (o.note ? "  ⚠ " + o.note : ""));
   }
+  if (cands.length) { say(""); say("Photos candidates (non utilisées, à regarder à la main) :"); cands.forEach((c) => say("  - " + c)); }
   say("");
   say("RÉSUMÉ : " + ok.length + " retrouvés sur " + seed.length + " (dont " + poiCount + " confirmés comme lieu par OpenStreetMap, " + (ok.length - poiCount) + " seulement par leur adresse)");
   say("Photos libres trouvées : " + withPhoto + " / " + ok.length);
