@@ -43,7 +43,8 @@
    "dejeuner"
   ],
   "d": "Dans un ancien entrepôt frigorifique occupé, une peintre d'Osaka sert un repas japonais de maison, au gré de son humeur. Espèces seulement.",
-  "v": 0
+  "v": 0,
+  "ph": "File:La Maison des Frigos, Paris 13 (9970364694).jpg"
  },
  {
   "id": "perle-paris-la-tete-dans-les-olives",
@@ -102,7 +103,8 @@
    "diner"
   ],
   "d": "Un bar-restaurant à l'étage du cinéma des Cinéastes : on dîne au-dessus des salles.",
-  "v": 1
+  "v": 1,
+  "ph": "File:Le Bistrot des Cinéastes - Bar Paris 17.jpg"
  },
  {
   "id": "perle-paris-hotel-particulier-montmartre",
@@ -292,7 +294,8 @@
    "gouter"
   ],
   "d": "À l'étage, au-dessus de l'ancien atelier de Bourdelle, avec vue sur deux jardins de sculptures.",
-  "v": 1
+  "v": 1,
+  "site": "https://bourdelle.paris.fr/en/visit/prepare-your-visit/cafe-restaurant-le-rhodia"
  },
  {
   "id": "perle-paris-pink-mamma",
@@ -440,18 +443,6 @@
   "v": 1
  },
  {
-  "id": "perle-paris-les-petites-mains-palais-galliera",
-  "t": "Les Petites Mains - Palais Galliera",
-  "q": "Palais Galliera Paris",
-  "k": "Terrasse face à la tour Eiffel",
-  "e": [
-   "dejeuner",
-   "gouter"
-  ],
-  "d": "Une terrasse de jardin ombragée, avec sculptures et fleurs, face à la tour Eiffel. Ouverte l'été.",
-  "v": 1
- },
- {
   "id": "perle-paris-cafe-mulot-maison-de-victor-hugo",
   "t": "Café Mulot - Maison de Victor Hugo",
   "q": "6 place des Vosges, 75004 Paris",
@@ -485,7 +476,8 @@
    "diner"
   ],
   "d": "Une salle vitrée sur le toit du musée du quai Branly, avec la tour Eiffel presque à portée de main.",
-  "v": 1
+  "v": 1,
+  "site": "https://m.quaibranly.fr/en/useful-information/come/museum-restaurants/panoramic-restaurant-les-ombres"
  },
  {
   "id": "perle-paris-la-dame-de-canton",
@@ -533,7 +525,8 @@
    "diner"
   ],
   "d": "Une péniche mêlant bar, restaurant et théâtre, avec spectacles et concerts, face à Notre-Dame.",
-  "v": 1
+  "v": 1,
+  "ph": "File:La Nouvelle Seine, 3 Quai de Montebello, 75005 Paris 2014.jpg"
  },
  {
   "id": "perle-paris-off-paris-seine",
@@ -615,7 +608,8 @@
    "diner"
   ],
   "d": "Un repas gastronomique dans un bus à toit vitré qui traverse Paris.",
-  "v": 1
+  "v": 1,
+  "site": "https://bustronome.com/en/paris/original-concept/"
  },
  {
   "id": "perle-paris-rooster",
@@ -812,7 +806,8 @@
    "gouter"
   ],
   "d": "Un salon de thé dans une cour intérieure ombragée, à deux pas des jardins.",
-  "v": 1
+  "v": 1,
+  "ph": "File:Grande Mosquée de Paris depuis salon de thé.jpg"
  },
  {
   "id": "perle-paris-cafe-l-augustine-musee-rodin",
@@ -861,7 +856,7 @@
    "dejeuner"
   ],
   "d": "Une maison de poupée sur le canal, avec fauteuils profonds, canapés et terrasse.",
-  "v": 1
+  "v": 0
  },
  {
   "id": "perle-paris-le-bistro-parisien",
@@ -1019,7 +1014,8 @@
    "diner"
   ],
   "d": "Une brasserie classée, près des jardins du Palais-Royal.",
-  "v": 1
+  "v": 1,
+  "ph": "File:P1010891 Paris II Rue Vivienne Grand-Colbert reductwk.JPG"
  },
  {
   "id": "perle-paris-cafe-de-l-homme",
