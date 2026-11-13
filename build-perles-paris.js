@@ -154,14 +154,15 @@ async function fetchTimeout(url, ms, opts) {
   try { return await fetch(url, Object.assign({ signal: ac.signal, redirect: "follow", headers: { "User-Agent": BROWSER_UA, Accept: "text/html,image/*;q=0.8" } }, opts || {})); }
   finally { clearTimeout(t); }
 }
-async function sitePhoto(tags) {
-  let site = tags && (tags.website || tags["contact:website"] || tags.url);
+async function sitePhoto(tags, item) {
+  let site = (tags && (tags.website || tags["contact:website"] || tags.url)) || (item && item.site);
   if (!site) return null;
   if (!/^https?:\/\//i.test(site)) site = "https://" + site;
   try {
     const r = await fetchTimeout(site, 12000);
     if (!r.ok) return null;
     const html = (await r.text()).slice(0, 400000);
+    if (item && !(item.site && /quaibranly|paris\.fr|bustronome/.test(site)) && tokens(item.t.replace(/ - .*/, "")).length && !shares(item.t.replace(/ - .*/, ""), html.replace(/<[^>]+>/g, " "))) return null;   // la page doit parler de ce lieu
     const metas = html.match(/<meta[^>]+>/gi) || [];
     let img = "";
     for (const m of metas) {
@@ -191,7 +192,7 @@ async function sitePhoto(tags) {
     const ph = await photo(it, o);
     const st = ph.strong || null;
     let web = null;
-    if (!st) web = await sitePhoto(o.tags);
+    if (!st) web = await sitePhoto(o.tags, it);
     if (o.kind === "lieu") poiCount++;
     if (st) withPhoto++;
     if (web) webPhoto++;
