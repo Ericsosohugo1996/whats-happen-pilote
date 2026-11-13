@@ -1,17 +1,17 @@
 Perles de Paris : 89 adresses à vérifier
-✓ La Cantine Arménienne [lieu · source ancienne] photo fiable https://commons.wikimedia.org/wiki/File:Maison_de_la_Culture_Arm%C3%A9nienne_(Paris)_-_1.JPG
+✓ La Cantine Arménienne [lieu · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:Maison_de_la_Culture_Arm%C3%A9nienne_(Paris)_-_1.JPG
 ✓ Centre Pouya [lieu · source ancienne] sans photo
 ✓ Shu [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 1293 m de l'adresse donnée, on garde l'adresse
-✓ La Maison des Frigos [lieu · source ancienne] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:La_Maison_des_Frigos,_Paris_13_(9970364694).jpg)
-✓ La tête dans les olives [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 5767 m de l'adresse donnée, on garde l'adresse
+✓ La Maison des Frigos [lieu · source ancienne] photo du site https://www.les-frigos.com
+✓ La tête dans les olives [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 5658 m de l'adresse donnée, on garde l'adresse
 ✓ Halo [lieu] sans photo
 ✓ Bidoche [lieu] sans photo
 ✓ Mezzanine [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 4062 m de l'adresse donnée, on garde l'adresse
-✓ Bistrot des Cinéastes [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Le_Bistrot_des_Cin%C3%A9astes_-_Bar_Paris_17.jpg)
-✓ Hôtel Particulier Montmartre [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Le_vieux_Montmartre_fa%C3%A7ade_d%27un_h%C3%B4tel_particulier,_18%C3%A8me_arrondissement,_Paris,_PH80740.jpg)
-✓ La Recyclerie [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Petite_Ceinture_-_Boulevard_Ornano_-_Juillet_2013_(1).JPG
+✓ Bistrot des Cinéastes [lieu] photo libre https://commons.wikimedia.org/wiki/File:Le_Bistrot_des_Cin%C3%A9astes_-_Bar_Paris_17.jpg
+✓ Hôtel Particulier Montmartre [lieu] photo du site https://www.hotelparticulier.com
+✓ La Recyclerie [lieu] photo libre https://commons.wikimedia.org/wiki/File:Petite_Ceinture_-_Boulevard_Ornano_-_Juillet_2013_(1).JPG
 ✓ Le Wagon Bleu [lieu] sans photo
-✓ Le Camondo [lieu] photo fiable https://commons.wikimedia.org/wiki/File:H%C3%B4tel_de_Camondo.jpg
+✓ Le Camondo [lieu] photo libre https://commons.wikimedia.org/wiki/File:H%C3%B4tel_de_Camondo.jpg
 ✓ Hanok [adresse] sans photo
 ✓ La Table des Bernardins [adresse] sans photo
 ✓ Le Gainsbarre [adresse] sans photo
@@ -21,30 +21,30 @@ Perles de Paris : 89 adresses à vérifier
 ✓ Ora Farmhouse [lieu] sans photo
 ✓ Kraft La Bonne Table [adresse] sans photo
 ✓ Jamrock [lieu] sans photo
-✓ Rose Bakery - musée de la Vie romantique [lieu] sans photo
-✓ Café de la Maison de Balzac [adresse] photo fiable https://commons.wikimedia.org/wiki/File:Maison_de_Balzac_-_panoramio_(1).jpg
+✓ Rose Bakery - musée de la Vie romantique [lieu] photo du site https://www.rosebakery.fr/
+✓ Café de la Maison de Balzac [adresse] photo libre https://commons.wikimedia.org/wiki/File:Maison_de_Balzac_-_panoramio_(1).jpg
 ✓ Le Rhodia [adresse] sans photo
-✓ Pink Mamma [lieu] sans photo
+✓ Pink Mamma [lieu] photo du site https://www.bigmammagroup.com/en/click-collect
 ✓ Babka Zana [lieu] sans photo
-✓ Bouillon Chartier [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Paris_Chartier_1302.jpg
+✓ Bouillon Chartier [lieu] photo libre https://commons.wikimedia.org/wiki/File:Paris_Chartier_1302.jpg
 ✓ Café du Commerce [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 7152 m de l'adresse donnée, on garde l'adresse
 ✓ Au Bœuf Couronné [adresse] sans photo
-✓ Mollard [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Brasserie_Mollard_-_panoramio.jpg
-✓ La Coupole [lieu] photo fiable https://commons.wikimedia.org/wiki/File:La_Coupole_-_Paris.JPG
-✓ Lapérouse [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Lap%C3%A9rouse,_51_Quai_des_Grands_Augustins,_75006_Paris,_September_2016.jpg
-✓ Le Procope [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Le_Procope_1,_Paris_2010.jpg
-✓ Bouillon Julien [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Restaurant_Julien.JPG
-✓ Le Train Bleu [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Train_bleu_01.jpg
+✓ Mollard [lieu] photo libre https://commons.wikimedia.org/wiki/File:Brasserie_Mollard_-_panoramio.jpg
+✓ La Coupole [lieu] photo libre https://commons.wikimedia.org/wiki/File:La_Coupole_-_Paris.JPG
+✓ Lapérouse [lieu] photo libre https://commons.wikimedia.org/wiki/File:Lap%C3%A9rouse,_51_Quai_des_Grands_Augustins,_75006_Paris,_September_2016.jpg
+✓ Le Procope [lieu] photo libre https://commons.wikimedia.org/wiki/File:Le_Procope_1,_Paris_2010.jpg
+✓ Bouillon Julien [lieu] photo libre https://commons.wikimedia.org/wiki/File:Restaurant_Julien.JPG
+✓ Le Train Bleu [lieu] photo libre https://commons.wikimedia.org/wiki/File:Train_bleu_01.jpg
 ✓ Café 1902 - Petit Palais [lieu] sans photo
 ✗ introuvable : Les Petites Mains - Palais Galliera  (Palais Galliera Paris)
 ✓ Café Mulot - Maison de Victor Hugo [adresse] sans photo
-✓ Au Bonheur du Jour - musée Cognacq-Jay [adresse] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Bonheur-du-jour,_J_385.jpg)  ⚠ conflit : le lieu trouvé est à 2068 m de l'adresse donnée, on garde l'adresse
+✓ Au Bonheur du Jour - musée Cognacq-Jay [adresse] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Bonheur-du-jour,_J_384.jpg)  ⚠ conflit : le lieu trouvé est à 2068 m de l'adresse donnée, on garde l'adresse
 ✓ Les Ombres [lieu] sans photo
 ✓ La Dame de Canton [lieu] sans photo
 ✓ Petit Bain [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Southcide_13_-_Petit_Bain,_Paris_(14243937717).jpg)
 ✓ Playtime [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 2515 m de l'adresse donnée, on garde l'adresse
-✓ La Nouvelle Seine [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:La_Nouvelle_Seine,_3_Quai_de_Montebello,_75005_Paris_2014.jpg)
-✓ Off Paris Seine [lieu] sans photo
+✓ La Nouvelle Seine [lieu] photo du site https://lanouvelleseine.com/
+✓ Off Paris Seine [lieu] photo du site https://offparisseine.com
 ✓ Rencontre [lieu] sans photo
 ✓ L'Almanach [lieu] sans photo
 ✓ Atica [lieu] sans photo
@@ -54,16 +54,16 @@ Perles de Paris : 89 adresses à vérifier
 ✓ Rooster [lieu] sans photo
 ✓ Le Baratin [lieu] sans photo
 ✓ Le Dauphin [lieu] sans photo
-✓ Holybelly [lieu] sans photo
-✓ Flora Danica [lieu · source ancienne] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Flora_danica,_det_er_dansk_urtebog_2-2-054.jpg)
-✓ Le Cirque [lieu · source ancienne] sans photo
-✓ La Gaîté lyrique [lieu · source ancienne] photo fiable https://commons.wikimedia.org/wiki/File:Th%C3%A9%C3%A2tre_de_la_Ga%C3%AEt%C3%A9_02.jpg
+✓ Holybelly [lieu] photo du site https://holybellycafe.com/
+✓ Flora Danica [lieu · source ancienne] photo du site https://www.floradanica.fr/
+✓ Le Cirque [lieu · source ancienne] photo du site https://www.restaurant-le-cirque.fr/
+✓ La Gaîté lyrique [lieu · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:Th%C3%A9%C3%A2tre_de_la_Ga%C3%AEt%C3%A9_02.jpg
 ✓ Secret Garden [lieu] sans photo
 ✓ Le Café des Chats [lieu] sans photo
 ✓ Temple & Chapon [lieu] sans photo
 ✓ Le Diamant Bleu [lieu] sans photo
 ✓ Griffon [lieu] sans photo
-✓ Amagat [lieu] sans photo
+✓ Amagat [lieu] photo du site http://amagatparis.fr
 ✓ Grand Coeur [adresse] sans photo
 ✓ Hôtel Eldorado [lieu] sans photo
 ✓ Terrasse du Saint James [adresse] sans photo
@@ -71,29 +71,28 @@ Perles de Paris : 89 adresses à vérifier
 ✓ Café L'Augustine - musée Rodin [lieu] sans photo
 ✓ Le Passage à Niveau [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Passage_%C3%A0_niveau_%C3%A0_Notre-Dame-de-Bondeville.jpg)
 ✓ Voie 15 [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 7205 m de l'adresse donnée, on garde l'adresse
-✓ Le Pavillon des Canaux [adresse] photo fiable https://commons.wikimedia.org/wiki/File:Paris_-_Le_Pavillon_des_Canaux,_7_June_2015.jpg
+✓ Le Pavillon des Canaux [adresse] photo libre https://commons.wikimedia.org/wiki/File:Paris_-_Le_Pavillon_des_Canaux,_7_June_2015.jpg
 ✓ Le Bistro Parisien [lieu] sans photo
-✓ La Balle au Bond [lieu] photo fiable https://commons.wikimedia.org/wiki/File:La_Balle_au_Bond_and_Jeanne_Moreau,_8_May_2016.jpg
+✓ La Balle au Bond [lieu] photo libre https://commons.wikimedia.org/wiki/File:La_Balle_au_Bond_and_Jeanne_Moreau,_8_May_2016.jpg
 ✓ Les Maquereaux [lieu] sans photo
-✓ Le Chalet des Îles [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Restaurant_Le_Chalet_des_%C3%8Eles,_Bois_de_Boulogne,_Paris.jpg
-✓ Rosa Bonheur sur Seine [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Rosa_Bonheur_sur_Seine_and_Le_Flow.jpg
+✓ Le Chalet des Îles [lieu] photo libre https://commons.wikimedia.org/wiki/File:Restaurant_Le_Chalet_des_%C3%8Eles,_Bois_de_Boulogne,_Paris.jpg
+✓ Rosa Bonheur sur Seine [lieu] photo libre https://commons.wikimedia.org/wiki/File:Rosa_Bonheur_sur_Seine_and_Le_Flow.jpg
 ✓ Pavillon Puebla [lieu] sans photo
 ✓ Rosa Bonheur [lieu · source ancienne] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Rosa_Bonheur_-_Ploughing_in_Nevers_-_Google_Art_Project.jpg)
 ✓ Rosa Bonheur à l'Est [lieu] sans photo
 ✓ La Ferme du Pré [lieu] sans photo
 ✓ Les Belles Plantes [lieu] sans photo
 ✓ La Terrasse de Madame [lieu] sans photo
-✓ Auberge Nicolas Flamel [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Porte_de_l%27auberge_de_Nicolas_Flamel.jpg
-✓ Le Grand Colbert [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:P1010891_Paris_II_Rue_Vivienne_Grand-Colbert_reductwk.JPG)
-✓ Café de l'Homme [lieu] sans photo
+✓ Auberge Nicolas Flamel [lieu] photo libre https://commons.wikimedia.org/wiki/File:Porte_de_l%27auberge_de_Nicolas_Flamel.jpg
+✓ Le Grand Colbert [lieu] photo du site https://legrandcolbert.fr/
+✓ Café de l'Homme [lieu] photo du site https://www.cafedelhomme.com
 ✓ Joli - musée Carnavalet [lieu] sans photo
-✓ Brasserie Lipp [lieu] photo fiable https://commons.wikimedia.org/wiki/File:Brasserie_Lipp,_151_boulevard_Saint-Germain,_Paris_6e.jpg
+✓ Brasserie Lipp [lieu] photo libre https://commons.wikimedia.org/wiki/File:Brasserie_Lipp,_151_boulevard_Saint-Germain,_Paris_6e.jpg
 
 Photos candidates (non utilisées, à regarder à la main) :
   - La Maison des Frigos : https://commons.wikimedia.org/wiki/File:La_Maison_des_Frigos,_Paris_13_(9970364694).jpg
-  - Bistrot des Cinéastes : https://commons.wikimedia.org/wiki/File:Le_Bistrot_des_Cin%C3%A9astes_-_Bar_Paris_17.jpg
   - Hôtel Particulier Montmartre : https://commons.wikimedia.org/wiki/File:Le_vieux_Montmartre_fa%C3%A7ade_d%27un_h%C3%B4tel_particulier,_18%C3%A8me_arrondissement,_Paris,_PH80740.jpg
-  - Au Bonheur du Jour - musée Cognacq-Jay : https://commons.wikimedia.org/wiki/File:Bonheur-du-jour,_J_385.jpg
+  - Au Bonheur du Jour - musée Cognacq-Jay : https://commons.wikimedia.org/wiki/File:Bonheur-du-jour,_J_384.jpg
   - Petit Bain : https://commons.wikimedia.org/wiki/File:Southcide_13_-_Petit_Bain,_Paris_(14243937717).jpg
   - La Nouvelle Seine : https://commons.wikimedia.org/wiki/File:La_Nouvelle_Seine,_3_Quai_de_Montebello,_75005_Paris_2014.jpg
   - Flora Danica : https://commons.wikimedia.org/wiki/File:Flora_danica,_det_er_dansk_urtebog_2-2-054.jpg
@@ -103,6 +102,8 @@ Photos candidates (non utilisées, à regarder à la main) :
   - Le Grand Colbert : https://commons.wikimedia.org/wiki/File:P1010891_Paris_II_Rue_Vivienne_Grand-Colbert_reductwk.JPG
 
 RÉSUMÉ : 88 retrouvés sur 89 (dont 66 confirmés comme lieu par OpenStreetMap, 22 seulement par leur adresse)
-Photos libres trouvées : 18 / 88
+Photos libres trouvées : 19 / 88
+Photos du site du lieu : 12 / 88
+Sans aucune photo : 57
 Introuvables (écartés) : 1
   - Les Petites Mains - Palais Galliera : Palais Galliera Paris
