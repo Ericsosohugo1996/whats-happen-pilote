@@ -134,6 +134,7 @@ async function candidate(item) {
 async function photo(item, o) {
   const t = (o && o.tags) || {};
   try {
+    if (item.ph) { const r = await imgInfo(item.ph); if (r) return { strong: r }; }   // photo choisie à la main après contrôle
     if (o.kind === "lieu") {
       if (t.wikimedia_commons) { const c = t.wikimedia_commons; const r = /^Category:/i.test(c) ? await fromCategory(c) : await imgInfo(c); if (r && !BAD.test(r.title)) return { strong: r }; }
       if (t.image && /commons\.wikimedia\.org\/wiki\/File:/.test(t.image)) { const r = await imgInfo(decodeURIComponent(t.image.split("/wiki/")[1])); if (r && !BAD.test(r.title)) return { strong: r }; }
@@ -145,31 +146,69 @@ async function photo(item, o) {
   return {};
 }
 
+// 3) à défaut de photo libre : l'image de présentation du site officiel du lieu (celle qui s'affiche quand on partage son lien).
+//    Elle appartient au lieu : on affiche « Photo : site du lieu » et on la retire sur simple demande.
+const BROWSER_UA = "Mozilla/5.0 (compatible; WhazupBot/1.0; +https://whazup.fr)";
+async function fetchTimeout(url, ms, opts) {
+  const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms);
+  try { return await fetch(url, Object.assign({ signal: ac.signal, redirect: "follow", headers: { "User-Agent": BROWSER_UA, Accept: "text/html,image/*;q=0.8" } }, opts || {})); }
+  finally { clearTimeout(t); }
+}
+async function sitePhoto(tags) {
+  let site = tags && (tags.website || tags["contact:website"] || tags.url);
+  if (!site) return null;
+  if (!/^https?:\/\//i.test(site)) site = "https://" + site;
+  try {
+    const r = await fetchTimeout(site, 12000);
+    if (!r.ok) return null;
+    const html = (await r.text()).slice(0, 400000);
+    const metas = html.match(/<meta[^>]+>/gi) || [];
+    let img = "";
+    for (const m of metas) {
+      if (/(property|name)=["'](og:image|og:image:url|twitter:image)["']/i.test(m)) { const c = m.match(/content=["']([^"']+)["']/i); if (c) { img = c[1]; break; } }
+    }
+    if (!img) return null;
+    img = new URL(img.replace(/&amp;/g, "&"), r.url || site).href;
+    if (!/^https:/i.test(img) || /logo|favicon|icon|placeholder|default|sprite/i.test(img)) return null;
+    const ri = await fetchTimeout(img, 12000);
+    const ct = String(ri.headers.get("content-type") || ""), len = +(ri.headers.get("content-length") || 0);
+    try { ri.body && ri.body.cancel && ri.body.cancel(); } catch (e) {}
+    if (!ri.ok || !/^image\/(jpeg|png|webp)/i.test(ct) || (len && len < 15000)) return null;
+    let host = ""; try { host = new URL(site).hostname.replace(/^www\./, ""); } catch (e) {}
+    return { url: img, site, host };
+  } catch (e) { return null; }
+}
+
 (async () => {
   const seed = JSON.parse(fs.readFileSync("data/perles-paris-seed.json", "utf8"));
   say("Perles de Paris : " + seed.length + " adresses à vérifier");
   const ok = [], lost = [];
-  let withPhoto = 0, poiCount = 0;
+  let withPhoto = 0, poiCount = 0, webPhoto = 0;
   const cands = [];
   for (const it of seed) {
     const o = await osm(it);
     if (!o) { lost.push(it); say("✗ introuvable : " + it.t + "  (" + it.q + ")"); continue; }
     const ph = await photo(it, o);
     const st = ph.strong || null;
+    let web = null;
+    if (!st) web = await sitePhoto(o.tags);
     if (o.kind === "lieu") poiCount++;
     if (st) withPhoto++;
+    if (web) webPhoto++;
     if (!st && ph.cand) cands.push(it.t + " : " + ph.cand.page);
     ok.push({
       id: it.id, t: it.t, c: "Paris", la: +o.la.toFixed(6), lo: +o.lo.toFixed(6), k: it.k, e: it.e, d: it.d,
-      p: st ? st.url : "", cr: st ? "Photo : " + st.art + " · " + st.lic + " · Wikimedia Commons" : "", cu: st ? st.page : "",
+      p: st ? st.url : web ? web.url : "", cr: st ? "Photo : " + st.art + " · " + st.lic + " · Wikimedia Commons" : web ? "Photo : site du lieu (" + web.host + ")" : "", cu: st ? st.page : web ? web.site : "", pw: !st && web ? 1 : 0,
       s: o.kind, v: it.v
     });
-    say("✓ " + it.t + " [" + o.kind + (it.v ? "" : " · source ancienne") + "] " + (st ? "photo fiable " + st.page : ph.cand ? "sans photo fiable (candidate à regarder : " + ph.cand.page + ")" : "sans photo") + (o.note ? "  ⚠ " + o.note : ""));
+    say("✓ " + it.t + " [" + o.kind + (it.v ? "" : " · source ancienne") + "] " + (st ? "photo libre " + st.page : web ? "photo du site " + web.site : ph.cand ? "sans photo fiable (candidate à regarder : " + ph.cand.page + ")" : "sans photo") + (o.note ? "  ⚠ " + o.note : ""));
   }
   if (cands.length) { say(""); say("Photos candidates (non utilisées, à regarder à la main) :"); cands.forEach((c) => say("  - " + c)); }
   say("");
   say("RÉSUMÉ : " + ok.length + " retrouvés sur " + seed.length + " (dont " + poiCount + " confirmés comme lieu par OpenStreetMap, " + (ok.length - poiCount) + " seulement par leur adresse)");
   say("Photos libres trouvées : " + withPhoto + " / " + ok.length);
+  say("Photos du site du lieu : " + webPhoto + " / " + ok.length);
+  say("Sans aucune photo : " + (ok.length - withPhoto - webPhoto));
   say("Introuvables (écartés) : " + lost.length);
   lost.forEach((l) => say("  - " + l.t + " : " + l.q));
   if (ok.length < 20) { say("Trop peu de résultats : le fichier final n'est pas écrit (OpenStreetMap est peut-être saturé, relance plus tard)."); fs.mkdirSync("data/perles-test", { recursive: true }); fs.writeFileSync("data/perles-test/_rapport-paris.txt", out.join("\n")); return; }
