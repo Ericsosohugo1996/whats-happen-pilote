@@ -1,0 +1,133 @@
+Bars de Paris : 112 adresses à vérifier
+✓ Doris Bar [adresse · source ancienne] sans photo
+✓ Divine House [adresse · source ancienne] sans photo
+✓ Little Red Door [lieu · source ancienne] sans photo
+✓ Copperbay [adresse · source ancienne] sans photo
+✓ Moonshiner [lieu · source ancienne] sans photo
+✓ La Mezcaleria [lieu] sans photo
+✓ Le Balzac [lieu · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:Cin%C3%A9ma_Le_Balzac,_1_rue_Balzac,_Paris_8e_1.jpg
+✓ Poppy [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 3508 m de l'adresse donnée, on garde l'adresse
+✓ Le bar caché du Lombem [adresse · source ancienne] sans photo
+✓ Gyoza Bar speakeasy [adresse · source ancienne] sans photo
+✓ The Confidential [adresse · source ancienne] sans photo
+✓ Bar caché de la Brasserie des Arts [adresse · source ancienne] sans photo
+✓ Maison Souquet [adresse · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:Maison_Souquet,_10_rue_de_Bruxelles.jpg
+✓ Gentlemen 1919 [lieu · source ancienne] photo du site https://www.gentlemen1919.com
+✓ Le Lavomatic [adresse · source ancienne] sans photo
+✓ Le Syndicat [lieu] sans photo
+✓ Experimental Cocktail Club [lieu] photo du site http://www.experimentalcocktailclub.com
+✓ Mesures [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 5427 m de l'adresse donnée, on garde l'adresse
+✓ Solera [lieu] photo du site https://soleraparis.wixsite.com/solera
+✓ Prescription Cosmic Theater [adresse] sans photo
+✓ Dirty Lemon [lieu] sans photo
+✓ Fréquence [lieu] sans photo
+✓ Le Très Particulier [adresse] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:24_F%C3%A9vrierUn_particulier_tr%C3%A8s_connu,_qui_n%27a_pas_la_goutte._Paris_Mus%C3%A9es_20230514105953.jpg)
+✓ Combat [lieu] sans photo
+✓ Kissproof [lieu] sans photo
+✓ Le 7e Ciel [adresse] sans photo
+✓ Brach Paris [lieu] sans photo
+✓ Bigoudi Rooftop [adresse] sans photo
+✓ Fuga R. [adresse] sans photo
+✓ Skybar Paris [lieu] sans photo
+✓ La Douce Heure par St-Germain [adresse] sans photo
+✓ L'Heure Dorée [adresse] sans photo
+✓ Molitor [lieu] photo libre https://commons.wikimedia.org/wiki/File:Piscine_et_h%C3%B4tel_Molitor,_avenue_de_la_Porte_Molitor,_Paris_2015.jpg
+✓ La Bellevilloise - Le Toit [lieu] photo libre https://commons.wikimedia.org/wiki/File:La_Bellevilloise.jpg
+✓ Augustin Marchand d'Vins [lieu] sans photo
+✓ Le Comptoir des Résistants [lieu] sans photo
+✓ Lolo cave à manger [adresse] sans photo
+✓ Les Fous de l'Île [lieu] sans photo
+✓ Early June [lieu] photo libre https://commons.wikimedia.org/wiki/File:Ancien_d%C3%A9bit_de_boisson,_rue_Jean-Poulmarch_02.jpg
+✓ Les Amoureuses bis [lieu] sans photo
+✓ Passerina [adresse] sans photo
+✓ Le vin au vert [lieu] sans photo
+✓ Supra [lieu] sans photo
+✓ Frenchie Bar à Vins [adresse] sans photo
+✓ Septime La Cave [lieu] sans photo
+✓ La Cave à Michel [lieu] sans photo
+✓ Folderol [lieu] sans photo
+✓ Donna [lieu] sans photo
+✓ Bambino [lieu] sans photo
+✓ La Renommée [lieu · source ancienne] sans photo
+✓ Danico [lieu · source ancienne] sans photo
+✓ La Candelaria [adresse] sans photo
+✓ Sotto [adresse · source ancienne] sans photo
+✓ Spootnik [lieu · source ancienne] sans photo
+✓ Le Shack [lieu · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:Le_Shack_-_Flickr_-_JJ.BT.jpg
+✓ Bar Bibliothèque du Saint James [adresse · source ancienne] sans photo
+✓ Rehab [adresse] sans photo
+✓ Serpent à Plume [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Vanit%C3%A9_aux_livres,_encrier,_plume,_feuilles_volantes,_miroir_et_serpent,_Paris_Mus%C3%A9es_20230708103836.jpg)
+✓ Mobster [lieu] sans photo
+✓ No Entry [lieu] sans photo
+✓ L'Épicier [lieu] sans photo
+✓ Baranaan [adresse] sans photo
+✓ Bar 228 - Le Meurice [adresse] sans photo
+✓ Grouvie [adresse] photo du site https://lanouvellegarde.com/fr/brasserie-des-pres/
+✓ Mondaine de Pariso [adresse] sans photo
+✓ Bibie [lieu] sans photo
+✓ Tiger Paris [lieu] sans photo
+✓ Isadora Cocktail Bar [adresse] sans photo
+✓ Le Mary Celeste [lieu] sans photo
+✓ Le Comptoir Général [lieu] photo libre https://commons.wikimedia.org/wiki/File:Le_Comptoir_G%C3%A9n%C3%A9ral,_Quai_de_Jemmapes_(5997610662).jpg
+✓ Le Sherry Butt [adresse] sans photo
+✓ Bonnie au SO/ Paris [adresse] sans photo
+✓ Le rooftop de La Fantaisie [adresse] sans photo
+✓ Le Bar du Louxor [lieu] photo libre https://commons.wikimedia.org/wiki/File:Louxor_cin%C3%A9ma_Paris.jpeg
+✗ introuvable : Beaux Parleurs  (Beaux Parleurs bar rue Lepic Paris)
+✗ introuvable : Nanna  (Nanna péniche littéraire quai Montebello Paris)
+✗ introuvable : Titi Amo  (Titi Amo cave à manger Paris 17e)
+✓ Out of the Blue [lieu] sans photo
+✗ introuvable : Zoutra  (Zoutra bar à vins Montmartre Paris)
+✓ Babi [lieu] sans photo
+✓ Martha Paris [lieu] photo du site https://www.marthaparis10.fr/
+✓ Yard [lieu] sans photo
+✓ La Belle Hortense [lieu] sans photo
+✓ Montijo [lieu] photo du site https://www.montijo.fr
+✓ Grain[s] [lieu] sans photo
+✓ La Compagnie des Vins Surnaturels [adresse] sans photo
+✓ Cavalier [lieu] sans photo
+✓ Le TUB [lieu] photo du site https://www.privateaser.com/lieu/6547-le-tub
+✓ La Fièvre [adresse] sans photo
+✓ Le 153 [lieu] sans photo
+✓ Potions & Co [lieu] sans photo
+✓ La Lucha Libre [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Lucha_Libre,_10_Rue_de_la_Montagne-Sainte-Genevi%C3%A8ve,_75005_Paris,_May_2015.jpg)
+✓ La Poudrière [lieu] sans photo
+✓ Demory Paris [adresse] sans photo
+✓ RPR Le Repaire de Charonne [lieu] photo du site https://lerepairedecharonne.com/
+✓ Boucan [lieu] sans photo
+✓ Coquine [adresse] sans photo
+✓ Brasserie de la Goutte d'Or [lieu] photo du site http://www.brasserielagouttedor.com
+✗ introuvable : La Fine Mousse  (6 avenue Jean Aicart, 75011 Paris)
+✓ Bisou [lieu · source ancienne] photo du site https://www.bar-bisou.com/
+✗ introuvable : Herbarium  (Herbarium bar Hôtel National des Arts et Métiers Paris)
+✓ La Commune [lieu · source ancienne] sans photo
+✗ introuvable : Le Belair  (Belair bar Maison de la Radio Paris)
+✓ Caveau de la Huchette [lieu] photo libre https://commons.wikimedia.org/wiki/File:Caveau_de_la_Huchette,_5_rue_de_la_Huchette,_Paris_5e_2.jpg
+✓ Caveau des Oubliettes [lieu] sans photo
+✓ Sunset Sunside [lieu] photo libre https://commons.wikimedia.org/wiki/File:Sunset-Sunside.jpg
+✓ Le Baiser Salé [lieu] photo libre https://commons.wikimedia.org/wiki/File:Le_Baiser_Sal%C3%A9_-_Paris.jpg
+✓ Le Duc des Lombards [lieu] photo libre https://commons.wikimedia.org/wiki/File:Le_Duc_des_Lombards_-_Paris_-_3.jpg
+✓ Le Piano Vache [lieu] photo du site https://lepianovache.com/
+✓ Chez Georges [lieu] sans photo
+✓ Le Bal Blomet [adresse] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Le_Bal_de_la_rue_Blomet).jpeg)
+✓ 38Riv [lieu] photo du site https://www.38riv.com/
+
+Photos candidates (non utilisées, à regarder à la main) :
+  - Le Très Particulier : https://commons.wikimedia.org/wiki/File:24_F%C3%A9vrierUn_particulier_tr%C3%A8s_connu,_qui_n%27a_pas_la_goutte._Paris_Mus%C3%A9es_20230514105953.jpg
+  - Serpent à Plume : https://commons.wikimedia.org/wiki/File:Vanit%C3%A9_aux_livres,_encrier,_plume,_feuilles_volantes,_miroir_et_serpent,_Paris_Mus%C3%A9es_20230708103836.jpg
+  - La Lucha Libre : https://commons.wikimedia.org/wiki/File:Lucha_Libre,_10_Rue_de_la_Montagne-Sainte-Genevi%C3%A8ve,_75005_Paris,_May_2015.jpg
+  - Brasserie de la Goutte d'Or : https://commons.wikimedia.org/wiki/File:Verre_de_la_brasserie_de_la_Goutte_d%27Or_%C3%A0_Paris.jpg
+  - Le Bal Blomet : https://commons.wikimedia.org/wiki/File:Le_Bal_de_la_rue_Blomet).jpeg
+
+RÉSUMÉ : 105 retrouvés sur 112 (dont 67 confirmés comme lieu par OpenStreetMap, 38 seulement par leur adresse)
+Photos libres trouvées : 12 / 105
+Photos du site du lieu : 12 / 105
+Sans aucune photo : 81
+Introuvables (écartés) : 7
+  - Beaux Parleurs : Beaux Parleurs bar rue Lepic Paris
+  - Nanna : Nanna péniche littéraire quai Montebello Paris
+  - Titi Amo : Titi Amo cave à manger Paris 17e
+  - Zoutra : Zoutra bar à vins Montmartre Paris
+  - La Fine Mousse : 6 avenue Jean Aicart, 75011 Paris
+  - Herbarium : Herbarium bar Hôtel National des Arts et Métiers Paris
+  - Le Belair : Belair bar Maison de la Radio Paris
