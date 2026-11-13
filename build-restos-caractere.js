@@ -67,7 +67,7 @@ function kindOf(text) { for (const [re, k] of KINDS) if (re.test(text)) return k
 function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return (h >>> 0).toString(36); }
 (async () => {
   if (!KEY) { say("Pas de clé DATAtourisme."); return; }
-  const OUT = "data/restos-caractere.json", PER_CITY = 3, TOTAL = 1000, MIN = 4;
+  const OUT = "data/restos-caractere.json", PER_CITY = 1000, TOTAL = 1500, MIN = 4;
   let url = "/v1/placeOfInterest?page_size=100&lang=fr&type=Restaurant", pages = 0; const cand = [];
   while (url && pages < 500) {
     const r = await get(url);
@@ -87,7 +87,7 @@ function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s
   cand.sort((a, b) => b.s - a.s);
   const per = {}, keep = [];
   for (const c of cand) { per[c.c] = (per[c.c] || 0) + 1; if (per[c.c] <= PER_CITY && keep.length < TOTAL) keep.push(c); }
-  say("Adresses de caractère : " + cand.length + " retenues par le score, " + keep.length + " gardées (max " + PER_CITY + " par ville), " + Object.keys(per).length + " villes");
+  say("Adresses de caractère : " + cand.length + " retenues par le score, " + keep.length + " gardées (aucune limite par ville), " + Object.keys(per).length + " villes");
   if (keep.length < 200) { say("Trop peu d'adresses : fichier non écrasé."); fs.writeFileSync("data/restos-test/_build-resume.txt", out.join("\n") + "\n"); return; }
   fs.mkdirSync("data", { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(keep.map(({ s, ...x }) => x)));
