@@ -96,7 +96,16 @@ async function fromWikidata(q) {
   const c = j && j.claims && j.claims.P18 && j.claims.P18[0]; const v = c && c.mainsnak && c.mainsnak.datavalue && c.mainsnak.datavalue.value;
   return v ? imgInfo("File:" + v) : null;
 }
-const BAD = /(15|16|17|18)\d\d|19[0-8]\d|btv|bpt|\(\d+ of \d+\)|estampe|gravure|dessin|\bMET\b|painting|tableau|gallica|affiche/i;
+const BAD = /concert|\btour\b|festival|dedicace|dédicace|©|(15|16|17|18)\d\d|19[0-8]\d|btv|bpt|\(\d+ of \d+\)|estampe|gravure|dessin|\bMET\b|painting|tableau|gallica|affiche/i;
+// le nom de fichier doit parler de CE lieu : tous (ou presque) les mots du nom, ou, pour un nom à un seul mot, un fichier qui commence par ce mot
+const LEAD = new Set(["le", "la", "les", "l", "de", "du", "des", "au", "aux", "brasserie", "restaurant", "cafe", "hotel", "bistrot", "bar", "file"]);
+function fileMatches(title, fileTitle) {
+  const t = tokens(title), words = norm(fileTitle.replace(/\.[a-z]+$/i, "")).split(/\s+/).filter(Boolean), set = new Set(words);
+  if (!t.length) return false;
+  if (t.length === 1) { let i = 0; while (i < words.length && LEAD.has(words[i])) i++; return words[i] === t[0]; }
+  const n = t.filter((w) => set.has(w)).length;
+  return n >= 2 && n >= Math.ceil(t.length * 0.75);
+}
 // photos géolocalisées à moins de 120 m du lieu et dont le nom de fichier contient un mot du lieu : très fiable
 async function fromGeo(item, o) {
   const u = "https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&list=geosearch&gsnamespace=6&gsradius=120&gslimit=40&gscoord=" + o.la + "%7C" + o.lo;
@@ -104,7 +113,7 @@ async function fromGeo(item, o) {
   const short = item.t.replace(/ - .*/, "");
   for (const f of ((j && j.query && j.query.geosearch) || [])) {
     if (!/\.jpe?g$/i.test(f.title) || BAD.test(f.title)) continue;
-    if (!shares(short, f.title)) continue;
+    if (!fileMatches(short, f.title)) continue;
     const r = await imgInfo(f.title); if (r) return r;
   }
   return null;
@@ -117,8 +126,7 @@ async function candidate(item) {
   const j = await getJson(u); await sleep(300);
   for (const f of ((j && j.query && j.query.search) || [])) {
     if (!/\.jpe?g$/i.test(f.title) || BAD.test(f.title)) continue;
-    const x = " " + norm(f.title) + " ";
-    if (!t.every((w) => x.indexOf(" " + w) >= 0)) continue;
+    if (!fileMatches(short, f.title)) continue;
     const r = await imgInfo(f.title); if (r) return r;
   }
   return null;
