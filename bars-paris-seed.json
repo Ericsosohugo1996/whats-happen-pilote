@@ -1,0 +1,785 @@
+[
+ {
+  "id": "bar-paris-doris-bar",
+  "t": "Doris Bar",
+  "q": "5 rue de Presbourg, 75016 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un bar en sous-sol de la brasserie Sir Winston, au décor d'Orient-Express, avec des casiers cachés sous le comptoir.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-divine-house",
+  "t": "Divine House",
+  "q": "11 bis rue Volney, 75002 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "On entre par une porte-miroir dans un restaurant, puis on descend dans un sous-sol tendu de tartan.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-little-red-door",
+  "t": "Little Red Door",
+  "q": "60 rue Charlot, 75003 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar du Marais dont la carte raconte la France ingrédient par ingrédient, souvent cité parmi les meilleurs du monde.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-copperbay",
+  "t": "Copperbay",
+  "q": "7 rue de Berri, 75008 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Le bar de l'hôtel Lancaster, dont les cocktails portent les noms de ceux qui l'ont fréquenté.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-moonshiner",
+  "t": "Moonshiner",
+  "q": "5 rue Sedaine, 75011 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Pour entrer, il faut traverser la chambre froide d'une pizzeria : ambiance Prohibition derrière la porte.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-la-mezcaleria",
+  "t": "La Mezcaleria",
+  "q": "13 boulevard du Temple, 75003 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "On y accède par les cuisines d'un hôtel. Décor latino, mezcal et ambiance Día de Muertos.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-balzac",
+  "t": "Le Balzac",
+  "q": "6 rue Balzac, 75008 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar d'hôtel feutré, aux cocktails inspirés de l'écrivain et de son œuvre.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-poppy",
+  "t": "Poppy",
+  "q": "92 rue de Vaugirard, 75006 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un étage sous un hôtel, avec un plafond en miroir et des lithographies de Chagall.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-le-bar-cache-du-lombem",
+  "t": "Le bar caché du Lombem",
+  "q": "22 passage des Panoramas, 75002 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un sous-sol voûté sous un restaurant de grillades, avec un taureau mécanique. Ouvert le vendredi et le samedi.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-gyoza-bar-speakeasy",
+  "t": "Gyoza Bar speakeasy",
+  "q": "56 passage des Panoramas, 75002 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un petit escalier au fond du Gyoza Bar mène à un bar baigné de néons rouges.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-the-confidential",
+  "t": "The Confidential",
+  "q": "9 rue d'Aguesseau, 75008 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar de velours dans un hôtel du Faubourg, avec des cocktails faits sur mesure.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-bar-cache-de-la-brasserie-des-arts",
+  "t": "Bar caché de la Brasserie des Arts",
+  "q": "28 rue Saint-André des Arts, 75006 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un sous-sol Art déco avec DJ le week-end et boules à facettes.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-maison-souquet",
+  "t": "Maison Souquet",
+  "q": "10 rue de Bruxelles, 75009 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Une ancienne maison close de la Belle Époque, aux salons feutrés devenus bar d'hôtel.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-gentlemen-1919",
+  "t": "Gentlemen 1919",
+  "q": "11 rue Jean Mermoz, 75008 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Une porte dérobée au fond d'un salon de coiffure, pour whiskies, rhums et cigares.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-le-lavomatic",
+  "t": "Le Lavomatic",
+  "q": "30 rue René Boulanger, 75010 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Une porte déguisée en machine à laver dans une laverie, puis un bar avec des balançoires.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-le-syndicat",
+  "t": "Le Syndicat",
+  "q": "51 rue du Faubourg Saint-Denis, 75010 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Une façade sans enseigne, d'apparence abandonnée, pour un bar à cocktails réputé qui ne sert que des spiritueux français.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-experimental-cocktail-club",
+  "t": "Experimental Cocktail Club",
+  "q": "37 rue Saint-Sauveur, 75002 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Le bar qui a lancé la nouvelle vague des cocktails à Paris, ouvert depuis plus de quinze ans.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-mesures",
+  "t": "Mesures",
+  "q": "58 rue de Saintonge, 75003 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar franco-japonais à l'esprit jazz-kissa, où la musique compte autant que le verre.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-solera",
+  "t": "Solera",
+  "q": "283 rue Saint-Jacques, 75005 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar détendu et énergique, tenu par un ancien barman de palace, qui préfère le hip-hop au jazz de salon.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-prescription-cosmic-theater",
+  "t": "Prescription Cosmic Theater",
+  "q": "23 rue Mazarine, 75006 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "L'ancien Prescription Cocktail Club entièrement redessiné, dans la famille des bars Experimental.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-dirty-lemon",
+  "t": "Dirty Lemon",
+  "q": "24 rue de la Folie Méricourt, 75011 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar à cocktails imaginé par une cheffe passée par de grandes tables parisiennes.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-frequence",
+  "t": "Fréquence",
+  "q": "20 rue Keller, 75011 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar à disques : les murs sont couverts de bacs à vinyles à la place des bouteilles.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-tres-particulier",
+  "t": "Le Très Particulier",
+  "q": "23 avenue Junot, 75018 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Caché dans le jardin d'un hôtel particulier de Montmartre, avec deux salles aux ambiances opposées.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-combat",
+  "t": "Combat",
+  "q": "63 rue de Belleville, 75019 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Des cocktails d'auteur très travaillés à Belleville, récompensés par le Fooding.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-kissproof",
+  "t": "Kissproof",
+  "q": "50 rue de Belleville, 75020 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Une façade jaune citron, des néons rouges et un comptoir en forme de pare-chocs.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-7e-ciel",
+  "t": "Le 7e Ciel",
+  "q": "64 boulevard Haussmann, 75009 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Une terrasse tout en haut du Printemps Haussmann, avec le dôme du magasin et la tour Eiffel en vue. Surtout l'été.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-brach-paris",
+  "t": "Brach Paris",
+  "q": "39 rue de la Pompe, 75116 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un toit-terrasse au milieu d'un potager urbain, ambiance provençale, avec la tour Eiffel en toile de fond.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-bigoudi-rooftop",
+  "t": "Bigoudi Rooftop",
+  "q": "38 avenue Raymond Poincaré, 75116 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un panorama à 360° près du Trocadéro, qui va du Sacré-Cœur à la Défense.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-fuga-r",
+  "t": "Fuga R.",
+  "q": "28 rue de Monceau, 75008 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un rooftop coloré qui évoque les paysages volcaniques de Lanzarote, entre pins et cactus.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-skybar-paris",
+  "t": "Skybar Paris",
+  "q": "19 rue du Commandant René Mouchotte, 75014 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Au 32e étage de la tour Montparnasse-Pullman, avec la tour Eiffel en face et des DJ chaque semaine.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-la-douce-heure-par-st-germain",
+  "t": "La Douce Heure par St-Germain",
+  "q": "40 boulevard Haussmann, 75009 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un bar d'été au huitième étage des Galeries Lafayette, face à l'Opéra Garnier.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-l-heure-doree",
+  "t": "L'Heure Dorée",
+  "q": "19 avenue Kléber, 75116 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Le toit de l'hôtel Peninsula, avec un avion accroché au-dessus des têtes et la tour Eiffel en vue.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-molitor",
+  "t": "Molitor",
+  "q": "13 rue Nungesser et Coli, 75016 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un toit qui domine la piscine historique, les courts de Roland-Garros et la tour Eiffel.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-la-bellevilloise-le-toit",
+  "t": "La Bellevilloise - Le Toit",
+  "q": "19-21 rue Boyer, 75020 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un grand toit-terrasse sur deux niveaux, avec une vue panoramique sur Paris.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-augustin-marchand-d-vins",
+  "t": "Augustin Marchand d'Vins",
+  "q": "26 rue des Grands-Augustins, 75006 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une librairie de bouteilles ouverte tard, sans carte des vins : on fait confiance au patron.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-comptoir-des-resistants",
+  "t": "Le Comptoir des Résistants",
+  "q": "18 rue du Château d'Eau, 75010 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un bar à vins de bistrot, engagé, avec plus de mille références.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-lolo-cave-a-manger",
+  "t": "Lolo cave à manger",
+  "q": "12 rue de Châteaudun, 75009 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une toute petite salle éclairée de rouge, avec une sélection entièrement nature.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-les-fous-de-l-ile",
+  "t": "Les Fous de l'Île",
+  "q": "33 rue des Deux Ponts, 75004 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une cave feutrée sous une brasserie, sur l'île Saint-Louis.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-early-june",
+  "t": "Early June",
+  "q": "19 rue Jean Poulmarch, 75010 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une buvette au bord du canal, murs blancs, avec des chefs invités.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-les-amoureuses-bis",
+  "t": "Les Amoureuses bis",
+  "q": "3 rue des Tournelles, 75004 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un bar à vins chaleureux, avec une grande table centrale pour les groupes.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-passerina",
+  "t": "Passerina",
+  "q": "44 rue Traversière, 75012 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une salle minimaliste au comptoir d'acajou, avec des vins italiens.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-vin-au-vert",
+  "t": "Le vin au vert",
+  "q": "70 rue de Dunkerque, 75009 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un bistrot sans prétention, tables en bois et verres à prix doux.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-supra",
+  "t": "Supra",
+  "q": "12 rue Jouye-Rouve, 75020 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un bar à vins géorgien, avec dégustations à thème et assiettes à partager.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-frenchie-bar-a-vins",
+  "t": "Frenchie Bar à Vins",
+  "q": "9 rue du Nil, 75002 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Briques apparentes, lumière tamisée et un comptoir pour ceux qui viennent seuls.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-septime-la-cave",
+  "t": "Septime La Cave",
+  "q": "3 rue Basfroi, 75011 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une toute petite cave, parfaite pour l'apéritif près de Septime.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-la-cave-a-michel",
+  "t": "La Cave à Michel",
+  "q": "34 rue Sainte-Marthe, 75010 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un comptoir minuscule et puriste tenu par deux frères : il se remplit vite.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-folderol",
+  "t": "Folderol",
+  "q": "10 rue du Grand Prieuré, 75011 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un mélange audacieux de vins nature et de glaces.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-donna",
+  "t": "Donna",
+  "q": "157 rue Saint-Martin, 75003 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un lieu minimaliste pour audiophiles, avec de la house et un comptoir en pierre. Mieux vaut réserver.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-bambino",
+  "t": "Bambino",
+  "q": "25 rue Saint-Sébastien, 75011 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un « stéréo-bar » : vinyles, cuisine ouverte et ambiance animée.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-la-renommee",
+  "t": "La Renommée",
+  "q": "95 rue Saint-Honoré, 75001 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un bar voûté en sous-sol, tout en velours, avec des classiques bien faits.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-danico",
+  "t": "Danico",
+  "q": "6 rue Vivienne, 75002 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un recoin au fond d'une pizzeria, pour des cocktails très soignés.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-la-candelaria",
+  "t": "La Candelaria",
+  "q": "52 rue de Saintonge, 75003 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "On passe par une taqueria pour rejoindre, tout au fond, un bar de tequila, de mezcal et de pisco.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-sotto",
+  "t": "Sotto",
+  "q": "45 rue de Poitou, 75003 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un bar en sous-sol d'un restaurant italien, avec un juke-box des années 80.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-spootnik",
+  "t": "Spootnik",
+  "q": "57 rue des Gravilliers, 75003 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Une cave futuriste sous un restaurant, avec DJ.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-le-shack",
+  "t": "Le Shack",
+  "q": "4 impasse Sandrié, 75009 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un ancien local d'édition aux murs de livres, tout près de l'Opéra.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-bar-bibliotheque-du-saint-james",
+  "t": "Bar Bibliothèque du Saint James",
+  "q": "5 place du Chancelier-Adenauer, 75116 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Des murs de bibliothèque dans un château avec jardin, pour un verre en toute discrétion.",
+  "v": 0
+ },
+ {
+  "id": "bar-paris-rehab",
+  "t": "Rehab",
+  "q": "7 rue de l'Échelle, 75001 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Au sous-sol d'un hôtel, un décor d'opiumerie et des cocktails au CBD.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-serpent-a-plume",
+  "t": "Serpent à Plume",
+  "q": "24 place des Vosges, 75003 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un sous-sol d'antiquaire sur la place des Vosges, entre mobilier des années 60 et ambiance d'explorateur maya.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-mobster",
+  "t": "Mobster",
+  "q": "8 rue de Crussol, 75011 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "On y entre par une cabine téléphonique avec un code secret. Thème gangster et concerts de jazz.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-no-entry",
+  "t": "No Entry",
+  "q": "20 bis rue de Douai, 75009 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un bar caché quelque part dans le restaurant Pink Mamma, avec des cocktails aux alcools infusés.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-l-epicier",
+  "t": "L'Épicier",
+  "q": "24 rue Notre-Dame-de-Nazareth, 75003 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "L'entrée est dissimulée parmi les rayons d'une épicerie, et les cocktails s'inspirent des saveurs d'Orient.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-baranaan",
+  "t": "Baranaan",
+  "q": "7 rue du Faubourg-Saint-Martin, 75010 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Au fond d'une réplique de wagon de train, un bar d'inspiration indienne caché dans un restaurant.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-bar-228-le-meurice",
+  "t": "Bar 228 - Le Meurice",
+  "q": "228 rue de Rivoli, 75001 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un piano-bar anglais intime, avec une atmosphère de speakeasy dans un palace.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-grouvie",
+  "t": "Grouvie",
+  "q": "6 cour du Commerce Saint-André, 75006 Paris",
+  "k": "Bar caché",
+  "e": [],
+  "d": "Un passage discret près d'Odéon, puis un bar disco avec boules à facettes, comedy club et bingo.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-mondaine-de-pariso",
+  "t": "Mondaine de Pariso",
+  "q": "23 rue de Ponthieu, 75008 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un néocabaret confidentiel inspiré des années 70, avec musique en direct et danse après le dîner.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-bibie",
+  "t": "Bibie",
+  "q": "7 rue Lacépède, 75005 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Des spiritueux de petites distilleries françaises, plus de 200 vins et des DJ sets le week-end.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-tiger-paris",
+  "t": "Tiger Paris",
+  "q": "13 rue Princesse, 75006 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Le premier bar de Paris entièrement consacré au gin, sous un décor tropical.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-isadora-cocktail-bar",
+  "t": "Isadora Cocktail Bar",
+  "q": "60 rue Jean-Jacques Rousseau, 75001 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Des cocktails baptisés du nom de femmes engagées, une cuisine servie tard et une ambiance rock.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-mary-celeste",
+  "t": "Le Mary Celeste",
+  "q": "1 rue Commines, 75003 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar à cocktails, à vins et à raciones, où l'on associe les verres à la cuisine.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-comptoir-general",
+  "t": "Le Comptoir Général",
+  "q": "80 quai de Jemmapes, 75010 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Une serre tropicale avec un bar-bateau dans une cour cachée du canal Saint-Martin, dont le thème change tous les trois mois.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-sherry-butt",
+  "t": "Le Sherry Butt",
+  "q": "20 rue Beautreillis, 75004 Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar cosy de whisky, avec une carte écrite sur le mur.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-bonnie-au-so-paris",
+  "t": "Bonnie au SO/ Paris",
+  "q": "10 rue Agrippa d'Aubigné, 75004 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un bar au 16e étage d'un hôtel, avec vue panoramique, décor de cinéma et soul-funk.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-rooftop-de-la-fantaisie",
+  "t": "Le rooftop de La Fantaisie",
+  "q": "24 rue Cadet, 75009 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un petit toit vert à l'esprit méditerranéen, avec vue sur le Sacré-Cœur et une quinzaine de tables seulement.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-le-bar-du-louxor",
+  "t": "Le Bar du Louxor",
+  "q": "170 boulevard de Magenta, 75010 Paris",
+  "k": "Sur les toits",
+  "e": [],
+  "d": "Un bar sur le toit du cinéma Louxor, au décor égyptien, avec vue sur le Sacré-Cœur.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-beaux-parleurs",
+  "t": "Beaux Parleurs",
+  "q": "Beaux Parleurs bar rue Lepic Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Un bar à cocktails de Montmartre à l'ambiance cosy, aux boissons très travaillées.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-nanna",
+  "t": "Nanna",
+  "q": "Nanna péniche littéraire quai Montebello Paris",
+  "k": "Bar à cocktails",
+  "e": [],
+  "d": "Une péniche littéraire amarrée au pied de Notre-Dame, avec bibliothèque et bar.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-titi-amo",
+  "t": "Titi Amo",
+  "q": "Titi Amo cave à manger Paris 17e",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une cave à manger qui met en avant les vigneronnes et raconte leur histoire.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-out-of-the-blue",
+  "t": "Out of the Blue",
+  "q": "Out of the Blue bar à vins cinéma courts métrages Paris 11e",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un bar à vins nature avec une salle de projection de courts métrages, dans un salon moquetté.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-zoutra",
+  "t": "Zoutra",
+  "q": "Zoutra bar à vins Montmartre Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un bar à vins levantin à Montmartre, aux assiettes créatives à partager.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-babi",
+  "t": "Babi",
+  "q": "Babi bar à vins Sentier Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un bar à vins entre bistrot et table de chef, plein d'humour.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-martha-paris",
+  "t": "Martha Paris",
+  "q": "Martha cave à manger rue Sainte-Marthe Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une cave à manger discrète et conviviale dans le village Sainte-Marthe, avec épicerie fine.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-yard",
+  "t": "Yard",
+  "q": "Yard bistrot cave à vins nature Père Lachaise Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Bistrot le jour, cave à vins nature le soir, près du Père-Lachaise.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-la-belle-hortense",
+  "t": "La Belle Hortense",
+  "q": "31 rue Vieille du Temple, 75004 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un bar à vins littéraire logé dans une librairie du Marais.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-montijo",
+  "t": "Montijo",
+  "q": "Montijo cave à manger Batignolles Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une cave à manger d'artistes aux airs de bodega espagnole, avec des vins nature.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-grain-s",
+  "t": "Grain[s]",
+  "q": "Grain[s] cave à manger vin saké Paris 6e",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une cave à manger de Saint-Germain-des-Prés qui marie vins et saké.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-la-compagnie-des-vins-surnaturels",
+  "t": "La Compagnie des Vins Surnaturels",
+  "q": "7 rue Lobineau, 75006 Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Un décor ancien et hors du temps au Quartier latin, pour amateurs de vin de tous budgets.",
+  "v": 1
+ },
+ {
+  "id": "bar-paris-cavalier",
+  "t": "Cavalier",
+  "q": "Cavalier restaurant vins nature cocktails Paris",
+  "k": "Cave à vins",
+  "e": [],
+  "d": "Une table ouverte tard, avec vins nature et cocktails.",
+  "v": 1
+ }
+]
