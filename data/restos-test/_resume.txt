@@ -1,0 +1,7 @@
+Exemple de structure (clés) : hasMainRepresentation, hasBeenCreatedBy, isLocatedAt, lastUpdate, hasDescription, label, type, lastUpdateDatatourisme, hasContact, uri, hasReview, uuid
+Types : Restaurant FoodEstablishment PlaceOfInterest PointOfInterest
+Restaurants lus : 8000 (sur 8000 lieux, 80 pages)
+  avec photo : 3146 | avec description ≥ 120 caractères : 0 | sans coordonnées : 0
+  « atypiques » (mots-clés cadre/ambiance/lieu) : 0 | + photo : 0 | + photo + description : 0
+Villes avec le plus de candidats : 
+Villes différentes avec au moins 1 candidat : 0
