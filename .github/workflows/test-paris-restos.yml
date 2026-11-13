@@ -1,0 +1,36 @@
+name: Test restaurants de Paris
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bars-sympa
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Chercher les restaurants de Paris avec photo libre
+        run: node test-paris-restos.js
+
+      - name: Enregistrer le compte rendu
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add data/restos-test
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau"
+          else
+            git commit -m "Test restaurants de Paris (automatique)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
