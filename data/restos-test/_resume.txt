@@ -1,7 +1,7 @@
 Exemple de structure (clés) : hasMainRepresentation, hasBeenCreatedBy, isLocatedAt, lastUpdate, hasDescription, label, type, lastUpdateDatatourisme, hasContact, uri, hasReview, uuid
 Types : Restaurant FoodEstablishment PlaceOfInterest PointOfInterest
-Restaurants lus : 8000 (sur 8000 lieux, 80 pages)
-  avec photo : 3146 | avec description ≥ 120 caractères : 5116 | sans coordonnées : 0
-  « atypiques » (mots-clés cadre/ambiance/lieu) : 2539 | + photo : 1153 | + photo + description : 1087
-Villes avec le plus de candidats : Pau 21, Biarritz 17, Anglet 12, Toulouse 12, Limoges 10, Dijon 10, Bayonne 10, Soorts-Hossegor 9, Hendaye 8, Rodez 7, Carcassonne 7, Narbonne 7, Dax 7, Saint-Jean-de-Luz 7, Montpellier 6, Tours 6, Strasbourg 6, Brive-la-Gaillarde 6, Onet-le-Château 6, Orléans 6
-Villes différentes avec au moins 1 candidat : 708
+Restaurants lus : 32136 (sur 32136 lieux, 322 pages)
+  avec photo : 12567 | avec description ≥ 120 caractères : 20511 | sans coordonnées : 0
+  « atypiques » (mots-clés cadre/ambiance/lieu) : 4056 | + photo : 1964 | + photo + description : 1853
+Villes avec le plus de candidats : Pau 42, Biarritz 27, Anglet 18, Bayonne 16, Limoges 13, Carcassonne 12, Orléans 10, Poitiers 9, Narbonne 9, Châteauroux 9, Villeneuve-sur-Lot 9, Lège-Cap-Ferret 9, Dijon 8, Seignosse 8, Toulouse 8, Brantôme en Périgord 7, Tours 7, Strasbourg 7, Villeréal 7, Martel 7
+Villes différentes avec au moins 1 candidat : 1101
