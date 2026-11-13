@@ -1,0 +1,1155 @@
+[
+ {
+  "id": "perle-paris-la-cantine-armenienne",
+  "t": "La Cantine Arménienne",
+  "q": "17 rue Bleue, 75009 Paris",
+  "k": "Cantine cachée",
+  "e": [
+   "dejeuner"
+  ],
+  "d": "Un escalier d'école, une cour, et tout au bout une cantine familiale : cuisine arménienne de maison, vin rouge de la maison.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-centre-pouya",
+  "t": "Centre Pouya",
+  "q": "48 quai de Jemmapes, 75010 Paris",
+  "k": "Maison de thé iranienne",
+  "e": [
+   "dejeuner",
+   "gouter",
+   "diner"
+  ],
+  "d": "Une façade sage sur le canal Saint-Martin, puis tapis, tabourets bas, musique persane, plats iraniens et thé à la cardamome.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-shu",
+  "t": "Shu",
+  "q": "8 rue Suger, 75006 Paris",
+  "k": "Izakaya caché",
+  "e": [
+   "diner"
+  ],
+  "d": "Une minuscule porte en bois, une mezzanine au plafond bas et des brochettes japonaises panées, les kushiage.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-la-maison-des-frigos",
+  "t": "La Maison des Frigos",
+  "q": "19 rue des Frigos, 75013 Paris",
+  "k": "Table d'artiste",
+  "e": [
+   "dejeuner"
+  ],
+  "d": "Dans un ancien entrepôt frigorifique occupé, une peintre d'Osaka sert un repas japonais de maison, au gré de son humeur. Espèces seulement.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-la-tete-dans-les-olives",
+  "t": "La tête dans les olives",
+  "q": "2 rue Sainte-Marthe, 75010 Paris",
+  "k": "Épicerie-table",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une épicerie sicilienne où quelques convives partagent un menu de saison. On réserve.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-halo",
+  "t": "Halo",
+  "q": "Halo restaurant Victor Blanchet Paris",
+  "k": "Bistrot caché",
+  "e": [
+   "diner"
+  ],
+  "d": "Derrière un concept store, le bistrot du chef Victor Blanchet, avec un petit bar caché et un salon privé.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-bidoche",
+  "t": "Bidoche",
+  "q": "Bidoche restaurant Paris",
+  "k": "Table derrière la boucherie",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une table de viandes de terroir dissimulée derrière une boucherie.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-mezzanine",
+  "t": "Mezzanine",
+  "q": "64 boulevard de Clichy, 75018 Paris",
+  "k": "Tapas à l'étage",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un restaurant-bar de tapas niché à l'étage de la salle de concert des Trois Baudets.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-bistrot-des-cineastes",
+  "t": "Bistrot des Cinéastes",
+  "q": "7 avenue de Clichy, 75017 Paris",
+  "k": "Bistrot au-dessus d'un cinéma",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un bar-restaurant à l'étage du cinéma des Cinéastes : on dîne au-dessus des salles.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-hotel-particulier-montmartre",
+  "t": "Hôtel Particulier Montmartre",
+  "q": "23 avenue Junot, 75018 Paris",
+  "k": "Terrasse secrète",
+  "e": [
+   "gouter",
+   "dejeuner"
+  ],
+  "d": "Une terrasse confidentielle et verte, sur les hauteurs de Montmartre, loin de la foule du Sacré-Cœur.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-la-recyclerie",
+  "t": "La Recyclerie",
+  "q": "83 boulevard Ornano, 75018 Paris",
+  "k": "Ancienne gare",
+  "e": [
+   "brunch",
+   "dejeuner",
+   "gouter",
+   "diner"
+  ],
+  "d": "Une ancienne gare de la Petite Ceinture devenue café-cantine : œufs bio, potager, poules et trains à l'arrêt.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-wagon-bleu",
+  "t": "Le Wagon Bleu",
+  "q": "7 rue Boursault, 75017 Paris",
+  "k": "Wagon Orient Express",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une voiture Orient Express de 1925 posée au-dessus des voies de Saint-Lazare, avec une cuisine d'inspiration corse.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-camondo",
+  "t": "Le Camondo",
+  "q": "63 rue de Monceau, 75008 Paris",
+  "k": "Dans la cour d'un musée",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Un restaurant dans la cour du musée Nissim de Camondo, rouvert avec une nouvelle carte et un nouveau décor.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-hanok",
+  "t": "Hanok",
+  "q": "6 place d'Iéna, 75116 Paris",
+  "k": "Coréen au musée Guimet",
+  "e": [
+   "dejeuner"
+  ],
+  "d": "Un restaurant coréen dans le musée Guimet, avec une terrasse sur le toit l'été.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-la-table-des-bernardins",
+  "t": "La Table des Bernardins",
+  "q": "20 rue de Poissy, 75005 Paris",
+  "k": "Café dans une nef",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Un café-restaurant installé dans la nef du collège des Bernardins, du XIIIe siècle : un silence de cathédrale pour déjeuner.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-gainsbarre",
+  "t": "Le Gainsbarre",
+  "q": "14 rue de Verneuil, 75007 Paris",
+  "k": "Maison Gainsbourg",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Le café-bar de la maison Gainsbourg, rue de Verneuil : on déjeune dans l'univers de l'artiste.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-megie",
+  "t": "Mégie",
+  "q": "Mégie quai de la Mégisserie Paris",
+  "k": "Cantine botanique",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Une cantine végétale, avec fleuriste et ateliers floraux, sur le quai de la Mégisserie.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-cafe-de-l-usine",
+  "t": "Café de l'Usine",
+  "q": "Café de l'Usine Belleville Paris",
+  "k": "Ancienne usine",
+  "e": [
+   "dejeuner"
+  ],
+  "d": "Une carte courte qui change, dans une ancienne usine de chaussures de Belleville.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-vecchio",
+  "t": "Vecchio",
+  "q": "14 rue Crespin du Gast, 75011 Paris",
+  "k": "Italien sur le toit",
+  "e": [
+   "diner"
+  ],
+  "d": "Un restaurant italo-américain caché dans le bar sur le toit du Perchoir Ménilmontant.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-cercle",
+  "t": "Le Cercle",
+  "q": "Le Cercle Thierry Marx Grande Loge de France Paris",
+  "k": "Chez les francs-maçons",
+  "e": [
+   "dejeuner"
+  ],
+  "d": "La cantine abordable de Thierry Marx, dans l'hôtel de la Grande Loge de France.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-rond",
+  "t": "Rond",
+  "q": "74 rue Joseph de Maistre, 75018 Paris",
+  "k": "Café d'audiophiles",
+  "e": [
+   "brunch",
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Un café d'audiophiles au rez-de-chaussée d'un club de sport : vinyles, baies sur le jardin et terrasse dans une cour aux lanternes.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-ora-farmhouse",
+  "t": "Ora Farmhouse",
+  "q": "Pavillon du Lac, Parc des Buttes-Chaumont, 75019 Paris",
+  "k": "Brunch sous les arbres",
+  "e": [
+   "brunch",
+   "dejeuner"
+  ],
+  "d": "Un brunch en terrasse sous les arbres, au pavillon du Lac des Buttes-Chaumont.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-kraft-la-bonne-table",
+  "t": "Kraft La Bonne Table",
+  "q": "37 rue du Hameau, 75015 Paris",
+  "k": "Maison d'artiste",
+  "e": [
+   "brunch"
+  ],
+  "d": "Un décor de maison d'artiste avec une grande fresque et une petite cour. Brunch à thème chaque mois, ateliers créatifs.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-jamrock",
+  "t": "Jamrock",
+  "q": "16 rue de Candie, 75011 Paris",
+  "k": "Jamaïcain du week-end",
+  "e": [
+   "brunch"
+  ],
+  "d": "Un brunch jamaïcain avec fresque tropicale, affiches rétro et terrasse sur une petite place, ouvert le week-end.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-rose-bakery-musee-de-la-vie-romantique",
+  "t": "Rose Bakery - musée de la Vie romantique",
+  "q": "16 rue Chaptal, 75009 Paris",
+  "k": "Thé au jardin",
+  "e": [
+   "gouter",
+   "dejeuner"
+  ],
+  "d": "Un salon de thé dans le jardin d'une maison d'artistes, avec terrasse.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-cafe-de-la-maison-de-balzac",
+  "t": "Café de la Maison de Balzac",
+  "q": "47 rue Raynouard, 75016 Paris",
+  "k": "Café vitré sur Paris",
+  "e": [
+   "gouter",
+   "dejeuner"
+  ],
+  "d": "Un café vitré dans le jardin de la maison de Balzac, avec une vue sur Paris depuis les hauteurs de Passy.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-rhodia",
+  "t": "Le Rhodia",
+  "q": "18 rue Antoine Bourdelle, 75015 Paris",
+  "k": "Atelier de sculpteur",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "À l'étage, au-dessus de l'ancien atelier de Bourdelle, avec vue sur deux jardins de sculptures.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-pink-mamma",
+  "t": "Pink Mamma",
+  "q": "20bis rue de Douai, 75009 Paris",
+  "k": "Verrière italienne",
+  "e": [
+   "gouter",
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un italien sur plusieurs étages sous une verrière : beaucoup de plantes, de la lumière, et la file d'attente avec.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-babka-zana",
+  "t": "Babka Zana",
+  "q": "Babka Zana place des Vosges Paris",
+  "k": "Salon de thé levantin",
+  "e": [
+   "gouter",
+   "dejeuner"
+  ],
+  "d": "Un salon de thé levantin à deux pas de la place des Vosges.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-jardin-de-mademoiselle",
+  "t": "Le Jardin de Mademoiselle",
+  "q": "Le Jardin de Mademoiselle Paris 7e",
+  "k": "Salon de thé enchanté",
+  "e": [
+   "gouter"
+  ],
+  "d": "Une boutique-salon de thé au décor féerique, près des Invalides.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-bouillon-chartier",
+  "t": "Bouillon Chartier",
+  "q": "7 rue du Faubourg Montmartre, 75009 Paris",
+  "k": "Bouillon de 1896",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un grand décor Belle Époque de 1896, classé monument historique : on mange à la table des autres, comme avant.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-cafe-du-commerce",
+  "t": "Café du Commerce",
+  "q": "51 rue du Commerce, 75015 Paris",
+  "k": "Bouillon de 1921",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une grande salle de 1921 dans un ancien grand magasin de mode.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-au-b-uf-couronne",
+  "t": "Au Bœuf Couronné",
+  "q": "188 avenue Jean Jaurès, 75019 Paris",
+  "k": "Paris de 1865",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une institution de La Villette de 1865, qui a gardé son décor du XIXe siècle.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-mollard",
+  "t": "Mollard",
+  "q": "115 rue Saint-Lazare, 75008 Paris",
+  "k": "Brasserie de 1867",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une brasserie de 1867 dont le décor d'Édouard Niermans est classé.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-la-coupole",
+  "t": "La Coupole",
+  "q": "102 boulevard du Montparnasse, 75014 Paris",
+  "k": "Art déco de 1927",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un grand vaisseau Art déco de Montparnasse, inauguré en 1927 et classé.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-laperouse",
+  "t": "Lapérouse",
+  "q": "51 quai des Grands Augustins, 75006 Paris",
+  "k": "Salons d'écrivains",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Des salons dans un hôtel particulier du XVIIe, que les écrivains fréquentent depuis longtemps.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-procope",
+  "t": "Le Procope",
+  "q": "13 rue de l'Ancienne Comédie, 75006 Paris",
+  "k": "Plus vieux café de Paris",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Le plus vieux café de Paris, ouvert en 1686, où l'on croisait les philosophes des Lumières.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-bouillon-julien",
+  "t": "Bouillon Julien",
+  "q": "16 rue du Faubourg Saint-Denis, 75010 Paris",
+  "k": "Bijou Art nouveau",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un bouillon Art nouveau classé, tout en bois, miroirs et vitraux.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-train-bleu",
+  "t": "Le Train Bleu",
+  "q": "Le Train Bleu Gare de Lyon Paris",
+  "k": "Salle dorée en gare",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une salle dorée de 1901 dans la gare de Lyon, avec ses grandes peintures de voyage au plafond.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-cafe-1902-petit-palais",
+  "t": "Café 1902 - Petit Palais",
+  "q": "Petit Palais avenue Winston Churchill 75008 Paris",
+  "k": "Jardin intérieur",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Un café caché dans le jardin intérieur du Petit Palais, sous la colonnade, entre mosaïques, bassins et palmiers.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-les-petites-mains-palais-galliera",
+  "t": "Les Petites Mains - Palais Galliera",
+  "q": "10 avenue Pierre-Ier-de-Serbie, 75116 Paris",
+  "k": "Terrasse face à la tour Eiffel",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Une terrasse de jardin ombragée, avec sculptures et fleurs, face à la tour Eiffel. Ouverte l'été.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-cafe-mulot-maison-de-victor-hugo",
+  "t": "Café Mulot - Maison de Victor Hugo",
+  "q": "6 place des Vosges, 75004 Paris",
+  "k": "Cour à fontaine",
+  "e": [
+   "gouter",
+   "dejeuner"
+  ],
+  "d": "Une cour pavée avec fontaine et fleurs, à côté des arcades de la place des Vosges.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-au-bonheur-du-jour-musee-cognacq-jay",
+  "t": "Au Bonheur du Jour - musée Cognacq-Jay",
+  "q": "8 rue Elzévir, 75003 Paris",
+  "k": "Cour du Marais",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Cour et terrasse dans l'hôtel de Donon, au cœur du Marais, sur le thème de l'art de vivre du XVIIIe.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-les-ombres",
+  "t": "Les Ombres",
+  "q": "27 quai Branly, 75007 Paris",
+  "k": "Toit vitré, tour Eiffel",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une salle vitrée sur le toit du musée du quai Branly, avec la tour Eiffel presque à portée de main.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-la-dame-de-canton",
+  "t": "La Dame de Canton",
+  "q": "Port de la Gare, 75013 Paris",
+  "k": "Jonque chinoise",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une ancienne jonque chinoise amarrée sur la Seine : bohème, romantique, avec concerts le week-end.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-petit-bain",
+  "t": "Petit Bain",
+  "q": "7 port de la Gare, 75013 Paris",
+  "k": "Barge à concerts",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Restaurant, bar et salle de concerts sur une barge de la Seine, à la programmation éclectique.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-playtime",
+  "t": "Playtime",
+  "q": "34 quai d'Austerlitz, 75013 Paris",
+  "k": "Restaurant flottant",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un restaurant flottant avec piscine, décontracté et à la mode.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-la-nouvelle-seine",
+  "t": "La Nouvelle Seine",
+  "q": "La Nouvelle Seine quai de la Tournelle Paris",
+  "k": "Péniche-théâtre",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une péniche mêlant bar, restaurant et théâtre, avec spectacles et concerts, face à Notre-Dame.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-off-paris-seine",
+  "t": "Off Paris Seine",
+  "q": "20 port d'Austerlitz, 75013 Paris",
+  "k": "Hôtel flottant",
+  "e": [
+   "brunch",
+   "dejeuner"
+  ],
+  "d": "Le bar-restaurant d'un hôtel flottant, ouvert à tous, avec grande terrasse sur l'eau et buffet le week-end.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-rencontre",
+  "t": "Rencontre",
+  "q": "51 rue Blanche, 75009 Paris",
+  "k": "Le chef et l'artiste",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un chef et un artiste se relaient tous les trois mois : les plats répondent aux œuvres accrochées aux murs.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-l-almanach",
+  "t": "L'Almanach",
+  "q": "35 rue Ramey, 75018 Paris",
+  "k": "Cuisine et expos",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une cuisine de bistrot gastronomique, avec des expositions qui changent tous les trois mois.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-atica",
+  "t": "Atica",
+  "q": "8 rue Frédéric Sauton, 75005 Paris",
+  "k": "Dîner immersif",
+  "e": [
+   "diner"
+  ],
+  "d": "Un dîner de saison qui explore une région du monde sous 112 m² d'écrans de projection.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-kodawari-ramen-yokocho",
+  "t": "Kodawari Ramen Yokocho",
+  "q": "29 rue Mazarine, 75006 Paris",
+  "k": "Ruelle de Tokyo",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Des ramen dans une ruelle de Tokyo recréée, sans réservation.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-dans-le-noir",
+  "t": "Dans le Noir ?",
+  "q": "51 rue Quincampoix, 75004 Paris",
+  "k": "Dîner dans l'obscurité",
+  "e": [
+   "diner"
+  ],
+  "d": "On dîne dans le noir complet, servi par des personnes malvoyantes.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-bustronome",
+  "t": "Le Bustronome",
+  "q": "2 avenue Kléber, 75116 Paris",
+  "k": "Repas dans un bus",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un repas gastronomique dans un bus à toit vitré qui traverse Paris.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-rooster",
+  "t": "Rooster",
+  "q": "Rooster restaurant Batignolles Paris",
+  "k": "Néo-bistrot",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un néo-bistrot des Batignolles, au comptoir de marbre et aux suspensions globes.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-baratin",
+  "t": "Le Baratin",
+  "q": "Le Baratin restaurant Belleville Paris 20e",
+  "k": "Bistrot de Belleville",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un vrai bistrot de quartier à Belleville, repéré par Le Fooding.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-dauphin",
+  "t": "Le Dauphin",
+  "q": "Le Dauphin restaurant Paris 11e",
+  "k": "Cave à manger",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une cave à manger du 11e, dans la liste des tables de caractère du Fooding.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-holybelly",
+  "t": "Holybelly",
+  "q": "Holybelly café Paris 10e",
+  "k": "Coffee shop",
+  "e": [
+   "brunch",
+   "dejeuner"
+  ],
+  "d": "Un coffee shop du 10e connu pour ses brunchs et ses pancakes.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-flora-danica",
+  "t": "Flora Danica",
+  "q": "142 avenue des Champs-Élysées, 75008 Paris",
+  "k": "Jardin caché",
+  "e": [
+   "brunch"
+  ],
+  "d": "Un brunch danois dans un jardin caché derrière la brasserie, avec un bar à smørrebrød.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-le-cirque",
+  "t": "Le Cirque",
+  "q": "141 rue Saint-Martin, 75004 Paris",
+  "k": "Hôtel particulier",
+  "e": [
+   "brunch",
+   "dejeuner"
+  ],
+  "d": "Un hôtel particulier du XVIIIe, avec terrasse face à Beaubourg et décor de cirque.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-la-gaite-lyrique",
+  "t": "La Gaîté lyrique",
+  "q": "3 bis rue Papin, 75003 Paris",
+  "k": "Foyer d'ancien théâtre",
+  "e": [
+   "brunch"
+  ],
+  "d": "Un brunch dans le foyer historique d'un ancien théâtre, avec des chefs de différents pays qui se relaient.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-maison-revka",
+  "t": "Maison Revka",
+  "q": "Maison Revka avenue Raymond Poincaré Paris 16e",
+  "k": "Jardin caché slave",
+  "e": [
+   "brunch",
+   "dejeuner"
+  ],
+  "d": "Des spécialités slaves dans un jardin caché, avec des animations pour les enfants.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-secret-garden",
+  "t": "Secret Garden",
+  "q": "Secret Garden brunch Paris 13e",
+  "k": "Rose bonbon",
+  "e": [
+   "brunch"
+  ],
+  "d": "Un décor rose bonbon, immersif, inspiré de la mode.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-cafe-des-chats",
+  "t": "Le Café des Chats",
+  "q": "Le Café des Chats Paris",
+  "k": "Brunch avec chats",
+  "e": [
+   "brunch",
+   "gouter"
+  ],
+  "d": "Un café où l'on prend son brunch au milieu des chats.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-temple-chapon",
+  "t": "Temple & Chapon",
+  "q": "Temple & Chapon hôtel Marais Paris",
+  "k": "Brunch new-yorkais",
+  "e": [
+   "brunch"
+  ],
+  "d": "Un brunch new-yorkais dans un hôtel du Marais, avec des pancakes salés.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-diamant-bleu",
+  "t": "Le Diamant Bleu",
+  "q": "Le Diamant Bleu Paris brunch bateau",
+  "k": "Brunch sur la Seine",
+  "e": [
+   "brunch"
+  ],
+  "d": "Un brunch à volonté à bord d'un bateau sur la Seine.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-griffon",
+  "t": "Griffon",
+  "q": "55bis rue des Francs Bourgeois, 75004 Paris",
+  "k": "Cour plantée",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Un restaurant-café-bar avec une cour plantée, invisible depuis la rue.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-amagat",
+  "t": "Amagat",
+  "q": "23 villa Riberolle, 75020 Paris",
+  "k": "Cantine au fond d'une villa",
+  "e": [
+   "dejeuner"
+  ],
+  "d": "Une cantine à l'esprit espagnol, avec un jardin caché au fond d'une petite villa.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-grand-coeur",
+  "t": "Grand Coeur",
+  "q": "41 rue du Temple, 75004 Paris",
+  "k": "Brasserie dans une cour classée",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une brasserie dans une grande cour pavée classée, à côté de studios de danse.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-hotel-eldorado",
+  "t": "Hôtel Eldorado",
+  "q": "18 rue des Dames, 75017 Paris",
+  "k": "Jardin bohème",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Un jardin privé bohème, ombragé, aux Batignolles.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-terrasse-du-saint-james",
+  "t": "Terrasse du Saint James",
+  "q": "5 place du Chancelier Adenauer, 75116 Paris",
+  "k": "Pergola et vieux arbres",
+  "e": [
+   "gouter",
+   "dejeuner"
+  ],
+  "d": "La terrasse d'un hôtel dans un grand jardin : pergola, pelouse et arbres anciens.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-salon-de-the-de-la-grande-mosquee",
+  "t": "Salon de thé de la Grande Mosquée",
+  "q": "2bis place du Puits de l'Ermite, 75005 Paris",
+  "k": "Cour ombragée",
+  "e": [
+   "gouter"
+  ],
+  "d": "Un salon de thé dans une cour intérieure ombragée, à deux pas des jardins.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-cafe-l-augustine-musee-rodin",
+  "t": "Café L'Augustine - musée Rodin",
+  "q": "77 rue de Varenne, 75007 Paris",
+  "k": "Jardin du musée Rodin",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Des tables simples dans le jardin du musée Rodin.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-passage-a-niveau",
+  "t": "Le Passage à Niveau",
+  "q": "2A rue de l'Ourcq, 75019 Paris",
+  "k": "Terrasse sur la voie",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une terrasse sur l'ancienne voie de la Petite Ceinture, avec végétation sauvage et street art.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-voie-15",
+  "t": "Voie 15",
+  "q": "397 bis rue de Vaugirard, 75015 Paris",
+  "k": "Hall de gare",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Coworking, café et restaurant dans le hall de l'ancienne gare de Vaugirard-Ceinture, avec une grande terrasse.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-pavillon-des-canaux",
+  "t": "Le Pavillon des Canaux",
+  "q": "39 quai de la Loire, 75019 Paris",
+  "k": "Maison de poupée",
+  "e": [
+   "brunch",
+   "gouter",
+   "dejeuner"
+  ],
+  "d": "Une maison de poupée sur le canal, avec fauteuils profonds, canapés et terrasse.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-bistro-parisien",
+  "t": "Le Bistro Parisien",
+  "q": "Le Bistro Parisien port de la Bourdonnais Paris",
+  "k": "Péniche, tour Eiffel",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une péniche au pied de la tour Eiffel, avec salle vitrée et terrasse flottante.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-faust",
+  "t": "Le Faust",
+  "q": "Le Faust pont Alexandre III Paris",
+  "k": "Entrepôt de la marine",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une brasserie dans un ancien entrepôt de la marine, sous le pont Alexandre III, avec grande terrasse.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-la-balle-au-bond",
+  "t": "La Balle au Bond",
+  "q": "La Balle au Bond Paris promenade Marceline Loridan-Ivens",
+  "k": "Péniche des Arts",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une péniche près du pont des Arts, sur les quais de Seine.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-les-maquereaux",
+  "t": "Les Maquereaux",
+  "q": "Les Maquereaux quai de l'Hôtel de Ville Paris",
+  "k": "Péniche, île Saint-Louis",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un bar-restaurant sur une péniche, avec vue sur l'île Saint-Louis.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-mademoiselle-mouche",
+  "t": "Mademoiselle Mouche",
+  "q": "Mademoiselle Mouche pont de la Conférence Paris",
+  "k": "Terrasse tropicale",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une terrasse de style tropical au bord de l'eau, avec vue sur la tour Eiffel.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-chalet-des-iles",
+  "t": "Le Chalet des Îles",
+  "q": "14 chemin de Ceinture du Lac Inférieur, 75016 Paris",
+  "k": "Chalet sur le lac",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Un chalet rustique sur une île du bois de Boulogne : on y arrive en barque.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-nouveau-chalet-du-lac",
+  "t": "Le Nouveau Chalet du Lac",
+  "q": "Chalet du Lac Bois de Vincennes Paris",
+  "k": "Plage au bois",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Au bord du lac de Vincennes, du sable, des chaises longues et des buffets à l'italienne.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-rosa-bonheur-sur-seine",
+  "t": "Rosa Bonheur sur Seine",
+  "q": "Rosa Bonheur sur Seine port des Invalides Paris",
+  "k": "Guinguette sur la Seine",
+  "e": [
+   "dejeuner",
+   "gouter",
+   "diner"
+  ],
+  "d": "Une guinguette avec chaises longues et pétanque, au bord de la Seine.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-pavillon-puebla",
+  "t": "Pavillon Puebla",
+  "q": "Pavillon Puebla Parc des Buttes-Chaumont Paris",
+  "k": "Guinguette cachée",
+  "e": [
+   "gouter",
+   "diner"
+  ],
+  "d": "Une guinguette cachée dans le parc des Buttes-Chaumont, avec guirlandes dans les arbres et coussins.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-rosa-bonheur",
+  "t": "Rosa Bonheur",
+  "q": "2 allée de la Cascade, 75019 Paris",
+  "k": "Guinguette du parc",
+  "e": [
+   "dejeuner",
+   "gouter",
+   "diner"
+  ],
+  "d": "La guinguette des Buttes-Chaumont : le grand classique, à retenir malgré la foule.",
+  "v": 0
+ },
+ {
+  "id": "perle-paris-rosa-bonheur-a-l-est",
+  "t": "Rosa Bonheur à l'Est",
+  "q": "Rosa Bonheur à l'Est lac des Minimes Bois de Vincennes",
+  "k": "Chalet au bord du lac",
+  "e": [
+   "dejeuner",
+   "gouter",
+   "diner"
+  ],
+  "d": "Un chalet au bord du lac des Minimes, avec grande terrasse et pizzas au feu de bois.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-laduree-au-pavillon-gravelle",
+  "t": "Ladurée au Pavillon Gravelle",
+  "q": "Ladurée Pavillon Gravelle Bois de Vincennes",
+  "k": "Thé au bois",
+  "e": [
+   "gouter",
+   "brunch",
+   "dejeuner"
+  ],
+  "d": "Un salon de thé et restaurant bucolique, au cœur du bois de Vincennes.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-la-ferme-du-pre",
+  "t": "La Ferme du Pré",
+  "q": "La Ferme du Pré Pré Catelan Bois de Boulogne",
+  "k": "Ancienne laiterie",
+  "e": [
+   "dejeuner"
+  ],
+  "d": "Un restaurant rustique dans une ancienne laiterie rénovée du bois de Boulogne.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-les-belles-plantes",
+  "t": "Les Belles Plantes",
+  "q": "Les Belles Plantes Jardin des Plantes Paris",
+  "k": "Brasserie fleurie",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Une brasserie au décor fleuri, avec deux terrasses, près de la Ménagerie du Jardin des Plantes.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-la-terrasse-de-madame",
+  "t": "La Terrasse de Madame",
+  "q": "La Terrasse de Madame Jardin du Luxembourg Paris",
+  "k": "Sous les marronniers",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Un café-restaurant sous les marronniers, près du Sénat, dans le jardin du Luxembourg.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-auberge-nicolas-flamel",
+  "t": "Auberge Nicolas Flamel",
+  "q": "51 rue de Montmorency, 75003 Paris",
+  "k": "Maison de 1407",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Un restaurant installé dans un bâtiment daté de 1407.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-le-grand-colbert",
+  "t": "Le Grand Colbert",
+  "q": "2 rue Vivienne, 75002 Paris",
+  "k": "Brasserie classée",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une brasserie classée, près des jardins du Palais-Royal.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-cafe-de-l-homme",
+  "t": "Café de l'Homme",
+  "q": "17 place du Trocadéro, 75116 Paris",
+  "k": "Terrasse du Trocadéro",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une terrasse au Trocadéro, face à la tour Eiffel.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-joli-musee-carnavalet",
+  "t": "Joli - musée Carnavalet",
+  "q": "Joli terrasse musée Carnavalet Paris",
+  "k": "Terrasse de musée",
+  "e": [
+   "dejeuner",
+   "gouter"
+  ],
+  "d": "Une terrasse dans les jardins du musée Carnavalet, dans le Marais.",
+  "v": 1
+ },
+ {
+  "id": "perle-paris-brasserie-lipp",
+  "t": "Brasserie Lipp",
+  "q": "151 boulevard Saint-Germain, 75006 Paris",
+  "k": "Décor de 1880",
+  "e": [
+   "dejeuner",
+   "diner"
+  ],
+  "d": "Une brasserie de 1880 au décor Belle Époque, au cœur de Saint-Germain-des-Prés.",
+  "v": 1
+ }
+]
