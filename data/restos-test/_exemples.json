@@ -1,1 +1,1082 @@
-[]
+[
+ {
+  "title": "LA GUINGUETTE",
+  "city": "Argens-Minervois",
+  "lat": 43.2407733,
+  "lng": 2.76557727,
+  "photo": "https://cdt34.media.tourinsoft.eu/upload/Restaurant-La-Guinguette.jpg",
+  "desc": "La guinguette est un agréable restaurant où l'on s'installe en terrasse au bord du canal du Midi pour se régaler d'une cuisine simple, locale et de saison , dans une ambiance chaleureuse et conviviale.  Au menu : assiette de Pays, tapas, grillades au feu de bo",
+  "uri": "https://data.datatourisme.fr/41/bfd872de-b7e6-3b2d-b95a-69e7c58d92a1"
+ },
+ {
+  "title": "L'EPHEMERE",
+  "city": "Englesqueville-la-Percée",
+  "lat": 49.387811,
+  "lng": -0.9588937,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/Terrasse-et-lounge.jpg",
+  "desc": "Le lieu\n\nSitué dans une ancienne ferme fortifiée du XIIe siècle près d'Omaha Beach, l'Ephémère offre différents espaces de restauration en extérieur, sous tentes touareg et en intérieur. Une ambiance guinguette chic au sein d'un lieu chargé d'histoire entre la",
+  "uri": "https://data.datatourisme.fr/30/28b195c5-8627-32ea-88cf-e08dad2f458d"
+ },
+ {
+  "title": "À l'Assiette de Pageas",
+  "city": "Pageas",
+  "lat": 45.677701,
+  "lng": 1.0019394,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/a-l-assiette-de-pageas---Geraud-Clary--1-.jpg",
+  "desc": "Attirez votre curiosité avec L’Assiette de Pageas, une adresse conviviale où l’on vient savourer une cuisine généreuse et passer un bon moment. Ici, les produits du terroir sont mis à l’honneur dans des plats simples et gourmands, servis dans une ambiance chal",
+  "uri": "https://data.datatourisme.fr/23/355382c5-16f0-30c1-80ba-14a5dede1363"
+ },
+ {
+  "title": "La Guinguette de Masmangeas",
+  "city": "Sardent",
+  "lat": 46.0348798,
+  "lng": 1.84590098,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/guiguette.jpg",
+  "desc": "La Guinguette vous accueille au bord du lac de Mamangeas et vous propose un bar ainsi que des planches apéro viande-fromage ou végétariennes.\n\nLes samedis soirs, concert et food-truck.",
+  "uri": "https://data.datatourisme.fr/23/68c23c69-4e8c-3ff6-8cf0-289584cbaba7"
+ },
+ {
+  "title": "Comme à la maison",
+  "city": "Brantôme en Périgord",
+  "lat": 45.3632521,
+  "lng": 0.64805208,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Comme-a-la-maison.JPG",
+  "desc": "Sur place au bord de l'eau dans l'esprit \"pique-nique\" ou à emporter. Petite restauration et pâtisserie faites maison avec des produits de qualité locaux et de préférence bio. Glaces artisanales du Périgord. Boissons locales. Journée en continue et jusqu'à l'a",
+  "uri": "https://data.datatourisme.fr/23/3138e030-73dd-3885-9622-9d13999e3e76"
+ },
+ {
+  "title": "Auberge Denena",
+  "city": "Aïcirits-Camou-Suhast",
+  "lat": 43.3373911,
+  "lng": -1.0228496,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Auberge-Denena---Saint-Palais--2--4.jpg",
+  "desc": "L'auberge Denena à Aïcirits est ouverte du mardi au dimanche midi au cœur du village. Vous serez très bien reçus par Jean Philippe en salle et Krystel aux fourneaux. Sur semaine, vous pourrez déguster une cuisine familiale et traditionnelle et des plats plus é",
+  "uri": "https://data.datatourisme.fr/23/17a2053d-bcad-33ff-9e12-2548c181edc9"
+ },
+ {
+  "title": "Crêperie Simone",
+  "city": "Anglet",
+  "lat": 43.4963153,
+  "lng": -1.5384683,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/creperie-simone-anglet-07.jpg",
+  "desc": "À proximité des plages d'Anglet, la crêperie offre une ambiance chaleureuse et conviviale avec une équipe souriante. Leurs galettes et crêpes bretonnes sont préparées avec de la farine moulue à la meule de pierre. Naturellement sans gluten, les galettes de Sim",
+  "uri": "https://data.datatourisme.fr/23/bd2d560b-7796-39b8-9e99-a4f895c4f04c"
+ },
+ {
+  "title": "L'Union",
+  "city": "Sausheim",
+  "lat": 47.7825748941175,
+  "lng": 7.38812327384949,
+  "photo": "https://opendata.tourisme-alsace.info/photos/mulhouse/photos/234005508_1_800x600.jpg",
+  "desc": "L'Union vous propose une cuisine authentique et traditionnelle. Votre repas sera sublimé par la vue sur un extérieur arboré et la piscine.",
+  "uri": "https://data.datatourisme.fr/5/acdae53e-9be7-3774-8588-5dab71207d57"
+ },
+ {
+  "title": "La Cour d'Eymet",
+  "city": "Eymet",
+  "lat": 44.6678854,
+  "lng": 0.39890839,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/La-Cour-d-Eymet-Restaurant-1--1-.jpg",
+  "desc": "Mr Kartheiser vous propose une cuisine traditionnelle, une cuisine de terroir, revisitée avec originalité. Dans une ambiance chaleureuse, retrouvez les saveurs de la Dordogne qui rendront inoubliable votre visite.\nAux beaux jours, profitez du joli cadre de la ",
+  "uri": "https://data.datatourisme.fr/23/c8767802-0c04-30ba-ab94-396dd04116d6"
+ },
+ {
+  "title": "La Taverne",
+  "city": "Ungersheim",
+  "lat": 47.8437809502706,
+  "lng": 7.28402137756348,
+  "photo": "https://opendata.tourisme-alsace.info/photos/mulhouse/photos/234005697_1_800x600.jpg",
+  "desc": "Entre l'Ecomusée d'Alsace et le Parc du Petit Prince, La Taverne vous ouvre ses portes. Ce restaurant typique vous accueille dans un cadre chaleureux à la décoration alsacienne et propose des spécialités du terroir. Les assiettes bien garnies et le fait maison",
+  "uri": "https://data.datatourisme.fr/5/4af51fd6-e645-3ab0-82ad-f520e32a396d"
+ },
+ {
+  "title": "Ferme Auberge du Puy d'Anché",
+  "city": "Sauzé-Vaussais",
+  "lat": 46.1244669,
+  "lng": 0.0985249,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/salle-auberge-4.JPG",
+  "desc": "Depuis plus de trente-cinq  ans, dans une salle du XVᵉ siècle, la famille Ragot vous accueille pour vous faire déguster ses produits issus de sa ferme : porcs noirs, volailles... ou des fermes alentours : truites fumées, fromages de chèvre, truffes...\nRéservé ",
+  "uri": "https://data.datatourisme.fr/23/fc9cea2e-b14f-3796-948a-84943bc0add9"
+ },
+ {
+  "title": "Café Source",
+  "city": "Saint-Aubin-sur-Mer",
+  "lat": 49.328142,
+  "lng": -0.37967,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/cafe-source--1-.jpg",
+  "desc": "Le Café Source est un café de bord de mer. On peut s'y installer en terrasse ou à l'intérieur le matin, pour le goûter, ou encore l'apéro et profiter d'une carte de produits locaux et/ou bio. \nAu Café Source on a à cœur de sourcer les produits : charcuterie, b",
+  "uri": "https://data.datatourisme.fr/30/e5637e06-9e7f-303a-b4ca-5758eb5cc76c"
+ },
+ {
+  "title": "LA BASTIDE CABEZAC",
+  "city": "Bize-Minervois",
+  "lat": 43.2968262,
+  "lng": 2.86957847,
+  "photo": "https://cdt34.media.tourinsoft.eu/upload/LA-BASTIDE-CABEZAC-2.jpeg",
+  "desc": "Cadre authentique et confort raffiné d'une bastide du XVIIIe. Les parfums, les saveurs et couleurs de la Méditerranée, les produits frais, composent la cuisine enjouée, fine et traditionnelle du chef. Très belle carte des vins faisant la part belle aux vins du",
+  "uri": "https://data.datatourisme.fr/41/86a13752-c773-3ff1-8ee7-43b1a0be1c6c"
+ },
+ {
+  "title": "Restaurant aux Bruyères",
+  "city": "Orbey",
+  "lat": 48.126169041167,
+  "lng": 7.15966095125123,
+  "photo": "https://opendata.tourisme-alsace.info/photos/kaysersberg/photos/restaurant-aux-bruyeres-orbey-facade-vue-rue_800x600.jpeg",
+  "desc": "Votre étape gourmande en Alsace entre la route des vins et la route des crêtes. Au menu choucroute garnie, kougelhopf glacé ou encore gibier.\n\nIdéalement placé pour le départ de nombreuses balades, vous pourrez également profiter du parc avec jeux en face du r",
+  "uri": "https://data.datatourisme.fr/5/3821bbe1-bc87-350a-8419-e2699c49f994"
+ },
+ {
+  "title": "La Vieille Digue",
+  "city": "Blainville-sur-Mer",
+  "lat": 49.079039,
+  "lng": -1.602205,
+  "photo": "https://cdt61.media.tourinsoft.eu/upload/restaurant-blainville-sur-mer-la-vieille-digue--2-.jpg",
+  "desc": "Cabane de dégustation de produits de la mer directement chez l'ostréiculteur. \nVue imprenable sur le havre de Blainville en dégustant les fruits de mer de l'exploitation.",
+  "uri": "https://data.datatourisme.fr/30/752b958a-5822-3166-8537-927812d6e95c"
+ },
+ {
+  "title": "Le Moulin de Ricard (groupes)",
+  "city": "Saint-Rémy",
+  "lat": 44.39218863,
+  "lng": 2.04091409,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/98074/images/1398777_09b26395-4134-4bca-90b5-ae792e6c8dac/600.webp",
+  "desc": "Bienvenue au Moulin de Ricard !\nDécouvrez notre cuisine maison, notre menu ouvrier le midi et notre carte du soir avec nos pizzas et nos plats gourmands, à savourer sur place ou à emporter !\nUn lieu de partage où gourmandise et convivialité sont au rendez-vous",
+  "uri": "https://data.datatourisme.fr/31/1457b14d-cb80-31c2-b53b-e81dff94c1af"
+ },
+ {
+  "title": "Hôtel Authentic by Balladins Rodez / Le Ségala",
+  "city": "Baraqueville",
+  "lat": 44.27345912,
+  "lng": 2.42783517,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/13955/images/157845_4226089a-a00b-476d-8e54-a9e3cc57a027/600.webp",
+  "desc": "Derrière le portail, un grand parc arboré, symbole de la magie et du silence de la campagne Aveyronnaise, abrite un hôtel restaurant de charme. Dans ce théâtre de verdure, où la vie est un art, profitez de la terrasse à la vue imprenable sur le Ségala et les P",
+  "uri": "https://data.datatourisme.fr/31/914e0f64-7f39-384b-b93f-71eaabb8faae"
+ },
+ {
+  "title": "Restaurant Lurrak",
+  "city": "Arbonne",
+  "lat": 43.4322065,
+  "lng": -1.5520823,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/IMG-1344-1440x900.jpg",
+  "desc": "Sur la place du fronton d'Arbonne, une maison basque de 1900 au décor épuré, d'inspiration nordique, ouverte sur la cuisine. Romain Goyeneche, passé par David Toutain à Paris et par Copenhague, y propose des menus dégustation de saison, créatifs et lisibles. G",
+  "uri": "https://data.datatourisme.fr/23/f2d987a9-e137-3b28-a730-96d42016bf09"
+ },
+ {
+  "title": "Bar de la Marine",
+  "city": "Biarritz",
+  "lat": 43.4819459,
+  "lng": -1.5646176,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/La-Marine-Biarritz-salle-1-2.jpg",
+  "desc": "A 200 mètres de la plage du Port Vieux, vous pourrez déguster une cuisine traditionnelle type bistro. \nLe petit déjeuner est servi toute l'année, pour le déjeuner et le dîner, vous pourrez découvrir des plats traditionnels et des desserts maison. Le soir, une ",
+  "uri": "https://data.datatourisme.fr/23/30561185-8cf0-391b-8c33-3e78fe5756cd"
+ },
+ {
+  "title": "Le Petit Charme",
+  "city": "Bannes",
+  "lat": 47.9137392,
+  "lng": 5.40175072,
+  "photo": "https://cdt51.media.tourinsoft.eu/upload/Restaurant-le-petit-charme-bannes-01-Alain-Vautrin.jpg",
+  "desc": "Restaurant de campagne comportant une salle de restaurant dans un cadre chaleureux et de style traditionnelle. Salle de bar moderne avec vue sur le lac de Charmes. Terrasse au bord du lac. Accueil de camping-car et de groupe.\nSnack à disposition en juillet et ",
+  "uri": "https://data.datatourisme.fr/48/852446a4-6cbc-3925-b8db-4f40561d654a"
+ },
+ {
+  "title": "Hôtel Campanile Nature",
+  "city": "Rodez",
+  "lat": 44.363263,
+  "lng": 2.570402,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/21785/images/704181_a27b7c49-2f7c-43c9-bc0a-763198ccba97/600.webp",
+  "desc": "L’Hôtel Campanile Nature Rodez vous accueille à 1 km du cœur historique de Rodez. Vous accéderez facilement à notre établissement 3 étoiles depuis l’autoroute A75 et la rocade. La gare est à seulement 1 km et l’aéroport à 10 km. En séjournant chez nous, voyage",
+  "uri": "https://data.datatourisme.fr/31/2dc8a34b-0aa6-3356-9c53-fde3345ea7f8"
+ },
+ {
+  "title": "Au Bureau - Dole",
+  "city": "Dole",
+  "lat": 47.08378,
+  "lng": 5.48833,
+  "photo": "https://decibelles-data.media.tourinsoft.eu/upload/bureau-19.jpg",
+  "desc": "Au Bureau est un Pub Brasserie typique inspiré des pubs londoniens. Déjeuners, apéros, dîners, soirées… Vous allez aimer passer du temps Au Bureau!\nLa décoration soignée et originale ne vous laissera pas indifferent.",
+  "uri": "https://data.datatourisme.fr/6/aee5e6c5-1188-3479-af18-cb5311db2fac"
+ },
+ {
+  "title": "Restaurant Panoramique des tribunes",
+  "city": "Arnac-Pompadour",
+  "lat": 45.3922011,
+  "lng": 1.38174861,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/166002959-4.jpg",
+  "desc": "Dans un cadre champêtre,  le restaurant panoramique permet de se restaurer tout en profitant de l'ambiance des courses hippiques avec une vue imprenable sur le champ de courses. Le petit plus : guichet pour les paris sur place.\n\nTrois menus au choix.\nJusqu’à 1",
+  "uri": "https://data.datatourisme.fr/23/151335cd-7a97-38a1-9650-c4ad2a14dcc7"
+ },
+ {
+  "title": "CAFE DE LA MAIRIE",
+  "city": "Montpellier",
+  "lat": 43.6079852,
+  "lng": 3.87577221,
+  "photo": "https://cdt34.media.tourinsoft.eu/upload/DSC06457.jpg",
+  "desc": "Bienvenue au Café de la Mairie, bistrot de partage situé dans le quartier animé Saint-Roch, où l'art du bon vivant et de la convivialité fusionnent.\nInspiré par l'authenticité des bistrots d'Antan, le Café de la Mairie vous invite à déguster une carte gourmand",
+  "uri": "https://data.datatourisme.fr/32/58edf321-7730-38e1-a265-7497e000ea96"
+ },
+ {
+  "title": "Château Belmont The Crest Collection",
+  "city": "Tours",
+  "lat": 47.406655,
+  "lng": 0.6863044,
+  "photo": "https://centre.media.tourinsoft.eu/upload/Chateau-Belmont-Junior-suite-pour-grande-photo-interieure-Credit-Photo-Fabrice-Rambert-2031.jpg",
+  "desc": "Chambres et suites d'excellence : décoration raffinée, meubles de qualité, équipement moderne. Un espace forme et bien-être (piscine intérieur, hammam), bar et restaurant. Vous bénéficierez de la tranquillité absolue des 2,5 hectares de verdure en centre-ville",
+  "uri": "https://data.datatourisme.fr/15/6e98775f-60cb-3429-bebf-38651f74c72e"
+ },
+ {
+  "title": "Au P'tit Mousse",
+  "city": "Courseulles-sur-Mer",
+  "lat": 49.3338819,
+  "lng": -0.4625031,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/auptitmousse-courseulles-devanture.jpeg",
+  "desc": "La maison hume la mer, le nez au vent... Depuis la terrasse, on admire le va-et vient des bateaux. Bienvenue au p'tit Mousse restaurant spécialisé dans les fruits de mer.",
+  "uri": "https://data.datatourisme.fr/30/81f770be-3511-306d-b456-ee4219faeda0"
+ },
+ {
+  "title": "Côté Resto",
+  "city": "Honfleur",
+  "lat": 49.42136,
+  "lng": 0.23254,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/Cote-Resto-salle.jpg",
+  "desc": "Idéalement situé sur la Place St Catherine, notre restaurant \"Côté Resto\" vous invite à savourer\nune cuisine raffinée à base de produits locaux. Dégustez nos impressionnants plateaux de fruits de\nmer et notre carte des vins de qualité. En mettant en valeur les",
+  "uri": "https://data.datatourisme.fr/30/2837d240-bfe8-3e0f-ac88-cd657cccd6c9"
+ },
+ {
+  "title": "L'Atelier",
+  "city": "Cabourg",
+  "lat": 49.2905611,
+  "lng": -0.1159639,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/L-Atelier-01.jpg",
+  "desc": "Idéalement situé au coeur de l'avenue de la Mer, l'Atelier propose un service continu dans un esprit bistrot très convivial. La décoration à la fois contemporaine et chaleureuse invite à la dégustation de petits plats frais et inventifs, à la présentation soig",
+  "uri": "https://data.datatourisme.fr/30/a9c4f7e7-c46b-37d8-93ae-9fd178cc03ad"
+ },
+ {
+  "title": "Restaurant La Garenne",
+  "city": "Cahors",
+  "lat": 44.4910765,
+  "lng": 1.43669771,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/IMG-5760.JPG",
+  "desc": "Une cuisine traditionnelle revisitée avec des produits de terroir vous est proposée dans un écrin de verdure, au calme, dans une ancienne grange datant de 1846 en pierres du Lot à 2km de Cahors terrasse ombragée et calme(loin de la route) au beaux jours et gra",
+  "uri": "https://data.datatourisme.fr/22/f6953824-24ae-34b9-b063-6a15620bca83"
+ },
+ {
+  "title": "Restaurant le Soursacois",
+  "city": "Soursac",
+  "lat": 45.2759015,
+  "lng": 2.1993795,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Le-soursacois.png",
+  "desc": "Situé au cœur du village de Soursac, à proximité du viaduc des Rochers Noirs, Le Soursacois propose une cuisine maison savoureuse dans une ambiance chaleureuse et conviviale. Le chef met à l’honneur des produits de saison à travers une carte courte, renouvelée",
+  "uri": "https://data.datatourisme.fr/23/7d32d744-cfac-3275-a343-fc8299603041"
+ },
+ {
+  "title": "Au Relais Gascon",
+  "city": "Labastide-d'Armagnac",
+  "lat": 43.9696295,
+  "lng": -0.1876604,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/2023---LABA---Le-Relais-Gascon---Entree-Bar----OT-Landes-d-Armagnac---WF--1-.jpg",
+  "desc": "Une cuisine simple et savoureuse concoctée par Cyrille et Fanny, un accueil souriant de Dominique et Michelle, une salle et une terrasse privative, une ambiance chaleureuse et cosy,…Tout pour passer un agréable moment au sein d’une superbe bastide du XIII° siè",
+  "uri": "https://data.datatourisme.fr/23/58e03ad7-faf8-3cd3-aa2c-8f076626dd64"
+ },
+ {
+  "title": "Crêperie Montès",
+  "city": "La Couvertoirade",
+  "lat": 43.91223447,
+  "lng": 3.31674456,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/7222/images/442612_a5d0df9e-613a-4541-b284-ebefe46ffc7a/600.webp",
+  "desc": "Depuis 1970, la Crêperie Montès fait vivre la tradition familiale dans une ancienne bergerie voûtée. Entre décor d’objets d’autrefois et recettes maison aux saveurs locales, elle invite à partager un moment authentique au cœur de La Couvertoirade.\n\nUne pause g",
+  "uri": "https://data.datatourisme.fr/31/5096aef4-9327-354e-b4e8-493194026e4a"
+ },
+ {
+  "title": "Indigo",
+  "city": "Le Dorat",
+  "lat": 46.2154293,
+  "lng": 1.0804584,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/678225229-122106528074846092-7946386719059489867-n.jpg",
+  "desc": "Mi-restaurant, mi-boutique, Indigo est un lieu aussi gourmand qu'engagé. On y savoure une cuisine végétalienne élaborée avec des produits locaux et de saison, dans une ambiance chaleureuse et conviviale. Et entre deux bouchées, on flâne parmi les créations d'a",
+  "uri": "https://data.datatourisme.fr/23/21381384-51c7-3493-8747-7a68c1fafc26"
+ },
+ {
+  "title": "Le Malu",
+  "city": "Villerable",
+  "lat": 47.7830526,
+  "lng": 1.06296,
+  "photo": "https://centre.media.tourinsoft.eu/upload/salle1-3.jpg",
+  "desc": "Le restaurant Le Malu se situe à l'entrée de Vendôme, dans un cadre verdoyant. Marianne et Ludovic vous proposent une cuisine à base de produits frais et locaux. Aux beaux jours, une terrasse ombragée vous permet de profiter du cadre.",
+  "uri": "https://data.datatourisme.fr/15/21481d94-81c3-32e1-9ebf-5f67da4abc32"
+ },
+ {
+  "title": "Le Palais",
+  "city": "Bellac",
+  "lat": 46.1190779,
+  "lng": 1.04902385,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Le-Palais-3.jpg",
+  "desc": "Situé en centre-ville de Bellac, à l'entrée de l'ancien quartier du Fort, le bar-restaurant Le Palais vous propose une cuisine traditionnelle élaborée avec des produits frais locaux. Spécialités de la maison: l'agneau Baronet et le bœuf limousin. Le Palais vou",
+  "uri": "https://data.datatourisme.fr/23/24394648-ecb6-3228-8949-dfae2580f4f9"
+ },
+ {
+  "title": "L'Estocade",
+  "city": "Chartres",
+  "lat": 48.4469621,
+  "lng": 1.4922057,
+  "photo": "https://centre.media.tourinsoft.eu/upload/RESCEN0280020056-1.jpg",
+  "desc": "Restaurant avec cheminée qui permet de bénéficier d'un hiver au coin du feu. L'été sur les terrasses au bord de l'Eure de la ville basse chartraine à deux pas de la cathédrale.",
+  "uri": "https://data.datatourisme.fr/15/a6a11af3-6b39-3000-9778-e4ec412a9fb0"
+ },
+ {
+  "title": "Restaurant Le Resto-grill",
+  "city": "Rodez",
+  "lat": 44.3735,
+  "lng": 2.5451,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/3670/images/539803_e43d97a1-4ed6-4c54-b21e-dd80ce659f12/600.webp",
+  "desc": "Plat à emporter chaud ou froid tous les jours le midi + livraison sur les chantiers et à domicile. \nExemple de menus:\nMenu terroir \nSalade rouergate, \nPavé de veau sauce morilles, aligot, \nPlateau de fromages, \nCoupe glacée, \nVin et café compris. \nMenu gourman",
+  "uri": "https://data.datatourisme.fr/31/54098909-ac4b-3836-8fd9-578c92a7bdf5"
+ },
+ {
+  "title": "Hôtel du Commerce",
+  "city": "Civray",
+  "lat": 46.1470535,
+  "lng": 0.2967142,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Un-chef--une-recette-1-2.jpg",
+  "desc": "Situé au bord de la Charente, à Civray, à une heure de Poitiers, l'Hôtel du Commerce est une parenthèse gustative avec des préparations et menus ancrés dans les saisons, faits maisons avec des produits locaux. Le temps d'un déjeuner ou dîner, seul ou accompagn",
+  "uri": "https://data.datatourisme.fr/23/d644c3bd-1b33-31c9-a6c0-5bd21dac7caf"
+ },
+ {
+  "title": "Restaurant Le Pont d'Or",
+  "city": "Figeac",
+  "lat": 44.6065901,
+  "lng": 2.0334411,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/RestaurantPontdor-Figeac-Facade.jpg",
+  "desc": "Le restaurant Le Pont d'Or et sa grande terrasse surplombant la rivière vous permettront d'apprécier notre cuisine traditionnelle. Dans une ambiance conviviale et authentique notre chef vous propose des produits de saison locaux et frais. Bar et cave à vins, n",
+  "uri": "https://data.datatourisme.fr/22/6fda5662-db1f-37fe-9f81-92c557b553d2"
+ },
+ {
+  "title": "O'lala Bar & Restaurant",
+  "city": "Saint-Germain-sur-Ay",
+  "lat": 49.2322113,
+  "lng": -1.6453866,
+  "photo": "https://cdt61.media.tourinsoft.eu/upload/5-45.png",
+  "desc": "Le O’lala : l'escale gourmande et festive de Saint-Germain-sur-Ay Plage\n\nÀ seulement 100 mètres des vagues, le O’lala s’est imposé comme l'adresse phare de la côte ouest du Cotentin. Installé dans un ancien cabaret entièrement rénové par Isabelle et Alain, ce ",
+  "uri": "https://data.datatourisme.fr/30/064c615a-3156-398b-bb3f-b5081cae0ed4"
+ },
+ {
+  "title": "Le Grand Herbet",
+  "city": "Blainville-sur-Mer",
+  "lat": 49.0611056,
+  "lng": -1.6045237,
+  "photo": "https://cdt61.media.tourinsoft.eu/upload/Restaurant-blainville-sur-mer-grand-herbet--3-.jpg",
+  "desc": "Décoration soignée, terrasse en bord de mer, le chef vous invite à partager un moment culinaire dans son restaurant où les plats composés de produits frais et locaux sont servis avec bonne humeur.\nUne grande partie de la carte se compose de produits de la mer,",
+  "uri": "https://data.datatourisme.fr/30/6f6eeba3-2683-3fed-b2ff-fd7e33bad84d"
+ },
+ {
+  "title": "Restaurant Bellevue by Miremont",
+  "city": "Biarritz",
+  "lat": 43.4830572,
+  "lng": -1.5613681,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Restaurant-Le-Bellevue.jpg",
+  "desc": "Situé sur la place Bellevue, au cœur de Biarritz, le Restaurant Bellevue vous accueille dans un cadre chaleureux où l’élégance  rencontre l’art de vivre basque. Vous êtes plongé dans une atmosphère authentique, vivante, fidèle à l’esprit des grandes brasseries",
+  "uri": "https://data.datatourisme.fr/23/16f008b6-470a-3744-9ecd-493dd803eb1f"
+ },
+ {
+  "title": "Restaurant La Chaleur Nordique",
+  "city": "Millau",
+  "lat": 44.10415506,
+  "lng": 3.0801992,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/20416/images/316866_3327386e-b881-4510-8fd0-16c2626e7011/600.webp",
+  "desc": "Le restaurant La Chaleur Nordique propose des plats faits maison à base de produits locaux, d'épices et de goûts issus de notre patrimoine nordique. Vous pouvez déguster de la viande du renne ou du saumon fumé à chaud dans une ambiance conviviale en salle ou s",
+  "uri": "https://data.datatourisme.fr/31/674f8964-b0ea-3a1d-99fe-db78d259a554"
+ },
+ {
+  "title": "Le Rockambol",
+  "city": "Cherbourg-en-Cotentin",
+  "lat": 49.6510486,
+  "lng": -1.5838896,
+  "photo": "https://cdt61.media.tourinsoft.eu/upload/chg-rest-le-rockambol-1.jpg",
+  "desc": "Le Rockambol, un lieu atypique, face à la rade de cherbourg.\nThe place to be! un cadre, une équipe, des bons produits frais et fait Maison",
+  "uri": "https://data.datatourisme.fr/30/1d6022df-ed9e-333b-9e3c-2e613db90bd0"
+ },
+ {
+  "title": "Restaurant Au Bon Accueil",
+  "city": "Salperwick",
+  "lat": 50.774885,
+  "lng": 2.232935,
+  "photo": "https://static.kap-tourisme.fr/public/medias/6/marais-audomarois-au-bon-accueil.jpg",
+  "desc": "Cet estaminet traditionnel met à l’honneur la cuisine régionale, avec des plats faits maison élaborés à partir de produits frais et locaux.\n\nParmi les spécialités incontournables, vous pourrez savourer la carbonnade flamande, le potjevleesch, le welsh, ainsi q",
+  "uri": "https://data.datatourisme.fr/14/3fe89c9f-9000-3c1e-9886-2236bf409d13"
+ },
+ {
+  "title": "Accueil du Couvent de Malet",
+  "city": "Saint-Côme-d'Olt",
+  "lat": 44.52007273,
+  "lng": 2.81916093,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/20525/images/471984_a5ac9145-2c90-459d-8ab9-11f93271f87c/600.webp",
+  "desc": "Nos hôtes logent dans un couvent du XIe siècle. Séjournez différemment, dans un lieu insolite.\nAccueil à partir de 15 heures. Vous arrivez plus tôt ? Profitez de notre bibliothèque ou de notre parc pour vous reposer et vous ressourcer.\n\nEspace hébergement :\n27",
+  "uri": "https://data.datatourisme.fr/31/43b26d4b-eac4-3b21-a212-0ca627f7e17d"
+ },
+ {
+  "title": "Le Channel",
+  "city": "Ouistreham",
+  "lat": 49.2788222,
+  "lng": -0.2515994,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/restaurant-la-channel-exterieur-1.jpg",
+  "desc": "Cuisine Terroir, Gourmande et Inventive. \n\nChangement complet de décor : des camaïeux de gris, des tableaux, des tapisseries et des orchidées blanches et quelques banquettes campent le décor moderne et chaleureux d'un restaurant très épicurien. \n\nLa Table : la",
+  "uri": "https://data.datatourisme.fr/30/6697fc01-f35a-34df-a2b8-17fd3b4b4550"
+ },
+ {
+  "title": "LE COMMERCE - LOGIS DE FRANCE",
+  "city": "La Canourgue",
+  "lat": 44.432959,
+  "lng": 3.21412301,
+  "photo": "https://cdt48.media.tourinsoft.eu/upload/DSC01634.JPG",
+  "desc": "L'hôtel situé dans un très joli village, la Canourgue, est un établissement familial depuis 3 générations. Aux portes de l'Aubrac et des Gorges du Tarn, cet hôtel moderne, vous fera passer des vacances en pleine nature où il fait bon vivre et bien manger. \n\nL'",
+  "uri": "https://data.datatourisme.fr/45/d54879ce-b0df-3fa2-8e31-3bd8a847a0f1"
+ },
+ {
+  "title": "La Pierre à pain de l'île de Vassivière",
+  "city": "Beaumont-du-Lac",
+  "lat": 45.8007481,
+  "lng": 1.86375682,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/181009307-5.jpg",
+  "desc": "Concentré d'authenticité : Devant le four à pain, retrouvez les pains, brioches, tartines et spécialités issus du four, et un service de restauration à emporter, formules, sandwich, etc.  Stage, atelier sur réservation.",
+  "uri": "https://data.datatourisme.fr/23/e05d5777-67d9-3ade-ba3c-13c0e2af5539"
+ },
+ {
+  "title": "Hôtel Restaurant La Bonne Famille",
+  "city": "Cressensac-Sarrazac",
+  "lat": 45.0136667,
+  "lng": 1.5754508,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/Ho-tel-Restaurant-La-Bonne-Famille.jpg",
+  "desc": "Aux confins du Lot et de la Corrèze, dans une discrétion naturelle raffinée, Chantal et Michel Guerby-Aussel perpétuent une tradition, presque une légende : l'hôtel café Aussel (4ème génération) devenu une table réputée répondant au patronyme convoité de « Bon",
+  "uri": "https://data.datatourisme.fr/22/2bce7849-a48e-387d-b41d-2d6218c0d899"
+ },
+ {
+  "title": "The Mill",
+  "city": "Rancon",
+  "lat": 46.1342394,
+  "lng": 1.19848,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/210007514-4.jpg",
+  "desc": "Niché au bord de la Gartempe, ce pub traditionnel anglais, mais contemporain, vous propose une expérience pub traditionnelle entourée d'une grande sélection de bières, de vins et de Guinness avec sa carte variée et riche en saveurs.  Spécialités de la maison :",
+  "uri": "https://data.datatourisme.fr/23/d4502b6b-a2ef-3464-928d-f3bd141f8127"
+ },
+ {
+  "title": "La table des copains",
+  "city": "Chinon",
+  "lat": 47.1685458,
+  "lng": 0.2382435,
+  "photo": "https://centre.media.tourinsoft.eu/upload/CHINON-AU-LOCAL-2.jpg",
+  "desc": "Entre la Forteresse Royale et les vignes de Chinon, découvrez la saveur des produits locaux avec des idées d’ailleurs. Jonathan et son équipe se feront un plaisir de vous accueillir dans une ambiance chaleureuse, conviviale et simple. A très vite dans le resta",
+  "uri": "https://data.datatourisme.fr/15/652d806a-f85d-32fe-a0e1-3e6312ba1424"
+ },
+ {
+  "title": "Domaine du Terroir",
+  "city": "La Chapelle-Aubareil",
+  "lat": 45.0236086,
+  "lng": 1.18766,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Le-Domaine-du-terroir-1-2.jpg",
+  "desc": "Bienvenue au Domaine du terroir.\nIci on épluche, on émince, on émulsionne, on taille, on poche, on déglace, on blanchit, on rôtit, on braise, on saisit, on poêle, on écaille et on dresse... Bref ici on Cuisine !\nNotre ambition est de vous proposer une cuisine ",
+  "uri": "https://data.datatourisme.fr/23/9f434196-f141-3dd1-9f67-a200dcaf752d"
+ },
+ {
+  "title": "Aqui é Aura , Taverne Contemporaine",
+  "city": "Glandon",
+  "lat": 45.4898155,
+  "lng": 1.22804869,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/203004473-4.jpg",
+  "desc": "Produits locaux et de saisons. Dans une ambiance cosy moderne et traditionnelle à la fois avec  un superbe environnement au bord de l'étang. Nicolas Ponthier, le chef, est un passionné de cuisine.",
+  "uri": "https://data.datatourisme.fr/23/52fb8754-956f-35b3-a526-f3f20ff62fd4"
+ },
+ {
+  "title": "L'Odyssée",
+  "city": "Hendaye",
+  "lat": 43.367567,
+  "lng": -1.7711484,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Carte-visite-Odyssee.png",
+  "desc": "Jérôme Chopin, le Chef, vous accueille dans son établissement situé sur la côte basque à Hendaye, en plein cœur de la balade de la baie de Txingudy. Vous y découvrirez un cadre magnifique avec une vue imprenable sur les deux montagnes Jaizkibel et les 3 couron",
+  "uri": "https://data.datatourisme.fr/23/438ab2b3-3359-3234-b93c-cfd3550339a5"
+ },
+ {
+  "title": "Auberge du Lac - Restaurant",
+  "city": "Castelnau-de-Mandailles",
+  "lat": 44.50877535,
+  "lng": 2.88375651,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/15556/images/176889_e8d1e367-2ed0-4784-8d54-b6fcc36227e0/600.webp",
+  "desc": "Profitez de la terrasse avec vue panoramique sur le lac. Découvrez les talents du chef cuisinier et ses plats aux accents de terroir : escargots poêlés, poitrine de porc farcie, confit de canard, aligot, cuisine au feu de bois, pain maison…\nOuvert tous les mid",
+  "uri": "https://data.datatourisme.fr/31/00e8976c-63c3-37dd-9353-d2916fd6565f"
+ },
+ {
+  "title": "Le Comptoir de Gabriel (groupes)",
+  "city": "Roquefort-sur-Soulzon",
+  "lat": 43.9764,
+  "lng": 2.9887,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/21124/images/332186_47b4eeda-a680-4b30-a867-f9d0f7ac1bce/600.webp",
+  "desc": "Avec une capacité totale de 55 personnes, nous pouvons accueillir les groupes pour un repas le temps d'un voyage touristique ou bien pour vos réunions professionnelles. \nLa salle du bas du Comptoir de gabriel est équipe d'un grand écran vous permettant de proj",
+  "uri": "https://data.datatourisme.fr/31/2a488960-89b9-3e0c-b36c-e25a963e8f73"
+ },
+ {
+  "title": "HOTEL DOUSSIERE",
+  "city": "Le Rozier",
+  "lat": 44.19053,
+  "lng": 3.2091,
+  "photo": "https://cdt48.media.tourinsoft.eu/upload/photo-terrasse.jpg",
+  "desc": "Flore et Guillaume vous accueillent à l’entrée des Gorges du Tarn et de la Jonte, au cœur du Rozier-Peyreleau, pour vous faire partager nature, élégance et convivialité autour d'une cuisine de terroir raffinée…\n\nPoint de départ d’une multitude de sentiers de G",
+  "uri": "https://data.datatourisme.fr/45/8514bf17-ff1b-3701-a786-bc6c67239ac3"
+ },
+ {
+  "title": "Pizzeria Les Secrets de La Laiterie",
+  "city": "Stutzheim-Offenheim",
+  "lat": 48.6319541587182,
+  "lng": 7.61870075087597,
+  "photo": "https://opendata.tourisme-alsace.info/photos/essais/photos/243000255_1_800x600.jpg",
+  "desc": "\"Les Secrets de la Laiterie\" se trouve au cœur de Stutzheim-Offenheim. Nos clients réguliers apprécient nos pizzas depuis des années, mais nous préparons également d'autres spécialités avec autant d'attention. Venez nous rendre visite ! L'équipe des Secrets de",
+  "uri": "https://data.datatourisme.fr/5/1e976007-ec7b-3ff4-8527-fa6854f12e21"
+ },
+ {
+  "title": "Auberge du Domaine de Gaillac (groupes)",
+  "city": "Sauclières",
+  "lat": 43.9431,
+  "lng": 3.3385,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/16575/images/191742_99728986-5287-4c1b-9f49-96a10df52e32/600.webp",
+  "desc": "Le restaurant du domaine de Gaillac vous accueille pour vos repas de groupes dans un cadre authentique. Avec ses deux salles de restaurant, vous ne manquerez pas de place et pourrez déguster une cuisine fait maison.\nDans la tradition caussenarde, vous pourrez ",
+  "uri": "https://data.datatourisme.fr/31/41a2de66-d996-317f-8b75-e77a310116c8"
+ },
+ {
+  "title": "Le Bistro Léon",
+  "city": "Lisieux",
+  "lat": 49.1461098,
+  "lng": 0.2603582,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/thumbnail-IMG-6084.jpg",
+  "desc": "Idéalement situé au sein de l’hôtel Kyriad Lisieux, le Bistro Léon vous accueille tous les soirs, de 19h00 à 21h30, pour un moment de détente et de convivialité autour d’une cuisine authentique.\n\nLe Bistro Léon à Lisieux dévoile sa nouvelle carte.\nPensée pour ",
+  "uri": "https://data.datatourisme.fr/30/248ca569-41d5-32fb-a039-cd7fa50007df"
+ },
+ {
+  "title": "Auberge Le Meisenberg",
+  "city": "Châtenois",
+  "lat": 48.2717630672357,
+  "lng": 7.39971041679382,
+  "photo": "https://opendata.tourisme-alsace.info/photos/essais/photos/222004246_1_800x600.jpg",
+  "desc": "Venez découvrir une auberge pleine de charme et de convivialité sur la route du vin, nichée au pied du Haut-Koenigsbourg.\n\nNous vous proposons un service efficace dans une ambiance chaleureuse avec un décor simple, sobre et élégant. Notre terrasse saura ravir ",
+  "uri": "https://data.datatourisme.fr/5/0d31e0ca-ddf2-3cbb-aea2-c515dec28b7b"
+ },
+ {
+  "title": "Le Comptoir",
+  "city": "Laguiole",
+  "lat": 44.6839,
+  "lng": 2.8459,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/5973/images/456323_b7a49586-60cd-41bc-b22f-f4cd928b18ad/600.webp",
+  "desc": "Le Comptoir, bar, restaurant, pizzeria, situé dans le quartier du faubourg, est ouvert toute l'année et vous accueille tous les jours (sauf le lundi). Déco et ambiance chaleureuse et conviviale.",
+  "uri": "https://data.datatourisme.fr/31/48f6669a-03c9-3769-8bb5-4dc57b4a0fbd"
+ },
+ {
+  "title": "Chez Julien",
+  "city": "Thèze",
+  "lat": 43.471981,
+  "lng": -0.343387,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Theze-Chez-Julien-entrecote-credit-Chez-Julien-1440x1080.jpg",
+  "desc": "Chez Julien, en Béarn, est vraiment l'âme de Thèze, un restaurant agréable, convivial avec une ambiance chaleureuse qui y règne. \nJulien vous accueille de manière impeccable et la carte propose tout un panel de plats à base de produits locaux, frais et tout le",
+  "uri": "https://data.datatourisme.fr/23/d4523f5a-0c46-3201-a732-03ef63135569"
+ },
+ {
+  "title": "Restaurant Les Chasseurs",
+  "city": "Ascain",
+  "lat": 43.344522,
+  "lng": -1.620241,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/asc-rest-chasseurs-logo.jpg",
+  "desc": "Restaurant situé au cœur même du village d'Ascain. Nous vous proposons une cuisine entre terre et mer, locale à base de produits frais et locaux. Une grande salle lumineuse ouverte sur une terrasse avec vue sur la Rhune et la nature puis une deuxième salle idé",
+  "uri": "https://data.datatourisme.fr/23/3286d44b-73c5-32b9-bfcc-f7bad2985dcd"
+ },
+ {
+  "title": "Le Marché des Jacobins",
+  "city": "Limoges",
+  "lat": 45.82593,
+  "lng": 1.2637073,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/LE-MARCHE-DES-JACOBINS-quadri-3.png",
+  "desc": "Le Marché des Jacobins est l'un des nouveaux concepts dans la restauration limougeaude ! Il s'agit d'une halle gourmande, festive et accessible à tous. Cet ancien garage automobile devenu tiers-lieu de la convivialité tend à devenir un restaurant multiple ; 8 ",
+  "uri": "https://data.datatourisme.fr/23/cb1af8eb-639d-393b-9228-9f1492bfef12"
+ },
+ {
+  "title": "Château de la Côte hôtel et SPA",
+  "city": "Biras",
+  "lat": 45.287574,
+  "lng": 0.638992,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/10-351.jpg",
+  "desc": "Situé en campagne à proximité de Brantôme. Découvrez tout le charme d'autrefois dans l'un des plus beaux châteaux-hôtels du Périgord dont les origines remontent au XVe siècle. Gastronomie traditionnelle gourmande et généreuse avec des produits de saison et du ",
+  "uri": "https://data.datatourisme.fr/23/280533ce-0e2e-3033-b597-68ae1563a339"
+ },
+ {
+  "title": "Les Bains d'été",
+  "city": "Arromanches-les-Bains",
+  "lat": 49.34026,
+  "lng": -0.62391,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/Les-Bains-d-ete.jpg",
+  "desc": "Venez découvrir au pied de la plage d'Arromanches, Les Bains d'Eté.\n\nService de brasserie, bar, salon de thé, produits \"fait maison\", petits producteurs locaux (bières artisanales normande), charcuteries et fromages normands, cidre de la Sapinière, glaces de l",
+  "uri": "https://data.datatourisme.fr/30/340e6dae-d190-3a6a-8efc-5064398066f3"
+ },
+ {
+  "title": "JANINE CAFE",
+  "city": "Toulouse",
+  "lat": 43.6018462,
+  "lng": 1.446982,
+  "photo": "https://cdt31.media.tourinsoft.eu/upload/JANINE-13.webp",
+  "desc": "Dans un décor cosy et intimiste, pensé comme un véritable salon où l’on aime prendre son temps, les visiteurs savourent pâtisseries maison, gâteaux inspirés des souvenirs d’enfance, cafés, thés, lattes gourmands, smoothies et autres boissons de saison.\nÀ l’heu",
+  "uri": "https://data.datatourisme.fr/33/00947bd3-6f49-30d5-8c49-5742e0109c8a"
+ },
+ {
+  "title": "Pizzeria Mets Gusto",
+  "city": "Lons",
+  "lat": 43.311452,
+  "lng": -0.4261132,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/mets4-3.jpg",
+  "desc": "A six kilomètre à l'ouest de Pau, au pied de la cité médiévale de Lescar, dans la zone commerciale de Lescar, nous vous accueillons dans notre Pizzeria, Brasserie au décor moderne, avec terrasse ombragée, salle climatisée.\nNous vous proposons une cuisine tradi",
+  "uri": "https://data.datatourisme.fr/23/38a0b6f0-019e-363b-8756-6e9aff00b3ca"
+ },
+ {
+  "title": "L'Atelier de la Bière",
+  "city": "Châteauroux",
+  "lat": 46.811106,
+  "lng": 1.693986,
+  "photo": "https://centre.media.tourinsoft.eu/upload/l-atelier-de-la-biere-NEW.png",
+  "desc": "L'atelier de la bière vous accueille dans une ambiance conviviale et chaleureuse pour vous faire déguster leurs bières brassées sur place. Vous pourrez vous installer à l'intérieur avec vue sur les cuves en cuivre ou à l'extérieur pour profiter du calme du la ",
+  "uri": "https://data.datatourisme.fr/15/0047cfff-f5c9-3c79-93b4-6883c8a5430d"
+ },
+ {
+  "title": "L'Auberge de la Source Hôtel & Spa**** - Collection Saint-Siméon",
+  "city": "Barneville-la-Bertran",
+  "lat": 49.3909672,
+  "lng": 0.19029946,
+  "photo": "https://normandie.media.tourinsoft.eu/upload/L-Auberge-de-la-Source---Hotel-1-FAuberge-de-la-Source.jpg",
+  "desc": "À quelques minutes de Honfleur et à proximité de Deauville, l’Auberge de la Source Hôtel & Spa invite à une escapade au cœur du Pays d’Auge. Dans ce cadre bucolique, trois sources serpentent sous les arbres, les étangs ponctuent le jardin et les pommiers rappe",
+  "uri": "https://data.datatourisme.fr/30/870c15ab-383b-3c78-a1ad-3acb70f7b8b0"
+ },
+ {
+  "title": "La Capitainerie",
+  "city": "Baume-les-Dames",
+  "lat": 47.3411062,
+  "lng": 6.3587563,
+  "photo": "https://decibelles-data.media.tourinsoft.eu/upload/344100761-7.JPG",
+  "desc": "À la Capitainerie, vous aimerez la terrasse agréable et tranquille au bord du canal. Le cadre est super pour une pause et très apprécié des cyclistes de passages et des promeneurs.\nAmateur de cuisine régionale ? Vous êtes au bon endroit ! \nFriture de truite, p",
+  "uri": "https://data.datatourisme.fr/6/02d76b46-5289-3368-a850-787bc0b3350e"
+ },
+ {
+  "title": "A la plage",
+  "city": "Royère-de-Vassivière",
+  "lat": 45.7903506,
+  "lng": 1.89695465,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/181009694-7.jpg",
+  "desc": "Venez découvrir une des plus belle vue du lac sur la plage de Vauveix tout en savourant un délicieux cocktail ou le fameux burger maison. En effet le snack de Vauveix vous propose ses sandwichs froids ou chauds,hot dog, frites, salades, plats du jour, grillade",
+  "uri": "https://data.datatourisme.fr/23/efaac5b6-4b32-30e1-a36a-8a7e394a39da"
+ },
+ {
+  "title": "Hôtel le Petit Trôo du Cheval Blanc",
+  "city": "Troo",
+  "lat": 47.7755082,
+  "lng": 0.7912731,
+  "photo": "https://centre.media.tourinsoft.eu/upload/IMG-1127-2.jpeg",
+  "desc": "Notre Hôtel Restaurant « le Petit Trôo du Cheval Blanc » vous accueille pour vos séjours en étape affaire, en couple, en famille ou entre amis. Situé dans la vallée du LOIR, à moins d’une heure de Blois, Tours et Le Mans, Trôo est une Petite Cité de Caractère.",
+  "uri": "https://data.datatourisme.fr/15/30ae0f4d-477b-3cef-a9be-121b7f3e163c"
+ },
+ {
+  "title": "Café de la Gare-Chez Dany",
+  "city": "Souillac",
+  "lat": 44.9014987,
+  "lng": 1.4662857,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/Chez-dany--Souillac.jpg",
+  "desc": "Face à la gare de Souillac, Café de la Gare - Chez Dany est une adresse conviviale où l’on retrouve toute l’authenticité de la cuisine du terroir.",
+  "uri": "https://data.datatourisme.fr/22/edfe3b45-5a6f-394d-b12c-9de378ce2600"
+ },
+ {
+  "title": "L'Orée du Bois",
+  "city": "Louvie-Juzon",
+  "lat": 43.094383,
+  "lng": -0.333992,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Oree-Bois1-Orree-du-Bois.jpg",
+  "desc": "A 8 kms de Louvie-Juzon au quartier de  Pédéhourat, l'Orée du Bois, en pleine campagne, vous accueille dans l'un des villages typiques de la Vallée d'Ossau. \nL'orée du bois vous propose une cuisine  traditionnelle avec des produits locaux et avec de larges por",
+  "uri": "https://data.datatourisme.fr/23/38144667-afea-37b1-ab06-23cb27871879"
+ },
+ {
+  "title": "Le Pavillon bleu",
+  "city": "Cambo-les-Bains",
+  "lat": 43.3545411,
+  "lng": -1.391923,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/5-629.jpg",
+  "desc": "Au coeur des essences exotiques du parc thermal, niché sous les tuiles vernissées d’une étonnante pagode, le restaurant Le Pavillon Bleu propose un cadre charmant et convivial pour vos repas. Sa magnifique terrasse offre une vue panoramique sur le piémont pyré",
+  "uri": "https://data.datatourisme.fr/23/d63f709d-4321-3488-a83d-84cb2c0e1ee0"
+ },
+ {
+  "title": "L'OCCITAN",
+  "city": "Cazères",
+  "lat": 43.203703,
+  "lng": 1.08582842,
+  "photo": "https://cdt31.media.tourinsoft.eu/upload/Restaurant-l-Occitan-CAZERES-devanture.jpg",
+  "desc": "Profitez de la cuisine traditionnelle de L’Occitan, proche de Toulouse, Haute-Garonne, Cœur de Garonne. Cadre agréable au bord de la Garonne.",
+  "uri": "https://data.datatourisme.fr/33/1f811bbe-47ee-3f33-9848-f951152c9b62"
+ },
+ {
+  "title": "Hôtel du Béryl",
+  "city": "Bagnoles de l'Orne Normandie",
+  "lat": 48.5571195,
+  "lng": -0.4155313,
+  "photo": "https://cdt61.media.tourinsoft.eu/upload/Hotel-Spa-Le-Beryl-Bagnoles-de-l-Orne-800.jpg",
+  "desc": "L'hôtel Spa du Béryl*** situé face au lac de Bagnoles de l'Orne, tout proche du Casino (appartenant au même groupe, JOA) dispose d'un restaurant avec vue panoramique sur le lac, 75 chambres, 8 cabines de soins, 5 salles de séminaires, 1 salle de réception pouv",
+  "uri": "https://data.datatourisme.fr/30/3bc2ed9f-98d5-3f5e-b833-2717c019c23a"
+ },
+ {
+  "title": "LA MAISON DE RÊVE",
+  "city": "Aniane",
+  "lat": 43.6668594,
+  "lng": 3.57116457,
+  "photo": "https://cdt34.media.tourinsoft.eu/upload/Domaine-18.jpg",
+  "desc": "Restaurant viticole La maison de rêve à Aniane au Domaine de la Grande Sieste.\n\nLa Maison de Rêve, c’est l’âme du groupe — Rocco et sa Mère, Bambino Rocco et Mademoiselle Boris — qui prend le large, au milieu des vignes du domaine de La Grande Sieste, à Aniane",
+  "uri": "https://data.datatourisme.fr/32/f6dbebf2-8d95-359a-bf2b-ec9d8e638b7d"
+ },
+ {
+  "title": "La Mangeoire",
+  "city": "Millau",
+  "lat": 44.09939958,
+  "lng": 3.08140409,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/4871/images/41383_864ed7c4-22bf-407a-81d4-d51c165691a2/600.webp",
+  "desc": "58 ans que ce restaurant, plein de charme et de caractère, tenu par la même famille, continue de régaler ses convives. Il est situé dans un cadre superbe, authentique, souligné de notes contemporaines sous les voûtes de pierre des anciens remparts, illuminé pa",
+  "uri": "https://data.datatourisme.fr/31/5e66ec50-a907-3120-b696-a87d11179f47"
+ },
+ {
+  "title": "Le Quatr'eau by le Chalet de l'étang",
+  "city": "Brunémont",
+  "lat": 50.2701729,
+  "lng": 3.1415622,
+  "photo": "https://hautsdefrance.media.tourinsoft.eu/upload/Photo-d-illustration---Non-contractuelle--c-Pixabay-2.jpg",
+  "desc": "Situé au bord du lac de Brunémont, profitez d'un moment de détente sur la terrasse ou en intérieur.\nSteven et son équipe vous accueillent dans une ambiance chaleureuse et vous proposent des animations toute l'année.\nRégalez-vous autour d'une cuisine élaborée à",
+  "uri": "https://data.datatourisme.fr/28/97542625-76d5-3132-acfd-6e1801859215"
+ },
+ {
+  "title": "Restaurant La Gariotte",
+  "city": "Gourdon",
+  "lat": 44.7412786,
+  "lng": 1.3929497,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/Restaurant-la-Gariotte-1-2.jpg",
+  "desc": "Découvrez notre univers…\nDans un décor contemporain et lumineux, notre restaurant vous propose des mets de qualité dans une atmosphère soignée. Nous vous proposons une cuisine régionale traditionnelle.\nMenu Ouvrier le midi uniquement.",
+  "uri": "https://data.datatourisme.fr/22/0eb0c869-a90f-317e-be18-16019c6b71bd"
+ },
+ {
+  "title": "Ferme-auberge du Ban de la Roche",
+  "city": "Bellefosse",
+  "lat": 48.3998330474895,
+  "lng": 7.21175193786621,
+  "photo": "https://opendata.tourisme-alsace.info/photos/bruche/photos/215000137_1_800x600.jpg",
+  "desc": "Ferme-auberge située à 700 m d'altitude, au centre du village et à proximité de la station du Champ du Feu. Vue panoramique. Spécialités : terrines, munster fermier, coupe myrtilles chaudes. Carte et suggestions de saison.  Élevages : bovins. Possibilité d'héb",
+  "uri": "https://data.datatourisme.fr/5/e310cd08-f754-31bc-a2d4-7b9d5548d06c"
+ },
+ {
+  "title": "La Pagode de Jade",
+  "city": "Pau",
+  "lat": 43.2925992,
+  "lng": -0.3578616,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/pagode-jade-pau.jpg",
+  "desc": "Notre restaurant se situe à la limite entre Bizanos et Pau. Nous sommes en contrebas de la ville à 10 minutes à pied de la gare et cinq minutes en voiture. \nNous sommes le seul restaurant familial qui propose des spécialités thaïlandaise depuis 32 \n  ans à Pau",
+  "uri": "https://data.datatourisme.fr/23/e8fcad01-b27d-3eeb-95a9-bacab04a32a7"
+ },
+ {
+  "title": "Restaurant Léon et Suzette",
+  "city": "Moncoutant-sur-Sèvre",
+  "lat": 46.7213541,
+  "lng": -0.5890369,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/moncoutant-bar-restaurant-leon-et-suzettte-salle.jpg",
+  "desc": "Le restaurant Léon et Suzette à Moncoutant sur Sèvre est un lieu unique dans les Deux-Sèvre. Nous vous proposons des galettes et des crêpes bretonnes, des burgers artisanaux sur place et à emporter. Une belle gamme de vin et de bière sur place et à emporter. L",
+  "uri": "https://data.datatourisme.fr/23/f9df65f4-223d-3706-83bb-c2a15d805b7f"
+ },
+ {
+  "title": "Le Saint André",
+  "city": "Monflanquin",
+  "lat": 44.532858,
+  "lng": 0.7681089,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/le-saint-andre-2.jpg",
+  "desc": "Brasserie conviviale au cœur de la bastides de Monflanquin. \nCuisine gourmande, produits locaux et ambiance chaleureuse !",
+  "uri": "https://data.datatourisme.fr/23/86aaee80-e414-3cef-9d32-b28f3f8e5bd6"
+ },
+ {
+  "title": "Restaurant du Camping Ciela Village de la Liez",
+  "city": "Peigney",
+  "lat": 47.871752,
+  "lng": 5.380867,
+  "photo": "https://cdt51.media.tourinsoft.eu/upload/Camping-de-la-liez-restaurant-peigney-01.jpg",
+  "desc": "Notre chef vous convie à savourer ses recettes les plus inspirées pour vos papilles. Dans notre salle de style rustique, au cadre agréable, ou sur notre terrasse, avec vue panoramique sur le lac de la Liez, vous trouverez également des plats plus simples telle",
+  "uri": "https://data.datatourisme.fr/48/23718496-14d7-3b08-8807-31cc74366977"
+ },
+ {
+  "title": "DOMAINE DE CANTARANNE - Restaurant",
+  "city": "Privezac",
+  "lat": 44.4114,
+  "lng": 2.1892,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/24380/images/452246_3fc6b678-5ec1-4154-aad7-c1b47f5b4a66/600.webp",
+  "desc": "Nous sommes un petit restaurant familial ouvert pendant la période estivale du jeudi au dimanche midi. Nous proposons un menu du jour les jeudis et vendredis midi ainsi qu'un menu un peu élaboré disponible tous les jours d'ouverture.",
+  "uri": "https://data.datatourisme.fr/31/7110cc87-bd67-39f5-9d52-671491d5fa7e"
+ },
+ {
+  "title": "Chez Alfitcha",
+  "city": "Licq-Athérey",
+  "lat": 43.06637,
+  "lng": -0.8764671,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Alfitcha-facade.png",
+  "desc": "Alfitxa,\"Chez Alfitch\", le prototype même de l'auberge de pays.\nAu cœur du village de Licq, sur la route d'Holzarte et d'Iraty, à l'entrée du célèbre pont des lamiñak,  l'auberge Alfitch propose, en toute simplicité, un menu du jour qui célèbre la cuisine loca",
+  "uri": "https://data.datatourisme.fr/23/678033f9-2499-3452-825f-d12c49967093"
+ },
+ {
+  "title": "Restaurant Le Campanile",
+  "city": "Cahors",
+  "lat": 44.4667436,
+  "lng": 1.42914533,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/-cahors-11-3.jpg",
+  "desc": "Dans la salle à manger, chaleureusement décorée, le Campanile vous propose une cuisine régionale ou traditionnelle, cuisine légère ou familiale. Formules-buffets, menus enfants ou plats à la carte ? Ici, question gastronomie, tous les choix vous sont permis…",
+  "uri": "https://data.datatourisme.fr/22/3a94414f-f644-399d-97b3-b3023a7d6906"
+ },
+ {
+  "title": "Etape Chapelloise",
+  "city": "La Chapelle-aux-Brocs",
+  "lat": 45.1461676,
+  "lng": 1.62624426,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/etape-chapelloise--8-.JPG",
+  "desc": "Un lieu, une ambiance, une cuisine faite maison avec amour \nDes produits locaux et une équipe aux petits soins\nMaryline et son équipe vous accueillent avec le sourire depuis mai 2022\n19360 La Chapelle-aux-Brocs à 10 min de Brive la Gaillarde",
+  "uri": "https://data.datatourisme.fr/23/52743355-0ee3-332e-88d9-1143f5c4ed94"
+ },
+ {
+  "title": "Le Castel du Pont d'Oly",
+  "city": "Jurançon",
+  "lat": 43.2770317,
+  "lng": -0.3884372,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/castel-du-pont-d-oly-courgette.jpg",
+  "desc": "Il existe en Béarn, un endroit rare et vrai où il fait bon manger. C’est à Jurançon, aux portes de Pau et à cinq minutes du centre, que se situe ce havre de paix existant depuis de nombreuses années. L'hôtel restaurant Castel du Pont d'Oly est le rendez vous i",
+  "uri": "https://data.datatourisme.fr/23/11221d76-8b66-3a2a-81a8-5c36983cb0c1"
+ },
+ {
+  "title": "Château Léognan (Le Manège)",
+  "city": "Léognan",
+  "lat": 44.7133,
+  "lng": -0.6372,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Le-Manege-verres-gourmands.jpg",
+  "desc": "Au cœur de la nature, dans un cadre inédit, dégustez les délicieuses créations de notre Chef Robin BOS, accompagnées des plus beaux flacons du vignoble bordelais. Produits locaux, inspirations de la région, délices de saison : Bienvenue à la table gourmande du",
+  "uri": "https://data.datatourisme.fr/23/76aca717-17c5-37b3-9867-b7450cd81bae"
+ },
+ {
+  "title": "LA BELLE EQUIPE",
+  "city": "Escalquens",
+  "lat": 43.516242,
+  "lng": 1.5474125,
+  "photo": "https://cdt31.media.tourinsoft.eu/upload/bar2-FB.jpg",
+  "desc": "Toutes les raisons sont bonnes pour fréquenter La Belle Équipe ! Afterwork, repas entre collègues ou entre amis, moment en famille... la carte proposée répondra à chacune des occasions et des goûts.\n\nL'été, l'esprit guinguette règne en terrasse. C'est le momen",
+  "uri": "https://data.datatourisme.fr/33/f0ee2d87-fbc7-3baf-88a7-d109ac3b700e"
+ },
+ {
+  "title": "Restaurant La Ferme",
+  "city": "Limoges",
+  "lat": 45.8289638,
+  "lng": 1.2635027,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/La-Ferme-Limoges.jpg",
+  "desc": "Proche de la cathédrale de Limoges, sur la place de la Cité, venez savourer des recettes bio, gourmandes aux saveurs d’antan.\nC’est dans une ambiance chaleureuse et intimiste que nous vous accueillons pour vous faire découvrir une cuisine traditionnelle et cré",
+  "uri": "https://data.datatourisme.fr/23/4157523f-95a8-3848-9cc7-023b9fe58618"
+ },
+ {
+  "title": "Les Mondes Gourmands",
+  "city": "Chasseneuil-du-Poitou",
+  "lat": 46.6678915,
+  "lng": 0.3610439,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/chasseneuil-ibis-resto1.jpg",
+  "desc": "Le restaurant \"Less Mondes Gourmands\" vous invite à vivre une expérience gourmande autour d’un vaste buffet à volonté, régulièrement renouvelé.\n\nConçu à partir de produits frais et rigoureusement sélectionnés auprès de producteurs locaux, le buffet propose une",
+  "uri": "https://data.datatourisme.fr/23/0426a36d-36e2-3d4e-9dc0-44a7f50c5536"
+ },
+ {
+  "title": "Hôtel Restaurant La Promenade",
+  "city": "Gourdon",
+  "lat": 44.7376334,
+  "lng": 1.3802001,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/Promenade-terrasse.jpg",
+  "desc": "Hôtel très calme, places de stationnement gratuites à proximité, 10 chambres avec 4 ambiances différentes… Au service du midi vous pourrez déguster différentes planches et le soir,une carte de restauration traditionnelle .  Situé en plein cœur d'une zone touri",
+  "uri": "https://data.datatourisme.fr/22/3690e614-a72c-3928-abd6-e65f7f3f3c36"
+ },
+ {
+  "title": "Restaurant Ô pieds dans l'eau",
+  "city": "Marcilhac-sur-Célé",
+  "lat": 44.5558603,
+  "lng": 1.77079539,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/IMG-20230610-192056.jpg",
+  "desc": "Au bord du Célé, venez déguster salades et assiettes gourmandes, pâtisseries, glaces… dans un cadre agréable.\nVous retrouverez dans votre assiette le fruit des productions locales.\nOuvert de mai à septembre – réservation conseillée.\nSur place : location de can",
+  "uri": "https://data.datatourisme.fr/22/a61c9ad3-0c77-3864-a3ec-f9e63e8d2a1c"
+ },
+ {
+  "title": "Autour de l'Âtre",
+  "city": "Val-Sonnette",
+  "lat": 46.5938784,
+  "lng": 5.5036883,
+  "photo": "https://decibelles-data.media.tourinsoft.eu/upload/autour-de-l-atre-exterieur-2.jpg",
+  "desc": "Installé comme un écrin niché dans le fond d’une reculée jurassienne et née des cendres d’une ancienne grange à foin typique, Autour de l’Âtre propose une expérience alliant la modernité d’une cuisine conçue sur-mesure ouverte sur une salle sobre et élégante, ",
+  "uri": "https://data.datatourisme.fr/6/77242510-c143-3391-941d-4215a5294d78"
+ },
+ {
+  "title": "La Guinguette du Vincou",
+  "city": "Bellac",
+  "lat": 46.11671,
+  "lng": 1.04978,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/510810513-122139557450772478-3843335238423331563-n.jpg",
+  "desc": "Venez faire le plein de fraicheur en bord de Vincou ! Installez-vous dans le parc Aimé Vallat, profitez de la vue sur les vieux quartiers de Bellac et dégustez les bons produits à la carte : salades, smash burgers, yaourts glacés, boissons fraiches. L'été sera",
+  "uri": "https://data.datatourisme.fr/23/8185d905-59ec-3ec2-8d76-1fb595371fe0"
+ },
+ {
+  "title": "Au Fil de l'Eau",
+  "city": "Sauveterre-de-Béarn",
+  "lat": 43.3962346,
+  "lng": -0.9349675,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Au-fil-de-l-eau-1--2-.jpeg",
+  "desc": "C'est au pied des remparts de la cité médiévale de Sauveterre-de-Béarn,  au bout du jardin,  que l'équipe de \"Au fil de l'eau\" vous invite à vous prélasser sur  les transats, bercés par le bruit des flots du gave d'Oloron, en dégustant  toute la journée :  gla",
+  "uri": "https://data.datatourisme.fr/23/29d002ce-e4e6-35f4-a8c9-be31f294854f"
+ },
+ {
+  "title": "Le Petit Central",
+  "city": "Dijon",
+  "lat": 47.3229577,
+  "lng": 5.0381343,
+  "photo": "https://decibelles-data.media.tourinsoft.eu/upload/Ibis-Central-67---IBIS-STYLES-CENTRAL--1-.jpg",
+  "desc": "Le Petit Central, votre bistrot de quartier, vous accueille dans un décor chic, chaleureux et résolument contemporain, ouvert du lundi au samedi : grandes baies vitrées, restauration locale et faite maison, terrasse ombragée et banquettes confortables invitent",
+  "uri": "https://data.datatourisme.fr/6/70bced7e-1ba1-39b8-b084-0d19a8b92984"
+ },
+ {
+  "title": "Hôtel de la Muse",
+  "city": "Mostuéjouls",
+  "lat": 44.196465,
+  "lng": 3.211875,
+  "photo": "https://medias.hit.enaveyron.fr/fiches/20435/images/317084_e9181502-95b6-4cee-9b1b-141f6d17ef2e/600.webp",
+  "desc": "Une expérience gourmande au fil du Tarn\nDans un cadre naturel d'exception, au bord de la rivière, le restaurant de l'Hôtel de la Muse vous invite à savourer une cuisine raffinée et généreuse, où la qualité des produits et le plaisir de bien manger occupent une",
+  "uri": "https://data.datatourisme.fr/31/1d30a896-b9ff-3a12-8767-dd09080aec8a"
+ },
+ {
+  "title": "Élite Restaurant",
+  "city": "Loudun",
+  "lat": 47.0121256,
+  "lng": 0.0833456,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/restaurant-turc-loudun-Elite-13-1.jpg",
+  "desc": "Bienvenue chez Elite Restaurant, votre adresse incontournable à Loudun (86) pour découvrir les saveurs raffinées de la cuisine turque gastronomique. \nDans une ambiance chaleureuse et élégante, nous vous invitons à savourer des grillades préparées au feu de boi",
+  "uri": "https://data.datatourisme.fr/23/e900999c-f2ea-39c5-9e27-0f4cd22b9f46"
+ },
+ {
+  "title": "Brasserie Les Haras",
+  "city": "Strasbourg",
+  "lat": 48.5782016,
+  "lng": 7.74071249999997,
+  "photo": "https://opendata.tourisme-alsace.info/photos/strasbourg/photos/223009125_1_800x600.jpg",
+  "desc": "La Brasserie des Haras, un restaurant à Strasbourg au cœur d’un lieu historique.\n\nPensée par le chef étoilé Marc Haeberlin et le chef François Baur, la carte propose une cuisine de saison et d’inspiration alsacienne, subtilement revisitée entre tradition et cr",
+  "uri": "https://data.datatourisme.fr/5/eecadbf3-7c87-356a-834d-a0b170f50e7d"
+ },
+ {
+  "title": "La Bigorne",
+  "city": "Chauvigny",
+  "lat": 46.5711887,
+  "lng": 0.6487846,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/bigorne-1400x883.jpg",
+  "desc": "Nichée dans le centre historique de Chauvigny, La Bigorne prend place dans une belle demeure en pierre qui respire le Moyen Âge. Cette crêperie au caractère affirmé met à l’honneur une cuisine artisanale, préparée sur place avec soin. À la carte, les galettes ",
+  "uri": "https://data.datatourisme.fr/23/49a323d7-4ab8-3e73-ba89-959a164262c1"
+ },
+ {
+  "title": "Ferme auberge Un Goût de Nature",
+  "city": "Condat-sur-Trincou",
+  "lat": 45.3742321,
+  "lng": 0.7037365,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/entree-219.jpg",
+  "desc": "Quoi de mieux pour goûter nos produits que de vous installer à une des tables de notre ferme auberge Un Goût de Nature à Condat-sur-Trincou près de Brantôme en Périgord ? Sur réservation, notre grande salle à manger vous fera sans aucun doute passer un agréabl",
+  "uri": "https://data.datatourisme.fr/23/f3fc8832-c6d2-3542-b216-e95825c352aa"
+ },
+ {
+  "title": "L'Hydropathe",
+  "city": "Briare",
+  "lat": 47.63949,
+  "lng": 2.73799,
+  "photo": "https://centre.media.tourinsoft.eu/upload/briare-026.JPG",
+  "desc": "Un restaurant bistronomique  fait uniquement avec des produits frais, favorisant les producteurs locaux. Avec sa salle climatisée, dans une ambiance conviviale et avec une cuisine généreuse.",
+  "uri": "https://data.datatourisme.fr/15/8949be5f-31d0-3b0a-a963-f9d04a3c0f97"
+ },
+ {
+  "title": "La Bonne Etoile",
+  "city": "Les Bordes",
+  "lat": 47.8117877,
+  "lng": 2.40521028,
+  "photo": "https://centre.media.tourinsoft.eu/upload/DSC00479.JPG",
+  "desc": "Restaurant traditionnel, entre Loire et Forêt d'Orléans. Climatisation - véranda - parking. Accueil personne à mobilité réduite / Toilettes handicapés.\nSpécialités : foie gras de canard au torchon, quenelle de brochet, rognon de veau sauce vin jaune, froid cha",
+  "uri": "https://data.datatourisme.fr/15/e26e837a-cd4d-3f1b-8988-a006259f996f"
+ },
+ {
+  "title": "Restaurant Café de France",
+  "city": "Montcuq-en-Quercy-Blanc",
+  "lat": 44.3382399,
+  "lng": 1.21052695,
+  "photo": "https://cdt46.media.tourinsoft.eu/upload/bandeau02.jpg",
+  "desc": "Ancien hôtel villageois depuis 1800, cette brasserie est située au centre du village de Montcuq, avec sa grande terrasse ombragée par le marronnier centenaire. Il y règne une ambiance très cosmopolite ou le personnel est polyglotte. La carte traditionnelle, ré",
+  "uri": "https://data.datatourisme.fr/22/2d3d537c-5ee8-3392-9aeb-fb8d26ea6965"
+ },
+ {
+  "title": "Le Relais du Puy du Bar",
+  "city": "Château-Chervix",
+  "lat": 45.6067767,
+  "lng": 1.35537717,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/202000798-4.JPG",
+  "desc": "Situé à Château-Chervix, en Haute-Vienne, le Relais du Puy de Bar est une escale incontournable pour les amoureux de la cuisine vraie. Chaque plat est préparé avec passion, privilégiant les produits locaux et le savoir-faire artisanal. Que vous soyez de passag",
+  "uri": "https://data.datatourisme.fr/23/ee4cf17c-394f-38c5-801e-ea30129a2ef5"
+ },
+ {
+  "title": "Hôtel Côté Loire - Auberge Ligérienne",
+  "city": "Blois",
+  "lat": 47.582773,
+  "lng": 1.3308136,
+  "photo": "https://centre.media.tourinsoft.eu/upload/P1000360.jpg",
+  "desc": "Situé en bord de Loire, à 2 minutes du château et du centre ville, le charme de la plus ancienne auberge de Blois (1675) au confort simple et  convivial. L'hôtel Côté Loire - Auberge Ligérienne propose 8 chambres avec télévision, Wifi, avec douche et WC. Stati",
+  "uri": "https://data.datatourisme.fr/15/9c1705f0-fec0-347b-8779-972fce2ce836"
+ },
+ {
+  "title": "LES CUVES GOURMANDES",
+  "city": "Pérols",
+  "lat": 43.5780521,
+  "lng": 3.939163,
+  "photo": "https://cdt34.media.tourinsoft.eu/upload/CUVES-GOURMANDES-PEROLS-201125----M.HESS-OTC3M--3-.jpg",
+  "desc": "Situé dans l’ancien chai centenaire du domaine de la Pailletrice, ce food-court n’est pas un lieu comme les autres. \nLà où l’on vinifiait autrefois les cépages emblématiques de la région, on retrouve aujourd’hui une halle de 2 000 m² pouvant accueillir jusqu’à",
+  "uri": "https://data.datatourisme.fr/32/9f41302f-4af5-3751-861c-dcdecc13cfe0"
+ },
+ {
+  "title": "Cannelle et Romarin",
+  "city": "Périgueux",
+  "lat": 45.1844162,
+  "lng": 0.7215378,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Cannelle-et-Romarin-min-1-.jpg",
+  "desc": "Sur la charmante place du Coderc, Cannelle et Romarin mêlent avec audace la tradition périgourdine et les saveurs indonésiennes. Dans une ambiance conviviale, on y déguste une cuisine maison, originale et généreuse, élaborée à partir de produits du marché et d",
+  "uri": "https://data.datatourisme.fr/23/7de7a781-11db-332c-92a1-2cc7bcdb1c69"
+ },
+ {
+  "title": "La Terrasse",
+  "city": "Biarritz",
+  "lat": 43.4867958,
+  "lng": -1.5562046,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/Restaurant-la-terrasse-Biarritz.jpg",
+  "desc": "Nichée face à l’océan, La Terrasse est une invitation à savourer l’instant. Dans un cadre élégant et lumineux, elle propose une cuisine traditionnelle et locale, à déguster au déjeuner comme au dîner, bercé par l’air marin et le spectacle de la Grande Plage.\nA",
+  "uri": "https://data.datatourisme.fr/23/bb9811ff-92fb-3a00-a410-c91eec186d3b"
+ },
+ {
+  "title": "Le Lion Verd",
+  "city": "Putanges-le-Lac",
+  "lat": 48.7640321,
+  "lng": -0.2452842,
+  "photo": "https://cdt61.media.tourinsoft.eu/upload/HOTNOR061FS001QS-1.jpg",
+  "desc": "Attentif au bon accueil de ses clients, l'Hôtel de Charme le Lion Verd vous réserve des chambres confortables et joliment décorées. En plein cœur du centre ville de Putanges-Pont-Ecrepin, l'hôtel-restaurant est situé au bord de l’eau (l’Orne). D'une capacité d",
+  "uri": "https://data.datatourisme.fr/30/028bde2f-0f3d-38fe-b056-d1a66f4455ce"
+ },
+ {
+  "title": "Léon",
+  "city": "Saint-Pierre-du-Mont",
+  "lat": 43.868975,
+  "lng": -0.4835289,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/739823-262356424-100971492435845-8132173626211356887-n.jpg",
+  "desc": "Léon, La Fish brasserie depuis 1893, cuisine des produits de la mer pour TOUS Léon vous accueille dans un restaurant à l’ambiance hyper conviviale type brasserie de bord de mer, avec des produits de la mer frais, variés et accessibles. Homard, moules frites, f",
+  "uri": "https://data.datatourisme.fr/23/34b4a8ec-fde1-3913-8480-729014d8e0e6"
+ },
+ {
+  "title": "Txikitalia",
+  "city": "Hendaye",
+  "lat": 43.3712483,
+  "lng": -1.7843972,
+  "photo": "https://cdt24.media.tourinsoft.eu/upload/txikitalia-logo-hendaye.PNG",
+  "desc": "Situé face au port de plaisance d'Hendaye, Txikitalia est une trattoria italo-basque qui met à l'honneur la convivialité et la générosité de la cuisine italienne. \nDans une ambiance chaleureuse et décontractée, l'établissement propose des antipasti à partager,",
+  "uri": "https://data.datatourisme.fr/23/a9584884-0fd9-3c11-9466-a24108bda96c"
+ }
+]

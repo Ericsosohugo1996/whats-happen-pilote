@@ -1,0 +1,189 @@
+[
+ {
+  "hasMainRepresentation": [
+   {
+    "hasAnnotation": [
+     {
+      "credits": [
+       "Céline Deschamps Photographe"
+      ],
+      "title": {
+       "@fr": "Argens Restaurant La Guinguette"
+      }
+     }
+    ],
+    "hasRelatedResource": [
+     {
+      "hasMimeType": [
+       {
+        "label": {
+         "@fr": "image/jpeg"
+        }
+       }
+      ],
+      "locator": [
+       "https://cdt34.media.tourinsoft.eu/upload/Restaurant-La-Guinguette.jpg"
+      ]
+     }
+    ]
+   }
+  ],
+  "hasBeenCreatedBy": {
+   "legalName": "11 - ADT Aude",
+   "identifier": "f563e9f8-1c15-4cc7-be80-fe5d8d9f5b1c",
+   "telephone": [
+    "+33 4 68 11 66 00"
+   ],
+   "homepage": [
+    "https://www.audetourisme.com/"
+   ]
+  },
+  "isLocatedAt": [
+   {
+    "geo": {
+     "latitude": 43.2407733,
+     "longitude": 2.76557727
+    },
+    "address": [
+     {
+      "hasAddressCity": {
+       "insee": "11013",
+       "label": {
+        "@fr": "Argens-Minervois"
+       }
+      },
+      "streetAddress": [
+       "Rue de la fontaine fraîche"
+      ],
+      "postalCode": "11200",
+      "addressLocality": "Argens-Minervois"
+     }
+    ]
+   }
+  ],
+  "lastUpdate": "2026-06-15",
+  "hasDescription": [
+   {
+    "description": {
+     "@fr": "La guinguette est un agréable restaurant où l'on s'installe en terrasse au bord du canal du Midi pour se régaler d'une cuisine simple, locale et de saison , dans une ambiance chaleureuse et conviviale.  Au menu : assiette de Pays, tapas, grillades au feu de bois, plats traditionnels et vins locaux."
+    }
+   }
+  ],
+  "label": {
+   "@fr": "LA GUINGUETTE"
+  },
+  "type": [
+   "Restaurant",
+   "FoodEstablishment",
+   "PlaceOfInterest",
+   "PointOfInterest"
+  ],
+  "lastUpdateDatatourisme": "2026-11-03T00:05:03.113Z",
+  "hasContact": [
+   {
+    "telephone": [
+     "+33 4 68 41 51 96"
+    ],
+    "homepage": [
+     "http://www.laguinguette-restaurant.com/"
+    ]
+   }
+  ],
+  "uri": "https://data.datatourisme.fr/41/bfd872de-b7e6-3b2d-b95a-69e7c58d92a1",
+  "hasReview": [
+   {
+    "hasReviewValue": {
+     "label": {
+      "@fr": "Vignobles & Découvertes"
+     },
+     "isCompliantWith": [
+      "EntertainmentAndEvent",
+      "Visit",
+      "Restaurant",
+      "BistroOrWineBar",
+      "LocalTouristOffice",
+      "Cellar",
+      "Accommodation",
+      "NaturalHeritage",
+      "CulturalSite",
+      "Practice"
+     ],
+     "key": "LabelRating_VignoblesDecouvertes"
+    }
+   }
+  ],
+  "uuid": "000041c5-b92b-3236-9768-6e560cea215c"
+ },
+ {
+  "hasBeenCreatedBy": {
+   "legalName": "Soubik",
+   "givenName": [
+    "Soubik"
+   ],
+   "familyName": [
+    "Soubik"
+   ]
+  },
+  "isLocatedAt": [
+   {
+    "geo": {
+     "elevation": 0,
+     "latitude": -21.030584,
+     "longitude": 55.687786
+    },
+    "address": [
+     {
+      "hasAddressCity": {
+       "insee": "97410",
+       "label": {
+        "@fr": "Saint-Benoît"
+       }
+      },
+      "streetAddress": [
+       "76, chemin Bélier - Bourbier-les-Hauts"
+      ],
+      "postalCode": "97470",
+      "addressLocality": "Saint-Benoît"
+     }
+    ]
+   }
+  ],
+  "lastUpdate": "2021-04-29",
+  "label": {
+   "@fr": "3ème Mi-Temps (La)"
+  },
+  "type": [
+   "FoodEstablishment",
+   "Restaurant",
+   "PlaceOfInterest",
+   "PointOfInterest"
+  ],
+  "lastUpdateDatatourisme": "2022-12-03T00:37:40.08Z",
+  "hasContact": [
+   {
+    "legalName": "3ème Mi-Temps (La)",
+    "address": [
+     {
+      "hasAddressCity": {
+       "insee": "97410",
+       "label": {
+        "@fr": "Saint-Benoît"
+       }
+      },
+      "streetAddress": [
+       "76, chemin Bélier - Bourbier-les-Hauts"
+      ],
+      "postalCode": "97470",
+      "addressLocality": "Saint-Benoît"
+     }
+    ],
+    "telephone": [
+     "+33 2 62 50 01 76"
+    ],
+    "siret": "32319786300018"
+   }
+  ],
+  "uri": "https://data.datatourisme.fr/54/cc184bd2-da72-36e8-93b3-841b3f9e9620",
+  "uuid": "0001a08b-b577-31d5-8747-646d72432887"
+ }
+]
