@@ -93,4 +93,8 @@ function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s
   fs.writeFileSync(OUT, JSON.stringify(keep.map(({ s, ...x }) => x)));
   fs.mkdirSync("data/restos-test", { recursive: true });
   fs.writeFileSync("data/restos-test/_build-resume.txt", out.join("\n") + "\n");
+  // un échantillon lisible (une adresse sur ~16, dans l'ordre) pour contrôler la qualité à l'œil
+  const step = Math.max(1, Math.floor(keep.length / 40)), samp = [];
+  for (let i = 0; i < keep.length && samp.length < 40; i += step) { const x = keep[i]; samp.push((samp.length + 1) + ". " + x.t + " | " + x.c + " | " + (x.k || "") + " | photo " + (x.p ? "oui" : "non") + "\n   " + String(x.d || "").slice(0, 160)); }
+  fs.writeFileSync("data/restos-test/_echantillon.txt", samp.join("\n") + "\n");
 })();
