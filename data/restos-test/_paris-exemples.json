@@ -1,0 +1,1937 @@
+[
+ {
+  "source": "wikidata",
+  "title": "café de la Régence",
+  "desc": "café à Paris, important centre européen des échecs aux 18e et 19e siècles",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Illustration%2024%20janvier%201851.jpg",
+  "loc": "Point(2.342579 48.859863)",
+  "uri": "http://www.wikidata.org/entity/Q1025693"
+ },
+ {
+  "source": "wikidata",
+  "title": "café de Flore",
+  "desc": "café situé à Paris, en France",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20de%20Flore%2C%20172%20boulevard%20Saint-Germain%2C%20Paris%206e.jpg",
+  "loc": "Point(2.3325 48.853889)",
+  "uri": "http://www.wikidata.org/entity/Q1025686"
+ },
+ {
+  "source": "wikidata",
+  "title": "Les Deux Magots",
+  "desc": "café situé dans le 6ème arrondissement à Paris",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Les%20Deux%20Magots%2C%2025%20September%202019.jpg",
+  "loc": "Point(2.333056 48.853889)",
+  "uri": "http://www.wikidata.org/entity/Q1147912"
+ },
+ {
+  "source": "wikidata",
+  "title": "Maxim's",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maxim%27s%2C%207%20Rue%20Royale%2C%2075008%20Paris%2C%2014%20September%202019.jpg",
+  "loc": "Point(2.322222222 48.867305555)",
+  "uri": "http://www.wikidata.org/entity/Q1235554"
+ },
+ {
+  "source": "wikidata",
+  "title": "café Procope",
+  "desc": "cafés-restaurants à Paris, France",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Procope%201%2C%20Paris%202010.jpg",
+  "loc": "Point(2.33875 48.853055555)",
+  "uri": "http://www.wikidata.org/entity/Q751293"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Dôme",
+  "desc": "restaurant situé à Paris, en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20D%C3%B4me%20Caf%C3%A9%2C%20108%20Boulevard%20du%20Montparnasse%2C%2075014%20Paris%202013.jpg",
+  "loc": "Point(2.3291 48.8419)",
+  "uri": "http://www.wikidata.org/entity/Q1025695"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Tour d'Argent",
+  "desc": "restaurant parisien",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Tour%20d%27Argent%2C%20Paris%2022%20September%202010.jpg",
+  "loc": "Point(2.354888888 48.849883333)",
+  "uri": "http://www.wikidata.org/entity/Q1338260"
+ },
+ {
+  "source": "wikidata",
+  "title": "café de la Paix",
+  "desc": "célèbre café-restaurant du 9e arrondissement de Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20de%20la%20Paix%201.jpg",
+  "loc": "Point(2.331672222 48.870780555)",
+  "uri": "http://www.wikidata.org/entity/Q2933008"
+ },
+ {
+  "source": "wikidata",
+  "title": "Buddha Bar",
+  "desc": "restaurant-bar-lounge",
+  "types": "bar, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Buddha%20Bar%20door.jpg",
+  "loc": "Point(2.32136111 48.86797222)",
+  "uri": "http://www.wikidata.org/entity/Q851372"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Rotonde",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Rotonde%202.JPG",
+  "loc": "Point(2.329166666 48.842361111)",
+  "uri": "http://www.wikidata.org/entity/Q868676"
+ },
+ {
+  "source": "wikidata",
+  "title": "café Guerbois",
+  "desc": "café culturel du XIXe siècle situé à Paris, en France",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20At%20the%20Caf%C3%A9%20Guerbois.jpg",
+  "loc": "Point(2.326773251 48.884457597)",
+  "uri": "http://www.wikidata.org/entity/Q1025611"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Train bleu",
+  "desc": "restaurant français",
+  "types": "buffet de gare, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Train%20bleu%2001.jpg",
+  "loc": "Point(2.373333333 48.845)",
+  "uri": "http://www.wikidata.org/entity/Q1810254"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Coupole",
+  "desc": "brasserie dans le 14ᵉ arrondissement de Paris",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Coupole%20-%20Paris.JPG",
+  "loc": "Point(2.32806 48.8424)",
+  "uri": "http://www.wikidata.org/entity/Q1445889"
+ },
+ {
+  "source": "wikidata",
+  "title": "café de la Nouvelle Athènes",
+  "desc": "ancien café situé à Paris, en France",
+  "types": "ancien restaurant, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20de%20le%20Nouvelle%20Ath%C3%A8nes.%20%28before%201900%29.jpg",
+  "loc": "Point(2.337777777 48.881944444)",
+  "uri": "http://www.wikidata.org/entity/Q1025688"
+ },
+ {
+  "source": "wikidata",
+  "title": "café des 2 Moulins",
+  "desc": "café-brasserie situé dans le 18e arrondissement de Paris, en France",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cafe%20des%202%20Moulins%2C%20Paris%2024%20August%202019.jpg",
+  "loc": "Point(2.33361111 48.88493056)",
+  "uri": "http://www.wikidata.org/entity/Q2593762"
+ },
+ {
+  "source": "wikidata",
+  "title": "Lipp",
+  "desc": "brasserie située à Paris",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasserie%20Lipp%2C%20151%20boulevard%20Saint-Germain%2C%20Paris%206e.jpg",
+  "loc": "Point(2.332628 48.854122)",
+  "uri": "http://www.wikidata.org/entity/Q263359"
+ },
+ {
+  "source": "wikidata",
+  "title": "Salon indien du Grand Café",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Plaque%20Lumi%C3%A8re2.jpg",
+  "loc": "Point(2.32944444 48.87027778)",
+  "uri": "http://www.wikidata.org/entity/Q2399858"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Closerie des Lilas",
+  "desc": "restaurant français",
+  "types": "brasserie, restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Closerie%20des%20Lilas%2C%20171%20boulevard%20du%20Montparnasse%2C%20Paris%206e%201.jpg",
+  "loc": "Point(2.33604 48.8401)",
+  "uri": "http://www.wikidata.org/entity/Q1441258"
+ },
+ {
+  "source": "wikidata",
+  "title": "café Anglais",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20anglais.jpg",
+  "loc": "Point(2.33744722 48.87127222)",
+  "uri": "http://www.wikidata.org/entity/Q2894560"
+ },
+ {
+  "source": "wikidata",
+  "title": "Angelina",
+  "desc": "salon de thé parisien",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/AngelinaParis.JPG",
+  "loc": "Point(2.32808333 48.86516667)",
+  "uri": "http://www.wikidata.org/entity/Q45107"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Grand Véfour",
+  "desc": "restaurant français situé dans le 1er arrondissement de Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Palais%20Royal%20Restaurant%20Grand%20V%C3%A9four%208.jpg",
+  "loc": "Point(2.3379 48.8661)",
+  "uri": "http://www.wikidata.org/entity/Q2896854"
+ },
+ {
+  "source": "wikidata",
+  "title": "Drouant",
+  "desc": "grand restaurant parisien fondé en 1880",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade%20-%20Restaurant%20Drouant%20-%20Paris.jpg",
+  "loc": "Point(2.33439 48.8688)",
+  "uri": "http://www.wikidata.org/entity/Q3040039"
+ },
+ {
+  "source": "wikidata",
+  "title": "café du Tambourin",
+  "desc": "",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A9ret%20-%20Caf%C3%A9%20du%20Tambourin.jpg",
+  "loc": "Point(2.33468 48.883362)",
+  "uri": "http://www.wikidata.org/entity/Q15077294"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Splendid",
+  "desc": "café-théâtre parisien",
+  "types": "café-théâtre",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/P1220786%20Paris%20X%20rue%20du%20Fbg-Saint-Martin%20n48%20Le%20Spendid%20rwk.jpg",
+  "loc": "Point(2.35666667 48.87083333)",
+  "uri": "http://www.wikidata.org/entity/Q367569"
+ },
+ {
+  "source": "wikidata",
+  "title": "L'Arpège",
+  "desc": "restaurant gastronomique à Paris, France",
+  "types": "restaurant gastronomique",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Arpege.jpg",
+  "loc": "Point(2.317 48.8557)",
+  "uri": "http://www.wikidata.org/entity/Q6455598"
+ },
+ {
+  "source": "wikidata",
+  "title": "Bouillon Chartier Grands Boulevards",
+  "desc": "restaurant à Paris fondé en 1896",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Chartier%201302.jpg",
+  "loc": "Point(2.3430137 48.8719356)",
+  "uri": "http://www.wikidata.org/entity/Q1071456"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Bœuf sur le toit",
+  "desc": "cabaret fondé à Paris en 1922 puis salle de spectacles et retaurant",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20B%C5%93uf%20sur%20le%20toit%20-%20int%C3%A9rieur.jpg",
+  "loc": "Point(2.31027778 48.87138889)",
+  "uri": "http://www.wikidata.org/entity/Q614681"
+ },
+ {
+  "source": "wikidata",
+  "title": "Madame Arthur",
+  "desc": "cabaret travesti à Paris",
+  "types": "discothèque gay",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Madame%20Arthur.jpg",
+  "loc": "Point(2.339543888 48.882591111)",
+  "uri": "http://www.wikidata.org/entity/Q41521104"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Jules Verne",
+  "desc": "restaurant situé au deuxième étage de la tour Eiffel, Paris",
+  "types": "",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Jules%20Verne%2C%20salle%20Quai%20Branly%2C%20Paris%202019.jpg",
+  "loc": "Point(2.294511475 48.858358868)",
+  "uri": "http://www.wikidata.org/entity/Q3223818"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Select",
+  "desc": "brasserie parisienne, qui a été notamment un des lieux de rendez-vous de l’intelligentsia de l’entre-deux-guerres",
+  "types": "bar gay, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cafe%20Le%20Select%2C%20Paris%20-%202011.JPG",
+  "loc": "Point(2.32833 48.8425)",
+  "uri": "http://www.wikidata.org/entity/Q3227073"
+ },
+ {
+  "source": "wikidata",
+  "title": "café du Croissant",
+  "desc": "restaurant dans le 2e arrondissement de Paris, en France",
+  "types": "bistro, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20du%20Croissant.jpg",
+  "loc": "Point(2.34328 48.8692)",
+  "uri": "http://www.wikidata.org/entity/Q2932997"
+ },
+ {
+  "source": "wikidata",
+  "title": "Polidor",
+  "desc": "",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20le%20Polidor%2C%20Paris%2C%202014.jpg",
+  "loc": "Point(2.34 48.84972222)",
+  "uri": "http://www.wikidata.org/entity/Q3394227"
+ },
+ {
+  "source": "wikidata",
+  "title": "Harry's New York Bar",
+  "desc": "bar bien connu à Paris, France",
+  "types": "bar",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Harrys%20New%20York%20Bar%206%2C%20Paris%202012.jpg",
+  "loc": "Point(2.3321 48.8692)",
+  "uri": "http://www.wikidata.org/entity/Q1334247"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Caveau de la Huchette",
+  "desc": "club de jazz à Paris",
+  "types": "club de jazz",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caveau%20de%20la%20Huchette%2C%205%20rue%20de%20la%20Huchette%2C%20Paris%205e%202.jpg",
+  "loc": "Point(2.34638889 48.85277778)",
+  "uri": "http://www.wikidata.org/entity/Q517995"
+ },
+ {
+  "source": "wikidata",
+  "title": "Au roi de la bière",
+  "desc": "brasserie dans le 8e arrondissement de Paris",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/McDonald%27s%2C%20119%20rue%20Saint-Lazare%2C%20Paris%2018%20June%202016.jpg",
+  "loc": "Point(2.32555556 48.87527778)",
+  "uri": "http://www.wikidata.org/entity/Q2870499"
+ },
+ {
+  "source": "wikidata",
+  "title": "la Palette",
+  "desc": "café et restaurant à Paris",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Palette.jpg",
+  "loc": "Point(2.33687 48.8554)",
+  "uri": "http://www.wikidata.org/entity/Q3211300"
+ },
+ {
+  "source": "wikidata",
+  "title": "Lasserre",
+  "desc": "restaurant à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20Lasserre%202.jpg",
+  "loc": "Point(2.309921 48.866324)",
+  "uri": "http://www.wikidata.org/entity/Q3218349"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Rocher de Cancale",
+  "desc": "restaurant parisien",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Au%20rocher%20de%20Cancale.jpg",
+  "loc": "Point(2.34715 48.8656)",
+  "uri": "http://www.wikidata.org/entity/Q3226500"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant Ledoyen",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon%20Ledoyen%2C%20Paris%2029%20April%202017%2001.jpg",
+  "loc": "Point(2.31641667 48.86608333)",
+  "uri": "http://www.wikidata.org/entity/Q3427911"
+ },
+ {
+  "source": "wikidata",
+  "title": "Fouquet's",
+  "desc": "restaurant parisien",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Facade%20fouquet%27s.jpg",
+  "loc": "Point(2.30128889 48.87138056)",
+  "uri": "http://www.wikidata.org/entity/Q3079972"
+ },
+ {
+  "source": "wikidata",
+  "title": "Auteuil-Boulogne",
+  "desc": "gare ferroviaire française",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasserie%20Auteuil%2C%2078%20Rue%20d%27Auteuil%2C%2075016%20Paris%2C%2028%20October%202019.jpg",
+  "loc": "Point(2.2599 48.8483)",
+  "uri": "http://www.wikidata.org/entity/Q16507928"
+ },
+ {
+  "source": "wikidata",
+  "title": "Passy-la-Muette",
+  "desc": "gare ferroviaire française",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gare%20de%20Passy-la-Muette%2C%20Paris%2016e%203.jpg",
+  "loc": "Point(2.2724 48.8581)",
+  "uri": "http://www.wikidata.org/entity/Q16508032"
+ },
+ {
+  "source": "wikidata",
+  "title": "New Morning",
+  "desc": "club de jazz parisien",
+  "types": "club de jazz",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20des%20Petites-%C3%89curies%20%28Paris%29%2C%20New%20Morning.jpg",
+  "loc": "Point(2.353379 48.872979)",
+  "uri": "http://www.wikidata.org/entity/Q657624"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant La Fermette Marbeuf",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FMarbeuf.jpg",
+  "loc": "Point(2.30191 48.86748)",
+  "uri": "http://www.wikidata.org/entity/Q22924726"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Maison Rose",
+  "desc": "restaurant à Montmartre, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montmartre%20Maison%20Rose%20002.JPG",
+  "loc": "Point(2.339667 48.887987)",
+  "uri": "http://www.wikidata.org/entity/Q103456427"
+ },
+ {
+  "source": "wikidata",
+  "title": "café de la Gare",
+  "desc": "théâtre situé à Paris, en France",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20de%20la%20Gare%20Paris.jpg",
+  "loc": "Point(2.3524656 48.8573719)",
+  "uri": "http://www.wikidata.org/entity/Q2382361"
+ },
+ {
+  "source": "wikidata",
+  "title": "Taillevent",
+  "desc": "restaurant à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Taillevent.jpg",
+  "loc": "Point(2.30246 48.8741)",
+  "uri": "http://www.wikidata.org/entity/Q2896230"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Ciel de Paris",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ciel%20de%20Paris%20005.JPG",
+  "loc": "Point(2.32222 48.8417)",
+  "uri": "http://www.wikidata.org/entity/Q3221420"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Duc des Lombards",
+  "desc": "club de jazz à Paris",
+  "types": "club de jazz",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Duc%20des%20Lombards%20-%20Paris%20-%203.jpg",
+  "loc": "Point(2.348555 48.859688)",
+  "uri": "http://www.wikidata.org/entity/Q3222470"
+ },
+ {
+  "source": "wikidata",
+  "title": "Maison dorée",
+  "desc": "restaurant situé à Paris, en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison%20Dor%C3%A9e.jpg",
+  "loc": "Point(2.33690278 48.87183611)",
+  "uri": "http://www.wikidata.org/entity/Q3279981"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant Julien",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20Julien.JPG",
+  "loc": "Point(2.35326 48.8705)",
+  "uri": "http://www.wikidata.org/entity/Q3427906"
+ },
+ {
+  "source": "wikidata",
+  "title": "À la Mère Catherine",
+  "desc": "restaurant à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%2075018%20Place%20du%20Tertre%2020120101%20La%20M%C3%A8re%20Catherine.jpg",
+  "loc": "Point(2.34083 48.8867)",
+  "uri": "http://www.wikidata.org/entity/Q3576752"
+ },
+ {
+  "source": "wikidata",
+  "title": "L'Ambroisie",
+  "desc": "restaurant à Paris, France",
+  "types": "",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20des%20Vosges%2C%20Paris%2C%20porte%20du%20n%C2%B0%2009%20%282%29.JPG",
+  "loc": "Point(2.3643 48.8554)",
+  "uri": "http://www.wikidata.org/entity/Q6455533"
+ },
+ {
+  "source": "wikidata",
+  "title": "L'As du Fallafel",
+  "desc": "restaurant de la rue des Rosiers, Paris",
+  "types": "Restaurants casher, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27As%20du%20Fallafel%2C%20Jewish%20Quarter%2C%20Paris%202015.jpg",
+  "loc": "Point(2.359072 48.857425)",
+  "uri": "http://www.wikidata.org/entity/Q6455605"
+ },
+ {
+  "source": "wikidata",
+  "title": "Lapérouse",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lap%C3%A9rouse%2C%2051%20Quai%20des%20Grands%20Augustins%2C%2075006%20Paris%2C%20October%202016.jpg",
+  "loc": "Point(2.34159 48.8551)",
+  "uri": "http://www.wikidata.org/entity/Q6488471"
+ },
+ {
+  "source": "wikidata",
+  "title": "café Frascati",
+  "desc": "café situé à Paris, en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Un%20salon%20de%20Frascati%2C%20Paris%2C%201800.jpg",
+  "loc": "Point(2.340156272 48.871733423)",
+  "uri": "http://www.wikidata.org/entity/Q2932946"
+ },
+ {
+  "source": "wikidata",
+  "title": "Café Voltaire",
+  "desc": "ancien café et restaurant situé à Paris, en France",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20Voltaire.jpg",
+  "loc": "Point(2.338881 48.850072)",
+  "uri": "http://www.wikidata.org/entity/Q2932969"
+ },
+ {
+  "source": "wikidata",
+  "title": "Ma Bourgogne",
+  "desc": "restaurant parisien",
+  "types": "bistro, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20Bourgogne%20-%20Paris%20IV%20%28FR75%29%20-%202021-05-25%20-%201.jpg",
+  "loc": "Point(2.364726667 48.856219734)",
+  "uri": "http://www.wikidata.org/entity/Q6720697"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Cinq",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nesta%20%C3%BAltima%20viagem%20a%20Paris%2C%20voltei%20ao%20Cinq.jpg",
+  "loc": "Point(2.30058611 48.86891667)",
+  "uri": "http://www.wikidata.org/entity/Q14955143"
+ },
+ {
+  "source": "wikidata",
+  "title": "Bouillon Racine",
+  "desc": "restaurant Art Nouveau à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior%20of%20the%20Bouillon%20Racine%20%28Paris%29.png",
+  "loc": "Point(2.3422225 48.8502466)",
+  "uri": "http://www.wikidata.org/entity/Q895021"
+ },
+ {
+  "source": "wikidata",
+  "title": "Au chien qui fume",
+  "desc": "restaurant à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Au%20Chien%20qui%20fume%2C%2019%20boulevard%20du%20Montparnasse%2C%20Paris%206e%202.jpg",
+  "loc": "Point(2.34486 48.8613)",
+  "uri": "http://www.wikidata.org/entity/Q17303726"
+ },
+ {
+  "source": "wikidata",
+  "title": "Alcazar d'hiver",
+  "desc": "café-concert parisien",
+  "types": "café-concert",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcazar%20d%27hiver-1875.jpg",
+  "loc": "Point(2.348037 48.87162)",
+  "uri": "http://www.wikidata.org/entity/Q2832100"
+ },
+ {
+  "source": "wikidata",
+  "title": "Pavillon Gabriel",
+  "desc": "centre de congrès de Paris, France, anciennement le café-concert \"Alcazar d'Été\"",
+  "types": "café-concert",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Alcazar%20d%27%C3%A9t%C3%A9%2C%20aujourd%27hui%20Pavillon%20Gabriel%2C%205%20avenue%20Gabriel%2C%208%C3%A8me%20arrondissement%2C%20Paris%2C%20PH73609.jpg",
+  "loc": "Point(2.3176 48.8677)",
+  "uri": "http://www.wikidata.org/entity/Q2832101"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Baiser salé",
+  "desc": "club de jazz à Paris",
+  "types": "club de jazz",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Baiser%20Sal%C3%A9%20-%20Paris.jpg",
+  "loc": "Point(2.34805556 48.85972222)",
+  "uri": "http://www.wikidata.org/entity/Q3220206"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Pré Catelan",
+  "desc": "restaurant en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Pr%C3%A9%20Catelan%2C%20Bois%20de%20Boulogne%2C%20Paris%20September%202015.jpg",
+  "loc": "Point(2.25061111 48.8639833)",
+  "uri": "http://www.wikidata.org/entity/Q3226046"
+ },
+ {
+  "source": "wikidata",
+  "title": "Queen",
+  "desc": "discothèque parisienne",
+  "types": "discothèque gay",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Queen.jpg",
+  "loc": "Point(2.3025 48.871)",
+  "uri": "http://www.wikidata.org/entity/Q3413995"
+ },
+ {
+  "source": "wikidata",
+  "title": "Sunset-Sunside",
+  "desc": "club de jazz à Paris, en France",
+  "types": "club de jazz",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunset-Sunside.jpg",
+  "loc": "Point(2.3477648 48.8599189)",
+  "uri": "http://www.wikidata.org/entity/Q3503965"
+ },
+ {
+  "source": "wikidata",
+  "title": "théâtre d'Edgar",
+  "desc": "salle de spectacle et café-théâtre de Paris, France",
+  "types": "café-théâtre",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Th%C3%A9%C3%A2tre%20d%27Edgar%201.jpg",
+  "loc": "Point(2.324443 48.841496)",
+  "uri": "http://www.wikidata.org/entity/Q3527601"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Balzar",
+  "desc": "brasserie du quartier latin",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Image%20Brasserie%20Le%20Balzar%20%28%20Ext%C3%A9rieur%29.jpg",
+  "loc": "Point(2.34336 48.84988)",
+  "uri": "http://www.wikidata.org/entity/Q2923992"
+ },
+ {
+  "source": "wikidata",
+  "title": "brasserie Mollard",
+  "desc": "brasserie dans le 8e arrondissement de Paris",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasserie%20Mollard%20-%20panoramio.jpg",
+  "loc": "Point(2.325903 48.875315)",
+  "uri": "http://www.wikidata.org/entity/Q2924015"
+ },
+ {
+  "source": "wikidata",
+  "title": "café Tortoni de Paris",
+  "desc": "café à Paris, en France",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Destruction%20des%20arbres%20de%20la%20libert%C3%A9.jpg",
+  "loc": "Point(2.336917 48.87162)",
+  "uri": "http://www.wikidata.org/entity/Q2932968"
+ },
+ {
+  "source": "wikidata",
+  "title": "L'Opéra Restaurant",
+  "desc": "restaurant à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/MezzanineOpera2.jpg",
+  "loc": "Point(2.3327065 48.8720826)",
+  "uri": "http://www.wikidata.org/entity/Q3204568"
+ },
+ {
+  "source": "wikidata",
+  "title": "Clown-Bar",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Clown-Bar%20%28int%C3%A9rieur%29.jpg",
+  "loc": "Point(2.3669 48.8636)",
+  "uri": "http://www.wikidata.org/entity/Q13518748"
+ },
+ {
+  "source": "wikidata",
+  "title": "café Riche",
+  "desc": "restaurant situé à Paris, en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20caf%C3%A9%20Riche%2C%20Paris.jpg",
+  "loc": "Point(2.3379 48.8718)",
+  "uri": "http://www.wikidata.org/entity/Q15918215"
+ },
+ {
+  "source": "wikidata",
+  "title": "Pharamond",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/P1160332%20Paris%20Ier%20rue%20gde%20truanderie%20pharamond%20rwk.jpg",
+  "loc": "Point(2.34849 48.863)",
+  "uri": "http://www.wikidata.org/entity/Q15918460"
+ },
+ {
+  "source": "wikidata",
+  "title": "Balajo",
+  "desc": "bar haut-lieu du bal musette au 9 de la rue de Lappe, Paris",
+  "types": "bar",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Balajo%2C%20Parijs.jpg",
+  "loc": "Point(2.37214804 48.85398102)",
+  "uri": "http://www.wikidata.org/entity/Q16626681"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Café du Commerce",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Caf%C3%A9%20du%20Commerce%2C%20Paris%2024%20September%202016%20001.jpg",
+  "loc": "Point(2.295506721 48.846423438)",
+  "uri": "http://www.wikidata.org/entity/Q933962"
+ },
+ {
+  "source": "wikidata",
+  "title": "cabaret-restaurant le Raspoutine",
+  "desc": "cabaret-restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entr%C3%A9e%20du%20Cabaret-restaurant%20le%20Raspoutine.JPG",
+  "loc": "Point(2.30016 48.87147)",
+  "uri": "http://www.wikidata.org/entity/Q22924731"
+ },
+ {
+  "source": "wikidata",
+  "title": "L'Escargot Montorgueil",
+  "desc": "restaurant dans le 1ᵉʳ arrondissement de Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Escargot%20Montorgueil.jpg",
+  "loc": "Point(2.346694 48.864167)",
+  "uri": "http://www.wikidata.org/entity/Q22980126"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Rostand",
+  "desc": "café à Paris, France",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Rostand%2C%206%20Place%20Edmond%20Rostand%2C%2075006%20Paris%2C%20May%202007.jpg",
+  "loc": "Point(2.340274786 48.847803157)",
+  "uri": "http://www.wikidata.org/entity/Q28494431"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Felicità",
+  "desc": "restaurant dans la Halle Freyssinet, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Felicit%C3%A0%20juin%202022%201.jpg",
+  "loc": "Point(2.3718337 48.8333368)",
+  "uri": "http://www.wikidata.org/entity/Q60846477"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Clarence",
+  "desc": "restaurant en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Clarence%2C%2031%20avenue%20Franklin-D.-Roosevelt%2C%20Paris%202021.jpg",
+  "loc": "Point(2.3098 48.8674)",
+  "uri": "http://www.wikidata.org/entity/Q60848328"
+ },
+ {
+  "source": "wikidata",
+  "title": "café des Aveugles",
+  "desc": "café à Paris, en France",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20des%20aveugles.jpg",
+  "loc": "Point(2.33879396 48.865935395)",
+  "uri": "http://www.wikidata.org/entity/Q18214244"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Pont traversé",
+  "desc": "librairie à Paris",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Pont%20travers%C3%A9%2C%2062%20rue%20de%20Vaugirard%2C%20Paris%206e.jpg",
+  "loc": "Point(2.331799053 48.848557195)",
+  "uri": "http://www.wikidata.org/entity/Q21658059"
+ },
+ {
+  "source": "wikidata",
+  "title": "brasserie Bofinger",
+  "desc": "brasserie à Paris",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasserie%20Bofinger.JPG",
+  "loc": "Point(2.368047 48.853914)",
+  "uri": "http://www.wikidata.org/entity/Q22921405"
+ },
+ {
+  "source": "wikidata",
+  "title": "Débit de boisson",
+  "desc": "bar dans le 10ᵉ arrondissement de Paris",
+  "types": "bar",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ancien%20d%C3%A9bit%20de%20boisson%2C%20rue%20du%20Faubourg-Poissonni%C3%A8re%2002.jpg",
+  "loc": "Point(2.348611 48.876667)",
+  "uri": "http://www.wikidata.org/entity/Q22921988"
+ },
+ {
+  "source": "wikidata",
+  "title": "Caffè Stern",
+  "desc": "restaurant italien à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20restaurant%20monument%20historique%20Caff%C3%A8%20Stern.png",
+  "loc": "Point(2.3417 48.87083)",
+  "uri": "http://www.wikidata.org/entity/Q84709371"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Brébant",
+  "desc": "café à Paris, France",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/32%20bd%20Poissonni%C3%A8re.jpg",
+  "loc": "Point(2.343390846 48.871619307)",
+  "uri": "http://www.wikidata.org/entity/Q109042700"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Vagenende",
+  "desc": "restaurant dans le 6ᵉ arrondissement de Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasserie%20Vagenende%202.jpg",
+  "loc": "Point(2.3375 48.85294)",
+  "uri": "http://www.wikidata.org/entity/Q1517408"
+ },
+ {
+  "source": "wikidata",
+  "title": "Bal Blomet",
+  "desc": "ancien cabaret dansant antillais et club de jazz du Paris des Années folles",
+  "types": "club de jazz",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Blomet%2033%202021%20b.jpg",
+  "loc": "Point(2.306146 48.84271)",
+  "uri": "http://www.wikidata.org/entity/Q2773263"
+ },
+ {
+  "source": "wikidata",
+  "title": "ancienne gare de Gennevilliers",
+  "desc": "gare ferroviaire française",
+  "types": "restaurant rapide",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ancienne%20gare%20de%20Gennevilliers%2001.jpg",
+  "loc": "Point(2.30493333 48.938625)",
+  "uri": "http://www.wikidata.org/entity/Q2845866"
+ },
+ {
+  "source": "wikidata",
+  "title": "Aux Trois Mailletz",
+  "desc": "restaurant et club de jazz parisien",
+  "types": "club de jazz, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aux%20Trois%20Mailletz.JPG",
+  "loc": "Point(2.346602 48.852148)",
+  "uri": "http://www.wikidata.org/entity/Q2873116"
+ },
+ {
+  "source": "wikidata",
+  "title": "Beau Regard",
+  "desc": "cinéma à Paris 6e Arrondissement, France",
+  "types": "bar, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cin%C3%A9ma%20le%20Saint-Germain-des-Pr%C3%A9s.JPG",
+  "loc": "Point(2.33331 48.8546)",
+  "uri": "http://www.wikidata.org/entity/Q3226863"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Tango",
+  "desc": "Boîte de nuit LGBT",
+  "types": "discothèque gay",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Tango%2C%2013%20rue%20au%20Maire.jpg",
+  "loc": "Point(2.356794 48.864501)",
+  "uri": "http://www.wikidata.org/entity/Q3227521"
+ },
+ {
+  "source": "wikidata",
+  "title": "Scala",
+  "desc": "salle de théâtre parisienne",
+  "types": "café-concert",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Scala%20%28Paris%29.jpg",
+  "loc": "Point(2.35453 48.8703)",
+  "uri": "http://www.wikidata.org/entity/Q3474920"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Chat qui pêche",
+  "desc": "club de jazz parisien à Paris fondé au milieu des années 1950",
+  "types": "club de jazz, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Chat%20Qui%20P%C3%AAche.jpg",
+  "loc": "Point(2.3462 48.853)",
+  "uri": "http://www.wikidata.org/entity/Q6506697"
+ },
+ {
+  "source": "wikidata",
+  "title": "café de Buci",
+  "desc": "café dans le 6e arrondissement de Paris, en France",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison%2051%20rue%20Mazarine%20et%2052%20rue%20Dauphine%2C%20Paris%202011.jpg",
+  "loc": "Point(2.33847 48.8538)",
+  "uri": "http://www.wikidata.org/entity/Q2932974"
+ },
+ {
+  "source": "wikidata",
+  "title": "café des Phares",
+  "desc": "café à Paris, en France",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20des%20Phares%2C%20Place%20de%20la%20Bastille%2C%20Paris.JPG",
+  "loc": "Point(2.36826 48.8536)",
+  "uri": "http://www.wikidata.org/entity/Q2932993"
+ },
+ {
+  "source": "wikidata",
+  "title": "café du Cadran",
+  "desc": "café et restaurant situé à Paris, en France",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cafe%20du%20cadran%20-%20Paris%202%20-%20Aout%202022%20-%20By%20Djiril5c.jpg",
+  "loc": "Point(2.33257 48.869)",
+  "uri": "http://www.wikidata.org/entity/Q2932996"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Chateaubriand",
+  "desc": "restaurant en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Chateaubriand.jpg",
+  "loc": "Point(2.3713 48.8693)",
+  "uri": "http://www.wikidata.org/entity/Q6506699"
+ },
+ {
+  "source": "wikidata",
+  "title": "Au Pied de Cochon",
+  "desc": "restaurant à Paris",
+  "types": "brasserie, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Au%20Pied%20de%20Cochon%2C%206%20Rue%20Coquilli%C3%A8re%2C%2075001%20Paris%2C%20France%20May%202017.jpg",
+  "loc": "Point(2.343778082 48.863501953)",
+  "uri": "http://www.wikidata.org/entity/Q12713563"
+ },
+ {
+  "source": "wikidata",
+  "title": "L'Atelier Renault",
+  "desc": "lieu présentant au public des véhicules Renault, incluant boutique, restaurant (Le 53) et salon de lecture, où sont aussi organisées des expositions temporaires",
+  "types": "bar, restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Atelier%20Renault.jpg",
+  "loc": "Point(2.30542 48.87011)",
+  "uri": "http://www.wikidata.org/entity/Q16529272"
+ },
+ {
+  "source": "wikidata",
+  "title": "auberge du soleil d'or",
+  "desc": "",
+  "types": "auberge",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Panneau%20Histoire%20de%20Paris%2C%20Auberge%20du%20soleil%20d%27or%2C%20226%20rue%20de%20Vaugirard%2C%20Paris%2015e.jpg",
+  "loc": "Point(2.305 48.840833333)",
+  "uri": "http://www.wikidata.org/entity/Q2870564"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Zimmer",
+  "desc": "",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Zimmer%2C%20restaurant%20in%20Paris.jpg",
+  "loc": "Point(2.34681 48.8578)",
+  "uri": "http://www.wikidata.org/entity/Q3228350"
+ },
+ {
+  "source": "wikidata",
+  "title": "Auteuil Brasserie",
+  "desc": "brasserie italienne à Paris",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasserie%20d%27Auteuil%2C%2078%20rue%20d%27Auteuil%2C%20Paris%2016e%201.jpg",
+  "loc": "Point(2.25986993 48.848329332)",
+  "uri": "http://www.wikidata.org/entity/Q115242500"
+ },
+ {
+  "source": "wikidata",
+  "title": "À La Tour Eiffel",
+  "desc": "brasserie parisienne",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20la%20tour%20eiffel%20-%20Paris%2015%20-%20Decembre%202022%20-%202.jpg",
+  "loc": "Point(2.292956668 48.843815155)",
+  "uri": "http://www.wikidata.org/entity/Q116218043"
+ },
+ {
+  "source": "wikidata",
+  "title": "Au Roi du Café",
+  "desc": "café parisien",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Au%20roi%20du%20caf%C3%A9%20-%20Paris%2015%20-%20Decembre%202022%20-%204.jpg",
+  "loc": "Point(2.306596265 48.843655212)",
+  "uri": "http://www.wikidata.org/entity/Q116281585"
+ },
+ {
+  "source": "wikidata",
+  "title": "Bistro Mon Rêve",
+  "desc": "restaurant parisien",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bistro%20Mon%20Reve%20-%20Paris%2015%20-%20Decembre%202022%20-%20close%20up.jpg",
+  "loc": "Point(2.285340582 48.840236599)",
+  "uri": "http://www.wikidata.org/entity/Q116281859"
+ },
+ {
+  "source": "wikidata",
+  "title": "café des Ambassadeurs",
+  "desc": "café-concert à Paris, France",
+  "types": "café-concert, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20des%20Ambassadeurs%2C%20ca.%201880%E2%80%931910.jpg",
+  "loc": "Point(2.318583333 48.867472222)",
+  "uri": "http://www.wikidata.org/entity/Q128693188"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant Latin Saint Jacques",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20Latin%20Saint%20Jacques%20in%20Paris%20in%202025%20-%2001.jpg",
+  "loc": "Point(2.3461846 48.8522756)",
+  "uri": "http://www.wikidata.org/entity/Q137714384"
+ },
+ {
+  "source": "wikidata",
+  "title": "Les Pipos",
+  "desc": "bistro de Paris",
+  "types": "bistro",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Street%20portrait%20%2847063631132%29.jpg",
+  "loc": "Point(2.3483416 48.8474772)",
+  "uri": "http://www.wikidata.org/entity/Q139987155"
+ },
+ {
+  "source": "wikidata",
+  "title": "Librairie L'instant",
+  "desc": "librairie à Paris",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Librairie%20L%27instant%20-%20Paris%20XV%20%2850489232667%29.jpg",
+  "loc": "Point(2.285770576 48.842519113)",
+  "uri": "http://www.wikidata.org/entity/Q109353160"
+ },
+ {
+  "source": "wikidata",
+  "title": "Friendlies",
+  "desc": "café et librairie queer parisienne",
+  "types": "bar LGBTQIA+, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Friendlies%2003.jpg",
+  "loc": "Point(2.3742974 48.8537435)",
+  "uri": "http://www.wikidata.org/entity/Q109391996"
+ },
+ {
+  "source": "wikidata",
+  "title": "Restaurants du Monde",
+  "desc": "restaurant au Carrousel du Louvre, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurants%20du%20monde%2C%20Le%20Caroussel%20du%20Louvre%20n6.jpg",
+  "loc": "Point(2.334397729 48.862270676)",
+  "uri": "http://www.wikidata.org/entity/Q109544932"
+ },
+ {
+  "source": "wikidata",
+  "title": "Café Campana",
+  "desc": "café du musée d'Orsay, Paris",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20caf%C3%A9%20Campana%2C%20mus%C3%A9e%20d%27Orsay%2C%20Paris%2016%20August%202013.jpg",
+  "loc": "Point(2.326178402 48.860295023)",
+  "uri": "http://www.wikidata.org/entity/Q110653215"
+ },
+ {
+  "source": "wikidata",
+  "title": "Restaurant du Musée d'Orsay",
+  "desc": "restaurant du musée d'Orsay, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20of%20the%20Mus%C3%A9e%20d%27Orsay%20%2852257045593%29.jpg",
+  "loc": "Point(2.32546605 48.859989151)",
+  "uri": "http://www.wikidata.org/entity/Q110655333"
+ },
+ {
+  "source": "wikidata",
+  "title": "American Dream",
+  "desc": "restaurant de style américain à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/American%20Dream%2C%2021%20rue%20Daunou%2C%20Paris%204%20June%202010.jpg",
+  "loc": "Point(2.330297581 48.870012377)",
+  "uri": "http://www.wikidata.org/entity/Q110692456"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le 53",
+  "desc": "restaurant-bar de L'Atelier Renault à Paris, France",
+  "types": "bar, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%2053%20Restaurant%20Bar%20by%20L%27Atelier%20Renault%20%C3%A0%20Paris%20le%209%20avril%202018%20-%2012.jpg",
+  "loc": "Point(2.30539 48.87008)",
+  "uri": "http://www.wikidata.org/entity/Q110713740"
+ },
+ {
+  "source": "wikidata",
+  "title": "Sushirama",
+  "desc": "restaurant japonais à Paris, France",
+  "types": "restaurant japonais",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20Sushirama%20%28Paris%29%20en%20juin%202022.JPG",
+  "loc": "Point(2.35792 48.87328)",
+  "uri": "http://www.wikidata.org/entity/Q112701227"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Relais de Venise",
+  "desc": "restaurant à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Relais%20de%20Venise%20-%20L%27Entrecote%20%28Porte%20Maillot%20Paris%20XVIIe%29%202009-06-13.jpg",
+  "loc": "Point(2.285130436 48.878037362)",
+  "uri": "http://www.wikidata.org/entity/Q112823388"
+ },
+ {
+  "source": "wikidata",
+  "title": "Bouillon Chartier Montparnasse",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bouillon%20Chartier%20Montparnasse.jpg",
+  "loc": "Point(2.323246798 48.844309555)",
+  "uri": "http://www.wikidata.org/entity/Q113549119"
+ },
+ {
+  "source": "wikidata",
+  "title": "Moulin de la Galette",
+  "desc": "restaurant situé au pied du moulin Radet ; l'ancien restaurant avec une grande salle de bal qui a fait l'objet de nombreuses peintures était située au pied du moulin Blute-Fin",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Moulin%20de%20la%20Galette%2C%20Montmartre%2C%20Paris%20October%202016%20001.jpg",
+  "loc": "Point(2.337129155 48.887395597)",
+  "uri": "http://www.wikidata.org/entity/Q113644732"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Popul'Air",
+  "desc": "café-théâtre à Paris",
+  "types": "café-théâtre",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/P1320869%20Paris%20XX%20rue%20Henri-Chevreau%20cafe%20theatre%20Le%20Popul%20air%20rwk.jpg",
+  "loc": "Point(2.38905167 48.870382676)",
+  "uri": "http://www.wikidata.org/entity/Q114819861"
+ },
+ {
+  "source": "wikidata",
+  "title": "Les Deux Palais",
+  "desc": "brasserie à Paris",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasserie%20Les%20Deux%20Palais-7808829%20copy%20%2852096450191%29.jpg",
+  "loc": "Point(2.346062105 48.855154679)",
+  "uri": "http://www.wikidata.org/entity/Q115177420"
+ },
+ {
+  "source": "wikidata",
+  "title": "Au Vieux Paris d'Arcole",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Au%20Vieux%20Paris%20d%27Arcole%2C%2024%20Rue%20Chanoinesse%2C%2075004%20Paris%2C%201%20May%202018.jpg",
+  "loc": "Point(2.350272676 48.854238306)",
+  "uri": "http://www.wikidata.org/entity/Q115180413"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant Prunier",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RestaurantPrunier.jpg",
+  "loc": "Point(2.291663 48.872531)",
+  "uri": "http://www.wikidata.org/entity/Q22922272"
+ },
+ {
+  "source": "wikidata",
+  "title": "café-bar « Le Pigalle »",
+  "desc": "café-bar à Paris",
+  "types": "bar, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bouillon%20Pigalle.jpg",
+  "loc": "Point(2.33746445 48.882650159)",
+  "uri": "http://www.wikidata.org/entity/Q22922282"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant « La Bouteille d'or »",
+  "desc": "restaurant dans le 5ᵉ arrondissement de Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Immeuble%209%20quai%20de%20Montebello%2C%20Paris%202014.jpg",
+  "loc": "Point(2.349444 48.851667)",
+  "uri": "http://www.wikidata.org/entity/Q22924449"
+ },
+ {
+  "source": "wikidata",
+  "title": "Débit de boisson « Au petit Maure »",
+  "desc": "bar dans le 6ᵉ arrondissement de Paris",
+  "types": "bar",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%2075006%20Rue%20de%20Seine%20no%2026%20enseigne%20Au%20Petit%20Maure%20%282%29.jpg",
+  "loc": "Point(2.336667 48.855556)",
+  "uri": "http://www.wikidata.org/entity/Q22924486"
+ },
+ {
+  "source": "wikidata",
+  "title": "Débit de boisson",
+  "desc": "bar dans le 6ᵉ arrondissement de Paris",
+  "types": "bar",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grille%201%20rue%20Guisarde.JPG",
+  "loc": "Point(2.335278 48.851944)",
+  "uri": "http://www.wikidata.org/entity/Q22924485"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Montparnasse 1900",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20Rougeot%20%28actuel%20bistrot%20de%20la%20Gare%29%2C%20Paris%2022%20septembre%202013.jpg",
+  "loc": "Point(2.32331 48.84431)",
+  "uri": "http://www.wikidata.org/entity/Q22924608"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant des Saints-Pères",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Devanture%20Restaurant%20Saints-P%C3%A8res.JPG",
+  "loc": "Point(2.33049 48.85427)",
+  "uri": "http://www.wikidata.org/entity/Q22924609"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant le Relais-Plaza",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20le%20Relais-Plaza%202013-09-22%2018-21-44.jpg",
+  "loc": "Point(2.30393 48.86608)",
+  "uri": "http://www.wikidata.org/entity/Q22975816"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Mercure galant",
+  "desc": "restaurant dans le 1ᵉʳ arrondissement de Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20le%20Mercure%20Galant.jpg",
+  "loc": "Point(2.338056 48.866361)",
+  "uri": "http://www.wikidata.org/entity/Q22980122"
+ },
+ {
+  "source": "wikidata",
+  "title": "L'Atelier de Joël Robuchon - Saint-Germain",
+  "desc": "restaurant en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Atelier%20de%20Jo%C3%ABl%20Robuchon.jpg",
+  "loc": "Point(2.3275 48.856611)",
+  "uri": "http://www.wikidata.org/entity/Q28057192"
+ },
+ {
+  "source": "wikidata",
+  "title": "L'Horloge",
+  "desc": "café-concert à Paris",
+  "types": "café-concert",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Horloge.%20Champs%20Elys%C3%A9es.%20Le%20seul%20Concert%20d%27%C3%A9t%C3%A9%20couvert%20en%20cas%20de%20pluie.%20Yvette%20Guilbert.jpg",
+  "loc": "Point(2.317222222 48.865555555)",
+  "uri": "http://www.wikidata.org/entity/Q47544984"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Chalet des Îles",
+  "desc": "bâtiment et restaurant au Bois de Boulogne",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chalet%20des%20Iles%2C%20Bois%20de%20Boulogne%2C%20Paris%202017%20002.jpg",
+  "loc": "Point(2.26028 48.86355)",
+  "uri": "http://www.wikidata.org/entity/Q52981191"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Balle au Bond",
+  "desc": "bateau théâtre à Paris, France",
+  "types": "",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Balle%20au%20Bond%20and%20Jeanne%20Moreau%2C%208%20May%202016.jpg",
+  "loc": "Point(2.3362 48.85813)",
+  "uri": "http://www.wikidata.org/entity/Q65947847"
+ },
+ {
+  "source": "wikidata",
+  "title": "Au Cadet de Gascogne",
+  "desc": "restaurant et cabaret artistique à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Au%20Cadet%20de%20Gascogne%2C%20Paris%2027%20March%202019%20002.jpg",
+  "loc": "Point(2.34098 48.88673)",
+  "uri": "http://www.wikidata.org/entity/Q65948790"
+ },
+ {
+  "source": "wikidata",
+  "title": "La sole Marguery",
+  "desc": "grand restaurant parisien du XIXe siècle",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade%20de%20l%27h%C3%B4tel%20Marguery%20%C3%A0%20c%C3%B4t%C3%A9%20du%20th%C3%A9%C3%A2tre%20du%20Gymnase%2C%20boulevard%20Bonne%20Nouvelle%2C%2010%C3%A8me%20arrondissement%2C%20Paris.%20PH78277.jpg",
+  "loc": "Point(2.349269 48.870758)",
+  "uri": "http://www.wikidata.org/entity/Q16652967"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Café Marly",
+  "desc": "café-restaurant situé au Louvre, à Paris",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Caf%C3%A9%20Marly%2C%20Louvre%20Museum%2C%20Paris%2019%20April%202013.jpg",
+  "loc": "Point(2.33561 48.86176)",
+  "uri": "http://www.wikidata.org/entity/Q17305044"
+ },
+ {
+  "source": "wikidata",
+  "title": "maison de la culture arménienne de Paris",
+  "desc": "centre culturel dédié à la culture arménienne en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison%20de%20la%20Culture%20Arm%C3%A9nienne%20%28Paris%29%20-%201.JPG",
+  "loc": "Point(2.34612 48.87581)",
+  "uri": "http://www.wikidata.org/entity/Q22670574"
+ },
+ {
+  "source": "wikidata",
+  "title": "café-bar, 91 rue Saint-Denis, 79 rue Rambuteau",
+  "desc": "café-bar à Paris",
+  "types": "bar, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Ancien%20caf%C3%A9-bar%20au%2091%20rue%20Saint-Denis%202.jpg",
+  "loc": "Point(2.349444 48.862222)",
+  "uri": "http://www.wikidata.org/entity/Q22920962"
+ },
+ {
+  "source": "wikidata",
+  "title": "café-bar, 3 rue Étienne-Marcel",
+  "desc": "café-bar à Paris",
+  "types": "bar, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%203%20rue%20%C3%89tienne-Marcel.JPG",
+  "loc": "Point(2.350556 48.863611)",
+  "uri": "http://www.wikidata.org/entity/Q22920960"
+ },
+ {
+  "source": "wikidata",
+  "title": "café-Bar « Le cochon à l'oreille »",
+  "desc": "bar dans le 1ᵉʳ arrondissement de Paris",
+  "types": "bar",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris.%20Le%20Cochon%20a%20l%27oreille.jpg",
+  "loc": "Point(2.345278 48.864444)",
+  "uri": "http://www.wikidata.org/entity/Q22920961"
+ },
+ {
+  "source": "wikidata",
+  "title": "café-bar, 143 rue Saint-Denis",
+  "desc": "café-bar à Paris",
+  "types": "bar, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20bar%20fa%C3%A7ade.jpg",
+  "loc": "Point(2.350278 48.864444)",
+  "uri": "http://www.wikidata.org/entity/Q22921176"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant du Journal",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20-%20Le%20Journal%2014.JPG",
+  "loc": "Point(2.339486 48.870653)",
+  "uri": "http://www.wikidata.org/entity/Q22921240"
+ },
+ {
+  "source": "wikidata",
+  "title": "café-bar, 105 rue du Temple",
+  "desc": "café-bar à Paris",
+  "types": "bar, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/105%20rue%20du%20Temple.jpg",
+  "loc": "Point(2.3575 48.862222)",
+  "uri": "http://www.wikidata.org/entity/Q22921255"
+ },
+ {
+  "source": "wikidata",
+  "title": "Chez Julien",
+  "desc": "restaurant, ancienne boulangerie à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/P1030898%20Paris%20IV%20rue%20de%20l%27H%C3%B4tel-de-Ville%20rue%20du%20Pont-Louis-Philippe%20Chez%20Julien%20MH%20rwk.JPG",
+  "loc": "Point(2.355156238 48.854758619)",
+  "uri": "http://www.wikidata.org/entity/Q22921399"
+ },
+ {
+  "source": "wikidata",
+  "title": "café-bar « Le Carrefour »",
+  "desc": "café-bar à Paris",
+  "types": "bar, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Charonne-Bistrot%20du%20Peintre%203.JPG",
+  "loc": "Point(2.3775 48.853333)",
+  "uri": "http://www.wikidata.org/entity/Q22922068"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Chardenoux",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20-%20Restaurant%20Chardenoux%2003.jpg",
+  "loc": "Point(2.385278 48.8525)",
+  "uri": "http://www.wikidata.org/entity/Q22922079"
+ },
+ {
+  "source": "wikidata",
+  "title": "relais de poste de la Barrière d'Enfer",
+  "desc": "relais de poste à Paris",
+  "types": "relais routier",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/14e%20arrondissement%20de%20Paris%20-%20relais%20de%20poste%20de%20la%20Barri%C3%A8re%20d%27Enfer%20-%2020161030175624.jpg",
+  "loc": "Point(2.334469 48.836112)",
+  "uri": "http://www.wikidata.org/entity/Q22922154"
+ },
+ {
+  "source": "wikidata",
+  "title": "Aviatic Bar",
+  "desc": "café dans le 15ᵉ arrondissement de Paris",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bar%20Rue%20de%20Vaugirard.JPG",
+  "loc": "Point(2.292933 48.835687)",
+  "uri": "http://www.wikidata.org/entity/Q22922156"
+ },
+ {
+  "source": "wikidata",
+  "title": "café « Le Relais du métro »",
+  "desc": "café dans le 15ᵉ arrondissement de Paris",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20%C2%AB%20Le%20Relais%20du%20m%C3%A9tro%20%C2%BB%202012-09-08%2011-12-57.jpg",
+  "loc": "Point(2.288889 48.854444)",
+  "uri": "http://www.wikidata.org/entity/Q22922166"
+ },
+ {
+  "source": "wikidata",
+  "title": "Beurre & Oeufs",
+  "desc": "boutique d'antiquités à Paris, France",
+  "types": "glacier",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%2C%20%22Au%20Facteur%20Cheval%22%2C%2011%20March%202017.jpg",
+  "loc": "Point(2.283333 48.844167)",
+  "uri": "http://www.wikidata.org/entity/Q22922168"
+ },
+ {
+  "source": "wikidata",
+  "title": "café-bar, 5 rue Mesnil",
+  "desc": "café-bar à Paris",
+  "types": "bar, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/CafeMesnil.jpg",
+  "loc": "Point(2.285 48.869167)",
+  "uri": "http://www.wikidata.org/entity/Q22922207"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Tire Bouchon",
+  "desc": "ancien cabaret artistique de Paris, France, aujourd'hui une crêperie",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Tire%20Bouchon%2C%209%20Rue%20Norvins%2C%2075018%20Paris%2C%20August%202013.jpg",
+  "loc": "Point(2.33981 48.88694)",
+  "uri": "http://www.wikidata.org/entity/Q81170106"
+ },
+ {
+  "source": "wikidata",
+  "title": "restaurant de l'Horloge",
+  "desc": "restaurant situé à Joinville-le-Pont",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20Horloge%20-%20Joinville-le-Pont%20%28FR94%29%20-%202020-08-25%20-%201.jpg",
+  "loc": "Point(2.47027 48.82913)",
+  "uri": "http://www.wikidata.org/entity/Q88230720"
+ },
+ {
+  "source": "wikidata",
+  "title": "auberge aux Bibelots du Diable",
+  "desc": "restaurant situé à Joinville-le-Pont",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Auberge%20Bibelots%20Diable%20-%20Joinville-le-Pont%20%28FR94%29%20-%202021-02-04%20-%202.jpg",
+  "loc": "Point(2.47549 48.81574)",
+  "uri": "http://www.wikidata.org/entity/Q88230728"
+ },
+ {
+  "source": "wikidata",
+  "title": "auberge de la Tourelle",
+  "desc": "auberge située à Maions-Alfort, en France",
+  "types": "auberge",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Auberge%20Tourelle%20-%20Maisons-Alfort%20%28FR94%29%20-%202021-02-25%20-%204.jpg",
+  "loc": "Point(2.451781 48.814625)",
+  "uri": "http://www.wikidata.org/entity/Q88329219"
+ },
+ {
+  "source": "wikidata",
+  "title": "café Au Lion d'Or",
+  "desc": "café situé à Ivry-sur-Seine, en France",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9%20Lion%20Or%20-%20Ivry-sur-Seine%20%28FR94%29%20-%202021-01-17%20-%201.jpg",
+  "loc": "Point(2.39603 48.80344)",
+  "uri": "http://www.wikidata.org/entity/Q88403235"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Belle Équipe",
+  "desc": "bar parisien",
+  "types": "bar",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris.%20Ma%20ville.%20La%20belle%20equipe.%20rue%20de%20Charonne.%20Not%20afraid.%20Fluctuat%20nec%20mergitur.%20%2822669504418%29.jpg",
+  "loc": "Point(2.382131 48.853849)",
+  "uri": "http://www.wikidata.org/entity/Q96012599"
+ },
+ {
+  "source": "wikidata",
+  "title": "guinguette au Vrai Arbre de Robinson",
+  "desc": "guinguette située au Plessis-Robinson, dans les Hauts-de-Seine",
+  "types": "guinguette",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Carte%20postale%20-%20Le%20Plessis-Robinson%20-%20Int%C3%A9rieur%20des%20Jardins%20du%20Restaurant%20du%20Vrai%20arbre.jpg",
+  "loc": "Point(2.27247 48.77827)",
+  "uri": "http://www.wikidata.org/entity/Q96605560"
+ },
+ {
+  "source": "wikidata",
+  "title": "guinguette au Grand Arbre",
+  "desc": "guinguette située au Plessis-Robinson, dans les Hauts-de-Seine",
+  "types": "guinguette",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Robinson%20restaurant%20du%20grand%20arbre%20wiki.jpg",
+  "loc": "Point(2.271601902 48.778971325)",
+  "uri": "http://www.wikidata.org/entity/Q96606046"
+ },
+ {
+  "source": "wikidata",
+  "title": "guinguette de l'Ermitage",
+  "desc": "guinguette située au Plessis-Robinson, dans les Hauts-de-Seine",
+  "types": "guinguette",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Vestige%20des%20guinguettes%2C%20L%27Ermitage%20-%20panoramio.jpg",
+  "loc": "Point(2.266162941 48.776315217)",
+  "uri": "http://www.wikidata.org/entity/Q96606048"
+ },
+ {
+  "source": "wikidata",
+  "title": "guinguette du Pavillon la Fontaine",
+  "desc": "guinguette située au Plessis-Robinson, dans les Hauts-de-Seine",
+  "types": "guinguette",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ancienne%20guinguette%20%28caf%C3%A9%20La%20Fontaine%29%20-%20panoramio.jpg",
+  "loc": "Point(2.267795302 48.776586004)",
+  "uri": "http://www.wikidata.org/entity/Q96606252"
+ },
+ {
+  "source": "wikidata",
+  "title": "auberge Au Père Lapin",
+  "desc": "auberge située à Suresnes, dans les Hauts-de-Seine",
+  "types": "auberge",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Auberge%20Au%20Pere%20Lapin%20186%20Bd%20Washington%20Suresnes.jpg",
+  "loc": "Point(2.218446984 48.872947288)",
+  "uri": "http://www.wikidata.org/entity/Q96612891"
+ },
+ {
+  "source": "wikidata",
+  "title": "brasserie de la Meuse",
+  "desc": "brasserie située à Sèvres, dans les Hauts-de-Seine",
+  "types": "brasserie",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Carte%20postale%20-%20S%C3%A8vres%20-%20Brasserie%20de%20la%20Meuse%20-%209FI-SEV%20346.jpg",
+  "loc": "Point(2.209982197 48.82460223)",
+  "uri": "http://www.wikidata.org/entity/Q96612919"
+ },
+ {
+  "source": "wikidata",
+  "title": "Angelina Rivoli",
+  "desc": "salon de thé, restaurant à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/AngelinaParis.JPG",
+  "loc": "Point(2.328446082 48.865092887)",
+  "uri": "http://www.wikidata.org/entity/Q103462303"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Consulat",
+  "desc": "restaurant à Montmartre, Paris",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Rue%20Norvins%202.jpg",
+  "loc": "Point(2.339878303 48.887066541)",
+  "uri": "http://www.wikidata.org/entity/Q103844498"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Bonne Franquette",
+  "desc": "restaurant à Montmartre, Paris",
+  "types": "restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20des%20Saules%2C%20Paris%2018%20October%202012%20002.jpg",
+  "loc": "Point(2.33984855 48.887171834)",
+  "uri": "http://www.wikidata.org/entity/Q103845316"
+ },
+ {
+  "source": "wikidata",
+  "title": "Buddha Bar",
+  "desc": "restaurant, bar à Paris, France",
+  "types": "bar, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Buddha%20Bar%20door.jpg",
+  "loc": "Point(2.320663681 48.8694576)",
+  "uri": "http://www.wikidata.org/entity/Q103892421"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Petit Cambodge",
+  "desc": "restaurant à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Shootings%20-%20The%20day%20after%20%2823011898735%29.jpg",
+  "loc": "Point(2.368125183 48.871685242)",
+  "uri": "http://www.wikidata.org/entity/Q104637509"
+ },
+ {
+  "source": "wikidata",
+  "title": "Hôtel du Nord",
+  "desc": "restaurant, ancien hôtel à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20du%20Nord%2C%2012%20April%202013.jpg",
+  "loc": "Point(2.364111668 48.873587958)",
+  "uri": "http://www.wikidata.org/entity/Q105564314"
+ },
+ {
+  "source": "wikidata",
+  "title": "Au Vieux Comptoir",
+  "desc": "restaurant à Paris, France",
+  "types": "bistro, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Au%20Vieux%20Comptoir%201%2C%20Rue%20des%20Lavandi%C3%A8res%20Sainte-Opportune%2C%2075001%20Paris%202011.jpg",
+  "loc": "Point(2.34598979 48.85884314)",
+  "uri": "http://www.wikidata.org/entity/Q105582654"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Troubadour",
+  "desc": "restaurant à Montmartre, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Troubadour%2C%20Montmartre%2C%20Paris%2023%20April%202017%2001.jpg",
+  "loc": "Point(2.339520453 48.886736379)",
+  "uri": "http://www.wikidata.org/entity/Q105603744"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Poulbot",
+  "desc": "restaurant à Montmartre, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Poulbot%20Cafe%20In%20Montmartre%2C%20Paris%20April%202014.jpg",
+  "loc": "Point(2.339884357 48.886875329)",
+  "uri": "http://www.wikidata.org/entity/Q105605308"
+ },
+ {
+  "source": "wikidata",
+  "title": "Pavillon Montsouris",
+  "desc": "restaurant à Paris, France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20pavillon%20Montsouris%20dans%20le%20parc%20Montsouris%2C%20Paris%2C%20France.jpg",
+  "loc": "Point(2.340568123 48.822245121)",
+  "uri": "http://www.wikidata.org/entity/Q108793794"
+ },
+ {
+  "source": "wikidata",
+  "title": "Rosa Bonheur Buttes Chaumont",
+  "desc": "restaurant dans le parc des Buttes-Chaumont, Paris",
+  "types": "guinguette, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosa%20Bonheur%2C%20Paris%205%20June%202015.jpg",
+  "loc": "Point(2.386267151 48.879988476)",
+  "uri": "http://www.wikidata.org/entity/Q108810458"
+ },
+ {
+  "source": "wikidata",
+  "title": "Laurent",
+  "desc": "restaurant dans le quartier des Champs-Élysées, à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20Laurent%20-%20Champs%20Elys%C3%A9es%20-%20Paris.JPG",
+  "loc": "Point(2.313142666 48.869244869)",
+  "uri": "http://www.wikidata.org/entity/Q108824569"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Grande Cascade",
+  "desc": "restaurant dans le bois de Boulogne, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Restaurant%20La%20Grande%20Cascade%2C%20bois%20de%20Boulogne%2C%20Paris%2016e%203.jpg",
+  "loc": "Point(2.240459451 48.86262528)",
+  "uri": "http://www.wikidata.org/entity/Q108831635"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Relais du Bois de Boulogne",
+  "desc": "restaurant abandonné à Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Relais%20du%20bois%20de%20Boulogne%2C%20bois%20de%20Boulogne%2C%20Paris%2016e%203.jpg",
+  "loc": "Point(2.254433973 48.866854151)",
+  "uri": "http://www.wikidata.org/entity/Q108836328"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Bohême du Tertre",
+  "desc": "restaurant à Montmartre, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cabaret%20de%20la%20Boheme%20September%2019%2C%202005.jpg",
+  "loc": "Point(2.341130025 48.886740541)",
+  "uri": "http://www.wikidata.org/entity/Q108899912"
+ },
+ {
+  "source": "wikidata",
+  "title": "Au Clairon des Chasseurs",
+  "desc": "restaurant à Montmartre, Paris",
+  "types": "brasserie, restaurant, café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montmartre%20cafes%2C%20Paris%2027%20April%202018.jpg",
+  "loc": "Point(2.341127709 48.886536584)",
+  "uri": "http://www.wikidata.org/entity/Q108900093"
+ },
+ {
+  "source": "wikidata",
+  "title": "Chez Eugène",
+  "desc": "restaurant à Montmartre, Paris",
+  "types": "brasserie, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chez%20Eugene%20-%20Place%20du%20Tertre.JPG",
+  "loc": "Point(2.340550086 48.886617223)",
+  "uri": "http://www.wikidata.org/entity/Q108900680"
+ },
+ {
+  "source": "wikidata",
+  "title": "58 Tour Eiffel",
+  "desc": "restaurant au premier étage de la Tour Eiffel, Paris",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/58%20Tour%20Eiffel%20restaurant%2C%20Paris%20April%202011.jpg",
+  "loc": "Point(2.2942664 48.858442276)",
+  "uri": "http://www.wikidata.org/entity/Q108913701"
+ },
+ {
+  "source": "wikidata",
+  "title": "La Mouette Rieuse",
+  "desc": "librairie à Paris",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Librairie%20La%20Mouette%20Rieuse%20-%20Paris%20%2835176711825%29.jpg",
+  "loc": "Point(2.361276698 48.85680034)",
+  "uri": "http://www.wikidata.org/entity/Q109349914"
+ },
+ {
+  "source": "wikidata",
+  "title": "brasserie Chez Jenny",
+  "desc": "restaurant français",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chez%20Jenny%2C%2039%20Boulevard%20du%20Temple%2C%20Paris%202006.jpg",
+  "loc": "Point(2.364638888 48.866083333)",
+  "uri": "http://www.wikidata.org/entity/Q16627059"
+ },
+ {
+  "source": "wikidata",
+  "title": "Chez Castel",
+  "desc": "",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chez%20Castel.jpg",
+  "loc": "Point(2.334586 48.852025)",
+  "uri": "http://www.wikidata.org/entity/Q2963161"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Renard Café",
+  "desc": "",
+  "types": "café",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Renard%20Caf%C3%A9%20%2875005%29%20%2851697344466%29.jpg",
+  "loc": "Point(2.351422779 48.846281785)",
+  "uri": "http://www.wikidata.org/entity/Q109731289"
+ },
+ {
+  "source": "wikidata",
+  "title": "Ze Baar",
+  "desc": "",
+  "types": "bar LGBTQIA+",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ze%20Baar%201.jpg",
+  "loc": "Point(2.35501 48.8596845)",
+  "uri": "http://www.wikidata.org/entity/Q125726820"
+ },
+ {
+  "source": "wikidata",
+  "title": "Les Nautes",
+  "desc": "bar-restaurant à Paris, France",
+  "types": "bar, restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Les%20Nautes%2C%201%20Quai%20des%20C%C3%A9lestins%2C%20Paris%20July%202015.jpg",
+  "loc": "Point(2.36031 48.852236)",
+  "uri": "http://www.wikidata.org/entity/Q112625391"
+ },
+ {
+  "source": "wikidata",
+  "title": "Jo Goldenberg",
+  "desc": "restaurant parisien",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jo%20Goldenberg%20restaurant%2C%20Paris%2012%20June%202005.jpg",
+  "loc": "Point(2.359869444 48.856866666)",
+  "uri": "http://www.wikidata.org/entity/Q26820239"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Floréal",
+  "desc": "restaurant à Paris (France)",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20-%20Le%20Flor%C3%A9al%20%2827819865416%29.jpg",
+  "loc": "Point(2.371083 48.870178)",
+  "uri": "http://www.wikidata.org/entity/Q67593171"
+ },
+ {
+  "source": "wikidata",
+  "title": "Pierre Gagnaire",
+  "desc": "restaurant en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20Balzac%2C%206%20rue%20Balzac%2C%20Paris%208e.jpg",
+  "loc": "Point(2.3005 48.8733)",
+  "uri": "http://www.wikidata.org/entity/Q84612318"
+ },
+ {
+  "source": "wikidata",
+  "title": "Guy Savoy",
+  "desc": "restaurant en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brigade%20guy%20savoy.jpg",
+  "loc": "Point(2.3395 48.8565)",
+  "uri": "http://www.wikidata.org/entity/Q84613055"
+ },
+ {
+  "source": "wikidata",
+  "title": "Épicure",
+  "desc": "restaurant en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Bristol%20Paris.jpg",
+  "loc": "Point(2.3148 48.8717)",
+  "uri": "http://www.wikidata.org/entity/Q84719171"
+ },
+ {
+  "source": "wikidata",
+  "title": "Alain Ducasse au Plaza Athénée",
+  "desc": "restaurant en France",
+  "types": "restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/PorteAth%C3%A9n%C3%A9e.jpg",
+  "loc": "Point(2.3044 48.8663)",
+  "uri": "http://www.wikidata.org/entity/Q84730452"
+ },
+ {
+  "source": "wikidata",
+  "title": "Kei",
+  "desc": "restaurant en France",
+  "types": "",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/P1160395%20Paris%20Ier%20rue%20Coq-H%C3%A9ron%20n%C2%B05%20et%207%20rwk.jpg",
+  "loc": "Point(2.3421 48.8644)",
+  "uri": "http://www.wikidata.org/entity/Q84768921"
+ },
+ {
+  "source": "wikidata",
+  "title": "Le Bar'Ouf",
+  "desc": "bar lesbien à Paris",
+  "types": "bar lesbien, bar gay",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20bar%27ouf%20-%20Paris.jpg",
+  "loc": "Point(2.352252 48.862596)",
+  "uri": "http://www.wikidata.org/entity/Q88553596"
+ },
+ {
+  "source": "osm",
+  "title": "Les Deux Magots",
+  "desc": "Café parisien, restaurant et café littéraire historique et institutionnel du quartier Saint-Germain-des-Prés de Paris. Il décerne le prix des Deux Magots, prix littéraire annuel depuis 1933.",
+  "types": " cafe",
+  "photo": "https://lesdeuxmagots.fr/wp-content/uploads/2021/08/les-deux-magots-terrasse-entree800x530.jpg",
+  "loc": "48.854069,2.3330634",
+  "uri": "osm:node/251699775"
+ },
+ {
+  "source": "osm",
+  "title": "Columbus Café & Co",
+  "desc": "",
+  "types": "coffee_shop cafe",
+  "photo": "https://www.columbuscafe.com/wp-content/uploads/2020/03/Paris-diderot-shoootin-photo-1-9-scaled.jpg",
+  "loc": "48.8463782,2.3799128",
+  "uri": "osm:node/589495688"
+ },
+ {
+  "source": "osm",
+  "title": "Casa Festa",
+  "desc": "",
+  "types": "pizza;italian restaurant",
+  "photo": "https://casafesta.fr/wp-content/uploads/2018/11/casa_festa_restaurant_pizzeria_logo_en_construction.png",
+  "loc": "48.8625897,2.34081",
+  "uri": "osm:node/681430409"
+ },
+ {
+  "source": "osm",
+  "title": "Le Nouveau Paris",
+  "desc": "",
+  "types": " restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le-Nouveau-Paris.png?width=800",
+  "loc": "48.8944814,2.2670121",
+  "uri": "osm:node/947307456"
+ },
+ {
+  "source": "osm",
+  "title": "In Paradiso",
+  "desc": "",
+  "types": "pizza restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/In-Paradiso.png?width=800",
+  "loc": "48.8946189,2.2667966",
+  "uri": "osm:node/1151311322"
+ },
+ {
+  "source": "osm",
+  "title": "Chéri-Chérie",
+  "desc": "",
+  "types": " cafe",
+  "photo": "https://tinyurl.com/26rkp7v9,https://tinyurl.com/29jz27uu,https://tinyurl.com/2p9ehfdu,https://tinyurl.com/yz557n2f,https://tinyurl.com/2p9879va",
+  "loc": "48.8730171,2.4047378",
+  "uri": "osm:node/2206746829"
+ },
+ {
+  "source": "osm",
+  "title": "Ze Baar",
+  "desc": "",
+  "types": " bar",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ze_Baar_1.jpg?width=800",
+  "loc": "48.859686,2.3550077",
+  "uri": "osm:node/4560139431"
+ },
+ {
+  "source": "osm",
+  "title": "Aux Ours",
+  "desc": "",
+  "types": " bar",
+  "photo": "https://tinyurl.com/2y4p4hcw,https://tinyurl.com/3yh7z9kb,https://tinyurl.com/59pbewkk,https://tinyurl.com/fywzfsu7,https://tinyurl.com/2rh8pja6",
+  "loc": "48.8675526,2.3966014",
+  "uri": "osm:node/7462119769"
+ },
+ {
+  "source": "osm",
+  "title": "Ceprano",
+  "desc": "CEPRANO - PIZZERIA ARTISANALE Proche des buttes Chaumont et du quartier Belleville. Profitez de notre salle ou de notre terrasse extérieure au calme de la rue Piétonne du Village Jourdain. Réservez une table et commandez vos pizzas en livraison.",
+  "types": "pizza;italian;italian_pizza;pasta restaurant",
+  "photo": "https://cepranopizza.com/img/jourdain-card.jpg",
+  "loc": "48.8743896,2.3892122",
+  "uri": "osm:node/8685780658"
+ },
+ {
+  "source": "osm",
+  "title": "CEPRANO • Saint-Mandé",
+  "desc": "CEPRANO - PIZZERIA ARTISANALE\nProche Zoo/bois de Vincennes et Parc Floral de Paris.\nRéservez une table et commandez vos pizzas à emporter ou en livraison à domicile.",
+  "types": "pizza;italian;italian_pizza;pasta;dessert restaurant",
+  "photo": "https://cepranopizza.com/img/saint-mande-card.jpg",
+  "loc": "48.8426931,2.41755",
+  "uri": "osm:node/9573004632"
+ },
+ {
+  "source": "osm",
+  "title": "Brunchy Café Paris",
+  "desc": "",
+  "types": " restaurant",
+  "photo": "https://tinyurl.com/5n8hytjy,https://tinyurl.com/22px9yvn,https://tinyurl.com/4mmwupsa,https://tinyurl.com/2s3tncap,https://tinyurl.com/2bkec3b7",
+  "loc": "48.8705411,2.3977769",
+  "uri": "osm:node/11030027212"
+ },
+ {
+  "source": "osm",
+  "title": "La Ferme du Pré",
+  "desc": "",
+  "types": "french restaurant",
+  "photo": "https://leprecatelan.paris/sites/default/files/styles/2400x1868/public/2026-04/sliders-pe1.png",
+  "loc": "48.8639398,2.2501781",
+  "uri": "osm:node/12420953268"
+ },
+ {
+  "source": "osm",
+  "title": "Pavillon du Lac",
+  "desc": "",
+  "types": " restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Category%3ALe_Pavillon_du_Lac?width=800",
+  "loc": "48.8807597,2.3809435",
+  "uri": "osm:way/63224756"
+ },
+ {
+  "source": "osm",
+  "title": "La Passerelle",
+  "desc": "",
+  "types": "french restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La-Passerelle-Neuilly.png?width=800",
+  "loc": "48.8907389,2.2601917",
+  "uri": "osm:way/81128908"
+ },
+ {
+  "source": "osm",
+  "title": "Le Pré Catelan",
+  "desc": "",
+  "types": "fine_dining restaurant",
+  "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le_Pr%C3%A9_Catelan%2C_Bois_de_Boulogne%2C_Paris_September_2015.jpg?width=800",
+  "loc": "48.8639757,2.250699",
+  "uri": "osm:way/83115461"
+ }
+]

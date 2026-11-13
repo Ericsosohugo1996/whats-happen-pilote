@@ -1,0 +1,58 @@
+Wikidata Paris : 242 restaurants/cafés/bars, dont 200 avec photo libre
+  • café de la Régence (28 langues) — café — café à Paris, important centre européen des échecs aux 18e et 19e sièc
+  • café de Flore (27 langues) — restaurant, café — café situé à Paris, en France
+  • Les Deux Magots (25 langues) — restaurant, café — café situé dans le 6ème arrondissement à Paris
+  • Maxim's (23 langues) — restaurant — restaurant français
+  • café Procope (23 langues) — restaurant, café — cafés-restaurants à Paris, France
+  • Le Dôme (19 langues) — restaurant — restaurant situé à Paris, en France
+  • La Tour d'Argent (18 langues) — restaurant — restaurant parisien
+  • café de la Paix (15 langues) — restaurant — célèbre café-restaurant du 9e arrondissement de Paris
+  • Buddha Bar (14 langues) — bar, restaurant — restaurant-bar-lounge
+  • La Rotonde (13 langues) — restaurant — restaurant français
+  • café Guerbois (13 langues) — café — café culturel du XIXe siècle situé à Paris, en France
+  • Le Train bleu (13 langues) — buffet de gare, restaurant — restaurant français
+  • La Coupole (12 langues) — brasserie — brasserie dans le 14ᵉ arrondissement de Paris
+  • café de la Nouvelle Athènes (12 langues) — ancien restaurant, restaurant — ancien café situé à Paris, en France
+  • café des 2 Moulins (12 langues) — café — café-brasserie situé dans le 18e arrondissement de Paris, en France
+  • Lipp (11 langues) — brasserie — brasserie située à Paris
+  • Salon indien du Grand Café (11 langues) — restaurant — restaurant français
+  • La Closerie des Lilas (10 langues) — brasserie, restaurant, café — restaurant français
+  • café Anglais (9 langues) — restaurant — restaurant français
+  • Angelina (8 langues) — café — salon de thé parisien
+  • Le Grand Véfour (8 langues) — restaurant — restaurant français situé dans le 1er arrondissement de Paris
+  • Drouant (8 langues) — restaurant — grand restaurant parisien fondé en 1880
+  • café du Tambourin (8 langues) — restaurant — 
+  • Le Splendid (7 langues) — café-théâtre — café-théâtre parisien
+  • L'Arpège (7 langues) — restaurant gastronomique — restaurant gastronomique à Paris, France
+  • Bouillon Chartier Grands Boulevards (6 langues) — restaurant — restaurant à Paris fondé en 1896
+  • Le Bœuf sur le toit (6 langues) — restaurant — cabaret fondé à Paris en 1922 puis salle de spectacles et retaurant
+  • Madame Arthur (6 langues) — discothèque gay — cabaret travesti à Paris
+  • Le Jules Verne (6 langues) —  — restaurant situé au deuxième étage de la tour Eiffel, Paris
+  • Le Select (6 langues) — bar gay, restaurant — brasserie parisienne, qui a été notamment un des lieux de rendez-vous 
+  • café du Croissant (6 langues) — bistro, café — restaurant dans le 2e arrondissement de Paris, en France
+  • Polidor (6 langues) — restaurant — 
+  • Harry's New York Bar (5 langues) — bar — bar bien connu à Paris, France
+  • Le Caveau de la Huchette (5 langues) — club de jazz — club de jazz à Paris
+  • Au roi de la bière (5 langues) — brasserie — brasserie dans le 8e arrondissement de Paris
+  • la Palette (5 langues) — restaurant, café — café et restaurant à Paris
+  • Lasserre (5 langues) — restaurant — restaurant à Paris, France
+  • Le Rocher de Cancale (5 langues) — restaurant — restaurant parisien
+  • restaurant Ledoyen (5 langues) — restaurant — restaurant français
+  • Fouquet's (5 langues) — restaurant — restaurant parisien
+OpenStreetMap Paris : 184 adresses avec lien photo ou Wikidata, dont 15 avec image ou Commons
+  • Les Deux Magots — cafe — https://lesdeuxmagots.fr/wp-content/uploads/2021/08/les-deux-magots-te
+  • Columbus Café & Co — coffee_shop — https://www.columbuscafe.com/wp-content/uploads/2020/03/Paris-diderot-
+  • Casa Festa — pizza;italian — https://casafesta.fr/wp-content/uploads/2018/11/casa_festa_restaurant_
+  • Le Nouveau Paris — restaurant — File:Le-Nouveau-Paris.png
+  • In Paradiso — pizza — File:In-Paradiso.png
+  • Chéri-Chérie — cafe — https://tinyurl.com/26rkp7v9,https://tinyurl.com/29jz27uu,https://tiny
+  • Ze Baar — bar — File:Ze Baar 1.jpg
+  • Aux Ours — bar — https://tinyurl.com/2y4p4hcw,https://tinyurl.com/3yh7z9kb,https://tiny
+  • Ceprano — pizza;italian;italian_pizza;pasta — https://cepranopizza.com/img/jourdain-card.jpg
+  • CEPRANO • Saint-Mandé — pizza;italian;italian_pizza;pasta;dessert — https://cepranopizza.com/img/saint-mande-card.jpg
+  • Brunchy Café Paris — restaurant — https://tinyurl.com/5n8hytjy,https://tinyurl.com/22px9yvn,https://tiny
+  • La Ferme du Pré — french — https://leprecatelan.paris/sites/default/files/styles/2400x1868/public
+  • Pavillon du Lac — restaurant — Category:Le_Pavillon_du_Lac
+  • La Passerelle — french — File:La-Passerelle-Neuilly.png
+  • Le Pré Catelan — fine_dining — File:Le Pré Catelan, Bois de Boulogne, Paris September 2015.jpg
+Brunchs : HTTP 502 # 502 Gateway Timeout This Overpass API server is currently at capacity. All query workers are busy and the request que
