@@ -1,0 +1,30 @@
+Perles de France : 22 adresses à vérifier
+✓ Le Musée [lieu] sans photo
+✓ Miraflores [lieu] photo libre https://commons.wikimedia.org/wiki/File:Restaurant_Miraflores_60_rue_Garibaldi_(Lyon).jpg
+✓ Le Passage [lieu] sans photo
+✓ La Source [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 3210 m de l'adresse donnée, on garde l'adresse
+✓ Piedra [lieu] sans photo
+✓ Zitoune [lieu] sans photo
+✓ Bistrot n°2 [adresse] sans photo
+✗ introuvable : Le République  (place Sadi-Carnot, 13002 Marseille)
+✓ L'Autre Petit Bois [lieu] sans photo
+✓ Brutus [lieu] sans photo
+✓ Le Tout du Cru [lieu] sans photo
+✓ Frida [lieu] sans photo
+✓ La Source [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 9124 m de l'adresse donnée, on garde l'adresse
+✓ Silex & Fourchette [lieu] sans photo
+✓ Cockpit [lieu] sans photo
+✓ Sixta [lieu] sans photo
+✓ Freia [lieu] sans photo
+✓ Obbo [lieu] photo du site https://obbo-nantes.fr
+✓ Kok Piraat [lieu] sans photo
+✓ La Luck [lieu] sans photo
+✓ Les Casseroles Lilloises [lieu] photo du site https://www.casseroleslilloises.com/
+✓ Les Fils à Maman [lieu] photo du site https://www.lesfilsamaman.com/restaurants/lille/
+
+RÉSUMÉ : 21 retrouvés sur 22 (dont 18 confirmés comme lieu par OpenStreetMap, 3 seulement par leur adresse)
+Photos libres trouvées : 1 / 21
+Photos du site du lieu : 3 / 21
+Sans aucune photo : 17
+Introuvables (écartés) : 1
+  - Le République : place Sadi-Carnot, 13002 Marseille
