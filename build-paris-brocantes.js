@@ -67,11 +67,26 @@ async function geocode(q, arr) {
   if (keep.length < 10) { console.log("Trop peu d'événements : fichier non écrasé (la page a peut-être changé)."); return; }
   const cache = {}, now = Date.now(), out = [], seen = {};
   let precise = 0;
+  const km = (p, q) => { const r = Math.PI / 180, x = (q[1] - p[1]) * r * Math.cos(p[0] * r), y = (q[0] - p[0]) * r; return 6371 * Math.sqrt(x * x + y * y); };
   for (const e of keep) {
-    const first = e.place.split(/,| et /)[0].replace(/^(sur le |sur la |sur l')?(terre[- ]plein( central)?( du| de la| de l')?\s*)/i, "").trim();
-    const q = first + ", 750" + pad(e.arr) + " Paris";
-    if (!(q in cache)) cache[q] = await geocode(q, e.arr);
-    const g = cache[q]; if (g) precise++;
+    // une brocante peut s'étendre sur plusieurs rues : on place chaque rue ; si elles sont proches on prend le milieu, sinon la place citée (ou la première rue)
+    let segs = e.place.replace(/«[^»]*»,?\s*/g, "").split(/,\s*| et (?=(?:rue|avenue|boulevard|place|quai|cours|passage|impasse|square|allée)\b)/i).map((x) => x.trim()).filter(Boolean);
+    segs = segs.map((x) => x.replace(/^(sur le |sur la |sur l')?(terre[- ]plein( central)?( du| de la| de l')?\s*)/i, "").trim()).filter(Boolean);
+    if (segs.length && /^(place|rue|avenue|boulevard|cours|quai)$/i.test(segs[0]) && segs[1]) segs = [(segs[0] + " et " + segs[1]).trim()].concat(segs.slice(2));
+    const pts = [];
+    for (const sg of segs.slice(0, 3)) {
+      const q = sg + ", 750" + pad(e.arr) + " Paris";
+      if (!(q in cache)) cache[q] = await geocode(q, e.arr);
+      if (cache[q]) pts.push({ sg, c: cache[q] });
+    }
+    let g = null;
+    if (pts.length === 1) g = pts[0].c;
+    else if (pts.length > 1) {
+      const near = pts.filter((p) => km(p.c, pts[0].c) < 1.2);
+      if (near.length === pts.length) g = [pts.reduce((a, p) => a + p.c[0], 0) / pts.length, pts.reduce((a, p) => a + p.c[1], 0) / pts.length, 1];
+      else { const pl = pts.find((p) => /^place\b/i.test(p.sg)); g = (pl || pts[0]).c; }
+    }
+    if (g) precise++;
     const c = g || CENTRE[e.arr];
     const id = "pbroc-" + e.a + "-" + slug(e.place) + "-" + e.arr; if (seen[id]) continue; seen[id] = 1;
     const label = e.kind + (e.place.length > 60 ? "" : ", " + e.place.charAt(0).toLowerCase() + e.place.slice(1));
