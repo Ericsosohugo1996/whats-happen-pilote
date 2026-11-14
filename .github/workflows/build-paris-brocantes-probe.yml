@@ -1,0 +1,38 @@
+name: Brocantes de Paris (test de lecture)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paris-brocantes-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Lire la page officielle de la Ville de Paris
+        run: node build-paris-brocantes-probe.js
+
+      - name: Enregistrer le résultat
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add data/brocantes-test
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau"
+          else
+            git commit -m "Brocantes de Paris (test de lecture) (automatique)"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin HEAD:main && break
+              sleep 5
+            done
+          fi
