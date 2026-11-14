@@ -1,0 +1,49 @@
+name: Brocantes de Paris (mise à jour)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * 1,4"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: paris-brocantes
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Lire le calendrier officiel de la Ville de Paris
+        run: node build-paris-brocantes.js
+
+      - name: Enregistrer le résultat
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add paris-brocantes.json data/brocantes-test
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau"
+          else
+            git commit -m "Brocantes de Paris (automatique)"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin HEAD:main && break
+              sleep 5
+            done
+          fi
+
+      - name: Relancer le découpage des données par ville
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/split-data.yml/dispatches \
+            -d '{"ref":"main"}' || true
