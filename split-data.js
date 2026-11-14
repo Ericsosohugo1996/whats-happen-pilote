@@ -51,6 +51,16 @@ for (const { kind, file } of SOURCES) {
       console.log("événements Ville de Paris ajoutés :", added);
     } catch (e) { console.log("paris-events.json illisible :", e.message); }
   }
+  // brocantes et vide-greniers du calendrier officiel de la Ville de Paris (paris-brocantes.json, relevé sur paris.fr)
+  if (kind === "events" && fs.existsSync("paris-brocantes.json")) {
+    try {
+      const extraB = JSON.parse(fs.readFileSync("paris-brocantes.json", "utf8"));
+      const haveB = new Set(items.map((e) => e.id));
+      let addedB = 0;
+      if (Array.isArray(extraB)) for (const e of extraB) if (!haveB.has(e.id)) { items.push(e); addedB++; }
+      console.log("brocantes de Paris ajoutées :", addedB);
+    } catch (e) { console.log("paris-brocantes.json illisible :", e.message); }
+  }
   // concerts, soirées et sport via Ticketmaster (ticketmaster-sync.js) : on les ajoute, sans doublon (même ville, même titre, même jour)
   if (kind === "events" && fs.existsSync("ticketmaster-events.json")) {
     try {
