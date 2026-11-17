@@ -1,0 +1,2431 @@
+[
+ {
+  "id": "osm-node-1456964942",
+  "title": "Le Reflet",
+  "lat": 47.216847,
+  "lng": -1.554806,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu,We 12:00-14:00; Th,Fr 12:00-14:00,19:30-22:00; Sa 19:30-22:00",
+  "address": "",
+  "website": "https://www.restaurantlereflet.fr/",
+  "description": "",
+  "wikidata": "Q136030130",
+  "score": 73
+ },
+ {
+  "id": "osm-node-4523953368",
+  "title": "O Deck",
+  "lat": 47.206907,
+  "lng": -1.568642,
+  "cuisine": "Grecque",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.odeck.fr/",
+  "description": "",
+  "wikidata": "Q135642917",
+  "score": 64
+ },
+ {
+  "id": "osm-node-6127014201",
+  "title": "Kessecet",
+  "lat": 47.214304,
+  "lng": -1.540601,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 10:00-15:00; Tu-Fr 10:00-15:00,18:00-24:00",
+  "address": "",
+  "website": "https://www.kessecet-nantes.fr",
+  "description": "Restaurant,bar à vins et cave",
+  "wikidata": "",
+  "score": 55
+ },
+ {
+  "id": "osm-node-6178602517",
+  "title": "Bras de Fer",
+  "lat": 47.205133,
+  "lng": -1.557351,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Tu-Fr 12:00-02:00, Sa 16:00-02:00",
+  "address": "",
+  "website": "https://www.brasdefernantes.fr",
+  "description": "Chai urbain, bar, cave et scène alternative",
+  "wikidata": "",
+  "score": 55
+ },
+ {
+  "id": "osm-node-6360471470",
+  "title": "Melon",
+  "lat": 47.215029,
+  "lng": -1.56476,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu-Fr 12:00-14:00,19:00-21:00; Sa 12:00-14:30",
+  "address": "",
+  "website": "https://www.bistromelon.com",
+  "description": "Bistrot et cave, produits locaux et bio",
+  "wikidata": "",
+  "score": 55
+ },
+ {
+  "id": "osm-node-3612947527",
+  "title": "République Côté Jardin",
+  "lat": 47.204942,
+  "lng": -1.554953,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:30; Th-Sa 12:00-14:30,19:00-22:00",
+  "address": "",
+  "website": "https://www.republiquecotejardin.com",
+  "description": "",
+  "wikidata": "",
+  "score": 47
+ },
+ {
+  "id": "osm-node-4519603451",
+  "title": "Paku Paku",
+  "lat": 47.221595,
+  "lng": -1.557596,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-21:30",
+  "address": "",
+  "website": "https://paku-paku.fr",
+  "description": "La Cantine Japonaise",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-11096503610",
+  "title": "La cour du coin",
+  "lat": 47.241106,
+  "lng": -1.535666,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo 12:00-14:00; Tu-Fr 12:00-14:00, 17:00-21:30",
+  "address": "Nantes",
+  "website": "http://lacourducoin.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 43
+ },
+ {
+  "id": "osm-node-364666007",
+  "title": "Pomme Bûche",
+  "lat": 47.21566,
+  "lng": -1.552733,
+  "cuisine": "fries",
+  "tags": [],
+  "hours": "Tu-Th 12:00-14:00,18:30-22:00; Fr 12:00-14:00,18:30-23:30; Sa 12:00-23:30",
+  "address": "",
+  "website": "https://pomme-buche.fr",
+  "description": "Pommes de terre taillées en bûches cuites dans du gras de bœuf à la belge",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-1651714593",
+  "title": "TerraVega",
+  "lat": 47.210986,
+  "lng": -1.549256,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu-Sa 10:00-18:00",
+  "address": "",
+  "website": "https://www.terravega.fr/",
+  "description": "Cuisine végétale, sans gluten, et respectueuse de l’environnement. Propose aussi des ateliers de cuisine et une épicerie fine",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-1927676546",
+  "title": "Quélys",
+  "lat": 47.205078,
+  "lng": -1.557912,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "https://quelys.vercel.app",
+  "description": "Cuisine bistronomique",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-2242868408",
+  "title": "Panier d'Or",
+  "lat": 47.218047,
+  "lng": -1.556395,
+  "cuisine": "taiwanese",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 18:30-21:00; Tu-Sa 11:30-14:00,18:30-21:30",
+  "address": "",
+  "website": "https://www.panierdor.fr",
+  "description": "Thé Oolong et Dim Sum",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-2348410054",
+  "title": "Comptoir à Poutine",
+  "lat": 47.213932,
+  "lng": -1.553292,
+  "cuisine": "poutine",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 11:30-22:00",
+  "address": "",
+  "website": "https://comptoirapoutine.fr/",
+  "description": "Restaurant proposant des poutines québecoises (Frites + Sauce brune + fromage). Option végétarienne disponible",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-3181068868",
+  "title": "Guindaille",
+  "lat": 47.211778,
+  "lng": -1.546932,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 12:00-14:00,17:30-24:00; Fr 12:00-14:00,17:30-25:00; Sa 17:30-25:00",
+  "address": "",
+  "website": "https://www.guindaille.fr",
+  "description": "Bar à manger. Cuisine bistronomique le midi, assiettes à partager le soir",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-4323347997",
+  "title": "Ichi Zen",
+  "lat": 47.213263,
+  "lng": -1.546323,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 12:00-14:00; Tu-Fr 12:00-14:00, 19:00-22:30; Sa 19:00-22:30",
+  "address": "",
+  "website": "https://ichizen.fr",
+  "description": "Brasserie japonaise. Donburi le midi, tapas à la japonaise le soir",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-4323482392",
+  "title": "Bairoz",
+  "lat": 47.211215,
+  "lng": -1.547065,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:15-13:15,19:30-21:00",
+  "address": "",
+  "website": "https://bairoz-nantes.com",
+  "description": "Cuisine du marché le midi en semaine, cuisine gastronomique le soir et le dimanche midi",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-4323505190",
+  "title": "Le lion et l’agneau",
+  "lat": 47.211614,
+  "lng": -1.546971,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:30-21:30",
+  "address": "",
+  "website": "https://www.le-lion-et-lagneau.fr",
+  "description": "Cuisine du terroir réinventée et créative, plats végétarien et végan sur demande",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-5164862621",
+  "title": "Salad'île",
+  "lat": 47.206703,
+  "lng": -1.549196,
+  "cuisine": "salad",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-14:30",
+  "address": "",
+  "website": "https://saladile.fr",
+  "description": "Restaurant saladbar",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-5268338828",
+  "title": "Naniwa",
+  "lat": 47.213408,
+  "lng": -1.56042,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,18:30-21:30; Su 18:00-21:00",
+  "address": "",
+  "website": "https://naniwa-nantes.fr",
+  "description": "Sushi artisanal",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-5528055528",
+  "title": "Éveille tes Papilles",
+  "lat": 47.207059,
+  "lng": -1.555184,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:45-17:30",
+  "address": "",
+  "website": "https://www.eveilletespapilles.com",
+  "description": "Fruits & légumes bio nantais, restaurant, salon de thé. Cuisine maison faite avec le coeur",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-5726309984",
+  "title": "Maison Paganelli",
+  "lat": 47.216847,
+  "lng": -1.55535,
+  "cuisine": "corsican",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-15:00,19:00-24:00",
+  "address": "",
+  "website": "https://maisonpaganelli.com",
+  "description": "Délices de Corse et méditerranée",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-6010447591",
+  "title": "L'Alsacien",
+  "lat": 47.217301,
+  "lng": -1.545257,
+  "cuisine": "alsatian",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-14:00, 18:00-22:00",
+  "address": "",
+  "website": "https://lalsacien.com/restaurants-bar-alsacien-flammekueche/restaurant-nantes-informations-horaires-contact/",
+  "description": "Bar à tartes flambées",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-7039676028",
+  "title": "La Cocotte Solidaire",
+  "lat": 47.226818,
+  "lng": -1.554133,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Fr 09:30-17:00 \"Selon activités\"; Sa,Su 10:00-17:00 \"Selon activités\"",
+  "address": "",
+  "website": "https://www.lacocottesolidaire.fr",
+  "description": "Cantine participative et responsable à prix libre.",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-8538184747",
+  "title": "Calma",
+  "lat": 47.202771,
+  "lng": -1.552709,
+  "cuisine": "empanada",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:00; Su 19:00-22:00",
+  "address": "",
+  "website": "https://www.calmarestaurant.fr",
+  "description": "Fabrique d'empenadas",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-11816602538",
+  "title": "Mashup",
+  "lat": 47.204198,
+  "lng": -1.563948,
+  "cuisine": "Fusion",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "We-Sa 10:00-00:30; Tu 10:00-23:30",
+  "address": "",
+  "website": "https://www.mashup-nantes.fr/",
+  "description": "Restaurant d’insertion, microbrasserie par la brasserie Tête Haute",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-3610953938",
+  "title": "L'Oasis",
+  "lat": 47.20084,
+  "lng": -1.545873,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Su 11:00-14:00,17:30-21:00",
+  "address": "",
+  "website": "http://www.oasisexpress.fr",
+  "description": "Couscous, tajines, pastilla",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-4350884508",
+  "title": "Morfal",
+  "lat": 47.21505,
+  "lng": -1.55897,
+  "cuisine": "Méditerranéenne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu,We 12:00-14:30; Th-Sa 12:00-14:30,19:00-21:30",
+  "address": "",
+  "website": "https://www.morfal-nantes.com/",
+  "description": "Street Food d’influence méditerranéenne",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-10106435150",
+  "title": "Eita!",
+  "lat": 47.207096,
+  "lng": -1.559411,
+  "cuisine": "latin american",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu,We 12:00-14:30; Th-Sa 12:00-14:30,19:00-22:00; Su 11:30-14:30",
+  "address": "",
+  "website": "eita",
+  "description": "Cuisine fusion de toute l’amérique du sud",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-1168418878",
+  "title": "Atelier du Bobun",
+  "lat": 47.205969,
+  "lng": -1.556511,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-15:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-3612974165",
+  "title": "Chez B.B.",
+  "lat": 47.205258,
+  "lng": -1.556167,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo,Tu 10:00-15:00; We-Fr 10:00-15:00,18:00-23:00",
+  "address": "",
+  "website": "https://www.chezbb.fr",
+  "description": "Bistro, bar à vins",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-6041353884",
+  "title": "La bourriche",
+  "lat": 47.214005,
+  "lng": -1.563564,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [],
+  "hours": "We-Fr 18:00-23:00; Sa 12:00-15:00,18:00-23:00; Su 12:00-15:00,18:00-22:00",
+  "address": "",
+  "website": "https://la-bourriche-bar-huitre-nantes.metro.rest",
+  "description": "Bar à huitres et comptoir de produits locaux",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-6159187778",
+  "title": "Restaurant du Convervatoire",
+  "lat": 47.207556,
+  "lng": -1.532283,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-14:00",
+  "address": "",
+  "website": "https://restaurant-du-conservatoire-nantes.eatbu.com",
+  "description": "Restaurant et self-service ouvert à tous",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-10923704809",
+  "title": "Restaurant Le Jardin - Nantes Orvault",
+  "lat": 47.258686,
+  "lng": -1.590048,
+  "cuisine": "",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Fr 12:00-13:30, 19:00-21:00; Sa 12:00-13:30, 19:00-21:15; Su 11:30-14:00",
+  "address": "",
+  "website": "https://www.lejardinorvault.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-2485414297",
+  "title": "Suko",
+  "lat": 47.215061,
+  "lng": -1.537927,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Fr 11:30-14:30, 17:30-22:00",
+  "address": "",
+  "website": "https://suko-sushi.fr",
+  "description": "Restaurant sushi de la chaîne SUKO : sushi kompany",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-2377254035",
+  "title": "Hanh de Bretagne",
+  "lat": 47.215604,
+  "lng": -1.552383,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,18:30-22:00; Sa 11:30-22:00; Su 11:30-14:30",
+  "address": "28 Rue des Petites Écuries",
+  "website": "https://www.hanh-de-bretagne-restaurant-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2721478835",
+  "title": "Kaboul",
+  "lat": 47.21293,
+  "lng": -1.555542,
+  "cuisine": "afghan",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:00,19:00-22:00; Fr,Sa 12:00-14:00,19:00-22:30; Su 19:00-22:00",
+  "address": "",
+  "website": "https://kaboulrestaurant.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2846468070",
+  "title": "Les Petits Pavés",
+  "lat": 47.224093,
+  "lng": -1.564373,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 10:00-15:00; Tu,We 10:00-21:30; Th,Fr 10:00-23:30",
+  "address": "",
+  "website": "",
+  "description": "Bistro brocante",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3458925850",
+  "title": "Le Milan & le Rossignol",
+  "lat": 47.213302,
+  "lng": -1.560861,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo 12:00-14:00; Tu-Fr 12:00-14:00, 19:00-22:00; Sa 12:00-22:00",
+  "address": "",
+  "website": "https://lemilanetlerossignol.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4323276593",
+  "title": "Ikimasho",
+  "lat": 47.21208,
+  "lng": -1.546238,
+  "cuisine": "ramen",
+  "tags": [],
+  "hours": "Mo-Su 11:30-22:00",
+  "address": "",
+  "website": "https://www.ikimasho.fr",
+  "description": "Restaurant immersif",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4946844122",
+  "title": "La Reine Blanche",
+  "lat": 47.195163,
+  "lng": -1.582131,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Tu,Th-Fr 12:00-14:00,19:00-21:30; We,Sa-Su 12:00-18:00,19:00-21:30",
+  "address": "13 Quai Marcel Boissard",
+  "website": "https://lareineblanche.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-6067231875",
+  "title": "2 Potes au feu",
+  "lat": 47.240202,
+  "lng": -1.513662,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo 12:00-15:00; Tu-Sa 12:00-15:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.2potesaufeu.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7098007407",
+  "title": "La Guinguette",
+  "lat": 47.194929,
+  "lng": -1.582871,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo 12:00-14:00,19:00-22:00; Tu-Su 12:00-22:00; Dec 25 off; Jan 1 off",
+  "address": "",
+  "website": "https://laguinguette.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7449312915",
+  "title": "L’Atelier des Délices",
+  "lat": 47.216471,
+  "lng": -1.557743,
+  "cuisine": "Française",
+  "tags": [
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 11:30-18:30; Su 10:30-14:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-13984966803",
+  "title": "Les Goûts d'Asie",
+  "lat": 47.266424,
+  "lng": -1.550182,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 12:00-14:30; Tu-Sa 12:00-14:30,19:00-22:30",
+  "address": "Boulevard Jacques Demy La Chapelle-sur-Erdre",
+  "website": "https://les-gouts-dasie-restaurant-la-chapelle-sur-erdre.eatbu.com/?lang=fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-way-45066683",
+  "title": "Café de L'Orangerie",
+  "lat": 47.221005,
+  "lng": -1.543933,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mar-Oct 09:00-21:30; Oct-Mar 09:00-17:30",
+  "address": "Rue Gambetta",
+  "website": "https://www.cafe-de-l-orangerie-restaurant-nantes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-way-129568607",
+  "title": "MI NOODLES",
+  "lat": 47.264779,
+  "lng": -1.552578,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-14:00,18:30-21:30",
+  "address": "7 Rue Képler La Chapelle-sur-Erdre",
+  "website": "https://mi-noodles.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2844603287",
+  "title": "Mauricette",
+  "lat": 47.220608,
+  "lng": -1.561674,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Oct-Mar Mo-We 09:30-15:00; Oct-Mar,Apr-Sep Th-Sa 09:30-24:00; Apr-Sep Mo-We 09:30-22:00",
+  "address": "",
+  "website": "http://www.mauricettenantes.com",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-6202234923",
+  "title": "Les Terrasses de l'Erdre",
+  "lat": 47.259981,
+  "lng": -1.532544,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 10:00-19:00; Th-Sa 10:00-23:00",
+  "address": "",
+  "website": "https://www.lesterrassesdelerdre.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-6331458425",
+  "title": "Sale & Pepe",
+  "lat": 47.193606,
+  "lng": -1.546574,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo 12:00-14:00; Tu,We 12:00-14:00,19:00-21:00; Th,Fr 12:00-14:00,19:00-22:00; Sa 19:00-22:00",
+  "address": "",
+  "website": "http://www.brasserie-sale-pepe.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-way-1286888614",
+  "title": "La Cantine du Voyage",
+  "lat": 47.201806,
+  "lng": -1.572592,
+  "cuisine": "skewer",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Jun-Aug: Mo-We 11:00-00:00, Th-Sa 11:00-02:00, Su 11:00-00:00; Sep: We,Su 11:00-00:00, Th-Sa 11:00-02:00",
+  "address": "",
+  "website": "https://lacantineduvoyage.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-330856098",
+  "title": "Crêperie Sainte-Croix",
+  "lat": 47.215516,
+  "lng": -1.553731,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-15:00,19:00-22:30; Sa 12:00-23:00; Su 12:00-22:30",
+  "address": "",
+  "website": "https://www.creperiesaintecroix.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-364666016",
+  "title": "The red & luna",
+  "lat": 47.215618,
+  "lng": -1.552878,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30; Tu,We 19:00-22:30",
+  "address": "",
+  "website": "https://restaurant-japonais-nantes-theredluna.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-364666045",
+  "title": "Au Vieux Quimper",
+  "lat": 47.215274,
+  "lng": -1.553301,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr,Su 11:45-23:00; Sa 11:45-23:30",
+  "address": "",
+  "website": "https://auvieuxquimpernantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-373218470",
+  "title": "Squadra",
+  "lat": 47.200831,
+  "lng": -1.573476,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "We-Fr 12:00-15:00,18:00-24:00, Sa 12:00-02:00, Su 12:00-20:00",
+  "address": "",
+  "website": "https://www.squadra-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-475385271",
+  "title": "Chacha",
+  "lat": 47.214752,
+  "lng": -1.554852,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "We-Fr 12:00-14:00,19:30-21:00; Sa 12:29-14:30,19:30-21:30",
+  "address": "",
+  "website": "http://www.chacharestaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-476294590",
+  "title": "Shaan Tandoori",
+  "lat": 47.214956,
+  "lng": -1.555249,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:30-22:00",
+  "address": "",
+  "website": "https://www.shaan-tandoori.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-546638406",
+  "title": "Boitbrütt & Krêptar",
+  "lat": 47.213496,
+  "lng": -1.553373,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "We,Th 19:00-00:00; Fr 19:00-01:00, Sa 12:00-14:00,19:00-01:00, Su 12:00-15:00",
+  "address": "",
+  "website": "https://boit-brutt-kreptar.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-633755369",
+  "title": "Chanchan",
+  "lat": 47.199768,
+  "lng": -1.58903,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 08:00-00:00; Th,Fr 08:00-01:00, Sa 10:00-15:00",
+  "address": "",
+  "website": "https://www.chanchan.family/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1086977649",
+  "title": "Amour de Pomme de terre",
+  "lat": 47.215822,
+  "lng": -1.555161,
+  "cuisine": "potato",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 12:00-14:00,19:00-22:30; Fr 12:00-14:00,19:00-23:00; Sa 12:00-23:00; Su 12:00-22:00",
+  "address": "",
+  "website": "http://www.amourdepommedeterre.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1087252790",
+  "title": "Ptéah",
+  "lat": 47.220277,
+  "lng": -1.548884,
+  "cuisine": "cambodian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-22:00; off",
+  "address": "",
+  "website": "https://pteah-la-maison-cambodgienne.webflow.io/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1087252943",
+  "title": "Casa Cruz",
+  "lat": 47.220825,
+  "lng": -1.548515,
+  "cuisine": "Portugaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 11:45-14:30,18:45-22:00; Sa 11:45-15:00,18:30-22:00",
+  "address": "",
+  "website": "https://casacruz.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1168418831",
+  "title": "Macoha",
+  "lat": 47.207662,
+  "lng": -1.558527,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-We 12:00-14:00,19:00-22:00; Th 12:00-14:00,19:00-22:30; Fr-Sa 12:00-14:00,19:00-23:00",
+  "address": "",
+  "website": "https://www.macoha-nantes.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1226122338",
+  "title": "Les Pâtes Express",
+  "lat": 47.209969,
+  "lng": -1.564569,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "We-Su 11:30-14:30,18:30-22:30; Tu 18:30-22:30",
+  "address": "",
+  "website": "https://lespatesexpress.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1400085371",
+  "title": "Taj Mahal",
+  "lat": 47.214622,
+  "lng": -1.559188,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-15:30,19:00-23:30",
+  "address": "",
+  "website": "http://www.tajmahal-lorient-nantes.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1834101917",
+  "title": "Sen's",
+  "lat": 47.215538,
+  "lng": -1.553896,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-21:30",
+  "address": "",
+  "website": "https://sens-nantesrestaurant.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2030052171",
+  "title": "Giola",
+  "lat": 47.218471,
+  "lng": -1.565608,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:30,18:00-23:00",
+  "address": "",
+  "website": "https://www.giola.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2207039483",
+  "title": "Chop Chop",
+  "lat": 47.216927,
+  "lng": -1.555562,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo-Fr 09:00-18:00; Sa 10:00-18:30; Jul-Aug: Mo-Fr 09:00-17:00, Sa 10:00-17:00",
+  "address": "",
+  "website": "https://chopchopnantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2207053075",
+  "title": "Voyage Voyage",
+  "lat": 47.217663,
+  "lng": -1.555419,
+  "cuisine": "Bistrot",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu,We 18:00-24:00, Th 12:00-14:30,18:00-01:00, Fr 12:00-14:30,18:00-02:00, Sa 12:15-15:00,18:00-02:00",
+  "address": "",
+  "website": "https://www.voyagevoyagenantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2207089599",
+  "title": "Inde et Vous Bindi",
+  "lat": 47.216852,
+  "lng": -1.556245,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 18:45-22:45; Tu-Sa 12:00-14:00,19:00-22:45; Su 12:00-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://www.inde-vous-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2207089601",
+  "title": "Le Coin des Crêpes",
+  "lat": 47.216629,
+  "lng": -1.556249,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-21:30; Su 12:00-14:00",
+  "address": "",
+  "website": "http://lecoindescrepes.canalblog.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2242868396",
+  "title": "Kenji & Louise",
+  "lat": 47.217944,
+  "lng": -1.556237,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu 12:00-14:00; We-Fr 12:00-14:00,19:00-21:30; Sa 19:00-21:30",
+  "address": "",
+  "website": "https://www.kenjietlouise.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2242868398",
+  "title": "Inde et vous",
+  "lat": 47.219335,
+  "lng": -1.55575,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 18:45-22:45; Tu-Sa 12:00-14:00,19:00-22:45; Su 12:00-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://www.inde-vous-nantes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2242868415",
+  "title": "L'Agave",
+  "lat": 47.219072,
+  "lng": -1.555261,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 19:30-21:30; Tu-Fr 12:00-14:00,19:30-21:30",
+  "address": "",
+  "website": "https://www.restaurant-lagave.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2247287530",
+  "title": "Chaiyo",
+  "lat": 47.217533,
+  "lng": -1.55641,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 12:00-14:00,19:30-22:00; Fr,Sa 12:00-14:30,19:30-22:30; Su 12:00-14:30",
+  "address": "",
+  "website": "https://restaurant-chaiyo-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2267169807",
+  "title": "Oneul",
+  "lat": 47.219385,
+  "lng": -1.554764,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "We-Sa 12:00-13:00,19:00-21:00; Tu 19:00-21:00",
+  "address": "",
+  "website": "https://oneul.odoo.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2348410044",
+  "title": "Asie Neptune",
+  "lat": 47.213838,
+  "lng": -1.553645,
+  "cuisine": "Vietnamienne",
+  "tags": [],
+  "hours": "Mo-Fr 11:00-14:30,18:00-22:30; Sa 11:00-15:30,18:00-23:30",
+  "address": "",
+  "website": "https://asie-neptune-restaurant-nantes.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2377418395",
+  "title": "Le Gandhi",
+  "lat": 47.215835,
+  "lng": -1.551875,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 19:00-23:00; Tu-Su 12:00-14:30,19:00-23:00",
+  "address": "",
+  "website": "https://legandhi-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2422376687",
+  "title": "Sarrasin & Co",
+  "lat": 47.218494,
+  "lng": -1.564048,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th,Sa 12:00-14:30; Fr 12:00-14:30,19:00-21:30",
+  "address": "",
+  "website": "https://www.sarrasinandco.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2471212374",
+  "title": "Baguettes Viet",
+  "lat": 47.219984,
+  "lng": -1.549214,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 12:00-21:00; Th-Sa 12:00-21:30",
+  "address": "",
+  "website": "https://www.baguettesviet.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2485095738",
+  "title": "Byblos",
+  "lat": 47.215672,
+  "lng": -1.553074,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th,Su 12:00-14:30,19:00-22:30; Fr,Sa 12:00-14:30,19:00-23:00",
+  "address": "",
+  "website": "https://byblos-nantes.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2590541964",
+  "title": "Afghan Nantes",
+  "lat": 47.217581,
+  "lng": -1.551501,
+  "cuisine": "afghan",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-15:00,18:00-23:00; Sa 11:30-23:00; Su 11:00-23:00",
+  "address": "",
+  "website": "http://www.laciboulette-nantes.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2590576301",
+  "title": "Nota Bene",
+  "lat": 47.217712,
+  "lng": -1.552048,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu,Th 12:00-14:00,19:00-22:00; We 12:00-14:00; Fr,Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "http://www.notabene-restaurant.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2721478834",
+  "title": "Le Cèdre",
+  "lat": 47.212966,
+  "lng": -1.555447,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-23:00",
+  "address": "",
+  "website": "https://www.lecedre-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2721542550",
+  "title": "Royal Indien",
+  "lat": 47.212784,
+  "lng": -1.555524,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "https://www.royal-indien.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2759300398",
+  "title": "Capadocia",
+  "lat": 47.21251,
+  "lng": -1.556566,
+  "cuisine": "Turque",
+  "tags": [],
+  "hours": "Tu-Fr 12:00-14:30,19:00-22:30; Sa 10:30-13:30,19:00-21:30; Su 10:30-13:30",
+  "address": "",
+  "website": "https://www.capadocia.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2781016507",
+  "title": "Sølheim",
+  "lat": 47.21128,
+  "lng": -1.547056,
+  "cuisine": "scandinavian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 12:00-14:00; Tu-We 12:00-14:00, 17:30-00:00; Th-Fr 12:00-14:00, 17:30-01:30; Sa 11:30-16:00",
+  "address": "",
+  "website": "https://www.solheim.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3063159686",
+  "title": "Le Bouche à Oreille",
+  "lat": 47.212943,
+  "lng": -1.561426,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Th 12:00-14:00,19:15-22:30; Fr,Sa 12:00-14:00,19:15-23:00",
+  "address": "",
+  "website": "https://leboucheaoreille-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3063159693",
+  "title": "Shalimar",
+  "lat": 47.212895,
+  "lng": -1.561748,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:30-22:45",
+  "address": "",
+  "website": "https://www.shalimar-restaurant-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3124140230",
+  "title": "Crêperie Heb Ken",
+  "lat": 47.21405,
+  "lng": -1.55912,
+  "cuisine": "cake",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:45-23:00",
+  "address": "",
+  "website": "https://www.creperie-hebken.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3125795729",
+  "title": "Atlas",
+  "lat": 47.213014,
+  "lng": -1.559159,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Sa-Mo 12:00-14:30,19:00-22:30; Tu-Fr 19:00-22:30",
+  "address": "",
+  "website": "https://atlas-restaurant-nantes.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3181860670",
+  "title": "Boucan",
+  "lat": 47.212029,
+  "lng": -1.546875,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Th 12:00-14:00,17:30-24:00, Fr 12:00-14:00,17:30-02:00, Sa 17:30-02:00",
+  "address": "",
+  "website": "https://boucan-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3548286836",
+  "title": "Pilgrim",
+  "lat": 47.213096,
+  "lng": -1.56174,
+  "cuisine": "british",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-24:00, Su 10:30-17:30",
+  "address": "",
+  "website": "https://www.pilgrimrestaurant-nantes.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3613033646",
+  "title": "L'Imaginarium",
+  "lat": 47.205832,
+  "lng": -1.554914,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu,We 12:00-14:30; Th,Fr 12:00-14:30,19:30-22:00; Sa 19:30-22:00",
+  "address": "",
+  "website": "https://imaginarium-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3790336350",
+  "title": "L'Ariana",
+  "lat": 47.219305,
+  "lng": -1.559043,
+  "cuisine": "afghan",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-21:30; Sa 19:00-21:30",
+  "address": "",
+  "website": "https://www.restaurant-ariana.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3937785971",
+  "title": "Dakoo",
+  "lat": 47.213428,
+  "lng": -1.553334,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-22:00; Su 12:00-14:15,18:30-21:30",
+  "address": "",
+  "website": "",
+  "description": "Fast-food de cuisine coréenne, disposant d'une salle pour se restaurer, et d'une terrasse en été.",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4018157663",
+  "title": "Chez Red Luna",
+  "lat": 47.215646,
+  "lng": -1.55826,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.chezredluna.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4114123593",
+  "title": "Jardin de chine",
+  "lat": 47.189542,
+  "lng": -1.489459,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4239161090",
+  "title": "The Garden",
+  "lat": 47.201415,
+  "lng": -1.546441,
+  "cuisine": "brunch",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 11:00-18:00; Sa,Su 09:30-18:00",
+  "address": "",
+  "website": "https://brunchthegarden-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4321304396",
+  "title": "Brunch Brunch",
+  "lat": 47.206305,
+  "lng": -1.556105,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "We-Fr 09:00-15:00; Sa,Su 10:30-15:00",
+  "address": "",
+  "website": "https://brunchbrunch.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4323408092",
+  "title": "Chez Cannelle",
+  "lat": 47.214007,
+  "lng": -1.546736,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Mo-We 10:00-14:00; Th-Sa 12:00-14:00,18:30-21:30",
+  "address": "",
+  "website": "https://chezcannelle.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4339684489",
+  "title": "Beau Rêve",
+  "lat": 47.219461,
+  "lng": -1.55467,
+  "cuisine": "egyptian",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://beaurevenantes.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4350892208",
+  "title": "Bao Dao",
+  "lat": 47.215367,
+  "lng": -1.556973,
+  "cuisine": "taiwanese",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-22:00",
+  "address": "",
+  "website": "https://www.baodao.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4472655440",
+  "title": "BigBang",
+  "lat": 47.216696,
+  "lng": -1.533868,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:45-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://bigbangnantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4791453323",
+  "title": "epikur",
+  "lat": 47.214947,
+  "lng": -1.541524,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-14:30",
+  "address": "",
+  "website": "https://www.epikur.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4803939412",
+  "title": "Le Bol",
+  "lat": 47.230637,
+  "lng": -1.628469,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:30-15:00,17:30-21:30; Fr 11:30-15:00",
+  "address": "",
+  "website": "https://le-bol-restaurant-saint-herblain.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5243498422",
+  "title": "Curry house",
+  "lat": 47.215589,
+  "lng": -1.552956,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "We,Th,Su 12:00-14:00,19:00-22:30; Fr,Sa 12:00-14:00,19:00-23:00; Mo,Tu 19:00-22:30",
+  "address": "",
+  "website": "https://curryhouses.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5460145598",
+  "title": "Domoro",
+  "lat": 47.219612,
+  "lng": -1.534175,
+  "cuisine": "Africaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-23:00; Fr,Su 19:00-23:00",
+  "address": "",
+  "website": "http://domoro.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5655365444",
+  "title": "À Table naturellement",
+  "lat": 47.206434,
+  "lng": -1.554709,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-17:30",
+  "address": "",
+  "website": "https://www.atable-naturellement.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5969621186",
+  "title": "M. Strogoff",
+  "lat": 47.217554,
+  "lng": -1.555437,
+  "cuisine": "russian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 19:00-22:00; Fr-Su 12:00-14:00,19:00-22:15",
+  "address": "",
+  "website": "https://www.restaurant-russe-m-strogoff.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6017739085",
+  "title": "Amour",
+  "lat": 47.217886,
+  "lng": -1.562179,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Fr 08:00-21:30; Sa 09:00-21:30",
+  "address": "",
+  "website": "https://www.amour-nantes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6020756069",
+  "title": "Izushi",
+  "lat": 47.214616,
+  "lng": -1.563875,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 10:30-14:30,17:30-22:30; Su 17:30-22:30",
+  "address": "",
+  "website": "https://izushi.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6049819810",
+  "title": "Myōkō",
+  "lat": 47.212611,
+  "lng": -1.560561,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 11:30-22:30",
+  "address": "",
+  "website": "https://nantes.myoko44.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6062119948",
+  "title": "Le Kashmir",
+  "lat": 47.212867,
+  "lng": -1.560204,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-14:30,18:30-23:00",
+  "address": "",
+  "website": "https://foodcollect.fr/store/Kashmir",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6165788473",
+  "title": "Comptoir libanais",
+  "lat": 47.21541,
+  "lng": -1.556979,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu,Th 12:00-14:00,19:00-22:00; Fr,Sa 12:00-15:00,19:00-22:30; Su 19:00-22:00",
+  "address": "",
+  "website": "https://le-comptoir-libanais-restaurant-nantes.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6183597432",
+  "title": "Eden Garden",
+  "lat": 47.212513,
+  "lng": -1.537266,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:30,19:00-22:30; Sa,Su 11:30-15:30,19:00-23:30",
+  "address": "",
+  "website": "https://www.edengardenrestaurants.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6185143602",
+  "title": "Le Marceau",
+  "lat": 47.21577,
+  "lng": -1.563951,
+  "cuisine": "Brasserie",
+  "tags": [],
+  "hours": "Mo-Su 11:30-15:00,18:00-24:00",
+  "address": "",
+  "website": "https://www.le-marceau-restaurant-nantes.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6540549773",
+  "title": "Le Bistrot Basque",
+  "lat": 47.214965,
+  "lng": -1.554932,
+  "cuisine": "basque",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:30-22:30; Su 12:00-14:00",
+  "address": "",
+  "website": "https://www.le-bistrot-basque-nantes.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7211945701",
+  "title": "Meiga",
+  "lat": 47.213029,
+  "lng": -1.577183,
+  "cuisine": "Tapas",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 12:00-22:00; Fr 12:00-23:00; Sa 17:00-23:00; Su 12:00-15:00",
+  "address": "",
+  "website": "https://www.meiga-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7820986343",
+  "title": "Les Funambules",
+  "lat": 47.203964,
+  "lng": -1.566307,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 12:00-21:30; Tu 12:00-22:00; We-Fr 12:00-23:00; Sa 12:00-24:00",
+  "address": "",
+  "website": "https://lesfunambulesdenantes.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7847674179",
+  "title": "Emporietto",
+  "lat": 47.22378,
+  "lng": -1.554586,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:30-22:00; Aug off",
+  "address": "",
+  "website": "https://www.emporietto.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8936109947",
+  "title": "We love soupes",
+  "lat": 47.204521,
+  "lng": -1.56864,
+  "cuisine": "soup",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:15; Fr 12:00-14:15,19:00-21:30; Sa 19:00-21:30",
+  "address": "",
+  "website": "https://welovesoupes.foxorders.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9671727571",
+  "title": "Ichi-go Ichi-e Ramen",
+  "lat": 47.211583,
+  "lng": -1.546746,
+  "cuisine": "ramen",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://ichigoichie.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9874592922",
+  "title": "Tata Bòbún",
+  "lat": 47.270522,
+  "lng": -1.520474,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,18:30-21:30",
+  "address": "Nantes",
+  "website": "https://tatabobun.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10604595686",
+  "title": "Indien Grill",
+  "lat": 47.207644,
+  "lng": -1.571745,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo,Tu 12:00-14:00; We-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://sites.google.com/view/restaurantindiengrill",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10936389808",
+  "title": "Da Peppe",
+  "lat": 47.189658,
+  "lng": -1.483232,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu,We 12:00-14:00,19:00-22:00; Th 12:00-14:00,19:00-22:30; Fr,Sa 12:00-14:30,19:00-23:00, Su 17:00-22:00",
+  "address": "",
+  "website": "https://www.da-peppe.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11247815266",
+  "title": "Fair~e",
+  "lat": 47.203718,
+  "lng": -1.568369,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 08:30-11:30,11:45-14:00",
+  "address": "",
+  "website": "",
+  "description": "Restaurant associatif formant des personnes réfugiées et primoarrivantes au métier de la restauration",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11758453624",
+  "title": "OHM.Town",
+  "lat": 47.197582,
+  "lng": -1.589466,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu,We 18:00-23:00; Th 18:00-00:00, Fr,Sa 18:00-03:00, Su 22:00-03:00",
+  "address": "",
+  "website": "https://ohm-town.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13347693876",
+  "title": "Chez Fruta",
+  "lat": 47.213442,
+  "lng": -1.553929,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Su 19:00-23:00",
+  "address": "",
+  "website": "https://chezfruta.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13984966804",
+  "title": "Le Grill du Gesvres",
+  "lat": 47.266352,
+  "lng": -1.550297,
+  "cuisine": "Turque",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 11:30-14:45,17:30-22:30; Fr-Sa 11:30-14:45,17:30-23:00; Su 17:30-22:30",
+  "address": "Boulevard du Gesvres La Chapelle-sur-Erdre",
+  "website": "https://bio.site/grilldugesvres.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-32669984",
+  "title": "La Tosca",
+  "lat": 47.249719,
+  "lng": -1.51919,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr,Su 11:30-14:00,18:30-22:00; Sa 11:30-14:00,18:30-22:30",
+  "address": "",
+  "website": "https://www.la-tosca-nantes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-82621929",
+  "title": "Giorgio Ristorante",
+  "lat": 47.247041,
+  "lng": -1.502888,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:00,19:00-22:00; Fr,Sa 12:00-14:00,19:00-23:00",
+  "address": "",
+  "website": "https://www.giorgio-restaurant-nantes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-135099147",
+  "title": "Bellacittà",
+  "lat": 47.227947,
+  "lng": -1.632337,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:30-14:30,18:30-22:30",
+  "address": "",
+  "website": "https://www.bellacitta.fr/nantes",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-1419328162",
+  "title": "Dani Crêperie",
+  "lat": 47.205495,
+  "lng": -1.555759,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "We,Su 09:00-14:00; Th-Sa 09:00-14:00,18:00-21:00",
+  "address": "",
+  "website": "https://dani-creperie.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1941959031",
+  "title": "La Cave du Lion d'Or",
+  "lat": 47.190185,
+  "lng": -1.519894,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu-Sa 09:30-12:30,14:30-19:30",
+  "address": "",
+  "website": "http://www.caveduliondor.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2348410048",
+  "title": "Le Bombay",
+  "lat": 47.213484,
+  "lng": -1.554166,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-23:00",
+  "address": "",
+  "website": "https://restaurantbombaynantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-3458917214",
+  "title": "La Gavotte",
+  "lat": 47.211491,
+  "lng": -1.566966,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:30-14:00,19:00-21:00+",
+  "address": "",
+  "website": "http://creperie-lagavotte.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4325261489",
+  "title": "Cheese & Friends",
+  "lat": 47.213924,
+  "lng": -1.564441,
+  "cuisine": "cheese",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 15:00-24:00",
+  "address": "",
+  "website": "https://cheeseandfriends.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5639391276",
+  "title": "Rivazza",
+  "lat": 47.230434,
+  "lng": -1.627805,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-14:30",
+  "address": "4 Boulevard du Zénith Saint-Herblain",
+  "website": "http://www.rivazza.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-6017764375",
+  "title": "Plume",
+  "lat": 47.217079,
+  "lng": -1.559784,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 08:30-18:00; Mo 12:00-18:00",
+  "address": "",
+  "website": "https://www.plumecantinesavoureuse.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-6112892443",
+  "title": "Lotus Ravioli",
+  "lat": 47.214083,
+  "lng": -1.556387,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu,We,Fr-Su 12:00-14:30,19:00-22:00",
+  "address": "",
+  "website": "https://www.lotusravioli.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-13234838685",
+  "title": "Le Prestige",
+  "lat": 47.261533,
+  "lng": -1.49774,
+  "cuisine": "traditional",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-14:00; Th 19:30-21:30; Fr-Sa 19:30-22:00",
+  "address": "8 Rue du Danemark Carquefou",
+  "website": "https://le-prestige-restaurant.metro.rest/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2377418388",
+  "title": "Asahi",
+  "lat": 47.215865,
+  "lng": -1.552514,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.asahi-restaurant-nantes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2485095784",
+  "title": "Tori Ya",
+  "lat": 47.216039,
+  "lng": -1.553057,
+  "cuisine": "ramen",
+  "tags": [
+   "Options végé",
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-22:00",
+  "address": "",
+  "website": "https://www.toriya.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-3822848881",
+  "title": "YUMMY",
+  "lat": 47.187827,
+  "lng": -1.473191,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-We 12:00-14:30, 18:45-22:00;Th-Fr 12:00-14:30, 18:45-22:30;Sa 12:00-22:30;Su 15:15-22:00",
+  "address": "",
+  "website": "https://bassegoulaine.yummyrestaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4218163818",
+  "title": "Midi et Demi",
+  "lat": 47.226938,
+  "lng": -1.624326,
+  "cuisine": "Internationale",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-14:30",
+  "address": "",
+  "website": "http://www.midietdemi.fr/restauration-entreprise/restaurant-grand-public-place-emporter",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5374896673",
+  "title": "Ramen Ya",
+  "lat": 47.213061,
+  "lng": -1.559144,
+  "cuisine": "ramen",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-22:00",
+  "address": "",
+  "website": "https://www.ramenya.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6042501996",
+  "title": "La Salerosa",
+  "lat": 47.21116,
+  "lng": -1.561403,
+  "cuisine": "Mexicaine",
+  "tags": [],
+  "hours": "Tu,We 12:00-14:30; Th,Fr 12:00-14:30,19:00-23:00; Sa 12:00-15:00,19:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "Cuisine traditionnelle mexicaine avec une petite touche française",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6228390874",
+  "title": "Le Mezz",
+  "lat": 47.210312,
+  "lng": -1.550895,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:30-16:00",
+  "address": "",
+  "website": "https://le-mezz.business.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-10106435152",
+  "title": "Mòaa",
+  "lat": 47.207016,
+  "lng": -1.559379,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 11:00-15:00; Tu-We 11:00-23:00; Th-Sa 11:00-00:00, Su 11:00-16:00",
+  "address": "",
+  "website": "https://www.magmaa-nantes.fr/manger-boire/moaa-3",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11435456480",
+  "title": "Olive Food",
+  "lat": 47.226385,
+  "lng": -1.519836,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Sa-Th 11:30-14:30,18:30-22:30; Fr 18:30-22:30",
+  "address": "",
+  "website": "https://restaurant-indien-olive-food-nantes.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ }
+]

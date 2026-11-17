@@ -1,0 +1,631 @@
+[
+ {
+  "id": "osm-node-8032776057",
+  "title": "Basa",
+  "lat": 43.490165,
+  "lng": -1.476304,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-22:00",
+  "address": "74 Rue d'Espagne Bayonne",
+  "website": "https://www.brasserie-basa.com/",
+  "description": "La Brasserie BASA rend accessible une cuisine équitable de qualité, faite maison avec des produits locaux. Restaurant labellisé Tokikoa et Travellers' Choice 2025 MICHELIN",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-7595302585",
+  "title": "Le Byron",
+  "lat": 43.481918,
+  "lng": -1.50523,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 10:00-15:00",
+  "address": "12 Allée du Cadran Anglet",
+  "website": "https://lebyron.fr/",
+  "description": "Brunch 1er dimanche du mois : 10h - 15h",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7511592759",
+  "title": "Quai n°15",
+  "lat": 43.48863,
+  "lng": -1.475249,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "15 Quai Amiral Jaureguiberry Bayonne",
+  "website": "https://quai-n15.fr/",
+  "description": "Labellisé Tokikoa en 2026",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-12038328806",
+  "title": "Kunitomi",
+  "lat": 43.493847,
+  "lng": -1.510155,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 12:15-22:00",
+  "address": "79 Rue de Hausquette Anglet",
+  "website": "https://kunitomi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11380846109",
+  "title": "NKI SUSHI",
+  "lat": 43.481748,
+  "lng": -1.445024,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-21:30",
+  "address": "Saint-Pierre-d'Irube",
+  "website": "https://order.nkisushi.com/en/shops/japonais/nki-sushi-bayonne",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11361763001",
+  "title": "Bohebon",
+  "lat": 43.487259,
+  "lng": -1.499053,
+  "cuisine": "hawaiian",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 08:00-20:00",
+  "address": "Avenue Jean-Léon Laporte Anglet",
+  "website": "https://restaurants.bohebon.fr/poke-bowl-anglet-bab2/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4641765006",
+  "title": "Atelier Mala",
+  "lat": 43.489143,
+  "lng": -1.477512,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:30,19:30-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4791804136",
+  "title": "Fufu Ramen",
+  "lat": 43.489975,
+  "lng": -1.476728,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Sa-Th 12:00-15:00,18:00-22:00; Fr 12:00-15:00",
+  "address": "66 Rue d'Espagne",
+  "website": "https://restaurantfufu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7003829821",
+  "title": "Le bistro de l'Atalante",
+  "lat": 43.495604,
+  "lng": -1.471483,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 13:00-22:30; Sa-Su 10:00-22:30",
+  "address": "",
+  "website": "https://atalante-cinema.org/bistro/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-12382693733",
+  "title": "Haragia",
+  "lat": 43.488917,
+  "lng": -1.473934,
+  "cuisine": "Viande",
+  "tags": [],
+  "hours": "\"ouvert jeudi soir, vendredi soir, samedi midi et soir\"",
+  "address": "",
+  "website": "https://haragia.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6732290372",
+  "title": "A la cantine",
+  "lat": 43.490576,
+  "lng": -1.471629,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-15:00; Sa 11:00-16:00",
+  "address": "",
+  "website": "https://a-la-cantine.business.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-2437908663",
+  "title": "Au Bouchon Basque",
+  "lat": 43.4859,
+  "lng": -1.476546,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Fr 00:00-02:00,08:00-15:00,19:00-24:00; Su 00:00-02:00,18:00-24:00",
+  "address": "",
+  "website": "https://aubouchonbasque.fr/restaurant/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11726721261",
+  "title": "Mogu Japan Café",
+  "lat": 43.483335,
+  "lng": -1.503524,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Fr 11:00-18:00",
+  "address": "67 Avenue de Bayonne Anglet",
+  "website": "http://www.japan-cafe-anglet.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-1236244933",
+  "title": "A La Bolée",
+  "lat": 43.490877,
+  "lng": -1.477132,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://alabolee.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-6710195477",
+  "title": "Le Croque Bedaine",
+  "lat": 43.484185,
+  "lng": -1.443579,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We,Th,Sa 11:00-14:00, 17:00-23:00; Fr 11:00-23:00; PH off",
+  "address": "36 Route de Bigot Mouguerre",
+  "website": "https://www.lecroquebedaine.fr/mouguerre/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-11380846130",
+  "title": "La Casa del Jamón",
+  "lat": 43.481292,
+  "lng": -1.445065,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 10:00-19:30",
+  "address": "3 Avenue du Portou Saint-Pierre-d'Irube",
+  "website": "https://www.lacasadeljamon.eu/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-631661851",
+  "title": "Le Bayonnais",
+  "lat": 43.491252,
+  "lng": -1.473785,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "http://www.bayonnais.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-7551899000",
+  "title": "Bombay",
+  "lat": 43.493453,
+  "lng": -1.466809,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-11380846107",
+  "title": "Bistrot Régent",
+  "lat": 43.481785,
+  "lng": -1.444582,
+  "cuisine": "",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:45-21:30",
+  "address": "2 Avenue du Portou Saint-Pierre-d'Irube",
+  "website": "https://www.bistro-regent.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-6163192794",
+  "title": "Woods",
+  "lat": 43.49319,
+  "lng": -1.477276,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 19:00-21:30",
+  "address": "",
+  "website": "https://foodcollect.fr/store/Woods/restaurant#",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-7511314625",
+  "title": "Hebeho",
+  "lat": 43.488954,
+  "lng": -1.473461,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu-Th 12:00-14:30; Fr,Sa 12:00-14:30,19:30-22:00",
+  "address": "",
+  "website": "https://www.hebeho.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-11380846106",
+  "title": "Tia Romana",
+  "lat": 43.481676,
+  "lng": -1.444526,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-21:30",
+  "address": "2 Avenue du Portou Saint-Pierre-d'Irube",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-11380846112",
+  "title": "Go Warung",
+  "lat": 43.481355,
+  "lng": -1.444844,
+  "cuisine": "indonesian",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:00-20:00",
+  "address": "2 Avenue du Portou Saint-Pierre-d'Irube",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-4890132421",
+  "title": "Les Tontons Flingueurs",
+  "lat": 43.491254,
+  "lng": -1.47483,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.les-tontons-flingueurs.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-10984479545",
+  "title": "Les Chenapans",
+  "lat": 43.469132,
+  "lng": -1.490243,
+  "cuisine": "Brasserie",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.brasserie-leschenapans.com/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-2429836014",
+  "title": "Nuance",
+  "lat": 43.489294,
+  "lng": -1.47325,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.restaurantnuance.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-3733294117",
+  "title": "Tajinier",
+  "lat": 43.493699,
+  "lng": -1.496401,
+  "cuisine": "couscous",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00, Mo-Sa 18:45-22:00, Sa,Su 12:00-14:00,18:45-23:00",
+  "address": "2 Rue des Pontots Anglet",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4790433722",
+  "title": "Chez Baï Les Goûts d'Ailleurs",
+  "lat": 43.490284,
+  "lng": -1.473106,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Tu-Sa 11:00-15:00,19:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4868223508",
+  "title": "Los Tacos Chingones",
+  "lat": 43.488983,
+  "lng": -1.473072,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.restaurant-los-tacos-chingones-bayonne.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4889167222",
+  "title": "Le Jaurès",
+  "lat": 43.492516,
+  "lng": -1.463038,
+  "cuisine": "Terroir",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.lejaures-bayonne.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-11849838098",
+  "title": "Cidrerie Kupela Sagardotegia",
+  "lat": 43.483695,
+  "lng": -1.452304,
+  "cuisine": "local",
+  "tags": [],
+  "hours": "",
+  "address": "79 Avenue Capitaine Resplandy",
+  "website": "https://www.kupela.fr/sagardotegia/",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-8157248905",
+  "title": "La Bottega della Mamma",
+  "lat": 43.500676,
+  "lng": -1.494841,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo,Fr 10:30-21:00",
+  "address": "3 Chemin de Jorlis anglet",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-3871575570",
+  "title": "Bistrot Fine",
+  "lat": 43.503802,
+  "lng": -1.503784,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://hotelrestaurantfine.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-7521713388",
+  "title": "Le Saint-Louis",
+  "lat": 43.492785,
+  "lng": -1.476132,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo 10:00-17:30; Tu-Sa 08:00-18:30; Su,PH off",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-3871575571",
+  "title": "Chez Georges",
+  "lat": 43.493003,
+  "lng": -1.488063,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-4868223515",
+  "title": "Hegoa",
+  "lat": 43.489739,
+  "lng": -1.473472,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "PH,Mo-Su 19:00-02:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-4868225025",
+  "title": "Cantine du Musée",
+  "lat": 43.492508,
+  "lng": -1.47312,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-8821311048",
+  "title": "Txiki Thaï",
+  "lat": 43.481761,
+  "lng": -1.50657,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-14128604458",
+  "title": "Sushi daily",
+  "lat": 43.488443,
+  "lng": -1.498619,
+  "cuisine": "sushi",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 08:30-21:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-4790453822",
+  "title": "Sen Viet",
+  "lat": 43.491079,
+  "lng": -1.472571,
+  "cuisine": "Vietnamienne",
+  "tags": [],
+  "hours": "Tu-Th 11:30-14:00; Fr,Sa 11:00-14:00,18:30-21:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ },
+ {
+  "id": "osm-node-5478507057",
+  "title": "Atlas",
+  "lat": 43.495001,
+  "lng": -1.467206,
+  "cuisine": "Méditerranéenne",
+  "tags": [],
+  "hours": "Th-Tu 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ }
+]

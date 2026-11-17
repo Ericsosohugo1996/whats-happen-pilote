@@ -1,0 +1,589 @@
+[
+ {
+  "id": "osm-node-13903726743",
+  "title": "Le Jardin de la Paillote Bleue",
+  "lat": 43.503238,
+  "lng": -1.535978,
+  "cuisine": "Méditerranéenne",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://lejardindelapaillotebleue.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-11916155408",
+  "title": "Le Jap Ona",
+  "lat": 43.463128,
+  "lng": -1.539752,
+  "cuisine": "sushi",
+  "tags": [
+   "À emporter"
+  ],
+  "hours": "Mo-Sa 08:30-20:00",
+  "address": "1 Rue des Hirondelles Biarritz",
+  "website": "https://lejap-ona.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13949695501",
+  "title": "Crêperie Biarritz Sarrasin",
+  "lat": 43.484035,
+  "lng": -1.556677,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-21:00",
+  "address": "6 Avenue de la Marne",
+  "website": "http://biarritz-sarrasin.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-2432919097",
+  "title": "La Goulue",
+  "lat": 43.480583,
+  "lng": -1.558318,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 19:30-23:00; Su,We,Th,Fr 12:00-14:00",
+  "address": "3 Rue Étienne Ardoin",
+  "website": "http://www.lagouluebiarritz.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-2433987631",
+  "title": "Bar Jean",
+  "lat": 43.481278,
+  "lng": -1.562538,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 10:30-02:00",
+  "address": "5 Rue des Halles",
+  "website": "https://barjean-biarritz.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-13123702501",
+  "title": "Le Jardin",
+  "lat": 43.480668,
+  "lng": -1.560158,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Th-Tu 12:00-14:30, 19:30-21:30",
+  "address": "4 Avenue Jaulerry",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-2702756266",
+  "title": "Le Bistrot gourmet",
+  "lat": 43.486063,
+  "lng": -1.550947,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Th-Mo 12:00-14:30,19:00-21:30",
+  "address": "18 Rue de la Bergerie Biarritz",
+  "website": "https://le-bistrot-gourmet.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-4822612421",
+  "title": "L'Entre Deux",
+  "lat": 43.480945,
+  "lng": -1.55881,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Sa 19:30-21:30",
+  "address": "5 Avenue du Maréchal Foch",
+  "website": "https://www.lentredeuxbiarritz.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11407115894",
+  "title": "Chez Isabella",
+  "lat": 43.459576,
+  "lng": -1.540599,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:30-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-4877320069",
+  "title": "Les Baigneuses",
+  "lat": 43.482306,
+  "lng": -1.5668,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "http://www.lesbaigneusesdebiarritz.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-4330743200",
+  "title": "Arena Biarritz",
+  "lat": 43.482353,
+  "lng": -1.567169,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "http://www.arena-biarritz.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-4877320120",
+  "title": "Bouillon Hortense",
+  "lat": 43.482828,
+  "lng": -1.559522,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:45, Tu-Sa 19:00-21:45",
+  "address": "11 Rue Gardères",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-14242016547",
+  "title": "Cidrerie Beti Bai des Platanes",
+  "lat": 43.49626,
+  "lng": -1.538832,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 11:30-14:30,18:30-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-2433987632",
+  "title": "Chistera & Coquillages",
+  "lat": 43.481137,
+  "lng": -1.561886,
+  "cuisine": "Espagnole",
+  "tags": [],
+  "hours": "",
+  "address": "13 13 Rue des Halles Biarritz",
+  "website": "https://chisteraetcoquillages.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-3871575597",
+  "title": "Le Cèdre du Liban",
+  "lat": 43.487373,
+  "lng": -1.537211,
+  "cuisine": "Libanaise",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.facebook.com/Le-C%C3%A8dre-du-Liban-170995299647367/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4298743995",
+  "title": "Lieu des Pêcheurs",
+  "lat": 43.499159,
+  "lng": -1.54343,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "http://lelieuanglet.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4726498189",
+  "title": "Los dos hermanos",
+  "lat": 43.481699,
+  "lng": -1.554747,
+  "cuisine": "Espagnole",
+  "tags": [],
+  "hours": "Mo-Su 19:30-22:30",
+  "address": "36 Avenue de Verdun",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4877320049",
+  "title": "Le Palmarium",
+  "lat": 43.482159,
+  "lng": -1.565846,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "http://www.le-palmarium-biarritz.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-11667095518",
+  "title": "Chez Anna",
+  "lat": 43.46252,
+  "lng": -1.539624,
+  "cuisine": "ukrainian",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-12927593520",
+  "title": "L'Océan",
+  "lat": 43.500405,
+  "lng": -1.542219,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Fr, Su 10:30-22:00; Sa 10:30-23:00",
+  "address": "7 Esplanade des Gascons",
+  "website": "https://loceanchambredamour.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-way-71996616",
+  "title": "Marloe Biarritz",
+  "lat": 43.473009,
+  "lng": -1.556099,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "45 Avenue du Président J.F. Kennedy Biarritz",
+  "website": "https://marloe-biarritz.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4955297702",
+  "title": "Goia",
+  "lat": 43.501013,
+  "lng": -1.539839,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.goiarestaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-12252376826",
+  "title": "Sunside Café Anglet",
+  "lat": 43.500914,
+  "lng": -1.541181,
+  "cuisine": "juice",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.sunsidecafe.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-12928131616",
+  "title": "Pho 8 Khao Soi",
+  "lat": 43.501077,
+  "lng": -1.539749,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://pho8khaosoi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-way-72023447",
+  "title": "Amarys",
+  "lat": 43.47221,
+  "lng": -1.534808,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Sa 19:30-22:00",
+  "address": "",
+  "website": "https://surehotel-biarritz.com/fra/restaurants",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-2796181655",
+  "title": "La Table Basque",
+  "lat": 43.484017,
+  "lng": -1.556916,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.restaurant-ltb-biarritz.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-6587493073",
+  "title": "L'Euphrate",
+  "lat": 43.501105,
+  "lng": -1.539708,
+  "cuisine": "Turque",
+  "tags": [],
+  "hours": "Mo off; Tu-Fr 10:00-15:00,18:00-23:30; PH 10:00-23:30",
+  "address": "38 Avenue des Dauphins Anglet",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-6828029868",
+  "title": "Le Bouchon Biarrot",
+  "lat": 43.485112,
+  "lng": -1.555738,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.lebouchonbiarrot.com/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-1362597014",
+  "title": "Bar restaurant Bistrot zingué",
+  "lat": 43.478111,
+  "lng": -1.557109,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 08:00-17:00",
+  "address": "5 Avenue de la Gare",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-3520082111",
+  "title": "Le O2 Verdun",
+  "lat": 43.481887,
+  "lng": -1.554185,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-3871575603",
+  "title": "Leonie",
+  "lat": 43.482883,
+  "lng": -1.544229,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "http://www.restaurant-leonie.com",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-3871575648",
+  "title": "Orange et Chocolat",
+  "lat": 43.501156,
+  "lng": -1.539496,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.creperie-anglet.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-6587493999",
+  "title": "A table !",
+  "lat": 43.501002,
+  "lng": -1.539138,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "15 Avenue du Rayon Vert Anglet",
+  "website": "https://www.restaurantatableanglet.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-3871575612",
+  "title": "Novotel Café",
+  "lat": 43.477153,
+  "lng": -1.526279,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "http://www.novotel.biarritz.anglet.aeroport.com",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-6813960405",
+  "title": "Santosha",
+  "lat": 43.48174,
+  "lng": -1.557372,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:00+",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-11051515125",
+  "title": "Carøe",
+  "lat": 43.47913,
+  "lng": -1.564282,
+  "cuisine": "Poissons",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.caroe.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-1361473274",
+  "title": "Le Pim'Pi",
+  "lat": 43.481748,
+  "lng": -1.557053,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:45,19:45-21:45+",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-6274733931",
+  "title": "Les 3 Salsas",
+  "lat": 43.474182,
+  "lng": -1.564268,
+  "cuisine": "Mexicaine",
+  "tags": [],
+  "hours": "Mo-Su 19:30-22:00+",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ },
+ {
+  "id": "osm-node-7350331594",
+  "title": "You Sushi",
+  "lat": 43.476622,
+  "lng": -1.547939,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Su,PH 11:00-14:30,18:00-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ }
+]

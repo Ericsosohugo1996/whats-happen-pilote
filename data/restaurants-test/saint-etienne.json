@@ -1,0 +1,813 @@
+[
+ {
+  "id": "osm-node-7181700707",
+  "title": "L'Atelier de Fauriel",
+  "lat": 45.42628,
+  "lng": 4.404354,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 08:00-16:00; week 01-53/2 Sa 06:30-14:00",
+  "address": "",
+  "website": "https://latelier-de-fauriel-restaurant-saint-etienne.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-6964046246",
+  "title": "Bali Café",
+  "lat": 45.440981,
+  "lng": 4.388428,
+  "cuisine": "indonesian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 12:00-14:00; Th-Fr 12:00-14:00,19:00-23:00",
+  "address": "5 Rue de Lodi",
+  "website": "https://www.balicafe.fr/",
+  "description": "Plat végétarien absent de la carte mais disponible à la demande",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-560857302",
+  "title": "La Taverne Brasserie",
+  "lat": 45.442729,
+  "lng": 4.398609,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "11:30-22:30",
+  "address": "",
+  "website": "https://latavernebrasserie42.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-1601318120",
+  "title": "Chez les Fondus",
+  "lat": 45.437078,
+  "lng": 4.387187,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Tu,Th-Fr,Su 18:45-24:00; Sa 12:00-15:00,18:45-24:00",
+  "address": "",
+  "website": "https://chezlesfondus.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3906814880",
+  "title": "El Inca",
+  "lat": 45.440189,
+  "lng": 4.388808,
+  "cuisine": "Péruvienne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 11:45-14:30; Fr-Sa 11:45-14:30,18:45-23:00",
+  "address": "21 Rue Louis Braille Saint-Étienne",
+  "website": "https://el-inca.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5900150416",
+  "title": "Madame, Table de Cheffe",
+  "lat": 45.432594,
+  "lng": 4.39426,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:30-21:00",
+  "address": "Place Villebœuf Saint-Étienne",
+  "website": "https://www.restaurantmadame.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5900130185",
+  "title": "La Savane",
+  "lat": 45.4349,
+  "lng": 4.391909,
+  "cuisine": "Africaine",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,19:00-23:00",
+  "address": "",
+  "website": "https://www.la-savane.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2979366747",
+  "title": "Oyisi",
+  "lat": 45.439425,
+  "lng": 4.394488,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:45-14:00,18:00-22:00",
+  "address": "55 Rue de la République Saint-Étienne",
+  "website": "https://www.restaurant-japonais-oyisi.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12173061019",
+  "title": "25 Côté Cour",
+  "lat": 45.453121,
+  "lng": 4.390424,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Fr 11:30-14:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-3461579508",
+  "title": "Wa Bento",
+  "lat": 45.434682,
+  "lng": 4.390944,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-We 11:30-14:00; Th-Sa 11:30-14:00,19:00-21:00",
+  "address": "",
+  "website": "https://www.wabento.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4509235547",
+  "title": "Spice Lounge",
+  "lat": 45.434223,
+  "lng": 4.391369,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 11:30-14:00,18:00-23:00; Fr-Sa 11:30-14:00,19:00-23:30",
+  "address": "",
+  "website": "https://www.spicelounge.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-10941834386",
+  "title": "Le Comptoir Syrien",
+  "lat": 45.427837,
+  "lng": 4.393815,
+  "cuisine": "syrian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th,Sa 12:00-14:30,19:00-22:00; Fr 19:00-22:00",
+  "address": "",
+  "website": "https://comptoirsyrien.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3294322846",
+  "title": "Jeannette",
+  "lat": 45.44185,
+  "lng": 4.385298,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 08:00-22:00",
+  "address": "",
+  "website": "https://www.creperie-jeannette.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-3617298919",
+  "title": "Little Garden",
+  "lat": 45.442101,
+  "lng": 4.385165,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu,We 10:00-15:00; Th,Fr 10:00-23:00; Sa 18:00-23:00",
+  "address": "",
+  "website": "https://mylittlegardenresto.wordpress.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-3668529939",
+  "title": "Corne d'Aurochs",
+  "lat": 45.440329,
+  "lng": 4.390346,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-We 12:00-14:00; Th,Fr 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://cornedaurochs.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-3920286861",
+  "title": "Chimère",
+  "lat": 45.436874,
+  "lng": 4.386966,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "closed",
+  "address": "",
+  "website": "https://restaurantchimere.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-5987144490",
+  "title": "La Maison Dorée",
+  "lat": 45.432852,
+  "lng": 4.3884,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We-Sa 10:00-14:00,19:30-01:00",
+  "address": "",
+  "website": "https://www.la-maison-doree.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-8954006621",
+  "title": "Kitchen St.",
+  "lat": 45.440695,
+  "lng": 4.398743,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 08:00-18:00",
+  "address": "",
+  "website": "https://www.kitchenstreet.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-13327754222",
+  "title": "Auberge du Bernay",
+  "lat": 45.411774,
+  "lng": 4.406861,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Th,Su 09:00-15:00; Fr 09:00-15:00,19:00-23:00; Fr-Sa 19:00-23:00",
+  "address": "",
+  "website": "https://aubergedubernay.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4509133921",
+  "title": "Bol'appétit",
+  "lat": 45.448078,
+  "lng": 4.383578,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Th 09:45-14:00; Fr 09:45-14:00,19:00-21:30",
+  "address": "",
+  "website": "https://www.bolappetit.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-5657218909",
+  "title": "La Fabuleuse Cantine",
+  "lat": 45.450554,
+  "lng": 4.386989,
+  "cuisine": "seasonal",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "1 Rue Claudius Ravachol Saint-Étienne",
+  "website": "https://saint-etienne.lafabuleusecantine.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-560878982",
+  "title": "La Loco",
+  "lat": 45.442258,
+  "lng": 4.398551,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 12:00-15:00,19:00-23:00; Fr,Su 12:00-15:00; Sa 19:00-23:00",
+  "address": "",
+  "website": "http://restaurant-la-loco.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-685756018",
+  "title": "Les Perles d’Ivoire",
+  "lat": 45.439169,
+  "lng": 4.38976,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Su-Mo 18:30-23:30; Tu-Sa 12:00-14:00,18:30-23:30",
+  "address": "",
+  "website": "https://lesperlesdivoire.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-1642939061",
+  "title": "Di Voglia",
+  "lat": 45.456608,
+  "lng": 4.391765,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Sa 10:00-14:30,19:00-21:30",
+  "address": "",
+  "website": "https://www.divoglia.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-3997775704",
+  "title": "Les Terrasses de Maloé",
+  "lat": 45.438325,
+  "lng": 4.38888,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 09:00-20:00",
+  "address": "",
+  "website": "https://www.lesterrassesdemaloe.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-10278572040",
+  "title": "Tsing Tao",
+  "lat": 45.429403,
+  "lng": 4.393204,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Tu-Sa 11:00-14:00,17:30-22:30; Su 17:30-22:30",
+  "address": "",
+  "website": "https://tsingtaosaint-etienne.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-2378055674",
+  "title": "Lusa Ramen",
+  "lat": 45.441151,
+  "lng": 4.387478,
+  "cuisine": "ramen",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30 , 18:30-22:30",
+  "address": "4 Place Jean Jaurès",
+  "website": "https://lusaramen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-4056375878",
+  "title": "Côté Sushi",
+  "lat": 45.436988,
+  "lng": 4.388642,
+  "cuisine": "Péruvienne",
+  "tags": [],
+  "hours": "Mo-Th,Su 11:00-22:30; Fr-Sa 11:00-23:00",
+  "address": "",
+  "website": "https://cotesushi.com/restaurants/3580-cote-sushi-saint-etienne",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-12073771719",
+  "title": "La Maison Nelly",
+  "lat": 45.437663,
+  "lng": 4.389952,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Tu,We 12:00-14:00; Th-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.nellytraiteurevents.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-12176637908",
+  "title": "Asian House",
+  "lat": 45.433586,
+  "lng": 4.388212,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Th 11:00-14:30,18:30-22:30; Fr 18:30-23:00; Sa 11:00-15:00,18:30-23:00",
+  "address": "",
+  "website": "https://asian-house.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-4233728790",
+  "title": "numéro dix",
+  "lat": 45.436299,
+  "lng": 4.386488,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 11:00-15:30; Sa 11:00-15:00",
+  "address": "",
+  "website": "https://numerodix-cantine.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-2266097269",
+  "title": "Le Méliès",
+  "lat": 45.441702,
+  "lng": 4.387319,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 14:00-00:00; Tu-We 12:00-00:30; Th-Sa 12:00-01:30; Su 14:00-22:00",
+  "address": "10 Place Jean Jaurès",
+  "website": "https://www.lemelies.com/restaurant-brasserie-le-melies/",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-3907979935",
+  "title": "Gandot",
+  "lat": 45.439458,
+  "lng": 4.38613,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 09:00-17:00",
+  "address": "",
+  "website": "https://gandot.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-13287579654",
+  "title": "Nour",
+  "lat": 45.451403,
+  "lng": 4.39175,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00 || 18:30-22:30 open \"Les soirs de spectacle\"",
+  "address": "",
+  "website": "https://www.lacomedie.fr/nour-690c806229bb2",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-way-755597953",
+  "title": "Les Comptoirs d'Alice et Jules",
+  "lat": 45.442256,
+  "lng": 4.420552,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "07:00-21:30",
+  "address": "",
+  "website": "https://www.lescomptoirsdalice.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-403182651",
+  "title": "L'Escargot d'Or",
+  "lat": 45.433991,
+  "lng": 4.388114,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://lescargotdor.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-661339906",
+  "title": "Bistrot Gaga",
+  "lat": 45.432737,
+  "lng": 4.387766,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,We 09:00-16:00; Tu,Th,Fr 07:00-15:00; Sa 06:30-15:00",
+  "address": "",
+  "website": "https://www.bistrotgaga.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-3412477504",
+  "title": "Sushi Tomioka",
+  "lat": 45.443018,
+  "lng": 4.384743,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "http://sushi-tomioka.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-4509282300",
+  "title": "L'Axolotl",
+  "lat": 45.428079,
+  "lng": 4.389308,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 11:00-14:00,19:00-22:00",
+  "address": "39 Rue Désiré Claude",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-4509282302",
+  "title": "Le Ryad",
+  "lat": 45.428084,
+  "lng": 4.394306,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.leryad.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-7384769840",
+  "title": "Miss Italia",
+  "lat": 45.441785,
+  "lng": 4.415164,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "139 Rue des Alliés",
+  "website": "https://www.pizzeria-miss-italia.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-392671687",
+  "title": "La Batisse",
+  "lat": 45.420679,
+  "lng": 4.410372,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://restaurant-labatisse42.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-2682123760",
+  "title": "Sushiren",
+  "lat": 45.437626,
+  "lng": 4.382997,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://sushiren42.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-3412227578",
+  "title": "Le Baobab",
+  "lat": 45.44442,
+  "lng": 4.384346,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://lebaobab.vercel.app/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-6871468042",
+  "title": "Kashmir Curry",
+  "lat": 45.457262,
+  "lng": 4.38192,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://kashmircurry42.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-2505108835",
+  "title": "Kyoto",
+  "lat": 45.436638,
+  "lng": 4.389595,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-3617298916",
+  "title": "Chez Ye",
+  "lat": 45.442025,
+  "lng": 4.385187,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-22:30; Sa,Su 11:30-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-8485710215",
+  "title": "Ô Dragon",
+  "lat": 45.443965,
+  "lng": 4.424275,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-12207288116",
+  "title": "Chez Dada Resto",
+  "lat": 45.429695,
+  "lng": 4.392858,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "We-Sa 11:30-14:30,20:00-22:45; Su 20:00-22:45",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-4560172352",
+  "title": "Tsuki",
+  "lat": 45.43511,
+  "lng": 4.387818,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://tsuki42.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-9762802054",
+  "title": "Italian Trattoria",
+  "lat": 45.445985,
+  "lng": 4.420956,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://restaurants.it-trattoria.fr/saint-etienne-steel/",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-4509235544",
+  "title": "Poco Loco",
+  "lat": 45.434878,
+  "lng": 4.390568,
+  "cuisine": "latin american",
+  "tags": [],
+  "hours": "12:00-01:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-13240176491",
+  "title": "Le Souffle du Maroc",
+  "lat": 45.440887,
+  "lng": 4.38852,
+  "cuisine": "Marocaine",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00; Su 12:00-14:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ }
+]

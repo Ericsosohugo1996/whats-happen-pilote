@@ -1,0 +1,750 @@
+ESSAI « Restaurants à découvrir » (OpenStreetMap) — aucun effet sur le site
+
+=== Paris (rayon 8 km) ===
+Restaurants avec un nom : 10964 | chaînes écartées : 1039 | retenus : 150
+Renseignés : type de cuisine 66 %, site web 34 %, horaires 48 %, description 2 %, fiche Wikidata 1 %
+  - Bouillon Chartier Montparnasse [Française · Accessible] score 106
+  - L'Escargot Montorgueil [Française · Terrasse/Accessible] score 87
+  - Le Cochon à l'Oreille [Française · Terrasse] score 87
+  - Moulin de la Galette [Française · Terrasse] score 84
+  - Brasserie Bofinger [Française · Accessible] score 83
+  - Le Bœuf sur le Toit [Française] score 81
+  - Au Vieux Paris d'Arcole [cuisine non précisée] score 76
+  - Le Petit Cambodge [Asiatique · Terrasse/Options végé] score 76
+  - Prunier [Poissons et fruits de mer] score 76
+  - La Fermette Marbeuf [Française] score 74
+  - Richer [Française · Terrasse/Options végé] score 74
+  - Le Choupinet [Française · Terrasse/Accessible] score 73
+  - L'Alsace [Française · Terrasse] score 73
+  - Derya [kurde · Terrasse/Accessible] score 73
+  - Gwenn Ha Du [Crêpes · Options végé/Accessible] score 73
+
+=== Lyon (rayon 7 km) ===
+Restaurants avec un nom : 1966 | chaînes écartées : 280 | retenus : 150
+Renseignés : type de cuisine 68 %, site web 50 %, horaires 68 %, description 6 %, fiche Wikidata 2 %
+  - Nostalgie [russian · Terrasse/Options végé] score 76
+  - La Bodeguita Cubana [cuban · Terrasse] score 74
+  - Brasserie L'Est - Bocuse [Française · Terrasse/Accessible] score 73
+  - La Cocagne [Asiatique · Terrasse] score 73
+  - Frite Alors! [Burger] score 73
+  - Bistrot Jutard [cuisine non précisée · Terrasse/Options végé/Accessible] score 69
+  - Lyon Dakar [Africaine · Terrasse] score 69
+  - Café des Fédérations [Française] score 68
+  - La Perle Sushi [sushi] score 68
+  - Ravello - Pizza napoletana gourmet [Italienne] score 67
+  - Messob [Éthiopienne] score 67
+  - La Voie Himalaya [nepalese · Accessible] score 67
+  - Brasserie Chanteclair [cuisine non précisée · Terrasse/Accessible] score 67
+  - Le Mercière [Française · Accessible] score 67
+  - Comptoir Chabert et Fils [Terroir] score 66
+
+=== Marseille (rayon 7 km) ===
+Restaurants avec un nom : 1022 | chaînes écartées : 128 | retenus : 150
+Renseignés : type de cuisine 50 %, site web 22 %, horaires 30 %, description 2 %, fiche Wikidata 0 %
+  - La Caravelle [Poissons · Terrasse] score 65
+  - La Kahena [couscous · Terrasse] score 55
+  - Un jardin en ville [Italienne · Terrasse] score 45
+  - Oeuf [coffee shop · Terrasse/Options végé/Accessible] score 44
+  - C'est bon [Grecque · Options végé] score 41
+  - OLLā | La Vieille Charité [Fusion · Terrasse/Options végé] score 36
+  - Sushi Room [cuisine non précisée · Terrasse] score 36
+  - BāM | La Terrasse [Fusion · Terrasse/Options végé/Bio] score 36
+  - Chez riz [Asiatique · Terrasse/Options végé] score 35
+  - My Little Warung [Asiatique · Terrasse/Options végé] score 35
+  - Mame Diarra [Africaine] score 34
+  - La Maison des Raviolis - Italie [Chinoise] score 34
+  - Le Toigou [Thaïlandaise] score 34
+  - Massena [coffee shop · Terrasse/Options végé] score 33
+  - Chez Yassine [arab · Terrasse/Options végé] score 33
+
+=== Bordeaux (rayon 7 km) ===
+Restaurants avec un nom : 1119 | chaînes écartées : 157 | retenus : 150
+Renseignés : type de cuisine 64 %, site web 44 %, horaires 50 %, description 2 %, fiche Wikidata 0 %
+  - La Fusion Intendance [cuisine non précisée] score 60
+  - Ze'Rock [cuisine non précisée · Terrasse/Accessible] score 47
+  - Atelier des Faures [Française · Terrasse] score 46
+  - La Cour de Nana [syrian · Terrasse/Options végé] score 42
+  - Pizza Del Passato [Italienne · Terrasse] score 41
+  - Frères Z [Asiatique · Options végé/Bio] score 40
+  - La Péniche Bistrot Régent [Viande · Accessible] score 40
+  - Halva [Libanaise · Terrasse/Options végé] score 40
+  - Le Jardin Pékinois [Chinoise · Terrasse] score 38
+  - Le Jardin Pêcheur [Française] score 38
+  - Sushi Création [Japonaise] score 37
+  - Jup Jup [Asiatique · Terrasse/Options végé] score 36
+  - Kawayoshi Ramen [ramen] score 36
+  - Adonis [Libanaise · Terrasse/Options végé] score 36
+  - Mélodie [Française · Terrasse/Options végé] score 36
+
+=== Toulouse (rayon 7 km) ===
+Restaurants avec un nom : 980 | chaînes écartées : 150 | retenus : 150
+Renseignés : type de cuisine 68 %, site web 54 %, horaires 68 %, description 10 %, fiche Wikidata 0 %
+  - Campagne [Française · Terrasse] score 52
+  - Ô Jardin Gourmand [Française · Terrasse] score 52
+  - L'Atelier du Pêcheur savoyard [Poissons et fruits de mer · Terrasse/Options végé] score 47
+  - Himari Sushi Saint-Cyprien [sushi · Terrasse/Options végé/Accessible] score 44
+  - Chut Guinguette [cuisine non précisée] score 44
+  - Le Galuchat [Crêpes · Terrasse/Options végé] score 43
+  - Kashmir [Indienne · Terrasse/Options végé] score 42
+  - Zen-Saï [Japonaise · Terrasse/Options végé] score 42
+  - Abyssinia [Éthiopienne · Terrasse/Options végé] score 42
+  - Le Temps des Vendanges [cuisine non précisée · Terrasse] score 41
+  - Le Père Léon [Française · Terrasse] score 41
+  - SushiYaki [Japonaise] score 40
+  - Côté Garonne [Française · Terrasse] score 40
+  - L'Atelier de l'Écharpe [Méditerranéenne] score 40
+  - Le Safran [arab · Options végé] score 40
+
+=== Nantes (rayon 7 km) ===
+Restaurants avec un nom : 735 | chaînes écartées : 149 | retenus : 150
+Renseignés : type de cuisine 83 %, site web 56 %, horaires 79 %, description 7 %, fiche Wikidata 1 %
+  - Le Reflet [Française · Options végé/Accessible] score 73
+  - O Deck [Grecque · Options végé] score 64
+  - Kessecet [Française · Options végé] score 55
+  - Bras de Fer [Brasserie · Bio/Accessible] score 55
+  - Melon [Française · Options végé/Bio] score 55
+  - République Côté Jardin [Française · Accessible] score 47
+  - Paku Paku [Japonaise · Terrasse/Options végé] score 44
+  - La cour du coin [Terroir] score 43
+  - Pomme Bûche [fries] score 41
+  - TerraVega [Internationale · Options végé/Bio] score 41
+  - Quélys [Française · Options végé/Accessible] score 41
+  - Panier d'Or [taiwanese · Options végé/Accessible] score 41
+  - Comptoir à Poutine [poutine · Options végé/Accessible] score 41
+  - Guindaille [Internationale · Options végé/Accessible] score 41
+  - Ichi Zen [Japonaise · Options végé] score 41
+
+=== Lille (rayon 7 km) ===
+Restaurants avec un nom : 867 | chaînes écartées : 137 | retenus : 150
+Renseignés : type de cuisine 65 %, site web 51 %, horaires 51 %, description 2 %, fiche Wikidata 0 %
+  - L'arrière pays [Française · Terrasse/Options végé] score 49
+  - La cour de la ch’tite brigitte [Terroir] score 41
+  - La cave d’Hippolyte [Terroir] score 40
+  - Saisons - Cave à Manger [Française] score 40
+  - Kok Piraat Péniche-Restaurant [Terroir] score 38
+  - La Petite Cour [Terroir · Terrasse] score 37
+  - Pico [Thaïlandaise] score 36
+  - Le Meunier [Française · Terrasse] score 36
+  - Mama Kitchen Caffè [Italienne] score 36
+  - La Chicorée [Terroir · Terrasse/Options végé/Accessible] score 36
+  - Bistrot du Ch'ti [Terroir · Terrasse/Options végé] score 36
+  - Le By S' [Française · Terrasse/Bio] score 35
+  - Toyotomi [Japonaise · Terrasse/Options végé] score 34
+  - Jour de Pêche [Poissons · Terrasse] score 34
+  - Happy F'eat [brunch · Terrasse/Options végé] score 34
+
+=== Strasbourg (rayon 7 km) ===
+Restaurants avec un nom : 846 | chaînes écartées : 123 | retenus : 150
+Renseignés : type de cuisine 65 %, site web 50 %, horaires 62 %, description 2 %, fiche Wikidata 1 %
+  - Maison des Tanneurs [Française · Accessible] score 56
+  - Les Restaurants Du Cœur Fringale [cuisine non précisée] score 54
+  - À l'Ancienne Douane [Terroir · Terrasse/Accessible] score 49
+  - Le Jardin de l'Orangerie [Terroir] score 42
+  - L'Epicier Grand Cru [Française · Options végé] score 41
+  - Les Tontons Flambeurs [Terroir · Options végé/Accessible] score 41
+  - Le grand Shanghai [Asiatique · Terrasse/Accessible] score 40
+  - Darness [Marocaine · Options végé/Accessible] score 40
+  - NEM.A [Vietnamienne · Options végé] score 39
+  - Le Schnockeloch [Terroir · Accessible] score 38
+  - Pétrin Bistrot du Boulanger [cuisine non précisée · Terrasse/Options végé] score 38
+  - Sushido [Japonaise · Terrasse/Options végé] score 36
+  - Carcasse [beef · Terrasse] score 36
+  - Purattu [libanaise · Terrasse/Options végé] score 36
+  - L'Oignon [Française · Terrasse/Options végé] score 36
+
+=== Nice (rayon 7 km) ===
+Restaurants avec un nom : 848 | chaînes écartées : 69 | retenus : 150
+Renseignés : type de cuisine 44 %, site web 48 %, horaires 40 %, description 2 %, fiche Wikidata 0 %
+  - La Cave du Fromager [cheese] score 84
+  - Le Plongeoir [cuisine non précisée] score 56
+  - Le Mayssa [Méditerranéenne · Terrasse/Accessible] score 41
+  - BA MA [Vietnamienne · Options végé] score 41
+  - L'Atelier [Française] score 38
+  - Kumano [Japonaise · Options végé/Accessible] score 38
+  - Chez Mireille [Espagnole] score 36
+  - Chez Pipo [Terroir · Terrasse/Options végé] score 35
+  - Indian Lounge [Indienne · Terrasse/Options végé/Accessible] score 35
+  - Cave de la Tour [cuisine non précisée · Terrasse] score 35
+  - Servella [Terroir] score 35
+  - Chez Ritho [Méditerranéenne · Terrasse/Options végé] score 33
+  - La Planxa [Française · Terrasse/Options végé/Accessible] score 33
+  - 21 Paysans [Terroir · Options végé/Bio] score 33
+  - La Vieille Crêpe [Française · Options végé/Accessible] score 33
+
+=== Montpellier (rayon 7 km) ===
+Restaurants avec un nom : 833 | chaînes écartées : 132 | retenus : 150
+Renseignés : type de cuisine 54 %, site web 29 %, horaires 35 %, description 2 %, fiche Wikidata 0 %
+  - Atelier 29 [barbecue · Terrasse/Accessible] score 44
+  - Le Petit Jardin [Terroir · Terrasse] score 44
+  - L'Atelier Gourmand Restaurant d'Application Purple Campus Montpellier [gastronomique] score 42
+  - Les Mômes [Terroir · Terrasse/Accessible] score 41
+  - Le désinvolte [cuisine non précisée · Terrasse/Options végé] score 38
+  - Rosemarie [Terroir · Terrasse/Options végé/Accessible] score 36
+  - Green Lab - Université [oriental · Terrasse/Options végé] score 36
+  - Maria & Juana [Mexicaine · Terrasse/Options végé] score 36
+  - L'Encas - Salon de thé et restaurant [cuisine non précisée · Terrasse] score 35
+  - Delecto [sushi · Terrasse/Options végé/Accessible] score 35
+  - Sushi Kawaii [Japonaise · Terrasse/Options végé] score 35
+  - Mikado [Japonaise · Terrasse/Options végé] score 34
+  - Yumiwi [Asiatique] score 34
+  - Beyrouth [Libanaise · Terrasse/Options végé] score 34
+  - L’Atelier de l’Alchimiste [Française] score 33
+
+=== Rennes (rayon 4 km) ===
+Restaurants avec un nom : 397 | chaînes écartées : 63 | retenus : 60
+Renseignés : type de cuisine 70 %, site web 59 %, horaires 75 %, description 1 %, fiche Wikidata 1 %
+  - Bretone [Crêpes] score 59
+  - Crêperie Saint-Georges [Crêpes · Terrasse/Options végé] score 42
+  - Terrible [fine dining · Terrasse] score 41
+  - Le Mékong [Asiatique] score 38
+  - Black Temple Food [caribbean · Terrasse/Options végé] score 36
+  - Mezzelicious [Libanaise · Terrasse/Options végé] score 36
+  - Les Bavardes [Française · Terrasse/Options végé] score 36
+  - L'Épi de Blé [Crêpes · Terrasse/Options végé/Accessible] score 36
+  - Les Piplettes [Crêpes · Terrasse/Options végé] score 36
+  - Estime [Française · Terrasse] score 36
+  - Bee'llig Crêperie [Crêpes · Terrasse/Options végé/Bio] score 36
+  - O’Liban [Libanaise · Terrasse/Options végé] score 36
+  - Yam Yam [Coréenne · Terrasse/Options végé] score 36
+  - Sakura Ya [Japonaise · Terrasse/Options végé] score 35
+  - Sarrasin [Crêpes · Terrasse/Options végé] score 35
+
+=== Grenoble (rayon 4 km) ===
+Restaurants avec un nom : 511 | chaînes écartées : 98 | retenus : 60
+Renseignés : type de cuisine 67 %, site web 43 %, horaires 64 %, description 4 %, fiche Wikidata 0 %
+  - La Chapelle [Internationale · Terrasse/Options végé] score 50
+  - K Fée des Jeux [Internationale · Options végé/Accessible] score 41
+  - Le Jardin d'Asie [Asiatique] score 41
+  - Chez Marius [traditional · Options végé] score 41
+  - TUK TUK GALLERY [Asiatique · Options végé] score 41
+  - Chez Pascal [Africaine · Terrasse] score 38
+  - Le Cèdre [Libanaise · Terrasse/Options végé] score 36
+  - Le Jardin Biergarten [german · Terrasse] score 36
+  - Gourmet Viet [Vietnamienne · Terrasse/Options végé] score 36
+  - Le Gratin Dauphinois [Française · Terrasse/Options végé] score 36
+  - Escale Indienne [Indienne · Terrasse/Options végé/Accessible] score 36
+  - Locafé [Française · Terrasse/Options végé/Bio] score 36
+  - Sunset Boulevard [Thaïlandaise · Terrasse/Options végé] score 36
+  - Fergus [local · Terrasse/Options végé] score 36
+  - Maison des Saveurs [Asiatique · Terrasse/Options végé/Accessible] score 36
+
+=== Dijon (rayon 4 km) ===
+Restaurants avec un nom : 339 | chaînes écartées : 56 | retenus : 60
+Renseignés : type de cuisine 61 %, site web 40 %, horaires 58 %, description 1 %, fiche Wikidata 0 %
+  - L'Âge de Raisin [Française · Terrasse] score 41
+  - Cave [Française] score 38
+  - Le Shanti [Indienne · Terrasse/Options végé/Accessible] score 34
+  - Masami [Japonaise · Terrasse/Options végé] score 34
+  - Le Petit Roi de la Lune [traditional · Terrasse] score 33
+  - The Little Italy [Italienne · Terrasse/Options végé] score 33
+  - Chez Léon [Française · Terrasse] score 32
+  - Monique boire et manger [cuisine non précisée · Terrasse] score 32
+  - La Cave se Rebiffe [Française] score 32
+  - Le Noti [Française · Options végé/Accessible] score 31
+  - L'Bout d'la Rue [Poissons et fruits de mer · Terrasse] score 31
+  - Le Palazzio [Italienne · Terrasse] score 31
+  - Da Adriano [Italienne · Terrasse] score 31
+  - La Chaumine [Bistrot] score 31
+  - Marco Polo [Italienne · Options végé] score 30
+
+=== Angers (rayon 4 km) ===
+Restaurants avec un nom : 263 | chaînes écartées : 50 | retenus : 60
+Renseignés : type de cuisine 73 %, site web 39 %, horaires 63 %, description 13 %, fiche Wikidata 0 %
+  - Potiron & Ciboulette [local · Terrasse/Options végé/Accessible] score 44
+  - La Soufflerie [Crêpes · Terrasse/Options végé/Accessible] score 44
+  - Tonton Foch [Française · Terrasse/Options végé/Accessible] score 44
+  - Maison Watson [Internationale · Terrasse/Options végé] score 44
+  - La Belle Équipe [Française · Terrasse/Options végé/Accessible] score 44
+  - Le Grand Jardin [Française] score 42
+  - La Péniche [Française] score 42
+  - La Gogane [Crêpes · Terrasse/Accessible] score 41
+  - Kazumi [fine dining · Accessible] score 41
+  - Les maraîchers [Française · Terrasse/Accessible] score 41
+  - Sakura [Japonaise · Terrasse] score 40
+  - La Cour [coffee shop] score 40
+  - Mamie Fada [Française · Terrasse/Accessible] score 39
+  - Le Punjab [Indienne · Terrasse/Options végé] score 38
+  - Paku Paku [Japonaise · Accessible] score 38
+
+=== Tours (rayon 4 km) ===
+Restaurants avec un nom : 278 | chaînes écartées : 35 | retenus : 60
+Renseignés : type de cuisine 66 %, site web 59 %, horaires 73 %, description 6 %, fiche Wikidata 0 %
+  - L'Atelier [Crêpes] score 42
+  - Verjus [Française] score 41
+  - Le Bistro Thaï [Thaïlandaise] score 38
+  - L’Accalmie [Française] score 37
+  - Les Grands Ducs [Française · Terrasse] score 36
+  - Le Cappuccino [Italienne · Terrasse/Options végé] score 36
+  - La Plume Blanche [Française · Terrasse] score 36
+  - Oi Izakaya [Japonaise] score 36
+  - Nachos [Mexicaine · Terrasse/Options végé] score 36
+  - Chez Madie [Tapas · Terrasse/Options végé/Accessible] score 35
+  - L'Atelier d'Olivier [Française · Accessible] score 34
+  - Gopal [Indienne · Options végé/Bio] score 33
+  - Bâmiyân [afghan · Options végé/Accessible] score 33
+  - China Town [Asiatique · Options végé] score 33
+  - Casse-Cailloux [Française · Terrasse] score 33
+
+=== Reims (rayon 4 km) ===
+Restaurants avec un nom : 240 | chaînes écartées : 32 | retenus : 60
+Renseignés : type de cuisine 54 %, site web 50 %, horaires 56 %, description 1 %, fiche Wikidata 2 %
+  - Au Cul de Poule [Française · Terrasse] score 73
+  - Le Gaulois [Française · Terrasse/Accessible] score 67
+  - L'Alambic [Française] score 60
+  - Le Tablier [Française] score 53
+  - Atelier Mala [Asiatique · Terrasse/Options végé] score 49
+  - Brasserie Le Jardin [Française] score 38
+  - Sacré Brunch [brunch · Terrasse/Options végé] score 36
+  - Saigon Cà Phê [Vietnamienne · Terrasse/Options végé/Accessible] score 36
+  - Taj Mahal [Indienne · Terrasse/Options végé/Accessible] score 36
+  - Punjab [indien · Terrasse/Options végé] score 35
+  - Restaurant Universitaire Moulin de la Housse [Internationale] score 34
+  - La Trattoria [Italienne · Options végé] score 33
+  - L'Apostrophe [Tapas · Terrasse] score 33
+  - Au Fil des Saisons [salad · Options végé] score 33
+  - Au coeur de l'Orient [Marocaine · Options végé/Accessible] score 33
+
+=== Rouen (rayon 4 km) ===
+Restaurants avec un nom : 355 | chaînes écartées : 43 | retenus : 60
+Renseignés : type de cuisine 72 %, site web 47 %, horaires 70 %, description 2 %, fiche Wikidata 1 %
+  - La Couronne [Française · Terrasse/Options végé] score 97
+  - Auberge Saint-Maclou [Française · Options végé] score 79
+  - D'eux-mêmes [Française · Terrasse/Options végé] score 36
+  - La Terrasse [Française · Terrasse/Options végé/Accessible] score 36
+  - Délices de Yifan [Asiatique] score 36
+  - Together Asia Fusion Food [Asiatique] score 36
+  - Blotti [Italienne · Options végé] score 33
+  - Sushi First [sushi] score 33
+  - Le 6e Sens [Internationale · Terrasse] score 33
+  - Marcel [Française · Terrasse] score 33
+  - Doges [Italienne · Terrasse] score 33
+  - La Petite Bouffe [pasta · Options végé/Accessible] score 33
+  - Le Café Perdu [traditionnelle du jardin · Terrasse/Accessible] score 33
+  - Maneki Neko [Japonaise · Options végé] score 33
+  - Okinawa [Asiatique · Terrasse] score 33
+
+=== Le Havre (rayon 4 km) ===
+Restaurants avec un nom : 200 | chaînes écartées : 26 | retenus : 52
+Renseignés : type de cuisine 51 %, site web 34 %, horaires 44 %, description 2 %, fiche Wikidata 0 %
+  - Babayoshi [Asiatique · Terrasse] score 33
+  - Maison hoi an [Vietnamienne] score 30
+  - Le Bistrot des grands bassins [Française] score 28
+  - Le Zgorthiote [Libanaise] score 28
+  - L'Horizon [Internationale · Terrasse] score 28
+  - Le Grignot [Française] score 27
+  - Le Pattaya [Thaïlandaise] score 27
+  - Fujiya-Sushi [Japonaise] score 27
+  - Crêperie Soizic [Crêpes] score 27
+  - Tudo Bem [Portugaise] score 27
+  - Brasserie Georges.B [Française] score 26
+  - L'Atlas [oriental] score 26
+  - Sakura Sushi [Japonaise] score 26
+  - Kimchi [Coréenne] score 25
+  - Le Taj Mahal [Indienne · Terrasse] score 25
+
+=== Saint-Étienne (rayon 4 km) ===
+Restaurants avec un nom : 203 | chaînes écartées : 30 | retenus : 53
+Renseignés : type de cuisine 62 %, site web 44 %, horaires 41 %, description 0 %, fiche Wikidata 0 %
+  - L'Atelier de Fauriel [Française · Terrasse] score 44
+  - Bali Café [indonesian · Options végé] score 39
+  - La Taverne Brasserie [Française · Terrasse] score 34
+  - Chez les Fondus [Terroir · Terrasse] score 33
+  - El Inca [Péruvienne · Terrasse/Accessible] score 33
+  - Madame, Table de Cheffe [Française · Terrasse/Options végé] score 33
+  - La Savane [Africaine · Terrasse/Options végé] score 32
+  - Oyisi [Japonaise · Options végé] score 31
+  - 25 Côté Cour [Française] score 31
+  - Wa Bento [Japonaise · Terrasse] score 30
+  - Spice Lounge [Indienne · Options végé] score 30
+  - Le Comptoir Syrien [syrian · Options végé] score 30
+  - Jeannette [Crêpes · Options végé] score 29
+  - Little Garden [Vietnamienne · Options végé] score 29
+  - Corne d'Aurochs [Française] score 29
+
+=== Toulon (rayon 4 km) ===
+Restaurants avec un nom : 196 | chaînes écartées : 25 | retenus : 42
+Renseignés : type de cuisine 47 %, site web 19 %, horaires 30 %, description 0 %, fiche Wikidata 0 %
+  - Sembilan [malaysian · Terrasse/Options végé] score 34
+  - Mirch Masala [Indienne · Options végé] score 33
+  - La Feuille de Chou [Française · Terrasse] score 30
+  - Jardin Bambou [Vietnamienne] score 30
+  - Al Dente [Italienne] score 26
+  - MAYOL [Italienne] score 26
+  - FloraBio [cuisine non précisée · Options végé] score 26
+  - Hôi An [Asiatique] score 24
+  - Sawa [syrian · Options végé] score 24
+  - Bistrot Chalucet [Française] score 24
+  - Joao's [Portugaise · Terrasse] score 23
+  - L'O Beach [Méditerranéenne] score 23
+  - Le Pastel [cuisine non précisée] score 22
+  - Le Petit Rungis [cuisine non précisée] score 22
+  - FocaChérie [Italienne · Options végé] score 22
+
+=== Clermont-Ferrand (rayon 4 km) ===
+Restaurants avec un nom : 286 | chaînes écartées : 38 | retenus : 60
+Renseignés : type de cuisine 52 %, site web 32 %, horaires 65 %, description 2 %, fiche Wikidata 0 %
+  - Le Bistrot d'à Côté [Bistrot · Terrasse/Options végé/Accessible] score 36
+  - Nhu-y [Vietnamienne · Terrasse/Options végé] score 36
+  - Inckliné [coffee shop] score 35
+  - Au BDV [Terroir] score 35
+  - Il Visconti [Italienne · Terrasse] score 33
+  - Honoré [Terroir · Accessible] score 32
+  - Fresh Burritos [Mexicaine · Terrasse/Options végé] score 32
+  - Bistrot Gorki [Française · Options végé/Accessible] score 32
+  - Le Gandhi [Indienne · Terrasse] score 31
+  - Le Duguesclin [Française · Terrasse] score 31
+  - Le Chardonnay [Bistrot · Terrasse] score 30
+  - La Régalade [Française · Options végé/Accessible] score 29
+  - Avenue [Française] score 29
+  - Okinawa [Japonaise] score 28
+  - Côté Sushi [Japonaise · Options végé] score 28
+
+=== Metz (rayon 4 km) ===
+Restaurants avec un nom : 267 | chaînes écartées : 56 | retenus : 60
+Renseignés : type de cuisine 63 %, site web 57 %, horaires 63 %, description 9 %, fiche Wikidata 0 %
+  - Le Jardin Suspendu [cuisine non précisée · Terrasse/Options végé] score 50
+  - La Cantoche [Française · Terrasse/Options végé] score 44
+  - Line Asie [Asiatique · Terrasse/Accessible] score 41
+  - Ayako Sushi [Japonaise · Options végé] score 41
+  - Angkor Thom [cambodian · Terrasse] score 40
+  - La Goulue [cuisine non précisée · Terrasse/Options végé/Accessible] score 38
+  - Ô Paradis Éthiopien [Éthiopienne · Accessible] score 38
+  - L'Assiette au Bœuf [Française · Terrasse/Accessible] score 36
+  - Pasta Mery [Italienne · Terrasse/Options végé] score 36
+  - Nomade [mezze · Terrasse/Options végé] score 36
+  - Angkor Wat [Asiatique · Terrasse/Options végé] score 36
+  - La Fleure de Ly [Française · Terrasse/Bio] score 35
+  - Au Cœur du Liban [oriental · Terrasse/Options végé] score 34
+  - Kyōdai Ramen [ramen · Terrasse/Options végé/Accessible] score 34
+  - Crêperie Le Saint-Malo [Terroir · Terrasse] score 33
+
+=== Nancy (rayon 4 km) ===
+Restaurants avec un nom : 299 | chaînes écartées : 34 | retenus : 60
+Renseignés : type de cuisine 50 %, site web 50 %, horaires 50 %, description 4 %, fiche Wikidata 1 %
+  - La Villa [cuisine non précisée] score 58
+  - Kounagi [Japonaise · Terrasse/Options végé] score 36
+  - Crock & Rock [Bistrot · Terrasse/Options végé] score 36
+  - Vins et Tartines [wine · Terrasse] score 36
+  - Le Villeroy [Marocaine · Terrasse/Options végé] score 35
+  - M.Houmous [cuisine non précisée · Options végé/Bio] score 35
+  - Le Bouche à Oreilles [cheese · Terrasse/Options végé/Accessible] score 35
+  - The Tiger [Indienne · Terrasse/Options végé] score 34
+  - La Petite Cuillère [Française · Terrasse/Options végé] score 34
+  - IT Italian Trattoria [Italienne · Terrasse/Options végé] score 34
+  - Le Chardon [Terroir · Terrasse/Options végé] score 34
+  - Le Jardin des Thermes [cuisine non précisée] score 34
+  - La Cour des Arts [cuisine non précisée · Options végé/Accessible] score 33
+  - O'Noodle [Chinoise · Terrasse] score 33
+  - Brasserie Saint-Georges [Française · Terrasse/Accessible] score 33
+
+=== Annecy (rayon 4 km) ===
+Restaurants avec un nom : 291 | chaînes écartées : 46 | retenus : 60
+Renseignés : type de cuisine 53 %, site web 51 %, horaires 35 %, description 5 %, fiche Wikidata 1 %
+  - l'Oasis Auberge du Bessard [cuisine non précisée] score 51
+  - Bateau-Restaurant MS Libellule [cuisine non précisée] score 42
+  - Saba [Française · Terrasse] score 36
+  - le Beignet ALPIN [savoy · Terrasse/Options végé/Bio] score 36
+  - Slake Coffee [brunch] score 35
+  - Le Bouillon [Française] score 34
+  - Bamboo [udon] score 34
+  - Bistro Sauvage [Terroir · Terrasse] score 33
+  - Nuance [Française · Terrasse] score 33
+  - Le Fréti [Terroir · Terrasse] score 32
+  - Les Petites Cantines Annecy [cuisine non précisée · Accessible] score 32
+  - Chez Ingalls [Française · Options végé] score 32
+  - La Cour 24 [Terroir] score 32
+  - Koto Koto [Japonaise · Options végé/Bio] score 30
+  - Dip Honest Food [cuisine non précisée · Terrasse/Options végé/Bio/Accessible] score 30
+
+=== Bayonne (rayon 3 km) ===
+Restaurants avec un nom : 169 | chaînes écartées : 25 | retenus : 41
+Renseignés : type de cuisine 45 %, site web 31 %, horaires 43 %, description 2 %, fiche Wikidata 0 %
+  - Basa [Terroir · Terrasse/Options végé] score 42
+  - Le Byron [cuisine non précisée · Terrasse/Options végé] score 36
+  - Quai n°15 [Terroir · Terrasse] score 33
+  - Kunitomi [Japonaise · Terrasse] score 33
+  - NKI SUSHI [sushi · Terrasse/Accessible] score 31
+  - Bohebon [hawaiian · Accessible] score 30
+  - Atelier Mala [Chinoise] score 29
+  - Fufu Ramen [Japonaise] score 28
+  - Le bistro de l'Atalante [cuisine non précisée · Terrasse/Options végé] score 28
+  - Haragia [Viande] score 28
+  - A la cantine [cuisine non précisée · Terrasse/Accessible] score 27
+  - Au Bouchon Basque [Terroir] score 26
+  - Mogu Japan Café [Japonaise] score 26
+  - A La Bolée [Crêpes · Terrasse] score 25
+  - Le Croque Bedaine [cuisine non précisée · Terrasse] score 25
+
+=== Biarritz (rayon 3 km) ===
+Restaurants avec un nom : 186 | chaînes écartées : 22 | retenus : 39
+Renseignés : type de cuisine 45 %, site web 25 %, horaires 18 %, description 0 %, fiche Wikidata 0 %
+  - Le Jardin de la Paillote Bleue [Méditerranéenne] score 32
+  - Le Jap Ona [sushi · À emporter] score 30
+  - Crêperie Biarritz Sarrasin [Française] score 29
+  - La Goulue [cuisine non précisée · Terrasse] score 27
+  - Bar Jean [Française · Terrasse] score 27
+  - Le Jardin [cuisine non précisée · Options végé] score 27
+  - Le Bistrot gourmet [Française] score 26
+  - L'Entre Deux [Française] score 26
+  - Chez Isabella [Italienne · Terrasse/Options végé/Accessible] score 24
+  - Les Baigneuses [Française · Terrasse] score 23
+  - Arena Biarritz [Française · Terrasse] score 21
+  - Bouillon Hortense [Française · Terrasse] score 21
+  - Cidrerie Beti Bai des Platanes [Terroir · Terrasse] score 21
+  - Chistera & Coquillages [Espagnole] score 20
+  - Le Cèdre du Liban [Libanaise] score 20
+
+=== La Rochelle (rayon 3 km) ===
+Restaurants avec un nom : 253 | chaînes écartées : 28 | retenus : 60
+Renseignés : type de cuisine 57 %, site web 35 %, horaires 45 %, description 2 %, fiche Wikidata 0 %
+  - Le Jardin du marché [Française · Options végé/Accessible] score 47
+  - Bun's garden [Terroir · Terrasse/Options végé/Accessible] score 42
+  - Yemanja [Internationale] score 38
+  - Le Rouge aux Lèvres [cuisine non précisée] score 38
+  - El Gauchito [argentinian] score 37
+  - Le Comptoir de Walter [Française · Terrasse/Options végé] score 36
+  - L'Asiane [Asiatique · Terrasse/Accessible] score 36
+  - Brasserie Là-Haut [cuisine non précisée · Terrasse/Accessible] score 35
+  - L'Épi de blé [Crêpes · Terrasse/Options végé] score 35
+  - Un voyage à Damas [syrian · Terrasse] score 33
+  - Gueuleton [local · Terrasse/Accessible] score 33
+  - Annam [Vietnamienne · Options végé] score 33
+  - Boniato [Mexicaine · Options végé] score 33
+  - Dijo [Française] score 33
+  - Bunsik [Coréenne · Terrasse/Options végé] score 33
+
+=== Avignon (rayon 3 km) ===
+Restaurants avec un nom : 276 | chaînes écartées : 21 | retenus : 60
+Renseignés : type de cuisine 48 %, site web 21 %, horaires 26 %, description 4 %, fiche Wikidata 0 %
+  - Au Jardin des Carmes [Française · Terrasse] score 47
+  - fou de fafa [Française · Terrasse/Options végé/Accessible] score 36
+  - Hygge [cuisine non précisée · Options végé] score 34
+  - La Guinguette du Vieux Moulin [Terroir] score 34
+  - Le Bercail [Terroir · Terrasse/Accessible] score 33
+  - Éphèse [Turque · Terrasse] score 33
+  - Mamma Corsica [Terroir · Terrasse] score 33
+  - L’arlequin [Française · Terrasse] score 33
+  - Le 46 [Française · Terrasse] score 33
+  - Le Cul De Poule [Française · Terrasse/Accessible] score 32
+  - Le zinzolin [Française · Terrasse] score 32
+  - Naturabsolu [organic · Options végé/Bio] score 31
+  - Milano [Italienne · Terrasse] score 30
+  - Le Vintage [Française] score 30
+  - La princière [cuisine non précisée · Terrasse/Options végé/Accessible] score 30
+
+=== Aix-en-Provence (rayon 4 km) ===
+Restaurants avec un nom : 292 | chaînes écartées : 27 | retenus : 60
+Renseignés : type de cuisine 54 %, site web 48 %, horaires 75 %, description 1 %, fiche Wikidata 0 %
+  - Côté Cour [Française] score 42
+  - Les Inséparables [gastronomique · Terrasse/Accessible] score 41
+  - Le Riad [Méditerranéenne · Options végé] score 39
+  - Jardin Mazarin [cuisine non précisée] score 38
+  - Francesca [Italienne] score 37
+  - Aux Délices du Liban [Libanaise · Terrasse/Options végé] score 35
+  - La Fromagerie du Passage [cuisine non précisée] score 34
+  - Seito Sushi & Grill [Japonaise · Terrasse/Options végé] score 34
+  - Aux Papillons [Française] score 33
+  - Tanja [Marocaine · Options végé/Accessible] score 33
+  - Le Souk Provençal [Française · Terrasse/Accessible] score 33
+  - Grey Sushi [sushi · Terrasse] score 33
+  - Aji-Sushi [sushi · Options végé] score 33
+  - IT Italian Trattoria [Italienne · Terrasse] score 32
+  - Le Bouddoir [Terroir · Terrasse] score 31
+
+=== Perpignan (rayon 4 km) ===
+Restaurants avec un nom : 209 | chaînes écartées : 34 | retenus : 56
+Renseignés : type de cuisine 61 %, site web 34 %, horaires 25 %, description 10 %, fiche Wikidata 0 %
+  - The Citrus [Internationale · Terrasse/Accessible] score 41
+  - Le petiot [Française · Terrasse/Options végé] score 41
+  - La cantine Latina [Péruvienne] score 35
+  - Baston Restaurant & Cave [cuisine non précisée] score 35
+  - Le Cabestan [Poissons et fruits de mer] score 34
+  - Ô Liban [Libanaise · Terrasse/Options végé/Accessible] score 34
+  - Le Chaudron Cabestany [Terroir · Terrasse] score 33
+  - La Taverne Bretonne [Crêpes · Options végé] score 33
+  - Miam [cuisine non précisée · Options végé] score 32
+  - Ô belles gambettes [cuisine non précisée] score 31
+  - Fricaccia Italian Street Food [Italienne · Accessible] score 30
+  - Catalogne Café [Terroir · Terrasse] score 30
+  - Txoko [Méditerranéenne · Terrasse] score 29
+  - Maménakané [Française] score 29
+  - La Passerelle [Poissons et fruits de mer] score 28
+
+=== Caen (rayon 4 km) ===
+Restaurants avec un nom : 275 | chaînes écartées : 47 | retenus : 60
+Renseignés : type de cuisine 59 %, site web 53 %, horaires 78 %, description 3 %, fiche Wikidata 0 %
+  - La Cave à Huîtres [Poissons et fruits de mer · Terrasse/Accessible] score 49
+  - Ohn’ki [Coréenne · Options végé/Accessible] score 39
+  - La Galettoire [Crêpes · Terrasse/Options végé] score 36
+  - L'Insolite [cuisine non précisée] score 36
+  - Le Potager [persian · Terrasse/Options végé] score 36
+  - Heiko Poké [hawaiian · Terrasse/Options végé] score 36
+  - La Buona Tavola [Italienne · Terrasse/Options végé/Accessible] score 35
+  - Le Bistronome [Française · Terrasse/Options végé/Accessible] score 35
+  - L'Oriental Couscous [couscous · Terrasse/Options végé] score 35
+  - Sasésu [Vietnamienne · Terrasse/Options végé] score 35
+  - Koboon [Thaïlandaise · Terrasse/Options végé/Accessible] score 35
+  - Le Sans-Gêne [barbecue · Terrasse/Accessible] score 35
+  - L'Embroche [Française · Terrasse/Options végé] score 34
+  - La Porte du Punjab [Indienne · Terrasse/Options végé] score 34
+  - La Véranda [Française · Terrasse] score 33
+
+=== Limoges (rayon 4 km) ===
+Restaurants avec un nom : 232 | chaînes écartées : 29 | retenus : 46
+Renseignés : type de cuisine 56 %, site web 19 %, horaires 31 %, description 1 %, fiche Wikidata 0 %
+  - La Petite Graine [cuisine non précisée · Options végé] score 33
+  - La Cuisine du Cloître [Française · Terrasse] score 31
+  - La Taverne - Table de caractère [Terroir · Accessible] score 29
+  - La Marelle des Saveurs [Terroir] score 28
+  - Amphytrion [Française] score 27
+  - Grill' Inn [Française] score 26
+  - Le Maharaja [Indienne] score 26
+  - La Petite ourse [Internationale] score 24
+  - Le Bistrot des halles [cuisine non précisée] score 24
+  - La souris verte [Française] score 24
+  - La Maison Libanaise [Libanaise · Terrasse/Options végé] score 24
+  - Le Pont Saint-Étienne [Française] score 23
+  - Le Comptoir St Jean [cuisine non précisée] score 23
+  - Syrina [Libanaise] score 23
+  - VerSus [cuisine non précisée] score 23
+
+=== Brest (rayon 4 km) ===
+Restaurants avec un nom : 204 | chaînes écartées : 21 | retenus : 60
+Renseignés : type de cuisine 64 %, site web 47 %, horaires 59 %, description 1 %, fiche Wikidata 0 %
+  - Le Jardin de Gwenn [Internationale] score 42
+  - L'Atelier Gourmand [Française · Terrasse] score 39
+  - Latitude Crêpe [Crêpes · Terrasse/Options végé] score 36
+  - Au falafel du Liban [Libanaise · Terrasse/Options végé] score 36
+  - Heiko [poke · Terrasse/Options végé] score 36
+  - Biorek [cuisine non précisée · Options végé/Bio/Accessible] score 35
+  - Blé noir [Crêpes · Terrasse/Accessible] score 35
+  - Fuxia [Italienne · Accessible] score 34
+  - Jardin d'hiver [cuisine non précisée] score 34
+  - Royal Punjab [Indienne · Options végé/Accessible] score 33
+  - Restaurant Universitaire de Kergoat [Française · Options végé/Accessible] score 33
+  - Le Ruffé [Terroir · Accessible] score 32
+  - So Metiss' [Internationale · Options végé] score 32
+  - Le Mont Liban [Libanaise · Options végé/Accessible] score 32
+  - Signare [Africaine · Options végé] score 32
+
+=== Poitiers (rayon 4 km) ===
+Restaurants avec un nom : 125 | chaînes écartées : 19 | retenus : 33
+Renseignés : type de cuisine 58 %, site web 29 %, horaires 50 %, description 2 %, fiche Wikidata 0 %
+  - Moulin de la Norée [Française · Options végé] score 46
+  - La Mangeoire [Française · Terrasse/Options végé] score 36
+  - Le Rooftop [cuisine non précisée · Accessible] score 34
+  - Beyrouth [Libanaise · Options végé] score 33
+  - Sweet Time & Company [cuisine non précisée · Terrasse] score 32
+  - Gourmandizz Pizza [Italienne · Terrasse] score 31
+  - Brasserie Hurons [Française · Options végé] score 31
+  - Le Bonheur Est Dans Le Thé [Française · Bio/Accessible] score 31
+  - La cuisine de comptoir [rotisserie · Accessible] score 29
+  - Taj Mahal [Indienne] score 28
+  - Le Flonflon Épatant [Française · Accessible] score 28
+  - Le Carré des Officiers, Bar – Brasserie – Pizzas [Française · Accessible] score 27
+  - Le Trait d'Union [Française · Terrasse/Options végé] score 27
+  - Saigon Exotique [Asiatique] score 27
+  - The Roof Poitiers - Maison de l'escalade [cuisine non précisée · Options végé] score 27
+
+=== Besançon (rayon 4 km) ===
+Restaurants avec un nom : 157 | chaînes écartées : 20 | retenus : 58
+Renseignés : type de cuisine 50 %, site web 51 %, horaires 68 %, description 1 %, fiche Wikidata 0 %
+  - L’Insolite [Française · Options végé] score 44
+  - Le Bouillon du Commerce [Terroir] score 44
+  - Yuki [Asiatique · Terrasse/Options végé] score 36
+  - L'Etna 3 [Italienne · Terrasse/Options végé] score 34
+  - Samuraï sushis [sushi · Options végé/Accessible] score 33
+  - Le Chapelier [Française · Terrasse/Options végé] score 33
+  - Central Sushi [sushi · Terrasse] score 33
+  - Le Café Café [Française · Terrasse/Accessible] score 32
+  - Restaurant Bistrot La Charrette [Terroir · Terrasse] score 31
+  - Dar les bains [Marocaine · Terrasse/Accessible] score 31
+  - Casinne [Terroir · Options végé/Accessible] score 31
+  - Namo [Chinoise · Options végé/Accessible] score 31
+  - La Boîte à crêpes [Crêpes · Terrasse] score 31
+  - Loiseau du Temps [Terroir · Terrasse] score 31
+  - Le Pixel [Mexicaine · Terrasse/Accessible] score 30
+
+=== Nîmes (rayon 4 km) ===
+Restaurants avec un nom : 203 | chaînes écartées : 34 | retenus : 55
+Renseignés : type de cuisine 53 %, site web 45 %, horaires 55 %, description 33 %, fiche Wikidata 0 %
+  - L'Ancien Thêatre [Française] score 49
+  - Brasserie des Fleurs [cuisine non précisée · Terrasse] score 46
+  - The Bird [cuisine non précisée] score 43
+  - Le Mauricette [cuisine non précisée] score 42
+  - Wine Bar "Le Cheval Blanc" [Terroir · Terrasse] score 40
+  - Le Mercadante [Italienne · Terrasse] score 40
+  - La Marmitte [Française · Terrasse] score 40
+  - Les délices de lola [Terroir · Options végé/Bio] score 39
+  - Aux Plaisirs des Halles [fine dining] score 36
+  - La damant bistrot chic [Française] score 36
+  - Sushi One [sushi · Accessible] score 36
+  - Le République [Terroir] score 35
+  - La Table du 2 [Terroir · Accessible] score 35
+  - L'Imprévu [fine dining] score 35
+  - Vinh Phat [Vietnamienne] score 35
+
+=== Pau (rayon 4 km) ===
+Restaurants avec un nom : 170 | chaînes écartées : 22 | retenus : 57
+Renseignés : type de cuisine 57 %, site web 38 %, horaires 41 %, description 5 %, fiche Wikidata 0 %
+  - La Galetterie [Crêpes · Bio/Accessible] score 41
+  - Jòïa Mâa [Française] score 39
+  - Les Amants du Marché [cuisine non précisée · Terrasse/Options végé/Bio] score 38
+  - Le Kbourut [Française] score 36
+  - L'Ardoise [Française · Terrasse] score 33
+  - La fiancée du désert [Libanaise · Terrasse/Accessible] score 33
+  - Viet Nam [Asiatique · Terrasse/Accessible] score 33
+  - Omnivore [Française · Terrasse] score 32
+  - Taj Mahal [Indienne · Terrasse] score 32
+  - Jumo & Co [Française · Terrasse] score 31
+  - À la bonne heure [Française · Terrasse/Accessible] score 31
+  - Gueuleton [Française] score 30
+  - La brasserie royale [cuisine non précisée] score 30
+  - Yuri. M [Japonaise · Accessible] score 30
+  - Restaurant Inter Administratif [cuisine non précisée · Terrasse/Options végé/Bio] score 30
+
+=== Montauban (rayon 3 km) ===
+Restaurants avec un nom : 71 | chaînes écartées : 6 | retenus : 16
+Renseignés : type de cuisine 45 %, site web 15 %, horaires 15 %, description 4 %, fiche Wikidata 0 %
+  - Le Gabriel [Terroir · Terrasse] score 32
+  - Le Jardin Il Tavolino [Italienne] score 30
+  - Namasthe [cuisine non précisée · Options végé] score 24
+  - Olla [cuisine non précisée · Terrasse/Options végé] score 23
+  - Gueuleton Montauban [Française] score 20
+  - Le Délice Indien [Indienne · Terrasse/Options végé/Accessible] score 20
+  - Le globe et la trotteuse [coffee shop · Terrasse/Accessible] score 20
+  - La Coulée Douce [Terroir] score 20
+  - L'Estanquet [cuisine non précisée] score 18
+  - Cantarossa [Méditerranéenne] score 17
+  - Les Terrasses de l'Empereur [cuisine non précisée · Terrasse/Options végé/Accessible] score 16
+  - Brasserie le Miroir [cuisine non précisée · Terrasse/Options végé] score 16
+  - L'atelier de Julie [cuisine non précisée] score 15
+  - Aux confidences [local · Options végé] score 15
+  - Le Pasha [cuisine non précisée · Terrasse/Accessible] score 14
+
+=== Ajaccio (rayon 4 km) ===
+Restaurants avec un nom : 105 | chaînes écartées : 10 | retenus : 5
+Renseignés : type de cuisine 25 %, site web 6 %, horaires 11 %, description 3 %, fiche Wikidata 0 %
+  - Bistro Canaille [Méditerranéenne] score 26
+  - L'Altru Versu [Française · Terrasse] score 23
+  - La Pause [cuisine non précisée] score 19
+  - Gusto [local] score 16
+  - Brasserie B'8 [cuisine non précisée] score 14
+
+=== Bastia (rayon 3 km) ===
+Restaurants avec un nom : 88 | chaînes écartées : 9 | retenus : 13
+Renseignés : type de cuisine 30 %, site web 9 %, horaires 22 %, description 1 %, fiche Wikidata 0 %
+  - Corto [Poissons] score 26
+  - Sushi My Karma [sushi] score 25
+  - Café WHA! [Mexicaine · Terrasse/Accessible] score 23
+  - COMO Cucina healthy VG [cuisine non précisée · Options végé] score 23
+  - A Cantina [Terroir · Options végé/Bio] score 22
+  - Le Bouillon Bastiais [cuisine non précisée] score 20
+  - A la Bottarga [Poissons · Terrasse] score 19
+  - U Paisanu [local] score 19
+  - A Loghja [Italienne] score 18
+  - Le Saïgon [Vietnamienne] score 18
+  - L'Atelier du marché [cuisine non précisée] score 15
+  - Les Sables Rouges [Méditerranéenne · Terrasse/Accessible] score 15
+  - Saveurs Lao [lao] score 14
+

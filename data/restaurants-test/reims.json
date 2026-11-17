@@ -1,0 +1,938 @@
+[
+ {
+  "id": "osm-node-6936993986",
+  "title": "Au Cul de Poule",
+  "lat": 49.257813,
+  "lng": 4.047896,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Tu, Th-Sa 12:00-14:00,19:30-22:00",
+  "address": "46 Boulevard Carteret",
+  "website": "https://www.auculdepoule.com/",
+  "description": "",
+  "wikidata": "Q104131696",
+  "score": 73
+ },
+ {
+  "id": "osm-node-4869858124",
+  "title": "Le Gaulois",
+  "lat": 49.254398,
+  "lng": 4.028033,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "2 Place Drouet d'Erlon Reims",
+  "website": "https://www.brasserielegaulois.com/",
+  "description": "",
+  "wikidata": "Q102170851",
+  "score": 67
+ },
+ {
+  "id": "osm-way-728503855",
+  "title": "L'Alambic",
+  "lat": 49.254682,
+  "lng": 4.022984,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "63 bis",
+  "website": "https://www.restaurant-lalambic.fr/",
+  "description": "",
+  "wikidata": "Q109418865",
+  "score": 60
+ },
+ {
+  "id": "osm-node-6317937706",
+  "title": "Le Tablier",
+  "lat": 49.254956,
+  "lng": 4.027699,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "32 Place d'Erlon",
+  "website": "",
+  "description": "",
+  "wikidata": "Q108582560",
+  "score": 53
+ },
+ {
+  "id": "osm-node-8911456219",
+  "title": "Atelier Mala",
+  "lat": 49.255141,
+  "lng": 4.030183,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-22:00",
+  "address": "44 Rue des Élus",
+  "website": "https://ateliermala-reims.com",
+  "description": "",
+  "wikidata": "",
+  "score": 49
+ },
+ {
+  "id": "osm-way-84665762",
+  "title": "Brasserie Le Jardin",
+  "lat": 49.240855,
+  "lng": 4.050437,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.lescrayeres.com/lejardin_4.html",
+  "description": "",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-5782715098",
+  "title": "Sacré Brunch",
+  "lat": 49.257039,
+  "lng": 4.03786,
+  "cuisine": "brunch",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 09:00-16:00; Sa-Su 10:00-16:00",
+  "address": "59 Rue Cérès Reims",
+  "website": "https://sacrebrunch.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5808070691",
+  "title": "Saigon Cà Phê",
+  "lat": 49.25483,
+  "lng": 4.027046,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-14:30,18:00-22:30; Su 12:00-14:30,18:00-22:30",
+  "address": "33 Place Drouet d'Erlon Reims",
+  "website": "https://www.saigon-ca-phe.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5808070735",
+  "title": "Taj Mahal",
+  "lat": 49.25665,
+  "lng": 4.025866,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-14:30,18:30-22:30",
+  "address": "87 Place Drouet d'Erlon Reims",
+  "website": "https://tajmahal-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-6284566521",
+  "title": "Punjab",
+  "lat": 49.291612,
+  "lng": 4.02321,
+  "cuisine": "indien",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 12:00-14:00, 19:00-22:00",
+  "address": "6 Rue en Mémoire des Harkis Reims",
+  "website": "https://punjab-reims.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-way-90735188",
+  "title": "Restaurant Universitaire Moulin de la Housse",
+  "lat": 49.241946,
+  "lng": 4.06041,
+  "cuisine": "Internationale",
+  "tags": [],
+  "hours": "",
+  "address": "4 Chemin des Rouliers Reims",
+  "website": "https://www.crous-reims.fr/restaurant/cafeteria-moulin-de-la-housse/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-5163802880",
+  "title": "La Trattoria",
+  "lat": 49.252052,
+  "lng": 4.03275,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-23:00",
+  "address": "45 Rue Chanzy Reims",
+  "website": "http://latrattoriareims.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5808070750",
+  "title": "L'Apostrophe",
+  "lat": 49.255676,
+  "lng": 4.02649,
+  "cuisine": "Tapas",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 10:00-00:00",
+  "address": "59 Place Drouet d'Erlon Reims",
+  "website": "http://www.restaurant-lapostrophe.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5858990390",
+  "title": "Au Fil des Saisons",
+  "lat": 49.257053,
+  "lng": 4.035518,
+  "cuisine": "salad",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-15:00",
+  "address": "13 Rue Courmeaux Reims",
+  "website": "https://www.au-fil-des-saisons.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13356353901",
+  "title": "Au coeur de l'Orient",
+  "lat": 49.252004,
+  "lng": 4.023125,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 11:30-14:30, 18:30-23:00; Fr-Sa 11:15-15:00, 18:15-00:00; Su 11:30-14:30, 18:30-23:00",
+  "address": "4 Rue de la Magdeleine",
+  "website": "https://o-coeur-de-l-orient.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5538329223",
+  "title": "Chez Armand",
+  "lat": 49.256187,
+  "lng": 4.033848,
+  "cuisine": "wine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 09:00-23:00",
+  "address": "4 Place du Forum Reims",
+  "website": "https://www.chez-armand-bistro.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5808070687",
+  "title": "Restaurant Café de la Paix",
+  "lat": 49.254532,
+  "lng": 4.026761,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 19:00-21:30",
+  "address": "9 Rue Buirette Reims",
+  "website": "https://restaurant-cafe-de-la-paix.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-6924074785",
+  "title": "Pizza Sarda",
+  "lat": 49.248621,
+  "lng": 4.037202,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:00, 19:00-22:30",
+  "address": "58 Rue Gambetta Reims",
+  "website": "http://pizza-sarda.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-12273053747",
+  "title": "Green sur mesure",
+  "lat": 49.260866,
+  "lng": 4.021752,
+  "cuisine": "poke",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 07:00-15:00",
+  "address": "4 Rue Gaston Boyer Reims",
+  "website": "https://restaurants.greensurmesure.fr/reims-clairmarais/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-12273120381",
+  "title": "La Grande Georgette",
+  "lat": 49.25351,
+  "lng": 4.031669,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 06:30-10:00,12:00-14:00,19:00-21:45",
+  "address": "18 Rue Tronsson Ducoudray Reims",
+  "website": "https://www.lacasernechanzy.com/fr/restaurant-et-bar.html",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5141690037",
+  "title": "KWABO",
+  "lat": 49.258215,
+  "lng": 4.021265,
+  "cuisine": "Africaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,Su off; Tu-We,Fr 12:00-14:00,19:00-23:00; Th 12:00-14:00,18:00-23:00; Sa 19:00-02:00",
+  "address": "31 Rue de Courcelles Reims",
+  "website": "https://kwabo-reims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6985301664",
+  "title": "Zhangliang malatang",
+  "lat": 49.255044,
+  "lng": 4.03536,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 11:30-14:30, 18:00-22:00",
+  "address": "1 Rue Eugène Desteuque",
+  "website": "https://zhangliangmalatang.fr/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7013152085",
+  "title": "La Gazelle",
+  "lat": 49.257936,
+  "lng": 4.040252,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo off; Tu 12:00-14:00; We-Sa 12:00-14:00,19:00-21:45; Su 12:00-14:00",
+  "address": "13 Avenue Jean Jaurès Reims",
+  "website": "https://www.lagazellereims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7086408191",
+  "title": "Le Bambi",
+  "lat": 49.252351,
+  "lng": 4.031691,
+  "cuisine": "Africaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Th 11:30-14:30, 18:00-22:00; Fr-Sa 11:30-14:30, 18:00-22:30; Su 11:30-14:30, 18:00-22:00",
+  "address": "",
+  "website": "https://lebambireims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12205673621",
+  "title": "Un indien dans la ville",
+  "lat": 49.256864,
+  "lng": 4.026541,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo off; Tu,We,Th 12:00-14:30,19:00-22:00; Fr,Sa 12:00-14:30,19:00-23:00; Su 12:00-14:30,19:00-22:00",
+  "address": "84 Place Drouet d'Erlon Reims",
+  "website": "https://www.unindiendanslaville.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13674339501",
+  "title": "Aku Ramen",
+  "lat": 49.251681,
+  "lng": 4.024128,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,18:00-22:30",
+  "address": "161 Rue de Vesle Reims",
+  "website": "https://rakuramenreims.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-662654730",
+  "title": "SODAD",
+  "lat": 49.255416,
+  "lng": 4.030943,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu 12:00-14:00; We-Sa 12:00-14:00, 19:00-22:00",
+  "address": "36",
+  "website": "https://sodad-restaurant-reims.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5160740629",
+  "title": "Le Mandarin",
+  "lat": 49.25336,
+  "lng": 4.026108,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "We-Mo 12:00-14:00,19:00-22:00",
+  "address": "31 Rue de Thillois",
+  "website": "https://lemandarinreims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-7500696105",
+  "title": "La Cucina di Fossati",
+  "lat": 49.257195,
+  "lng": 4.047096,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu 12:00-14:00; We,Th 12:00-14:00,19:00-21:00; Fr,Sa 12:00-14:00,19:00-21:30",
+  "address": "56 Rue de Cernay Reims",
+  "website": "https://www.la-cucina-di-fossati.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13333415237",
+  "title": "Bistro des Anges",
+  "lat": 49.252686,
+  "lng": 4.031317,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 09:00-00:00; Su 10:00-16:00",
+  "address": "12 Rue Chanzy Reims",
+  "website": "https://bistrodesanges.com",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5858981691",
+  "title": "Le Riad",
+  "lat": 49.257049,
+  "lng": 4.033234,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 19:00-22:30; Su 12:00-14:00",
+  "address": "12 Rue de Tambour Reims",
+  "website": "http://restaurant-leriad-reims.com",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6799417094",
+  "title": "Sushido",
+  "lat": 49.248511,
+  "lng": 4.037311,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30, 19:00-22:30",
+  "address": "62 Rue Gambetta",
+  "website": "https://sushido-reims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6976784085",
+  "title": "Sacré Ka",
+  "lat": 49.249204,
+  "lng": 4.036726,
+  "cuisine": "Libanaise",
+  "tags": [],
+  "hours": "Mo-We 08:00-21:00; Th-Sa 08:00-23:00; Su 11:00-18:00",
+  "address": "44 Rue Gambetta Reims",
+  "website": "https://www.sacreka.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6987074887",
+  "title": "Che Diego",
+  "lat": 49.26196,
+  "lng": 4.030004,
+  "cuisine": "argentinian",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-15:00,18:30-23:30",
+  "address": "2 Boulevard Jules César Reims",
+  "website": "https://che-diego.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6994582585",
+  "title": "Le Saint-Julien",
+  "lat": 49.256317,
+  "lng": 4.038945,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Su off, Mo-Sa 12:00-14:00; Tu,Th,Fr,Sa 19:30-21:30",
+  "address": "",
+  "website": "http://restaurantlesaintjulien.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7007846585",
+  "title": "Le Bocal",
+  "lat": 49.260138,
+  "lng": 4.030967,
+  "cuisine": "Poissons",
+  "tags": [],
+  "hours": "Tu-Th 12:00-13:30,19:00-21:00; Fr-Sa 12:30-13:30,19:00-21:30",
+  "address": "27 Rue de Mars Reims",
+  "website": "https://www.restaurantlebocal.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7018229485",
+  "title": "Hanuri Korean Grill Reims",
+  "lat": 49.251149,
+  "lng": 4.035339,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "12:00-15:00; 18:00-23:00",
+  "address": "1 Rue de Contrai Reims",
+  "website": "https://www.hanuri.fr/reims/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-12247065419",
+  "title": "Cuivré",
+  "lat": 49.257254,
+  "lng": 4.031467,
+  "cuisine": "Bistrot",
+  "tags": [],
+  "hours": "Mo off; Tu-Sa 17:00-00:00; Su off",
+  "address": "2 Rue de Pouilly Reims",
+  "website": "https://cuivrereims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7058379186",
+  "title": "La Villa",
+  "lat": 49.259297,
+  "lng": 4.03188,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Su-Th 12:00-14:30, 19:00-22:30; Fr-Sa 12:00-14:30, 19:00-23:30",
+  "address": "30 Rue de Mars",
+  "website": "http://lavillareims.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-7376596017",
+  "title": "L'Espelette",
+  "lat": 49.272486,
+  "lng": 4.024145,
+  "cuisine": "Espagnole",
+  "tags": [],
+  "hours": "Mo-Th 12:00-14:00, 19:00-22:00; Fr 12:00-14:00, 19:00-23:00; Sa 19:00-23:00",
+  "address": "29 Rue Roger Salengro",
+  "website": "https://lespelette-reims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-5538329224",
+  "title": "Côté Sushi",
+  "lat": 49.256102,
+  "lng": 4.032644,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:00-22:30; Fr,Sa 11:00-23:00; Su 11:00-22:30",
+  "address": "7 Place du Forum Reims",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-6316019448",
+  "title": "La Brigade",
+  "lat": 49.255371,
+  "lng": 4.026707,
+  "cuisine": "Viande",
+  "tags": [],
+  "hours": "Mo-Th 11:30-14:30,18:00-22:00; Fr-Su 11:30-22:30",
+  "address": "45 Place Drouet d'Erlon Reims",
+  "website": "https://www.la-brigade.fr/restaurant-reims",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-6932797185",
+  "title": "La Braise",
+  "lat": 49.258053,
+  "lng": 4.033066,
+  "cuisine": "barbecue",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-22:00",
+  "address": "1 Rue Jean-Jacques Rousseau Reims",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11446193077",
+  "title": "Bangkok factory",
+  "lat": 49.252457,
+  "lng": 4.025756,
+  "cuisine": "Thaïlandaise",
+  "tags": [],
+  "hours": "Mo-Th 11:30-15:00,18:30-23:30; Fr 11:30-13:30,18:30-24:00; Sa-Su 11:30-15:00,18:30-24:00",
+  "address": "",
+  "website": "https://bangkokfactory.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-12196569572",
+  "title": "Séoul",
+  "lat": 49.256996,
+  "lng": 4.026438,
+  "cuisine": "Coréenne",
+  "tags": [],
+  "hours": "Mo 12:00-14:30,19:00-22:30; Tu off; We-Su 12:00-14:30,19:00-22:30",
+  "address": "90 Place Drouet d'Erlon Reims",
+  "website": "https://seoul-reims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-1071236209",
+  "title": "Le Bistrot du Forum",
+  "lat": 49.25629,
+  "lng": 4.033989,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 09:00-23:00",
+  "address": "6 Place du Forum Reims",
+  "website": "https://www.lebistrotduforum.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-5821528802",
+  "title": "Little Georgette",
+  "lat": 49.253347,
+  "lng": 4.031842,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We-Su 12:00-14:00,19:00-22:00",
+  "address": "18 Rue Tronsson Ducoudray Reims",
+  "website": "https://www.lacasernechanzy.com/fr/littlegeorgette.html",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-5861221088",
+  "title": "Bulle 1924",
+  "lat": 49.257455,
+  "lng": 4.039689,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 12:00-13:45, Th,Fr 12:00-13:45,19:00-22:30, Sa 12:00-24:00, Su 12:00-15:00",
+  "address": "14 Place Aristide Briand Reims",
+  "website": "https://www.bulle1924.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-7069085585",
+  "title": "Gabrielle",
+  "lat": 49.252699,
+  "lng": 4.032732,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "We-Su 11:00-15:00, 18:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-7110353286",
+  "title": "Tip Khao",
+  "lat": 49.251884,
+  "lng": 4.023995,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00; Su,Mo off",
+  "address": "",
+  "website": "https://www.tipkhao.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-10704806076",
+  "title": "L'Ardennais",
+  "lat": 49.257826,
+  "lng": 4.040014,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Th 09:00-15:30; Fr-Sa 09:00-15:30,19:00-21:30",
+  "address": "9 Avenue Jean Jaurès Reims",
+  "website": "https://www.brasserie-lardennais.com/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-13631055169",
+  "title": "Victor by Sharies Reims",
+  "lat": 49.261594,
+  "lng": 4.021975,
+  "cuisine": "traditional",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:30,19:00-22:30",
+  "address": "8 Rue des Docks Rémois Reims",
+  "website": "https://sharies.co/fr/restaurants/victor",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-6222668525",
+  "title": "L'ArTdoise",
+  "lat": 49.235888,
+  "lng": 4.069195,
+  "cuisine": "brunch",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "2 Rue Gabriel Voisin Reims",
+  "website": "https://lartdoise.brasseriemaison.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-6358689933",
+  "title": "Hoang Van",
+  "lat": 49.258508,
+  "lng": 4.042753,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:00-14:00,18:30-21:30",
+  "address": "54 Avenue Jean Jaurès Reims",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-7389878682",
+  "title": "Les Cocottes",
+  "lat": 49.25729,
+  "lng": 4.048204,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 10:00-19:00",
+  "address": "70 Rue de Cernay",
+  "website": "https://www.lescocottesduculdepoule.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-7872238935",
+  "title": "La Medina",
+  "lat": 49.255772,
+  "lng": 4.025835,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "13 Rue de Châtivesle",
+  "website": "http://www.lamedinareims.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-10017805520",
+  "title": "Délices d'Asie",
+  "lat": 49.260879,
+  "lng": 4.04842,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 10:30-15:00, 16:30-21:30",
+  "address": "131 Avenue Jean Jaurès Reims",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-11891072470",
+  "title": "Genki",
+  "lat": 49.252054,
+  "lng": 4.032134,
+  "cuisine": "ramen",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30; Su off",
+  "address": "36 Rue Chanzy Reims",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-12941645994",
+  "title": "o sushi 51",
+  "lat": 49.261887,
+  "lng": 4.029044,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo,Su 18:00-22:30; Tu-Th 11:00-14:30,18:00-22:30; Fr 11:00-14:30,18:00-23:00; Sa 11:00-14:30",
+  "address": "",
+  "website": "https://osushi51.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-way-88250069",
+  "title": "Shiva",
+  "lat": 49.244804,
+  "lng": 4.019184,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 11:45-14:00,18:45-22:00; Tu off; We-Su 11:45-14:00,18:45-22:00",
+  "address": "99 Rue de Courlancy Reims",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ }
+]

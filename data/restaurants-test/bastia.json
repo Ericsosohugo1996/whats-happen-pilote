@@ -1,0 +1,197 @@
+[
+ {
+  "id": "osm-node-11018640580",
+  "title": "Corto",
+  "lat": 42.696576,
+  "lng": 9.449776,
+  "cuisine": "Poissons",
+  "tags": [],
+  "hours": "Fr-Sa 10:00-14:30, 18:30-23:00; Su, We-Th 10:00-14:30, 18:30-22:30",
+  "address": "1 Rue de la Marine",
+  "website": "https://www.whatiseat.com/fr/menu/corto/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-4714239757",
+  "title": "Sushi My Karma",
+  "lat": 42.702382,
+  "lng": 9.450892,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Su 09:00-22:30",
+  "address": "",
+  "website": "https://www.mykarmashop.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-5807430546",
+  "title": "Café WHA!",
+  "lat": 42.696422,
+  "lng": 9.450949,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:00-23:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-8609969033",
+  "title": "COMO Cucina healthy VG",
+  "lat": 42.703805,
+  "lng": 9.452842,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 09:00-15:00",
+  "address": "9 Rue Luce de Casabianca",
+  "website": "https://comocucina.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-5340333238",
+  "title": "A Cantina",
+  "lat": 42.696069,
+  "lng": 9.44743,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo-Sa 11:00-23:00",
+  "address": "2 Boulevard Paoli",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-13970102171",
+  "title": "Le Bouillon Bastiais",
+  "lat": 42.705087,
+  "lng": 9.440984,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Th 11:30-14:00; Fr-Sa 11:30-14:00,19:30-22:00",
+  "address": "Rue du Juge Falcone Bastia",
+  "website": "https://www.bouillonbastiais.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-2483371527",
+  "title": "A la Bottarga",
+  "lat": 42.696796,
+  "lng": 9.450712,
+  "cuisine": "Poissons",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "12:00-15:00,19:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-8303389343",
+  "title": "U Paisanu",
+  "lat": 42.696606,
+  "lng": 9.451765,
+  "cuisine": "local",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.upaisanu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-5488262807",
+  "title": "A Loghja",
+  "lat": 42.698298,
+  "lng": 9.450712,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Su 10:30-15:00, 18:45-21:45",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-13251893653",
+  "title": "Le Saïgon",
+  "lat": 42.695381,
+  "lng": 9.450102,
+  "cuisine": "Vietnamienne",
+  "tags": [],
+  "hours": "Mo 19:30-22:30; Tu-Sa 12:00-13:30, 19:30-22:30",
+  "address": "Quai Albert Gillio",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-14208379094",
+  "title": "L'Atelier du marché",
+  "lat": 42.697002,
+  "lng": 9.451361,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-way-122464497",
+  "title": "Les Sables Rouges",
+  "lat": 42.673256,
+  "lng": 9.445136,
+  "cuisine": "Méditerranéenne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-2483371526",
+  "title": "Saveurs Lao",
+  "lat": 42.69682,
+  "lng": 9.450605,
+  "cuisine": "lao",
+  "tags": [],
+  "hours": "12:00-14:00,19:00-22:00; Tu 12:00-14:00; We off",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ }
+]

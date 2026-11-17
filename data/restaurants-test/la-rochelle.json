@@ -1,0 +1,948 @@
+[
+ {
+  "id": "osm-node-1445028102",
+  "title": "Le Jardin du marché",
+  "lat": 46.161844,
+  "lng": -1.150655,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 08:30-18:00; Jul-Aug: Mo 08:30-18:00",
+  "address": "",
+  "website": "https://lejardindumarche.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 47
+ },
+ {
+  "id": "osm-node-2489449221",
+  "title": "Bun's garden",
+  "lat": 46.139955,
+  "lng": -1.159581,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-14:30",
+  "address": "17 Rue Alfred Kastler La Rochelle",
+  "website": "https://buns-garden.fr/",
+  "description": "Restaurant proposant des plats et des bun's (pain composé d'une garniture) faits sur place.",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-6897984593",
+  "title": "Yemanja",
+  "lat": 46.1578,
+  "lng": -1.155384,
+  "cuisine": "Internationale",
+  "tags": [],
+  "hours": "We-Su 18:00-00:00",
+  "address": "23 Rue Léonce Vieljeux La Rochelle",
+  "website": "https://www.instagram.com/yemanja.larochelle/",
+  "description": "World cuisine.",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-7170558748",
+  "title": "Le Rouge aux Lèvres",
+  "lat": 46.162142,
+  "lng": -1.148924,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "4 Rue des Cloutiers",
+  "website": "https://lerouge-auxlevres.fr/",
+  "description": "Bar à vins / Cave à manger",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-8935941218",
+  "title": "El Gauchito",
+  "lat": 46.160955,
+  "lng": -1.149232,
+  "cuisine": "argentinian",
+  "tags": [],
+  "hours": "Su-We 11:00-14:30; Th-Sa 11:00-14:30,19:00-22:00",
+  "address": "19 Rue des Dames",
+  "website": "https://www.elgauchito.fr/",
+  "description": "Restaurant d'empañadas",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-5776610409",
+  "title": "Le Comptoir de Walter",
+  "lat": 46.156956,
+  "lng": -1.149138,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:15; Fr-Sa 19:00-22:00; Su off",
+  "address": "Rue Saint-Nicolas La Rochelle",
+  "website": "https://lecomptoirdewalter.info",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-way-986167454",
+  "title": "L'Asiane",
+  "lat": 46.140087,
+  "lng": -1.134982,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-14:30,17:45-21:00",
+  "address": "34 Avenue Roger Salengro",
+  "website": "https://lasiane-aytre.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3094245600",
+  "title": "Brasserie Là-Haut",
+  "lat": 46.153511,
+  "lng": -1.150649,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:45-18:00",
+  "address": "Quai Louis Prunier La Rochelle",
+  "website": "https://brasserie-la-haut-la-rochelle.com",
+  "description": "Restaurant de l'aquarium",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4876114521",
+  "title": "L'Épi de blé",
+  "lat": 46.15878,
+  "lng": -1.151496,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Su-Th 11:00-22:00+; PH,Fr,Sa 11:00-22:30+",
+  "address": "2 Rue du Port",
+  "website": "https://creperielarochelle.wixsite.com/epideble",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-3057474210",
+  "title": "Un voyage à Damas",
+  "lat": 46.155378,
+  "lng": -1.147839,
+  "cuisine": "syrian",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-15:00,18:00-23:00",
+  "address": "13 Quai de Marans",
+  "website": "https://unvoyageadamas.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5815045527",
+  "title": "Gueuleton",
+  "lat": 46.158425,
+  "lng": -1.154498,
+  "cuisine": "local",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-21:30",
+  "address": "12 Rue Chef de Ville La Rochelle",
+  "website": "https://www.gueuleton.fr/gueuleton-la-Rochelle/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8235819175",
+  "title": "Annam",
+  "lat": 46.161302,
+  "lng": -1.148362,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://o-pho-dannam.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8977881509",
+  "title": "Boniato",
+  "lat": 46.162416,
+  "lng": -1.148688,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:00, 19:00-21:30",
+  "address": "16 Rue des Cloutiers La Rochelle",
+  "website": "https://leboniato.wixsite.com/boniato",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9774814417",
+  "title": "Dijo",
+  "lat": 46.156475,
+  "lng": -1.155166,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:30-21:30; Mo 19:30-21:30",
+  "address": "",
+  "website": "https://www.dijo-restaurant.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11011591923",
+  "title": "Bunsik",
+  "lat": 46.162633,
+  "lng": -1.150243,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Th 11:30-14:30,18:30-21:30; Fr-Sa 11:30-14:30,18:30-22:30; Su 11:30-14:30,18:30-21:30",
+  "address": "21 Rue du Minage",
+  "website": "https://www.bunsik.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-12772971876",
+  "title": "Ginger",
+  "lat": 46.156144,
+  "lng": -1.155755,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "33 Rue Saint-Jean du Pérot",
+  "website": "https://www.ginger-larochelle.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-12772971877",
+  "title": "La Boussole",
+  "lat": 46.156148,
+  "lng": -1.156072,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-14:30,18:30-23:00",
+  "address": "41 Rue Saint-Jean du Pérot",
+  "website": "https://laboussole-larochelle.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-119832050",
+  "title": "Rotisserie du pré",
+  "lat": 46.162089,
+  "lng": -1.149579,
+  "cuisine": "friture",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 10:00-14:30; Fr 10:00-20:30; Sa,Su 09:00-14:30,18:00-20:30",
+  "address": "",
+  "website": "https://www.rotisseriedupre.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-119868383",
+  "title": "Galanga",
+  "lat": 46.161009,
+  "lng": -1.148273,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "https://www.galanga-larochelle.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3107167488",
+  "title": "Le 1929",
+  "lat": 46.162525,
+  "lng": -1.148697,
+  "cuisine": "Tapas",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-15:00,19:00-23:00",
+  "address": "13 Rue des Cloutiers La Rochelle",
+  "website": "",
+  "description": "La tapisserie bordelaise, restaurant de partage",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5064132595",
+  "title": "Annette",
+  "lat": 46.159191,
+  "lng": -1.150881,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30",
+  "address": "14 Rue Bletterie La Rochelle",
+  "website": "https://www.instagram.com/restaurant_annette/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5821154296",
+  "title": "Les Pâtes Volantes",
+  "lat": 46.156163,
+  "lng": -1.155658,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 12:00-14:10,19:00-22:10",
+  "address": "",
+  "website": "https://les-pates-volantes-restaurant.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-7737932485",
+  "title": "Pattaya",
+  "lat": 46.155901,
+  "lng": -1.154974,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-23:00; PH off",
+  "address": "Rue de la Chaîne La Rochelle",
+  "website": "https://restaurantpattaya.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-8010080723",
+  "title": "Le Pompon",
+  "lat": 46.156626,
+  "lng": -1.149543,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 10:30-02:00",
+  "address": "41 Quai Valin",
+  "website": "https://www.brasserielepompon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-9943447994",
+  "title": "Bao Zi bar",
+  "lat": 46.156009,
+  "lng": -1.155046,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-22:00",
+  "address": "18 Rue de la Chaîne La Rochelle",
+  "website": "https://baozibar.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-8010091603",
+  "title": "Le Merluberlu",
+  "lat": 46.156782,
+  "lng": -1.149597,
+  "cuisine": "Poissons",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Th 12:00-14:00,17:30-00:00; Fr-Sa 12:00-02:00",
+  "address": "37 Quai Valin",
+  "website": "https://merluberlularochelle.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-8935932419",
+  "title": "La Maison du Curry",
+  "lat": 46.161001,
+  "lng": -1.149227,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-14:00,18:30-22:30",
+  "address": "21 Rue des Dames",
+  "website": "https://lamaisonducurry.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9505094014",
+  "title": "La Storia",
+  "lat": 46.157345,
+  "lng": -1.153944,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-13:45, 19:00-21:45",
+  "address": "22 Cours des Dames La Rochelle",
+  "website": "https://lrstoria.business.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-1344585102",
+  "title": "Le Mail",
+  "lat": 46.156106,
+  "lng": -1.16426,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-15:00,18:00-23:00; Su 12:00-23:00",
+  "address": "16 Allée du Mail La Rochelle",
+  "website": "https://www.restaurant-le-mail.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3346610928",
+  "title": "L'ardoise des Cloutiers",
+  "lat": 46.162283,
+  "lng": -1.148955,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Th 12:00-13:45; Fr,Sa 12:00-13:45,19:30-21:45",
+  "address": "",
+  "website": "https://lardoise-des-cloutiers.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5602642825",
+  "title": "Casa della Pizza",
+  "lat": 46.170165,
+  "lng": -1.158671,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-22:00",
+  "address": "99 Avenue du Lieutenant Colonel Bernier La Rochelle",
+  "website": "https://casadellapizza.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-10840020709",
+  "title": "Koya",
+  "lat": 46.158418,
+  "lng": -1.154345,
+  "cuisine": "Péruvienne",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "10 Rue Chef de Ville La Rochelle",
+  "website": "https://koya-larochelle.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-11040664154",
+  "title": "Thaï Famille",
+  "lat": 46.149111,
+  "lng": -1.144602,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:30-20:30",
+  "address": "14 Rue Émile Normandin La Rochelle",
+  "website": "https://thaifamille.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-1822578937",
+  "title": "Wallilabou Bay",
+  "lat": 46.143412,
+  "lng": -1.154199,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Tu 12:00-14:00; We-Sa 12:00-14:00, 19:30-21:30",
+  "address": "3 Rue Georges Morvan",
+  "website": "https://wallilaboubay.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-9505094011",
+  "title": "La Bella Donna",
+  "lat": 46.155959,
+  "lng": -1.155229,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "15 Rue de la Chaîne La Rochelle",
+  "website": "https://bella-donna.fr/fr/bella-donna-en-ville-la-rochelle.html",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-1853984208",
+  "title": "L'Équinoxe",
+  "lat": 46.140535,
+  "lng": -1.170443,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [],
+  "hours": "Mo-Su 08:00-02:00",
+  "address": "14 Rue de l'Ange Gardien",
+  "website": "https://www.equinoxelarochelle.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-3057550786",
+  "title": "Café du Nord",
+  "lat": 46.155789,
+  "lng": -1.150653,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "19 Quai du Gabut",
+  "website": "https://lecafedunord.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-9008324123",
+  "title": "Carlotta",
+  "lat": 46.15628,
+  "lng": -1.156092,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:00; Sa 12:00-14:30,19:00-22:30; Su 12:00-14:30,19:00-22:00",
+  "address": "30 Rue Saint-Jean du Pérot",
+  "website": "https://www.leclandesmamma.com/carlotta-la-rochelle/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-3094403399",
+  "title": "Café Barrière",
+  "lat": 46.155421,
+  "lng": -1.166063,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Su-Fr 12:00-14:00, 19:00-21:30; Sa 12:00-14:00, 19:00-22:30",
+  "address": "15 Allée du Mail La Rochelle",
+  "website": "https://www.casinosbarriere.com/la-rochelle/cafe-barriere",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-5821154290",
+  "title": "Shalimar",
+  "lat": 46.156138,
+  "lng": -1.155974,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "39 Rue Saint-Jean du Pérot",
+  "website": "https://shalimar-restaurant-larochelle.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-8212537536",
+  "title": "Le Bistrot de Mémé",
+  "lat": 46.142404,
+  "lng": -1.163048,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo 11:45-14:15; Tu-Sa 11:45-14:15,18:45-23:00",
+  "address": "",
+  "website": "https://www.bistrot-de-meme-17.com",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-10908156326",
+  "title": "Hattori Sushi",
+  "lat": 46.158271,
+  "lng": -1.15145,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "8 Quai Duperré La Rochelle",
+  "website": "https://www.hattori-sushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-2238678581",
+  "title": "Savor",
+  "lat": 46.157728,
+  "lng": -1.149191,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 10:00-00:00",
+  "address": "11 Place de la Fourche La Rochelle",
+  "website": "https://savor-larochelle.com",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-3487550093",
+  "title": "L'Objectif",
+  "lat": 46.156028,
+  "lng": -1.154983,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,17:00-22:30; Su 10:00-15:00; Mo off",
+  "address": "16 Rue de la Chaîne",
+  "website": "https://www.lobjectif-lr.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-8212491094",
+  "title": "June",
+  "lat": 46.160915,
+  "lng": -1.149241,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo,We 09:00-15:00; Th-Fr 09:00-17:00; Sa 10:00-17:00; Su 10:00-15:00",
+  "address": "17 Rue des Dames",
+  "website": "https://junelarochelle.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-9810501417",
+  "title": "La Villa Blanche",
+  "lat": 46.14175,
+  "lng": -1.16758,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 11:30-14:30;Fr 17:30-21:30; Sa 18:30-21:30; Jul-Aug Mo-Su 11:30-14:30, 18:30-21:30; Jul-Aug Fr 17:30-21:30",
+  "address": "62 Avenue du Lazaret",
+  "website": "https://la-villa-blanche.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11062565842",
+  "title": "Promenade",
+  "lat": 46.161061,
+  "lng": -1.148747,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "We-Su 09:30-17:30",
+  "address": "4 Rue des Trois Fuseaux La Rochelle",
+  "website": "https://promenade-larochelle.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-2371035186",
+  "title": "La Marée",
+  "lat": 46.154001,
+  "lng": -1.148325,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "1 Avenue de Colmar",
+  "website": "https://la-maree.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-3092409729",
+  "title": "La bonne pâte",
+  "lat": 46.157911,
+  "lng": -1.149174,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "Place de la Fourche",
+  "website": "https://labonnepatelarochelle.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-9505094013",
+  "title": "Iséo",
+  "lat": 46.156249,
+  "lng": -1.154426,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.iseo-larochelle.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-12324705137",
+  "title": "Le Mireuil - Chez Sally",
+  "lat": 46.169939,
+  "lng": -1.183937,
+  "cuisine": "Africaine",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Su 09:00-20:00",
+  "address": "Avenue Louis Guillet La Rochelle",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-way-119809556",
+  "title": "Le Récif",
+  "lat": 46.141419,
+  "lng": -1.170694,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-5821154289",
+  "title": "Sri Krishna",
+  "lat": 46.156306,
+  "lng": -1.156366,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 19:00-23:00; Tu-Su 12:00-14:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-11001119451",
+  "title": "Amaryne",
+  "lat": 46.161785,
+  "lng": -1.148197,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:45-14:00,18:45-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-11001121304",
+  "title": "Crêperie de Verdun",
+  "lat": 46.161784,
+  "lng": -1.152618,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 10:00-19:00",
+  "address": "30 Rue Chaudrier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-11011597435",
+  "title": "Le Benèze",
+  "lat": 46.16122,
+  "lng": -1.149045,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 10:00-16:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-11029150710",
+  "title": "Sakura",
+  "lat": 46.16175,
+  "lng": -1.147962,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-4359319885",
+  "title": "Yamato",
+  "lat": 46.162502,
+  "lng": -1.149667,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "closed",
+  "address": "5 Rue du Minage",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-6648225385",
+  "title": "Le Trot Quai",
+  "lat": 46.159149,
+  "lng": -1.161744,
+  "cuisine": "coffee shop",
+  "tags": [],
+  "hours": "Mo-Fr 08:00-16:00",
+  "address": "12 Avenue Jean Guiton",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-10832470117",
+  "title": "Les Délices d'Amal",
+  "lat": 46.161805,
+  "lng": -1.160694,
+  "cuisine": "Marocaine",
+  "tags": [],
+  "hours": "Tu-Su 11:30-14:00, 18:00-21:00",
+  "address": "28 Rue de Suède La Rochelle",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ }
+]

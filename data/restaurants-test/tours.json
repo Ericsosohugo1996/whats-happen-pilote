@@ -1,0 +1,908 @@
+[
+ {
+  "id": "osm-node-3577422429",
+  "title": "L'Atelier",
+  "lat": 47.390916,
+  "lng": 0.681063,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "Mo-Su 11:00-23:00",
+  "address": "",
+  "website": "https://www.artisancrepier.com/restaurants/tours/",
+  "description": "",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-13019685633",
+  "title": "Verjus",
+  "lat": 47.394211,
+  "lng": 0.679698,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "https://verjustours.fr/",
+  "description": "cuisine de Saison vin d’Artisans",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-6375856000",
+  "title": "Le Bistro Thaï",
+  "lat": 47.394529,
+  "lng": 0.680503,
+  "cuisine": "Thaïlandaise",
+  "tags": [],
+  "hours": "Tu-Su 12:00-14:30,19:00-22:00",
+  "address": "",
+  "website": "https://bistrothaitours.fr",
+  "description": "Le Maï Thaï a duré environ 13 ans",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-6323428039",
+  "title": "L’Accalmie",
+  "lat": 47.393806,
+  "lng": 0.679305,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Fr 12:00-13:30,19:00-21:00; Sa 19:00-21:00",
+  "address": "",
+  "website": "https://restaurant-laccalmie.fr",
+  "description": "Chef (et propriétaire) Arthur Viard",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-3577422439",
+  "title": "Les Grands Ducs",
+  "lat": 47.391895,
+  "lng": 0.680098,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:30-23:00",
+  "address": "",
+  "website": "https://www.restaurant-les-grands-ducs-tours.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3671992753",
+  "title": "Le Cappuccino",
+  "lat": 47.394198,
+  "lng": 0.681427,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "https://lecappuccino-tours.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-6375856008",
+  "title": "La Plume Blanche",
+  "lat": 47.394202,
+  "lng": 0.681355,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-23:00",
+  "address": "",
+  "website": "http://laplumeblanche-tours.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-9296277612",
+  "title": "Oi Izakaya",
+  "lat": 47.425775,
+  "lng": 0.699884,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:15,19:00-22:15; Su 19:00-22:15",
+  "address": "",
+  "website": "https://oiizakaya37.com/",
+  "description": "Sushi & grill",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-way-390130377",
+  "title": "Nachos",
+  "lat": 47.366258,
+  "lng": 0.680169,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Su-We 11:30-21:30; Th-Sa 11:30-22:30",
+  "address": "",
+  "website": "https://nachos.fr/tours-les-2-lions/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1153841454",
+  "title": "Chez Madie",
+  "lat": 47.394495,
+  "lng": 0.681398,
+  "cuisine": "Tapas",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo,We,Th,Fr,Sa 12:00-01:00; Tu 17:00-00:00; Su 17:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "Lien vers menu PDF : qrco.de/bbdB6e",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-5658282000",
+  "title": "L'Atelier d'Olivier",
+  "lat": 47.395527,
+  "lng": 0.655874,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:45-21:15",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-3373047530",
+  "title": "Gopal",
+  "lat": 47.409375,
+  "lng": 0.679999,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu, Sa 12:00-14:00; Fr 19:00-21:30",
+  "address": "",
+  "website": "https://legopal.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5823954444",
+  "title": "Bâmiyân",
+  "lat": 47.395233,
+  "lng": 0.685326,
+  "cuisine": "afghan",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "https://bamiyan-tours.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6367146869",
+  "title": "China Town",
+  "lat": 47.38883,
+  "lng": 0.686401,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 11:30-14:00, 18:30-22:00; Fr-Sa 11:30-14:00, 18:30-22:30; Su 11:30-14:00, 18:30-22:00",
+  "address": "34 Rue Victor Hugo Tours",
+  "website": "https://chinatown37.com/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-69566615",
+  "title": "Casse-Cailloux",
+  "lat": 47.387833,
+  "lng": 0.683719,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Tu 12:00-14:00, 19:00-21:30; We 19:00-21:30; Th-Fr 12:00-14:00, 19:00-21:30",
+  "address": "26 Rue Jehan Fouquet Tours",
+  "website": "https://restaurantcassecailloux.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-390130357",
+  "title": "Holly's Dinner",
+  "lat": 47.36587,
+  "lng": 0.678492,
+  "cuisine": "Américaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 09:00-22:30; Fr-Sa 09:00-23:00",
+  "address": "",
+  "website": "https://hollysdiner.fr/les-restaurants/tours/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-390130367",
+  "title": "IT Italian Trattoria",
+  "lat": 47.365941,
+  "lng": 0.678787,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Su-Th 09:00-22:00; Fr-Sa 09:00-22:30",
+  "address": "",
+  "website": "https://restaurants.it-trattoria.fr/tours-lheure-tranquille/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-635058973",
+  "title": "La Chope",
+  "lat": 47.386738,
+  "lng": 0.689997,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:00; Mo-Th 19:15-22:30; Fr-Sa 19:15-23:00; Su 19:15-22:00",
+  "address": "",
+  "website": "https://www.la-chope.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-963238471",
+  "title": "Fujisushi",
+  "lat": 47.389094,
+  "lng": 0.687912,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Sa 11:45-14:30, 18:45-22:30",
+  "address": "17 Rue Victor Hugo Tours",
+  "website": "http://www.fujisushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-1728853361",
+  "title": "Hokane Ramen",
+  "lat": 47.386132,
+  "lng": 0.694475,
+  "cuisine": "ramen",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 11:45-14:15,18:30-22:15; Tu 18:30-22:15; We-Su 11:45-14:15,18:30-22:15",
+  "address": "",
+  "website": "https://hokane.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-3138370511",
+  "title": "Chez Monsieur Henri",
+  "lat": 47.393484,
+  "lng": 0.693248,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Fr 07:45-17:30",
+  "address": "",
+  "website": "https://www.asso-jeunesse-habitat.org/se-restaurer.html",
+  "description": "Restaurant ouvert à TOUS. Cuisine \"maison\" et produits frais. Repas sur place et vente à emporter.",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-6137508453",
+  "title": "Les Canailles",
+  "lat": 47.396092,
+  "lng": 0.692047,
+  "cuisine": "traditional",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,Th 19:00-22:15; Fr 19:00-22:30; Sa 12:00-14:00,19:00-22:30; Su 12:00-14:00,19:00-22:15",
+  "address": "",
+  "website": "https://lescanailles.co",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-6199468287",
+  "title": "Le Colvert",
+  "lat": 47.394198,
+  "lng": 0.68151,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,19:00-22:00",
+  "address": "",
+  "website": "https://www.colvert-tours.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-9228497213",
+  "title": "ToursBouillon",
+  "lat": 47.394891,
+  "lng": 0.685756,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 11:30-15:30",
+  "address": "",
+  "website": "https://toursbouillon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-10046854155",
+  "title": "Dagobert",
+  "lat": 47.39431,
+  "lng": 0.680015,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo,Th-Sa 19:00-23:00; Su 12:00-14:00",
+  "address": "",
+  "website": "https://restaurantdagobert.fr",
+  "description": "18h pour les planches apéro",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-1158305128",
+  "title": "Moom Thai",
+  "lat": 47.389987,
+  "lng": 0.694664,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:30; Mo-Su 19:00-22:30",
+  "address": "",
+  "website": "https://moomthai37.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6496425953",
+  "title": "La crêpe au carré",
+  "lat": 47.389476,
+  "lng": 0.688668,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-20:00; Sa 11:30-22:00",
+  "address": "",
+  "website": "https://crepe-au-carre.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7108821041",
+  "title": "Yoïsho!",
+  "lat": 47.387835,
+  "lng": 0.68955,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 11:30-14:30; Tu-Sa 11:00-17:00; Th 11:00-17:00; Th 18:00-19:00 \"sur commande de bento\"; SH Th 11:00-17:00",
+  "address": "11 Avenue de Grammont Tours",
+  "website": "https://yoisho.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9194072356",
+  "title": "La Souris Gourmande",
+  "lat": 47.396145,
+  "lng": 0.691627,
+  "cuisine": "cheese",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 19:00-22:00; Th 12:00-14:00,19:00-22:00; Fr,Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://lasourisgourmande37.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11771543630",
+  "title": "L'Affiné",
+  "lat": 47.395854,
+  "lng": 0.689857,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "https://www.laffine.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11929201320",
+  "title": "Maison Gloria",
+  "lat": 47.389205,
+  "lng": 0.688759,
+  "cuisine": "Tapas",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 09:00-00:00; Su 09:00-19:00",
+  "address": "15 Place Jean Jaurès Tours",
+  "website": "https://www.maison-gloria.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-69792802",
+  "title": "Brasserie L'Univers",
+  "lat": 47.389626,
+  "lng": 0.689772,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo 07:00-24:00; Tu-Sa 00:00-01:00,07:00-24:00; Su 00:00-01:00,10:00-24:00",
+  "address": "",
+  "website": "https://www.brasserie-univers.com/",
+  "description": "Maison fondée en 1896",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5707551335",
+  "title": "Nobuki",
+  "lat": 47.393404,
+  "lng": 0.690512,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Th 12:00-14:00; Fr 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "http://nobuki.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-6147757558",
+  "title": "Délices Marocains (Bar à couscous)",
+  "lat": 47.394712,
+  "lng": 0.682947,
+  "cuisine": "Marocaine",
+  "tags": [],
+  "hours": "Tu-Fr 11:00-14:30,18:00-22:00; Sa-Su 11:00-22:00",
+  "address": "",
+  "website": "https://delices-marocains.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-6285913479",
+  "title": "Saïko Bento & Bubble Tea",
+  "lat": 47.389763,
+  "lng": 0.691826,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-22:30",
+  "address": "",
+  "website": "https://saikobento.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-way-390130392",
+  "title": "Sushi Kyo",
+  "lat": 47.365994,
+  "lng": 0.678565,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:30, 19:00-22:30",
+  "address": "",
+  "website": "https://www.sushikyo-tours.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-1098883192",
+  "title": "L'Ambassadeur",
+  "lat": 47.376027,
+  "lng": 0.694889,
+  "cuisine": "Marocaine",
+  "tags": [],
+  "hours": "Mo-Sa 10:00-00:00",
+  "address": "",
+  "website": "https://l-ambassadeur.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4411250304",
+  "title": "Le Bœuf à Boss",
+  "lat": 47.382955,
+  "lng": 0.703671,
+  "cuisine": "malagasy",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu,We 12:00-14:30; Th,Fr 12:00-14:30,19:30-22:00; Sa 12:00-14:30,19:30-22:30",
+  "address": "",
+  "website": "",
+  "description": "Cuisine malgache et réunionnaise",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4924249650",
+  "title": "La Bigouden",
+  "lat": 47.394286,
+  "lng": 0.681364,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:30; Su,Mo off",
+  "address": "",
+  "website": "https://www.labigouden.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4957523995",
+  "title": "Chez Tonton",
+  "lat": 47.393414,
+  "lng": 0.682729,
+  "cuisine": "Bistrot",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:30-22:00; Su 10:00-15:00",
+  "address": "",
+  "website": "https://www.cheztonton-tours.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-way-1551740993",
+  "title": "Mamie Bigoude",
+  "lat": 47.427623,
+  "lng": 0.700797,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "Mo-Th 11:30-13:30, 18:30-21:30; Fr 11:30-13:30, 19:00-22:00; Sa 12:00-14:30, 18:30-22:30; Su 12:00-14:30",
+  "address": "",
+  "website": "https://mamiebigoude.com/restaurant-tours-nord/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-relation-21127202",
+  "title": "Il Restorante",
+  "lat": 47.36644,
+  "lng": 0.678559,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Su 11:30-14:30; Su-Th 18:30-22:00; Fr-Sa 18:30-22:30",
+  "address": "",
+  "website": "https://www.ilristorante.fr/il-ristorante-le-restaurant-italien-de-tours/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-3273369949",
+  "title": "L'étape à pâtes",
+  "lat": 47.395834,
+  "lng": 0.690282,
+  "cuisine": "pasta",
+  "tags": [],
+  "hours": "Mo,Tu 11:00-15:00; We-Fr 11:00-15:00,18:30-22:00; Sa 11:00-15:00,18:30-22:30",
+  "address": "",
+  "website": "https://www.etape-a-pates.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6375856004",
+  "title": "Lucky Sushi",
+  "lat": 47.394306,
+  "lng": 0.68114,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Tu-Su 12:00-14:30, 19:00-23:00",
+  "address": "",
+  "website": "https://restaurantluckysushi.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6427759145",
+  "title": "Ichiban",
+  "lat": 47.394295,
+  "lng": 0.681286,
+  "cuisine": "Coréenne",
+  "tags": [],
+  "hours": "Mo,Th-Su 12:00-14:30; Mo-Su 19:00-22:30",
+  "address": "",
+  "website": "https://ichiban37.com/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6665617785",
+  "title": "Les Bartavelles",
+  "lat": 47.395556,
+  "lng": 0.688308,
+  "cuisine": "",
+  "tags": [],
+  "hours": "We-Fr 19:15-20:30, Fr,Sa 12:00-12:45,19:15-20:30, Su 12:00-12:45",
+  "address": "",
+  "website": "https://www.bartavelles.fr",
+  "description": "Réservation obligatoire",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6789837992",
+  "title": "L’Akan",
+  "lat": 47.392847,
+  "lng": 0.68502,
+  "cuisine": "ivorian",
+  "tags": [],
+  "hours": "Mo 12:00-13:45; Tu-Fr 12:00-13:45,19:15-21:45",
+  "address": "",
+  "website": "https://restaurantlakan.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7187914920",
+  "title": "Les Gens heureux",
+  "lat": 47.394619,
+  "lng": 0.684401,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:30,18:00-23:00",
+  "address": "",
+  "website": "http://www.gensheureux.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-9097658388",
+  "title": "Le Comptoir de Mamie Bigoude",
+  "lat": 47.393263,
+  "lng": 0.681596,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "Mo-Th 11:30-22:00; Fr-Su 11:30-22:30",
+  "address": "",
+  "website": "https://comptoirmamiebigoude.com/restaurant-breton-tours",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-10828011270",
+  "title": "Ô Sidon",
+  "lat": 47.395963,
+  "lng": 0.690511,
+  "cuisine": "Libanaise",
+  "tags": [],
+  "hours": "Tu-Th 12:00-15:00,19:00-22:30; Fr,Sa 12:00-15:00,19:30-23:00",
+  "address": "",
+  "website": "https://www.sidon.libanais-tours.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-11771543634",
+  "title": "Le Petit Patrimoine",
+  "lat": 47.395822,
+  "lng": 0.689563,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.lepetitpatrimoine.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-14103028323",
+  "title": "Le Rif",
+  "lat": 47.409518,
+  "lng": 0.681736,
+  "cuisine": "Marocaine",
+  "tags": [],
+  "hours": "Tu-Th 12:00-13:00; Fr-Sa 12:00-13:30, 19:00-21:30",
+  "address": "",
+  "website": "https://www.restaurant-lerif.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-way-69410576",
+  "title": "Le Poggio",
+  "lat": 47.425422,
+  "lng": 0.704411,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Th 12:00-14:00, 19:00-22:30; Fr,Sa 12:00-14:00, 19:00-23:00; Su 12:00-14:30, 19:00-22:30",
+  "address": "",
+  "website": "https://www.le-poggio.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-1158305336",
+  "title": "Izakaya",
+  "lat": 47.3901,
+  "lng": 0.694542,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30,17:30-22:30",
+  "address": "",
+  "website": "https://izakayatours.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-3273369954",
+  "title": "Surya",
+  "lat": 47.395712,
+  "lng": 0.689454,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.surya-restaurant-indien37.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-3982198779",
+  "title": "Kabuli",
+  "lat": 47.390447,
+  "lng": 0.694153,
+  "cuisine": "afghan",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://kabuli.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-7950701822",
+  "title": "Dahlia",
+  "lat": 47.394963,
+  "lng": 0.680251,
+  "cuisine": "Méditerranéenne",
+  "tags": [],
+  "hours": "Tu-We 19:00-21:30; Th-Sa 12:00-13:30, 19:00-21:30",
+  "address": "",
+  "website": "https://www.dahlia-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-10753137046",
+  "title": "Saveurs du Brésil",
+  "lat": 47.385469,
+  "lng": 0.701634,
+  "cuisine": "brazilian",
+  "tags": [],
+  "hours": "Tu,Th-Sa 12:00-14:00; Tu 19:00-22:00; Th 19:00-22:30; Fr,Sa 19:00-23:00; Su 12:00-15:00; Mo,We,PH closed",
+  "address": "16 Rue du Docteur Fournier",
+  "website": "https://saveursdubresil37.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-11727904307",
+  "title": "Makéda",
+  "lat": 47.396066,
+  "lng": 0.691127,
+  "cuisine": "Éthiopienne",
+  "tags": [],
+  "hours": "Tu-Su 11:30-14:00,19:30-23:00",
+  "address": "",
+  "website": "https://www.makeda-tours.com",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-12698714356",
+  "title": "Le Comptoir du Théatre Olympia",
+  "lat": 47.393618,
+  "lng": 0.688415,
+  "cuisine": "local",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:15-14:00",
+  "address": "",
+  "website": "https://cdntours.fr/informations/le-comptoir-et-la-librairie-du",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ }
+]

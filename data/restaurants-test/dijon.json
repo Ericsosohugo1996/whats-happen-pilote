@@ -1,0 +1,919 @@
+[
+ {
+  "id": "osm-node-891812240",
+  "title": "L'Âge de Raisin",
+  "lat": 47.317679,
+  "lng": 5.034942,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 18:00-02:00",
+  "address": "67 Rue Berbisey Dijon",
+  "website": "https://age-de-raisin.fr/",
+  "description": "Bar à vins et à manger",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-10939040152",
+  "title": "Cave",
+  "lat": 47.322065,
+  "lng": 5.04545,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Fr 12:00-14:00,18:00-00:00",
+  "address": "",
+  "website": "https://cave.restaurant/",
+  "description": "",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-891812235",
+  "title": "Le Shanti",
+  "lat": 47.317661,
+  "lng": 5.034868,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-00:00",
+  "address": "",
+  "website": "http://leshanti.unblog.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-4079717536",
+  "title": "Masami",
+  "lat": 47.321548,
+  "lng": 5.04782,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "12:00-15:00,19:00-23:00",
+  "address": "",
+  "website": "http://www.restaurantmasami.com/site/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-3606611561",
+  "title": "Le Petit Roi de la Lune",
+  "lat": 47.319968,
+  "lng": 5.04,
+  "cuisine": "traditional",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 12:00-14:00, 19:00-21:30; We-Su off; Fr-Sa 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "https://www.lepetitroidelalune.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4475976473",
+  "title": "The Little Italy",
+  "lat": 47.32311,
+  "lng": 5.042976,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 10:30-22:00; Sa 10:30-23:00; Su 12:00-15:00",
+  "address": "",
+  "website": "https://www.thelittleitaly-shop.com/#dijon",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2295254785",
+  "title": "Chez Léon",
+  "lat": 47.32471,
+  "lng": 5.038809,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.restochezleon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-3453754221",
+  "title": "Monique boire et manger",
+  "lat": 47.319907,
+  "lng": 5.039817,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo 19:00-21:30; Tu-Fr 12:00-14:00,19:00-21:30; We 12:00-14:00; Sa 12:00-15:00",
+  "address": "",
+  "website": "https://www.moniqueboireetmanger.fr/",
+  "description": "Respect des saisons, Produits frais et bruts, Fait maison, Transparence. Toutes nos viandes sont françaises. Tous nos produits travaillés proviennent de maraichers et d’agriculteurs sélectionnés pour leurs méthodes de travail saines et respectueuses de la",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-12175008678",
+  "title": "La Cave se Rebiffe",
+  "lat": 47.322623,
+  "lng": 5.045559,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Su 18:30-00:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2146284863",
+  "title": "Le Noti",
+  "lat": 47.328196,
+  "lng": 5.049311,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 09:00-22:00",
+  "address": "",
+  "website": "https://noti-dijon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2163325429",
+  "title": "L'Bout d'la Rue",
+  "lat": 47.324078,
+  "lng": 5.044031,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Sep-Jun Tu-Sa 12:00-13:45,19:00-22:00; Jul-Aug 19:00-22:00",
+  "address": "",
+  "website": "https://www.restaurant-boutdlarue.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2568987318",
+  "title": "Le Palazzio",
+  "lat": 47.325906,
+  "lng": 5.045234,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-22:00; Su-Mo off",
+  "address": "18 Place de la République",
+  "website": "https://le-palazzio-dijon.eatbu.com/?lang=fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5731638972",
+  "title": "Da Adriano",
+  "lat": 47.321275,
+  "lng": 5.035943,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:30",
+  "address": "7 Rue Michelet Dijon",
+  "website": "https://www.da-adriano.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-126414172",
+  "title": "La Chaumine",
+  "lat": 47.302777,
+  "lng": 5.019679,
+  "cuisine": "Bistrot",
+  "tags": [],
+  "hours": "Mo-Fr 07:00-19:00",
+  "address": "105 Rue de Chenôve Dijon",
+  "website": "https://www.facebook.com/lachauminedijon/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-255728482",
+  "title": "Marco Polo",
+  "lat": 47.320116,
+  "lng": 5.035984,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 12:00-14:00,19:00-22:30; Fr-Sa 12:00-14:00,19:00-23:00",
+  "address": "",
+  "website": "https://www.marcopolodijon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-1379434396",
+  "title": "La Menuiserie",
+  "lat": 47.324456,
+  "lng": 5.038778,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 08:00-24:00; Mo 17:00-23:00; Su 14:00-23:00",
+  "address": "28 Rue des Godrans Dijon",
+  "website": "https://www.lamenuiseriedijon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-1509645516",
+  "title": "Pourquoi pas ?",
+  "lat": 47.319529,
+  "lng": 5.035603,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 19:15-21:15; Sa 12:00-13:15,19:15-21:15",
+  "address": "",
+  "website": "https://www.pourquoipas-dijon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3449110483",
+  "title": "La Bourgogne",
+  "lat": 47.325963,
+  "lng": 5.045596,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 07:00-22:30",
+  "address": "20 Place de la République",
+  "website": "https://www.brasserielabourgogne.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3453754220",
+  "title": "L‘AbenFant",
+  "lat": 47.31998,
+  "lng": 5.039793,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "We-Sa 12:00-14:00,19:00-21:00",
+  "address": "",
+  "website": "https://restaurantlabenfant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4244754293",
+  "title": "L'Un des Sens",
+  "lat": 47.322445,
+  "lng": 5.043275,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu,Th-Sa 12:15-13:30,19:30-21:00; We 12:15-13:30; Su,Mo off",
+  "address": "",
+  "website": "https://lundessens-dijon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4719165668",
+  "title": "Le Phénicien",
+  "lat": 47.321827,
+  "lng": 5.046644,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,18:00-23:30; Su 18:30-22:30",
+  "address": "",
+  "website": "https://www.restaurant-lephenicien.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5533132230",
+  "title": "La Papaye Verte",
+  "lat": 47.327412,
+  "lng": 5.044901,
+  "cuisine": "Asiatique",
+  "tags": [
+   "À emporter"
+  ],
+  "hours": "Mo-Th 11:00-19:30, Fr 11:00-20:00",
+  "address": "4 Rue Marceau Dijon",
+  "website": "http://www.la-papaye-verte.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-9885509252",
+  "title": "Sushi d'or",
+  "lat": 47.320985,
+  "lng": 5.039855,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Th-Tu 11:30-14:30,18:30-22:30",
+  "address": "",
+  "website": "https://www.sushidordijon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3449300670",
+  "title": "Au Jardin des Halles",
+  "lat": 47.323976,
+  "lng": 5.040472,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Tu,Th-Sa 11:45-14:00,18:45-22:00; Su 11:45-14:00; We off",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4460234338",
+  "title": "Koki",
+  "lat": 47.344707,
+  "lng": 5.04547,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Su 11:45-13:45,18:45-21:45",
+  "address": "",
+  "website": "https://kokidijon.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-5647101971",
+  "title": "Popotes",
+  "lat": 47.328404,
+  "lng": 5.049844,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 07:30-15:00; Su 09:00-14:30",
+  "address": "",
+  "website": "https://popotes.fr/popotes-cantine-respectueuse-ouvre-bientot-ses-portes-a-dijon/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-10678286011",
+  "title": "Côté Sushi",
+  "lat": 47.323522,
+  "lng": 5.039291,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 11:00-14:30, 18:00-22:30; Fr, Sa 11:00-23:00; Su 11:00-22:30",
+  "address": "",
+  "website": "https://cotesushi.com/restaurants/3789-cote-sushi-dijon",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-1419915122",
+  "title": "Spica",
+  "lat": 47.324713,
+  "lng": 5.042551,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-13:00,19:30-21:00; We 19:30-21:00",
+  "address": "48 Rue de la Préfecture Dijon",
+  "website": "https://www.restaurantspica.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-4314647471",
+  "title": "Fado à Mesa",
+  "lat": 47.32373,
+  "lng": 5.044685,
+  "cuisine": "Portugaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu,We,Sa 09:00-18:00, Th,Fr 09:00-14:30,18:00-22:00",
+  "address": "",
+  "website": "https://www.facebook.com/FadoAMesa",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-8509617478",
+  "title": "Ittshin Ramen - République",
+  "lat": 47.326799,
+  "lng": 5.046571,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "We-Sa 11:30-14:30,18:30-22:30; Su 18:00-22:30",
+  "address": "2 Boulevard Georges Clemenceau",
+  "website": "https://www.ittshinrestaurants.com",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-10131924284",
+  "title": "La cantine de la Fourmilière",
+  "lat": 47.332857,
+  "lng": 5.042294,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Mo 12:00-13:45; Tu-Sa 09:30-18:00; Su off",
+  "address": "",
+  "website": "https://www.lafourmiliere-dijon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-893208617",
+  "title": "Le Zola",
+  "lat": 47.318893,
+  "lng": 5.034971,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Su-Th 10:00-23:00; Fr,Sa 10:00-00:30",
+  "address": "",
+  "website": "https://le-zola-dijon.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-1379434399",
+  "title": "Sublime",
+  "lat": 47.324485,
+  "lng": 5.038606,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:30-21:00; Su-Mo off",
+  "address": "",
+  "website": "https://www.sublimerestaurant.net/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-2891210013",
+  "title": "Palais Nippon",
+  "lat": 47.328127,
+  "lng": 5.044292,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 11:45-14:30,19:00-22:00",
+  "address": "18 Avenue Garibaldi Dijon",
+  "website": "https://www.palaisnippon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-4102090579",
+  "title": "Les Garçons",
+  "lat": 47.31881,
+  "lng": 5.034398,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Th 16:00-00:00; Fr-Sa 16:00-02:00; Su-Mo off",
+  "address": "",
+  "website": "https://chezpierreetjules.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-5915894590",
+  "title": "Abyssinia",
+  "lat": 47.327205,
+  "lng": 5.049443,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-21:30; Sa 12:00-14:00,17:00-23:00; Su 17:00-21:00",
+  "address": "",
+  "website": "https://www.abyssinia-ethiopia.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-9151990243",
+  "title": "Les Cornichons",
+  "lat": 47.345942,
+  "lng": 5.059768,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr  12:00-14:30",
+  "address": "42 Avenue de Stalingrad Dijon",
+  "website": "http://www.lavapeur.com/brasserie",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-893208553",
+  "title": "Le Cercle",
+  "lat": 47.318424,
+  "lng": 5.033222,
+  "cuisine": "brunch",
+  "tags": [],
+  "hours": "We 11:30-14:00,18:00-23:00; Th,Fr 11:30-14:00,18:00-01:30; Sa 11:30-01:30; Su 11:30-18:00; Mo,Tu off",
+  "address": "",
+  "website": "https://www.lecerclerestaurant.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-895350839",
+  "title": "La Fine Heure",
+  "lat": 47.319065,
+  "lng": 5.037372,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "We-Th 12:00-14:00, 19:00-22:00; Fr-Sa 12:00-14:00, 19:00-22:30; Tu 19:00-22:00",
+  "address": "",
+  "website": "https://www.lafineheure.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-4245669592",
+  "title": "Au Gré de mes Envies",
+  "lat": 47.320668,
+  "lng": 5.040863,
+  "cuisine": "taiwanese",
+  "tags": [],
+  "hours": "We-Sa 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "http://www.augredemesenviesdijon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-4734602311",
+  "title": "Akatsuki",
+  "lat": 47.315377,
+  "lng": 5.04509,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Tu,Th 11:30-14:00,18:30-22:00; We 18:30-22:00; Fr 11:30-14:00,18:30-23:00; Sa 18:30-23:00; Su off",
+  "address": "",
+  "website": "https://restaurant-akatsuki.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-5731060579",
+  "title": "100Dô",
+  "lat": 47.318977,
+  "lng": 5.044002,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-21:30",
+  "address": "",
+  "website": "http://restaurant100do.com",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-5803933353",
+  "title": "Osaka",
+  "lat": 47.322719,
+  "lng": 5.039795,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30, 18:45-22:30; Su 18:45-22:30",
+  "address": "",
+  "website": "http://www.osakadijon.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-12541355972",
+  "title": "Gina",
+  "lat": 47.323578,
+  "lng": 5.039309,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Su,Mo 10:00-14:00,19:00-22:00; Tu 08:00-14:00,19:00-22:00; We 10:00-14:00,19:00-22:30; Fr,Su 08:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.restaurant-gina.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-266015694",
+  "title": "Refuge des Pirates",
+  "lat": 47.351579,
+  "lng": 5.058071,
+  "cuisine": "coffee shop",
+  "tags": [],
+  "hours": "Tu-Sa 11:30-15:00,18:30-23:30; Mo 11:30-14:30",
+  "address": "",
+  "website": "http://refugedespirates.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-1483540615",
+  "title": "Brasserie la Cantine",
+  "lat": 47.313775,
+  "lng": 5.06811,
+  "cuisine": "Brasserie",
+  "tags": [],
+  "hours": "Mo-Fr 11:30-13:30",
+  "address": "6 Avenue Alain Savary Dijon",
+  "website": "https://www.crous-bfc.fr/restaurant/brasserie-la-cantine/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-4396697741",
+  "title": "Sushi Park",
+  "lat": 47.32439,
+  "lng": 5.02904,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Th,Sa-Su 11:00-14:30,18:00-23:00; Fr 18:00-23:00",
+  "address": "",
+  "website": "http://www.sushiparkdijon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-8219605547",
+  "title": "Ittshin Izakaya",
+  "lat": 47.326898,
+  "lng": 5.046889,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo,Su off; Tu-Th 11:30-13:45,18:30-22:00; Fr-Sa 11:30-13:45,18:30-22:30; Mo-Sa 11:30-14:30,18:30-22:30; Tu,We off; Su 18:00-22:30",
+  "address": "",
+  "website": "https://www.ittshinrestaurants.com",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-9784662486",
+  "title": "Madeleine Café",
+  "lat": 47.322695,
+  "lng": 5.042899,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 09:30-18:30",
+  "address": "",
+  "website": "https://madeleinecafe.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-13389678982",
+  "title": "I Fratelli",
+  "lat": 47.338193,
+  "lng": 5.063411,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo 18:45-21:45; Tu-Sa 11:45-14:00,18:45-21:45",
+  "address": "",
+  "website": "https://ifratellidijon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-10069862989",
+  "title": "Charles & Geoffroy Rôtisserie",
+  "lat": 47.329062,
+  "lng": 5.038575,
+  "cuisine": "poulet roti",
+  "tags": [],
+  "hours": "",
+  "address": "4 Place Barbe Dijon",
+  "website": "https://www.facebook.com/people/Charles-Geoffroy-R%C3%B4tisserie-Ma%C3%AEtres-r%C3%B4tisseurs/61592094002859/",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-10080283082",
+  "title": "Place d’Italie",
+  "lat": 47.319115,
+  "lng": 5.040405,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "4-6 Place des Cordeliers Dijon",
+  "website": "https://placeditaliedijon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-11601973037",
+  "title": "Sakana",
+  "lat": 47.339265,
+  "lng": 5.068238,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "",
+  "address": "3 Impasse de Reggio Dijon",
+  "website": "https://www.sakanarestaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-way-125943809",
+  "title": "Ye Sushi",
+  "lat": 47.329111,
+  "lng": 5.066111,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 11:30-14:30,18:30-22:30",
+  "address": "47 Avenue Raymond Poincaré Dijon",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4734603030",
+  "title": "Le Sommatino",
+  "lat": 47.315911,
+  "lng": 5.044949,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-13:30,19:00-22:00",
+  "address": "7 Rue d'Auxonne Dijon",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-4734603031",
+  "title": "Village Mandarin",
+  "lat": 47.315959,
+  "lng": 5.044852,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "We-Su 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-12254999642",
+  "title": "Döner Kebab",
+  "lat": 47.302478,
+  "lng": 5.050477,
+  "cuisine": "Turque",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 11:00-14:00,18:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-890307278",
+  "title": "Soleil de Tunis",
+  "lat": 47.31649,
+  "lng": 5.03438,
+  "cuisine": "tunisian",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu,We,Su 11:00-14:00; Th-Sa 11:00-14:00,18:15-22:00; Mo off",
+  "address": "21 Rue de la Manutention Dijon",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-1379434388",
+  "title": "Rochangul - Cuisine Ouïghour",
+  "lat": 47.322894,
+  "lng": 5.03825,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Mo-Sa 11:00-14:30,17:30-21:30; Su 11:30-21:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-1515593465",
+  "title": "Min'Chine",
+  "lat": 47.322432,
+  "lng": 5.025229,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Mo-Sa 10:30-14:30,17:00-23:00; Su 17:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ }
+]

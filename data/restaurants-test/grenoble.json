@@ -1,0 +1,1009 @@
+[
+ {
+  "id": "osm-node-6432763613",
+  "title": "La Chapelle",
+  "lat": 45.186149,
+  "lng": 5.719684,
+  "cuisine": "Internationale",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:45-14:00,19:00-23:00",
+  "address": "Rue des Bains Grenoble",
+  "website": "http://www.lachapellegrenoble.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 50
+ },
+ {
+  "id": "osm-node-1014442589",
+  "title": "K Fée des Jeux",
+  "lat": 45.193941,
+  "lng": 5.729462,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-01:00; Sa 00:00-01:00",
+  "address": "",
+  "website": "https://kfeedesjeux.com",
+  "description": "Protections menstruelles priorisées pour les client.es Menstrual products prioritized for the customers",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-2364324792",
+  "title": "Le Jardin d'Asie",
+  "lat": 45.190765,
+  "lng": 5.722574,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo off; Tu-Sa 11:45-13:30,18:00-22:30; Su off",
+  "address": "",
+  "website": "http://restaurant-lejardindasie.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-4412995632",
+  "title": "Chez Marius",
+  "lat": 45.192555,
+  "lng": 5.731531,
+  "cuisine": "traditional",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:30,19:00-22:30; Fr 12:00-14:30,19:00-23:00; Sa 12:00-14:45,19:00-23:00; Su 12:00-14:45,19:00-22:30",
+  "address": "1 Place Notre-Dame Grenoble",
+  "website": "https://chez-marius-restaurant.fr/",
+  "description": "Cuisine traditionnelle française ",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-10195422614",
+  "title": "TUK TUK GALLERY",
+  "lat": 45.184229,
+  "lng": 5.722168,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th,Sa 12:00-14:00",
+  "address": "10 Rue Doudart de Lagrée Grenoble",
+  "website": "https://tuktuk-grenoble.fr/",
+  "description": "Réservations par SMS",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-5077498488",
+  "title": "Chez Pascal",
+  "lat": 45.18754,
+  "lng": 5.71113,
+  "cuisine": "Africaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 10:00-01:30",
+  "address": "",
+  "website": "https://chez-pascal-restaurant-grenoble.eatbu.com/?lang=fr",
+  "description": "Resto'Artistique",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-316125288",
+  "title": "Le Cèdre",
+  "lat": 45.18498,
+  "lng": 5.723146,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-13:30, 19:30-22:00; Mo 19:30-22:00",
+  "address": "",
+  "website": "https://www.lecedre-grenoble.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-318613353",
+  "title": "Le Jardin Biergarten",
+  "lat": 45.187395,
+  "lng": 5.721083,
+  "cuisine": "german",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 16:00-01:45; Su 16:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1742839546",
+  "title": "Gourmet Viet",
+  "lat": 45.182142,
+  "lng": 5.732424,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://gourmetviet.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2133622972",
+  "title": "Le Gratin Dauphinois",
+  "lat": 45.19061,
+  "lng": 5.716497,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:00-14:00,19:00-22:00",
+  "address": "52 Avenue Félix Viallet Grenoble",
+  "website": "https://jaimelegratindauphinois.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2146484348",
+  "title": "Escale Indienne",
+  "lat": 45.188407,
+  "lng": 5.711021,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 10:00-14:00, 19:00-22:00; Sa 12:00-14:30, 19:00-22:30",
+  "address": "",
+  "website": "https://lescaleindienne.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2177128646",
+  "title": "Locafé",
+  "lat": 45.187624,
+  "lng": 5.711132,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo 12:00-23:30; Tu-Fr 10:00-23:30",
+  "address": "31 Rue d'Alembert Grenoble",
+  "website": "https://locafegrenoble.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2432222108",
+  "title": "Sunset Boulevard",
+  "lat": 45.189135,
+  "lng": 5.727526,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:30-15:00,18:30-22:00",
+  "address": "",
+  "website": "https://sunset-grenoble.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2690224344",
+  "title": "Fergus",
+  "lat": 45.202679,
+  "lng": 5.738216,
+  "cuisine": "local",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-15:00,18:00-23:00",
+  "address": "6 Quai Yermoloff La Tronche",
+  "website": "https://www.fergus-restaurant-la-tronche.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4575830198",
+  "title": "Maison des Saveurs",
+  "lat": 45.192667,
+  "lng": 5.709249,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo,Fr 11:45-14:30; Tu-Th 11:45-14:30,19:00-22:00; Sa-Su off",
+  "address": "",
+  "website": "https://maisondessaveursgrenoble.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5571686005",
+  "title": "Ashima 云南小馆",
+  "lat": 45.193475,
+  "lng": 5.731109,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu 18:30-21:30; We-Th 18:00-21:30; Fr, Sa 12:00-15:00, 18:00-22:00",
+  "address": "12 Rue Chenoise Grenoble",
+  "website": "https://www.ashima.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5678123215",
+  "title": "Kyushu Ramen",
+  "lat": 45.188966,
+  "lng": 5.722137,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 11:30-14:30, 18:00-22:00",
+  "address": "9 Avenue Alsace Lorraine Grenoble",
+  "website": "https://www.kyushuramen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-11270405950",
+  "title": "Vertical'Art Grenoble",
+  "lat": 45.18566,
+  "lng": 5.767934,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:00-23:00; Sa-Su 09:00-14:00",
+  "address": "41 Rue des Glairons",
+  "website": "https://grenoble.vertical-art.fr/restaurant-bar/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-way-398056928",
+  "title": "Ayako Sushi",
+  "lat": 45.183374,
+  "lng": 5.722582,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "http://www.ayakosushi.fr/index.html#/restaurants",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-658178612",
+  "title": "Le Bombay",
+  "lat": 45.18698,
+  "lng": 5.718366,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 12:00-13:30, 19:00-22:30",
+  "address": "60 Cours Jean Jaurès Grenoble",
+  "website": "https://restaurantbombay.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-1013545105",
+  "title": "Le Bontemps",
+  "lat": 45.192296,
+  "lng": 5.731641,
+  "cuisine": "cake",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "We-Sa 09:00-18:00, Su 09:00-16:00",
+  "address": "2 Rue Saint-Hugues Grenoble",
+  "website": "https://bontempsgrenoble.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2344376496",
+  "title": "Sushi One",
+  "lat": 45.191024,
+  "lng": 5.71932,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "11:30-14:15,18:30-22:15",
+  "address": "28 Avenue Félix Viallet Grenoble",
+  "website": "https://www.sushionegrenoble.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2517563021",
+  "title": "Le Mezzé Pavillon",
+  "lat": 45.184091,
+  "lng": 5.720821,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-23:00; Mo 19:00-23:00",
+  "address": "",
+  "website": "https://www.lemezze-pavillon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-11030656544",
+  "title": "Ciel Rooftop",
+  "lat": 45.195755,
+  "lng": 5.726341,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 08:30-14:00,19:00-23:00; Su 08:30-17:00",
+  "address": "17 Rue Maurice Gignoux Grenoble",
+  "website": "https://www.ciel-rooftop.com",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2344376466",
+  "title": "Crapaudine",
+  "lat": 45.190749,
+  "lng": 5.71903,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo-Fr 11:30-15:00",
+  "address": "",
+  "website": "https://www.crapaudine.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2388638762",
+  "title": "Crêperie de Gordes",
+  "lat": 45.192335,
+  "lng": 5.727788,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-22:00",
+  "address": "",
+  "website": "https://creperie-de-gordes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2614657161",
+  "title": "Sacrebleu",
+  "lat": 45.185383,
+  "lng": 5.720225,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "10:00-23:59",
+  "address": "",
+  "website": "https://www.sacrebleu-huitre.com",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2855216196",
+  "title": "Neuf Lamen",
+  "lat": 45.186529,
+  "lng": 5.718214,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 11:30-14:30,18:30-22:30",
+  "address": "",
+  "website": "https://www.neuf-lamen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-4252190874",
+  "title": "Le Katana",
+  "lat": 45.199471,
+  "lng": 5.752676,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:00-14:00, Mo-Sa 19:00-22:00",
+  "address": "Place du Charmeyran La Tronche",
+  "website": "https://www.lekatana.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-5692518818",
+  "title": "Le P'tit Bouillon",
+  "lat": 45.189932,
+  "lng": 5.716038,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "11:50-14:30,18:50-22:00",
+  "address": "67 Avenue Alsace Lorraine Grenoble",
+  "website": "https://ptitbouillon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-12849241690",
+  "title": "Café Vélo Restaurant",
+  "lat": 45.184659,
+  "lng": 5.709804,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-15:00; Th 15:00-24:00",
+  "address": "",
+  "website": "https://www.cafe-velo.fr/",
+  "description": "Café Vélo - Cantine - Tournevis",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-311316708",
+  "title": "Katmandou",
+  "lat": 45.185539,
+  "lng": 5.721738,
+  "cuisine": "nepalese",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "https://www.katmandou-restaurant-grenoble.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-617970326",
+  "title": "Brasserie des Antiquaires",
+  "lat": 45.190956,
+  "lng": 5.732453,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-00:00",
+  "address": "",
+  "website": "https://brasseriedesantiquaires.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1019855956",
+  "title": "La Ferme à Dédé",
+  "lat": 45.192715,
+  "lng": 5.729893,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "11:50-14:30,18:30-23:00",
+  "address": "24 Rue Barnave Grenoble",
+  "website": "http://www.restaurantlafermeadede.com/restaurant-centre-ancien.html",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1019855962",
+  "title": "La Fondue",
+  "lat": 45.192853,
+  "lng": 5.730698,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-13:30, Sa,Su 12:00-14:00, Mo-Su 19:00-01:00",
+  "address": "",
+  "website": "https://www.lafonduegrenoble.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1019855966",
+  "title": "Papapy",
+  "lat": 45.192077,
+  "lng": 5.727787,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "We-Fr 12:00-19:00; Sa 10:00-19:00; Su 10:00-15:00",
+  "address": "",
+  "website": "https://papapy-grenoble.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2143123838",
+  "title": "L'Aiguillage",
+  "lat": 45.189093,
+  "lng": 5.712757,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo-Tu 12:00-14:00; We-Fr 12:00-14:00,19:30-21:00",
+  "address": "",
+  "website": "https://aiguillage.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2498359176",
+  "title": "Yatta! Ramen",
+  "lat": 45.19301,
+  "lng": 5.730203,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:45-14:30,18:30-22:00",
+  "address": "14 Rue Brocherie Grenoble",
+  "website": "https://www.yatta-ramen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4120805141",
+  "title": "1968",
+  "lat": 45.157544,
+  "lng": 5.734898,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 08:00-18:00",
+  "address": "Avenue d'Innsbruck Grenoble",
+  "website": "https://www.bruleursdeloups.fr/restaurant-le-1968/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5817855687",
+  "title": "Bistrot Viet",
+  "lat": 45.183835,
+  "lng": 5.717323,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 10:00-15:00,18:00-22:00",
+  "address": "",
+  "website": "https://bistrotviet.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6301736896",
+  "title": "By Bo Bun",
+  "lat": 45.1848,
+  "lng": 5.722064,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:45-14:30, 18:00-22:30; Fr-Su 18:00-22:30",
+  "address": "2 Rue Doudart de Lagrée Grenoble",
+  "website": "https://www.bybobun.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13541297091",
+  "title": "L'Orangerie Perchée",
+  "lat": 45.188062,
+  "lng": 5.737753,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 08:00-01:00, Sa 09:00-01:00, Su 09:00-22:00",
+  "address": "",
+  "website": "https://orangerie-perchee.fr",
+  "description": "Un lieu hybride au cœur de Grenoble : Escalade, cuisine durable et moments à partager.",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13591068879",
+  "title": "Matsuri",
+  "lat": 45.184958,
+  "lng": 5.755993,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Th,Fr,Su-Tu 11:30-14:30,18:30-22:30; We,Sa 11:30-22:30",
+  "address": "",
+  "website": "https://matsuri.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-471355789",
+  "title": "Little Sushi",
+  "lat": 45.185912,
+  "lng": 5.718817,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 10:30-14:00, Mo-Su 17:30-22:30",
+  "address": "",
+  "website": "https://www.little-sushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-471361284",
+  "title": "Le Bambou Vert",
+  "lat": 45.185853,
+  "lng": 5.719293,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Tu,Th-Su 11:45-14:00,18:15-23:00; We 18:15-23:00",
+  "address": "",
+  "website": "http://www.le-bambou-vert.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2268172152",
+  "title": "Chez Mai",
+  "lat": 45.185986,
+  "lng": 5.715325,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:00",
+  "address": "22 Rue Nicolas Chorier Grenoble",
+  "website": "https://chezmai-grenoble.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2813031257",
+  "title": "Pho 38",
+  "lat": 45.188104,
+  "lng": 5.719685,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,We-Su 12:00-15:30,18:00-22:30; Tu 19:00-22:30",
+  "address": "38 Cours Berriat Grenoble",
+  "website": "https://pho-38-grenoble.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4528114911",
+  "title": "Le Sultan",
+  "lat": 45.180374,
+  "lng": 5.721254,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,19:00-23:00; Su 12:00-14:30",
+  "address": "",
+  "website": "https://lesultandegrenoble.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-8904898620",
+  "title": "Yamato Ramen",
+  "lat": 45.189166,
+  "lng": 5.726574,
+  "cuisine": "ramen",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo,Tu,Th-Sa 11:30-14:00,19:00-21:30",
+  "address": "",
+  "website": "https://www.yamato-ramen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-11188884937",
+  "title": "Mitsuba",
+  "lat": 45.191592,
+  "lng": 5.731734,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.restaurantmitsuba.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2134591983",
+  "title": "Shiva",
+  "lat": 45.189722,
+  "lng": 5.717269,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo,Tu,Th-Sa 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "https://shiva-restoindien.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2268172153",
+  "title": "Seoul",
+  "lat": 45.185979,
+  "lng": 5.715212,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00",
+  "address": "22 Rue Nicolas Chorier Grenoble",
+  "website": "https://www.restaurant-seoul.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2304989986",
+  "title": "L'Éthique",
+  "lat": 45.190709,
+  "lng": 5.718848,
+  "cuisine": "",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-14:00; Tu-Fr 19:00-21:00",
+  "address": "",
+  "website": "https://www.restaurantethique.com/",
+  "description": "Brasserie",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4600085189",
+  "title": "Chez Grand Maman",
+  "lat": 45.189352,
+  "lng": 5.729012,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,Su off; Tu-Sa 08:00-19:00",
+  "address": "2 Place Jean Achard",
+  "website": "",
+  "description": "Non-stop sucré-salé",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6473650771",
+  "title": "Poppa",
+  "lat": 45.192768,
+  "lng": 5.72964,
+  "cuisine": "Espagnole",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 10:00-00:00",
+  "address": "",
+  "website": "https://www.lepoppa.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-10210102276",
+  "title": "Bombay Talkies",
+  "lat": 45.203266,
+  "lng": 5.704897,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 17:00-22:00",
+  "address": "23 Winston Churchill Grenoble",
+  "website": "https://www.bombaytalkies.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11016345907",
+  "title": "Masitda",
+  "lat": 45.189269,
+  "lng": 5.720156,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://www.masitda-grenoble.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-317787333",
+  "title": "Come Prima",
+  "lat": 45.191091,
+  "lng": 5.730745,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "12:00-14:45,19:00-23:00; Fr,Sa 12:00-14:45,19:00-23:30",
+  "address": "",
+  "website": "https://pizzeriacomeprima.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-667276023",
+  "title": "Lanka",
+  "lat": 45.187025,
+  "lng": 5.719014,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:00-14:00,19:00-23:00",
+  "address": "",
+  "website": "https://restaurant-lanka-grenoble.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-2614657123",
+  "title": "Califor'U",
+  "lat": 45.185902,
+  "lng": 5.718897,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30, Mo-Fr 19:00-21:30, Sa-Su 19:00-22:00",
+  "address": "",
+  "website": "https://califor-u.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ }
+]

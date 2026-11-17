@@ -1,0 +1,507 @@
+[
+ {
+  "id": "osm-node-8176484217",
+  "title": "Moulin de la Norée",
+  "lat": 46.575189,
+  "lng": 0.301781,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "We,Su 12:00-13:30; Th-Sa 12:00-13:30,19:00-21:30",
+  "address": "5 Rue de l’Ermitage Biard",
+  "website": "https://moulindelanoree.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 46
+ },
+ {
+  "id": "osm-way-40517921",
+  "title": "La Mangeoire",
+  "lat": 46.584358,
+  "lng": 0.344355,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,19:30-22:30",
+  "address": "55 Place Charles de Gaulle",
+  "website": "https://lamangeoire-poitiers.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1588412286",
+  "title": "Le Rooftop",
+  "lat": 46.583912,
+  "lng": 0.337585,
+  "cuisine": "",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu,We 12:00-00:00; Th 12:00-01:00; Fr 12:00-02:00; Sa 18:00-02:00",
+  "address": "",
+  "website": "https://lemeteo.weebly.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-9688120173",
+  "title": "Beyrouth",
+  "lat": 46.578391,
+  "lng": 0.337897,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30, 18:30-23:00; Su 18:30-23:00",
+  "address": "41 Rue Sadi Carnot Poitiers",
+  "website": "https://www.restaurant-beyrouth.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5114919982",
+  "title": "Sweet Time & Company",
+  "lat": 46.582455,
+  "lng": 0.343832,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 11:00-19:00",
+  "address": "",
+  "website": "https://fr-fr.facebook.com/sweettimecie/",
+  "description": "Pour se retrouver autour d'un déjeuner ou d'un gouter. Produits frais et locaux.",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2581257128",
+  "title": "Gourmandizz Pizza",
+  "lat": 46.578834,
+  "lng": 0.320294,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-We 11:00-14:00,18:00-21:00; Th-Sa 11:00-14:00,18:00-22:00",
+  "address": "11 Rue Léopold Sedar Senghor",
+  "website": "https://www.gourmandizz-pizza.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9505184092",
+  "title": "Brasserie Hurons",
+  "lat": 46.568853,
+  "lng": 0.387459,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-13:30",
+  "address": "9 Rue Théodore Lefebvre Poitiers",
+  "website": "https://www.crous-poitiers.fr/restaurant/brasserie-hurons-champlain/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-38961517",
+  "title": "Le Bonheur Est Dans Le Thé",
+  "lat": 46.579388,
+  "lng": 0.339315,
+  "cuisine": "Française",
+  "tags": [
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-19:00",
+  "address": "",
+  "website": "https://www.lebonheurestdanslethe.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-87683614",
+  "title": "La cuisine de comptoir",
+  "lat": 46.603248,
+  "lng": 0.323535,
+  "cuisine": "rotisserie",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30",
+  "address": "92 Avenue du Plateau des Glières",
+  "website": "http://cuisine-comptoir-poitiers.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-13171829101",
+  "title": "Taj Mahal",
+  "lat": 46.58238,
+  "lng": 0.344046,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:00, 19:00-22:30",
+  "address": "78 Rue de la Cathédrale",
+  "website": "https://taj-mahal-poitiers.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-way-40466195",
+  "title": "Le Flonflon Épatant",
+  "lat": 46.584443,
+  "lng": 0.343178,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "We-Sa 10:00-15:00,18:00-23:00; Su 10:00-20:00",
+  "address": "5 Rue de l'Université Poitiers",
+  "website": "https://le-flonflon-epatant.eatbu.com/?lang=fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-1334366567",
+  "title": "Le Carré des Officiers, Bar – Brasserie – Pizzas",
+  "lat": 46.598514,
+  "lng": 0.322184,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-14:00",
+  "address": "",
+  "website": "http://www.lecarre-des-officiers-restaurant-pizzeria-86.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-1596671138",
+  "title": "Le Trait d'Union",
+  "lat": 46.587148,
+  "lng": 0.352747,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:45-14:00,19:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-8094338861",
+  "title": "Saigon Exotique",
+  "lat": 46.566021,
+  "lng": 0.363756,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Su 11:45-14:30",
+  "address": "125 Route de Nouaille",
+  "website": "https://dcoupons.fr/enseigne/saigon-exotique-route-de-nouaille/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-8818672117",
+  "title": "The Roof Poitiers - Maison de l'escalade",
+  "lat": 46.597446,
+  "lng": 0.323701,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 17:00-22:00; Tu-Th 11:00-22:00; Sa-Su 11:00-19:00",
+  "address": "11 Rue de la Demi-Lune Poitiers",
+  "website": "https://poitiers.theroof.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-13231725944",
+  "title": "Aux 974 Saveurs",
+  "lat": 46.583541,
+  "lng": 0.344081,
+  "cuisine": "reunionese",
+  "tags": [],
+  "hours": "Tu-Fr 09:30-14:30; Sa 08:00-14:00",
+  "address": "",
+  "website": "https://aux974saveurs.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-13884423402",
+  "title": "Natsukaya",
+  "lat": 46.576421,
+  "lng": 0.307705,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-13:00, 19:00-20:45",
+  "address": "Rue des Charmes",
+  "website": "https://www.natsukaya.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-9122596082",
+  "title": "Le Don Camillo",
+  "lat": 46.584617,
+  "lng": 0.342047,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Su 00:00-24:00",
+  "address": "23 Place Charles VII Poitiers",
+  "website": "https://le-don-camillo-snack-poitiers.eatbu.com/?lang=fr#",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-12092290925",
+  "title": "La Gazette",
+  "lat": 46.582921,
+  "lng": 0.342004,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "1 Rue Gambetta",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-658725376",
+  "title": "La Serrurerie",
+  "lat": 46.580753,
+  "lng": 0.340631,
+  "cuisine": "",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 00:00-02:00,07:30-24:00; Sa 00:00-02:00,08:30-24:00; Su 00:00-02:00,10:00-24:00",
+  "address": "",
+  "website": "https://www.laserrurerie.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-3647313400",
+  "title": "Yakido",
+  "lat": 46.573903,
+  "lng": 0.329566,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.yakido.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-5436022071",
+  "title": "Chez Ngim",
+  "lat": 46.597829,
+  "lng": 0.324723,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-way-39180729",
+  "title": "Le Carré d'Art(s)",
+  "lat": 46.583644,
+  "lng": 0.341772,
+  "cuisine": "Terroir",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "42 Rue du Moulin à Vent",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-way-39219070",
+  "title": "L'Auberge Chez Cul De Paille",
+  "lat": 46.581057,
+  "lng": 0.33879,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 12:15-14:00,19:30-21:15",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-1930989111",
+  "title": "Petit Panda",
+  "lat": 46.563627,
+  "lng": 0.3554,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Su 11:30-14:30",
+  "address": "31 Rue du Panier Vert",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-7494688800",
+  "title": "Les 4 grillades",
+  "lat": 46.563325,
+  "lng": 0.299173,
+  "cuisine": "traditional",
+  "tags": [],
+  "hours": "Mo-Fr 09:00-15:00; Sa,Su \"sur réservation\"",
+  "address": "4 Allée de la Régie vouneuil sous biard",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-7613515480",
+  "title": "Le Mandé Massa",
+  "lat": 46.601729,
+  "lng": 0.326654,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-15:00,18:00-23:00, Su 16:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-10200132596",
+  "title": "Olivetto",
+  "lat": 46.554108,
+  "lng": 0.305827,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30, We-Sa 19:00-22:30",
+  "address": "",
+  "website": "https://loliveto-poitiers.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-way-40028255",
+  "title": "Bistro Regent",
+  "lat": 46.582906,
+  "lng": 0.344714,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:45-23:15",
+  "address": "15 Place Charles de Gaulle",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-way-40028262",
+  "title": "L'Essentiel",
+  "lat": 46.582879,
+  "lng": 0.34527,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:30, Mo-Sa 19:15-21:00",
+  "address": "188 Grand Rue",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-way-88127662",
+  "title": "L'atelier",
+  "lat": 46.564527,
+  "lng": 0.362164,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-11739040109",
+  "title": "Miandodo",
+  "lat": 46.579555,
+  "lng": 0.340219,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30,18:30-21:30",
+  "address": "9 Rue de Magenta",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-7668784606",
+  "title": "Délices Sénégalaises",
+  "lat": 46.589021,
+  "lng": 0.357187,
+  "cuisine": "Africaine",
+  "tags": [
+   "À emporter"
+  ],
+  "hours": "Tu-Sa 11:00-15:00; Su 11:00-16:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ }
+]

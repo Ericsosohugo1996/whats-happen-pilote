@@ -1,0 +1,2397 @@
+[
+ {
+  "id": "osm-node-2917495131",
+  "title": "Bouillon Chartier Montparnasse",
+  "lat": 48.844324,
+  "lng": 2.323272,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-00:00",
+  "address": "59 Boulevard du Montparnasse",
+  "website": "https://www.bouillon-chartier.com/montparnasse/",
+  "description": "Ancien restaurant Rougeot",
+  "wikidata": "Q22924608",
+  "score": 106
+ },
+ {
+  "id": "osm-node-681294130",
+  "title": "L'Escargot Montorgueil",
+  "lat": 48.864168,
+  "lng": 2.346704,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 09:00-02:00",
+  "address": "38 Rue Montorgueil Paris",
+  "website": "https://www.escargotmontorgueil.com/",
+  "description": "",
+  "wikidata": "Q22980126",
+  "score": 87
+ },
+ {
+  "id": "osm-node-2478201177",
+  "title": "Le Cochon à l'Oreille",
+  "lat": 48.864452,
+  "lng": 2.345174,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 12:15-15:00,19:00-23:00",
+  "address": "15 Rue Montmartre Paris",
+  "website": "https://www.lecochonaloreille.com/",
+  "description": "",
+  "wikidata": "Q22920961",
+  "score": 87
+ },
+ {
+  "id": "osm-node-3379363204",
+  "title": "Moulin de la Galette",
+  "lat": 48.887351,
+  "lng": 2.337141,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-23:00",
+  "address": "83 Rue Lepic",
+  "website": "https://www.lemoulindelagalette.fr/",
+  "description": "",
+  "wikidata": "Q113644732",
+  "score": 84
+ },
+ {
+  "id": "osm-node-968153548",
+  "title": "Brasserie Bofinger",
+  "lat": 48.85391,
+  "lng": 2.368043,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-15:00, 18:30-00:00; Su 12:00-15:00, 18:30-23:00",
+  "address": "",
+  "website": "https://www.bofingerparis.com/",
+  "description": "",
+  "wikidata": "Q22921405",
+  "score": 83
+ },
+ {
+  "id": "osm-node-1681152231",
+  "title": "Le Bœuf sur le Toit",
+  "lat": 48.871404,
+  "lng": 2.31044,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.bœufsurletoit.com/",
+  "description": "Brasserie",
+  "wikidata": "Q614681",
+  "score": 81
+ },
+ {
+  "id": "osm-node-677610918",
+  "title": "Au Vieux Paris d'Arcole",
+  "lat": 48.854224,
+  "lng": 2.350271,
+  "cuisine": "",
+  "tags": [],
+  "hours": "12:00-14:00,18:30-21:30",
+  "address": "",
+  "website": "https://auvieuxparis.fr/le-restaurant.html",
+  "description": "",
+  "wikidata": "Q115180413",
+  "score": 76
+ },
+ {
+  "id": "osm-node-2143923399",
+  "title": "Le Petit Cambodge",
+  "lat": 48.871668,
+  "lng": 2.36811,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-23:00",
+  "address": "",
+  "website": "http://www.LePetitCambodge.fr",
+  "description": "",
+  "wikidata": "Q104637509",
+  "score": 76
+ },
+ {
+  "id": "osm-node-3611457778",
+  "title": "Prunier",
+  "lat": 48.872535,
+  "lng": 2.291691,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://prunier.com/fr/restaurant",
+  "description": "",
+  "wikidata": "Q22922272",
+  "score": 76
+ },
+ {
+  "id": "osm-node-1677068307",
+  "title": "La Fermette Marbeuf",
+  "lat": 48.867531,
+  "lng": 2.302055,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "www.fermettemarbeuf.com",
+  "description": "",
+  "wikidata": "Q22924726",
+  "score": 74
+ },
+ {
+  "id": "osm-node-4418773893",
+  "title": "Richer",
+  "lat": 48.874114,
+  "lng": 2.34775,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 08:00-01:00",
+  "address": "2 Rue Richer",
+  "website": "https://lericher.com/",
+  "description": "",
+  "wikidata": "Q125621926",
+  "score": 74
+ },
+ {
+  "id": "osm-node-783272359",
+  "title": "Le Choupinet",
+  "lat": 48.847711,
+  "lng": 2.340772,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 08:00-01:00",
+  "address": "58 Boulevard Saint-Michel Paris",
+  "website": "https://lechoupinet.com/",
+  "description": "",
+  "wikidata": "Q141829004",
+  "score": 73
+ },
+ {
+  "id": "osm-node-843477435",
+  "title": "L'Alsace",
+  "lat": 48.869952,
+  "lng": 2.305824,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 07:00-02:00; Fr-Sa 07:00-04:00; Su 07:00-02:00",
+  "address": "",
+  "website": "https://www.restaurantalsace.com",
+  "description": "",
+  "wikidata": "Q3279632",
+  "score": 73
+ },
+ {
+  "id": "osm-node-2757768985",
+  "title": "Derya",
+  "lat": 48.870615,
+  "lng": 2.35326,
+  "cuisine": "kurde",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Fr-Sa 12:00-00:00; Su-Th 12:00-23:00",
+  "address": "",
+  "website": "https://www.restaurantderya.com/",
+  "description": "",
+  "wikidata": "Q136431400",
+  "score": 73
+ },
+ {
+  "id": "osm-node-4455803672",
+  "title": "Gwenn Ha Du",
+  "lat": 48.793608,
+  "lng": 2.33635,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-14:30,18:30-22:30",
+  "address": "30 Place Jacques Carat Cachan",
+  "website": "https://gwenn-ha-du-cachan.fr/fr",
+  "description": "",
+  "wikidata": "Q111917170",
+  "score": 73
+ },
+ {
+  "id": "osm-node-790498231",
+  "title": "La Coupole",
+  "lat": 48.842278,
+  "lng": 2.32809,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "08:00-24:00; Su-Mo 08:00-23:00",
+  "address": "",
+  "website": "https://www.lacoupole-paris.com",
+  "description": "",
+  "wikidata": "Q1445889",
+  "score": 72
+ },
+ {
+  "id": "osm-node-3089609526",
+  "title": "Hôtel du Nord",
+  "lat": 48.873492,
+  "lng": 2.36414,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Su-Th 09:00-00:00; Fr,Sa 09:00-02:00",
+  "address": "",
+  "website": "https://hoteldunord.org/",
+  "description": "",
+  "wikidata": "Q105564314",
+  "score": 72
+ },
+ {
+  "id": "osm-node-3351637400",
+  "title": "Allard",
+  "lat": 48.853321,
+  "lng": 2.341014,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "12:00-14:00,19:00-22:00",
+  "address": "41 Rue Saint-André des Arts Paris",
+  "website": "https://www.restaurant-allard.fr/",
+  "description": "",
+  "wikidata": "Q125621487",
+  "score": 71
+ },
+ {
+  "id": "osm-node-13119162048",
+  "title": "L'Esprit Nouveau",
+  "lat": 48.864589,
+  "lng": 2.285117,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 07:00-23:00",
+  "address": "16 Avenue d'Eylau Paris",
+  "website": "https://www.canopypariseiffeltower.com/",
+  "description": "",
+  "wikidata": "Q140052998",
+  "score": 71
+ },
+ {
+  "id": "osm-node-251671404",
+  "title": "Polidor",
+  "lat": 48.849818,
+  "lng": 2.340134,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Su 12:00-22:30",
+  "address": "",
+  "website": "https://www.polidor.com/",
+  "description": "",
+  "wikidata": "Q3394227",
+  "score": 70
+ },
+ {
+  "id": "osm-node-2164935920",
+  "title": "Au Rocher de Cancale",
+  "lat": 48.865591,
+  "lng": 2.347126,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "78 Rue Montorgueil",
+  "website": "",
+  "description": "",
+  "wikidata": "Q3226500",
+  "score": 70
+ },
+ {
+  "id": "osm-node-5331770657",
+  "title": "Chez Eugène",
+  "lat": 48.886611,
+  "lng": 2.340552,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Su 06:30-01:00",
+  "address": "17 Place du Tertre Paris",
+  "website": "https://chezeugene-paris.fr/fr/",
+  "description": "",
+  "wikidata": "Q108900680",
+  "score": 70
+ },
+ {
+  "id": "osm-node-1676563319",
+  "title": "Drouant",
+  "lat": 48.868751,
+  "lng": 2.334504,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "PH,Mo-Su 08:00-23:00",
+  "address": "16 - 18 Place Gaillon",
+  "website": "https://www.drouant.com/",
+  "description": "",
+  "wikidata": "Q3040039",
+  "score": 69
+ },
+ {
+  "id": "osm-node-2733983772",
+  "title": "Le Relais de Venise",
+  "lat": 48.878029,
+  "lng": 2.285111,
+  "cuisine": "barbecue",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:30,19:00-23:30; Sa,Su 12:00-14:45,19:00-23:30",
+  "address": "271 Boulevard Pereire Paris",
+  "website": "https://relaisdevenise.com/locations/paris.php",
+  "description": "",
+  "wikidata": "Q112823388",
+  "score": 68
+ },
+ {
+  "id": "osm-node-3181077161",
+  "title": "Chez Julien",
+  "lat": 48.854749,
+  "lng": 2.355136,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "08:30-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q22921399",
+  "score": 68
+ },
+ {
+  "id": "osm-node-3421390898",
+  "title": "Sushirama",
+  "lat": 48.873287,
+  "lng": 2.357898,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-15:00,18:30-23:00; Sa-Su 18:30-23:00",
+  "address": "",
+  "website": "http://www.sushirama.fr",
+  "description": "",
+  "wikidata": "Q112701227",
+  "score": 68
+ },
+ {
+  "id": "osm-node-4728771718",
+  "title": "Clover Grill",
+  "lat": 48.861036,
+  "lng": 2.341773,
+  "cuisine": "grill",
+  "tags": [],
+  "hours": "Mo-Th, Su 12:00-14:15, 19:00-22:30; Fr-Sa 12:00-14:15, 19:00-23:00",
+  "address": "",
+  "website": "http://www.clover-grill.com/",
+  "description": "",
+  "wikidata": "Q125701044",
+  "score": 68
+ },
+ {
+  "id": "osm-node-251474108",
+  "title": "La Tour d'Argent",
+  "lat": 48.84983,
+  "lng": 2.354915,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-13:15, 19:00-21:15",
+  "address": "",
+  "website": "http://www.latourdargent.com",
+  "description": "",
+  "wikidata": "Q1338260",
+  "score": 67
+ },
+ {
+  "id": "osm-node-1678007548",
+  "title": "Le Dôme",
+  "lat": 48.841939,
+  "lng": 2.329114,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [],
+  "hours": "Mo-Su 12:00-15:00,19:00-23:00",
+  "address": "",
+  "website": "https://www.restaurant-ledome.com/",
+  "description": "",
+  "wikidata": "Q1025695",
+  "score": 67
+ },
+ {
+  "id": "osm-node-5331770655",
+  "title": "La Bonne Franquette",
+  "lat": 48.887146,
+  "lng": 2.33981,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30, 19:00-22:00",
+  "address": "18 Rue Saint-Rustique Paris",
+  "website": "https://labonnefranquette.com",
+  "description": "",
+  "wikidata": "Q103845316",
+  "score": 67
+ },
+ {
+  "id": "osm-node-9781734723",
+  "title": "Cantine de la Maison de la Culture Arménienne de Paris",
+  "lat": 48.875354,
+  "lng": 2.346118,
+  "cuisine": "armenian",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-15:00,19:00-23:00",
+  "address": "17 Rue Bleue Paris",
+  "website": "https://www.facebook.com/Cantine-de-la-Maison-de-la-Culture-Armenienne-de-Paris-298995103835749",
+  "description": "",
+  "wikidata": "Q22670574",
+  "score": 67
+ },
+ {
+  "id": "osm-node-5030026521",
+  "title": "L'Atelier de Joël Robuchon",
+  "lat": 48.856659,
+  "lng": 2.327551,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Su 11:30-15:30, 18:30-23:55",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q28057192",
+  "score": 66
+ },
+ {
+  "id": "osm-node-13387377102",
+  "title": "Nobisan",
+  "lat": 48.858871,
+  "lng": 2.364626,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Fr 12:30-15:30, 19:00-22:30; Sa-Su 12:30-16:00, 19:00-22:30",
+  "address": "58 Rue de Turenne",
+  "website": "https://nobisan-temaki.com/",
+  "description": "",
+  "wikidata": "Q131383581",
+  "score": 66
+ },
+ {
+  "id": "osm-node-3229495399",
+  "title": "La Mère Catherine",
+  "lat": 48.886752,
+  "lng": 2.340802,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Su 00:00-02:00, 07:00-23:59",
+  "address": "",
+  "website": "https://lamerecatherine.com/",
+  "description": "",
+  "wikidata": "Q3576752",
+  "score": 65
+ },
+ {
+  "id": "osm-node-6452240272",
+  "title": "Le Select",
+  "lat": 48.842619,
+  "lng": 2.328385,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Su-Th 07:00-02:00; Fr-Sa 07:00-03:00",
+  "address": "99 Boulevard du Montparnasse Paris",
+  "website": "https://www.leselect-montparnasse.fr",
+  "description": "",
+  "wikidata": "Q3227073",
+  "score": 65
+ },
+ {
+  "id": "osm-way-63224756",
+  "title": "Pavillon du Lac",
+  "lat": 48.88076,
+  "lng": 2.380943,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 10:00-23:59, Su 10:00-19:30",
+  "address": "Place Armand Carrel",
+  "website": "https://www.lepavillondulac.fr/",
+  "description": "",
+  "wikidata": "Q108810944",
+  "score": 65
+ },
+ {
+  "id": "osm-node-1791641575",
+  "title": "Au Cadet De Gascogne",
+  "lat": 48.886724,
+  "lng": 2.340962,
+  "cuisine": "",
+  "tags": [],
+  "hours": "07:00-02:00",
+  "address": "",
+  "website": "https://cadet-de-gascogne.com/",
+  "description": "",
+  "wikidata": "Q65948790",
+  "score": 63
+ },
+ {
+  "id": "osm-node-5273855843",
+  "title": "Auteuil Brasserie - Restaurant",
+  "lat": 48.848307,
+  "lng": 2.259821,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Su 09:00-01:30",
+  "address": "78 Rue d'Auteuil Paris",
+  "website": "http://www.auteuil-brasserie.com/",
+  "description": "",
+  "wikidata": "Q115242500",
+  "score": 63
+ },
+ {
+  "id": "osm-node-251758249",
+  "title": "Buddha-Bar Paris",
+  "lat": 48.86808,
+  "lng": 2.321569,
+  "cuisine": "fusion asiatique",
+  "tags": [],
+  "hours": "",
+  "address": "8-12 Rue Boissy d'Anglas Paris",
+  "website": "https://www.buddhabar.com/",
+  "description": "",
+  "wikidata": "Q851372",
+  "score": 62
+ },
+ {
+  "id": "osm-node-1133077162",
+  "title": "Le Grand Amalfi",
+  "lat": 48.851556,
+  "lng": 2.349681,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "12:00-14:30,19:00-22:30",
+  "address": "9 Quai de Montebello",
+  "website": "https://legrandamalfirestaurant.fr/app/",
+  "description": "",
+  "wikidata": "Q22924449",
+  "score": 62
+ },
+ {
+  "id": "osm-node-11027800758",
+  "title": "Café Campana",
+  "lat": 48.860312,
+  "lng": 2.326138,
+  "cuisine": "",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Fr-We,PH 10:30-16:45; Th 11:00-15:30",
+  "address": "1 Rue de la Légion d'Honneur Paris",
+  "website": "https://www.musee-orsay.fr/fr/visite/restauration#anchor-navigation-3",
+  "description": "",
+  "wikidata": "Q110653215",
+  "score": 62
+ },
+ {
+  "id": "osm-node-689178436",
+  "title": "Bouillon du Croissant",
+  "lat": 48.869197,
+  "lng": 2.34331,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Sa 10:00-02:00",
+  "address": "",
+  "website": "https://www.bistrotducroissant.fr",
+  "description": "",
+  "wikidata": "Q2932997",
+  "score": 61
+ },
+ {
+  "id": "osm-node-700256907",
+  "title": "Madame Guan",
+  "lat": 48.859201,
+  "lng": 2.350278,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:00-21:00",
+  "address": "63 Rue Saint-Martin Paris",
+  "website": "",
+  "description": "",
+  "wikidata": "Q140440876",
+  "score": 61
+ },
+ {
+  "id": "osm-node-5890655486",
+  "title": "Le Poulbot",
+  "lat": 48.886904,
+  "lng": 2.339922,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Su 12:00-22:00",
+  "address": "3 Rue Poulbot Paris",
+  "website": "https://lepoulbot.com/",
+  "description": "",
+  "wikidata": "Q105605308",
+  "score": 61
+ },
+ {
+  "id": "osm-node-3145596196",
+  "title": "Le Servan",
+  "lat": 48.86105,
+  "lng": 2.38135,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Fr 19:30-22:30, Tu-Fr 12:00-14:00",
+  "address": "32 Rue Saint-Maur Paris",
+  "website": "https://leservan.com/",
+  "description": "",
+  "wikidata": "Q125622282",
+  "score": 60
+ },
+ {
+  "id": "osm-node-4984367631",
+  "title": "Au Clairon des Chasseurs",
+  "lat": 48.886542,
+  "lng": 2.341115,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo 07:00-02:00; Tu 07:00-02:00; We 07:00-02:00; Th 07:00-02:00; Fr 07:00-02:00; Sa 07:00-02:00; Su 07:00-02:00",
+  "address": "3 Place du Tertre Paris",
+  "website": "https://auclairondeschasseurs.fr/",
+  "description": "",
+  "wikidata": "Q108900093",
+  "score": 60
+ },
+ {
+  "id": "osm-node-5060785678",
+  "title": "Restaurant Astier",
+  "lat": 48.866187,
+  "lng": 2.37202,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Fr 12:15-14:15,19:00-22:30; Sa 12:15-14:15,19:00-23:00; Su 12:30-14:15,19:00-22:30",
+  "address": "",
+  "website": "https://www.restaurant-astier.com/",
+  "description": "",
+  "wikidata": "Q125622323",
+  "score": 59
+ },
+ {
+  "id": "osm-node-10167674735",
+  "title": "Le Faham",
+  "lat": 48.88559,
+  "lng": 2.31172,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu-Th 19:30-21:00; Fr,Sa 12:00-13:30,19:30-21:00",
+  "address": "",
+  "website": "https://lefaham.com/",
+  "description": "",
+  "wikidata": "Q84254070",
+  "score": 59
+ },
+ {
+  "id": "osm-node-2929995921",
+  "title": "Le Chardenoux",
+  "lat": 48.852772,
+  "lng": 2.384965,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q22922079",
+  "score": 58
+ },
+ {
+  "id": "osm-node-3980676684",
+  "title": "Yam'Tcha",
+  "lat": 48.861496,
+  "lng": 2.341827,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "We-Fr 12:00-13:00,19:30-21:00; Tu,Sa 19:30-21:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q125700814",
+  "score": 58
+ },
+ {
+  "id": "osm-node-12231726767",
+  "title": "Club 13",
+  "lat": 48.876954,
+  "lng": 2.303134,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Fr 09:00-16:30",
+  "address": "",
+  "website": "https://club13paris.fr",
+  "description": "",
+  "wikidata": "Q106867360",
+  "score": 58
+ },
+ {
+  "id": "osm-node-3955986236",
+  "title": "La Table d'Akihiro",
+  "lat": 48.851084,
+  "lng": 2.319428,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q123348741",
+  "score": 52
+ },
+ {
+  "id": "osm-node-534910294",
+  "title": "Gare aux vins",
+  "lat": 48.845847,
+  "lng": 2.375074,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Mo 10:00-19:00; Tu-We 10:00-20:00; Th-Fr 10:00-20:30; Sa 10:00-13:00,16:30-20:00",
+  "address": "26 Boulevard Diderot",
+  "website": "https://gareauxvins.com",
+  "description": "caviste, cave a manger, epicerie de terroirs",
+  "wikidata": "",
+  "score": 49
+ },
+ {
+  "id": "osm-node-3438438500",
+  "title": "L'Atelier des Batignolles",
+  "lat": 48.884004,
+  "lng": 2.322651,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 07:00-00:00; Sa 09:00-00:00; Su 09:00-16:00",
+  "address": "",
+  "website": "https://latelierdesbatignolles.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 49
+ },
+ {
+  "id": "osm-node-4699968994",
+  "title": "Epicure",
+  "lat": 48.871718,
+  "lng": 2.314801,
+  "cuisine": "fine dining",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q84719171",
+  "score": 49
+ },
+ {
+  "id": "osm-node-683133904",
+  "title": "Le Passage Saint Honoré",
+  "lat": 48.867668,
+  "lng": 2.331687,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 00:00-02:00, 07:00-23:59",
+  "address": "",
+  "website": "https://www.privateaser.com/lieu/47701-le-passage-saint-honore",
+  "description": "",
+  "wikidata": "",
+  "score": 47
+ },
+ {
+  "id": "osm-node-2604653847",
+  "title": "L'atelier saisonnier",
+  "lat": 48.82741,
+  "lng": 2.370324,
+  "cuisine": "brunch",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo off; Tu-Fr 11:00-00:00; Sa 10:00-00:00; Su 10:00-16:00",
+  "address": "55 Rue de Tolbiac Paris",
+  "website": "https://lateliersaisonnier.com",
+  "description": "",
+  "wikidata": "",
+  "score": 47
+ },
+ {
+  "id": "osm-node-1806357932",
+  "title": "Jardin de Montsouris",
+  "lat": 48.821118,
+  "lng": 2.341291,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:15-14:30,19:15-21:30",
+  "address": "",
+  "website": "https://www.le-jardin-de-montsouris.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 45
+ },
+ {
+  "id": "osm-node-2613267450",
+  "title": "Jardin d'Italie",
+  "lat": 48.788577,
+  "lng": 2.3619,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:00-14:30,18:30-23:00",
+  "address": "50 bis Avenue de la République Villejuif",
+  "website": "https://www.jardinditalie-villejuif.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 45
+ },
+ {
+  "id": "osm-node-3501719736",
+  "title": "L'Atelier des Sœurs",
+  "lat": 48.877545,
+  "lng": 2.351363,
+  "cuisine": "Américaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 08:00-23:00",
+  "address": "",
+  "website": "https://latelierdessoeurs.shop/",
+  "description": "",
+  "wikidata": "",
+  "score": 45
+ },
+ {
+  "id": "osm-node-4226720997",
+  "title": "L’Atelier",
+  "lat": 48.852302,
+  "lng": 2.423789,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 12:00-15:00,19:00-22:00; Fr-Sa 12:00-15:00,19:00-22:30",
+  "address": "60 bis Rue Robespierre Montreuil",
+  "website": "https://www.restaulatelier.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 45
+ },
+ {
+  "id": "osm-node-1349129240",
+  "title": "L'Atelier",
+  "lat": 48.88375,
+  "lng": 2.259856,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:00-23:00",
+  "address": "",
+  "website": "https://www.artisancrepier.com/restaurants/neuilly-sur-seine-2/",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-6807439085",
+  "title": "La Bibimerie",
+  "lat": 48.87081,
+  "lng": 2.359611,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-15:00; Tu-Fr 19:00-22:00; Sa 12:30-15:30, 19:30-22:30",
+  "address": "1 Rue Lucien Sampaix Paris",
+  "website": "https://www.labibimerie.com/",
+  "description": "La Bibimerie est un restaurant de bibimbap à Paris 10. Le restaurant coréen à Strasbourg Saint-Denis vous accueille au sein d'un cadre convivial et artistique. Le restaurant asiatique a une terrasse ensoleillée et une cuisine ouverte sur la salle. Le chef",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-9044402513",
+  "title": "L'Atelier Artisan Crêpier",
+  "lat": 48.833013,
+  "lng": 2.386574,
+  "cuisine": "tea",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo 11:00-23:00; Tu 11:00-23:30; We-Sa 11:00-24:00; Su 11:00-22:30",
+  "address": "32 Cr Saint-Emilion Paris 12eme Arrondissement",
+  "website": "https://www.artisancrepier.com/restaurants/bercy/",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-14191322101",
+  "title": "L’Atelier Artisan Crêpier - Issy-les-Moulineaux",
+  "lat": 48.826281,
+  "lng": 2.274751,
+  "cuisine": "tea",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-We 12:00-21:30; Th 12:00-22:30; Fr-Sa 12:00-22:00; Su 12:00-21:30",
+  "address": "",
+  "website": "https://www.artisancrepier.com/restaurants/issy/",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-158603712",
+  "title": "Moulin Créole",
+  "lat": 48.829834,
+  "lng": 2.322899,
+  "cuisine": "caribbean",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "07:00-23:30",
+  "address": "",
+  "website": "https://www.moulin-creole-paris.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 43
+ },
+ {
+  "id": "osm-node-6120089396",
+  "title": "Mamatchai",
+  "lat": 48.861202,
+  "lng": 2.344299,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-16:00,19:00-22:30; Sa 12:00-22:30",
+  "address": "",
+  "website": "http://www.mamatchai.fr",
+  "description": "Anciennement : bar Le Coude à Coude",
+  "wikidata": "",
+  "score": 43
+ },
+ {
+  "id": "osm-node-4872302388",
+  "title": "Olabar",
+  "lat": 48.889215,
+  "lng": 2.410006,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-We 11:00-15:00, 18:30-22:30; Th-Sa 11:00-15:00, 17:30-22:30",
+  "address": "54 Rue Jules Auffret Pantin",
+  "website": "https://olabar.fr",
+  "description": "Restaurant libanais. Accueil chaleureux et prix corrects.",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-7262052554",
+  "title": "Yemma",
+  "lat": 48.861773,
+  "lng": 2.382882,
+  "cuisine": "arab",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-23:00",
+  "address": "119 Rue du Chemin Vert Paris",
+  "website": "https://www.facebook.com/cantineyemma/",
+  "description": "La gastronomie marocaine revisité à la cool par des Africanados de la street food.",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-286696657",
+  "title": "Mama Nissa",
+  "lat": 48.865788,
+  "lng": 2.3453,
+  "cuisine": "algerian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-22:30; Mo-We 16:00-18:00 closed",
+  "address": "",
+  "website": "https://www.mamanissa.fr/",
+  "description": "Situé à Paris 2, Mama Nissa est un restaurant algérien de Châtelet. Le restaurant propose un grand choix de plats végétariens à deux pas du quartier Les Halles. Sur place, en livraison ou à emporter, les plats de Mama Nissa sont aussi healthy que gourmand",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-2065214032",
+  "title": "Nouilles Amala",
+  "lat": 48.864307,
+  "lng": 2.400275,
+  "cuisine": "tibetan",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Su 12:00-15:00, 19:00-22:30",
+  "address": "28 Rue de la Cour des Noues Paris",
+  "website": "https://www.nouillesamala.com",
+  "description": "Restaurant tibétain familial, nouilles fraîches et momos faits maison",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-4986721617",
+  "title": "Gros Bao",
+  "lat": 48.871491,
+  "lng": 2.365704,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-15:00,19:00-23:00; Sa-Su 12:00-23:00",
+  "address": "",
+  "website": "https://www.baofamily.co/grosbao",
+  "description": "Les plats phares de différentes régions de Chine dans une ambiance kitch et moderne.",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-6964519392",
+  "title": "Le Petit Harajuku",
+  "lat": 48.866337,
+  "lng": 2.379792,
+  "cuisine": "ramen",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,18:30-23:00; Su 12:00-15:00",
+  "address": "129 Rue Oberkampf Paris",
+  "website": "https://lepetitharajuku.com/",
+  "description": "Le Petit Harajuku est un restaurant typiquement Japonais proposant la cuisine populaire et familiale nippone.",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-7056393764",
+  "title": "Chulita",
+  "lat": 48.866613,
+  "lng": 2.372982,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 12:00-14:30,19:00-22:00; Fr 12:00-14:30,19:00-23:00; Sa 12:00-15:30,19:00-23:00",
+  "address": "41 Rue Jean-Pierre Timbaud Paris",
+  "website": "https://holachulita.com",
+  "description": "Cantine Street Food Mexicaine",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-667338349",
+  "title": "Le Florissant",
+  "lat": 48.828924,
+  "lng": 2.33294,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "12:00-14:30,19:00-22:30",
+  "address": "3 Rue Bézout Paris",
+  "website": "https://leflorissant.com/",
+  "description": "Saveurs d'Asie",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-6034943364",
+  "title": "Bar à Iode - Charonne",
+  "lat": 48.853409,
+  "lng": 2.383105,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-15:00; Tu-Sa 19:00-23:00",
+  "address": "18 Rue Jean Macé Paris",
+  "website": "http://baraiode.fr/",
+  "description": "Chain of seafood restaurants.",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-6034964198",
+  "title": "Bar à Iode",
+  "lat": 48.849702,
+  "lng": 2.351647,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-15:00, Tu-Sa 19:00-23:00",
+  "address": "",
+  "website": "http://www.baraiode.fr",
+  "description": "Chain of seafood restaurants.",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-11946824769",
+  "title": "Le Jardin de Clichy",
+  "lat": 48.898562,
+  "lng": 2.30723,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:30, 19:00-22:30",
+  "address": "29 Boulevard Jean Jaurès",
+  "website": "https://lejardindeclichy.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-13849872107",
+  "title": "La Cour du Faubourg",
+  "lat": 48.852689,
+  "lng": 2.3717,
+  "cuisine": "Bistrot",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00",
+  "address": "29 Rue du Faubourg Saint-Antoine Paris",
+  "website": "https://www.thefork.fr/restaurant/la-cour-du-faubourg-r606055",
+  "description": "",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-2889797046",
+  "title": "Dat Viet",
+  "lat": 48.830025,
+  "lng": 2.329619,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "https://datviet.fr",
+  "description": "\"Art de la cuisine Vietnamienne à Paris !",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-10153088253",
+  "title": "DimDimSum",
+  "lat": 48.863021,
+  "lng": 2.353444,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 11:30-15:00, 18:00-22:30; Fr-Su 11:30-22:30",
+  "address": "20 Rue du Grenier Saint-Lazare",
+  "website": "https://dimdimsum.fr/",
+  "description": "Traditional Homemade Chinese Food",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-1143736503",
+  "title": "Le Céleste Gourmand",
+  "lat": 48.857565,
+  "lng": 2.350149,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:30-15:00,18:00-23:00; Su 11:00-15:00,18:00-23:00",
+  "address": "",
+  "website": "https://lecelestegourmand.com/",
+  "description": "Spécialités du Sichuan",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-3980826496",
+  "title": "Ha Noi 1988 Gác Manger",
+  "lat": 48.861653,
+  "lng": 2.341784,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "11:00-21:00",
+  "address": "110 Rue Saint-Honoré Paris",
+  "website": "https://www.viet-eat.com/",
+  "description": "Anciennement : \nLa Table du 110\nPico (Restaurant)\nBeauté Saint-Honoré",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-6532221252",
+  "title": "Savannah Café",
+  "lat": 48.845916,
+  "lng": 2.349219,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo 19:00-22:30; Tu-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.savannahcafe.fr/",
+  "description": "Cuisine inventive de tradition libanaise et méditerranéenne, faite maison",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-614319066",
+  "title": "Jardin d'Asie",
+  "lat": 48.812408,
+  "lng": 2.300893,
+  "cuisine": "Thaïlandaise",
+  "tags": [],
+  "hours": "Mo-Sa 12:30-22:30",
+  "address": "",
+  "website": "https://jardindasie92.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-1592376720",
+  "title": "Moulin d'Issy",
+  "lat": 48.823529,
+  "lng": 2.26075,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Fr 06:00-00:00; Sa-Su 10:00-00:00",
+  "address": "1 Place Jacques Madaule",
+  "website": "https://le-moulin-d-issy.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-3506647955",
+  "title": "Sushi Izakaya",
+  "lat": 48.825167,
+  "lng": 2.289539,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 18:00-22:30, Mo-Sa 11:00-14:30; PH off",
+  "address": "38 bis",
+  "website": "https://www.izakaya.fr/",
+  "description": "website only works on mobile, free delivery from 12€",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-4675508392",
+  "title": "Shakti",
+  "lat": 48.866133,
+  "lng": 2.33738,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://restaurantshaktiparis.com",
+  "description": "",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-251474107",
+  "title": "Jardin des Pâtes",
+  "lat": 48.843744,
+  "lng": 2.354486,
+  "cuisine": "pasta",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:30-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-252263209",
+  "title": "Biondi",
+  "lat": 48.863821,
+  "lng": 2.367074,
+  "cuisine": "argentinian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30, 19:00-23:00",
+  "address": "118 Rue Amelot",
+  "website": "https://www.biondi-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-252550640",
+  "title": "Rang",
+  "lat": 48.868003,
+  "lng": 2.373207,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "We-Su 12:00-15:00,19:00-23:00; Mo-Tu 19:00-23:00",
+  "address": "50 Rue de la Fontaine au Roi",
+  "website": "https://www.rangrestaurant.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-428164786",
+  "title": "Ty Louis",
+  "lat": 48.849204,
+  "lng": 2.389514,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-23:00",
+  "address": "240 Rue du Faubourg Saint-Antoine Paris",
+  "website": "https://www.tylouis.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-446819198",
+  "title": "Le Dellys",
+  "lat": 48.878318,
+  "lng": 2.357805,
+  "cuisine": "couscous",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 10:00-02:00; Fr 10:00-24:00",
+  "address": "",
+  "website": "",
+  "description": "Bar & restaurant",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-531497617",
+  "title": "Paya Thaï Aligre",
+  "lat": 48.849747,
+  "lng": 2.378883,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,19:00-23:30",
+  "address": "30 Rue d'Aligre Paris",
+  "website": "https://www.paya-thai.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-680617611",
+  "title": "Trantranzai",
+  "lat": 48.863158,
+  "lng": 2.349897,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "12:00-22:30",
+  "address": "94 Rue Saint-Denis",
+  "website": "https://www.trantranzai.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-817304096",
+  "title": "Triadou Haussmann",
+  "lat": 48.874152,
+  "lng": 2.325525,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 07:00-01:00",
+  "address": "",
+  "website": "http://www.triadouhaussmann.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-990384075",
+  "title": "Oishii",
+  "lat": 48.881561,
+  "lng": 2.364601,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-22:30, Su 18:45-22:30",
+  "address": "",
+  "website": "http://www.oishii-paris.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1519809386",
+  "title": "Au ciel",
+  "lat": 48.854377,
+  "lng": 2.383569,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Th-Tu 12:00-15:00,18:00-23:00; We 18:00-23:00",
+  "address": "97 Rue de Charonne",
+  "website": "https://www.restoauciel.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1985707701",
+  "title": "Mme Shawn",
+  "lat": 48.874225,
+  "lng": 2.362387,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-15:00,19:30-23:00",
+  "address": "",
+  "website": "http://www.mmeshawn.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2052942075",
+  "title": "Sea Bar",
+  "lat": 48.815192,
+  "lng": 2.317366,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.paris-peche.com/seabar",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2184027349",
+  "title": "Fung Shun",
+  "lat": 48.82231,
+  "lng": 2.363151,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "http://www.fungshun.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2217707729",
+  "title": "Thai Royal",
+  "lat": 48.824981,
+  "lng": 2.362081,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We-Mo 12:00-14:30, 19:00-23:30, Tu closed",
+  "address": "",
+  "website": "https://thairoyal.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2347006547",
+  "title": "Le Petit Josselin",
+  "lat": 48.841908,
+  "lng": 2.325552,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,18:30-23:00",
+  "address": "59 Rue du Montparnasse Paris",
+  "website": "https://www.creperielepetitjosselin.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2591578155",
+  "title": "Breizh Cafe",
+  "lat": 48.847225,
+  "lng": 2.437894,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-22:30",
+  "address": "4 Rue du Midi Vincennes",
+  "website": "https://www.breizhcafe.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2611478140",
+  "title": "Le 55 Crep's",
+  "lat": 48.812449,
+  "lng": 2.327851,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:00-21:00, Fr 11:00-14:30",
+  "address": "",
+  "website": "https://www.le55creps.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2843836701",
+  "title": "Italian Trattoria",
+  "lat": 48.831011,
+  "lng": 2.375934,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-14:30, 18:30-22:30",
+  "address": "125 Avenue de France Paris",
+  "website": "https://it-trattoria.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2853835933",
+  "title": "Paradis de Sushi",
+  "lat": 48.888609,
+  "lng": 2.378055,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30,18:30-22:30",
+  "address": "77 Quai de la Seine",
+  "website": "https://www.paradisdesushi.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3207283940",
+  "title": "Savane & Mousson",
+  "lat": 48.858775,
+  "lng": 2.371209,
+  "cuisine": "Africaine",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:30,19:00-23:00; Fr 12:00-14:30,19:00-24:00; Sa 12:00-15:00,19:00-24:00; Su 12:00-14:30,19:00-22:00",
+  "address": "47 Boulevard Richard-Lenoir Paris",
+  "website": "https://www.savane-mousson.fr/notre-restaurant-paris-11/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3286375776",
+  "title": "Mam'Ayoka Pajol",
+  "lat": 48.888473,
+  "lng": 2.362756,
+  "cuisine": "cambodian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00",
+  "address": "20 Esplanade Nathalie Sarraute Paris",
+  "website": "http://www.mamayoka.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3392253611",
+  "title": "Diletto",
+  "lat": 48.86306,
+  "lng": 2.370895,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-02:00",
+  "address": "",
+  "website": "https://www.diletto.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3653924043",
+  "title": "Au Beurre Salé",
+  "lat": 48.848532,
+  "lng": 2.37203,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-22:30",
+  "address": "55 Avenue Ledru-Rollin Paris",
+  "website": "https://aubeurresale.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3688329411",
+  "title": "Delhi Bazaar",
+  "lat": 48.863784,
+  "lng": 2.381091,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 19:00-22:30",
+  "address": "71 Rue Servan Paris",
+  "website": "https://www.tandoor-club.com/restaurant/delhi-bazaar",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3932548845",
+  "title": "Ménélik",
+  "lat": 48.890694,
+  "lng": 2.320512,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-16:00,18:00-02:00",
+  "address": "4 Rue Sauffroy",
+  "website": "https://menelikrestaurant.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4076261425",
+  "title": "Bodhi Vegan",
+  "lat": 48.875847,
+  "lng": 2.370115,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-14:30, 18:30-22:30; Sa 12:00-15:00, 18:30-22:30; Su 18:30-22:30",
+  "address": "",
+  "website": "https://www.bodhivegan.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4181820389",
+  "title": "Ravioli Nord-Est",
+  "lat": 48.862846,
+  "lng": 2.349536,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-15:00,18:00-23:00; Sa 11:30-23:00",
+  "address": "115 Rue Saint-Denis Paris",
+  "website": "https://saint-denis.raviolinordest.com/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4678675289",
+  "title": "Breizh Café Montorgueil",
+  "lat": 48.866804,
+  "lng": 2.347365,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "12:00-22:30; Fr-Sa 12:00-23:00",
+  "address": "14 Rue des Petits Carreaux Paris",
+  "website": "https://breizhcafe.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4723221891",
+  "title": "Blanc de Noirs",
+  "lat": 48.851695,
+  "lng": 2.366809,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "12:00-15:00,19:00-23:00",
+  "address": "7 Rue de la Cerisaie Paris",
+  "website": "https://www.instagram.com/blanc_de_noirs_restaurant/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4878441121",
+  "title": "Délices de Beyrouth",
+  "lat": 48.861917,
+  "lng": 2.351673,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:00-23:30",
+  "address": "151 Rue Saint-Martin Paris",
+  "website": "https://delicesdebeyrouth.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5003433662",
+  "title": "Costa d'Amalfi",
+  "lat": 48.859235,
+  "lng": 2.323525,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,18:30-22:30; Su 12:00-14:00",
+  "address": "65 Rue de l'Université Paris",
+  "website": "https://www.restaurant-costadamalfi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5679969921",
+  "title": "Koko",
+  "lat": 48.883828,
+  "lng": 2.371951,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 12:00-23:00",
+  "address": "14 Quai de la Loire",
+  "website": "http://koko-bistro.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5715271118",
+  "title": "Ito Sushi",
+  "lat": 48.888195,
+  "lng": 2.389232,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:45-14:30,18:00-22:30; Su 18:00-22:30",
+  "address": "2 Rue Adolphe Mille Paris",
+  "website": "https://itoshushi.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5752357952",
+  "title": "Crêperie Port Manech",
+  "lat": 48.842192,
+  "lng": 2.325526,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 18:30-23:30",
+  "address": "",
+  "website": "https://www.creperieportmanech.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-6257638197",
+  "title": "Levantine",
+  "lat": 48.871566,
+  "lng": 2.368138,
+  "cuisine": "middle eastern",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "12:00-15:00,18:30-22:30",
+  "address": "",
+  "website": "https://www.levantine.paris/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-6388855934",
+  "title": "Eataly Paris Marais",
+  "lat": 48.85821,
+  "lng": 2.354348,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 10:00-23:00",
+  "address": "37 Rue Sainte-Croix de la Bretonnerie Paris",
+  "website": "https://eataly.fr/nos-restaurants",
+  "description": "Nuovissima sede della famosa catena di ristoranti e dei prodotti alimentari di lusso. Aprirà il 12 aprile 2019.",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-6657729432",
+  "title": "Ajap",
+  "lat": 48.817288,
+  "lng": 2.327001,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-15:00,18:00-23:00; Su 18:00-23:00",
+  "address": "12 Rue Barbès Montrouge",
+  "website": "http://www.ajapsushi.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7491680785",
+  "title": "slow",
+  "lat": 48.834433,
+  "lng": 2.327589,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "PH open",
+  "address": "",
+  "website": "https://www.slowfamily.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7514785271",
+  "title": "Mori Café",
+  "lat": 48.853461,
+  "lng": 2.375763,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-15:00; Fr-Sa 12:00-15:00, 18:00-21:00",
+  "address": "2 Rue des Taillandiers Paris",
+  "website": "https://www.moricafeparis.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7767737120",
+  "title": "Alma",
+  "lat": 48.865723,
+  "lng": 2.345894,
+  "cuisine": "corsican",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 12:00-14:00,19:00-23:00; Fr-Sa 12:00-14:00,19:00-23:30",
+  "address": "",
+  "website": "https://www.restaurant-alma.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-9545366728",
+  "title": "Compose",
+  "lat": 48.864243,
+  "lng": 2.347925,
+  "cuisine": "salad",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 09:00-14:30; Sa 11:00-16:00; Su off",
+  "address": "22 Rue Étienne Marcel",
+  "website": "https://composeparis.fr/compose-etienne-marcel/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-10811701293",
+  "title": "Nour Comptoir",
+  "lat": 48.866113,
+  "lng": 2.371661,
+  "cuisine": "oriental",
+  "tags": [],
+  "hours": "Su-Th 12:00-15:00,18:00-22:30; Fr 12:00-15:00; Sa 18:00-22:30",
+  "address": "38 Rue Jean-Pierre Timbaud Paris",
+  "website": "https://nour-comptoir.com/",
+  "description": "spécialité : arayes",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-12083272060",
+  "title": "Maison de l'étoile",
+  "lat": 48.85273,
+  "lng": 2.298749,
+  "cuisine": "tibetan",
+  "tags": [],
+  "hours": "Mo-Su 12:00-22:00",
+  "address": "59 avenue de Suffren Paris",
+  "website": "https://maisondeletoile.fr/",
+  "description": "Restaurant tibétain, cuisine et glaces artisanales",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-way-63656168",
+  "title": "Mehman",
+  "lat": 48.792328,
+  "lng": 2.337137,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo 19:00-23:00; Tu-Su 12:00-14:30,19:00-23:00",
+  "address": "3 Avenue Louis Georgeon Cachan",
+  "website": "https://www.mehman.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-683133918",
+  "title": "Charly",
+  "lat": 48.867162,
+  "lng": 2.332482,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-22:30",
+  "address": "36 Place du Marché Saint-Honoré",
+  "website": "https://charlybunsparis.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-883484122",
+  "title": "Le Phénicien",
+  "lat": 48.880082,
+  "lng": 2.364714,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Su-Th 11:00-22:00; Fr-Sa 11:00-22:55",
+  "address": "",
+  "website": "https://www.lephenicien.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-1507655307",
+  "title": "Paris Hanoï Little Hanoi",
+  "lat": 48.858266,
+  "lng": 2.388245,
+  "cuisine": "Asiatique",
+  "tags": [
+   "À emporter"
+  ],
+  "hours": "12:00-14:30,19:00-22:30 || open \"Covid19\"",
+  "address": "",
+  "website": "https://www.parishanoi.fr/fr/restaurants/little-hanoi-mont-louis",
+  "description": "Livraisons via Deliveroo, Uber Eats et Glovo.",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-1780508213",
+  "title": "Gourou",
+  "lat": 48.855621,
+  "lng": 2.386768,
+  "cuisine": "curry",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 09:00-23:30; Su-Mo off; Aug off",
+  "address": "42 Rue Léon Frot Paris",
+  "website": "https://www.gourouindianfood.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2414859297",
+  "title": "Cheng thai",
+  "lat": 48.845401,
+  "lng": 2.435281,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 19:00-22:30, Tu-Sa 12:00-14:30",
+  "address": "",
+  "website": "https://cheng-thai.onataste.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-3213130981",
+  "title": "Chez Janou",
+  "lat": 48.856707,
+  "lng": 2.367214,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Su 12:00-15:00, 19:00-22:00",
+  "address": "2 Rue Roger Verlomme Paris",
+  "website": "https://www.chezjanou.com/",
+  "description": "Spécialités provençales",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-3414365016",
+  "title": "Sushi Sun",
+  "lat": 48.901001,
+  "lng": 2.3154,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-15:00,18:00-23:00",
+  "address": "",
+  "website": "https://www.sushisun92.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-3621911693",
+  "title": "La Tartine",
+  "lat": 48.856049,
+  "lng": 2.358405,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 08:00-23:30; Su 11:00-23:00",
+  "address": "24 Rue de Rivoli Paris",
+  "website": "http://latartineparis.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4416073771",
+  "title": "Bo Sushi",
+  "lat": 48.897743,
+  "lng": 2.373883,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,17:30-22:30; Sa-Su 12:00-15:00,17:30-22:30",
+  "address": "",
+  "website": "https://bosushi19.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4831650279",
+  "title": "La Villa Andrea",
+  "lat": 48.879114,
+  "lng": 2.353238,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "11:00-14:30,18:30-23:30",
+  "address": "",
+  "website": "https://www.villaandrea.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-5684369391",
+  "title": "La Cantine Bretonne",
+  "lat": 48.889335,
+  "lng": 2.383937,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 08:00-01:00",
+  "address": "22-bis Rue de l'Ourcq",
+  "website": "https://lacantinebretonne.com",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-6032068221",
+  "title": "L'Écume Saint-Honoré - Restaurant",
+  "lat": 48.865944,
+  "lng": 2.331212,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [],
+  "hours": "Tu-Th 11:00-19:00,Fr-Sa 11:00-22:00",
+  "address": "",
+  "website": "https://www.facebook.com/lecumesainthonore/",
+  "description": "A mix of restaurant and seafood shop. Different opening hours for restaurant and seafood shop.",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-7255087885",
+  "title": "Distrito Francés Marais",
+  "lat": 48.861237,
+  "lng": 2.364839,
+  "cuisine": "Mexicaine",
+  "tags": [],
+  "hours": "Tu 12:30-15:00; Fr 12:30-15:00, 19:00-23:30; Sa 12:00-15:30, 19:00-23:30; Su 12:00-15:30, 19:00-22:30; We-Th 19:30-23:00",
+  "address": "25 Rue du Pont aux Choux Paris",
+  "website": "https://distritofrances.fr/",
+  "description": "Mexican Soulfood X French Touch",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-8005907665",
+  "title": "Gili-Gili",
+  "lat": 48.879628,
+  "lng": 2.336243,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Fr 11:30-14:30",
+  "address": "48 Rue Notre-Dame-de-Lorette",
+  "website": "https://www.gili-gili.fr/",
+  "description": "restaurant partiellement végétarien. FIXME: ouvertures: Du Lundi au Mercredi 12h-16h / Jeudi et Vendredi 12h-16h & 19h-21h / Samedi 12h-20h",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-11011989583",
+  "title": "Pénates",
+  "lat": 48.852736,
+  "lng": 2.388186,
+  "cuisine": "Méditerranéenne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Lundi-Vendredi 9h00-23h30",
+  "address": "226 Boulevard Voltaire Paris",
+  "website": "https://www.instagram.com/penates_paris/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-way-607098148",
+  "title": "Baan Nat",
+  "lat": 48.809218,
+  "lng": 2.328911,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-14:30, Mo-Sa 19:00-23:00",
+  "address": "",
+  "website": "https://www.baannat.com",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-909529763",
+  "title": "Maison Jenny",
+  "lat": 48.821955,
+  "lng": 2.360806,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 09:00-22:00, Sa 10:00-22:00, Su 10:00-14:30",
+  "address": "9 Rue Gandon Paris",
+  "website": "https://maison-jenny.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-1287933955",
+  "title": "Joyti",
+  "lat": 48.843811,
+  "lng": 2.3152,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "12:00-22:00",
+  "address": "148 Rue de Vaugirard",
+  "website": "https://www.joyti-paris.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ }
+]

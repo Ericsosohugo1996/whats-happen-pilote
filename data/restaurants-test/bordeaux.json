@@ -1,0 +1,2382 @@
+[
+ {
+  "id": "osm-node-5438078845",
+  "title": "La Fusion Intendance",
+  "lat": 44.841941,
+  "lng": -0.575173,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "6 Cours de l'Intendance",
+  "website": "",
+  "description": "",
+  "wikidata": "Q22920118",
+  "score": 60
+ },
+ {
+  "id": "osm-way-101012210",
+  "title": "Ze'Rock",
+  "lat": 44.861816,
+  "lng": -0.524101,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q3226501",
+  "score": 47
+ },
+ {
+  "id": "osm-node-4341511989",
+  "title": "Atelier des Faures",
+  "lat": 44.836934,
+  "lng": -0.579698,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 12:00-14:00; Fr 12:00-14:00,19:30-21:45; Sa 19:30-21:45",
+  "address": "15 Rue des Frères Bonie Bordeaux",
+  "website": "https://www.atelierdesfaures.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 46
+ },
+ {
+  "id": "osm-node-7176198486",
+  "title": "La Cour de Nana",
+  "lat": 44.835414,
+  "lng": -0.569791,
+  "cuisine": "syrian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "73 Cours Victor Hugo",
+  "website": "https://lacourdenana.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-6225582948",
+  "title": "Pizza Del Passato",
+  "lat": 44.852591,
+  "lng": -0.619751,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:30-14:00,18:30-21:45; Sa,Su 18:30-22:00",
+  "address": "249 Avenue Louis Barthou Bordeaux",
+  "website": "https://pizzadelpassato.fr",
+  "description": "covid19: uniquement vente à emporter et livraison",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-3469722353",
+  "title": "Frères Z",
+  "lat": 44.849243,
+  "lng": -0.583883,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo-Fr 12:00-14:30,19:00-22:00; Su 19:00-22:00",
+  "address": "165 Rue Fondaudège",
+  "website": "https://www.freresz.com/",
+  "description": "Nouilles artisanales et cuisine asiatique",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-4549870291",
+  "title": "La Péniche Bistrot Régent",
+  "lat": 44.865143,
+  "lng": -0.557909,
+  "cuisine": "Viande",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:45-14:30,18:45-22:45",
+  "address": "Quai Armand Lalande",
+  "website": "https://www.bistro-regent.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-4637441490",
+  "title": "Halva",
+  "lat": 44.829977,
+  "lng": -0.581099,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-We 09:00-16:00; Th-Fr 09:00-22:00",
+  "address": "63 Rue de Pessac",
+  "website": "https://halva-cuisine.fr",
+  "description": "Café & cuisine de quartier",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-7208860887",
+  "title": "Le Jardin Pékinois",
+  "lat": 44.837009,
+  "lng": -0.579447,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 12:00-14:00,19:00-22:00",
+  "address": "9 Rue des Frères Bonie",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-9312976271",
+  "title": "Le Jardin Pêcheur",
+  "lat": 44.861187,
+  "lng": -0.55436,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Th 10:00-23:00",
+  "address": "",
+  "website": "https://www.jardin-pecheur-bordeaux.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-5963732041",
+  "title": "Sushi Création",
+  "lat": 44.852482,
+  "lng": -0.615397,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:30,18:00-22:30,18:00-22:30",
+  "address": "163 Avenue Louis Barthou Bordeaux",
+  "website": "https://www.sushicreation.fr/cauderans",
+  "description": "covid19: sur commande, à emporter ou livraison",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-635951493",
+  "title": "Jup Jup",
+  "lat": 44.83239,
+  "lng": -0.57117,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-22:30",
+  "address": "10 Rue des Augustins",
+  "website": "https://jupjup.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1927310463",
+  "title": "Kawayoshi Ramen",
+  "lat": 44.81358,
+  "lng": -0.589786,
+  "cuisine": "ramen",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30,19:00-22:30",
+  "address": "237 Bis Cours Gambetta",
+  "website": "https://kawayoshi-ramen.com/",
+  "description": "Spécialité : Ramen au bouillon de poulet",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1982601322",
+  "title": "Adonis",
+  "lat": 44.831022,
+  "lng": -0.568014,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-16:00,18:00-23:30",
+  "address": "49 Place des Capucins Bordeaux",
+  "website": "https://adonis-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2353659885",
+  "title": "Mélodie",
+  "lat": 44.840599,
+  "lng": -0.570405,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo,Tu 19:00-22:30; We,Th 12:00-14:30,19:00-22:30; Fr-Su 12:00-14:30,19:00-23:00",
+  "address": "6 Rue des Faussets",
+  "website": "www.restaurant-melodie.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2572761660",
+  "title": "Eat Sushi",
+  "lat": 44.842134,
+  "lng": -0.580019,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-We 11:00-22:00; Th-Sa 11:00-23:30; Su 11:00-22:00",
+  "address": "7 Cours Georges Clemenceau",
+  "website": "https://eatsushi.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4217607338",
+  "title": "CambodgEat",
+  "lat": 44.841335,
+  "lng": -0.558529,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-14:15,18:30-21:30",
+  "address": "20 Avenue Thiers Bordeaux",
+  "website": "https://cambodgeat.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4704353253",
+  "title": "L’abeille gourmande",
+  "lat": 44.836064,
+  "lng": -0.572992,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-15:00",
+  "address": "30 Place de la Ferme de Richemont",
+  "website": "https://labeille-gourmande-bordeaux.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4769553920",
+  "title": "La Collation",
+  "lat": 44.845931,
+  "lng": -0.578888,
+  "cuisine": "breakfast",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 09:30-14:30; Sa,Su 10:00-16:00",
+  "address": "17 Rue Fondaudège",
+  "website": "https://www.lacollation.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4810819824",
+  "title": "OKRA",
+  "lat": 44.841491,
+  "lng": -0.583823,
+  "cuisine": "Africaine",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-23:00",
+  "address": "51 Rue Judaïque",
+  "website": "https://www.okra-restaurant.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4838866387",
+  "title": "Chez les Ploucs",
+  "lat": 44.840479,
+  "lng": -0.570454,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Th 18:30-22:30; Fr 18:30-23:00; Sa 12:00-14:30,18:30-23:00; Su 12:00-14:30,18:30-22:30",
+  "address": "10 Rue des Faussets",
+  "website": "https://chezlesploucs.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-6027840887",
+  "title": "Umami",
+  "lat": 44.836872,
+  "lng": -0.571756,
+  "cuisine": "ramen",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Su-Fr 12:00-14:30,19:00-22:30; Sa 12:00-15:30,18:30-22:30",
+  "address": "8 Place Fernand Lafargue",
+  "website": "https://www.facebook.com/umamiramenbordeaux",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7255074585",
+  "title": "Wasabi Café",
+  "lat": 44.839774,
+  "lng": -0.559629,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:00; Sa 19:00-22:00; Su off",
+  "address": "3 Place de Stalingrad",
+  "website": "https://www.wasabicafe.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7403471072",
+  "title": "MAÈ TÛ",
+  "lat": 44.839888,
+  "lng": -0.576804,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-18:00",
+  "address": "12 Rue Poquelin Molière Bordeaux",
+  "website": "https://www.facebook.com/861525587388320/",
+  "description": "specialité_de_rouleaux_de_printemps;asiatique;cuisine_laotienne",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-9105779404",
+  "title": "Le Marrakech",
+  "lat": 44.841445,
+  "lng": -0.571474,
+  "cuisine": "Marocaine",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:00",
+  "address": "15 Rue Saint-Rémi",
+  "website": "https://lemarrakech-bordeaux.fr/",
+  "description": "Spécialité Marocaine",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-9162216317",
+  "title": "Dat Viet",
+  "lat": 44.83305,
+  "lng": -0.561805,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We-Mo 12:00-14:00,19:00-22:30; Tu 19:00-22:30",
+  "address": "1 Quai Sainte-Croix",
+  "website": "https://www.datvietbordeaux.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-10031377717",
+  "title": "New York New York",
+  "lat": 44.836249,
+  "lng": -0.575347,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 10:00-01:30",
+  "address": "4 Cours Pasteur",
+  "website": "https://www.privateaser.com/lieu/40534-new-york-new-york",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1754966931",
+  "title": "Brasserie du Sud-Ouest",
+  "lat": 44.819505,
+  "lng": -0.572483,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:30-22:00",
+  "address": "127 Cours de la Somme Bordeaux",
+  "website": "https://brasseriedusudouest.business.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2518438996",
+  "title": "Les Négociants",
+  "lat": 44.835547,
+  "lng": -0.571657,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:45,19:30-21:45",
+  "address": "3 Rue de Guienne",
+  "website": "https://lesnegociants.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-3027465886",
+  "title": "Aphrodite",
+  "lat": 44.839936,
+  "lng": -0.56976,
+  "cuisine": "Grecque",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 19:00-23:00; Fr-Sa 12:00-14:00,19:00-22:00; Su off",
+  "address": "17 Rue Emile Duploye",
+  "website": "https://aphrodite.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4217607350",
+  "title": "Matsa Caffè",
+  "lat": 44.841251,
+  "lng": -0.558662,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 09:00-14:30",
+  "address": "16 Avenue Thiers",
+  "website": "https://matsacaffe.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-8787171117",
+  "title": "Frida",
+  "lat": 44.835825,
+  "lng": -0.57051,
+  "cuisine": "Méditerranéenne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "We 18:00-00:00; Th-Sa 18:00-02:00; Su 10:30-00:30",
+  "address": "27-29 Rue Buhan",
+  "website": "https://www.frida.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-12120026268",
+  "title": "Lasagna",
+  "lat": 44.839019,
+  "lng": -0.573386,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-15:00, 18:30-23:00",
+  "address": "3 Rue de la Merci",
+  "website": "https://www.lelasagna.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2485497959",
+  "title": "Boccaccia",
+  "lat": 44.83099,
+  "lng": -0.567795,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "We-Sa 12:00-14:30,19:00-22:30; Su 12:00-15:00",
+  "address": "52 Place des Capucins",
+  "website": "https://www.boccaccia.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2485563790",
+  "title": "Nobi Nobi",
+  "lat": 44.832488,
+  "lng": -0.57286,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "PH,Su-Th 11:30-23:00, PH,Fr,Sa 11:30-23:30",
+  "address": "262 Rue Sainte-Catherine Bordeaux",
+  "website": "https://www.nobinobi-streetfood.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2950620804",
+  "title": "Pita Pita",
+  "lat": 44.840542,
+  "lng": -0.570421,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 19:00-23:00",
+  "address": "8 Rue des Faussets",
+  "website": "https://www.pitapitabordeaux.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-4427576589",
+  "title": "La Table de l'Épicier",
+  "lat": 44.841318,
+  "lng": -0.581883,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-15:00, 19:00-23:00",
+  "address": "4 Rue Castelnau d'Auros",
+  "website": "https://la-table-de-lepicier-bordeaux.fr/fr",
+  "description": "Restaurant et épicerie fine",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-7160741901",
+  "title": "Côté Sushi",
+  "lat": 44.837048,
+  "lng": -0.571515,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:00-14:30,18:00-22:30; Fr 11:00-14:30,18:00-23:00; Sa 11:00-23:00; Su 11:00-22:30",
+  "address": "2 Place Fernand Lafargue",
+  "website": "https://cotesushi.com/restaurants/15-bordeaux",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-9525001993",
+  "title": "Arcada",
+  "lat": 44.837581,
+  "lng": -0.569059,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 10:00-24:00",
+  "address": "13 Rue de la Rousselle",
+  "website": "https://www.arcada-restaurant.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-1166981923",
+  "title": "Le Santosha",
+  "lat": 44.837123,
+  "lng": -0.571528,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 12:00-16:00,19:00-23:00; Fr 12:00-16:00,19:00-23:30; Sa 12:00-16:30,19:00-23:30; Su 12:00-16:30,19:00-23:00",
+  "address": "2 Place Fernand Lafargue",
+  "website": "https://www.santosha.cool/restaurant/santosha-bordeaux",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1927310518",
+  "title": "L'Alcala",
+  "lat": 44.8121,
+  "lng": -0.589768,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00; Su 12:00-14:00,19:00-21:45",
+  "address": "Place Alcala de Henares Talence",
+  "website": "https://www.lalcala.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1928803088",
+  "title": "Karl",
+  "lat": 44.840424,
+  "lng": -0.571978,
+  "cuisine": "Méditerranéenne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 08:30-20:30",
+  "address": "6 Place du Parlement",
+  "website": "https://www.karlbordeaux.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2353659488",
+  "title": "Ottoman",
+  "lat": 44.840268,
+  "lng": -0.570558,
+  "cuisine": "Turque",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-15:00,18:00-00:00",
+  "address": "18 Rue des Faussets",
+  "website": "https://ottoman-bordeaux.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3393800184",
+  "title": "La Tupiña",
+  "lat": 44.832869,
+  "lng": -0.562079,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 12:00-14:00,19:00-23:00; Mo off",
+  "address": "6 Rue Porte de la Monnaie Bordeaux",
+  "website": "http://www.latupina.com/tupina-restaurant-bordeaux/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3677750200",
+  "title": "L'Avenue Carnot",
+  "lat": 44.850973,
+  "lng": -0.595876,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:15,19:45-22:15",
+  "address": "2 Avenue Carnot Bordeaux",
+  "website": "https://www.avenue-carnot.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4568770569",
+  "title": "Au Bon Jaja",
+  "lat": 44.837896,
+  "lng": -0.567983,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "18:00 - 00:00",
+  "address": "4 Cours d'Alsace et Lorraine Bordeaux",
+  "website": "https://www.facebook.com/Au-Bon-Jaja-1651791815076512",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4738252610",
+  "title": "Thanh Binh",
+  "lat": 44.830788,
+  "lng": -0.5694,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00; We 19:00-22:00; Su off",
+  "address": "49 Rue Élie Gintrac Bordeaux",
+  "website": "https://thanhbinhviet33.wixsite.com/vietnam",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4745476222",
+  "title": "fufu",
+  "lat": 44.854801,
+  "lng": -0.572064,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://restaurantfufu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5705233137",
+  "title": "Siman Restaurant Brasserie",
+  "lat": 44.841642,
+  "lng": -0.562156,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 10:00-02:00",
+  "address": "7 Quai des Queyries Bordeaux",
+  "website": "https://www.siman-bordeaux.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6086424686",
+  "title": "La Douce Parenthèse",
+  "lat": 44.839052,
+  "lng": -0.571277,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 10:30-18:00",
+  "address": "8 bis Rue Maucoudinat",
+  "website": "https://www.ladouceparenthesesalondethe.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7041701305",
+  "title": "Berthus",
+  "lat": 44.83929,
+  "lng": -0.570695,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-23:00",
+  "address": "15 Rue des Bahutiers Bordeaux",
+  "website": "https://www.restaurant-berthus.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7208926187",
+  "title": "Vin Wè",
+  "lat": 44.841166,
+  "lng": -0.582645,
+  "cuisine": "creole",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu,Th,Sa 12:00-14:30,19:00-22:00; We,Fr 19:00-22:00; Su 19:00-21:45",
+  "address": "63 Rue Saint-Sernin",
+  "website": "https://vin-we.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9192493933",
+  "title": "Santosha Pessac",
+  "lat": 44.806016,
+  "lng": -0.631264,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "12:00-14:30,19:00-22:30",
+  "address": "1 Place de la Ve République Pessac",
+  "website": "https://restaurants.santosha.cool/cantine-thai-pessac-centre-ville/#",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10228610813",
+  "title": "Suki",
+  "lat": 44.834714,
+  "lng": -0.586818,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-21:00",
+  "address": "90-92 Cours du Maréchal Juin",
+  "website": "https://www.restaurantsuki.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10839837406",
+  "title": "Marie Curry",
+  "lat": 44.821578,
+  "lng": -0.559031,
+  "cuisine": "Internationale",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00; Su,Mo 12:00-14:00",
+  "address": "45 Rue de la Compagnie du Midi Bordeaux",
+  "website": "https://mariecurry.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13165394599",
+  "title": "Bouillon Marguerite",
+  "lat": 44.787615,
+  "lng": -0.531316,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,Tu,Th 12:00-15:00,19:00-23:30; We,Su 12:00-15:30,19:00-23:30; Fr 12:00-15:00,19:00-00:00; Sa 12:00-15:30,19:00-00:00",
+  "address": "5 Avenue du 7ème Art",
+  "website": "https://www.bouillonmarguerite.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13171667676",
+  "title": "Pavillon Garonne",
+  "lat": 44.794619,
+  "lng": -0.527938,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:30-21:30",
+  "address": "Rue Louis Blériot Bègles",
+  "website": "https://pavillon-garonne.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-156164794",
+  "title": "L'Ermitage Cauderan",
+  "lat": 44.858396,
+  "lng": -0.622956,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 08:30-00:00; Sa 09:00-00:00",
+  "address": "341 Avenue du Maréchal de Lattre de Tassigny",
+  "website": "https://lermitage-cauderan.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-226890067",
+  "title": "Le Shogun",
+  "lat": 44.794478,
+  "lng": -0.605596,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:45-14:30,18:45-22:30",
+  "address": "755 Cours de la Libération",
+  "website": "https://leshogun.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2242681866",
+  "title": "Mets Mots",
+  "lat": 44.848359,
+  "lng": -0.582653,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo 12:00-13:30; Tu-Fr 12:00-13:30,19:30-21:30",
+  "address": "",
+  "website": "https://www.metsmots.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2503800928",
+  "title": "Café des Arts",
+  "lat": 44.834745,
+  "lng": -0.573119,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 08:00-24:00; Su 09:00-23:30",
+  "address": "138 Cours Victor Hugo",
+  "website": "https://www.lecafedesarts.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4807360933",
+  "title": "La Belle Rose",
+  "lat": 44.878139,
+  "lng": -0.533755,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:30, Tu-Th 19:30-22:00, Fr,Sa 19:30-22:30",
+  "address": "1 Place Aristide Briand",
+  "website": "http://www.labellerose.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4825954521",
+  "title": "Konnichiwa",
+  "lat": 44.839944,
+  "lng": -0.582038,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 11:30-14:30, Mo-Su 18:30-22:30",
+  "address": "22 Rue Saint-Sernin",
+  "website": "https://www.konnichiwabordeaux.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4905454576",
+  "title": "Au Bouchon des Chartrons",
+  "lat": 44.858901,
+  "lng": -0.557236,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,20:00-22:00",
+  "address": "",
+  "website": "https://www.aubouchondeschartrons.fr/",
+  "description": "Opération \"Bouchon à la maison\", menus disponibles sur la page Facebook et commande par téléphone.",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4966898221",
+  "title": "Ma Part des Anges",
+  "lat": 44.841173,
+  "lng": -0.6474,
+  "cuisine": "Tapas",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 10:00-14:00, 16:00-01:30; Sa 10:00-02:00",
+  "address": "10 Rue de la Vieille Église",
+  "website": "http://www.mapartdesanges.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-7123001785",
+  "title": "Demeter",
+  "lat": 44.838336,
+  "lng": -0.568602,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-21:45",
+  "address": "9 Rue Ausone",
+  "website": "https://www.restaurantdemeter.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-7263209525",
+  "title": "Petits Plaisirs • 物食记",
+  "lat": 44.834917,
+  "lng": -0.575424,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo,Tu,Th 12:00-14:30,19:00-21:30; We off; Fr-Su 12:00-14:30,19:00-21:30",
+  "address": "2 bis Rue de Cursol",
+  "website": "https://petitsplaisirs-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-8787149118",
+  "title": "Monzú",
+  "lat": 44.843255,
+  "lng": -0.577561,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-22:30",
+  "address": "12 Place des Grands Hommes",
+  "website": "https://www.monzu.fr/grands-hommes",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-12123867343",
+  "title": "Maki Time",
+  "lat": 44.823405,
+  "lng": -0.600243,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:30-14:00,18:00-21:45; Fr,Sa 11:30-14:00,18:00-22:00; Su off",
+  "address": "114 Rue de la Béchade",
+  "website": "https://www.makitime.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-12183649035",
+  "title": "La fine Bouche",
+  "lat": 44.836076,
+  "lng": -0.576948,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Fr 12:00-13:30,19:15-21:00; Sa 19:15-21:00",
+  "address": "30 Rue du Hâ Bordeaux",
+  "website": "https://www.lafinebouche33.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-12817761741",
+  "title": "My Little Warung",
+  "lat": 44.832481,
+  "lng": -0.572473,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Su-We 11:30-22:00; Th-Sa 11:30-23:00",
+  "address": "35 Rue des Augustins",
+  "website": "https://www.mylittlewarung.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-13383259126",
+  "title": "Lenom Fusion",
+  "lat": 44.835218,
+  "lng": -0.569421,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,19:00-22:30",
+  "address": "70 Cours Victor Hugo",
+  "website": "https://lenomfusion-bdx.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-1484524772",
+  "title": "Café Japonais",
+  "lat": 44.838918,
+  "lng": -0.573149,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-18:30,19:00-23:00",
+  "address": "22 Rue Saint-Siméon",
+  "website": "http://cafejaponais.free.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2839963323",
+  "title": "Ragazzi da Peppone",
+  "lat": 44.80667,
+  "lng": -0.630958,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 12:00-14:15,19:00-22:00; Fr 12:00-14:15,19:00-22:30; Sa 12:00-14:30,19:00-22:30; Su 12:00-14:30,19:00-22:00",
+  "address": "8 Place de la Liberté Pessac",
+  "website": "https://ragazzidapeppone.fr/restaurants/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-3677750211",
+  "title": "Satine & Bodandy",
+  "lat": 44.849006,
+  "lng": -0.593284,
+  "cuisine": "fine dining",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:01-13:30,18:31-21:30; Sa-Su off",
+  "address": "245 Rue Turenne",
+  "website": "http://www.juliencruege.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4838866392",
+  "title": "L'Embarcadère",
+  "lat": 44.840159,
+  "lng": -0.572053,
+  "cuisine": "Poissons",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 19:00-24:00+, Sa,Su 12:00-14:00+",
+  "address": "3 Rue du Pas Saint-Georges",
+  "website": "http://embarcadere-bordeaux.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7073238486",
+  "title": "O P'tit Jardin",
+  "lat": 44.85521,
+  "lng": -0.595739,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Tu 12:00-14:00; We-Fr 12:00-14:00,18:30-00:00",
+  "address": "52 Avenue de la Libération Charles de Gaulle Le Bouscat",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7161289392",
+  "title": "Blaze Trip Sushi",
+  "lat": 44.835455,
+  "lng": -0.575415,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-23:30",
+  "address": "25 Cours Pasteur",
+  "website": "https://blaze-trip-sushi-bordeaux.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7193216785",
+  "title": "Agrùm",
+  "lat": 44.8419,
+  "lng": -0.581081,
+  "cuisine": "Méditerranéenne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Fr 12:00-14:30,19:00-21:00; Sa 10:30-14:30,19:00-21:00; Su 10:30-14:30",
+  "address": "",
+  "website": "https://agrumbordeaux.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-10139568518",
+  "title": "Fufu Ramen",
+  "lat": 44.841359,
+  "lng": -0.57239,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-23:00",
+  "address": "37 Rue Saint-Rémi",
+  "website": "https://restaurantfufu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11076843840",
+  "title": "Papadum Indian food",
+  "lat": 44.867611,
+  "lng": -0.562981,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 11:30-15:00,19:00-22:30; Su 19:00-22:30",
+  "address": "121 Rue Lucien Faure",
+  "website": "https://papadum.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12367835189",
+  "title": "Terre Émeraude",
+  "lat": 44.834778,
+  "lng": -0.577385,
+  "cuisine": "colombian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-14:00,19:30-22:00; Sa 19:30-22:00",
+  "address": "32 Rue de Cursol",
+  "website": "https://www.terreemeraude.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12367999701",
+  "title": "Moelleuses et Persillées",
+  "lat": 44.852818,
+  "lng": -0.567974,
+  "cuisine": "Viande",
+  "tags": [],
+  "hours": "Mo-Th 12:00-14:30, 19:00-23:00; Fr-Su 12:00-23:00",
+  "address": "65 Quai des Chartrons",
+  "website": "https://www.moelleuses-et-persillees.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12442290002",
+  "title": "Naï Naï",
+  "lat": 44.839735,
+  "lng": -0.581416,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "https://www.nainai.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12497862144",
+  "title": "La Crêpe Funky",
+  "lat": 44.841049,
+  "lng": -0.58131,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo 12:00-15:00; Tu-Fr 12:00-15:00, 19:00-22:00; Sa 12:00-22:00; Su off",
+  "address": "32 Place Gambetta",
+  "website": "https://la-crepe-funky.jimdosite.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13004244861",
+  "title": "Osteria da Luigi",
+  "lat": 44.839493,
+  "lng": -0.57209,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:45, 19:00-22:45",
+  "address": "23 Rue du Pas Saint-Georges",
+  "website": "https://www.osteria-da-luigi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-1819938405",
+  "title": "Fellini",
+  "lat": 44.813587,
+  "lng": -0.552509,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo,Tu 12:00-14:30; We-Fr 12:00-14:30,19:30-22:00; Sa 19:30-22:00",
+  "address": "",
+  "website": "https://restaurant-fellini-begles.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-1982595495",
+  "title": "Monkey Mood",
+  "lat": 44.833523,
+  "lng": -0.565274,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30, 19:00-21:00; Su 11:30-14:30, 19:00-21:30",
+  "address": "11 Rue Camille Sauvageau",
+  "website": "https://monkey-mood.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-2353105920",
+  "title": "Nom d'Une Crepe",
+  "lat": 44.841244,
+  "lng": -0.572027,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "Mo-Su 11:45-14:45,18:45-22:45",
+  "address": "32 Rue Saint-Rémi",
+  "website": "https://nomdunecrepe-bordeaux.com",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3419827077",
+  "title": "Luuly",
+  "lat": 44.855463,
+  "lng": -0.6138,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:00-14:30,17:30-20:30; We 17:30-20:30",
+  "address": "1B Avenue de Verdun Bordeaux",
+  "website": "https://www.luuly.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4344451196",
+  "title": "Yumi",
+  "lat": 44.853391,
+  "lng": -0.56719,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:30, 19:00-22:00",
+  "address": "",
+  "website": "http://yumibordeaux.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4637436992",
+  "title": "Adey Abeba",
+  "lat": 44.83117,
+  "lng": -0.574522,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:30",
+  "address": "83 Cours Aristide Briand",
+  "website": "http://www.restaurant-ethiopien-33.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4637867789",
+  "title": "Ici Argentine",
+  "lat": 44.840018,
+  "lng": -0.599089,
+  "cuisine": "argentinian",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Fr 11:30-14:00, Tu-Su 18:30-21:30",
+  "address": "84 Boulevard du Président Wilson",
+  "website": "https://www.iciargentine.com",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5514311639",
+  "title": "Su and Shi Bordeaux",
+  "lat": 44.864295,
+  "lng": -0.558175,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:00-14:00,18:30-22:30; Sa 18:30-22:30; Su 18:00-22:30",
+  "address": "",
+  "website": "https://www.suandshi.com/6-restaurant-bordeaux-quartier-bassin-a-flots.html",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5996583359",
+  "title": "Les drôles",
+  "lat": 44.841437,
+  "lng": -0.571737,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Th 12:00-14:30,19:00-22:30; Tu off; Fr-Su 12:00-15:00,19:00-23:00",
+  "address": "21 Rue Saint-Rémi Bordeaux",
+  "website": "https://www.restaurantlesdroles.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-9312689809",
+  "title": "Sushiman",
+  "lat": 44.863845,
+  "lng": -0.581707,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Fr 11:00-14:00,18:00-22:00; Sa-Su 18:00-22:00",
+  "address": "78 Rue Calixte Camelle",
+  "website": "https://www.ausushiman.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-9566852054",
+  "title": "Chez Hibou",
+  "lat": 44.837984,
+  "lng": -0.57352,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Mo-Tu,Th-Sa 12:00-14:00,19:00-22:00; We,Su off",
+  "address": "45 Rue du Loup",
+  "website": "https://www.chezhibou.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-9689777466",
+  "title": "Bimbao",
+  "lat": 44.830849,
+  "lng": -0.567075,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-14:30; Sa-Su 12:00-15:00",
+  "address": "9 Place des Capucins",
+  "website": "https://bimbao.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-12205277974",
+  "title": "Papy",
+  "lat": 44.839119,
+  "lng": -0.570425,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo,Su off; Tu-Fr 19:00-22:00; Sa 12:00-14:00,19:00-22:00",
+  "address": "7 Rue de la Tour de Gassies",
+  "website": "https://www.papyrestaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13046524270",
+  "title": "Casa Gaia",
+  "lat": 44.850514,
+  "lng": -0.571149,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo-Sa 12:00-14:30,19:00-22:00; Su 12:00-15:30",
+  "address": "16 bis Rue Latour",
+  "website": "https://www.casagaia.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13344430047",
+  "title": "Le P'tit 18",
+  "lat": 44.835473,
+  "lng": -0.578343,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 06:00-19:00",
+  "address": "36 Rue Maréchal Joffre",
+  "website": "https://ptit18-bordeaux.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13808722962",
+  "title": "Mazal",
+  "lat": 44.840871,
+  "lng": -0.570702,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "We-Sa 19:30-02:00",
+  "address": "4 Rue du Puits Descujols",
+  "website": "https://lemazal.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-way-156205324",
+  "title": "Maison Franco",
+  "lat": 44.859535,
+  "lng": -0.608043,
+  "cuisine": "Viande",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 09:00-14:30,17:00-20:00; Su 09:00-14:00",
+  "address": "",
+  "website": "https://www.maison-franco.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-way-505900326",
+  "title": "Krousty Sabaïdi Pessac",
+  "lat": 44.803004,
+  "lng": -0.614848,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Th 11:30-22:30; Fr,Sa 11:30-23:00; Su 12:00-22:30",
+  "address": "75 Avenue des Échoppes Pessac",
+  "website": "https://www.kroustyresto.fr/restaurant-thai-food/pessac",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-1879727454",
+  "title": "La Goulette",
+  "lat": 44.829641,
+  "lng": -0.567754,
+  "cuisine": "tunisian",
+  "tags": [],
+  "hours": "Mo-Su 12:00-00:00",
+  "address": "81 Cours de la Marne",
+  "website": "https://lagoulette-bordeaux.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-2352488767",
+  "title": "Shaïko",
+  "lat": 44.842798,
+  "lng": -0.578366,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:00,19:00-21:00; Su,PH off",
+  "address": "",
+  "website": "https://www.shaiko-bordeaux.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-2353659711",
+  "title": "Lume",
+  "lat": 44.840722,
+  "lng": -0.570487,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "3 Rue des Faussets",
+  "website": "https://ristorantelume.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-2503316953",
+  "title": "Bar de la Marine",
+  "lat": 44.865631,
+  "lng": -0.548999,
+  "cuisine": "local",
+  "tags": [],
+  "hours": "Mo 09:00-17:00; Tu-Fr 09:00-01:30; Sa 12:00-01:30",
+  "address": "28 Rue Achard Bordeaux",
+  "website": "https://www.frederic-coiffe.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4002232196",
+  "title": "Les Récoltants",
+  "lat": 44.837341,
+  "lng": -0.570441,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Tu 12:00-14:00; We-Sa 12:00-14:00,19:00-21:00; Su off",
+  "address": "18 Rue Sainte-Colombe",
+  "website": "https://www.lesrecoltants.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4446057471",
+  "title": "Sweet Corner",
+  "lat": 44.800483,
+  "lng": -0.617506,
+  "cuisine": "tea",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 07:00-12:15 open \"Cuisine fermée\"; Mo-Fr 12:15-18:00",
+  "address": "126 Avenue du Docteur Albert Schweitzer Pessac",
+  "website": "https://sweet-corner-pessac.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4816138333",
+  "title": "An Tam",
+  "lat": 44.806084,
+  "lng": -0.631837,
+  "cuisine": "Vietnamienne",
+  "tags": [],
+  "hours": "Tu 12:00-14:30; We-Sa 12:00-14:30,19:00-22:30",
+  "address": "26 Avenue Pasteur Pessac",
+  "website": "https://www.facebook.com/antamrestaurant/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-6369705819",
+  "title": "Molino",
+  "lat": 44.840378,
+  "lng": -0.558636,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 08:00-16:00; Sa 10:00-16:00",
+  "address": "1 Rue Montméjean",
+  "website": "https://molinobordeaux.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-6812973060",
+  "title": "Le Familia",
+  "lat": 44.862838,
+  "lng": -0.551068,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 09:00-24:00, Su 09:00-19:00",
+  "address": "",
+  "website": "https://www.familia-brasserie.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7038718309",
+  "title": "Morajú",
+  "lat": 44.838602,
+  "lng": -0.576738,
+  "cuisine": "argentinian",
+  "tags": [],
+  "hours": "Tu-We 12:00-14:30; Th-Sa 12:00-14:30, 19:30-22:30",
+  "address": "42 Rue des Trois Conils Bordeaux",
+  "website": "https://moraju.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7073238528",
+  "title": "Calix",
+  "lat": 44.855599,
+  "lng": -0.596249,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:30-22:00",
+  "address": "64 Avenue de la Libération Charles de Gaulle Le Bouscat",
+  "website": "https://calix.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7263292702",
+  "title": "Que toi",
+  "lat": 44.838931,
+  "lng": -0.572966,
+  "cuisine": "Vietnamienne",
+  "tags": [],
+  "hours": "Mo-Su 10:30-15:00, 18:30-22:30",
+  "address": "18 Rue Saint-Siméon",
+  "website": "https://www.restaurant-vietnamien-bordeaux.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7266118951",
+  "title": "Dolce Vita Villenave d'Ornon",
+  "lat": 44.777654,
+  "lng": -0.574239,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Tu-Su 19:00-22:00; Th-Sa 12:00-13:30,19:00-22:00",
+  "address": "55 Avenue du Maréchal Leclerc Villenave-d'Ornon",
+  "website": "https://dolcevita-villenave.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7368308946",
+  "title": "Padang Padang",
+  "lat": 44.837421,
+  "lng": -0.571049,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Su-Th 12:00-15:00,19:00-22:30; Sa 12:00-15:30,19:00-23:00; Fr 12:00-15:00,19:00-23:00",
+  "address": "37 Rue Sainte-Colombe",
+  "website": "http://www.padang-padang.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7494291650",
+  "title": "Mademoiselle Simone",
+  "lat": 44.836804,
+  "lng": -0.574814,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo,Tu,Fr 10:30-18:30; Sa,Su 10:00-15:00",
+  "address": "67 Rue des Ayres Bordeaux",
+  "website": "https://mademoisellesimonebdx.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-9327957717",
+  "title": "Beirut Kitchen",
+  "lat": 44.834698,
+  "lng": -0.564007,
+  "cuisine": "Libanaise",
+  "tags": [],
+  "hours": "Tu-Su 19:00-22:00, Fr-Su 12:00-14:00",
+  "address": "8 Quai de la Grave",
+  "website": "https://beirut-kitchen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-9332431440",
+  "title": "Asia Box",
+  "lat": 44.82068,
+  "lng": -0.571622,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Tu-Su 11:00-14:00,18:00-22:00",
+  "address": "257 Rue Malbec",
+  "website": "https://asia-box.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-9945558871",
+  "title": "Mlle Potts & Co",
+  "lat": 44.833398,
+  "lng": -0.565432,
+  "cuisine": "tea house",
+  "tags": [],
+  "hours": "Tu-Fr 09:00-18:00; Sa 10:00-17:00; Su 11:00-16:00",
+  "address": "2 bis Rue Planterose",
+  "website": "https://mllepotts-bordeaux.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-11360300193",
+  "title": "Iké Poké",
+  "lat": 44.842233,
+  "lng": -0.557054,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,18:30-21:30; Sa,Su 18:30-21:30",
+  "address": "48 Avenue Thiers",
+  "website": "https://www.ikepoke.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-11937137775",
+  "title": "Lucca",
+  "lat": 44.833601,
+  "lng": -0.584437,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo 12:00-14:30; Tu-Fr 12:00-14:30,18:30-22:00",
+  "address": "6 Place Rodesse",
+  "website": "https://lefooding.com/restaurants/lucca",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-12120700292",
+  "title": "Bo tannique",
+  "lat": 44.838441,
+  "lng": -0.574369,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:45,19:00-22:00",
+  "address": "2 Rue Tustal",
+  "website": "https://www.restaurant-bo-tannique-bordeaux.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-12369643316",
+  "title": "Peter Coffee Shop",
+  "lat": 44.835541,
+  "lng": -0.571761,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 08:30-16:30",
+  "address": "10 Rue de Guienne",
+  "website": "https://petercoffeeshop.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-13065439930",
+  "title": "Le Lasagna",
+  "lat": 44.850269,
+  "lng": -0.572288,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-15:00, 18:30-23:00",
+  "address": "23 Rue Notre-Dame",
+  "website": "https://www.lelasagna.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-13103302880",
+  "title": "Mame",
+  "lat": 44.825491,
+  "lng": -0.577388,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We-Sa 12:00-22:00; Su 11:30-14:30",
+  "address": "5 Rue Colette",
+  "website": "https://mame-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-13682030504",
+  "title": "Sushi Delivery",
+  "lat": 44.834417,
+  "lng": -0.574586,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 11:30-14:30,18:00-02:00; Th 11:30-14:30,18:00-04:00; Fr 11:30-14:30,18:00-05:00; Sa 12:00-15:00,18:00-05:00; Su 12:00-15:00,18:00-02:30",
+  "address": "28 Cours Pasteur",
+  "website": "https://sushi-delivery59.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-way-139674733",
+  "title": "Salad&Co",
+  "lat": 44.79003,
+  "lng": -0.530509,
+  "cuisine": "salad",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:30, 18:30-21:30; Su 12:00-14:30, 18:30-21:30",
+  "address": "1 Rue Louis de Funès Villenave-d'Ornon",
+  "website": "https://www.saladandco.fr/restaurant/restaurant-bordeaux-villenave-dornon",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-way-512387399",
+  "title": "Cafétéria Le Forum",
+  "lat": 44.797361,
+  "lng": -0.619434,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 07:30-18:00",
+  "address": "2 Avenue Léon Duguit Pessac",
+  "website": "https://www.crous-bordeaux.fr/restaurant/cafataria-le-forum/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-352964326",
+  "title": "Merci",
+  "lat": 44.797139,
+  "lng": -0.528624,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "8 Rue de la Capitainerie",
+  "website": "https://restaurant-merci.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-1129411972",
+  "title": "Haru Haru",
+  "lat": 44.818176,
+  "lng": -0.585065,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30, 19:00-22:30",
+  "address": "93 Cours Gambetta",
+  "website": "https://haruharu.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-2291199046",
+  "title": "Daifuku",
+  "lat": 44.833497,
+  "lng": -0.582036,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "PH,Tu-Su 12:00-14:30,18:30-22:30",
+  "address": "73 Rue de Belfort",
+  "website": "https://www.sushidaifuku.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-2370503389",
+  "title": "Couleur Tibet",
+  "lat": 44.832785,
+  "lng": -0.570809,
+  "cuisine": "tibetan",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "56 Rue du Mirail",
+  "website": "https://restaurant-couleur-tibet.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-2463795332",
+  "title": "Chez Joon",
+  "lat": 44.83802,
+  "lng": -0.571514,
+  "cuisine": "Coréenne",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:30, 19:00-22:00; Sa 12:00-15:00, 19:00-22:00",
+  "address": "19 Rue du Cerf Volant",
+  "website": "https://www.chezjoojmn.com",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-2501425261",
+  "title": "Restaurant Pastel",
+  "lat": 44.84893,
+  "lng": -0.570826,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "2 Quai des Chartrons Bordeaux",
+  "website": "https://restaurant-pastel.com",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-3808390829",
+  "title": "La Piscine",
+  "lat": 44.807316,
+  "lng": -0.553958,
+  "cuisine": "buffet",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Mo-Fr 12:00-14:30",
+  "address": "2 Rue Carnot Bègles",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-4584332389",
+  "title": "Sushi Kòbbo Arcins",
+  "lat": 44.783007,
+  "lng": -0.537226,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Tu-Su 12:00-14:30,19:00-22:30",
+  "address": "88 Avenue Mirieu de Labarre Villenave-d'Ornon",
+  "website": "https://www.sushikobboarcins.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-4816138329",
+  "title": "Sushi Fou",
+  "lat": 44.806519,
+  "lng": -0.631403,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Fr 11:30-14:15, 18:00-22:15; Sa 11:30-14:30, 18:00-22:15; Su 18:00-22:15",
+  "address": "7 Place de la Liberté Pessac",
+  "website": "https://sushifou.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-4928251889",
+  "title": "Pickles",
+  "lat": 44.850025,
+  "lng": -0.572412,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "15 Rue Notre-Dame",
+  "website": "https://picklesbordeaux.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6279509185",
+  "title": "Nama",
+  "lat": 44.844116,
+  "lng": -0.579651,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Tu-Su 12:00-14:00, 19:30-22:30",
+  "address": "24 Rue Lafaurie de Monbadon",
+  "website": "https://www.namawinerestaurant.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6957721018",
+  "title": "Chez Maxime",
+  "lat": 44.852675,
+  "lng": -0.617205,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Tu-Sa 11:00-21:30",
+  "address": "197 Avenue Louis Barthou Bordeaux",
+  "website": "",
+  "description": "covid19:sur commande,à emporter, livraison",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6958346488",
+  "title": "Xieng-Maï",
+  "lat": 44.837034,
+  "lng": -0.599177,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo,Tu,Fr 12:00-14:00,19:00-22:00; We,Th,Sa 19:00-22:00",
+  "address": "5 Boulevard du Président Wilson",
+  "website": "https://xieng-mai.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6987756914",
+  "title": "Tea cosy",
+  "lat": 44.830892,
+  "lng": -0.604037,
+  "cuisine": "tea",
+  "tags": [],
+  "hours": "Mo-Fr 08:30-17:30; Sa, Su 11:00-14:00",
+  "address": "11 Rue du Grand Maurian Bordeaux",
+  "website": "https://tea-cosy.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6992581375",
+  "title": "SUSHI 7",
+  "lat": 44.883614,
+  "lng": -0.633567,
+  "cuisine": "sushi",
+  "tags": [
+   "À emporter"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "120 Avenue du Médoc Eysines",
+  "website": "https://www.sushi7.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7058248588",
+  "title": "Man Mo Bordeaux",
+  "lat": 44.852258,
+  "lng": -0.57195,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30,18:00-22:30; \"drink service to 2am\"",
+  "address": "8 Place du Marché des Chartrons Bordeaux",
+  "website": "https://www.manmodimsum.com/bordeaux/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7193258185",
+  "title": "IT Trattoria",
+  "lat": 44.831094,
+  "lng": -0.567749,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 09:00-22:00",
+  "address": "",
+  "website": "https://it-trattoria.com",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7208882185",
+  "title": "Heiko",
+  "lat": 44.836985,
+  "lng": -0.574151,
+  "cuisine": "poke",
+  "tags": [],
+  "hours": "Mo-Sa 11:45-22:30; Su 18:00-22:30",
+  "address": "49 Rue des Ayres",
+  "website": "https://heiko-poke.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7252378855",
+  "title": "Le Samouraï",
+  "lat": 44.831702,
+  "lng": -0.578102,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:30,19:00-22:30",
+  "address": "9 Rue Edmond Costedoat",
+  "website": "https://restaurant-lesamourai.com",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ }
+]

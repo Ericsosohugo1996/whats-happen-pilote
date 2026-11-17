@@ -1,0 +1,2413 @@
+[
+ {
+  "id": "osm-node-680173041",
+  "title": "Maison des Tanneurs",
+  "lat": 48.581405,
+  "lng": 7.741809,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-13:45, 19:30-21:45",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q14628592",
+  "score": 56
+ },
+ {
+  "id": "osm-node-10757412796",
+  "title": "Les Restaurants Du Cœur Fringale",
+  "lat": 48.589142,
+  "lng": 7.734577,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "Rue du Rempart Strasbourg",
+  "website": "https://ad67.restosducoeur.org/centres-departementaux/ad67-centre-dactivites-strasbourg-5/",
+  "description": "",
+  "wikidata": "Q171205",
+  "score": 54
+ },
+ {
+  "id": "osm-node-288171147",
+  "title": "À l'Ancienne Douane",
+  "lat": 48.579503,
+  "lng": 7.750051,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 09:00-19:30; Sa 08:00-18:30",
+  "address": "",
+  "website": "https://www.anciennedouane.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 49
+ },
+ {
+  "id": "osm-node-3574974710",
+  "title": "Le Jardin de l'Orangerie",
+  "lat": 48.590208,
+  "lng": 7.776191,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "Parc de l'Orangerie",
+  "website": "http://www.jardinorangerie.fr",
+  "description": "Cuisine régionale avec généralement deux options végétariennes",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-5309033272",
+  "title": "L'Epicier Grand Cru",
+  "lat": 48.582058,
+  "lng": 7.741817,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 11:00-15:00, 16:00-22:30; Th 11:00-15:00, 16:00-23:30; Fr 11:00-23:30; Sa 10:00-23:30; Su 11:00-20:30",
+  "address": "",
+  "website": "https://www.lepiciergrandcru.com/restaurant-fromage-strasbourg",
+  "description": "Bar à fromage et vin",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-8455588506",
+  "title": "Les Tontons Flambeurs",
+  "lat": 48.57257,
+  "lng": 7.756022,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 12:00-14:00,18:00-00:00; Fr-Sa 12:00-14:00,18:00-01:00, Su 17:00-23:00",
+  "address": "",
+  "website": "https://tontonsflambeurs.fr",
+  "description": "Tartes flambées artisanales",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-1249709890",
+  "title": "Le grand Shanghai",
+  "lat": 48.58408,
+  "lng": 7.743117,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-22:30",
+  "address": "",
+  "website": "https://legrandshanghai.fr/",
+  "description": "Restaurant asiatique Restaurant chinois Buffet à volonté Plats au wok",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-10090330298",
+  "title": "Darness",
+  "lat": 48.58556,
+  "lng": 7.740419,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 12:00-14:30,18:00-22:00; Fr,Sa 12:00-22:30; Su 12:00-22:00",
+  "address": "14 Rue du Faubourg de Saverne Strasbourg",
+  "website": "https://www.darness.fr",
+  "description": "Cantine marocaine",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-2676660697",
+  "title": "NEM.A",
+  "lat": 48.58367,
+  "lng": 7.754132,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 19:00-22:00",
+  "address": "5 Rue des Pucelles Strasbourg",
+  "website": "https://www.nem-a.com/",
+  "description": "Uniquement des nems : végétariens, poulet, porc, bœuf poivré, porc/crevette, canard confit, sucrés, etc.",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-1250345388",
+  "title": "Le Schnockeloch",
+  "lat": 48.582779,
+  "lng": 7.7381,
+  "cuisine": "Terroir",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-14:30,18:30-23:00; PH off",
+  "address": "1 Quai Saint-Jean Strasbourg",
+  "website": "http://www.schnockeloch.fr",
+  "description": "Dishes of alsatian tradition",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-5817350201",
+  "title": "Pétrin Bistrot du Boulanger",
+  "lat": 48.572946,
+  "lng": 7.767564,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "06:30-19:00",
+  "address": "12 Rue de l'Elbe Strasbourg",
+  "website": "https://petrin-bistrot-du-boulanger.eatbu.com/",
+  "description": "Également salon de thé.",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-488631647",
+  "title": "Sushido",
+  "lat": 48.579914,
+  "lng": 7.75239,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30, 19:00-22:30; Su 19:00-22:30",
+  "address": "10 Quai des Bateliers",
+  "website": "http://www.sushido.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1159011380",
+  "title": "Carcasse",
+  "lat": 48.584702,
+  "lng": 7.66695,
+  "cuisine": "beef",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Fr 12:00-14:00,19:00-22:00; Sa 19:00-22:30; Su 12:00-14:00",
+  "address": "",
+  "website": "https://www.restaurant-carcasse.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1211141262",
+  "title": "Purattu",
+  "lat": 48.578817,
+  "lng": 7.754918,
+  "cuisine": "libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:30; Sa 19:00-22:30",
+  "address": "13 Rue des Orphelins Strasbourg",
+  "website": "https://restaurantpurattu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1605656225",
+  "title": "L'Oignon",
+  "lat": 48.581416,
+  "lng": 7.741435,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "We-Su 12:00-15:00,19:00-23:00",
+  "address": "",
+  "website": "http://www.restaurantloignon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1716874571",
+  "title": "Le Baeckeoffe d'Alsace",
+  "lat": 48.580344,
+  "lng": 7.741966,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-22:00; Sa-Su 11:30-22:30",
+  "address": "14 Rue des Moulins",
+  "website": "https://baeckeoffe.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1970477053",
+  "title": "Rasoi",
+  "lat": 48.578932,
+  "lng": 7.751114,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 12:00-14:00,18:30-22:30",
+  "address": "2 Rue des Bouchers Strasbourg",
+  "website": "https://rasoistrasbourg.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2270579612",
+  "title": "Au Petit Mezze",
+  "lat": 48.581769,
+  "lng": 7.745801,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00",
+  "address": "13 bis Rue Sainte-Barbe Strasbourg",
+  "website": "https://aupetitmezze.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4508664517",
+  "title": "Aedaen Place Brasserie",
+  "lat": 48.582517,
+  "lng": 7.741765,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:30,18:30-22:30; Su off",
+  "address": "",
+  "website": "https://www.aedaen-place.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4691175038",
+  "title": "Shahi Mahal",
+  "lat": 48.578677,
+  "lng": 7.75477,
+  "cuisine": "pakistani",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su",
+  "address": "",
+  "website": "https://www.shahimahal.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5000831837",
+  "title": "Le Galopin",
+  "lat": 48.582125,
+  "lng": 7.742111,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 11:00-01:30; Su 11:00-21:00",
+  "address": "",
+  "website": "https://www.bistrotlegalopin.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-8173781658",
+  "title": "Taikin",
+  "lat": 48.573606,
+  "lng": 7.765522,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-23:00",
+  "address": "55 Presqu'Île André Malraux Strasbourg",
+  "website": "https://taikin.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-9019330329",
+  "title": "Brasserie l'Ours Blanc",
+  "lat": 48.583809,
+  "lng": 7.743449,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-15:00, 18:30-23:00",
+  "address": "52 Rue du Jeu des Enfants Strasbourg",
+  "website": "https://brasserie-loursblanc.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-9022668371",
+  "title": "Avobowl",
+  "lat": 48.581972,
+  "lng": 7.74307,
+  "cuisine": "poke",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,18:15-21:45; Sa-Su 11:00-17:00",
+  "address": "",
+  "website": "https://www.avobowl.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-10300123687",
+  "title": "Ranna Ghor",
+  "lat": 48.580286,
+  "lng": 7.756584,
+  "cuisine": "bengladesh",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 11:30-14:30,18:30-22:00; Fr,Sa 11:30-14:30,18:00-23:00; Su 11:00-15:00",
+  "address": "",
+  "website": "https://ranna-ghor.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-way-592671832",
+  "title": "Brasserie Michel Debus",
+  "lat": 48.608706,
+  "lng": 7.749444,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:45-14:00,18:30-22:00",
+  "address": "85 Route de Bischwiller Schiltigheim",
+  "website": "https://brasserie-michel-debus.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-way-1056213296",
+  "title": "Le Jardin Céleste",
+  "lat": 48.59098,
+  "lng": 7.669942,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-15:00,18:30-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-488631662",
+  "title": "Maharaja",
+  "lat": 48.580194,
+  "lng": 7.752987,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 11:30-14:00, 18:30-23:30",
+  "address": "15 Quai des Bateliers",
+  "website": "https://maharaja.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-589018818",
+  "title": "Crêperie Le Moulin Du Diable",
+  "lat": 48.579088,
+  "lng": 7.741639,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:30-14:00,18:30-22:00; Su,Mo off",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-872484525",
+  "title": "L'Ancienne Chapelle",
+  "lat": 48.579039,
+  "lng": 7.754284,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa; Su 17:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-1659083610",
+  "title": "Brasserie À la Cave Profonde",
+  "lat": 48.607056,
+  "lng": 7.735581,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu,Su 11:30-14:00; We-Sa 11:30-14:00, 18:30-22:00",
+  "address": "",
+  "website": "https://caveprofonde.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-1716574914",
+  "title": "Restaurant Pizzeria Schwert;Hotel Schwert",
+  "lat": 48.57379,
+  "lng": 7.809821,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,18:00-21:30; Sa 18:00-22:00",
+  "address": "51 Hauptstraße Kehl",
+  "website": "https://www.hotel-schwert.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4087213845",
+  "title": "La Cerise",
+  "lat": 48.604297,
+  "lng": 7.753285,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 11:30-14:30, 18:30-22:30",
+  "address": "13 Rue Neuve",
+  "website": "https://laceriseschilick.fr/",
+  "description": "Restaurant Créole, spécialités réunionnaises",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4220761790",
+  "title": "Le Tire-Bouchon",
+  "lat": 48.580555,
+  "lng": 7.75059,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-15:00,18:00-24:00",
+  "address": "5 Rue des Tailleurs de Pierre Strasbourg",
+  "website": "https://www.letirebouchon.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4594699365",
+  "title": "Iskandar",
+  "lat": 48.583595,
+  "lng": 7.741565,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 18:00-21:00",
+  "address": "6 Place du Vieux Marché aux Vins",
+  "website": "https://www.restaurantiskandar.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4600677774",
+  "title": "Habibi",
+  "lat": 48.577563,
+  "lng": 7.771195,
+  "cuisine": "syrian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-22:00",
+  "address": "",
+  "website": "https://habibi.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4831185264",
+  "title": "Yume Sushi",
+  "lat": 48.582895,
+  "lng": 7.739304,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "11:00-14:00, 18:00-22:00",
+  "address": "",
+  "website": "https://yume-sushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-5069564938",
+  "title": "La Maison de Damas",
+  "lat": 48.609168,
+  "lng": 7.749752,
+  "cuisine": "syrian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 10:00-14:00,17:30-22:00",
+  "address": "11 Allée Robert Théophile Debus Schiltigheim",
+  "website": "https://www.maison-de-damas.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-8953179201",
+  "title": "Ô Baozi",
+  "lat": 48.584036,
+  "lng": 7.743677,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,18:00-21:00",
+  "address": "",
+  "website": "http://www.obaozi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-899426124",
+  "title": "Au Pont Saint-Martin",
+  "lat": 48.580024,
+  "lng": 7.742842,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-22:30",
+  "address": "",
+  "website": "https://www.pont-saint-martin.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2676662296",
+  "title": "Ô Brazil",
+  "lat": 48.58342,
+  "lng": 7.741271,
+  "cuisine": "brazilian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:30-13:30; Tu-Sa 18:30-22:00",
+  "address": "13 Rue du Jeu des Enfants Strasbourg",
+  "website": "https://www.restaurant-obrazil-strasbourg.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-7089160915",
+  "title": "Falafilo",
+  "lat": 48.583048,
+  "lng": 7.744392,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "11:30-22:30",
+  "address": "",
+  "website": "https://falafilo.business.site",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-11800346521",
+  "title": "Red Lantern",
+  "lat": 48.583609,
+  "lng": 7.742066,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-21:00; Su 11:30-15:00",
+  "address": "",
+  "website": "https://redlantern.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-way-1000017661",
+  "title": "Holly’s Diner",
+  "lat": 48.585764,
+  "lng": 7.741242,
+  "cuisine": "Américaine",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th,Su 09:00-22:30; Fr-Sa 09:00-23:00",
+  "address": "",
+  "website": "https://hollysdiner.fr/les-restaurants/strasbourg/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-288171145",
+  "title": "Brasserie Louise",
+  "lat": 48.576415,
+  "lng": 7.753662,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 09:00-00:30",
+  "address": "1 Rue de la Brigade Alsace-Lorraine",
+  "website": "https://www.brasserie-louise.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-471431749",
+  "title": "Le Fossile",
+  "lat": 48.57855,
+  "lng": 7.753757,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-We 12:00-14:00,19:00-22:30; Th-Sa 12:00-14:30,19:00-23:00",
+  "address": "6 Petite Rue d'Austerlitz Strasbourg",
+  "website": "https://lefossile.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-481251218",
+  "title": "Les Savons d'Hélène",
+  "lat": 48.582044,
+  "lng": 7.744238,
+  "cuisine": "salad",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-00:30",
+  "address": "",
+  "website": "https://www.lessavonsdhelene.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-872484637",
+  "title": "Le Banquet des Sophistes",
+  "lat": 48.578778,
+  "lng": 7.752074,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-13:30,19:00-21:30",
+  "address": "5 Rue d'Austerlitz Strasbourg",
+  "website": "https://le-banquet.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1249709972",
+  "title": "Le Bartholdi",
+  "lat": 48.584281,
+  "lng": 7.742947,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 11:00-24:00; Fr,Sa 11:00-01:00",
+  "address": "31 Rue du Vieux Marché aux Vins Strasbourg",
+  "website": "http://www.brasserie-bartholdi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1354006040",
+  "title": "Restaurant Beyrouth",
+  "lat": 48.569513,
+  "lng": 7.756911,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:00,18:30-22:00",
+  "address": "39 Route du Polygone Strasbourg",
+  "website": "https://www.restaurant-beyrouth-strasbourg.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3014786795",
+  "title": "Le Sultan",
+  "lat": 48.583882,
+  "lng": 7.74703,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-22:30",
+  "address": "7 Passage de la Pomme de Pin Strasbourg",
+  "website": "https://lesultan.net",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3184155258",
+  "title": "La Fignette",
+  "lat": 48.582446,
+  "lng": 7.742666,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-23:00",
+  "address": "",
+  "website": "https://lafignette.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3602705202",
+  "title": "La Binchstub Gayot",
+  "lat": 48.583175,
+  "lng": 7.752728,
+  "cuisine": "tarte flambee",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "18:30-01:30",
+  "address": "6 Rue du Tonnelet Rouge",
+  "website": "http://www.binchstub.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4486525647",
+  "title": "Matsumotoya",
+  "lat": 48.582349,
+  "lng": 7.754818,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "11:30-14:30,18:30-22:00; Feb 01,Mar 01,Apr 01,Jun 01,Jul 01,Aug 01,Sep 01,Oct 01,Nov 01,Dec 01 18:30-22:00; Jan 01,May 01,Jul 14 off; Dec 24-26 off",
+  "address": "13 Rue des Veaux Strasbourg",
+  "website": "http://restaurant-matsumotoya.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4619370470",
+  "title": "Houmous & Co",
+  "lat": 48.579904,
+  "lng": 7.747821,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:30-21:30; Fr, Sa 11:30-22:00",
+  "address": "",
+  "website": "https://houmous-and-co.webnode.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4752463123",
+  "title": "La Binchstub Broglie",
+  "lat": 48.58513,
+  "lng": 7.749575,
+  "cuisine": "tarte flambee",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,18:30-01:30; Su 18:30-01:30",
+  "address": "",
+  "website": "https://www.binchstub.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5097838660",
+  "title": "Ô 30",
+  "lat": 48.583865,
+  "lng": 7.753233,
+  "cuisine": "Fusion",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:00",
+  "address": "30 Rue des Juifs Strasbourg",
+  "website": "https://o30restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5171061121",
+  "title": "Au Cèdre",
+  "lat": 48.578889,
+  "lng": 7.756841,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-13:30,19:00-22:30; Sa-Su 19:00-22:30",
+  "address": "1 Rue du Saint-Gothard Strasbourg",
+  "website": "https://au-cedre.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5745976541",
+  "title": "Bésame Mucho",
+  "lat": 48.583279,
+  "lng": 7.760824,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:30",
+  "address": "10 Rue Fritz Kiener Strasbourg",
+  "website": "https://www.besamemucho.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5965786343",
+  "title": "Tzatzi",
+  "lat": 48.581908,
+  "lng": 7.745655,
+  "cuisine": "Méditerranéenne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-24:00",
+  "address": "",
+  "website": "https://www.tzatzi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6243945071",
+  "title": "IchiNiSan&GO",
+  "lat": 48.584493,
+  "lng": 7.74323,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:00-14:00,17:30-22:00; Su 17:30-22:00",
+  "address": "",
+  "website": "https://ichinisanandgo.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7744311271",
+  "title": "Lalibela",
+  "lat": 48.569413,
+  "lng": 7.753655,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:30,18:00-23:00; Su 11:00-15:00,18:00-23:00",
+  "address": "74 Avenue de Colmar Strasbourg",
+  "website": "https://restaurant-lalibela-strasbourg.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7982209120",
+  "title": "Jabiru Café",
+  "lat": 48.578779,
+  "lng": 7.758748,
+  "cuisine": "Africaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 11:45-14:00; Tu,Th,Fr 11:45-14:00,18:00-23:00; Sa 18:00-23:00; PH off",
+  "address": "",
+  "website": "https://jabirucafe.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8974736669",
+  "title": "Le Café Potager",
+  "lat": 48.582422,
+  "lng": 7.746163,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 09:00-21:00; Su 10:00-21:00",
+  "address": "",
+  "website": "https://www.lecafepotager.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8986803415",
+  "title": "Chez Ani",
+  "lat": 48.585479,
+  "lng": 7.73791,
+  "cuisine": "Africaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Tu 12:00-14:30, 18:30-22:00; We 18:30-22:30; Th-Fr 12:00-14:30, 18:30-22:30; Sa 12:00-15:00, 18:30-23:00; Su 18:30-22:30",
+  "address": "26 Rue Thiergarten Strasbourg",
+  "website": "https://www.privateaser.com/lieu/41909-chez-ani",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9023010239",
+  "title": "Sichuan",
+  "lat": 48.583426,
+  "lng": 7.743996,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Su 12:00-14:30, 19:00-22:30",
+  "address": "18 Rue du Fossé des Tanneurs Strasbourg",
+  "website": "https://restaurant-sichuan.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9411322948",
+  "title": "Dostoïevski",
+  "lat": 48.590367,
+  "lng": 7.786279,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-15:00, 18:30-22:00; Sa-Su 12:00-22:00",
+  "address": "106 Rue du Général Conrad Strasbourg",
+  "website": "https://restodosto.com/",
+  "description": "Cuisine traditionnelle d'europe de l'est, nombreuses options végétariennes",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9641679580",
+  "title": "Bún Tastic",
+  "lat": 48.582119,
+  "lng": 7.74319,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:30-14:30,18:30-21:00; Mo 11:30-14:30",
+  "address": "",
+  "website": "https://buntastic.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10178111998",
+  "title": "Koa Thai",
+  "lat": 48.584029,
+  "lng": 7.737715,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "12:00-15:00,19:00-22:00; Fr,Sa 12:00-15:00,19:00-22:30",
+  "address": "",
+  "website": "https://koathai.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10204239492",
+  "title": "UMAI Ramen",
+  "lat": 48.578536,
+  "lng": 7.754566,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 11:30-14:30,18:30-22:30",
+  "address": "",
+  "website": "https://umai-ramen.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10233570348",
+  "title": "Seoul Station",
+  "lat": 48.583002,
+  "lng": 7.753826,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:45-14:00, 18:45-21:30",
+  "address": "",
+  "website": "https://www.seoulstation-coreen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10556292407",
+  "title": "Yamas",
+  "lat": 48.581172,
+  "lng": 7.752882,
+  "cuisine": "Grecque",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://lnk.bio/yamas-restaurant-grec",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11368757569",
+  "title": "Hey Mama",
+  "lat": 48.583572,
+  "lng": 7.75423,
+  "cuisine": "Fusion",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 09:00-17:00; Sa-Su 10:00-16:00",
+  "address": "",
+  "website": "https://heymama-foodandculture.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-12507878701",
+  "title": "Izumi",
+  "lat": 48.584391,
+  "lng": 7.745765,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr,PH 11:45-14:30,18:45-22:30; Sa 11:30-15:00,18:30-23:00",
+  "address": "",
+  "website": "https://izumi-ramen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13413179409",
+  "title": "Bistrot Paprika",
+  "lat": 48.582483,
+  "lng": 7.718855,
+  "cuisine": "hongrois",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:30; Tu-Th 19:00-22:00; Fr-Sa 19:00-22:30; Su 11:00-14:00",
+  "address": "",
+  "website": "https://bistrotpaprika.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-39654586",
+  "title": "Bistrot et chocolat",
+  "lat": 48.581499,
+  "lng": 7.753001,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:00-19:00; Fr 11:00-21:00; Sa 10:00-21:00; Su 10:00-19:00",
+  "address": "",
+  "website": "https://www.bistrotetchocolat.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-40033008",
+  "title": "L'ami Schutz",
+  "lat": 48.580458,
+  "lng": 7.739231,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 18:30-22:30",
+  "address": "1 Ponts Couverts",
+  "website": "https://www.ami-schutz.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-610318717",
+  "title": "Ristorante Francesca",
+  "lat": 48.585226,
+  "lng": 7.75616,
+  "cuisine": "pasta",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:00-22:00",
+  "address": "",
+  "website": "https://www.francesca.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-1354006065",
+  "title": "Annam",
+  "lat": 48.569395,
+  "lng": 7.756642,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Su 11:45-14:30, 18:30-23:00",
+  "address": "44 Route du Polygone Strasbourg",
+  "website": "https://annamrestaurantindien.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-1588700043",
+  "title": "Iberica",
+  "lat": 48.579458,
+  "lng": 7.749009,
+  "cuisine": "Espagnole",
+  "tags": [],
+  "hours": "Tu-Th 12:00-14:00,19:00-21:30; Fr,Sa 12:00-14:00,19:00-22:15; Su 19:00-21:30",
+  "address": "",
+  "website": "https://www.iberica.restaurant/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-1639772971",
+  "title": "La Bonne Source",
+  "lat": 48.563198,
+  "lng": 7.7597,
+  "cuisine": "alsatian",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "https://www.facebook.com/people/Restaurant-La-Bonne-Source/100063562091760/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2270579647",
+  "title": "Le Petit Bouillon Pharamond",
+  "lat": 48.581555,
+  "lng": 7.746108,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-14:45,18:30-22:30",
+  "address": "",
+  "website": "https://www.pharamond-strasbourg.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2270579671",
+  "title": "S'Thomas Stuebel",
+  "lat": 48.580866,
+  "lng": 7.743894,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa off",
+  "address": "",
+  "website": "http://sthomasstuebel.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-3293108674",
+  "title": "La Table du Gayot",
+  "lat": 48.582704,
+  "lng": 7.753552,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Su-Mo 12:00-13:45,19:00-21:45; Th-Sa 12:00-13:45,19:00-21:45; Tu-We off",
+  "address": "8 Place du Marché Gayot",
+  "website": "http://la-table-du-gayot.business.site",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4614387727",
+  "title": "L'Épicerie",
+  "lat": 48.581828,
+  "lng": 7.746886,
+  "cuisine": "tartine",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Su-We 11:00-21:30; Th-Sa 11:00-22:30",
+  "address": "",
+  "website": "https://www.epicerie-strasbourg.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4696193406",
+  "title": "Momo Tibétain",
+  "lat": 48.58256,
+  "lng": 7.739545,
+  "cuisine": "tibetan",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "11:00-14:30, 18:00-22:30",
+  "address": "",
+  "website": "https://momo-tibetain.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5190858432",
+  "title": "Le Mikado",
+  "lat": 48.582444,
+  "lng": 7.738809,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:45-14:00,18:45-22:00; PH off",
+  "address": "11 Quai Turckheim Strasbourg",
+  "website": "https://mikadostrasbourg.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5853329104",
+  "title": "Shoon",
+  "lat": 48.57011,
+  "lng": 7.751162,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 11:30-14:30,18:30-23:00",
+  "address": "51 Route de l'Hôpital Strasbourg",
+  "website": "https://www.shoon.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-6183620906",
+  "title": "Abyssinia",
+  "lat": 48.583574,
+  "lng": 7.73701,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,19:00-23:30",
+  "address": "",
+  "website": "https://www.abyssiniastrasbourg.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-9909667321",
+  "title": "Verrine & Vapeur",
+  "lat": 48.577648,
+  "lng": 7.758534,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-20:00",
+  "address": "1b Rue de l'Hôpital Militaire Strasbourg",
+  "website": "https://www.verrine-vapeur.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-538823823",
+  "title": "Fischerstub",
+  "lat": 48.599893,
+  "lng": 7.742864,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-00:00; Sa 19:00-00:00; Su 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.fischerstub.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-873923061",
+  "title": "Persia",
+  "lat": 48.578932,
+  "lng": 7.760312,
+  "cuisine": "persian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 12:00-14:00; Tu-Sa 12:00-14:30, 19:30-22:00",
+  "address": "",
+  "website": "https://restaurant-persia.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-1211016688",
+  "title": "L'Atelier",
+  "lat": 48.588987,
+  "lng": 7.752861,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Fr 11:45-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.latelier-restaurant-strasbourg.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2000610942",
+  "title": "Shahi Pakwan",
+  "lat": 48.578948,
+  "lng": 7.742648,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 11:30-14:30; Tu-Th 11:30-14:30,18:00-23:00; Fr-Sa 11:30-14:30,17:00-23:00; Su off",
+  "address": "43 Rue Finkwiller Strasbourg",
+  "website": "https://restaurantshahipakwan.com/take-away/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2511959416",
+  "title": "Chez l'Oncle Freddy",
+  "lat": 48.580173,
+  "lng": 7.742461,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:30-21:30",
+  "address": "9 Rue des Moulins Strasbourg",
+  "website": "https://www.chezlonclefreddy.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2595500450",
+  "title": "Restaurant Irina",
+  "lat": 48.603851,
+  "lng": 7.751111,
+  "cuisine": "Géorgienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We 09:00-14:00,18:30-22:00; Th 12:00-14:00,18:30-22:30; Fr 11:45-14:00,18:30-22:30; Sa 11:45-22:30; Su 11:45-21:30",
+  "address": "5 Rue du Barrage Schiltigheim",
+  "website": "https://restaurant-irina-schiltigheim.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-3976168201",
+  "title": "Bo & Bun",
+  "lat": 48.604072,
+  "lng": 7.750184,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo 12:00-13:30; Tu-Th 12:00-13:30,18:30-21:30; Fr-Sa 12:00-13:30,18:30-22:00",
+  "address": "2 Rue de la Mairie Schiltigheim",
+  "website": "https://www.bobun.asia/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4362535373",
+  "title": "Allo Pad Thaï",
+  "lat": 48.581537,
+  "lng": 7.746445,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 11:00-15:00; Tu-Sa 11:00-15:00, 17:30-22:00",
+  "address": "",
+  "website": "https://allopadthai.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4598296539",
+  "title": "Mandala",
+  "lat": 48.585507,
+  "lng": 7.740458,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 12:00-14:30, 19:00-22:00;Fr-Sa 12:00-14:30, 19:00-22:30",
+  "address": "",
+  "website": "https://www.mandala-strasbourg.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4817232278",
+  "title": "La Petite Alsace",
+  "lat": 48.581625,
+  "lng": 7.741564,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "23 Rue du Bain aux Plantes Strasbourg",
+  "website": "https://lapetitealsace.com",
+  "description": "Spécialités alsaciennes et cuisine de marché",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5037090017",
+  "title": "Cinnamon",
+  "lat": 48.579666,
+  "lng": 7.748054,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-14:30, 18:30-22:30; Tu off",
+  "address": "",
+  "website": "https://cinnamonrestaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5097838661",
+  "title": "La Casserole",
+  "lat": 48.583488,
+  "lng": 7.752637,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-16:00,19:30-23:45",
+  "address": "",
+  "website": "https://www.restaurantlacasserole.fr/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5765542953",
+  "title": "Annam Sushi & More",
+  "lat": 48.572268,
+  "lng": 7.810765,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 11:00-22:00; Fr-Su 11:00-22:30",
+  "address": "5 Marktstraße Kehl",
+  "website": "https://www.anamm-sushi.de/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-8455588503",
+  "title": "Bol'inn",
+  "lat": 48.572837,
+  "lng": 7.756362,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:00-14:00, 18:00-22:00; Su 18:00-22:00",
+  "address": "",
+  "website": "http://bol-inn.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9036183674",
+  "title": "Tortilla",
+  "lat": 48.582949,
+  "lng": 7.746823,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "11:00-22:00",
+  "address": "",
+  "website": "https://restaurants.fr.tortilla.co/strasbourg/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9061661770",
+  "title": "Tamil",
+  "lat": 48.57991,
+  "lng": 7.746246,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:30-14:00, 18:30-23:00",
+  "address": "",
+  "website": "https://www.restaurant-tamil.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9217135343",
+  "title": "Les Lampions",
+  "lat": 48.581722,
+  "lng": 7.756505,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:30-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://leslampions.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-10086531847",
+  "title": "L'Impasse",
+  "lat": 48.630103,
+  "lng": 7.715501,
+  "cuisine": "Tapas",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-We 12:00-14:00; Th,Fr 12:00-14:00,18:30-22:00; Sa 18:30-22:00",
+  "address": "",
+  "website": "https://limpasse.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11160412367",
+  "title": "Bande à Part",
+  "lat": 48.585071,
+  "lng": 7.755712,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-15:00,18:00-00:00",
+  "address": "4 Rue Pierre Bucher Strasbourg",
+  "website": "https://bande-a-part-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11196125916",
+  "title": "La table afghane",
+  "lat": 48.560449,
+  "lng": 7.764537,
+  "cuisine": "afghan",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:45-14:00, 18:30-22:00",
+  "address": "183 Route du Polygone Strasbourg",
+  "website": "https://la-table-afghane-strasbourg.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11232361557",
+  "title": "L'Ambassade",
+  "lat": 48.580174,
+  "lng": 7.749701,
+  "cuisine": "british",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 10:00-01:30",
+  "address": "7 Rue du Vieux Marché aux Poissons Strasbourg",
+  "website": "https://www.ambassade-strasbourg.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12091513428",
+  "title": "Ko Tao",
+  "lat": 48.572834,
+  "lng": 7.770275,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "11:30-14:00,18:30-23:00; Fr 18:30-23:00",
+  "address": "25 Rue de l'Elbe Strasbourg",
+  "website": "",
+  "description": "Thaï street food",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12701764691",
+  "title": "Foudre Feu",
+  "lat": 48.580519,
+  "lng": 7.757258,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo 19:00-21:00; Tu-Th 12:00-13:30,19:00-21:00; Fr 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "https://foudrefeu.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13194045299",
+  "title": "La Crêperie Illkirch",
+  "lat": 48.525783,
+  "lng": 7.708348,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "We-Sa 12:00-21:00; Su 15:00-18:00; Tu 12:00-18:00",
+  "address": "156 Route de Lyon Illkirch-Graffenstaden",
+  "website": "https://www.creperie-delices.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13278122001",
+  "title": "Hey Mama Gare",
+  "lat": 48.583215,
+  "lng": 7.735721,
+  "cuisine": "Internationale",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 07:00-23:00; Sa-Su 07:00-16:00",
+  "address": "8 Petite Rue de la Course",
+  "website": "https://heymama-restaurant.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13343670401",
+  "title": "La Knackerie",
+  "lat": 48.581393,
+  "lng": 7.749274,
+  "cuisine": "local",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:00-21:00",
+  "address": "",
+  "website": "https://www.laknackerie.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13713218301",
+  "title": "Le Carné",
+  "lat": 48.584982,
+  "lng": 7.736963,
+  "cuisine": "Viande",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:30,18:30-22:00",
+  "address": "28 Rue Kuhn Strasbourg",
+  "website": "https://www.xn--lecarn-gva.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-39754699",
+  "title": "Au Vieux Strasbourg",
+  "lat": 48.580525,
+  "lng": 7.750725,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Su 12:00-22:00",
+  "address": "5 Rue du Maroquin",
+  "website": "https://vieuxstrasbourg.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-1249709975",
+  "title": "OKII",
+  "lat": 48.584215,
+  "lng": 7.742667,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "12:00-14:30,19:00-22:30",
+  "address": "29 Rue du Vieux Marché aux Vins Strasbourg",
+  "website": "https://okii.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-1537346561",
+  "title": "Auberge du Cerf",
+  "lat": 48.519668,
+  "lng": 7.705288,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:00",
+  "address": "Route de Lyon",
+  "website": "http://www.laubergeducerf.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-2656224626",
+  "title": "Salon de thé Grand'Rue",
+  "lat": 48.581824,
+  "lng": 7.74232,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 08:30-18:30",
+  "address": "",
+  "website": "https://www.salondethegrandrue.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-2839437602",
+  "title": "Le Bistrot des Copains",
+  "lat": 48.578635,
+  "lng": 7.744923,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,18:30-22:00, Sa 11:30-15:00,18:30-23:00, Su 11:30-15:00,18:30-22:00",
+  "address": "12 Quai Finkwiller",
+  "website": "http://www.bistrotdescopains.com",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3032950330",
+  "title": "Harmonie Bowl and Juice",
+  "lat": 48.583058,
+  "lng": 7.754893,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-15:00, 19:00-22:00",
+  "address": "",
+  "website": "https://www.harmoniebowlandjuice.com",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3049301880",
+  "title": "Abbiocco",
+  "lat": 48.578455,
+  "lng": 7.760594,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 11:30-14:30",
+  "address": "",
+  "website": "https://www.abbiocco.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3510214756",
+  "title": "BonBao",
+  "lat": 48.581029,
+  "lng": 7.742938,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "12:00-13:30,19:00-21:30; Tu,We off",
+  "address": "",
+  "website": "https://www.bonbao.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4558140616",
+  "title": "Le Stras",
+  "lat": 48.581089,
+  "lng": 7.743037,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu,Th 12:00-13:30,19:00-21:30; We 19:00-21:30; PH off",
+  "address": "9 Rue des Dentelles Strasbourg",
+  "website": "https://lestras.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4600677791",
+  "title": "Snack Traiteur Libanais",
+  "lat": 48.577613,
+  "lng": 7.771204,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-22:30",
+  "address": "8 Rue de Leicester Strasbourg",
+  "website": "http://lelibanais-esplanade.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4968835231",
+  "title": "L'Orchidea",
+  "lat": 48.58733,
+  "lng": 7.746507,
+  "cuisine": "Poissons",
+  "tags": [],
+  "hours": "Tu-Th 12:00-14:00,19:00-21:30; Fr,Sa 12:00-14:00,19:00-22:00",
+  "address": "6 Rue du Faubourg de Pierre Strasbourg",
+  "website": "https://www.lorchidea.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-6960264707",
+  "title": "Le Météor",
+  "lat": 48.582592,
+  "lng": 7.740931,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 07:00-01:30",
+  "address": "10 Rue du 22 Novembre Strasbourg",
+  "website": "https://lemeteor.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-9009508383",
+  "title": "La Case de L'Isle Bourbon",
+  "lat": 48.582377,
+  "lng": 7.740522,
+  "cuisine": "caribbean",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 12:00-14:00, 19:00-22:00; Fr,Sa 12:00-14:00, 19:00-23:00",
+  "address": "",
+  "website": "https://restaurant-la-case-de-lisle-bourbon.business.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-9865481589",
+  "title": "Yami sushi",
+  "lat": 48.598862,
+  "lng": 7.764398,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Su-Fr 11:45-14:30, 18:45-22:30; Sa 18:45-22:30",
+  "address": "12 Boulevard de Dresde",
+  "website": "https://www.yamisushi67.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-9924741656",
+  "title": "Restaurant solidaire Emmaüs",
+  "lat": 48.630859,
+  "lng": 7.774504,
+  "cuisine": "",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 11:00-18:00",
+  "address": "14 Rue de l'Atome Bischheim",
+  "website": "https://emmausmundo.wordpress.com/restaurant-solidaire/",
+  "description": "Réserver en appelant le +33 6 11 35 74 38 du mardi au samedi, de 10h à 11h30 et de 14h à 16h.",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-10203608318",
+  "title": "Brasserie K Strasbourg",
+  "lat": 48.583847,
+  "lng": 7.735384,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 06:30-10:00; Sa,Su,PH 07:00-10:30",
+  "address": "",
+  "website": "https://brasserie-k.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-11243727901",
+  "title": "Bachué",
+  "lat": 48.578744,
+  "lng": 7.754395,
+  "cuisine": "latin american",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:45,18:00-22:00",
+  "address": "6 Strasbourg",
+  "website": "https://bachue.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13511671981",
+  "title": "Brio",
+  "lat": 48.583041,
+  "lng": 7.743024,
+  "cuisine": "Tapas",
+  "tags": [],
+  "hours": "Tu-Th 18:00-00:00; Fr,Sa 18:00-01:00",
+  "address": "",
+  "website": "https://bar-brio.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13767159276",
+  "title": "Le Jasmin",
+  "lat": 48.587331,
+  "lng": 7.768637,
+  "cuisine": "tunisien",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-13:00, 19:00-20:45",
+  "address": "",
+  "website": "https://lejasminstrasbourg.shop",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13947176202",
+  "title": "Ichiban Ramen",
+  "lat": 48.599459,
+  "lng": 7.762781,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:45-14:30,18:45-22:30; Su 10:45-14:30,18:45-22:30",
+  "address": "5 Boulevard de Dresde Strasbourg",
+  "website": "https://www.ichibanramen.fr/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-way-39846452",
+  "title": "Il Felice",
+  "lat": 48.580641,
+  "lng": 7.748982,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Tu-Fr 12:00-14:00; Sa 12:00-14:30; Tu-Th 19:00-22:00; Fr, Sa 19:00-22:30",
+  "address": "",
+  "website": "https://www.ilfelice.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-way-58062559",
+  "title": "Au Cheval Noir",
+  "lat": 48.622065,
+  "lng": 7.75557,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu 12:00-14:00, 19:00-22:00; We 12:00-14:00; Th-Su 12:00-14:00, 19:00-22:00",
+  "address": "38 Rue de la République Hœnheim",
+  "website": "https://www.au-cheval-noir.com/Cheval-Noir-Restaurant-Familiale-Cuisine-Traditionnelle",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-617835456",
+  "title": "Le Pavot",
+  "lat": 48.595563,
+  "lng": 7.717309,
+  "cuisine": "hongroise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "We-Sa 12:00-14:00,19:00-22:30; Su 12:00-14:00",
+  "address": "",
+  "website": "https://www.instagram.com/lepavot_strasbourg/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-872175040",
+  "title": "Au Potiron",
+  "lat": 48.578883,
+  "lng": 7.754836,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:00; Sa 19:00-22:00",
+  "address": "24 Rue Sainte-Madeleine Strasbourg",
+  "website": "https://au-potiron.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-872597600",
+  "title": "Ganesha",
+  "lat": 48.579423,
+  "lng": 7.7581,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:00-14:00,18:30-23:00",
+  "address": "",
+  "website": "https://restaurantganesha.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-1588595149",
+  "title": "Bistrot Coco",
+  "lat": 48.579677,
+  "lng": 7.748768,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:00; 19:00-22:00",
+  "address": "",
+  "website": "https://bistrot-coco.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-2510316836",
+  "title": "Le Jardin du Pourtales",
+  "lat": 48.606056,
+  "lng": 7.799475,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.lejardindupourtales.com",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4088875737",
+  "title": "Lamian",
+  "lat": 48.582493,
+  "lng": 7.755063,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 11:30-14:30,18:30-22:30; Su,Mo 18:30-22:30",
+  "address": "",
+  "website": "https://lamian.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4498935680",
+  "title": "Il Girasole",
+  "lat": 48.578561,
+  "lng": 7.749073,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Fr-Su 12:00-14:00,19:00-23:00; Mo-Th 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "http://www.ilgirasole.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4594699369",
+  "title": "Vert Olive",
+  "lat": 48.577266,
+  "lng": 7.753601,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "3 Rue de la Brigade Alsace-Lorraine Strasbourg",
+  "website": "http://restaurant-vertolive.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-5037078691",
+  "title": "Al Diwan",
+  "lat": 48.582031,
+  "lng": 7.757103,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:30-14:00,18:30-22:30; Su 11:00-15:00",
+  "address": "",
+  "website": "https://www.restaurant-aldiwan.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-5075908013",
+  "title": "La Fabrique",
+  "lat": 48.611406,
+  "lng": 7.747125,
+  "cuisine": "bistronomique",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30",
+  "address": "32 Rue de la Gare Schiltigheim",
+  "website": "https://www.lafabrique-restaurant.com/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7737597488",
+  "title": "Keis atelier",
+  "lat": 48.579214,
+  "lng": 7.760679,
+  "cuisine": "Coréenne",
+  "tags": [],
+  "hours": "Mo-Sa 19:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ }
+]

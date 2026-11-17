@@ -1,0 +1,74 @@
+[
+ {
+  "id": "osm-node-10944716605",
+  "title": "Bistro Canaille",
+  "lat": 41.917394,
+  "lng": 8.737573,
+  "cuisine": "Méditerranéenne",
+  "tags": [],
+  "hours": "Th-Tu 07:30-00:30; We off",
+  "address": "20 Rue Saint-Charles",
+  "website": "https://www.tripadvisor.fr/Restaurant_Review-g187140-d8372700-Reviews-Bistro_Canaille-Ajaccio_Communaute_d_Agglomeration_du_Pays_Ajaccien_Corse_du_Sud_.html",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-way-66281696",
+  "title": "L'Altru Versu",
+  "lat": 41.90868,
+  "lng": 8.713225,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "Rue des Septs Chapelles",
+  "website": "",
+  "description": "Restaurant",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-5354750827",
+  "title": "La Pause",
+  "lat": 41.926476,
+  "lng": 8.73667,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Su 07:00-20:00",
+  "address": "7 Avenue Beverini Vico",
+  "website": "",
+  "description": "SAS LA PAUSE, spécialités pâte",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-11930769369",
+  "title": "Gusto",
+  "lat": 41.918782,
+  "lng": 8.737129,
+  "cuisine": "local",
+  "tags": [],
+  "hours": "",
+  "address": "Avenue du Premier Consul",
+  "website": "https://www.whatiseat.com/de/menu/gusto/",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-way-698765695",
+  "title": "Brasserie B'8",
+  "lat": 41.94519,
+  "lng": 8.757131,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "Boulevard Louis Campi",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ }
+]

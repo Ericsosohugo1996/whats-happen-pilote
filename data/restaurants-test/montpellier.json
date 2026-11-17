@@ -1,0 +1,2313 @@
+[
+ {
+  "id": "osm-node-598980552",
+  "title": "Atelier 29",
+  "lat": 43.617102,
+  "lng": 3.881075,
+  "cuisine": "barbecue",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-14:30, 18:00-00:00; Sa 18:00-00:00",
+  "address": "29 Rue de la Cavalerie Montpellier",
+  "website": "https://latelier29.business.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-620882675",
+  "title": "Le Petit Jardin",
+  "lat": 43.612225,
+  "lng": 3.873293,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-13:15,19:30-21:00",
+  "address": "20 Rue Jean-Jacques Rousseau Montpellier",
+  "website": "https://www.petit-jardin.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-3383017259",
+  "title": "L'Atelier Gourmand Restaurant d'Application Purple Campus Montpellier",
+  "lat": 43.621524,
+  "lng": 3.832285,
+  "cuisine": "gastronomique",
+  "tags": [],
+  "hours": "12:30-15:00",
+  "address": "2300 Avenue des Moulins Montpellier",
+  "website": "",
+  "description": "L'Atelier Gourmand, est un restaurant d'application. Il est ouvert uniquement pendant la période scolaire de septembre à juin, du mardi au vendredi. Il est ouvert à tous, sur réservation uniquement.",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-6695148373",
+  "title": "Les Mômes",
+  "lat": 43.611082,
+  "lng": 3.877559,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 10:00-01:00",
+  "address": "8 Place du Marché aux Fleurs Montpellier",
+  "website": "https://lesmomesmontpellier.fr",
+  "description": "Restaurant bar & cocktails au cœur de Montpellier. Carte tapas.",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-12186515709",
+  "title": "Le désinvolte",
+  "lat": 43.610054,
+  "lng": 3.914554,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:00",
+  "address": "1350 Avenue Albert Einstein Montpellier",
+  "website": "https://www.facebook.com/people/Le-desinvolte/100051291253248/",
+  "description": "Restaurant sur place et à emporter dans le quartier du millénaire à Montpellier. Cuisine fait maison et de saison.",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-602012283",
+  "title": "Rosemarie",
+  "lat": 43.60918,
+  "lng": 3.875795,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 09:00-01:00",
+  "address": "3 Rue des Soeurs Noires Montpellier",
+  "website": "https://www.facebook.com/RosemaryMontpellier",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3633000702",
+  "title": "Green Lab - Université",
+  "lat": 43.611893,
+  "lng": 3.876419,
+  "cuisine": "oriental",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-22:00",
+  "address": "2 Rue de l'Université Montpellier",
+  "website": "https://www.greenlab-mtp.fr/home",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-13136112207",
+  "title": "Maria & Juana",
+  "lat": 43.611272,
+  "lng": 3.875183,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,19:00-22:00",
+  "address": "14 Rue du palais des Guilhem",
+  "website": "https://mariajuanatacos.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-616933496",
+  "title": "L'Encas - Salon de thé et restaurant",
+  "lat": 43.606242,
+  "lng": 3.880221,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 07:00-21:30, Sa-Su 09:00-22:00",
+  "address": "21 Rue de Maguelone Montpellier",
+  "website": "https://lencasmontpellier.fr/",
+  "description": "Salon de thé et restauration, boissons chaudes, plats et pâtisseries. Sur place et à emporter",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-635883721",
+  "title": "Delecto",
+  "lat": 43.613471,
+  "lng": 3.879007,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Tu,Th-Sa",
+  "address": "3 Rue des Écoles Laïques Montpellier",
+  "website": "https://delecto-montpellier.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-11227677037",
+  "title": "Sushi Kawaii",
+  "lat": 43.608813,
+  "lng": 3.873494,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 18:00-22:00",
+  "address": "58 Rue Saint-Guilhem Montpellier",
+  "website": "https://www.sushi-kawaii.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-6138194785",
+  "title": "Mikado",
+  "lat": 43.607773,
+  "lng": 3.874856,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:30-14:30,19:30-22:30 ; Sa 19:30-22:30",
+  "address": "31 Rue Alexandre Cabanel Montpellier",
+  "website": "https://mikado-montpellier.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-6647915576",
+  "title": "Yumiwi",
+  "lat": 43.608361,
+  "lng": 3.876498,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Tu-Sa 11:30-15:00; We-Sa 18:30-22:00",
+  "address": "4 Rue Saint-Côme",
+  "website": "https://www.yumiwi.fr/",
+  "description": "Dimsum",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-9160298154",
+  "title": "Beyrouth",
+  "lat": 43.588757,
+  "lng": 3.937201,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "12:00-14:30; We-Sa 12:00-14:30,19:30-22:30",
+  "address": "225 Rue Antoine de Saint-Exupéry Mauguio",
+  "website": "https://restaurant-le-beyrouth.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-5078485724",
+  "title": "L’Atelier de l’Alchimiste",
+  "lat": 43.608145,
+  "lng": 3.875066,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "5 Rue Four des Flammes",
+  "website": "https://www.facebook.com/AtelierAlchimisteMontpellier",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6458931285",
+  "title": "L'Effet Jardin",
+  "lat": 43.583802,
+  "lng": 3.920886,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu-We 09:00-15:00; Th-Sa 09:00-15:00, 19:30-22:00",
+  "address": "",
+  "website": "https://www.restaurant-leffetjardin.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11288634081",
+  "title": "Le Faitout",
+  "lat": 43.615242,
+  "lng": 3.874762,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "À emporter"
+  ],
+  "hours": "Mo-Fr 08:00-14:30",
+  "address": "4 boulevard Pasteur Montpellier",
+  "website": "https://www.le-faitout.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-12481586101",
+  "title": "Sefed",
+  "lat": 43.614594,
+  "lng": 3.879207,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-14:00; Tu-Th 19:00-22:00; Fr-Sa 19:00-22:30",
+  "address": "4 Boulevard Louis Blanc Montpellier",
+  "website": "https://sefed.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13136101533",
+  "title": "Kōyō Izakaya",
+  "lat": 43.606286,
+  "lng": 3.876019,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 19:00-22:00",
+  "address": "5 Rue de l'Ancienne Poste",
+  "website": "https://bookings.zenchef.com/results?rid=362623",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-635883724",
+  "title": "Les Casseroles en folies",
+  "lat": 43.613351,
+  "lng": 3.878817,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.facebook.com/LesCasserolesEnFolie/",
+  "description": "Crêperie",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4527885182",
+  "title": "Fourchette et Tirebouchon",
+  "lat": 43.56861,
+  "lng": 3.837355,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 11:30-14:00,18:00-22:00",
+  "address": "6 Rue Robert Schuman Saint-Jean-de-Védas",
+  "website": "https://www.fourchetteettirebouchon.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-way-82416945",
+  "title": "Le Chalet Chamoniard",
+  "lat": 43.584631,
+  "lng": 3.933809,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "12:00-15:00,19:00-23:00",
+  "address": "Avenue Marcel Pagnol Lattes",
+  "website": "https://www.lechaletchamoniard.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2228674724",
+  "title": "La Part des Anges",
+  "lat": 43.609894,
+  "lng": 3.878601,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Sa 18:00-01:00",
+  "address": "10 Rue Collot Montpellier",
+  "website": "https://www.lapartdesangesmontpellier.com/",
+  "description": "Bar à vin et tapas, planches de charcuterie, fromages, fruits de mer, desserts.",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-3173773007",
+  "title": "La Prose",
+  "lat": 43.574497,
+  "lng": 3.940682,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 09:00-15:30",
+  "address": "Avenue Georges Frêche Pérols",
+  "website": "https://www.la-prose-dejeuner-restaurant-perols.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4527885185",
+  "title": "Poz'pasta",
+  "lat": 43.568578,
+  "lng": 3.836615,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:30-14:00,18:00-21:00; Sa 18:00-21:00",
+  "address": "9 Rue Robert Schuman Saint-Jean-de-Védas",
+  "website": "https://poz-pasta.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4527886833",
+  "title": "L'un des Sens",
+  "lat": 43.567799,
+  "lng": 3.83906,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-We 12:00-13:45; Th 12:00-13:45,19:30-21:00; Fr,Sa 12:00-13:45,19:30-22:00",
+  "address": "25 Rue Robert Schuman Saint-Jean-de-Védas",
+  "website": "https://www.restaurant-lundessens.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9139969808",
+  "title": "La Table Marocaine",
+  "lat": 43.591259,
+  "lng": 3.937333,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:30-22:30; Su 19:30-22:30",
+  "address": "135 Rue Roland Garros Mauguio",
+  "website": "https://latablemarocaine34.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9160298156",
+  "title": "O’ Buffet",
+  "lat": 43.588553,
+  "lng": 3.939567,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "12:00-14:00, 19:00-22:00",
+  "address": "1049 Rue Hélène Boucher Mauguio",
+  "website": "https://www.o-buffet.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9160305932",
+  "title": "Marcel & Co",
+  "lat": 43.581926,
+  "lng": 3.94215,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "11:45-14:45; Su off",
+  "address": "285 Rue Hélène Boucher Mauguio",
+  "website": "https://www.marcelandco-resto.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-9177896749",
+  "title": "Les Cabanes",
+  "lat": 43.580334,
+  "lng": 3.949247,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "12:00-14:30,19:00-22:30",
+  "address": "121 Avenue Jacqueline Auriol Mauguio",
+  "website": "https://all.accor.com/hotel/B4T1/index.fr.shtml",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-11120638760",
+  "title": "Tandoori",
+  "lat": 43.606896,
+  "lng": 3.881489,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:30-13:00",
+  "address": "9 Rue Aristide Ollivier Montpellier",
+  "website": "https://tandoori-montpellier.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12782455324",
+  "title": "Kim Hi Noodle",
+  "lat": 43.630144,
+  "lng": 3.90343,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 11:30-14:00,18:30-22:00",
+  "address": "652 Avenue de l'Europe Castelnau-le-Lez",
+  "website": "https://kim-hi-noodle.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13351048901",
+  "title": "Maison Castillonne",
+  "lat": 43.584031,
+  "lng": 3.804967,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We 11:30-14:00; Th 12:00-14:00, 18:00-00:30; Fr 12:00-14:00, 19:30-23:30; Sa 11:00-14:00, 19:30-23:30; Su 19:30-23:30",
+  "address": "",
+  "website": "https://caviar-castillonne.com/pages/restaurant",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-76180755",
+  "title": "Maison Bonnaire",
+  "lat": 43.61162,
+  "lng": 3.913655,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 07:30-14:30",
+  "address": "76 Allée Wilhelm Roentgen Montpellier",
+  "website": "https://maison-bonnaire.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-82417516",
+  "title": "Brasserie Gusto",
+  "lat": 43.583693,
+  "lng": 3.936791,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "12:00-14:00,19:00-22:30",
+  "address": "Rue René Clair Lattes",
+  "website": "https://www.brasseriegusto.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2957470196",
+  "title": "Pirates Paradise",
+  "lat": 43.603506,
+  "lng": 3.917093,
+  "cuisine": "Internationale",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:45,19:00-22:45",
+  "address": "Allée Ulysse Montpellier",
+  "website": "https://montpellier.pirates-paradise.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4414948848",
+  "title": "Lou Païs d’Aqui",
+  "lat": 43.585685,
+  "lng": 3.933378,
+  "cuisine": "Tapas",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 12:00-14:00; Fr,Sa 12:00-14:00,19:30-22:00",
+  "address": "Rue Louis Lumière Lattes",
+  "website": "https://www.restaurant-loupaisdaqui.com",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-8085628231",
+  "title": "Coco d'asie",
+  "lat": 43.60269,
+  "lng": 3.8742,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:00,18:30-21:30; Su 18:30-21:30; Sa off",
+  "address": "4 Rue Ernest Michel Montpellier",
+  "website": "https://www.cocodasie.fr/contact",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-8761759341",
+  "title": "La Tomate",
+  "lat": 43.609825,
+  "lng": 3.874709,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:00, 19:00-22:00; Fr-Sa 12:00-14:00, 19:00-22:30",
+  "address": "3 Rue Sainte-Anne Montpellier",
+  "website": "https://latomate.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-10177228598",
+  "title": "Sensible",
+  "lat": 43.613651,
+  "lng": 3.880016,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "We-Sa 12:00-13:30, Th-Sa 19:00-21:00",
+  "address": "25 Rue du Pila Saint-Gély",
+  "website": "https://restaurantsensible.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-12787806957",
+  "title": "Krousty Sabaidi",
+  "lat": 43.631384,
+  "lng": 3.909569,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "11:30-23:00",
+  "address": "1134 Avenue de l'Europe Castelnau-le-Lez",
+  "website": "https://restaurants.kroustyresto.fr/thai-montpellier-castelnau",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-way-374099951",
+  "title": "Maky Sushi",
+  "lat": 43.571626,
+  "lng": 3.940664,
+  "cuisine": "sushi",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-21:30",
+  "address": "Avenue Georges Frêche Pérols",
+  "website": "https://makysushi.com",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-724171874",
+  "title": "Le Grillardin",
+  "lat": 43.613202,
+  "lng": 3.878839,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Th 12:00-14:00, 19:00-22:00; Fr, Sa 12:00-14:30, 19:00-22:30; Su 12:00-14:30, 19:00-22:00",
+  "address": "3 Place de la Chapelle Neuve Montpellier",
+  "website": "https://www.restaurantlegrillardin.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-724186512",
+  "title": "Ma Première Cantine",
+  "lat": 43.610001,
+  "lng": 3.878191,
+  "cuisine": "salad",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 08:30-00:00",
+  "address": "4 Place Jean Jaurès Montpellier",
+  "website": "https://mapremierecantine.fr/jeanjaures.html",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-1673435259",
+  "title": "Odiki Sushi",
+  "lat": 43.603361,
+  "lng": 3.917788,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:30-14:45,18:30-22:30",
+  "address": "Allée Ulysse Montpellier",
+  "website": "http://osushium.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-3787710539",
+  "title": "C'era una volta",
+  "lat": 43.613754,
+  "lng": 3.804324,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-21:30",
+  "address": "",
+  "website": "https://cera-una-volta.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-6563822285",
+  "title": "Crêprie Le Kreisker",
+  "lat": 43.609383,
+  "lng": 3.879546,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-23:00",
+  "address": "3 Passage Bruyas Montpellier",
+  "website": "https://www.creperielekreisker.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-11893347817",
+  "title": "Mamakech",
+  "lat": 43.610581,
+  "lng": 3.874491,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 11:30-24:00; Su 11:30-17:00",
+  "address": "",
+  "website": "https://www.mamakech.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-621193468",
+  "title": "Le Puja",
+  "lat": 43.61515,
+  "lng": 3.877274,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Mo-Th 11:45-14:45, 18:50-23:30; Fr 11:45-14:45, 18:30-23:30; Sa 11:45-14:45, 18:45-23:00",
+  "address": "3 Rue Ferdinand Fabre",
+  "website": "https://www.restaurantpuja.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-621195696",
+  "title": "Tiger Noodles Louis Blanc",
+  "lat": 43.614592,
+  "lng": 3.879275,
+  "cuisine": "noodle",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-14:30,18:30-23:00",
+  "address": "4 Boulevard Louis Blanc Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-635868922",
+  "title": "Kim-Yen",
+  "lat": 43.614073,
+  "lng": 3.877332,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 10:00-16:00",
+  "address": "48 Rue de l'Université Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-11056601890",
+  "title": "Djaam",
+  "lat": 43.613763,
+  "lng": 3.877087,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Mo-Su 11:00-14:00, 18:00-22:00",
+  "address": "35 Rue de l'Université",
+  "website": "https://djaam.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-105440570",
+  "title": "Côté Jardin",
+  "lat": 43.630057,
+  "lng": 3.870624,
+  "cuisine": "",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://cotejardin.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-620882677",
+  "title": "Umami la cinquième saveur",
+  "lat": 43.611966,
+  "lng": 3.87357,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "15 Rue Jean-Jacques Rousseau Montpellier",
+  "website": "https://www.umami-cinquiemesaveur.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-1718564142",
+  "title": "Chez Lez Amis",
+  "lat": 43.60438,
+  "lng": 3.897911,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 09:00-22:00",
+  "address": "5 Place de la Révolution Française Montpellier",
+  "website": "https://chez-lez-amis.eatbu.com/?lang=fr",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-1719508117",
+  "title": "Le Bouchon Catalan",
+  "lat": 43.605277,
+  "lng": 3.884259,
+  "cuisine": "Tapas",
+  "tags": [],
+  "hours": "Mo-Sa 07:00-01:00",
+  "address": "21 Rue de la Méditerranée Montpellier",
+  "website": "https://lebouchoncatalan.wixsite.com",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-1864450476",
+  "title": "Lady Sushi",
+  "lat": 43.577684,
+  "lng": 3.828043,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Sa 11:00-14:00,18:00-22:00; Su 18:00-22:00",
+  "address": "1 Rue Fon de l'Hospital Saint-Jean-de-Védas",
+  "website": "https://www.lady-sushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-6439072887",
+  "title": "La table de Pierre Rouge",
+  "lat": 43.618668,
+  "lng": 3.885316,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00; Sa-Su 09:00-18:00",
+  "address": "",
+  "website": "http://www.pierre-rouge.com",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-8096396857",
+  "title": "Au Chapeau Thé",
+  "lat": 43.590551,
+  "lng": 3.799702,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 09:00-17:00",
+  "address": "8 Rue des Capriers Lavérune",
+  "website": "https://www.chapeau-the.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-12787806968",
+  "title": "Aloha Poké",
+  "lat": 43.632322,
+  "lng": 3.912626,
+  "cuisine": "hawaiian",
+  "tags": [],
+  "hours": "Tu-Su 10:00-22:30",
+  "address": "1425 Avenue de l'Europe Castelnau-le-Lez",
+  "website": "https://aloha-poke.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-598931253",
+  "title": "La St Louisienne",
+  "lat": 43.603397,
+  "lng": 3.882603,
+  "cuisine": "senegalese",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Su 12:00-15:00,18:00-23:00",
+  "address": "5 Place Carnot",
+  "website": "https://www.facebook.com/lasaintlouisiennemtp/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-674049723",
+  "title": "Willamette",
+  "lat": 43.610584,
+  "lng": 3.865681,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:00-15:00+",
+  "address": "6 Rue Marioge",
+  "website": "https://www.willamette.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-724185253",
+  "title": "Chez Peng Peng",
+  "lat": 43.612269,
+  "lng": 3.876541,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,18:15-22:00",
+  "address": "13 Rue de l'Université Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-1312805409",
+  "title": "Pachamama",
+  "lat": 43.613572,
+  "lng": 3.810421,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-15:00,19:00-23:30",
+  "address": "",
+  "website": "https://www.pachamamajuvignac.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-1624007003",
+  "title": "L'écailler des Beaux Arts",
+  "lat": 43.617591,
+  "lng": 3.88158,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:30-22:00",
+  "address": "43 Rue de la Cavalerie",
+  "website": "https://facebook.com/lecailler.beaux.arts/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-5279395653",
+  "title": "Le sage libanais",
+  "lat": 43.608418,
+  "lng": 3.870655,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-14:30, 18:30-22:00",
+  "address": "38 Rue du Faubourg du Courreau Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-5968633985",
+  "title": "Soulenq",
+  "lat": 43.649975,
+  "lng": 3.838551,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu 10:00-19:00; We-Sa 10:00-22:00",
+  "address": "469 Rue de la Thériaque Montpellier",
+  "website": "https://www.soulenqrestaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-9269832114",
+  "title": "Lys Tea",
+  "lat": 43.608508,
+  "lng": 3.873611,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Fr, Sa 11:00-22:00; Mo-Th 11:00-21:00; Su 13:00-22:00",
+  "address": "8 Rue Alexandre Cabanel",
+  "website": "https://lys-tea.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-9542525629",
+  "title": "R Restaurant",
+  "lat": 43.591324,
+  "lng": 3.941301,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Fr 09:00-17:00; Sa 09:00-21:00",
+  "address": "199 Rue du Salaison Mauguio",
+  "website": "https://www.r-restaurant.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-10943825856",
+  "title": "Le Jardin des Frangins",
+  "lat": 43.621137,
+  "lng": 3.893849,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.le-jardin-des-frangins-restaurant-montpellier.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11001541095",
+  "title": "Mamie Lasagnes",
+  "lat": 43.632743,
+  "lng": 3.898983,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Tu-Sa 10:30-14:00,17:30-22:00",
+  "address": "4 Place de l'Europe - Simone Veil Castelnau-le-Lez",
+  "website": "https://www.mamielasagnes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11003376038",
+  "title": "Bari Trattoria",
+  "lat": 43.624223,
+  "lng": 3.913759,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00; We-Fr 19:15-22:00",
+  "address": "89 Rue Hélène Boucher Castelnau-le-Lez",
+  "website": "https://bari-trattoria.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11659530191",
+  "title": "Faune",
+  "lat": 43.606268,
+  "lng": 3.87884,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 11:00-01:00, Su 11:00-18:00",
+  "address": "13 Rue de la République Montpellier",
+  "website": "https://faunemoco.com",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-13157802701",
+  "title": "J'adooore Asia",
+  "lat": 43.619684,
+  "lng": 3.916162,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:00, 18:30-22:00",
+  "address": "2 Allée Charles Robert Darwin",
+  "website": "https://jadoooreasia.com/fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-13180206961",
+  "title": "La Nipote",
+  "lat": 43.631797,
+  "lng": 3.908042,
+  "cuisine": "pinsa",
+  "tags": [],
+  "hours": "Mo-Su 18:00-22:30",
+  "address": "2 bis Rue des Perrières Castelnau-le-Lez",
+  "website": "https://lanipote.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-14021930701",
+  "title": "Coppia",
+  "lat": 43.610576,
+  "lng": 3.874415,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Fr 12:00-14:30; Sa 12:00-15:00; Fr-Sa 19:30-00:00",
+  "address": "5 Place du Petit Scel",
+  "website": "https://www.instagram.com/coppia.montpellier/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-way-170953156",
+  "title": "Restaurant Universitaire du Triolet",
+  "lat": 43.631189,
+  "lng": 3.860198,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:15-14:00",
+  "address": "1061 Rue du Professeur Joseph Anglada Montpellier",
+  "website": "https://www.crous-montpellier.fr/restaurant/resto-u-triolet/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-664032809",
+  "title": "Romagna kitchen",
+  "lat": 43.608341,
+  "lng": 3.871576,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Th-Sa 12:00-14:30,19:00-21:30; Tu-We 12:00-14:45",
+  "address": "",
+  "website": "http://romagnakitchen.com",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-3749429349",
+  "title": "Kamii",
+  "lat": 43.657495,
+  "lng": 3.886277,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Tu-Su 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "https://kamii-japanese-restaurant.business.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-4293164012",
+  "title": "Gusto",
+  "lat": 43.60343,
+  "lng": 3.921309,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "2 Place de Lisbonne Montpellier",
+  "website": "https://www.brasseriegusto.com",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-7038382246",
+  "title": "Takkito",
+  "lat": 43.609552,
+  "lng": 3.876036,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Su 11:00-15:00",
+  "address": "",
+  "website": "https://www.takkito.com",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-11740660537",
+  "title": "Sumac",
+  "lat": 43.60854,
+  "lng": 3.887992,
+  "cuisine": "Libanaise",
+  "tags": [],
+  "hours": "Mo-Su 11:30-14:30,19:30-22:00",
+  "address": "",
+  "website": "https://www.sumac-restaurant-montpellier.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-13987525645",
+  "title": "Groove",
+  "lat": 43.598209,
+  "lng": 3.899146,
+  "cuisine": "brunch",
+  "tags": [],
+  "hours": "Mo-Su 10:00-18:00",
+  "address": "",
+  "website": "https://groovecafe.my.canva.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-14081801396",
+  "title": "To-Ly Phở Bò - Bánh Cuốn",
+  "lat": 43.606955,
+  "lng": 3.869017,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Su-Fr 12:00-14:30,19:00-22:30",
+  "address": "3 Rue Adam de Craponne Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-610462161",
+  "title": "L’Original",
+  "lat": 43.604264,
+  "lng": 3.882366,
+  "cuisine": "Méditerranéenne",
+  "tags": [],
+  "hours": "Tu-Fr 08:30-16:00,18:30-21:30; Sa 08:30-16:00,18:30-21:30; Su 10:30-16:00",
+  "address": "16 Rue Henri René Montpellier",
+  "website": "https://www.loriginal-restaurant-montpellier.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-635868921",
+  "title": "L'Oignon Givré",
+  "lat": 43.614031,
+  "lng": 3.877318,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 10:00-15:00",
+  "address": "46 Rue de l'Université Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-1702787549",
+  "title": "Le Comptoir",
+  "lat": 43.600183,
+  "lng": 3.899389,
+  "cuisine": "Terroir",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 10:00-00:00",
+  "address": "",
+  "website": "https://lecomptoir.one/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-4269919379",
+  "title": "Bella Napoli",
+  "lat": 43.637887,
+  "lng": 3.873374,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:00; Sa 19:00-22:00",
+  "address": "",
+  "website": "http://facebook.com/bellanapolimontpellier/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-4343434189",
+  "title": "Sushi Kawai",
+  "lat": 43.596386,
+  "lng": 3.887947,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Fr 11:30-14:30, 19:00-22:00; Sa-Su 19:00-23:00",
+  "address": "",
+  "website": "http://www.sushi-kawai.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-7822403186",
+  "title": "Joy Healthyfood",
+  "lat": 43.6061,
+  "lng": 3.874711,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 10:00-18:00",
+  "address": "55 Rue Estelle",
+  "website": "https://joy-yoga-healthyfood.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-8539608033",
+  "title": "Popu - The Babel Community",
+  "lat": 43.609899,
+  "lng": 3.891951,
+  "cuisine": "Tapas",
+  "tags": [],
+  "hours": "Mo-Fr 08:00-22:00",
+  "address": "954 Avenue Jean Mermoz",
+  "website": "https://www.thebabelcommunity.com/montpellier/restaurant/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-10741946253",
+  "title": "Bagel & U",
+  "lat": 43.608246,
+  "lng": 3.880707,
+  "cuisine": "bagel",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "6 Rue Boussairolles Montpellier",
+  "website": "https://bagelandu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-712004009",
+  "title": "L'Aveyronnais",
+  "lat": 43.609836,
+  "lng": 3.876851,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.restaurant-laveyronnais.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-2663189106",
+  "title": "Le Shelter",
+  "lat": 43.610522,
+  "lng": 3.875357,
+  "cuisine": "scandinavian",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 11:00-16:00; Fr,Sa 11:00-21:00",
+  "address": "11 Rue Saint-Firmin Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-2955520001",
+  "title": "Hakko",
+  "lat": 43.610008,
+  "lng": 3.879252,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu-Th 12:00-14:00; Fr 12:00-14:00, 19:30-22:00",
+  "address": "20 Rue Jacques Coeur",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-13157791201",
+  "title": "Welly",
+  "lat": 43.619315,
+  "lng": 3.916048,
+  "cuisine": "local",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 07:00-17:00",
+  "address": "555 Rue du Mas de Verchant",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-608303104",
+  "title": "Kuma-Ï sushi",
+  "lat": 43.607647,
+  "lng": 3.881333,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "16 Rue Boussairolles Montpellier",
+  "website": "https://kumaisushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-12802729174",
+  "title": "Oh My Bowl",
+  "lat": 43.612712,
+  "lng": 3.876834,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:00-21:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-1702787582",
+  "title": "Le Trinque Fougasse",
+  "lat": 43.600287,
+  "lng": 3.899948,
+  "cuisine": "Terroir",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.trinquefougasse.com/?espace=sud",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-1739838550",
+  "title": "L'Arlequin",
+  "lat": 43.607762,
+  "lng": 3.896242,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://larlequinmontpellier.com/",
+  "description": "Bar à vin, tapas, grill",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-2793007457",
+  "title": "Berthe",
+  "lat": 43.600341,
+  "lng": 3.901347,
+  "cuisine": "",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 09:00-15:00, 18:00-22:00",
+  "address": "",
+  "website": "https://berthe-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-2875108057",
+  "title": "L'Italien",
+  "lat": 43.648825,
+  "lng": 3.842012,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 09:00-18:00",
+  "address": "Saint-Clément-de-Rivière",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-4434225344",
+  "title": "Antonio e Marco",
+  "lat": 43.600164,
+  "lng": 3.898496,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:00-15:00,18:30-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-7804073808",
+  "title": "Échappée Douce",
+  "lat": 43.610147,
+  "lng": 3.87554,
+  "cuisine": "brunch",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Su,We 11:00-15:00; Th,Fr 10:00-17:00; Sa 10:00-18:00",
+  "address": "18 Rue du Bayle Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-7858575486",
+  "title": "L’Alchimiste",
+  "lat": 43.608191,
+  "lng": 3.874584,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo 19:00-22:30; We-Sa 19:00-22:30",
+  "address": "",
+  "website": "https://www.alchimistemontpellier.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-10225066217",
+  "title": "Table de la Lyre",
+  "lat": 43.642302,
+  "lng": 3.845206,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Th 12:00-14:00,19:30-23:00;\nFr 12:00-15:00",
+  "address": "48 Rue Georges Denizot",
+  "website": "https://www.tabledelalyre.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-13287429653",
+  "title": "La Cave à Nico",
+  "lat": 43.57553,
+  "lng": 3.830642,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-14286920091",
+  "title": "3B Bol Bun & Bubble",
+  "lat": 43.605635,
+  "lng": 3.877578,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-15:00,18:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-way-103664283",
+  "title": "Chez Pépette",
+  "lat": 43.632779,
+  "lng": 3.896012,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo, We, Fr 11:30-15:00; Tu 11:30-14:00; Th 11:30-14:00, 19:00-22:00",
+  "address": "5 Avenue Aristide Briand Castelnau-le-Lez",
+  "website": "https://chezpepette.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-way-230064854",
+  "title": "Bistrot D'O",
+  "lat": 43.635793,
+  "lng": 3.836453,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:00",
+  "address": "178 Rue de la Carrierasse Montpellier",
+  "website": "https://www.domainedo.fr/lieux-de-spectacle/bistrot-do-0",
+  "description": "",
+  "wikidata": "",
+  "score": 21
+ },
+ {
+  "id": "osm-node-617007937",
+  "title": "Crêperie de la Comédie",
+  "lat": 43.608603,
+  "lng": 3.880358,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "Mo-Su 11:30-24:00",
+  "address": "12 Place de la Comédie",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-622316104",
+  "title": "Via Pila",
+  "lat": 43.613064,
+  "lng": 3.879601,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "http://www.viapila.com",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-724186724",
+  "title": "Li's Raviolis Chinois",
+  "lat": 43.61276,
+  "lng": 3.876735,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:30-14:30,18:30-22:30",
+  "address": "23 Rue de l'Université Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-1704461298",
+  "title": "Vert Tomate",
+  "lat": 43.608291,
+  "lng": 3.888519,
+  "cuisine": "",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 08:30-15:30",
+  "address": "23 Place du Nombre d'Or",
+  "website": "https://www.facebook.com/RestaurantMonsieurJules",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-1739563947",
+  "title": "O Beach",
+  "lat": 43.605305,
+  "lng": 3.890149,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "72 Avenue du Pont Juvénal",
+  "website": "https://www.ristorante-obeach.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-3393055145",
+  "title": "Pampa y Luna",
+  "lat": 43.606919,
+  "lng": 3.866895,
+  "cuisine": "argentinian",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 08:30-23:00",
+  "address": "13 Place Roger Salengro Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-9991155118",
+  "title": "La Casa Deya",
+  "lat": 43.627776,
+  "lng": 3.898787,
+  "cuisine": "Méditerranéenne",
+  "tags": [],
+  "hours": "",
+  "address": "600 rue des anémones Castelnau-le-Lez",
+  "website": "https://la-casa-deya.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-11003354185",
+  "title": "Mademoiselle Boris",
+  "lat": 43.629027,
+  "lng": 3.897905,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "28 Rue du Prado Castelnau-le-Lez",
+  "website": "https://mademoiselleboris.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-12007230624",
+  "title": "Thai Zone",
+  "lat": 43.6079,
+  "lng": 3.881057,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.thaizone.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-way-1168571435",
+  "title": "Yukimi",
+  "lat": 43.605907,
+  "lng": 3.89468,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su,PH 12:00-14:30,19:00-22:30",
+  "address": "110 Avenue du Pont Juvénal Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-607974828",
+  "title": "l'Indya",
+  "lat": 43.607297,
+  "lng": 3.881086,
+  "cuisine": "Indienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-15:30,18:30-23:30; Su 18:30-23:30",
+  "address": "7 Rue Alfred Bruyas",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-4220859651",
+  "title": "Le restaurant de la Maison des Vins du Languedoc",
+  "lat": 43.582597,
+  "lng": 3.890523,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "Lattes",
+  "website": "https://www.maisondesvinsdulanguedoc.com/le-restaurant",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-5747891359",
+  "title": "Caffè Panis",
+  "lat": 43.611667,
+  "lng": 3.877466,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "Café - Brasserie",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-6718315688",
+  "title": "Young-Min Grill",
+  "lat": 43.642454,
+  "lng": 3.919192,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "",
+  "address": "305 Avenue Blaise Pascal",
+  "website": "http://www.youngmingrill.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-635883720",
+  "title": "Nawa",
+  "lat": 43.612976,
+  "lng": 3.87937,
+  "cuisine": "Libanaise",
+  "tags": [],
+  "hours": "Mo-Fr, Su 19:00-22:00; Sa 11:30-14:30, 19:00-23:00",
+  "address": "74 Rue de l'Aiguillerie",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-724186529",
+  "title": "Pinocchio",
+  "lat": 43.609803,
+  "lng": 3.878014,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://pinocchio-restaurant.fr/montpellier",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-899034019",
+  "title": "100 sushis",
+  "lat": 43.626225,
+  "lng": 3.866283,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Fr 18:00-22:00; Su 18:00-22:00,11:00-14:00",
+  "address": "49 Avenue du Professeur Grasset Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-2159366507",
+  "title": "Le Déclic",
+  "lat": 43.61369,
+  "lng": 3.830303,
+  "cuisine": "barbecue",
+  "tags": [],
+  "hours": "Apr-Sep: Mo-Sa 08:00-15:00,19:00-23:00; Oct-Mar: Mo-Sa 08:30-15:00",
+  "address": "20 Allée Antonin Chauliac",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-3787683032",
+  "title": "Heaven sushi",
+  "lat": 43.618025,
+  "lng": 3.810206,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Fr 11:30-14:00,18:30-22:30; Sa,Su 18:30-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-4859665034",
+  "title": "Les Jardins de Marrakech",
+  "lat": 43.598804,
+  "lng": 3.900644,
+  "cuisine": "Marocaine",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.facebook.com/RestaurantLesJardinsDeMarrekech/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-5078639322",
+  "title": "Thanh Long Restaurant",
+  "lat": 43.60575,
+  "lng": 3.877205,
+  "cuisine": "Vietnamienne",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:00, 19:30-22:00",
+  "address": "3 Rue Durand",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-6814364900",
+  "title": "Biquette",
+  "lat": 43.612169,
+  "lng": 3.862037,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Sa 09:00-15:00,17:00-20:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-10735366153",
+  "title": "La Manaba",
+  "lat": 43.607522,
+  "lng": 3.867517,
+  "cuisine": "ecuador",
+  "tags": [],
+  "hours": "Tu-Su 12:00-15:00, 18:00-22:00",
+  "address": "17 Rue Daru",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-12406611849",
+  "title": "Leclère",
+  "lat": 43.606785,
+  "lng": 3.873909,
+  "cuisine": "fine dining",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "http://www.restaurantleclere.com",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-12590451960",
+  "title": "Bisciu",
+  "lat": 43.6154,
+  "lng": 3.881224,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://xn--bisci-5ua.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-13393166964",
+  "title": "Koboon",
+  "lat": 43.633051,
+  "lng": 3.917801,
+  "cuisine": "Thaïlandaise",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://koboon-resto.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-579739333",
+  "title": "Chez Vincent",
+  "lat": 43.61655,
+  "lng": 3.880033,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Fr 12:00-13:30, 19:30-22:30; Sa-Su 19:00-22:30;Mo off",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-598918887",
+  "title": "Le Ban des Gourmands",
+  "lat": 43.603369,
+  "lng": 3.882683,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Fr 17:00-24:00, Sa 12:00-14:00,18:00-24:00",
+  "address": "5 Place Carnot",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-724186716",
+  "title": "L'authentik",
+  "lat": 43.612689,
+  "lng": 3.876466,
+  "cuisine": "Turque",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 19:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-5747891394",
+  "title": "Ché Lys",
+  "lat": 43.613045,
+  "lng": 3.87931,
+  "cuisine": "Vietnamienne",
+  "tags": [],
+  "hours": "",
+  "address": "69 Rue de l'Aiguillerie",
+  "website": "",
+  "description": "restaurant vietnamien",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-7057970787",
+  "title": "Immersion",
+  "lat": 43.610319,
+  "lng": 3.875678,
+  "cuisine": "fine dining",
+  "tags": [],
+  "hours": "Tu 19:30-21:30; We-Sa 12:00-14:00, 19:30-21:30",
+  "address": "17 Rue Saint-Firmin",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-7911820486",
+  "title": "Pokhawaï",
+  "lat": 43.60458,
+  "lng": 3.878837,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-14181193605",
+  "title": "Froment & Sarrasin - Crêperie",
+  "lat": 43.609446,
+  "lng": 3.879098,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "",
+  "address": "7 Rue Jacques Coeur",
+  "website": "http://fromentetsarrasin-creperie.com",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-635883714",
+  "title": "Cucina Nostra",
+  "lat": 43.613262,
+  "lng": 3.879159,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.instagram.com/cucina_nostra_/",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-664073247",
+  "title": "L'Equateur",
+  "lat": 43.607799,
+  "lng": 3.867496,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-15:00,19:00-23:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-1711395901",
+  "title": "Gyraya",
+  "lat": 43.607836,
+  "lng": 3.889481,
+  "cuisine": "Grecque",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Th 11:30-14:30,19:00-22:00; Fr 11:30-14:30,18:30-22:00; Sa,Su 11:30-15:00,18:30-22:00",
+  "address": "22 Place du Millénaire",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-2159534751",
+  "title": "Le P'tit Thaï",
+  "lat": 43.614656,
+  "lng": 3.829066,
+  "cuisine": "Thaïlandaise",
+  "tags": [],
+  "hours": "Sa-We 11:30-14:30,18:30-23:00; Fr 18:30-23:00",
+  "address": "22 Route de Lodève",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-2742299591",
+  "title": "Q'Fouji Sushi",
+  "lat": 43.607551,
+  "lng": 3.878047,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Sa 10:00-14:00, 18:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-3739290274",
+  "title": "L'Autre Sud",
+  "lat": 43.60716,
+  "lng": 3.877155,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "26 Rue des Étuves Montpellier",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-4735850661",
+  "title": "Otoro",
+  "lat": 43.632698,
+  "lng": 3.916343,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.restaurant-otoro.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ }
+]

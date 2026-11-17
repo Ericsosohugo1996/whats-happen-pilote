@@ -1,0 +1,925 @@
+[
+ {
+  "id": "osm-node-5061680521",
+  "title": "La Couronne",
+  "lat": 49.442756,
+  "lng": 1.087783,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 19:00-22:30",
+  "address": "31-27 Place du Vieux Marché",
+  "website": "https://www.lacouronne-rouen.fr/",
+  "description": "Plus vieille auberge de France",
+  "wikidata": "Q30599793",
+  "score": 97
+ },
+ {
+  "id": "osm-node-4552989601",
+  "title": "Auberge Saint-Maclou",
+  "lat": 49.439992,
+  "lng": 1.098787,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-14:00,19:00-22:00; Sa 19:00-22:30; Su 12:00-14:30",
+  "address": "222",
+  "website": "",
+  "description": "",
+  "wikidata": "Q22952076",
+  "score": 79
+ },
+ {
+  "id": "osm-node-2145294813",
+  "title": "D'eux-mêmes",
+  "lat": 49.442642,
+  "lng": 1.088303,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "12:00-14:30, 19:00-22:30",
+  "address": "9 Place du Vieux Marché Rouen",
+  "website": "https://www.restaurant-deuxmemes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5719648822",
+  "title": "La Terrasse",
+  "lat": 49.442618,
+  "lng": 1.088391,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 00:00-02:00,12:00-24:00",
+  "address": "9 Place du Vieux Marché Rouen",
+  "website": "https://www.laterrasse-rouen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5964239139",
+  "title": "Délices de Yifan",
+  "lat": 49.44365,
+  "lng": 1.088508,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Sa 10:00-22:00",
+  "address": "20 Place du Vieux Marché",
+  "website": "https://www.yifan.fr/",
+  "description": "Chinese and Asian Restaurant",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7371301967",
+  "title": "Together Asia Fusion Food",
+  "lat": 49.445547,
+  "lng": 1.097481,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Tu-Su 12:00-14:00,18:30-22:00",
+  "address": "118 Rue Beauvoisine Rouen",
+  "website": "https://together-rouen.carrd.co/",
+  "description": "Omelette Tornade & Spécialités Hongkongaises recettes faites maison",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1672610778",
+  "title": "Blotti",
+  "lat": 49.443151,
+  "lng": 1.094197,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-22:00",
+  "address": "30",
+  "website": "https://blotti.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1846779724",
+  "title": "Sushi First",
+  "lat": 49.42397,
+  "lng": 1.088708,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Tu-Fr 11:00-14:30, 18:00-22:00; Sa 11:00-14:30, 18:00-23:00",
+  "address": "42 Place Voltaire",
+  "website": "https://www.sushifirst.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3894984634",
+  "title": "Le 6e Sens",
+  "lat": 49.443327,
+  "lng": 1.086677,
+  "cuisine": "Internationale",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-21:30; Th-Sa 12:00-14:00,19:00-22:30",
+  "address": "2",
+  "website": "https://le-sixiemesens.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4548479517",
+  "title": "Marcel",
+  "lat": 49.4428,
+  "lng": 1.087524,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 09:00-23:00",
+  "address": "39 Place du Vieux Marché Rouen",
+  "website": "https://marcel-rouen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4556237056",
+  "title": "Doges",
+  "lat": 49.444102,
+  "lng": 1.087614,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://les-doges-rouen.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4597229954",
+  "title": "La Petite Bouffe",
+  "lat": 49.441603,
+  "lng": 1.098934,
+  "cuisine": "pasta",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 11:00-14:00,19:00-22:00; Fr,Sa 11:00-14:00,19:00-22:30; Su off",
+  "address": "",
+  "website": "https://www.rouentourisme.com/restaurants-traditionnels/la-petite-bouffe-1705/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4687235117",
+  "title": "Le Café Perdu",
+  "lat": 49.441099,
+  "lng": 1.099882,
+  "cuisine": "traditionnelle du jardin",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Th,PH 12:00-15:00; Fr-Sa,PH 12:00-15:00,19:00-23:00",
+  "address": "44 Rue d'Amiens Rouen",
+  "website": "https://www.instagram.com/lecafeperdu_rouen",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6266998359",
+  "title": "Maneki Neko",
+  "lat": 49.417412,
+  "lng": 1.091113,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 19:00-22:30",
+  "address": "192 Rue Garibaldi Sotteville-lès-Rouen",
+  "website": "http://manekineko76.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7128453385",
+  "title": "Okinawa",
+  "lat": 49.442899,
+  "lng": 1.087044,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "12:00-14:30,19:00-22:30",
+  "address": "5 Rue de la Pie Rouen",
+  "website": "https://okinawa-rouen.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11242936202",
+  "title": "La Grange",
+  "lat": 49.470151,
+  "lng": 1.08702,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo 09:00-16:00; Tu-We 09:00-19:00; Th-Sa 09:00-24:00; Su 09:00-15:00",
+  "address": "150 Mont-Saint-Aignan",
+  "website": "https://www.lagrangemontsaintaignan.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11435036241",
+  "title": "La Rose des Sables",
+  "lat": 49.448196,
+  "lng": 1.100343,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-15:00,19:00-23:00",
+  "address": "113 Place Beauvoisine",
+  "website": "https://larosedessablesrouen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-12192759193",
+  "title": "La Parenthèse",
+  "lat": 49.443041,
+  "lng": 1.092356,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo off; Tu-Fr 11:30-15:00; Sa 11:30-18:00; Su 11:00-15:00",
+  "address": "7 Rue de la Poterne Rouen",
+  "website": "https://laparenthese.metro.rest",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13356376713",
+  "title": "Ariana",
+  "lat": 49.438229,
+  "lng": 1.099885,
+  "cuisine": "afghan",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 19:00-23:00",
+  "address": "",
+  "website": "https://restaurantariana.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3102967702",
+  "title": "Taste of Tandoori",
+  "lat": 49.425977,
+  "lng": 1.07481,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:30,19:00-22:30",
+  "address": "193",
+  "website": "https://tasteoftandoori-rouen.mystrikingly.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4548479499",
+  "title": "Italian Trattoria",
+  "lat": 49.443688,
+  "lng": 1.088396,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 09:30-22:30; Fr,Sa 09:30-23:00",
+  "address": "",
+  "website": "https://it-trattoria.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4548479518",
+  "title": "Les Maraichers",
+  "lat": 49.442784,
+  "lng": 1.087607,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "37 Place du Vieux Marché",
+  "website": "https://www.lesmaraichers.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4888346689",
+  "title": "Le Delhi",
+  "lat": 49.438194,
+  "lng": 1.100235,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:00,19:00-23:00; Su,PH off",
+  "address": "15",
+  "website": "http://restaurantdelhi.net",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5621402616",
+  "title": "Pascaline",
+  "lat": 49.44297,
+  "lng": 1.092291,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:00",
+  "address": "5 Rue de la Poterne Rouen",
+  "website": "https://laparenthese.metro.rest",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-7128434283",
+  "title": "L'incontournable",
+  "lat": 49.442841,
+  "lng": 1.087207,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 10:30-23:00; Sa 10:30-15:00,16:30-23:00",
+  "address": "1 Rouen",
+  "website": "https://lincontournable-rouen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-6173265139",
+  "title": "Aux Delices des Carmes",
+  "lat": 49.442453,
+  "lng": 1.09534,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 10:30-20:30",
+  "address": "48 Place des Carmes Rouen",
+  "website": "https://aux-delices-des-carmes.edan.io/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6373171821",
+  "title": "Au Prince des Sables",
+  "lat": 49.443355,
+  "lng": 1.104122,
+  "cuisine": "tunisian",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:00,19:00-22:30",
+  "address": "78",
+  "website": "https://www.auprincedesables.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6983707034",
+  "title": "La Carte d'Orient",
+  "lat": 49.41958,
+  "lng": 1.095125,
+  "cuisine": "oriental",
+  "tags": [],
+  "hours": "Tu-Fr 11:30-13:30,16:30-21:00; Sa 16:30-21:00",
+  "address": "137 Rue Pierre Corneille Sotteville-lès-Rouen",
+  "website": "http://www.traiteur-lacartedorient.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7474241166",
+  "title": "Ottoman Palace",
+  "lat": 49.412944,
+  "lng": 1.072951,
+  "cuisine": "Turque",
+  "tags": [],
+  "hours": "Mo-Th 11:00-22:30; Fr 11:00-23:00; Sa 11:00-23:00",
+  "address": "42 Avenue des Canadiens Le Petit-Quevilly",
+  "website": "http://www.ottomanpalace.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-8077966292",
+  "title": "Nouilles Fait Maison",
+  "lat": 49.443765,
+  "lng": 1.09067,
+  "cuisine": "noodle",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 12:00-14:30,19:00-22:30",
+  "address": "83 Rue Écuyère Rouen",
+  "website": "https://nouilles-fait-maison.onataste.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13103488187",
+  "title": "Hokati",
+  "lat": 49.443591,
+  "lng": 1.09218,
+  "cuisine": "taiwanese",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-21:30",
+  "address": "",
+  "website": "https://hokati.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13821359874",
+  "title": "Mon P'tit Hanoi",
+  "lat": 49.442974,
+  "lng": 1.094832,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 11:30-14:30; Tu-Th 11:30-15:00,19:00-21:30; Fr 11:30-15:00,19:00-22:00; Sa 12:00-16:00,19:00-22:00",
+  "address": "",
+  "website": "https://monptithanoi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4489833541",
+  "title": "Gandhi",
+  "lat": 49.434402,
+  "lng": 1.085552,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:35,06:30-21:00",
+  "address": "18",
+  "website": "https://www.gandhi-rouen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4552989614",
+  "title": "Zhoushi",
+  "lat": 49.439979,
+  "lng": 1.09794,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Tu-Sa 11:45-14:30,18:00-22:00; Su 18:00-22:00",
+  "address": "4 Place Barthélémy Rouen",
+  "website": "http://www.zhoushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4638897134",
+  "title": "La Dune",
+  "lat": 49.433647,
+  "lng": 1.087652,
+  "cuisine": "oriental",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-21:30; Sa 12:00-14:00,19:00-22:00",
+  "address": "10",
+  "website": "https://ladune-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5312599340",
+  "title": "Ôdate Sushi",
+  "lat": 49.433143,
+  "lng": 1.090938,
+  "cuisine": "sushi",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:00-14:00,18:00-23:00; Fr 18:00-23:00",
+  "address": "",
+  "website": "https://www.odatesushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5667044871",
+  "title": "Bân Thaï",
+  "lat": 49.443965,
+  "lng": 1.090777,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00; Su,Mo off",
+  "address": "95",
+  "website": "https://www.banthai-rouen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-7040943676",
+  "title": "Seoul",
+  "lat": 49.441212,
+  "lng": 1.099469,
+  "cuisine": "Coréenne",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30,19:00-23:00",
+  "address": "",
+  "website": "https://www.seoul-rouen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-12049864269",
+  "title": "Crêperie Roland",
+  "lat": 49.441145,
+  "lng": 1.09672,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 12:00-14:00,19:00-21:30; Fr,Sa 12:00-14:00,19:00-22:00",
+  "address": "22 Rue Saint-Nicolas",
+  "website": "https://creperie-roland.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-12926456439",
+  "title": "Hokkaido",
+  "lat": 49.444083,
+  "lng": 1.091183,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Tu-Th 12:00-14:30,19:00-23:00; Fr,Sa 12:00-14:00,19:00-22:30",
+  "address": "5 Rue des Bons Enfants",
+  "website": "https://hokkaido.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4458402696",
+  "title": "Hoian Resto",
+  "lat": 49.447748,
+  "lng": 1.093571,
+  "cuisine": "Vietnamienne",
+  "tags": [],
+  "hours": "Mo-Su 11:30-23:00",
+  "address": "9 Rue Verte",
+  "website": "https://hoianresto76.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-6259932600",
+  "title": "Le P'tit Bec",
+  "lat": 49.441547,
+  "lng": 1.09997,
+  "cuisine": "traditional",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Jun-Aug Mo 12:00-14:30; Jun-Aug Tu-Sa 12:00-14:30,19:00-22:30; Sep-May Tu,We 12:00-14:30",
+  "address": "182",
+  "website": "https://www.leptitbec.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7161321398",
+  "title": "La Maison du Bonheur",
+  "lat": 49.439163,
+  "lng": 1.132487,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Tu-Th 12:00-15:00,19:00-23:00; Fr-Sa 12:00-15:00,19:00-24:00",
+  "address": "33",
+  "website": "http://www.restaurant-lamaisondubonheur.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-7969561071",
+  "title": "Génération Sushi",
+  "lat": 49.442173,
+  "lng": 1.114849,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo-Su 11:00-15:00, 18:00-23:00",
+  "address": "244",
+  "website": "http://genesushi76.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-835732897",
+  "title": "Margherita",
+  "lat": 49.442405,
+  "lng": 1.089377,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Sa 11:00-21:00",
+  "address": "",
+  "website": "https://margherita-rouen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-4553781505",
+  "title": "Vila Nela",
+  "lat": 49.44227,
+  "lng": 1.091191,
+  "cuisine": "Portugaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 09:00-19:30",
+  "address": "5 Place Maréchal Foch Rouen",
+  "website": "https://www.vilanela.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-4555961858",
+  "title": "Le Palais Indien",
+  "lat": 49.446986,
+  "lng": 1.095048,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30,19:00-23:30",
+  "address": "91",
+  "website": "https://lepalaisindien.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-4556237058",
+  "title": "Chiba Ramen",
+  "lat": 49.444016,
+  "lng": 1.087701,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Su 11:00-22:00",
+  "address": "",
+  "website": "https://www.chibaramen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-5105543539",
+  "title": "La Bekaa",
+  "lat": 49.443436,
+  "lng": 1.092201,
+  "cuisine": "Libanaise",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00,19:00-23:00; Sa-Su 12:00-15:00,19:00-23:00",
+  "address": "36 Rue Percière Rouen",
+  "website": "https://www.facebook.com/cusinelibanaise",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-5503632501",
+  "title": "Nachos",
+  "lat": 49.442513,
+  "lng": 1.08917,
+  "cuisine": "grill",
+  "tags": [],
+  "hours": "Mo-Su,PH 18:00-21:30",
+  "address": "",
+  "website": "http://nachos-mexicangrill.com",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7978182002",
+  "title": "Bouillon Italia Osteria d'Or",
+  "lat": 49.438031,
+  "lng": 1.101167,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Su 09:00-02:00",
+  "address": "4 Place Saint-Marc Rouen",
+  "website": "https://www.bouillon-italia.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-9057033748",
+  "title": "PokéShop",
+  "lat": 49.441254,
+  "lng": 1.099306,
+  "cuisine": "poke",
+  "tags": [],
+  "hours": "11:30-22:00",
+  "address": "",
+  "website": "https://pokeshopparis.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-9788979739",
+  "title": "Nanakô",
+  "lat": 49.442226,
+  "lng": 1.091352,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:30,18:30-22:00",
+  "address": "1-3 Place Maréchal Foch Rouen",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-10860014687",
+  "title": "Midi Vin",
+  "lat": 49.470739,
+  "lng": 1.084091,
+  "cuisine": "Brasserie",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 10:30-16:00",
+  "address": "9",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-11697818238",
+  "title": "La Casa de las tapas",
+  "lat": 49.438463,
+  "lng": 1.098735,
+  "cuisine": "Espagnole",
+  "tags": [],
+  "hours": "Tu-Sa 17:00-24:00",
+  "address": "49 Rue Molière Rouen",
+  "website": "https://lacasadelastapas.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-13050645617",
+  "title": "Bangkok Factory",
+  "lat": 49.431791,
+  "lng": 1.087276,
+  "cuisine": "Thaïlandaise",
+  "tags": [],
+  "hours": "Su-Th 11:30-15:00,18:00-23:00, Fr 18:00-24:00, Sa 11:30-24:00",
+  "address": "",
+  "website": "https://bangkokfactory.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-13105804051",
+  "title": "Lé Là",
+  "lat": 49.439046,
+  "lng": 1.090937,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu 19:30-21:30; We,Th 12:00-14:00,19:30-21:30; Fr,Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://lela-restaurant.fr/",
+  "description": "Saveurs de l'île de la Réunion et de la Normandie",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-13531770801",
+  "title": "Nagoya sushi Rouen",
+  "lat": 49.439283,
+  "lng": 1.09153,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:30,19:00-22:30",
+  "address": "15 Rue de la Champmesle",
+  "website": "https://nagoya-sushi-rouen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-way-64958380",
+  "title": "Villa Léonard",
+  "lat": 49.469695,
+  "lng": 1.127825,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:00,18:00-23:30",
+  "address": "1160 Rue Herbeuse Bois-Guillaume",
+  "website": "https://villaleonard.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-way-729735089",
+  "title": "Le Siecle d'Or",
+  "lat": 49.422719,
+  "lng": 1.106834,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30,19:00-23:00",
+  "address": "",
+  "website": "https://le-siecle-dor.business.site/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ }
+]

@@ -1,0 +1,971 @@
+[
+ {
+  "id": "osm-node-6067268886",
+  "title": "Potiron & Ciboulette",
+  "lat": 47.471783,
+  "lng": -0.55516,
+  "cuisine": "local",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Tu 11:30-15:30; We 11:30-18:30; Th-Fr 11:30-21:30; Sa 11:30-18:00; Su 11:00-15:30",
+  "address": "57 Rue Baudrière",
+  "website": "https://www.potironetciboulette.fr/",
+  "description": "Horaire vu sur instagram : Du lundi au jeudi de 11h30-21h00/ vendredi 11h30-22h",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-7304548467",
+  "title": "La Soufflerie",
+  "lat": 47.473021,
+  "lng": -0.550156,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00; Su,Mo off",
+  "address": "8 Place du Pilori Angers",
+  "website": "https://www.lasoufflerieangers.fr/",
+  "description": "Crêperie, Salade et Soufflés",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-8515352149",
+  "title": "Tonton Foch",
+  "lat": 47.470191,
+  "lng": -0.548395,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-We 12:00-24:00, Th-Sa 12:00-02:00, Su 11:00-15:00",
+  "address": "4 Boulevard du Maréchal Foch",
+  "website": "https://www.tontonfoch.com/",
+  "description": "En complḿent du bistro restaurant, le bar est ouvert de 12h à minuit du lundi au mercredi, jusqu'à 2h du jeudi au samedi et pour bruncher le dimanche de 11h à 15h.",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-8605876118",
+  "title": "Maison Watson",
+  "lat": 47.472279,
+  "lng": -0.554365,
+  "cuisine": "Internationale",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-14:00; Sa 12:00-16:00",
+  "address": "41 Rue Plantagenêt Angers",
+  "website": "https://maisonwatson.fr",
+  "description": "Boutique de traiteur proposant une cuisine 100% végétale, bio, locale, de saison et gourmande ! Sur place et à emporter",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-11742256788",
+  "title": "La Belle Équipe",
+  "lat": 47.46437,
+  "lng": -0.566319,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 09:00-22:00; Sa 09:00-15:00",
+  "address": "4 Boulevard Marc Leclerc Angers",
+  "website": "https://labelleequipeangers.com/",
+  "description": "chaque semaine une carte",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-4169430243",
+  "title": "Le Grand Jardin",
+  "lat": 47.474238,
+  "lng": -0.545262,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://legrandjardin.wixsite.com/le-grand-jardin/",
+  "description": "Situé au sein de votre hôtel Mercure Angers centre, le restaurant est ouvert à tous les gourmands de passage.",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-5899929085",
+  "title": "La Péniche",
+  "lat": 47.472151,
+  "lng": -0.560893,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "\"Réservation uniquement\"",
+  "address": "Quai Des Carmes Angers",
+  "website": "https://www.peniche-angers.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-3589529994",
+  "title": "La Gogane",
+  "lat": 47.473902,
+  "lng": -0.554537,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo 12:00-14:00; We-Th 12:00-13:30,19:00-21:00; Fr-Sa 12:00-14:00,19:00-21:30",
+  "address": "11 Place Molière Angers",
+  "website": "https://creperie-la-gogane.metro.rest/?lang=fr",
+  "description": "BODACC : Jugement prononçant la clôture de la procédure de liquidation judiciaire pour insuffisance d'actif",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-8334430711",
+  "title": "Kazumi",
+  "lat": 47.466326,
+  "lng": -0.556737,
+  "cuisine": "fine dining",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu,Th,Fr 12:15-14:00, Mo-Sa 20:00-23:00",
+  "address": "3 Rue d'Anjou Angers",
+  "website": "https://restaurant-kazumi.com/",
+  "description": "Les chaises hautes ne sont pas adaptées aux enfants en bas âge et une empreinte bancaire est obligatoire pour valider la réservation.",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-12197289070",
+  "title": "Les maraîchers",
+  "lat": 47.483894,
+  "lng": -0.543224,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 07:00-15:00",
+  "address": "12 Avenue Jean Joxé",
+  "website": "https://www.bar-restaurant-lesmaraichers.fr/",
+  "description": "Bar Restaurant du midi",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-2344418263",
+  "title": "Sakura",
+  "lat": 47.473148,
+  "lng": -0.550652,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Fr 12:00-14:30,19:00-22:30; Su 19:00-22:30",
+  "address": "8 Rue des Poëliers Angers",
+  "website": "https://www.sakura-angers.fr/",
+  "description": "Les brochettes ne sont plus servies 30min avant la fin de chaque service.",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-8330415756",
+  "title": "La Cour",
+  "lat": 47.472898,
+  "lng": -0.553295,
+  "cuisine": "coffee shop",
+  "tags": [],
+  "hours": "Mo-We 12:00-24:00; Th,Fr 12:00-02:00; Sa 11:00-02:00; Su 11:00-23:00",
+  "address": "",
+  "website": "https://www.lacour-angers.com",
+  "description": "",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-9028285174",
+  "title": "Mamie Fada",
+  "lat": 47.472662,
+  "lng": -0.560956,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-00:00",
+  "address": "18 Quai des Carmes Angers",
+  "website": "https://www.mamiefada.com/",
+  "description": "Bar à cocktails",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-4693824393",
+  "title": "Le Punjab",
+  "lat": 47.473087,
+  "lng": -0.549098,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.lepunjab-restaurant-angers.fr/",
+  "description": "cuisine Indienne et Pakistanaise",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-6008051961",
+  "title": "Paku Paku",
+  "lat": 47.467361,
+  "lng": -0.550026,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-21:00",
+  "address": "38 Rue Bressigny Angers",
+  "website": "https://paku-paku.fr/",
+  "description": "La cantine japonaise",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-7070213678",
+  "title": "La table 33",
+  "lat": 47.478201,
+  "lng": -0.545608,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00; Fr 19:00-22:00; PH closed",
+  "address": "33 Avenue Besnardière Angers",
+  "website": "https://www.latable33.fr/",
+  "description": "En fonction du marché, le chef vous propose une ardoise élaborée à partir deproduits frais et de saison. Ouverture 30 min avant et fermeture 30 min après sur Tripadvisor",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-9548304848",
+  "title": "Sol e Luna",
+  "lat": 47.477568,
+  "lng": -0.552513,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Fr 12:00-14:30,19:00-21:30; Sa 19:00-22:00",
+  "address": "14 Boulevard Robert",
+  "website": "https://www.sol-e-luna.fr/",
+  "description": "chèques vacances non acceptés; gay Friendly",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-11119807446",
+  "title": "La Maison",
+  "lat": 47.47257,
+  "lng": -0.561169,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-15:00,18:00-00:00",
+  "address": "20 Quai des Carmes Angers",
+  "website": "https://lamaisonangers.com/",
+  "description": "Restaurant français sur les quais d'Angers, avec une vue exceptionnelle sur le château et la cathédrale d'Angers",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-11473143464",
+  "title": "Odorico",
+  "lat": 47.469755,
+  "lng": -0.548018,
+  "cuisine": "breton",
+  "tags": [],
+  "hours": "Tu-Fr 12:00-14:00; Sa 12:30-14:00; Mo-Su 19:30-21:00",
+  "address": "1 Boulevard du Maréchal Foch Angers",
+  "website": "https://www.odorico-restaurant-angers.com/",
+  "description": "Concept du restaurant – inspiré de l'artiste et mosaïste Italo-Breton – mets en valeur des produits locaux et de saisons avec une association de goûte entre ses deux cultures italo-bretonne.",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-7227294285",
+  "title": "Foodista",
+  "lat": 47.475012,
+  "lng": -0.550326,
+  "cuisine": "brunch",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 09:00-17:30",
+  "address": "8 Rue Boisnet Angers",
+  "website": "",
+  "description": "Restaurant pour petit déjeuner et brunch",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-8330316957",
+  "title": "Umami Kitchen",
+  "lat": 47.47377,
+  "lng": -0.559332,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Sa 10:00-13:30; Tu 10:00-14:30; We-Fr 10:00-14:30; Mo 11:00-14:30",
+  "address": "9 Rue Beaurepaire Angers",
+  "website": "http://www.umamikitchen.fr",
+  "description": "Fermeture définitive et Cession sous acte authentique en date du 30/12/2024 selon le BODACC du 27 février 2025",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-10025618385",
+  "title": "Crêperie Marie Mil'Goules",
+  "lat": 47.468712,
+  "lng": -0.557437,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00; Tu, We 19:00-21:45; Th 19:00-22:00; Fr, Sa 19:00-22:30",
+  "address": "7 Impasse Toussaint Angers",
+  "website": "https://creperie-mil-goules.paqe.io/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2852670350",
+  "title": "Maison Paganelli",
+  "lat": 47.471837,
+  "lng": -0.552938,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu 10:30-14:30,18:00-00:00; We 09:00-00:00; Th-Sa 10:30-00:00",
+  "address": "",
+  "website": "https://maisonpaganelli.com/angers/",
+  "description": "Bistro corse",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-8286178812",
+  "title": "Gustave et Claude",
+  "lat": 47.469743,
+  "lng": -0.553907,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-We 12:00-14:30; Th-Sa 12:00-14:30,18:00-22:30",
+  "address": "10 Rue Saint-Aubin Angers",
+  "website": "https://www.gustaveetclaude.com/",
+  "description": "C'est à la fois un restaurant, un bar à vin et une épicerie",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-8463640166",
+  "title": "220° Celsius",
+  "lat": 47.470004,
+  "lng": -0.554023,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 10:00-20:00",
+  "address": "1 Rue Saint-Aubin",
+  "website": "https://www.facebook.com/220celsius",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2343228888",
+  "title": "La Crémaillière",
+  "lat": 47.467373,
+  "lng": -0.550104,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-13:45,19:00-21:30; Su 12:00-13:45",
+  "address": "30 Rue Bressigny Angers",
+  "website": "",
+  "description": "Ouverture 30 min plus tôt et fermeture 30 min plus tard selon Tripadvisor",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2343238883",
+  "title": "Le Bistrot des Ducs",
+  "lat": 47.471766,
+  "lng": -0.552992,
+  "cuisine": "dessert",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 12:00-13:30, 19:00-21:30; Fr-Sa 12:00-13:30,19:00-22:30",
+  "address": "6 Rue des Deux-Haies Angers",
+  "website": "https://bistrotdesducs.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3241192949",
+  "title": "Tigr.",
+  "lat": 47.469237,
+  "lng": -0.556818,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Th 19:00-22:00; Tu-Fr 12:00-14:00; Sa 12:00-14:30; Fr-Sa 19:00-22:30",
+  "address": "43 Rue Toussaint",
+  "website": "https://tigr-angers.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3784521995",
+  "title": "Nanooda",
+  "lat": 47.475189,
+  "lng": -0.553533,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu,We,Th,Su 12:00-14:00; Fr-Sa 12:00-14:00,19:00-21:00",
+  "address": "7 Rue du Mail Angers",
+  "website": "",
+  "description": "Une décoration atypique, chaleureuse, détente assurée. Restaurant avec sa cuisine de terroir, authentique et généreuse.",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3928537318",
+  "title": "Les Petits Prés",
+  "lat": 47.471088,
+  "lng": -0.55249,
+  "cuisine": "fine dining",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 08:00-01:00, Su 09:00-16:00",
+  "address": "6 Place du Ralliement Angers",
+  "website": "https://www.lespetitspres.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6722822045",
+  "title": "Le Grandgousier",
+  "lat": 47.47272,
+  "lng": -0.55203,
+  "cuisine": "barbecue",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,18:30-23:00; Sa-Su 12:00-14:30,18:30-23:00",
+  "address": "7 Rue Saint-Laud Angers",
+  "website": "https://legrandgousier.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7134125085",
+  "title": "Autour d'un Cep",
+  "lat": 47.472194,
+  "lng": -0.556766,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-13:30; 19:30-21:00",
+  "address": "9 Rue Baudrière Angers",
+  "website": "https://www.autourduncep.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8286178814",
+  "title": "Heiko",
+  "lat": 47.469558,
+  "lng": -0.553687,
+  "cuisine": "polynesian",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su,PH 11:30-22:00",
+  "address": "12 Rue Saint-Aubin Angers",
+  "website": "https://www.heiko-poke.com/angers/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8822458861",
+  "title": "Pok Ïno",
+  "lat": 47.471623,
+  "lng": -0.553643,
+  "cuisine": "hawaiian",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 11:30-02:00",
+  "address": "61 Rue Saint-Laud",
+  "website": "https://pok-ino.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8841451163",
+  "title": "Icerolls & co",
+  "lat": 47.472147,
+  "lng": -0.555084,
+  "cuisine": "",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo,Tu,Th,Fr 11:00-14:00,16:00-20:00; We,Sa 11:00-20:00",
+  "address": "Place de la République",
+  "website": "https://icerollsco.eatbu.com/?lang=fr",
+  "description": "Concept de glace roulée ou tu créer ta recette sucrée ou salée",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-11897874776",
+  "title": "Donna",
+  "lat": 47.47277,
+  "lng": -0.560734,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.donna-angers.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6783252485",
+  "title": "Barco Vino",
+  "lat": 47.472731,
+  "lng": -0.559981,
+  "cuisine": "Viande",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-We 17:00-00:00; Th-Sa 17:00-01:00",
+  "address": "Quai des Carmes Angers",
+  "website": "https://www.barcovino.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-8568931894",
+  "title": "Cambodia Street Food",
+  "lat": 47.471621,
+  "lng": -0.552805,
+  "cuisine": "cambodian",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00; Su off",
+  "address": "10 Rue des Deux-Haies Angers",
+  "website": "https://cambodia-streetfood.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2344434264",
+  "title": "La Brigade",
+  "lat": 47.471358,
+  "lng": -0.554047,
+  "cuisine": "Viande",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 11:30-14:30,18:30-22:00; Fr-Su 11:30-22:30",
+  "address": "5 Angers",
+  "website": "https://www.la-brigade.fr/restaurant-angers",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4602351217",
+  "title": "Le triporteur",
+  "lat": 47.470537,
+  "lng": -0.548529,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu,Th,Fr 12:00-13:45,19:30-21:30; We,Sa 19:30-21:30",
+  "address": "40 Rue David-d'Angers",
+  "website": "https://www.letriporteurangers.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4213078438",
+  "title": "La Tablée",
+  "lat": 47.472169,
+  "lng": -0.550694,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Fr 12:00-14:00,19:00-22:00; Sa 12:00-14:30,19:00-22:30",
+  "address": "1 Rue David-d'Angers",
+  "website": "https://creperie-la-tablee-restaurant-angers.eatbu.com/?lang=fr",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-2862085560",
+  "title": "Marlaguette",
+  "lat": 47.461144,
+  "lng": -0.538315,
+  "cuisine": "Méditerranéenne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu,We 12:00-14:00; Th,Fr 12:00-14:00,19:00-21:00; Sa 19:00-21:00",
+  "address": "105 Rue de la Madeleine",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7021315531",
+  "title": "L'Académie",
+  "lat": 47.467634,
+  "lng": -0.558886,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 08:30-14:00; Tu-Fr 09:00-14:00; Sa-Su off",
+  "address": "7 Place de l’Académie Angers",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-7833232069",
+  "title": "Trésors du liban",
+  "lat": 47.46907,
+  "lng": -0.553298,
+  "cuisine": "Libanaise",
+  "tags": [],
+  "hours": "Tu-Su 11:00-14:30,17:30-20:00; Sa 11:00-15:00,16:30-20:30",
+  "address": "4 Rue des Lices Angers",
+  "website": "https://www.tresorsduliban.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-8879219102",
+  "title": "Frikadel",
+  "lat": 47.472282,
+  "lng": -0.540575,
+  "cuisine": "friture",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "24 Avenue Pasteur Angers",
+  "website": "https://lesfolies.coop/cafe-barrestaurant/espace-restauration/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-11375373861",
+  "title": "Le royaume de Saba",
+  "lat": 47.471686,
+  "lng": -0.537213,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Fr 16:00-02:00, Sa,Su 12:00-02:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-11755107137",
+  "title": "La petite cigogne",
+  "lat": 47.469273,
+  "lng": -0.553571,
+  "cuisine": "dessert",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo,We-Fr 10:00-17:30; Tu 10:00-14:00; Sa 10:00-18:30",
+  "address": "23 Rue du Musée Angers",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-13006859604",
+  "title": "Café-cantine La Bulle En Bois",
+  "lat": 47.477919,
+  "lng": -0.604248,
+  "cuisine": "cake",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 10:00-18:00; Th 09:00-15:00; Fr 10:00-17:00",
+  "address": "11 Rue Alexandre Fleming",
+  "website": "https://labulleenbois.fr/cantine/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-5314116693",
+  "title": "L’Astuce",
+  "lat": 47.484837,
+  "lng": -0.517316,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr \"Midi et Soir\"; Fr-Sa \"Soir\"",
+  "address": "57 Avenue Victor Châtenay Angers",
+  "website": "https://restaurant-lastuce-angers.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-8331289457",
+  "title": "My Gyoza",
+  "lat": 47.473081,
+  "lng": -0.5517,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Sa 11:45-14:30,19:00-22:00; Su off",
+  "address": "36 Rue du Cornet Angers",
+  "website": "https://www.mygyoza.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-7182316443",
+  "title": "Tokyo Foch",
+  "lat": 47.46792,
+  "lng": -0.550722,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:00,18:00-22:00; Sa 12:00-14:00,18:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-7182316446",
+  "title": "India",
+  "lat": 47.468423,
+  "lng": -0.549156,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-13:30,19:00-22:00; Mo,Su 19:00-22:00",
+  "address": "",
+  "website": "https://www.india49.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-8331235299",
+  "title": "So Sushi",
+  "lat": 47.472598,
+  "lng": -0.554618,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Mo,Tu,Th-Sa 11:00-14:00,17:30-22:00; We,Su 17:30-22:00",
+  "address": "",
+  "website": "https://www.sosushi49.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11465098111",
+  "title": "La Dévoreuse",
+  "lat": 47.465764,
+  "lng": -0.554089,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:00-19:00",
+  "address": "",
+  "website": "https://www.wheat-angers.com/reservations",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-11799695290",
+  "title": "Mésopotamie",
+  "lat": 47.454027,
+  "lng": -0.527535,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 10:00-14:00,17:00-21:00",
+  "address": "158 Rue Saumuroise Angers",
+  "website": "https://restaurant-mesopotamie.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-3583777532",
+  "title": "Le Dos de la Cuillère",
+  "lat": 47.469325,
+  "lng": -0.556302,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 11:45-18:00; Fr 11:45-15:00",
+  "address": "35 Rue Toussaint Angers",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-5592368912",
+  "title": "La Cantine Viêt",
+  "lat": 47.473581,
+  "lng": -0.553983,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 11:30-14:00, Mo-Fr 18:30-21:00",
+  "address": "9 Rue de la Roë Angers",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-6789256838",
+  "title": "Croccante",
+  "lat": 47.473643,
+  "lng": -0.551199,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00; We-Th 19:00-22:00; Fr-Sa 19:00-22:30; Su 18:30-21:30",
+  "address": "54 Rue du Mail Angers",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-6902569973",
+  "title": "Francesca",
+  "lat": 47.467765,
+  "lng": -0.525026,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Sa 09:30-20:00",
+  "address": "",
+  "website": "https://www.francesca.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-7419182234",
+  "title": "Chez Oki",
+  "lat": 47.471836,
+  "lng": -0.542024,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 18:30-22:00",
+  "address": "12 Avenue Pasteur Angers",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ }
+]

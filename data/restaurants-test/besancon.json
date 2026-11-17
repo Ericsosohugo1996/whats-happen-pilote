@@ -1,0 +1,898 @@
+[
+ {
+  "id": "osm-node-1419597382",
+  "title": "L’Insolite",
+  "lat": 47.237454,
+  "lng": 6.026715,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30",
+  "address": "58 Rue des Granges Besançon",
+  "website": "https://www.lesmeilleursrestos.fr/restaurant-besancon/885-l-insolite-besancon.html",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-way-53820560",
+  "title": "Le Bouillon du Commerce",
+  "lat": 47.238746,
+  "lng": 6.025411,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 11:45-14:00,19:30-22:00; Su 12:00-14:00",
+  "address": "31 Rue des Granges Besançon",
+  "website": "https://lebouillonducommerce.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-way-53520866",
+  "title": "Yuki",
+  "lat": 47.242207,
+  "lng": 6.01759,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:30, 17:30-22:30; Su 17:30-22:30",
+  "address": "4 Rue Richebourg Besançon",
+  "website": "https://yuki25.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4657656610",
+  "title": "L'Etna 3",
+  "lat": 47.247046,
+  "lng": 6.023265,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,18:30-00:00",
+  "address": "1 Avenue Maréchal Foch Besançon",
+  "website": "http://www.letna3.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-3226771752",
+  "title": "Samuraï sushis",
+  "lat": 47.246027,
+  "lng": 6.022888,
+  "cuisine": "sushi",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 11:00-13:30,18:00-21:30",
+  "address": "2 Avenue Maréchal Foch Besançon",
+  "website": "https://samouraisushis.fr/accueil/besancon/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6293162899",
+  "title": "Le Chapelier",
+  "lat": 47.238067,
+  "lng": 6.028263,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo,Th-Sa 12:00-15:00,18:00-01:00; Tu-We 12:00-15:00",
+  "address": "1 Rue Jean-Baptiste-Victor Proudhon",
+  "website": "https://lechapelierbesanco.wixsite.com/lechapelier",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6293878849",
+  "title": "Central Sushi",
+  "lat": 47.245282,
+  "lng": 6.028371,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "11:00-15:00,18:00-23:00; Fr 18:00-23:00",
+  "address": "35 Avenue Carnot",
+  "website": "https://www.centralsushi.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6178574092",
+  "title": "Le Café Café",
+  "lat": 47.238437,
+  "lng": 6.019701,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "We-Sa 12:00-14:00,19:00-21:30",
+  "address": "36 Rue Claude Pouillet Besançon",
+  "website": "https://www.le-cafe-cafe-restaurant-bensancon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4716376725",
+  "title": "Restaurant Bistrot La Charrette",
+  "lat": 47.241156,
+  "lng": 6.023151,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30; We,Sa 12:00-13:30",
+  "address": "11 Rue Jean Petit Besançon",
+  "website": "https://www.restaurantlacharrette.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6297308286",
+  "title": "Dar les bains",
+  "lat": 47.238299,
+  "lng": 6.028259,
+  "cuisine": "Marocaine",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 11:45-14:00, 19:00-23:00",
+  "address": "",
+  "website": "https://dar-les-bains-besancon.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6703795092",
+  "title": "Casinne",
+  "lat": 47.23489,
+  "lng": 6.02897,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Fr 19:00-23:00; Sa 12:00-14:00,19:00-23:00; Su 12:00-14:00; Jul-Aug Th 19:00-23:00",
+  "address": "132 Grande Rue Besançon",
+  "website": "https://www.casinne-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6828927666",
+  "title": "Namo",
+  "lat": 47.235694,
+  "lng": 6.031002,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 12:00-14:00; Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.toyodoo.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6965886461",
+  "title": "La Boîte à crêpes",
+  "lat": 47.234738,
+  "lng": 6.028081,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-13:45,19:00-22:00",
+  "address": "6 Rue Ronchaux Besançon",
+  "website": "https://www.boiteacrepe.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-10833600309",
+  "title": "Loiseau du Temps",
+  "lat": 47.240408,
+  "lng": 6.022235,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:15-21:00; Su 12:00-14:00",
+  "address": "27 Rue des Boucheries Besançon",
+  "website": "https://www.bernard-loiseau.com/fr/loiseaudutemps.html",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2812869836",
+  "title": "Le Pixel",
+  "lat": 47.236389,
+  "lng": 6.033746,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu 09:00-22:00; We-Fr 08:30-22:00; Sa 10:00-22:00; Su 10:30-16:30",
+  "address": "12 Avenue Arthur Gaulard",
+  "website": "https://taqueriaquest.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5337902617",
+  "title": "La cour des paillettes",
+  "lat": 47.235073,
+  "lng": 6.03156,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Sa 14:00-01:00; Su 16:00-22:00; We-Th 16:00-12:00; Fr 16:00-01:00",
+  "address": "",
+  "website": "https://www.instagram.com/lacourdespaillettes",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-6485319096",
+  "title": "Hummus",
+  "lat": 47.239013,
+  "lng": 6.020517,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 11:30-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://hummuscantine.my.canva.site/hummus",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3078079763",
+  "title": "La Grange",
+  "lat": 47.241065,
+  "lng": 6.024083,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:30; Fr,Sa 12:00-14:00,19:00-23:30",
+  "address": "",
+  "website": "https://www.lagrange-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-12087682828",
+  "title": "Petit Bouloie",
+  "lat": 47.246466,
+  "lng": 5.987895,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-13:30",
+  "address": "45 Avenue de l'Observatoire Besançon",
+  "website": "https://www.crous-bfc.fr/restaurant/resto-u-cafet-petit-bouloie/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-4702301992",
+  "title": "Le P'tit Gourmet",
+  "lat": 47.237525,
+  "lng": 6.027985,
+  "cuisine": "Poissons",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:00,19:00-23:00; Tu-We 11:30-14:00",
+  "address": "18 Rue François-Louis Bersot Besançon",
+  "website": "https://www.lesmeilleursrestos.fr/restaurant-besancon/884-le-p-tit-gourmet-besancon.html",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-5422941922",
+  "title": "Saï Thaï",
+  "lat": 47.233378,
+  "lng": 6.026517,
+  "cuisine": "Thaïlandaise",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00; Su 19:00-22:00",
+  "address": "3 Rue Chifflet",
+  "website": "https://saithai.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6532298388",
+  "title": "Sapori Di Sicilia",
+  "lat": 47.24704,
+  "lng": 6.026809,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:30; Su 19:00-22:30",
+  "address": "21 Rue de Belfort Besançon",
+  "website": "https://www.lesmeilleursrestos.fr/emporter-a-besancon/76-sapori-di-sicilia-besancon.html",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-8987423577",
+  "title": "Royal Chalezeule",
+  "lat": 47.26414,
+  "lng": 6.058939,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Su 12:00-14:30; 19:00-22:30",
+  "address": "",
+  "website": "https://www.royalchalezeule.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-869306812",
+  "title": "LauMas",
+  "lat": 47.231508,
+  "lng": 6.026386,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "We-Sa 00:00-13:30,07:00-21:00; Su 00:00-14:00",
+  "address": "35 Rue Charles Nodier",
+  "website": "https://restaurant-laumas.com",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-1419626701",
+  "title": "Au Vieux Comtois",
+  "lat": 47.23644,
+  "lng": 6.026463,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo,Tu,Th,Fr 19:00-22:00; We,Sa,Su 12:00-14:00,19:00-22:00",
+  "address": "13 Grande Rue Besançon",
+  "website": "https://www.lesmeilleursrestos.fr/restaurant-besancon/112-au-vieux-comtois-besancon.html",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-6481374780",
+  "title": "Bombay",
+  "lat": 47.238174,
+  "lng": 6.023036,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Mo 19:00-22:00; Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "3 Rue d'Anvers Besançon",
+  "website": "https://www.lesmeilleursrestos.fr/emporter-a-besancon/107-le-bombay-besancon.html",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-7191793318",
+  "title": "Les 4 Saisons",
+  "lat": 47.235278,
+  "lng": 6.024308,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Fr 11:00-14:00",
+  "address": "22 Rue Mégevand Besançon",
+  "website": "https://restaurant-les-4-saisons-besancon.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-10036644909",
+  "title": "Casa Good Vibes",
+  "lat": 47.241658,
+  "lng": 6.017245,
+  "cuisine": "Mexicaine",
+  "tags": [],
+  "hours": "We 19:00-21:00; Th-Fr 12:00-13:30,19:00-21:00; Sa 10:30-13:30,19:00-21:00; Su 10:30-13:30",
+  "address": "12 Rue Richebourg Besançon",
+  "website": "https://www.casagoodvibes.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-way-946031630",
+  "title": "Le Trépillot - Cafétéria",
+  "lat": 47.239928,
+  "lng": 5.988722,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:15-13:45",
+  "address": "",
+  "website": "https://restaurant-letrepillot.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-way-946031631",
+  "title": "Le Trépillot - Le Club",
+  "lat": 47.239736,
+  "lng": 5.988536,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-14:00",
+  "address": "",
+  "website": "https://restaurant-letrepillot.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-way-1058132537",
+  "title": "Le café du temps",
+  "lat": 47.247491,
+  "lng": 6.023564,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 07:00-20:00",
+  "address": "",
+  "website": "http://Www.lecafedutemps.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-2813659721",
+  "title": "Les Bateliers",
+  "lat": 47.232391,
+  "lng": 6.034578,
+  "cuisine": "Poissons",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:00; We 12:00-14:00; Sa 19:00-22:00",
+  "address": "12 Faubourg Rivotte Besançon",
+  "website": "https://www.restaurant-bateliers-besancon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-2985625139",
+  "title": "Basilic Instant",
+  "lat": 47.236742,
+  "lng": 6.02844,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:30",
+  "address": "93 Rue des Granges Besançon",
+  "website": "https://basilic-instant.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-7074295602",
+  "title": "La Coudée",
+  "lat": 47.239814,
+  "lng": 6.021456,
+  "cuisine": "traditional",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:00,19:00-22:00; Fr off; Sa 12:00-14:00,19:00-22:00; Su 19:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-7272378546",
+  "title": "Le Maharajah",
+  "lat": 47.235054,
+  "lng": 6.03205,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "19:00-22:30; Fr,Sa 19:00-23:00",
+  "address": "",
+  "website": "https://www.restaurantindien-besancon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-7864719070",
+  "title": "L'annexe",
+  "lat": 47.23686,
+  "lng": 6.023378,
+  "cuisine": "Poissons",
+  "tags": [],
+  "hours": "Mo 12:00-14:00; Tu-Fr 12:00-14:00,19:30-21:30; Sa 19:30-21:30",
+  "address": "",
+  "website": "https://restaurantannexe.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-13002194491",
+  "title": "Resto Allo Tunis",
+  "lat": 47.233871,
+  "lng": 6.007594,
+  "cuisine": "tunisian",
+  "tags": [],
+  "hours": "Tu-Su 11:30-14:30, 18:00-23:30",
+  "address": "",
+  "website": "https://restoallotunis.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-534448739",
+  "title": "Effet Boeuf",
+  "lat": 47.234291,
+  "lng": 6.026442,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,Sa 19:00-23:00; Tu-Fr 12:00-14:00,19:00-23:00",
+  "address": "3 Rue Mairet Besançon",
+  "website": "https://www.lesmeilleursrestos.fr/restaurant-besancon/142-l-effet-boeuf-besancon.html",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-12077223435",
+  "title": "Sushi Koi",
+  "lat": 47.234892,
+  "lng": 6.032079,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 11:30-13:30,18:30-21:30",
+  "address": "16 Rue Rivotte Besançon",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 25
+ },
+ {
+  "id": "osm-node-5089209519",
+  "title": "Les tables libanaises",
+  "lat": 47.240946,
+  "lng": 6.018417,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 00:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-6296221506",
+  "title": "Au Petit Polonais",
+  "lat": 47.237031,
+  "lng": 6.027915,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu-We 12:00-14:00; Th-Sa 12:00-14:00,19:00-22:00",
+  "address": "81 Rue des Granges Besançon",
+  "website": "https://le-petit-polonais.eatbu.com/?lang=fr",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-7191740402",
+  "title": "L'Antr'Act",
+  "lat": 47.240276,
+  "lng": 6.024157,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Su-Th 12:00-14:00,19:00-22:30; Fr-Sa 12:00-14:00,19:00-23:00",
+  "address": "10 Rue Gustave Courbet Besançon",
+  "website": "https://lantract.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-4200284284",
+  "title": "Le Primate",
+  "lat": 47.238181,
+  "lng": 6.028687,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "39 Rue François-Louis Bersot Besançon",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-6739571377",
+  "title": "Hong Kong",
+  "lat": 47.239363,
+  "lng": 6.020691,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo,We-Sa 12:00-14:00,19:00-22:00",
+  "address": "6 Quai Vauban Besançon",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 22
+ },
+ {
+  "id": "osm-node-1750868204",
+  "title": "L'atami",
+  "lat": 47.25202,
+  "lng": 6.035422,
+  "cuisine": "Géorgienne",
+  "tags": [],
+  "hours": "We-Su 12:00-14:00, 19:00-22:00; Fr-Sa 22:00-23:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-4231604661",
+  "title": "L'affineur comtois",
+  "lat": 47.242922,
+  "lng": 6.021369,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.l-affineur-comtois-restaurant-besancon.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-6481375092",
+  "title": "Bon2",
+  "lat": 47.237335,
+  "lng": 6.021974,
+  "cuisine": "seasonal",
+  "tags": [],
+  "hours": "Mo-Fr 11:00-14:00",
+  "address": "18 Rue Pasteur Besançon",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-9737183757",
+  "title": "Bento Express 25",
+  "lat": 47.249523,
+  "lng": 6.023144,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.bentoexpress25.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-8545259683",
+  "title": "Le Clemenceau",
+  "lat": 47.237391,
+  "lng": 6.005879,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://le-clemenceau.com",
+  "description": "",
+  "wikidata": "",
+  "score": 19
+ },
+ {
+  "id": "osm-node-2872105385",
+  "title": "Au Pays",
+  "lat": 47.235943,
+  "lng": 6.023438,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Fr 11:30-14:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-3206214121",
+  "title": "Chez Bouba",
+  "lat": 47.239239,
+  "lng": 6.018613,
+  "cuisine": "Turque",
+  "tags": [],
+  "hours": "Mo-Sa 11:00-01:00",
+  "address": "2 Place Marulaz Besançon",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-7272378539",
+  "title": "Ramen et momo",
+  "lat": 47.235631,
+  "lng": 6.031079,
+  "cuisine": "tibetan",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:30-14:30,18:00-22:00;Fr-Sa 22:00-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-8987423579",
+  "title": "Sushi Yuga",
+  "lat": 47.263764,
+  "lng": 6.056317,
+  "cuisine": "buffet",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 19:00-22:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-11149887297",
+  "title": "Les délices de Fafa",
+  "lat": 47.247428,
+  "lng": 6.028063,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Mo-Th 12:00-22:30; Fr-Su 12:00-24:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-way-977165680",
+  "title": "Pum",
+  "lat": 47.240433,
+  "lng": 6.023999,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Tu 12:00-14:30,19:00-23:30; Fr,Sa 12:00-14:30,19:00-23:00; Su 12:00-14:00",
+  "address": "1 Rue Jean Petit Besançon",
+  "website": "https://www.pumthaifoodchain.fr/besancon/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-6293245497",
+  "title": "Arigato",
+  "lat": 47.237758,
+  "lng": 6.028317,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 11:45-15:00, 18:45-00:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-7191352977",
+  "title": "Chez Loulou La Bodega",
+  "lat": 47.237458,
+  "lng": 6.02792,
+  "cuisine": "deli",
+  "tags": [],
+  "hours": "Th-Sa 10:00-14:00, 17:00-01:00; Tu-We 17:00-01:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ },
+ {
+  "id": "osm-node-7272378532",
+  "title": "Raj Mahal",
+  "lat": 47.235914,
+  "lng": 6.030356,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Mo-Fr 19:00-22:00, Tu-Th 12:00-15:00, Sa,Su 12:00-24:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ }
+]

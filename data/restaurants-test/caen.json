@@ -1,0 +1,953 @@
+[
+ {
+  "id": "osm-node-3655763904",
+  "title": "La Cave à Huîtres",
+  "lat": 49.182939,
+  "lng": -0.355864,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:00-15:00,18:30-23:00; Su off",
+  "address": "",
+  "website": "https://www.la-cave-a-huitres.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 49
+ },
+ {
+  "id": "osm-node-2340517056",
+  "title": "Ohn’ki",
+  "lat": 49.185477,
+  "lng": -0.359922,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 18:30-21:30",
+  "address": "",
+  "website": "https://www.ohnki.fr/",
+  "description": "Restaurant coréen",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-1902188045",
+  "title": "La Galettoire",
+  "lat": 49.183301,
+  "lng": -0.36719,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Su 12:00-14:00,19:00-21:30; We-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://la-galettoire.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2340517029",
+  "title": "L'Insolite",
+  "lat": 49.185729,
+  "lng": -0.359691,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://restaurant-linsolite.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2995811924",
+  "title": "Le Potager",
+  "lat": 49.181926,
+  "lng": -0.361586,
+  "cuisine": "persian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-15:00,18:30-22:00; Sa 11:30-22:00",
+  "address": "",
+  "website": "https://le-potager.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-10196683415",
+  "title": "Heiko Poké",
+  "lat": 49.182579,
+  "lng": -0.351247,
+  "cuisine": "hawaiian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-22:30; Su 18:30-22:30; Su off",
+  "address": "13 Quai François Mitterrand",
+  "website": "https://heiko-poke.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1694359559",
+  "title": "La Buona Tavola",
+  "lat": 49.183106,
+  "lng": -0.367775,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-We 12:00-14:00,19:00-22:30; Th-Sa 12:00-14:00,19:00-23:00; Su off",
+  "address": "",
+  "website": "https://www.labuonatavola.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-3796524843",
+  "title": "Le Bistronome",
+  "lat": 49.184587,
+  "lng": -0.356489,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 10:00-14:00,17:30-21:30",
+  "address": "",
+  "website": "https://bistronome-caen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-3798578869",
+  "title": "L'Oriental Couscous",
+  "lat": 49.177038,
+  "lng": -0.353734,
+  "cuisine": "couscous",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "We-Su 11:30-14:00,17:30-22:00",
+  "address": "",
+  "website": "https://oriental-couscous.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4585228570",
+  "title": "Sasésu",
+  "lat": 49.179051,
+  "lng": -0.35733,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:00-23:30",
+  "address": "",
+  "website": "https://sasesu.com/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-11740859424",
+  "title": "Koboon",
+  "lat": 49.181335,
+  "lng": -0.349336,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 18:30-22:30; Tu-Th 11:30-14:30,18:30-22:30; Fr,Sa 11:30-14:30,18:30-23:30",
+  "address": "",
+  "website": "https://www.koboon-resto.fr/carte-caen",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-way-1315890064",
+  "title": "Le Sans-Gêne",
+  "lat": 49.184665,
+  "lng": -0.384442,
+  "cuisine": "barbecue",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 16:30-23:30",
+  "address": "4 Rue du Chemin Vert",
+  "website": "https://lesansgene.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2340517015",
+  "title": "L'Embroche",
+  "lat": 49.185278,
+  "lng": -0.36012,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Th 12:00-14:00, 19:00-22:00; Fr 12:00-14:00, 19:00-22:30; Sa 12:00-14:30, 19:00-22:45",
+  "address": "",
+  "website": "https://www.lembroche.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-12260483921",
+  "title": "La Porte du Punjab",
+  "lat": 49.186779,
+  "lng": -0.360151,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 11:00-14:30,18:00-22:30; Fr-Sa 11:00-14:30,18:00-23:00; Su 11:00-14:30,18:00-22:30",
+  "address": "",
+  "website": "https://laportedupunjab.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-1635287363",
+  "title": "La Véranda",
+  "lat": 49.180212,
+  "lng": -0.360091,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We-Sa 12:00-14:00, 19:00-21:30",
+  "address": "",
+  "website": "https://www.laveranda-caen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6201005297",
+  "title": "Le Grenier à Crèpes",
+  "lat": 49.178428,
+  "lng": -0.356659,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-14:00,19:00-22:00; Sa 19:30-22:00",
+  "address": "",
+  "website": "https://www.legrenieracrepes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1993336186",
+  "title": "Le Maharajah",
+  "lat": 49.182921,
+  "lng": -0.35637,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:00-14:30,18:00-23:00",
+  "address": "",
+  "website": "https://lemaharajah.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2309413785",
+  "title": "Benazir",
+  "lat": 49.178698,
+  "lng": -0.353338,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 19:00-23:30",
+  "address": "",
+  "website": "http://www.restaurant-benazir.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4690256738",
+  "title": "Sushis Makers",
+  "lat": 49.183098,
+  "lng": -0.357462,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:00-14:00,18:00-22:00; Su 18:00-22:00",
+  "address": "",
+  "website": "https://sushimakers.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-7434606630",
+  "title": "Une Cuillère carrée",
+  "lat": 49.18334,
+  "lng": -0.357664,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Th-Sa 12:00-14:00, 19:00-22:00; Tu-We 19:00-22:00",
+  "address": "",
+  "website": "https://unecuillerecarree.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-12146105295",
+  "title": "Boumbap",
+  "lat": 49.182871,
+  "lng": -0.362667,
+  "cuisine": "brunch",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu 18:00-21:00; We-Sa 12:00-01:00; Su 11:30-15:00",
+  "address": "",
+  "website": "https://www.boumbap.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-3394917825",
+  "title": "Anouche",
+  "lat": 49.184731,
+  "lng": -0.35617,
+  "cuisine": "armenian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 19:00-22:00; Su off",
+  "address": "",
+  "website": "https://restaurant-anouche.wixsite.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-3645272531",
+  "title": "Le Bistrot Saint-Michel",
+  "lat": 49.175422,
+  "lng": -0.354334,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,Tu,Fr,Sa 12:00-13:30,19:00-21:30; Su 12:00-13:30",
+  "address": "",
+  "website": "https://www.lebistrotsaintmichel.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4377679489",
+  "title": "La Casiniere",
+  "lat": 49.184124,
+  "lng": -0.36655,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu-Sa; Mo-Su off",
+  "address": "",
+  "website": "https://la-casiniere.fr/",
+  "description": "Horaires : midi et soir, du mardi au samedi",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5163884628",
+  "title": "La Ficelle",
+  "lat": 49.182331,
+  "lng": -0.359201,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:45-14:00,18:45-22:00",
+  "address": "",
+  "website": "https://www.laficellecaen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6005196972",
+  "title": "Monsieur Louis",
+  "lat": 49.182793,
+  "lng": -0.368549,
+  "cuisine": "normandy",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "http://www.monsieur-louis.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6912740554",
+  "title": "Soyombo",
+  "lat": 49.182112,
+  "lng": -0.357159,
+  "cuisine": "mongolian",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:00-14:30,18:30-00:00",
+  "address": "19 Avenue du 6 Juin",
+  "website": "https://www.soyombo.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7008811438",
+  "title": "L'Etoile",
+  "lat": 49.189961,
+  "lng": -0.344875,
+  "cuisine": "brunch",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Th 12:00-14:30, 19:00-22:30; Fr-Sa 19:00-23:00",
+  "address": "",
+  "website": "https://restaurant-letoile.metro.bar/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-7156004642",
+  "title": "Bistrot Saigon",
+  "lat": 49.183957,
+  "lng": -0.363665,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 11:30-14:30, 18:30-22:30; Su 18:30-22:30",
+  "address": "",
+  "website": "https://bistrotsaigon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-12243453655",
+  "title": "Linette",
+  "lat": 49.200802,
+  "lng": -0.389105,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-21:00; Sa-Su off",
+  "address": "9 Rue Karl Probst",
+  "website": "https://linette-caen.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-155695477",
+  "title": "Le Pavillon",
+  "lat": 49.192564,
+  "lng": -0.35947,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:30-14:00",
+  "address": "",
+  "website": "https://lepavillonrestaucaen.wixsite.com/caen",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-way-1316084714",
+  "title": "Le Raphaël",
+  "lat": 49.182505,
+  "lng": -0.351672,
+  "cuisine": "Française",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 12:00-14:30,19:00-22:00; Fr,Sa 12:00-14:30,19:00-22:30",
+  "address": "7 Quai François Mitterrand Caen",
+  "website": "https://le-raphael.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-1603738826",
+  "title": "Fleur de Sushi",
+  "lat": 49.179222,
+  "lng": -0.360555,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-15:00, 19:00-23:00",
+  "address": "",
+  "website": "https://www.fleurdesushi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3811636660",
+  "title": "Joufflu 1er",
+  "lat": 49.182589,
+  "lng": -0.373889,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "https://restaurant-joufflu1er.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-4922420089",
+  "title": "Sacrée Mathilde",
+  "lat": 49.185347,
+  "lng": -0.359459,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 11:30-14:30, 18:30-22:00",
+  "address": "",
+  "website": "https://www.sacreemathilde.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5166155597",
+  "title": "O P'tit Chef",
+  "lat": 49.18051,
+  "lng": -0.36129,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 12:00-14:00,19:00-22:00; Fr,Sa 12:00-14:00,18:30-22:30",
+  "address": "",
+  "website": "https://www.creperie-optitchef-caen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-6976648608",
+  "title": "Le Poisson Rouge",
+  "lat": 49.177267,
+  "lng": -0.353231,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 11:00-14:30,18:00-22:00",
+  "address": "",
+  "website": "https://www.lepoissonrouge-caen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-8377916616",
+  "title": "Le Libanais",
+  "lat": 49.182916,
+  "lng": -0.35712,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo 19:00-22:15; Tu-Th 12:00-14:00,19:00-22:15; Fr,Sa 12:00-14:00,19:00-22:30; Su off",
+  "address": "",
+  "website": "https://lelibanais-caen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-12215762130",
+  "title": "Le Triple V",
+  "lat": 49.183574,
+  "lng": -0.365372,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 11:30-18:30",
+  "address": "",
+  "website": "https://www.letriplev.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-1635230641",
+  "title": "Don Katsu",
+  "lat": 49.179884,
+  "lng": -0.357789,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Tu 19:00-21:00; We-Th 12:00-14:00,19:00-21:00; Fr-Sa 12:00-14:00,19:00-21:30",
+  "address": "",
+  "website": "https://www.donkatsu.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-1997286728",
+  "title": "Les Domaines qui Montent",
+  "lat": 49.181943,
+  "lng": -0.366087,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Sa 10:00-20:00",
+  "address": "",
+  "website": "https://www.lesdomainesquimontent.com/",
+  "description": "Caviste qui fait également table d'hôte (18 places, deux formules entrée/plat/fromage/dessert) le midi, du lundi au samedi. Sur réservation le soir.",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-2335835206",
+  "title": "L'Atelier Café",
+  "lat": 49.183068,
+  "lng": -0.367901,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Tu,Th 09:00-01:00; We 11:00-01:00; Fr 07:30-01:00; Sa 15:00-01:00; Su 17:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-3095209508",
+  "title": "Les Gens Heureux",
+  "lat": 49.178516,
+  "lng": -0.379704,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 09:00-16:00; Sa-Su off",
+  "address": "144",
+  "website": "https://www.lesgensheureux-caen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-5045873278",
+  "title": "Le Toucan",
+  "lat": 49.199214,
+  "lng": -0.360766,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Mo-Fr 08:30-16:00",
+  "address": "",
+  "website": "https://www.brasserieletoucan.fr/",
+  "description": "Horaires de service du restaurant : 12:00-14:30",
+  "wikidata": "",
+  "score": 29
+ },
+ {
+  "id": "osm-node-1902187922",
+  "title": "Eat Sushi",
+  "lat": 49.182965,
+  "lng": -0.368127,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Su-Fr 11:00-15:00,17:15-22:45; Sa 11:00-23:00",
+  "address": "",
+  "website": "https://www.eatsushi.fr/nos-restaurants/caen",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-2012546427",
+  "title": "Villa Gaïndé - Restaurant Afro-Sénégalais",
+  "lat": 49.184489,
+  "lng": -0.363023,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "We-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://villa-gainde.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-3713780368",
+  "title": "Okaen Sushi",
+  "lat": 49.182173,
+  "lng": -0.375263,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Tu-Su 11:30-14:30,17:30-22:30",
+  "address": "",
+  "website": "https://www.okaen-sushi.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-6390207218",
+  "title": "Villa al Taglio",
+  "lat": 49.178905,
+  "lng": -0.352496,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Th 12:00-14:30,19:00-23:00; Fr-Sa 12:00-14:30,19:00-00:00",
+  "address": "",
+  "website": "http://www.villaaltaglio.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 28
+ },
+ {
+  "id": "osm-node-1946134650",
+  "title": "Bruno Ristorante",
+  "lat": 49.177819,
+  "lng": -0.354844,
+  "cuisine": "Italienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Tu-Th 12:00-14:00,19:00-22:30; Fr-Sa 12:00-14:00,19:00-23:00",
+  "address": "",
+  "website": "http://www.brunoristorante.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-1993724791",
+  "title": "Kashmir",
+  "lat": 49.18749,
+  "lng": -0.360013,
+  "cuisine": "Indienne",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:30, 19:00-23:30",
+  "address": "",
+  "website": "https://kashmircaen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-2340517098",
+  "title": "Crêperie Gaby",
+  "lat": 49.185304,
+  "lng": -0.359895,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-21:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-3889252351",
+  "title": "Yaki",
+  "lat": 49.181203,
+  "lng": -0.358343,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Sa 11:00-14:30, 17:30-22:00",
+  "address": "",
+  "website": "https://yaki-sushi.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-5081643514",
+  "title": "Amalia",
+  "lat": 49.178295,
+  "lng": -0.356119,
+  "cuisine": "Espagnole",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:00-23:00; Su-Mo off",
+  "address": "",
+  "website": "https://amaliarestaurantcaen.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-9797001917",
+  "title": "Bouchon du Vaugueux",
+  "lat": 49.184947,
+  "lng": -0.359613,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "We-Sa 12:00-13:30,19:00-21:30",
+  "address": "",
+  "website": "https://www.bouchonduvaugueux.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-11850198997",
+  "title": "Chez Marta",
+  "lat": 49.181834,
+  "lng": -0.375648,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:30, 19:00-22:00",
+  "address": "",
+  "website": "https://chezmarta.com",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-12766036102",
+  "title": "Eleene",
+  "lat": 49.181206,
+  "lng": -0.366265,
+  "cuisine": "Coréenne",
+  "tags": [],
+  "hours": "Mo-Sa 10:30-19:00; Su off",
+  "address": "",
+  "website": "https://www.eleene.fr/restaurant-coreen-caen/",
+  "description": "",
+  "wikidata": "",
+  "score": 27
+ },
+ {
+  "id": "osm-node-1635264303",
+  "title": "Keys & Co",
+  "lat": 49.178568,
+  "lng": -0.353196,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "We-Su 09:00-18:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-1993724793",
+  "title": "Les Saveurs de la Réunion",
+  "lat": 49.184482,
+  "lng": -0.363581,
+  "cuisine": "reunionese",
+  "tags": [],
+  "hours": "Mo 19:00-22:00; Tu 12:00-14:00,19:00-22:00; We 19:00-22:00; Th-Sa 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "https://www.lessaveursdelareunion.net/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-2336670744",
+  "title": "Le Bistrot Basque",
+  "lat": 49.182836,
+  "lng": -0.355668,
+  "cuisine": "basque",
+  "tags": [],
+  "hours": "Mo-Th 12:00-14:00,19:30-22:30; Fr-Sa 12:00-14:00,19:30-23:00",
+  "address": "",
+  "website": "https://www.le-bistrot-basque.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ },
+ {
+  "id": "osm-node-4552370972",
+  "title": "Le Refuge",
+  "lat": 49.182479,
+  "lng": -0.356238,
+  "cuisine": "savoyard",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-14:00,19:00-22:00; Sa 19:00-22:00; Su,Mo off",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 26
+ }
+]

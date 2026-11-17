@@ -1,0 +1,2384 @@
+[
+ {
+  "id": "osm-node-4929491011",
+  "title": "Nostalgie",
+  "lat": 45.753133,
+  "lng": 4.854169,
+  "cuisine": "russian",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,19:00-23:00",
+  "address": "51 Avenue Félix Faure",
+  "website": "https://www.thefork.fr/restaurant/nostalgie-r849448",
+  "description": "",
+  "wikidata": "Q63116253",
+  "score": 76
+ },
+ {
+  "id": "osm-node-5033045022",
+  "title": "La Bodeguita Cubana",
+  "lat": 45.777823,
+  "lng": 4.830047,
+  "cuisine": "cuban",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-23:00",
+  "address": "44 Rue de Cuire",
+  "website": "http://www.bodeguitacubana.fr/",
+  "description": "",
+  "wikidata": "Q111438677",
+  "score": 74
+ },
+ {
+  "id": "osm-node-2009071997",
+  "title": "Brasserie L'Est - Bocuse",
+  "lat": 45.767668,
+  "lng": 4.859729,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo,Sa,Su 12:00-14:30; Mo,Tu,We,Th,Fr 19:00-22:00; Tu,We,Th,Fr 12:00-14:00; Sa-Su 19:00-23:00",
+  "address": "14 place jules ferry Lyon 6eme Arrondissement",
+  "website": "https://www.maisons-bocuse.com/nos-brasseries/brasserie-est-lyon-6-brotteaux/",
+  "description": "",
+  "wikidata": "Q60477558",
+  "score": 73
+ },
+ {
+  "id": "osm-node-2193015893",
+  "title": "La Cocagne",
+  "lat": 45.757201,
+  "lng": 4.841435,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,Tu 10:00-15:30; We-Sa 10:00-15:30,19:00-24:00",
+  "address": "",
+  "website": "https://lacocagne-lyon.fr/",
+  "description": "",
+  "wikidata": "Q60615583",
+  "score": 73
+ },
+ {
+  "id": "osm-node-3194037968",
+  "title": "Frite Alors!",
+  "lat": 45.767913,
+  "lng": 4.831929,
+  "cuisine": "Burger",
+  "tags": [],
+  "hours": "Mo-Su 11:30-22:00",
+  "address": "",
+  "website": "https://www.fritealors.fr/",
+  "description": "",
+  "wikidata": "Q64590183",
+  "score": 73
+ },
+ {
+  "id": "osm-node-1823016649",
+  "title": "Bistrot Jutard",
+  "lat": 45.774586,
+  "lng": 4.830875,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 07:30-23:00",
+  "address": "",
+  "website": "http://www.bistrotjutard.com/",
+  "description": "",
+  "wikidata": "Q109629308",
+  "score": 69
+ },
+ {
+  "id": "osm-node-4527516467",
+  "title": "Lyon Dakar",
+  "lat": 45.757489,
+  "lng": 4.848321,
+  "cuisine": "Africaine",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 11:30-14:00,19:00-22:00",
+  "address": "",
+  "website": "http://lyon-dakar.zenchef.com/",
+  "description": "",
+  "wikidata": "Q61004425",
+  "score": 69
+ },
+ {
+  "id": "osm-node-4447864288",
+  "title": "Café des Fédérations",
+  "lat": 45.766536,
+  "lng": 4.832427,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Su 12:00-14:00, 19:30-22:00",
+  "address": "8 Rue du Major Martin",
+  "website": "https://restaurant-cafedesfederations-lyon.fr",
+  "description": "",
+  "wikidata": "Q115686556",
+  "score": 68
+ },
+ {
+  "id": "osm-node-6611832553",
+  "title": "La Perle Sushi",
+  "lat": 45.799666,
+  "lng": 4.847305,
+  "cuisine": "sushi",
+  "tags": [],
+  "hours": "Tu-Sa 11:30-13:30,18:30-22:00",
+  "address": "41 Rue Jean Moulin",
+  "website": "https://www.sushicaluire.com/perle-sushi-restaurant",
+  "description": "",
+  "wikidata": "Q50380403",
+  "score": 68
+ },
+ {
+  "id": "osm-node-270480842",
+  "title": "Ravello - Pizza napoletana gourmet",
+  "lat": 45.766742,
+  "lng": 4.855803,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Tu 19:00-22:00; We,Th 12:00-14:00,19:00-22:00; Fr,Sa 12:00-14:00,19:00-23:00",
+  "address": "69 Rue Ney",
+  "website": "https://www.ravello-lyon.fr",
+  "description": "",
+  "wikidata": "Q60533892",
+  "score": 67
+ },
+ {
+  "id": "osm-node-2108414413",
+  "title": "Messob",
+  "lat": 45.766509,
+  "lng": 4.854832,
+  "cuisine": "Éthiopienne",
+  "tags": [],
+  "hours": "We-Su 12:00-14:30, 19:00-23:00; Mo-Tu 19:00-23:00",
+  "address": "85 Rue Masséna",
+  "website": "https://restaurantmessob.fr/",
+  "description": "",
+  "wikidata": "Q61942221",
+  "score": 67
+ },
+ {
+  "id": "osm-node-2848506169",
+  "title": "La Voie Himalaya",
+  "lat": 45.759291,
+  "lng": 4.851931,
+  "cuisine": "nepalese",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.lavoiehimalaya.com/",
+  "description": "",
+  "wikidata": "Q61577544",
+  "score": 67
+ },
+ {
+  "id": "osm-node-6239598114",
+  "title": "Brasserie Chanteclair",
+  "lat": 45.774537,
+  "lng": 4.829773,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-We 08:00-22:30; Th-Sa 08:00-23:00; Su 08:00-22:00",
+  "address": "",
+  "website": "https://brasserie-chanteclair.com",
+  "description": "",
+  "wikidata": "Q111766785",
+  "score": 67
+ },
+ {
+  "id": "osm-node-6710231392",
+  "title": "Le Mercière",
+  "lat": 45.762604,
+  "lng": 4.832666,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Th 12:00-14:30,18:45-22:30; Fr 12:00-14:30,18:45-23:00; Sa 11:45-15:30,18:45-23:00; Su 11:45-15:30,18:45-22:30",
+  "address": "",
+  "website": "http://www.restaurant-le-merciere.fr/",
+  "description": "",
+  "wikidata": "Q63079862",
+  "score": 67
+ },
+ {
+  "id": "osm-node-257110357",
+  "title": "Comptoir Chabert et Fils",
+  "lat": 45.756767,
+  "lng": 4.834704,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Th,Su 12:00-14:00,19:00-23:00; Fr-Sa 12:00-14:00,19:00-23:30",
+  "address": "",
+  "website": "https://chabertetfils.fr/",
+  "description": "",
+  "wikidata": "Q114270338",
+  "score": 66
+ },
+ {
+  "id": "osm-node-471990202",
+  "title": "Le Pailleron",
+  "lat": 45.779534,
+  "lng": 4.833324,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Th-Sa 12:00-14:00,19:00-22:00; Su 12:00-19:30",
+  "address": "",
+  "website": "https://www.lepailleron.fr",
+  "description": "",
+  "wikidata": "Q78348064",
+  "score": 66
+ },
+ {
+  "id": "osm-node-473541096",
+  "title": "Le Bistrot d'Odette",
+  "lat": 45.75958,
+  "lng": 4.846013,
+  "cuisine": "Terroir",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 08:00-23:00",
+  "address": "",
+  "website": "https://bistrotdodette.fr",
+  "description": "",
+  "wikidata": "Q60035660",
+  "score": 66
+ },
+ {
+  "id": "osm-node-931941893",
+  "title": "Japontori",
+  "lat": 45.764134,
+  "lng": 4.856304,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:00, Tu-Sa 19:15-22:00",
+  "address": "",
+  "website": "https://japontori.com/",
+  "description": "",
+  "wikidata": "Q59609612",
+  "score": 66
+ },
+ {
+  "id": "osm-node-3066189889",
+  "title": "Daniel et Denise Créqui",
+  "lat": 45.762232,
+  "lng": 4.847199,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00, 19:00-21:45",
+  "address": "",
+  "website": "https://www.danieletdenise.fr/restaurant-daniel-denise-crequi-la-carte/",
+  "description": "",
+  "wikidata": "Q63253921",
+  "score": 66
+ },
+ {
+  "id": "osm-node-4427608194",
+  "title": "Balthaz'art",
+  "lat": 45.773286,
+  "lng": 4.83219,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-We 19:00-21:00; Fr-Sa 12:00-13:30, 19:00-21:30; Th 12:00-13:30, 19:00-21:00",
+  "address": "",
+  "website": "https://www.restaurantbalthazart.com/",
+  "description": "",
+  "wikidata": "Q112258971",
+  "score": 66
+ },
+ {
+  "id": "osm-node-6331159793",
+  "title": "Nakata",
+  "lat": 45.757805,
+  "lng": 4.858083,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Fr 11:30-14:30,18:00-22:30; Sa,Su 18:00-22:30",
+  "address": "",
+  "website": "https://partdieu.nakata.fr/",
+  "description": "",
+  "wikidata": "Q62024576",
+  "score": 66
+ },
+ {
+  "id": "osm-node-6454004688",
+  "title": "Restaurant Africana",
+  "lat": 45.752858,
+  "lng": 4.845212,
+  "cuisine": "Africaine",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-15:00,17:30-22:30; Sa 12:00-16:00,18:00-23:00; Su 16:00-22:30",
+  "address": "",
+  "website": "https://africana-lyon-7.fr",
+  "description": "",
+  "wikidata": "Q63614740",
+  "score": 66
+ },
+ {
+  "id": "osm-node-2003366021",
+  "title": "Bouillon Croix-Rousse",
+  "lat": 45.774727,
+  "lng": 4.832674,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 07:00-24:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q100294897",
+  "score": 63
+ },
+ {
+  "id": "osm-node-2188469187",
+  "title": "Le Pain de Sucre",
+  "lat": 45.766754,
+  "lng": 4.854594,
+  "cuisine": "brazilian",
+  "tags": [],
+  "hours": "Tu-Sa 19:00-24:00",
+  "address": "",
+  "website": "https://www.lepaindesucre-lyon.fr/",
+  "description": "",
+  "wikidata": "Q61732420",
+  "score": 63
+ },
+ {
+  "id": "osm-node-270477178",
+  "title": "Maison Clovis",
+  "lat": 45.767829,
+  "lng": 4.857154,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://maisonclovis.com",
+  "description": "",
+  "wikidata": "Q60878488",
+  "score": 61
+ },
+ {
+  "id": "osm-node-3478281197",
+  "title": "Le Rive Gauche",
+  "lat": 45.769158,
+  "lng": 4.847402,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "http://le-rivegauche.fr/",
+  "description": "",
+  "wikidata": "Q64448622",
+  "score": 60
+ },
+ {
+  "id": "osm-node-5504342685",
+  "title": "Café des Artisans, Le bouchon de Muriel",
+  "lat": 45.753994,
+  "lng": 4.872757,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Sa 12:00-14:30,19:00-23:00; Su 12:00-14:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q117069440",
+  "score": 60
+ },
+ {
+  "id": "osm-node-10959470052",
+  "title": "Apik",
+  "lat": 45.807341,
+  "lng": 4.892213,
+  "cuisine": "armenian",
+  "tags": [],
+  "hours": "",
+  "address": "85 Route de Genève",
+  "website": "https://www.apik-restaurant-traiteur.com/",
+  "description": "",
+  "wikidata": "Q119138826",
+  "score": 60
+ },
+ {
+  "id": "osm-node-75744647",
+  "title": "Restaurant Pierre Orsi",
+  "lat": 45.769468,
+  "lng": 4.849098,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "http://www.pierreorsi.com",
+  "description": "",
+  "wikidata": "Q60179008",
+  "score": 59
+ },
+ {
+  "id": "osm-node-6280398099",
+  "title": "André Melkonyan",
+  "lat": 45.769695,
+  "lng": 4.855544,
+  "cuisine": "armenian",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00, Th,Fr 19:30-20:45",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q61732996",
+  "score": 59
+ },
+ {
+  "id": "osm-node-4271257887",
+  "title": "Focaccia",
+  "lat": 45.761966,
+  "lng": 4.856708,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "Mo-Sa 07:30-20:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q60371723",
+  "score": 57
+ },
+ {
+  "id": "osm-node-2017222977",
+  "title": "O'Kypos",
+  "lat": 45.771752,
+  "lng": 4.804104,
+  "cuisine": "Grecque",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-15:00,18:00-24:00",
+  "address": "",
+  "website": "https://www.o-kypos.fr/",
+  "description": "Jeux de boules dans le jardin.",
+  "wikidata": "",
+  "score": 55
+ },
+ {
+  "id": "osm-node-2991310228",
+  "title": "Victoria Hall",
+  "lat": 45.746206,
+  "lng": 4.850515,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "43 Rue du Repos Lyon",
+  "website": "https://www.victoriahall.fr/",
+  "description": "",
+  "wikidata": "Q62518214",
+  "score": 55
+ },
+ {
+  "id": "osm-node-7082517170",
+  "title": "Bar de l'Avenir",
+  "lat": 45.779387,
+  "lng": 4.829403,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q114133320",
+  "score": 54
+ },
+ {
+  "id": "osm-node-5090485983",
+  "title": "Le Bistrot de la Cave",
+  "lat": 45.73582,
+  "lng": 4.91078,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-14:00; Th-Fr 17:30-00:00",
+  "address": "",
+  "website": "https://www.facebook.com/lebistrotdelacave",
+  "description": "Cuisine de Bistrot proposant au choix 2 entrées, 2 plats, 2 desserts et des vins au verre en accord. Mode bar à vin et tapas jeudi et le vendredi soir",
+  "wikidata": "",
+  "score": 53
+ },
+ {
+  "id": "osm-node-2884312304",
+  "title": "Une Table au Soleil",
+  "lat": 45.760242,
+  "lng": 4.847981,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q64850456",
+  "score": 51
+ },
+ {
+  "id": "osm-node-3490938093",
+  "title": "Carré Jardin",
+  "lat": 45.762734,
+  "lng": 4.828296,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "We-Su 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://carre-jardin-lyon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 50
+ },
+ {
+  "id": "osm-node-6406861996",
+  "title": "Le Bouchon Alsacien",
+  "lat": 45.769725,
+  "lng": 4.849037,
+  "cuisine": "alsatian",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "https://lebouchonalsacien.fr/",
+  "description": "La winstube alsacienne, la cuisine de ma mère, la cave de mon père",
+  "wikidata": "",
+  "score": 50
+ },
+ {
+  "id": "osm-node-2356843331",
+  "title": "Tulum Riviera",
+  "lat": 45.772101,
+  "lng": 4.826253,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "10 Place du Lieutenant Morel",
+  "website": "",
+  "description": "",
+  "wikidata": "Q111584400",
+  "score": 49
+ },
+ {
+  "id": "osm-node-6528135564",
+  "title": "Le Book-Lard",
+  "lat": 45.765713,
+  "lng": 4.847792,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q64416085",
+  "score": 48
+ },
+ {
+  "id": "osm-node-4317847891",
+  "title": "Café de la Crêche",
+  "lat": 45.775426,
+  "lng": 4.834484,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "Q119805544",
+  "score": 46
+ },
+ {
+  "id": "osm-node-11231259639",
+  "title": "L'Atelier Artisan Crêpier - Lyon",
+  "lat": 45.760008,
+  "lng": 4.855442,
+  "cuisine": "tea",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Th 11:00-22:30; Fr-Sa 11:00-23:00; Su 11:00-22:30",
+  "address": "17 Rue Dr Bouchut Lyon 3eme Arrondissement",
+  "website": "https://www.artisancrepier.com/restaurants/lyon-la-part-dieu/",
+  "description": "",
+  "wikidata": "",
+  "score": 44
+ },
+ {
+  "id": "osm-node-243519184",
+  "title": "Monplaisir côté cour",
+  "lat": 45.74511,
+  "lng": 4.865078,
+  "cuisine": "Française",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-22:00",
+  "address": "64 Avenue des Frères Lumière Lyon",
+  "website": "https://restaurant-monplaisircotecour.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-12987327992",
+  "title": "Carbone",
+  "lat": 45.768322,
+  "lng": 4.855135,
+  "cuisine": "barbecue",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "We-Sa 19:30-22:00; Fr, Sa 12:00-14:00",
+  "address": "95 Rue Bossuet",
+  "website": "https://www.carbonerestaurant.fr/",
+  "description": "Spécificité de cuisine à la braise",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-5323735782",
+  "title": "Aux Bons Sauvages",
+  "lat": 45.749451,
+  "lng": 4.817097,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:30; Th 19:00-21:30; Fr-Sa 19:00-01:00",
+  "address": "2 Quai Jean-Jacques Rousseau La Mulatière",
+  "website": "https://aux-bons-sauvages.fr/",
+  "description": "16 Quai des Étroits sur leur site web, ce qui n'existe pas mais est peut-être plus facile à trouver par leurs clients, et 2 quai JJRousseau sur le terrain. Ou renumérotation ?",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-6952843193",
+  "title": "Le Gentlecat",
+  "lat": 45.751687,
+  "lng": 4.829522,
+  "cuisine": "brunch",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-We 14:30-19:00;Th-Fr 14:30-22:00;Sa 12:30-22:00;Su 10:00-17:00",
+  "address": "51 Rue Auguste Comte Lyon",
+  "website": "https://legentlecat.fr/",
+  "description": "Bar à chats. Salon de thé en journée, planches le soir et brunch le dimanche.",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-10203566510",
+  "title": "Gurgussum",
+  "lat": 45.763628,
+  "lng": 4.870529,
+  "cuisine": "Éthiopienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 09:00-23:00",
+  "address": "6 Cours Tolstoï",
+  "website": "https://gurgussum-restaurant.fr",
+  "description": "Restaurant Erythréen",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-6328539697",
+  "title": "Le Jean Moulin",
+  "lat": 45.768377,
+  "lng": 4.84791,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-13:30,19:30-21:30",
+  "address": "",
+  "website": "https://lejeanmoulin-lyon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-9166768694",
+  "title": "7 Rooftop",
+  "lat": 45.777435,
+  "lng": 4.751109,
+  "cuisine": "Brasserie",
+  "tags": [],
+  "hours": "Tu-Sa 11:30-15:00,18:00-01:00",
+  "address": "Route de Paris Charbonnières-les-Bains",
+  "website": "https://www.7rooftop.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 40
+ },
+ {
+  "id": "osm-node-4767263598",
+  "title": "Micro Sillon",
+  "lat": 45.769077,
+  "lng": 4.829518,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo,Th 16:00-24:00",
+  "address": "6 Place Fernand Rey Lyon",
+  "website": "https://www.microsillon-cave.fr/",
+  "description": "Bar à vin",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-6348086885",
+  "title": "Engimono",
+  "lat": 45.759838,
+  "lng": 4.841868,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 11:45-14:30,18:45-22:30; Mo-Su off \"Fermeture temporaire du 2024-09-03 au 2024-10-03\"",
+  "address": "8 Rue Servient",
+  "website": "https://www.restaurantengimono.fr/",
+  "description": "Cet établissement est fermé jusqu’au 3 octobre.",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-6685453322",
+  "title": "Maison Nô",
+  "lat": 45.766168,
+  "lng": 4.835572,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://www.maisonno.com/",
+  "description": "Hôtel, restaurant, rooftop.",
+  "wikidata": "",
+  "score": 39
+ },
+ {
+  "id": "osm-node-3102661230",
+  "title": "Petit bouclard",
+  "lat": 45.749112,
+  "lng": 4.845155,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 10:00-24:00; Th-Sa 10:00-01:00",
+  "address": "",
+  "website": "https://lepetitbouclard.fr",
+  "description": "restaurant bar avec plusieurs plats végétariens ou pouvant se végétariser",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-6343748753",
+  "title": "Fondue 9",
+  "lat": 45.754757,
+  "lng": 4.841563,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Su-Th 12:00-14:30,18:00-23:00; Fr-Sa 12:00-14:30,18:00-01:00",
+  "address": "",
+  "website": "https://fondue9-lyon.fr",
+  "description": "Fondue Chinoise",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-257109625",
+  "title": "Atelier d'Yvonne",
+  "lat": 45.757224,
+  "lng": 4.834694,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-14:30,19:00-22:30; Sa 12:00-14:30,19:00-22:30",
+  "address": "",
+  "website": "https://www.restaurant-atelier-yvonne.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-533377503",
+  "title": "Frisettes",
+  "lat": 45.758875,
+  "lng": 4.848506,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Fr 08:30-21:30",
+  "address": "76 Rue Mazenod Lyon",
+  "website": "https://frisettes.fr/",
+  "description": "Caféterie le matin et dans l'après-midi.",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-2567543622",
+  "title": "Le Jardin d'Aline",
+  "lat": 45.782433,
+  "lng": 4.879078,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,Tu 10:30-15:00; We-Fr 10:30-15:00,18:00-24:00",
+  "address": "",
+  "website": "https://m.facebook.com/lejardindaline/",
+  "description": "",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-3782174629",
+  "title": "Buldo",
+  "lat": 45.798183,
+  "lng": 4.830823,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mar-Oct We-Sa 12:00-14:00, 19:00-22:00; Mar-Oct Su 12:00-14:00",
+  "address": "",
+  "website": "https://www.buldo.net/",
+  "description": "Spécialité de grenouilles.",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-3833021058",
+  "title": "Le Coq et la Mule",
+  "lat": 45.756811,
+  "lng": 4.866935,
+  "cuisine": "Espagnole",
+  "tags": [],
+  "hours": "Mo-Fr 09:00-16:00, We-Fr 18:00-22:00",
+  "address": "251 Rue Paul Bert",
+  "website": "https://lecoqetlamule.fr",
+  "description": "épicerie-restaurant-bar",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-4963496724",
+  "title": "Maison Léa",
+  "lat": 45.759634,
+  "lng": 4.830276,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-21:30",
+  "address": "11 Quai des Célestins",
+  "website": "https://lamaisonlea.fr/lamaisonlea/",
+  "description": "Bouchon Contemporain",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-5002709347",
+  "title": "Atelier d'Ainay",
+  "lat": 45.754136,
+  "lng": 4.82619,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 12:00-14:30; Fr 12:00-14:30,18:45-21:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-7072630080",
+  "title": "Trèfle",
+  "lat": 45.752711,
+  "lng": 4.828392,
+  "cuisine": "fine dining",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Th-Sa 12:15-14:00; Tu-Sa 19:15-22:00",
+  "address": "",
+  "website": "https://www.trefle-restaurant.fr/",
+  "description": "restaurant gastronomique végétalien",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-9457562146",
+  "title": "Momos",
+  "lat": 45.769952,
+  "lng": 4.834163,
+  "cuisine": "nepalese",
+  "tags": [],
+  "hours": "Mo off; Tu-Su 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://momos-lyon-1.fr",
+  "description": "cuisine=nepalese;tibétaine refusé par Osmose",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-9571622403",
+  "title": "Milord Circus",
+  "lat": 45.778791,
+  "lng": 4.80711,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 09:00-01:00; Su 09:00-16:00",
+  "address": "23 Rue de Saint-Cyr",
+  "website": "https://milord-circus.fr/",
+  "description": "Café - Bar - Restaurant, le Milord Circus est un lieu atypique et chaleureux au cœur de Vaise. Dans un décor inspiré du cirque vintage",
+  "wikidata": "",
+  "score": 37
+ },
+ {
+  "id": "osm-node-262998574",
+  "title": "Fratelli Parisi",
+  "lat": 45.770094,
+  "lng": 4.857441,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:00, 19:00-22:00; Fr-Su 12:00-15:00, 19:00-22:00",
+  "address": "",
+  "website": "https://www.fratelliparisi.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1132323116",
+  "title": "La Storia nostra",
+  "lat": 45.773184,
+  "lng": 4.868559,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 11:45-14:30,18:45-22:00",
+  "address": "1 Rue Pierre Larousse",
+  "website": "https://lastorianostra.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-1747128468",
+  "title": "Atelier 32",
+  "lat": 45.785553,
+  "lng": 4.810797,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:30, Th 18:00-20:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2017222861",
+  "title": "Yamato",
+  "lat": 45.771455,
+  "lng": 4.805635,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,18:30-22:30; Sa-Su 18:30-22:30",
+  "address": "35 Rue Sergent Michel Berthet",
+  "website": "https://www.yamato-resto.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2092759463",
+  "title": "Bloom Sushi",
+  "lat": 45.766769,
+  "lng": 4.837348,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:30, 19:00-22:00",
+  "address": "27 Rue de l'Arbre Sec",
+  "website": "https://bloomsushi.fr/restaurant-bloom-lyon/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2465120104",
+  "title": "Toï Toï Le Zinc",
+  "lat": 45.779876,
+  "lng": 4.877213,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 12:00-14:00, Tu-Sa 17:00-01:00",
+  "address": "17 Rue Marcel Dutartre",
+  "website": "https://toitoilezinc.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-2995044135",
+  "title": "Catarsis",
+  "lat": 45.762485,
+  "lng": 4.828218,
+  "cuisine": "cake",
+  "tags": [],
+  "hours": "Tu-Fr 19:30-23:00; Sa 19:30-00:00",
+  "address": "10 Rue des Trois-Maries",
+  "website": "https://www.catarsis-restaurant.fr/",
+  "description": "Seulement desserts pâtissiers",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3982106793",
+  "title": "Jeïta",
+  "lat": 45.764232,
+  "lng": 4.781274,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "11:00-23:00",
+  "address": "10 Place Pierre Vauboin Tassin-la-Demi-Lune",
+  "website": "https://jeitarestaurant.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7132940139",
+  "title": "Prana",
+  "lat": 45.750437,
+  "lng": 4.829246,
+  "cuisine": "macrobiotic",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu 12:00-14:00; We-Sa 12:00-14:00,19:00-21:30",
+  "address": "5 Rue Duhamel",
+  "website": "https://www.prana-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-8120952553",
+  "title": "Bistro Zakka",
+  "lat": 45.754409,
+  "lng": 4.840444,
+  "cuisine": "Chinoise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-21:30",
+  "address": "",
+  "website": "https://www.bistrozakka.fr/",
+  "description": "Street Food Chinoise",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-8781731405",
+  "title": "Park",
+  "lat": 45.779361,
+  "lng": 4.860116,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 10:00-22:00; Sa,Su off",
+  "address": "",
+  "website": "https://brasserie-park.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-10207017186",
+  "title": "Montchat Sushi",
+  "lat": 45.753938,
+  "lng": 4.889438,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 11:30-14:00, 18:30-22:30; Sa-Su 18:30-22:30",
+  "address": "4 Rue Camille",
+  "website": "http://www.montchat-sushi.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-10978857182",
+  "title": "Restaurant Taj Mahal",
+  "lat": 45.767765,
+  "lng": 4.855908,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:30, 18:00-23:00",
+  "address": "",
+  "website": "https://www.tajmahallyon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-12177920301",
+  "title": "Le Kashmir",
+  "lat": 45.764195,
+  "lng": 4.890854,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Su 12:00-14:30,19:00-23:30",
+  "address": "150 Rue du 4 Août 1789 Villeurbanne",
+  "website": "https://restaurant-lekashmir.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3863058667",
+  "title": "Les Marmottes",
+  "lat": 45.75487,
+  "lng": 4.847788,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "https://www.lesmarmottesrestaurant.fr",
+  "description": "Spécialités savoyardes, raclette",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-5408180623",
+  "title": "Le Petit Carron",
+  "lat": 45.752741,
+  "lng": 4.852658,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-13:30, Mo-Fr 19:00-21:30",
+  "address": "",
+  "website": "https://www.lepetitcarron-restaurant.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-6602297735",
+  "title": "Yum yum Thaï food",
+  "lat": 45.756988,
+  "lng": 4.858335,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 11:30-14:00,18:30-22:00; Fr 18:30-22:00; Sa 11:30-14:30,18:30-22:30",
+  "address": "164 Rue Paul Bert Lyon",
+  "website": "https://yumyum-thaifood.com",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-6861000078",
+  "title": "Esperanto",
+  "lat": 45.761953,
+  "lng": 4.833617,
+  "cuisine": "Internationale",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 19:00-01:00, Fr,Sa 12:00-15:00, Su 11:00-16:00",
+  "address": "",
+  "website": "https://esperantolyon.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-7980757288",
+  "title": "Le Viet-Nam",
+  "lat": 45.769299,
+  "lng": 4.851771,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:30-22:00",
+  "address": "",
+  "website": "https://www.restaurant-viet-nam.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-10218330334",
+  "title": "Sioou",
+  "lat": 45.754215,
+  "lng": 4.858263,
+  "cuisine": "bowl",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-14:00,18:30-21:30",
+  "address": "77 Rue de l'Abondance",
+  "website": "https://sioou-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-257109620",
+  "title": "Adonys",
+  "lat": 45.758353,
+  "lng": 4.835615,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:00-24:00",
+  "address": "",
+  "website": "https://adonys-hotel-dieu-lyon.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-257110368",
+  "title": "Peppe",
+  "lat": 45.75721,
+  "lng": 4.834852,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-We 12:00-14:30,19:00-22:30; Th 12:00-14:30,19:00-22:45; Fr 12:00-14:30,19:00-23:15; Sa 12:00-15:30,19:00-23:15; Su 12:00-15:30,19:00-22:30",
+  "address": "",
+  "website": "https://peppe.pizza/peppe-lyon",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2019574512",
+  "title": "Toki sushi",
+  "lat": 45.777424,
+  "lng": 4.833304,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,19:00-22:30; Su 19:00-22:30; Mo 12:00-14:30,19:00-22:30",
+  "address": "14 Rue du Mail",
+  "website": "http://www.tokisushi.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2188469192",
+  "title": "La Maison Thaï",
+  "lat": 45.766608,
+  "lng": 4.854811,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-21:30",
+  "address": "",
+  "website": "https://la-maison-thai-lyon-6.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2299536950",
+  "title": "Rachid Dupont",
+  "lat": 45.770832,
+  "lng": 4.86153,
+  "cuisine": "couscous",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:00-14:30, Fr,Sa 18:30-22:00",
+  "address": "",
+  "website": "https://www.rachiddupont.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-2818899237",
+  "title": "Bohdi",
+  "lat": 45.760625,
+  "lng": 4.866665,
+  "cuisine": "nepalese",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-14:00, Tu-Fr 17:00-23:30, Sa-Su 12:00-23:30",
+  "address": "",
+  "website": "https://www.lyonbodhi.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-3127162694",
+  "title": "Chez Georges",
+  "lat": 45.767017,
+  "lng": 4.836774,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00, 19:30-22:00",
+  "address": "",
+  "website": "https://www.aupetit-bouchon-chez-georges.fr/",
+  "description": "Bouchon Lyonnais, spécialité de mâchons.",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-7272089167",
+  "title": "TOMO",
+  "lat": 45.767254,
+  "lng": 4.843287,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00,19:00-21:00",
+  "address": "",
+  "website": "https://restaurant-tomo.fr/",
+  "description": "Restaurant de semi-gastronomie franco-japonaise.",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-7495276302",
+  "title": "La Cave Café Terroir",
+  "lat": 45.759268,
+  "lng": 4.831975,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu-Fr 18:00-24:00; Sa 12:00-14:00,18:00-24:00",
+  "address": "",
+  "website": "https://www.cafeterroir.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-8114408630",
+  "title": "Boleh Lah",
+  "lat": 45.7525,
+  "lng": 4.839092,
+  "cuisine": "malaysian",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 19:00-21:30",
+  "address": "",
+  "website": "https://www.bolehlah.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-8862181217",
+  "title": "Trattino",
+  "lat": 45.735379,
+  "lng": 4.837682,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 10:00-24:00",
+  "address": "58 Rue Clément Marot",
+  "website": "https://trattino.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-9253283706",
+  "title": "Clone",
+  "lat": 45.769963,
+  "lng": 4.849662,
+  "cuisine": "barbecue",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:00, 19:30-21:30",
+  "address": "",
+  "website": "https://www.clone-lyon.fr/",
+  "description": "Restaurant bistronomique, cuisine au feu de bois.",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-9337107463",
+  "title": "Lipopette",
+  "lat": 45.767795,
+  "lng": 4.83083,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 19:00-22:30",
+  "address": "",
+  "website": "https://www.lipopettelyon.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-11374066681",
+  "title": "Fufu Ramen",
+  "lat": 45.766692,
+  "lng": 4.837158,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Su 11:30-22:30",
+  "address": "",
+  "website": "https://restaurantfufu.com",
+  "description": "Sans réservation",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-253449540",
+  "title": "Ginette et Marius",
+  "lat": 45.73507,
+  "lng": 4.874103,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 07:00-19:00",
+  "address": "43 Avenue Jean Mermoz Lyon",
+  "website": "https://ginette-et-marius.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-939274027",
+  "title": "ICEO",
+  "lat": 45.740261,
+  "lng": 4.83939,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-01:00; Sa 17:00-01:00",
+  "address": "147 Avenue Jean Jaurès",
+  "website": "https://www.iceorestaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2093658048",
+  "title": "Pasta e pizza",
+  "lat": 45.773699,
+  "lng": 4.828711,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Fr, Sa 11:00-14:00, 18:00-23:00; Su 11:00-14:00, 18:30-22:00; We 11:00-14:00, 19:00-22:00; Th 18:30-22:00",
+  "address": "",
+  "website": "https://pastaepizza.fr/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2103161662",
+  "title": "Afghan Palace",
+  "lat": 45.755192,
+  "lng": 4.84222,
+  "cuisine": "afghan",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo,We-Su 12:00-23:00",
+  "address": "13 Rue Basse Combalot Lyon",
+  "website": "https://afghanpalace.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2183058825",
+  "title": "LiveStation DIY",
+  "lat": 45.753191,
+  "lng": 4.83992,
+  "cuisine": "breakfast",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 08:00-01:00; Sa 17:00-01:00; Su 11:45-01:00",
+  "address": "Rue de Bonald",
+  "website": "https://livestationdiy.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2848506168",
+  "title": "Gratin",
+  "lat": 45.759349,
+  "lng": 4.851925,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:30, 19:00-21:30",
+  "address": "",
+  "website": "https://www.gratinrestaurantravioles.com/",
+  "description": "La spécialité c'est les ravioles qui peuvent être déclinés de l'entrée au dessert.",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3066189902",
+  "title": "Ramen Katsuya",
+  "lat": 45.760998,
+  "lng": 4.849337,
+  "cuisine": "ramen",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00; Su 19:00-22:00",
+  "address": "",
+  "website": "https://ramen-katsuya-lyon.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3239700752",
+  "title": "Co Cotto",
+  "lat": 45.769549,
+  "lng": 4.856104,
+  "cuisine": "Chinoise",
+  "tags": [],
+  "hours": "Tu-Su 11:45-14:30, 18:45-22:30",
+  "address": "",
+  "website": "https://cocotto.fr/",
+  "description": "Spécialiste dans la cuisine de la région du Sichuan.",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3472849523",
+  "title": "Shaheen",
+  "lat": 45.770375,
+  "lng": 4.867515,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:45",
+  "address": "27 Rue des Charmettes",
+  "website": "https://tandoor-time-lyon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5414357345",
+  "title": "Le Simple Goût des Choses",
+  "lat": 45.769897,
+  "lng": 4.858057,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-13:15, 19:30-21:15",
+  "address": "",
+  "website": "https://www.lesimplegoutdeschoses.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6433764723",
+  "title": "Les yeux du Liban",
+  "lat": 45.732851,
+  "lng": 4.879376,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:00-15:00,18:00-23:00",
+  "address": "1",
+  "website": "https://lesyeuxduliban-lyon-8.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7395653625",
+  "title": "Valmy Tandoori",
+  "lat": 45.77483,
+  "lng": 4.807178,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:00-23:00",
+  "address": "",
+  "website": "https://www.valmy-tandoori.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7646316785",
+  "title": "Léo Sushi",
+  "lat": 45.707648,
+  "lng": 4.821261,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "Tu-Sa 12:00-14:30, 19:00-22:30; Su 19:00-22:30; Mo 12:00-14:30",
+  "address": "",
+  "website": "http://leo-sushi-pierre-benite.fr/",
+  "description": "Sushis",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-8112670863",
+  "title": "Chez Maître Sakir",
+  "lat": 45.76549,
+  "lng": 4.827227,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Tu-Sa 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "https://chezmaitresakir.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9392117602",
+  "title": "Mexican'o",
+  "lat": 45.732328,
+  "lng": 4.872789,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Su, Tu 19:00-22:30; We-Th 12:00-14:00, 19:00-22:30; Fr-Sa 12:00-14:00, 19:00-23:00",
+  "address": "",
+  "website": "https://www.restaurant-mexicano-lyon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10059031351",
+  "title": "La Gaité",
+  "lat": 45.765561,
+  "lng": 4.898648,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 06:30-15:00",
+  "address": "6 Petite Rue Pasteur Villeurbanne",
+  "website": "https://www.facebook.com/bistrorestolagaite",
+  "description": "La cuisine française offre des repas authentiques à ce restaurant. Un personnel sympa attend les clients tout au long de l'année. Un service à La Gaité est spectaculaire. Une ambiance douillete a été remarquée par les clients. Les utilisateurs de Google o",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-10583589667",
+  "title": "Chô chaï",
+  "lat": 45.77064,
+  "lng": 4.873969,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-14:30,18:30-23:00",
+  "address": "113 Cours Émile Zola",
+  "website": "https://www.chochai.com",
+  "description": "Restaurant Thaïlandais",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13136862571",
+  "title": "Yalla Eat",
+  "lat": 45.777885,
+  "lng": 4.802938,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Fr 11:30-14:30,18:30-22:00; Sa-Su 18:30-22:00",
+  "address": "29 Rue de Bourgogne Lyon",
+  "website": "https://www.yallaeat.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-13191373101",
+  "title": "WineYouWant",
+  "lat": 45.773781,
+  "lng": 4.812853,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 12:00-13:30, 19:30-21:00",
+  "address": "2 Place de Serin",
+  "website": "https://wineyouwant.com/",
+  "description": "dédié au vin avec un très grand choix notamment au verre",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-106640854",
+  "title": "Restaurant Fond Rose - Bocuse",
+  "lat": 45.791279,
+  "lng": 4.828021,
+  "cuisine": "fine dining",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo,Su 12:00-14:30; Mo,Tu,We,Th 19:00-22:00; Tu,We,Th,Fr,Sa 12:00-14:00; Fr 19:00-21:45; Sa-Su 19:00-22:30",
+  "address": "25 Chemin de Fond Rose Caluire-et-Cuire",
+  "website": "https://www.maisons-bocuse.com/restaurants-lyon-ouverts/restaurant-fond-rose-caluire",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-942389874",
+  "title": "Chez Carlo Gerland",
+  "lat": 45.729906,
+  "lng": 4.830339,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-14:00, 19:00-10:30",
+  "address": "",
+  "website": "https://chezcarlo-lyon.fr/reservations-gerland/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2019632293",
+  "title": "Milpa",
+  "lat": 45.776031,
+  "lng": 4.834958,
+  "cuisine": "Mexicaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30,19:00-24:00",
+  "address": "2 Rue de Belfort",
+  "website": "https://milpa-lyon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2897421388",
+  "title": "Snack Brasil",
+  "lat": 45.776596,
+  "lng": 4.80439,
+  "cuisine": "brazilian",
+  "tags": [],
+  "hours": "Mo, Th-Fr 12:00-14:00, 18:00-22:00; Sa 11:00-22:00; Su 12:00-20:00",
+  "address": "",
+  "website": "https://snack-brasil.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-2992957633",
+  "title": "La Trattoria de Saint-Jean",
+  "lat": 45.762606,
+  "lng": 4.827749,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-23:00, Su 12:00-17:00",
+  "address": "",
+  "website": "https://latrattoriadesaintjean.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-3533525012",
+  "title": "Le Marélie",
+  "lat": 45.763932,
+  "lng": 4.857559,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://restaurant-creperie-lemarelie.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4437666891",
+  "title": "Ernesto",
+  "lat": 45.765889,
+  "lng": 4.831441,
+  "cuisine": "Méditerranéenne",
+  "tags": [],
+  "hours": "Tu, We 11:00-00:00; Th-Sa 11:00-01:00",
+  "address": "",
+  "website": "ernestolyon.fr",
+  "description": "Restaurant, bar à tapas.",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4623479391",
+  "title": "Takumi",
+  "lat": 45.75175,
+  "lng": 4.831272,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Su 12:00-14:00, 19:00-22:00",
+  "address": "50 Rue Franklin",
+  "website": "https://www.takumi-ramen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4831692627",
+  "title": "Armen",
+  "lat": 45.772986,
+  "lng": 4.869361,
+  "cuisine": "balkan",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 12:00-15:00,19:30-23:00",
+  "address": "6 Rue Melzet Villeurbanne",
+  "website": "https://armen-restaurant.onataste.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5275182490",
+  "title": "La Brasserie du TNP",
+  "lat": 45.765418,
+  "lng": 4.879753,
+  "cuisine": "Internationale",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-15:00; Sa 17:30-23:00; Su 14:30-19:00",
+  "address": "",
+  "website": "https://labrasseriedutnp.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-5678080919",
+  "title": "Slake",
+  "lat": 45.765986,
+  "lng": 4.832356,
+  "cuisine": "breakfast",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 08:30-18:30",
+  "address": "18 Rue de la Platière",
+  "website": "http://slake-coffee.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-7529497404",
+  "title": "Souk Souk",
+  "lat": 45.760706,
+  "lng": 4.832501,
+  "cuisine": "algerian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:30-14:30,18:30-22:30",
+  "address": "",
+  "website": "https://souk-souk.com",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-8296497660",
+  "title": "Fenotte Traiteur",
+  "lat": 45.771057,
+  "lng": 4.811704,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé",
+   "Bio",
+   "Accessible"
+  ],
+  "hours": "Tu-Fr 11:30-16:00",
+  "address": "",
+  "website": "https://www.fenotte.coop/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-9575191476",
+  "title": "Bigoudène",
+  "lat": 45.731626,
+  "lng": 4.829295,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo,Tu 12:00-14:00, We 12:00+, Th,Fr 12:00-14:00, Th,Fr 19:00-22:00",
+  "address": "",
+  "website": "https://creperiebigoudene.com/fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-10795263670",
+  "title": "Les Petites Cantines Villeurbanne",
+  "lat": 45.77167,
+  "lng": 4.86768,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu, We, Fr, Su 09:30-14:00; Th 17:30-21:30",
+  "address": "",
+  "website": "https://villeurbanne.lespetitescantines.org/",
+  "description": "Cuisine participative et restaurant associatif",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-257110366",
+  "title": "Nishiki Ramen",
+  "lat": 45.757024,
+  "lng": 4.834771,
+  "cuisine": "ramen",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo,We-Su 12:00-14:15,19:00-22:15; Tu 19:00-22:15",
+  "address": "9 Rue des Marronniers",
+  "website": "https://nishikiramen69.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-521232623",
+  "title": "La Squadra",
+  "lat": 45.759748,
+  "lng": 4.848523,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 11:30-15:00, 18:00-23:00; Mo 11:30-15:00, 18:00-22:30",
+  "address": "19 Rue Voltaire",
+  "website": "https://www.lasquadralyon.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2077032487",
+  "title": "Saïgon Gourmet",
+  "lat": 45.754904,
+  "lng": 4.840771,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 11:30-14:00,19:00-23:00; We off",
+  "address": "",
+  "website": "https://saigon-gourmet.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2077036332",
+  "title": "Biang",
+  "lat": 45.75309,
+  "lng": 4.840704,
+  "cuisine": "noodle",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-We 12:00-14:00, 19:00-22:00; Th-Sa 12:00-14:00, 19:00-22:30; Su 12:00-14:30",
+  "address": "15 Rue de Bonald",
+  "website": "https://www.biang.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2183063803",
+  "title": "Bao Haus",
+  "lat": 45.752634,
+  "lng": 4.83954,
+  "cuisine": "Asiatique",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 19:00-22:30, Th-Sa 12:00-14:00",
+  "address": "",
+  "website": "https://baohaus.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2195559237",
+  "title": "Kaffee Berlin",
+  "lat": 45.767364,
+  "lng": 4.857281,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 10:00-24:00; Su 11:00-23:00",
+  "address": "",
+  "website": "https://www.kaffeeberlin.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2205019195",
+  "title": "MIMO",
+  "lat": 45.750807,
+  "lng": 4.84399,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 11:00-01:00, Su 11:00-24:00",
+  "address": "",
+  "website": "https://mimolyon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-2297038052",
+  "title": "Le Shimla",
+  "lat": 45.773379,
+  "lng": 4.867033,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th, Sa 12:00-14:00, Mo-Sa 19:30-22:30",
+  "address": "",
+  "website": "https://le-shimla.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-3644979095",
+  "title": "Fady",
+  "lat": 45.78541,
+  "lng": 4.856005,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 10:00-16:00",
+  "address": "",
+  "website": "http://fady-lyon.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4299726094",
+  "title": "Aklé",
+  "lat": 45.756934,
+  "lng": 4.8506,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Tu 12:00-14:00; We-Fr 12:00-14:00, 19:00-21:30; Sa 19:00-22:30",
+  "address": "85 Rue Paul Bert",
+  "website": "https://akle.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4547990869",
+  "title": "Little Italy",
+  "lat": 45.755894,
+  "lng": 4.827479,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "http://www.littleitaly-lyon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4714982866",
+  "title": "Senkichi",
+  "lat": 45.745926,
+  "lng": 4.863784,
+  "cuisine": "sushi",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo 12:00-14:30; Tu-Sa 12:00-14:30,19:00-22:30; PH,Su 19:00-22:30",
+  "address": "",
+  "website": "https://www.senkichi.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5460767623",
+  "title": "Les Mauvaises Herbes",
+  "lat": 45.769715,
+  "lng": 4.829779,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu, We 19:00-22:00; Th-Sa 12:00-14:00, 19:00-22:00",
+  "address": "",
+  "website": "https://www.les-mauvaises-herbes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5914556392",
+  "title": "El Bar Debourg",
+  "lat": 45.730021,
+  "lng": 4.830359,
+  "cuisine": "local",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 07:00-24:00; Sa 08:00-24:00",
+  "address": "",
+  "website": "https://www.cuisineitinerante.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6217336344",
+  "title": "Yu Shan",
+  "lat": 45.766482,
+  "lng": 4.831701,
+  "cuisine": "taiwanese",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-14:30,18:30-22:30",
+  "address": "Rue Lanterne",
+  "website": "https://www.yushan.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6259341988",
+  "title": "Le Hoggar",
+  "lat": 45.771059,
+  "lng": 4.867677,
+  "cuisine": "couscous",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "12:00-14:30,19:00-23:00",
+  "address": "55 Cours Émile Zola Villeurbanne",
+  "website": "https://le-hoggar-lyon.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6259342085",
+  "title": "Kenbo",
+  "lat": 45.747727,
+  "lng": 4.834484,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo,We-Su 11:30-14:30,18:30-22:30",
+  "address": "",
+  "website": "https://kenbo.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6710239891",
+  "title": "Breizh café",
+  "lat": 45.764969,
+  "lng": 4.832189,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "11:00-22:00",
+  "address": "",
+  "website": "https://www.breizhcafe.com/lyon-albon",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ }
+]

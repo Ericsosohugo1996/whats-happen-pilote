@@ -1,0 +1,254 @@
+[
+ {
+  "id": "osm-node-4310540086",
+  "title": "Le Gabriel",
+  "lat": 44.015916,
+  "lng": 1.356161,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 07:00-02:00",
+  "address": "",
+  "website": "https://legabriel-montauban.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-13752488798",
+  "title": "Le Jardin Il Tavolino",
+  "lat": 43.996448,
+  "lng": 1.333566,
+  "cuisine": "Italienne",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "https://iltavolino.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-10066667799",
+  "title": "Namasthe",
+  "lat": 44.017237,
+  "lng": 1.353152,
+  "cuisine": "",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 10:00-18:30",
+  "address": "56 rue de la République Montauban",
+  "website": "https://www.vegetarienamasthe.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 24
+ },
+ {
+  "id": "osm-node-10064993520",
+  "title": "Olla",
+  "lat": 44.01654,
+  "lng": 1.355234,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:00-15:00, 18:00-22:00",
+  "address": "",
+  "website": "",
+  "description": "poke place",
+  "wikidata": "",
+  "score": 23
+ },
+ {
+  "id": "osm-node-2357724359",
+  "title": "Gueuleton Montauban",
+  "lat": 44.017449,
+  "lng": 1.340144,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "",
+  "address": "52 Rue de Palisse Montauban",
+  "website": "https://www.gueuleton.fr/gueuleton-montauban/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-5903900570",
+  "title": "Le Délice Indien",
+  "lat": 44.017501,
+  "lng": 1.353592,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-9178935798",
+  "title": "Le globe et la trotteuse",
+  "lat": 44.037707,
+  "lng": 1.378808,
+  "cuisine": "coffee shop",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 08:30-20:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-11020144956",
+  "title": "La Coulée Douce",
+  "lat": 44.014743,
+  "lng": 1.347406,
+  "cuisine": "Terroir",
+  "tags": [],
+  "hours": "",
+  "address": "9 bis Rue du Général Sarrail Montauban",
+  "website": "https://www.facebook.com/lacouleedouce.montauban/",
+  "description": "",
+  "wikidata": "",
+  "score": 20
+ },
+ {
+  "id": "osm-node-13747794851",
+  "title": "L'Estanquet",
+  "lat": 44.005713,
+  "lng": 1.342141,
+  "cuisine": "",
+  "tags": [],
+  "hours": "Tu,We 12:00-13:30; Th-Sa 12:00-13:30,19:15-21:30",
+  "address": "",
+  "website": "https://www.restaurantlestanquet.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 18
+ },
+ {
+  "id": "osm-node-13072260201",
+  "title": "Cantarossa",
+  "lat": 43.999548,
+  "lng": 1.339942,
+  "cuisine": "Méditerranéenne",
+  "tags": [],
+  "hours": "",
+  "address": "855 Avenue de Toulouse",
+  "website": "https://cantarossa.com/restaurant/",
+  "description": "",
+  "wikidata": "",
+  "score": 17
+ },
+ {
+  "id": "osm-node-12358981466",
+  "title": "Les Terrasses de l'Empereur",
+  "lat": 44.01594,
+  "lng": 1.356,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Tu,Su 12:15-13:45; We-Sa 12:15-13:45,19:30-21:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-12359978037",
+  "title": "Brasserie le Miroir",
+  "lat": 44.017808,
+  "lng": 1.3538,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Su 12:00-14:00, We-Sa 19:00-21:30",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 16
+ },
+ {
+  "id": "osm-node-6775570615",
+  "title": "L'atelier de Julie",
+  "lat": 44.033778,
+  "lng": 1.37502,
+  "cuisine": "",
+  "tags": [],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-10065178818",
+  "title": "Aux confidences",
+  "lat": 44.016751,
+  "lng": 1.345113,
+  "cuisine": "local",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "113 Avenue Aristide Briand",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 15
+ },
+ {
+  "id": "osm-node-6214358687",
+  "title": "Le Pasha",
+  "lat": 44.014545,
+  "lng": 1.342212,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "Mo-Su 09:00-24:00",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ },
+ {
+  "id": "osm-node-7741743385",
+  "title": "India gate",
+  "lat": 44.017909,
+  "lng": 1.353104,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "",
+  "address": "",
+  "website": "",
+  "description": "",
+  "wikidata": "",
+  "score": 14
+ }
+]

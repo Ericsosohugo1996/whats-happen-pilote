@@ -1,0 +1,974 @@
+[
+ {
+  "id": "osm-node-9328097454",
+  "title": "Bretone",
+  "lat": 48.109191,
+  "lng": -1.672731,
+  "cuisine": "Crêpes",
+  "tags": [],
+  "hours": "Mo, Tu 11:00-18:00; We-Su 11:00-23:00",
+  "address": "7 Rue Joseph-Sauveur",
+  "website": "",
+  "description": "",
+  "wikidata": "Q103762645",
+  "score": 59
+ },
+ {
+  "id": "osm-node-1302023816",
+  "title": "Crêperie Saint-Georges",
+  "lat": 48.111053,
+  "lng": -1.682418,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-15:00, 19:00-23:00; Fr, Sa 12:00-16:00, 19:00-23:00",
+  "address": "",
+  "website": "https://www.creperiesaintgeorges.fr/",
+  "description": "Horaires approximatifs",
+  "wikidata": "",
+  "score": 42
+ },
+ {
+  "id": "osm-node-5602157254",
+  "title": "Terrible",
+  "lat": 48.112277,
+  "lng": -1.68483,
+  "cuisine": "fine dining",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu 19:00-22:30; We 12:00-14:30, 19:00-22:30; Th-Fr 12:00-14:30, 19:00-24:00; Sa 12:00-14:45, 19:00-24:00",
+  "address": "11 Rue des Portes Mordelaises Rennes",
+  "website": "https://terrible-restaurant.fr/",
+  "description": "Ouvert en 2026, remplace le salon de thé.",
+  "wikidata": "",
+  "score": 41
+ },
+ {
+  "id": "osm-node-2125556411",
+  "title": "Le Mékong",
+  "lat": 48.12451,
+  "lng": -1.657647,
+  "cuisine": "Asiatique",
+  "tags": [],
+  "hours": "11:45-14:00; 18:45-22:00",
+  "address": "180 bis Rue de Fougères Rennes",
+  "website": "http://www.restaurant-mekong.com/",
+  "description": "Spécialités cambodgiennes, chinoises et thaïlandaises dans une ambiance typiquement cambodgienne.",
+  "wikidata": "",
+  "score": 38
+ },
+ {
+  "id": "osm-node-3655664614",
+  "title": "Black Temple Food",
+  "lat": 48.114339,
+  "lng": -1.681665,
+  "cuisine": "caribbean",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 18:00-23:00; Fr 18:00-23:59; Sa-Su 18:00-23:00",
+  "address": "",
+  "website": "https://blacktemplefood.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3739708326",
+  "title": "Mezzelicious",
+  "lat": 48.116111,
+  "lng": -1.680748,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 19:00-22:30; Fr-Sa 12:00-14:00",
+  "address": "22 Rue de Saint-Malo Rennes",
+  "website": "https://mezzelicious.bzh/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-4198507494",
+  "title": "Les Bavardes",
+  "lat": 48.106171,
+  "lng": -1.666059,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:30, 18:30-23:00",
+  "address": "34 Boulevard René Laënnec Rennes",
+  "website": "https://lesbavardes.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5060776091",
+  "title": "L'Épi de Blé",
+  "lat": 48.109235,
+  "lng": -1.679421,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Su-Th 11:00-22:00; Fr-Sa 11:00-22:30",
+  "address": "2 Rue Jules Simon Rennes",
+  "website": "https://republique.creperie-lepideble.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5520290657",
+  "title": "Les Piplettes",
+  "lat": 48.108623,
+  "lng": -1.676765,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00; Fr-Sa 19:00-22:00",
+  "address": "41 Rue Vasselot Rennes",
+  "website": "https://lespiplettes35.wordpress.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5838570585",
+  "title": "Estime",
+  "lat": 48.111038,
+  "lng": -1.682656,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://estime-restaurant.com",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5870711987",
+  "title": "Bee'llig Crêperie",
+  "lat": 48.122397,
+  "lng": -1.661093,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé",
+   "Bio"
+  ],
+  "hours": "Tu-Th 12:00-14:00,19:00-21:00; Fr 12:00-14:00,19:00-21:30; Sa 12:00-14:30,19:00-21:30",
+  "address": "144 Rue de Fougères Rennes",
+  "website": "https://www.beellig.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-5981802928",
+  "title": "O’Liban",
+  "lat": 48.113768,
+  "lng": -1.680915,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-23:00",
+  "address": "15 Rue de Penhoët Rennes",
+  "website": "http://www.oliban-rennes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-7126513454",
+  "title": "Yam Yam",
+  "lat": 48.10549,
+  "lng": -1.68337,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Th 09:00-20:30; Fr 09:00-21:30; Sa 10:00-21:30; Su off",
+  "address": "",
+  "website": "https://www.yamyambistrocoreen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 36
+ },
+ {
+  "id": "osm-node-3740649377",
+  "title": "Sakura Ya",
+  "lat": 48.115025,
+  "lng": -1.678167,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-14:00,19:00-21:30; Sa 12:00-14:30,19:00-21:30",
+  "address": "15 Rue Saint-Melaine Rennes",
+  "website": "https://lessakura.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-4782954038",
+  "title": "Sarrasin",
+  "lat": 48.108087,
+  "lng": -1.679017,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Sa 12:00-14:00,19:00-22:00",
+  "address": "17 Rue Jules Simon Rennes",
+  "website": "https://www.creperie-sarrasin.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-10706998106",
+  "title": "Les Récupérables",
+  "lat": 48.100531,
+  "lng": -1.686282,
+  "cuisine": "Terroir",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 09:30-18:00",
+  "address": "144 Rue de Nantes",
+  "website": "https://www.lesrecuperables.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-12909053001",
+  "title": "Le Coffee Crêpes",
+  "lat": 48.114221,
+  "lng": -1.678817,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 09:30-19:00",
+  "address": "",
+  "website": "https://lecoffeecrepes.eatbu.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 35
+ },
+ {
+  "id": "osm-node-2388505228",
+  "title": "India",
+  "lat": 48.11195,
+  "lng": -1.675358,
+  "cuisine": "Indienne",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-14:00,19:00-23:00",
+  "address": "41 Rue Saint-Georges Rennes",
+  "website": "https://india-restaurant-rennes.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-5895114647",
+  "title": "Ramen Ya",
+  "lat": 48.114366,
+  "lng": -1.679121,
+  "cuisine": "ramen",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "11:30-22:00",
+  "address": "6 Rue de la Visitation",
+  "website": "https://www.ramenya.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 34
+ },
+ {
+  "id": "osm-node-1079128359",
+  "title": "Villa Tredici",
+  "lat": 48.104537,
+  "lng": -1.672093,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 10:00-22:00",
+  "address": "13 Place de la Gare Rennes",
+  "website": "https://villatredici.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1302023852",
+  "title": "Akady",
+  "lat": 48.103932,
+  "lng": -1.677336,
+  "cuisine": "Africaine",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 12:00-14:45,18:00-22:00",
+  "address": "",
+  "website": "https://www.akady-bretagne.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-2970057956",
+  "title": "L'ambassade",
+  "lat": 48.109253,
+  "lng": -1.680794,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "09:00-24:00",
+  "address": "12 Rue de la Parcheminerie Rennes",
+  "website": "http://www.lambassade-rennes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-3606658032",
+  "title": "Kraz",
+  "lat": 48.111681,
+  "lng": -1.677098,
+  "cuisine": "Crêpes",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 12:00-14:00, 19:00-22:00; Fr 12:00-14:00, 19:00-22:30; Sa 12:00-14:30, 19:00-22:30; Su 12:00-16:00",
+  "address": "4 Rue Saint-Georges Rennes",
+  "website": "https://krazrennes.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4131673388",
+  "title": "Fish'n'Beer",
+  "lat": 48.104465,
+  "lng": -1.671915,
+  "cuisine": "Poissons",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Su 10:30-22:30",
+  "address": "14 Avenue Jean Janvier Rennes",
+  "website": "https://www.fish-n-beer.com",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-4893480244",
+  "title": "Poutinebros",
+  "lat": 48.113814,
+  "lng": -1.680934,
+  "cuisine": "poutine",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo 12:00-22:00; Tu-Su 12:00-23:00",
+  "address": "19 Rue de Penhoët Rennes",
+  "website": "https://www.poutinebros.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-5346869048",
+  "title": "Le Yamouna",
+  "lat": 48.117008,
+  "lng": -1.677621,
+  "cuisine": "Indienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo,Su 19:00-23:00; Tu-Sa 12:00-14:00,19:00-23:00",
+  "address": "16 Rue de Robien Rennes",
+  "website": "https://www.yamouna.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-6225563497",
+  "title": "Ikimasho",
+  "lat": 48.110696,
+  "lng": -1.678483,
+  "cuisine": "Japonaise",
+  "tags": [],
+  "hours": "Mo-Sa 11:30-22:00",
+  "address": "5 Rue Baudrairie Rennes",
+  "website": "https://www.ikimasho.fr/",
+  "description": "Restaurant japonais de ramen. Décoré comme une rue japonaise typique.   Ouvert en 2025, présent aussi à Nantes.",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-7042371020",
+  "title": "Origines",
+  "lat": 48.118438,
+  "lng": -1.679073,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse",
+   "Accessible"
+  ],
+  "hours": "09:00-23:00",
+  "address": "2 Rue de l'Hôtel Dieu Rennes",
+  "website": "https://origines-rennes.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9036168005",
+  "title": "Satio",
+  "lat": 48.108501,
+  "lng": -1.677232,
+  "cuisine": "bowls",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th 12:00-14:00, 19:00-21:00; Fr, Sa 12:00-14:30, 19:00-22:00; Su 19:00-22:00",
+  "address": "32 Rue Vasselot Rennes",
+  "website": "https://satio-restaurant.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-9981137462",
+  "title": "Koboon",
+  "lat": 48.110797,
+  "lng": -1.676855,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Tu-Th 11:30-14:30,18:30-22:30; Fr,Sa 11:30-14:30,18:30-23:00; Su 18:45-23:00",
+  "address": "14 Rue du Vau Saint-Germain Rennes",
+  "website": "https://www.koboon-resto.fr/rennes",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-way-1283724280",
+  "title": "Garden parties",
+  "lat": 48.107772,
+  "lng": -1.652046,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 17:00-23:00; Th-Sa 17:00-01:00; Su 16:00-22:00",
+  "address": "30;28 Boulevard Villebois-Mareuil Rennes",
+  "website": "https://lagardenpartie.bzh/",
+  "description": "",
+  "wikidata": "",
+  "score": 33
+ },
+ {
+  "id": "osm-node-1302023849",
+  "title": "Falafel",
+  "lat": 48.116003,
+  "lng": -1.680763,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 12:00-15:00; Sa 12:00-15:00",
+  "address": "16 Rue de Saint-Malo Rennes",
+  "website": "https://falafel-rennes.webadorsite.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4131673385",
+  "title": "L’Arrivée",
+  "lat": 48.104006,
+  "lng": -1.673799,
+  "cuisine": "Bistrot",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 11:00-15:00,17:00-00:00; Su 11:00-15:00",
+  "address": "35 Boulevard Beaumont Rennes",
+  "website": "https://bistrotlarrivee.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-4225489992",
+  "title": "Séoul to Go",
+  "lat": 48.112325,
+  "lng": -1.693421,
+  "cuisine": "Coréenne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Th 11:45-15:00; Fr,Sa 11:45-18:00",
+  "address": "39 Rue Vaneau",
+  "website": "https://natayatuchinda.wixsite.com/seoultogo",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-6020289376",
+  "title": "Chez Brume",
+  "lat": 48.108861,
+  "lng": -1.680479,
+  "cuisine": "Poissons",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.chezbrume.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-10969562066",
+  "title": "Khao San",
+  "lat": 48.109377,
+  "lng": -1.645516,
+  "cuisine": "Thaïlandaise",
+  "tags": [
+   "Options végé",
+   "Accessible"
+  ],
+  "hours": "Mo-Th 12:00-14:00,18:30-21:00; Fr,Sa 12:00-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://www.khao-san.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-13252464131",
+  "title": "Saveurs Ramen",
+  "lat": 48.102119,
+  "lng": -1.674346,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 11:30-14:00,18:30-22:00",
+  "address": "",
+  "website": "https://saveurs-ramen.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 32
+ },
+ {
+  "id": "osm-node-301638726",
+  "title": "Mamamok",
+  "lat": 48.111829,
+  "lng": -1.675629,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Sa",
+  "address": "",
+  "website": "https://www.mamamok.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-1616603451",
+  "title": "Via Roma",
+  "lat": 48.128505,
+  "lng": -1.646783,
+  "cuisine": "Italienne",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-We 12:00-14:00; Th-Sa 12:00-14:00,19:00-22:00",
+  "address": "",
+  "website": "https://www.la-via-roma-rennes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-3750653164",
+  "title": "La Crêperie Rennaise",
+  "lat": 48.113006,
+  "lng": -1.681182,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Su 12:00-15:00,19:30-22:30; Fr,Sa 12:00-15:00,19:30-23:30",
+  "address": "",
+  "website": "https://creperierennaise.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4225458019",
+  "title": "Fezi",
+  "lat": 48.108345,
+  "lng": -1.676261,
+  "cuisine": "Terroir",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Tu-Fr 12:00-13:30, We-Sa 19:30-21:00",
+  "address": "",
+  "website": "https://fezi-restaurant.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4489587020",
+  "title": "La Parisienne",
+  "lat": 48.109434,
+  "lng": -1.683671,
+  "cuisine": "Bistrot",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Th 07:30-14:00,19:00-22:00; Fr 07:30-14:00,19:00-23:00; Sa 09:00-14:30,19:00-23:00",
+  "address": "",
+  "website": "https://www.laparisienne-rennes.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4729392123",
+  "title": "Dubble",
+  "lat": 48.105437,
+  "lng": -1.683806,
+  "cuisine": "poke",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 08:00-15:00",
+  "address": "49 Rue du Puits Mauger Rennes",
+  "website": "https://www.dubble-food.com/restaurants/rennes-colombier",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-4950298601",
+  "title": "Khmer Thaï",
+  "lat": 48.117351,
+  "lng": -1.681048,
+  "cuisine": "cambodian",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "We-Su 12:00-14:00, 19:00-22:00",
+  "address": "37 Rue de Saint-Malo Rennes",
+  "website": "https://www.khmer-thai-restaurant.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5028892073",
+  "title": "Ça nous botte",
+  "lat": 48.130953,
+  "lng": -1.657292,
+  "cuisine": "local",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 10:30-17:30",
+  "address": "12 Place Lucie et Raymond Aubrac Rennes",
+  "website": "",
+  "description": "Cantine végétarienne - Salon de thé",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5029503575",
+  "title": "Café Cortina",
+  "lat": 48.103517,
+  "lng": -1.682644,
+  "cuisine": "Bistrot",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo 08:00-19:00; Tu,We 09:00-22:30; Th,Fr 09:00-01:00",
+  "address": "12 Rue Docteur Francis Joly Rennes",
+  "website": "http://cafecortina.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-5602157253",
+  "title": "Le Bistrot de Cédric",
+  "lat": 48.112364,
+  "lng": -1.684757,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Th 12:00-14:00,19:00-22:00; Fr-Sa 12:00-14:00,19:00-22:30",
+  "address": "",
+  "website": "https://bistrotdecedric.com/bistrot-francais",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6173666085",
+  "title": "Taverne de la Marine",
+  "lat": 48.109512,
+  "lng": -1.68489,
+  "cuisine": "Poissons et fruits de mer",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-Su 12:00-14:30,19:00-23:00",
+  "address": "2 Place de Bretagne Rennes",
+  "website": "http://www.tavernedelamarine.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-6711936991",
+  "title": "Le 2 rue des Dames",
+  "lat": 48.110665,
+  "lng": -1.683357,
+  "cuisine": "Française",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-Fr 12:00-13:30, 19:30-21:00",
+  "address": "2 Rue des Dames Rennes",
+  "website": "https://www.le2ruedesdames.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-13917592489",
+  "title": "Zeytun & Cumin",
+  "lat": 48.11291,
+  "lng": -1.681264,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Th, Su 12:00-14:30; Fr, Sa 12:00-15:00; Tu, Su 19:00-22:00; Mo, We, Th 19:00-22:30; Fr, Sa 19:00-23:00",
+  "address": "",
+  "website": "https://zeytuncumin-restaurant-rennes.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 31
+ },
+ {
+  "id": "osm-node-1794582724",
+  "title": "Le Tire-Bouchon",
+  "lat": 48.111062,
+  "lng": -1.681425,
+  "cuisine": "Française",
+  "tags": [],
+  "hours": "Mo-Fr 12:00-14:00, 19:00-23:00",
+  "address": "2 Rue du Chapitre Rennes",
+  "website": "https://www.tirebouchon.bzh/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-2923760808",
+  "title": "Il Basilico",
+  "lat": 48.106878,
+  "lng": -1.673042,
+  "cuisine": "",
+  "tags": [
+   "Terrasse",
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 12:00-14:00, 19:00-22:00; Sa 12:00-14:30, 19:00-22:30",
+  "address": "25 Avenue Jean Janvier Rennes",
+  "website": "https://www.ilbasilico.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-3892469491",
+  "title": "Al Saj",
+  "lat": 48.11407,
+  "lng": -1.679491,
+  "cuisine": "Libanaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Fr 11:30-15:00,19:00-23:00; Sa 11:30-23:00",
+  "address": "5 Rue de la Motte-Fablet",
+  "website": "https://alsaj.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5610251321",
+  "title": "Sahara Couscous",
+  "lat": 48.101576,
+  "lng": -1.659936,
+  "cuisine": "Marocaine",
+  "tags": [],
+  "hours": "Mo-Su 11:00-14:00,18:00-23:00",
+  "address": "10 Rue de Vern Rennes",
+  "website": "https://sahara-couscous-restaurant-rennes.eatbu.com",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-5760665565",
+  "title": "L'AOC",
+  "lat": 48.102714,
+  "lng": -1.684078,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo 12:00-14:00; Tu-Fr 12:00-14:00,19:30-22:00; Sa 19:30-22:00",
+  "address": "67Ter Boulevard de la Tour d'Auvergne Rennes",
+  "website": "https://aocrennes.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-6466506482",
+  "title": "Khimaira",
+  "lat": 48.112323,
+  "lng": -1.685331,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu-We 12:00-14:00; Th-Sa 12:00-14:00, 19:30-22:00; Su, Mo off",
+  "address": "5 Place du Bas des Lices Rennes",
+  "website": "https://www.khimaira-restaurant-rennes.fr/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-11339223382",
+  "title": "Thaï Away",
+  "lat": 48.09696,
+  "lng": -1.698734,
+  "cuisine": "Japonaise",
+  "tags": [
+   "Options végé"
+  ],
+  "hours": "Mo-Sa 11:00-19:00",
+  "address": "30 Rue des Munitionnettes",
+  "website": "https://www.thai-away.fr",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-11985868721",
+  "title": "Pho Anh Em",
+  "lat": 48.105718,
+  "lng": -1.678568,
+  "cuisine": "Vietnamienne",
+  "tags": [
+   "Accessible"
+  ],
+  "hours": "Mo-Sa 12:00-14:00, 19:00-21:00",
+  "address": "3 Place du Général Giraud Rennes",
+  "website": "https://phoanhembzh.wixsite.com/website",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-node-13051869401",
+  "title": "Gruppomimo",
+  "lat": 48.112792,
+  "lng": -1.682595,
+  "cuisine": "Italienne",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Mo-We 12:00-14:30,19:00-22:30; Th,Fr 12:00-14:30,19:00-23:30; Sa 12:00-15:00,19:00-23:30; Su 12:00-15:00,19:00-22:30",
+  "address": "",
+  "website": "https://www.gruppomimo.com/nos-restaurants/gruppomimo-rennes",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ },
+ {
+  "id": "osm-way-80259212",
+  "title": "Essentiel",
+  "lat": 48.12194,
+  "lng": -1.681448,
+  "cuisine": "",
+  "tags": [
+   "Terrasse"
+  ],
+  "hours": "Tu 12:00-14:30; We-Sa 12:00-14:30,19:30-23:00",
+  "address": "11 Rue Armand Rébillon Rennes",
+  "website": "https://www.restaurantessentiel.com/",
+  "description": "",
+  "wikidata": "",
+  "score": 30
+ }
+]
