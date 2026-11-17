@@ -1,0 +1,36 @@
+name: Essai restaurants
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: split-data
+  cancel-in-progress: false
+
+jobs:
+  essai:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Chercher les restaurants dans OpenStreetMap (essai, sans effet sur le site)
+        run: node restaurants-test.js
+
+      - name: Enregistrer les fichiers de test
+        run: |
+          git config user.name "whazup-bot"
+          git config user.email "bot@whazup.fr"
+          git add data/restaurants-test
+          if git diff --cached --quiet; then
+            echo "Rien à enregistrer"
+          else
+            git commit -m "Essai restaurants (fichiers de test)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
