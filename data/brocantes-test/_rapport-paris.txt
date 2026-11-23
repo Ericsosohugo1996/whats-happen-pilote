@@ -1,44 +1,31 @@
-Brocantes de Paris : 43 événements à venir (adresses placées précisément : 43 / 44)
-2026-11-19 | Brocante, place Jules Joffrin | place Jules Joffrin, 75018 Paris | 48.892629,2.344651
-2026-11-20→2026-11-22 | Brocante, place des Vosges | place des Vosges, 75004 Paris | 48.855631,2.365535
-2026-11-20→2026-11-22 | Brocante | rue du Temple, rue Eugène Spuller, rue de Bretagne, rue de Turenne et rue Caffarelli, 75003 Paris | 48.862501,2.359839
-2026-11-21→2026-11-22 | Brocante, avenue d'Italie | avenue d'Italie, 75013 Paris | 48.822771,2.358354
-2026-11-21→2026-11-22 | Brocante, avenue des Gobelins, rue de Bazeilles et rue Censier | avenue des Gobelins, rue de Bazeilles et rue Censier, 75005 Paris | 48.838072,2.353117
-2026-11-21 | Brocante, place de Levis | place de Levis, 75017 Paris | 48.883549,2.313529
-2026-11-21 | Vide-greniers, terre plein boulevard Vaugirard et place Raoul Dautry | terre plein boulevard Vaugirard et place Raoul Dautry, 75015 Paris | 48.841751,2.320481
-2026-11-21 | Vide-greniers, avenue de l'Observatoire | avenue de l'Observatoire, 75014 Paris | 48.835896,2.335743
-2026-11-21 | Vide-greniers, place des Fêtes | Place des Fêtes, 75019 Paris | 48.876744,2.392994
-2026-11-22 | Brocante, boulevard de Port Royal | boulevard de Port Royal, 75005 Paris | 48.837292,2.347385
-2026-11-22 | Brocante, rue Cardinet | rue Cardinet, 75017 Paris | 48.889441,2.316435
-2026-11-22 | Vide-greniers | rue de Lancry, rue Jean Poulmarch et place Jacques Bonsergent, 75010 Paris | 48.872026,2.362419
-2026-11-22 | Vide-greniers, sur le cours de Vincennes | sur le cours de Vincennes, 75020 Paris | 48.863,2.401
-2026-11-27→2026-11-28 | Vide-greniers, boulevard Haussmann | boulevard Haussmann, 75009 Paris | 48.873067,2.332393
+Brocantes de Paris : 30 événements à venir (adresses placées précisément : 31 / 31)
+2026-11-27→2026-11-28 | Vide-greniers, boulevard Haussmann | boulevard Haussmann, 75009 Paris | 48.873301,2.330621
 2026-11-28 | Brocante, boulevard Murat | boulevard Murat, 75016 Paris | 48.84761,2.257888
-2026-11-29 | Vide-greniers, boulevard de Picpus | boulevard de Picpus, 75012 Paris | 48.847308,2.399016
+2026-11-29 | Vide-greniers, boulevard de Picpus | boulevard de Picpus, 75012 Paris | 48.847766,2.399124
 2026-11-29 | Brocante, place de la République | place de la République, 75003 Paris | 48.867542,2.363958
 2026-11-29 | Vide-greniers, boulevard Rochechouart | boulevard Rochechouart, 75009 Paris | 48.882883,2.344062
-2026-11-28→2026-11-29 | Brocante, boulevard Saint Germain | boulevard Saint Germain, 75005 Paris | 48.850018,2.348875
+2026-11-28→2026-11-29 | Brocante, boulevard Saint Germain | boulevard Saint Germain, 75005 Paris | 48.84931,2.356772
 2026-12-05 | Brocante, boulevard Bonne Nouvelle | boulevard Bonne Nouvelle, 75010 Paris | 48.870199,2.350261
 2026-12-05 | Brocante, boulevard Exelmans | boulevard Exelmans, 75016 Paris | 48.84087,2.264919
 2026-12-05 | Vide-greniers, rue Henri Poincaré | rue Henri Poincaré, 75020 Paris | 48.87051,2.401319
-2026-12-05→2026-12-06 | Brocante, boulevard Arago | boulevard Arago, 75013 Paris | 48.836401,2.350632
-2026-12-06 | Brocante, cours de Vincennes | cours de Vincennes, 75020 Paris | 48.847276,2.409064
-2026-12-06 | Brocante, sur le terre-plein central du Cours de Vincennes | sur le terre-plein central du Cours de Vincennes, 75012 Paris | 48.847715,2.402782
+2026-12-05→2026-12-06 | Brocante, boulevard Arago | boulevard Arago, 75013 Paris | 48.8357,2.348444
+2026-12-06 | Brocante, cours de Vincennes | cours de Vincennes, 75020 Paris | 48.84746,2.406975
+2026-12-06 | Brocante, sur le terre-plein central du Cours de Vincennes | sur le terre-plein central du Cours de Vincennes, 75012 Paris | 48.847064,2.410291
 2026-12-06 | Vide-greniers, rue Crozatier | rue Crozatier, 75012 Paris | 48.847408,2.381202
-2026-12-06 | Brocante | rue Azais, rue du Cardinal Guibert et rue Chevalier de la Barre, 75018 Paris | 48.886675,2.343582
-2026-12-06 | Brocante, rue des Fossés Saint Bernard, place Jussieu et rue Jussieu | rue des Fossés Saint Bernard, place Jussieu et rue Jussieu, 75005 Paris | 48.847505,2.354828
-2026-12-12 | Brocante, boulevard de Sébastopol | boulevard de Sébastopol, 75003 Paris | 48.865331,2.352044
-2026-12-12→2026-12-13 | Brocante, rue Ordener et rue du Poteau | rue Ordener et rue du Poteau, 75018 Paris | 48.895085,2.341325
+2026-12-06 | Brocante | rue Azais, rue du Cardinal Guibert et rue Chevalier de la Barre, 75018 Paris | 48.886632,2.342498
+2026-12-06 | Brocante, rue des Fossés Saint Bernard, place Jussieu et rue Jussieu | rue des Fossés Saint Bernard, place Jussieu et rue Jussieu, 75005 Paris | 48.846598,2.355295
+2026-12-12 | Brocante, boulevard de Sébastopol | boulevard de Sébastopol, 75003 Paris | 48.863162,2.350837
+2026-12-12→2026-12-13 | Brocante, rue Ordener et rue du Poteau | rue Ordener et rue du Poteau, 75018 Paris | 48.894404,2.342881
 2026-12-12→2026-12-13 | Brocante, avenue Kléber | avenue Kléber, 75016 Paris | 48.863444,2.287539
 2026-12-17 | Brocante, place Jules Joffrin | place Jules Joffrin, 75018 Paris | 48.892629,2.344651
-2026-12-19 | Vide-greniers, rue Caulaincourt | rue Caulaincourt, 75018 Paris | 48.8868,2.332725
-2026-12-19 | Brocante, rue de Turbigo, rue Mondetour et rue Française | rue de Turbigo, rue Mondetour et rue Française, 75001 Paris | 48.863446,2.348056
+2026-12-19 | Vide-greniers, rue Caulaincourt | rue Caulaincourt, 75018 Paris | 48.888036,2.333815
+2026-12-19 | Brocante, rue de Turbigo, rue Mondetour et rue Française | rue de Turbigo, rue Mondetour et rue Française, 75001 Paris | 48.863437,2.348042
 2026-12-20 | Brocante, boulevard de Clichy | boulevard de Clichy, 75009 Paris | 48.883706,2.332977
 2026-12-26 | Brocante | place et passage des Petits-Pères et rue Notre-Dame-des-Victoires, 75002 Paris | 48.869003,2.342093
 2026-12-27 | Brocante, place Baudoyer et rue de Rivoli | place Baudoyer et rue de Rivoli, 75004 Paris | 48.856433,2.355346
 2027-01-09 | Vide-greniers, avenue du Maine et place Gilbert Perroy | avenue du Maine et place Gilbert Perroy, 75014 Paris | 48.831393,2.325642
 2027-01-10 | Brocante, rue de la Chaussée d'Antin | rue de la Chaussée d'Antin, 75009 Paris | 48.871273,2.334031
-2027-01-16 | Brocante, boulevard Saint-Michel et boulevard Saint-Germain | boulevard Saint-Michel et boulevard Saint-Germain, 75005 Paris | 48.847058,2.341057
+2027-01-16 | Brocante, boulevard Saint-Michel et boulevard Saint-Germain | boulevard Saint-Michel et boulevard Saint-Germain, 75005 Paris | 48.846432,2.343634
 2027-01-27→2027-01-30 | Braderie, « Les 4 jours coup de balais », rue du Commerce | « Les 4 jours coup de balais », rue du Commerce, 75015 Paris | 48.845379,2.294475
-2027-01-30 | Brocante, sur le passage côté Canopée et rue Rambuteau | sur le passage côté Canopée et rue Rambuteau, 75001 Paris | 48.862085,2.349732
+2027-01-30 | Brocante, sur le passage côté Canopée et rue Rambuteau | sur le passage côté Canopée et rue Rambuteau, 75001 Paris | 48.862668,2.34714
 2027-03-29 | Brocante, boulevard de Grenelle | boulevard de Grenelle, 75015 Paris | 48.849417,2.296407
