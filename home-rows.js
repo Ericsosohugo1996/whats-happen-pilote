@@ -46,11 +46,17 @@
   function sortKey(ev) { return (ev.date || "") + " " + (timeOf(ev) || "99:99"); }
   function isPlace(ev) { return ev.category === "À voir" || ev.category === "Bar"; }
 
+  // événement annulé (« [Annulé] », « ANNULÉ - », « …-ANNULE ») : on ne le montre pas à l'accueil
+  function cancelled(ev) {
+    var t = String(ev.title || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    return /(^|[^a-z])(annule[es]?|cancel(l)?ed)([^a-z]|$)/.test(t);
+  }
+
   function pool() {
     var base = [];
     try { base = baseVisibleEvents(); } catch (e) { base = []; }
     var now = new Date(), today = ymd(now);
-    return base.filter(function (ev) { return ev && ev.date && ev.date >= today && real(ev) && !isPlace(ev) && ev.title && (!window.__wzCatOk || window.__wzCatOk(ev, ev.category)); });
+    return base.filter(function (ev) { return ev && ev.date && ev.date >= today && real(ev) && !isPlace(ev) && ev.title && !cancelled(ev) && (!window.__wzCatOk || window.__wzCatOk(ev, ev.category)); });
   }
 
   // clé anti-doublon : titre sans accents/ponctuation/numéro de séance + lieu + jour
