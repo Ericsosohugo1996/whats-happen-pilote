@@ -33,7 +33,8 @@
         var k = String(e.title).toLowerCase().replace(/[^a-z0-9]+/g, "") + "|" + e.date;
         if (seen[k]) return false; seen[k] = 1; return true;
       }).sort(function (a, b) {
-        return (a.date + (a.time || "99")).localeCompare(b.date + (b.time || "99")) || ((b.photo ? 1 : 0) - (a.photo ? 1 : 0));
+        function real(e) { return e.photo && !e.photoGeneric ? 0 : 1; }
+        return (real(a) - real(b)) || (a.date + (a.time || "99")).localeCompare(b.date + (b.time || "99"));
       });
     } catch (e) { return []; }
   }
