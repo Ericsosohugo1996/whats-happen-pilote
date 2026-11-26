@@ -275,7 +275,11 @@ for (const { kind, file } of SOURCES) {
       const pools = { "Spectacles": tp.theatre, "Musique": tp.concert, "Soirée": tp.club, "Marché": tp.marche, "Sport": tp.sport, "Brocante": tp.brocante, "Festival": tp.festival, "Famille": tp.jardin };
       let g = 0;
       for (const ev of items) {
-        const pool = ev.category === "Expo" ? expoPool(ev) : ev.category === "Divers" ? diversPool(ev) : pools[ev.category];
+        let pool = ev.category === "Expo" ? expoPool(ev) : ev.category === "Divers" ? diversPool(ev) : pools[ev.category];
+        // marchés de Noël sans photo : dessin de marché de Noël (fait par Whazup) plutôt qu'une photo de halle sans rapport
+        if (ev.category === "Marché" && /no[eë]l/i.test(String(ev.title || "") + " " + String(ev.id || "")) && fs.existsSync("noel-marche-1.jpg")) {
+          pool = [1, 2, 3].map(n => ({ u: "noel-marche-" + n + ".jpg", c: "Illustration Whazup" }));
+        }
         if (ev.photo || !pool || !pool.length) continue;
         let h = 0; for (const ch of String(ev.id)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
         const p = pool[h % pool.length];
