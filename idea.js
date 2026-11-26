@@ -187,6 +187,8 @@
   var CLOSED_START_RE = /^\s*\W*(complet|annul[ée]e?|report[ée]e?|sold.?out)\b/i, CLOSED_CAPS_RE = /\b(COMPLET|ANNUL[ÉE]E?|REPORT[ÉE]E?)\b/;
   function isClosed(t) { t = String(t || ""); return CLOSED_START_RE.test(t) || CLOSED_CAPS_RE.test(t); }
   var BENEV_RE = /(b[ée]n[ée]vol|cherche (son|ses) |recherche de volontaires|\bstaff\b)/i;
+  // liste à compléter : mots du titre qu'on ne veut jamais voir dans « Surprends-moi » (ils restent visibles dans la liste complète)
+  var SKIP_RE = /(\bagenda\s+20\d\d\b|visite\s+coquine|maisons?\s+closes)/i;
   var SLOW_RE = /\b(ateliers?|cours|conf[eé]rences?|initiation|assembl[eé]e|r[eé]union|cycle)\b/i;
   function surpriseOk(ev) {
     if (ev.isPlace) return !JUNK_PLACE_RE.test(String(ev.title || ""));
@@ -250,6 +252,7 @@
     var res = [], ctx = { mem: memLoad(), visited: visitedSet(), wx: wxLoad() };
     pool().forEach(function (ev) {
       if (!wantOk(ev) || !surpriseOk(ev)) return;
+      if (SKIP_RE.test(String(ev.title || ""))) return; // annonces qui ne sont pas des sorties précises, et sujets sensibles : jamais proposés dans « Surprends-moi »
       var tm = timing(ev); if (!tm) return;
             // une expo « ouvre » plutôt qu'elle ne « commence » : on le dit honnêtement
       if (ev.category === "Expo" && !ev.isPlace && mins(ev.time) != null) tm = { label: (S.when === "now" ? "" : String(tm.label).split(" · ")[0] + " · ") + "Ouverte dès " + hh(ev.time).replace(/ h 00$/, " h"), score: tm.score };
