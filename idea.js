@@ -13,6 +13,7 @@
     ["festival", "🎪 Festival", ["Festival"]],
     ["sport", "⚽ Sport", ["Sport"]],
     ["bar", "🍸 Bar", ["Bar"]],
+    ["resto", "🍽️ Adresses de caractère", ["Resto"]],
     ["social", "🤝 Rencontrer du monde", []],
     ["expo", "🖼️ Expos & visites", ["Expo"]],
     ["autres", "✨ Autres sorties", ["Divers"]],
@@ -33,8 +34,76 @@
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
+  // ---- « Adresses de caractère » : une sélection (pas un annuaire), lue dans data/restos-caractere.json ----
+  var restosPromise = null;
+  function restosLoad() {
+    if (restosPromise) return restosPromise;
+    var get = function (u) { return fetch(u, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : []; }).then(function (a) { return Array.isArray(a) ? a : []; }).catch(function () { return []; }); };
+    // les « perles » choisies à la main passent avant la sélection automatique
+    restosPromise = Promise.all([get("data/perles-paris.json"), get("data/restos-caractere.json"), get("data/bars-caractere.json"), get("data/bars-paris.json"), get("data/perles-france.json")])
+      .then(function (r) { window.__wzRestos = r[0].concat(r[4] || [], r[1]); window.__wzBars = (r[2] || []).concat(r[3] || []); return window.__wzRestos; })
+      .catch(function () { window.__wzRestos = window.__wzRestos || []; window.__wzBars = window.__wzBars || []; return window.__wzRestos; });
+    return restosPromise;
+  }
+  // « Bars de caractère » : bars à cocktails, caves à vins, bars cachés, péniches, rooftops (sélection lue dans data/bars-caractere.json)
+  function barById(id) { return (window.__wzBars || []).filter(function (x) { return x.id === id; })[0]; }
+  function barEv(r) {
+    return { id: r.id, isPlace: true, category: "Bar", kind: r.k || "Bar de caractère", title: r.t, place: r.c, city: r.c, lat: r.la, lng: r.lo, photo: r.p || "", description: r.d, time: "", date: null,
+      credit: r.p ? "Photo : office de tourisme (DATAtourisme)" : "", creditUrl: "", envies: null, sc: r.sc || 0, caractere: true };
+  }
+  function isRestoId(id) { return /^(resto|perle)-/.test(String(id)); }
+  var ENVIE_LABEL = { brunch: "Brunch", dejeuner: "Déjeuner", gouter: "Goûter", diner: "Dîner" };
+  // quelles envies correspondent au moment choisi (brunch seulement le week-end)
+  function envieSlots(when) {
+    var d = new Date(), dow = d.getDay(), h = d.getHours() + d.getMinutes() / 60, wk = dow === 0 || dow === 6, all = ["brunch", "dejeuner", "gouter", "diner"];
+    if (when === "now") { if (h < 11.5) return wk ? ["brunch", "dejeuner"] : ["dejeuner"]; if (h < 14.5) return wk ? ["dejeuner", "brunch"] : ["dejeuner"]; if (h < 18) return ["gouter"]; return ["diner"]; }
+    if (when === "tonight") return ["diner"];
+    if (when === "tomorrow") { var t = (dow + 1) % 7; return t === 0 || t === 6 ? all : ["dejeuner", "gouter", "diner"]; }
+    if (when === "weekend") return all;
+    return wk ? all : ["dejeuner", "gouter", "diner"];
+  }
+  function shortDesc(s) {
+    s = String(s || "").trim(); var m = s.match(/[^.!?]+[.!?]+/g), o = m ? m.slice(0, 2).join(" ").trim() : "";
+    if (!o || o.length > 200) { o = s.slice(0, 180); o = o.replace(/\s+\S*$/, "").replace(/[\s,;:]+$/, "") + "…"; }
+    return o;
+  }
+  function restoEv(r) {
+    var perle = /^perle-/.test(String(r.id || ""));
+    return { id: r.id, isPlace: true, category: "Resto", kind: r.k || "Adresse de caractère", title: r.t, place: r.c, city: r.c, lat: r.la, lng: r.lo, photo: r.p || "", description: r.d, time: "", date: null,
+      credit: r.p ? (r.cr || "Photo : office de tourisme (DATAtourisme)") : "", creditUrl: r.cu || "", envies: perle ? (r.e || []) : null, perle: perle, mystery: !r.p, sc: r.sc || 0 };
+  }
+  // adresse surprise (perle sans photo, volontaire) : carte typographique au lieu d'une photo
+  function phHTML(ev) {
+    if (!(ev && ev.mystery)) return eventPhotoHTML(ev);
+    return '<div class="wz-mys"><span class="wz-mys-a">ADRESSE CACHÉE</span><span class="wz-mys-k">' + esc(ev.kind || "Adresse de caractère") + '</span><span class="wz-mys-c">' + esc(ev.city || "") + '</span></div>';
+  }
+  (function () { if (document.getElementById("wz-mys-css")) return; var st = document.createElement("style"); st.id = "wz-mys-css";
+    st.textContent = "#wz-idea .wz-mys{width:100%;height:100%;min-height:120px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:14px 18px;background:linear-gradient(135deg,#14213D 0%,#1c2f5a 55%,#E85D3D 140%);color:#fff;text-align:left}#wz-idea .wz-mys-a{font:800 10px/1 system-ui,sans-serif;letter-spacing:.14em;color:#f3b4a4}#wz-idea .wz-mys-k{font:italic 600 24px/1.1 Georgia,serif}#wz-idea .wz-mys-c{font:600 13px/1 system-ui,sans-serif;opacity:.75}";
+    document.head.appendChild(st); })();
   function pool() {
     var ref = referencePoint(), out = [];
+    if (S.want && S.want.indexOf("resto") !== -1 && window.__wzRestos) {
+      window.__wzRestos.forEach(function (r) {
+        var d = haversineKm(ref.lat, ref.lng, r.la, r.lo);
+        if (d > Math.max(state.userPos ? (state.radiusKm || 20) : 25, 25)) return;
+        // pas de photo : adresse quand même proposée (« à découvrir », volontairement sans photo)
+        var mo = new Date().getMonth(); // guinguettes, cabanes et péniches : saison d'avril à septembre
+        if ((r.k === "Guinguette" || r.k === "Cabane" || r.k === "Sur l'eau") && (mo < 3 || mo > 8)) return;
+        var o = restoEv(r); o.distance = d; out.push(o);
+      });
+      return out;
+    }
+    if (S.want && S.want.indexOf("bar") !== -1 && window.__wzBars) {
+      var mb = new Date().getMonth();
+      window.__wzBars.forEach(function (r) {
+        if (!r.p) return;
+        if (r.id === "bar-paris-le-balzac" || /privateaser\.com/i.test(String(r.cu || ""))) return; // photo douteuse (mauvais lieu) ou site tiers de réservation : écartée
+        if ((r.k === "Guinguette" || r.k === "Bar sur l'eau" || r.k === "Sur les toits") && (mb < 3 || mb > 8)) return; // lieux d'été
+        var d = haversineKm(ref.lat, ref.lng, r.la, r.lo);
+        if (d > Math.max(state.userPos ? (state.radiusKm || 20) : 25, 25)) return;
+        var o = barEv(r); o.distance = d; out.push(o);
+      });
+    }
     allEvents().forEach(function (ev) {
       if (!ev.lat || !ev.lng) return;
       if (state.userPos ? false : ev.city !== state.city) return;
@@ -61,6 +130,12 @@
   // renvoie { label, score } ou null si la sortie ne convient pas au moment choisi
   function timing(ev) {
     var n = nowMin(), t = today();
+    if (ev.category === "Resto") {
+      if (!ev.envies) return { label: "Table à découvrir · vérifie les horaires", score: 250 - (ev.sc || 0) * 8 };
+      var slots = envieSlots(S.when), hit = slots.filter(function (x) { return ev.envies.indexOf(x) !== -1; });
+      if (!hit.length) return null;
+      return { label: ENVIE_LABEL[hit[0]] + " · vérifie les horaires", score: 180 };
+    }
     if (ev.isPlace || !ev.date) {
       // lieux ouverts (bars, sites à visiter) : seulement pour maintenant / ce soir
       if (S.when === "now" || S.when === "tonight") {
@@ -123,15 +198,63 @@
     if (m != null && m < 10 * 60 && ev.category !== "Marché" && ev.category !== "Brocante" && !EARLY_OK_RE.test(String(ev.title || ""))) return false;
     return true;
   }
+
+  // ---- mémoire : on ne reproposera pas ce qui a déjà été fait, vu ou écarté ; la météo oriente (pluie → à l'abri) ----
+  var MEM_KEY = "wz-idea-memory", WX_KEY = "wz-idea-wx";
+  function memLoad() { try { return JSON.parse(localStorage.getItem(MEM_KEY) || "{}") || {}; } catch (e) { return {}; } }
+  function memSave(m) {
+    try {
+      var cut = Date.now() - 14 * 86400000, k, n = 0;
+      for (k in m) { if (!m[k] || m[k].t < cut) delete m[k]; else n++; }
+      if (n > 300) { Object.keys(m).sort(function (a, b) { return m[a].t - m[b].t; }).slice(0, n - 300).forEach(function (x) { delete m[x]; }); }
+      localStorage.setItem(MEM_KEY, JSON.stringify(m));
+    } catch (e) {}
+  }
+  function memMark(ev, kind) { if (!ev || ev.id == null) return; var m = memLoad(); var old = m[ev.id]; if (kind === "shown" && old && old.k === "skip") return; m[ev.id] = { t: Date.now(), k: kind }; memSave(m); }
+  function normT(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim(); }
+  function visitedSet() {
+    var out = [];
+    try { (window.__souvenirsList || []).forEach(function (s) { var n = normT(s && s.placeName); if (n.length >= 4) out.push(n); }); } catch (e) {}
+    return out;
+  }
+  function wxLoad() { try { var w = JSON.parse(localStorage.getItem(WX_KEY) || "null"); if (w && Date.now() - w.t < 45 * 60000) return w; } catch (e) {} return null; }
+  function wxPrefetch() {
+    try {
+      if (wxLoad()) return;
+      var ref = referencePoint(); if (!ref || !ref.lat) return;
+      fetch("https://api.open-meteo.com/v1/forecast?latitude=" + ref.lat + "&longitude=" + ref.lng + "&current=temperature_2m,weather_code&timezone=auto")
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var c = d && d.current; if (!c) return;
+          var code = c.weather_code, rain = (code >= 51 && code <= 67) || (code >= 80 && code <= 82) || code >= 95 || (code >= 71 && code <= 77);
+          localStorage.setItem(WX_KEY, JSON.stringify({ t: Date.now(), rain: !!rain, temp: c.temperature_2m }));
+        }).catch(function () {});
+    } catch (e) {}
+  }
+  var OUTDOOR_RE = /(jardin|parc\b|plage|promenade|balade|randonn|\bquai|march[eé] de no[eë]l|bords? de)/i;
+  function memAdjust(ev, ctx) {
+    var d = 0, e = ctx.mem[ev.id];
+    if (e) { var age = Date.now() - e.t; if (e.k === "skip" && age < 7 * 86400000) d += 200; else if (e.k === "shown" && age < 3 * 86400000) d += 100; }
+    if (ev.isPlace || ev.category === "À voir") {
+      var tn = normT(ev.title);
+      if (tn.length >= 4 && ctx.visited.some(function (v) { return tn.indexOf(v) !== -1 || v.indexOf(tn) !== -1; })) d += 250;
+    }
+    if (ctx.wx && ctx.wx.rain && S.when === "now") {
+      var outdoor = ev.category === "Marché" || ev.category === "Brocante" || OUTDOOR_RE.test(String(ev.title || "")) || (ev.isPlace && !isMuseum(ev));
+      var indoor = ev.category === "Expo" || ev.category === "Spectacles" || (ev.isPlace && isMuseum(ev));
+      if (outdoor) d += 90; else if (indoor) d -= 30;
+    }
+    return d;
+  }
   function rank() {
-    var res = [];
+    var res = [], ctx = { mem: memLoad(), visited: visitedSet(), wx: wxLoad() };
     pool().forEach(function (ev) {
       if (!wantOk(ev) || !surpriseOk(ev)) return;
       var tm = timing(ev); if (!tm) return;
             // une expo « ouvre » plutôt qu'elle ne « commence » : on le dit honnêtement
       if (ev.category === "Expo" && !ev.isPlace && mins(ev.time) != null) tm = { label: (S.when === "now" ? "" : String(tm.label).split(" · ")[0] + " · ") + "Ouverte dès " + hh(ev.time).replace(/ h 00$/, " h"), score: tm.score };
       var real = ev.photo && !ev.photoGeneric && !ev.photoVenue;
-      var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25) + (!ev.isPlace && SLOW_RE.test(String(ev.title || "")) ? 70 : 0) + (ev.category === "Famille" && S.want.indexOf("famille") === -1 ? 80 : 0) + (!ev.isPlace && PRATIQUE_RE.test(String(ev.title || "")) && S.want.indexOf("any") !== -1 ? 90 : 0);
+      var sc = tm.score * 0.6 + ev.distance * 12 - (real ? 60 : ev.photoVenue ? 30 : 0) - (ev.isPlace ? 0 : 25) + (!ev.isPlace && SLOW_RE.test(String(ev.title || "")) ? 70 : 0) + (ev.category === "Famille" && S.want.indexOf("famille") === -1 ? 80 : 0) + (!ev.isPlace && PRATIQUE_RE.test(String(ev.title || "")) && S.want.indexOf("any") !== -1 ? 90 : 0) + memAdjust(ev, ctx);
       res.push({ ev: ev, label: tm.label, score: sc });
     });
     // lieux très connus : ils passent devant (Louvre, Orsay, Notre-Dame…)
@@ -161,6 +284,7 @@
   // une « soirée » avant 18 h s'appelle plutôt un événement de l'après-midi
   function catLabel(ev) {
     var c = String(ev.category || ""), m = mins(ev.time);
+    if (c === "Resto") return ev.kind || "Adresse de caractère";
     if (c === "Soirée" && m != null && m < 18 * 60) return m < 12 * 60 ? "Matinée" : "Après-midi";
     return c;
   }
@@ -187,7 +311,64 @@
     if (!pick) return st;
     return st.concat([{ ev: pick, label: "Un verre pour finir", walk: walkMin(km), drink: true }]);
   }
-  function planStops(x) { var pool = planPool(), st = planFrom(x, pool); return st.length < 2 ? st : withDrink(st, pool); }
+  // repas : déjeuner dès 12 h (sortie suivante à 14 h ou plus), dîner dès 19 h (sortie suivante à 20 h 45 ou plus), dans une adresse de caractère à moins de 10 min à pied
+  function withMeal(st) {
+    var first = st[0]; if (!first || first.ev.isPlace || !first.ev.date) return st;
+    var m = mins(first.ev.time); if (m == null) return st;
+    var slot = null, at = "";
+    if (m >= 14 * 60 && m < 17 * 60) { slot = "dejeuner"; at = "12:00"; }
+    else if (m >= 20 * 60 + 45) { slot = "diner"; at = "19:00"; }
+    if (!slot || !first.ev.lat || !first.ev.lng) return st;
+    var skip = S.planSkip || [], best = null;
+    (window.__wzRestos || []).forEach(function (r) {
+      if (!r || skip.indexOf(r.id) !== -1 || typeof r.la !== "number" || typeof r.lo !== "number") return;
+      var perle = /^perle-/.test(String(r.id || ""));
+      if (perle && (!r.e || r.e.indexOf(slot) === -1)) return;
+      var km = haversineKm(first.ev.lat, first.ev.lng, r.la, r.lo);
+      if (km > 0.62 || km < 0.005) return;
+      var sc = km + (perle ? 0 : 0.25);   // les adresses choisies à la main passent d'abord
+      if (!best || sc < best.sc) best = { r: r, km: km, sc: sc };
+    });
+    if (!best) return st;
+    var ev = restoEv(best.r); ev.date = first.ev.date; ev.time = at;
+    first.walk = walkMin(best.km);
+    return [{ ev: ev, label: MEALS[slot], walk: 0, meal: slot }].concat(st);
+  }
+  function hh2(n) { return (n < 10 ? "0" : "") + n; }
+  var MEALS = { dejeuner: "Déjeuner", diner: "Dîner", gouter: "Goûter" };
+  // repas ou goûter ENTRE deux sorties : si l'écart est d'au moins 1 h 40, une adresse de caractère à moins de 10 min à pied (déjeuner 11 h 30-14 h, goûter 15 h-17 h 30, dîner 19 h-21 h)
+  function withGapMeal(st) {
+    if (st.some(function (z) { return z.meal; }) && st.length >= 4) return st;
+    var skip = S.planSkip || [];
+    for (var i = 0; i + 1 < st.length; i++) {
+      var a = st[i].ev, b = st[i + 1].ev;
+      if (st[i].drink || st[i + 1].drink || a.isPlace || b.isPlace || !a.lat || !b.lat) continue;
+      var am = mins(a.time), bm = mins(b.time); if (am == null || bm == null) continue;
+      var endA = am + durOf(a), gap = bm - endA; if (gap < 100) continue;
+      var best = null;
+      (window.__wzRestos || []).forEach(function (r) {
+        if (!r || skip.indexOf(r.id) !== -1 || typeof r.la !== "number" || typeof r.lo !== "number" || !/^perle-/.test(String(r.id || ""))) return;
+        var k1 = haversineKm(a.lat, a.lng, r.la, r.lo), k2 = haversineKm(r.la, r.lo, b.lat, b.lng);
+        if (k1 > 0.62 || k2 > 0.9 || k1 < 0.005) return;
+        var t0 = endA + walkMin(k1), W = { dejeuner: [690, 840], gouter: [900, 1050], diner: [1140, 1260] }, found = null;
+        ["dejeuner", "gouter", "diner"].forEach(function (sl) {
+          if (found || !r.e || r.e.indexOf(sl) === -1) return;
+          var tc = Math.max(t0, W[sl][0]);
+          if (tc <= W[sl][1] && tc + 45 + walkMin(k2) <= bm) found = { slot: sl, t: tc };
+        });
+        if (!found) return;
+        var sc = k1 + k2;
+        if (!best || sc < best.sc) best = { r: r, k1: k1, k2: k2, t: found.t, slot: found.slot, sc: sc };
+      });
+      if (!best) continue;
+      var ev = restoEv(best.r), tt = Math.ceil(best.t / 5) * 5; ev.date = a.date; ev.time = hh2(Math.floor(tt / 60)) + ":" + hh2(tt % 60);
+      st[i + 1].walk = walkMin(best.k2);
+      st.splice(i + 1, 0, { ev: ev, label: MEALS[best.slot], walk: walkMin(best.k1), meal: best.slot });
+      return st;
+    }
+    return st;
+  }
+  function planStops(x) { var pool = planPool(), st = planFrom(x, pool); if (st.length >= 2) { st = withGapMeal(st); st = withDrink(st, pool); } return withMeal(st); }
   function planFrom(first, ranked) {
     var stops = [{ ev: first.ev, label: first.label, walk: 0 }];
     var seen = {}; seen[first.ev.category] = 1;
@@ -248,13 +429,13 @@
     return p.join(", ").replace(/^./, function (c) { return c.toUpperCase(); }) + ".";
   }
   function card(x, big) {
-    var ev = x.ev, color = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[ev.category]) || "#6C757D", icon = (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[ev.category]) || "📍";
+    var ev = x.ev, color = (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[ev.category]) || "#6C757D", icon = ev.category === "Resto" ? "🍽️" : (typeof CATEGORY_ICONS !== "undefined" && CATEGORY_ICONS[ev.category]) || "📍";
     var price = typeof eventPriceType === "function" ? eventPriceType(ev) : "";
     var dist = ev.distance <= 3 ? Math.max(2, Math.round(ev.distance * 12 / 5) * 5) + " min à pied" : ev.distance.toFixed(1).replace(".", ",") + " km";
     var venue = ev.place ? String(ev.place).split(",")[0] : "";
-    return '<button type="button" class="wz-i-card' + (big ? " big" : "") + '" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-i-ph">' + eventPhotoHTML(ev) +
+    return '<button type="button" class="wz-i-card' + (big ? " big" : "") + '" data-i="open" data-id="' + esc(ev.id) + '"><div class="wz-i-ph">' + phHTML(ev) +
       '<span class="wz-i-pill" style="--c:' + color + '">' + icon + " " + esc(catLabel(ev).toUpperCase()) + (price === "free" ? " · Gratuit" : "") + '</span></div>' +
-      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div>' + (isSocial(ev) ? '<div class="wz-i-soc" style="display:inline-block;margin:6px 0 0;padding:4px 10px;border-radius:999px;background:#E6F4F2;color:#13655F;font:800 12px inherit;font-family:inherit">🤝 Facile d’y aller seul(e)</div>' : '') + '<div class="wz-i-why">' + esc(x.label) + '</div>' + (big && whyText(x, price) ? '<div class="wz-i-why2" style="margin-top:6px;font-size:12.5px;font-weight:600;line-height:1.4;opacity:.85">Pourquoi cette idée : ' + esc(whyText(x, price)) + '</div>' : '') + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
+      '<div class="wz-i-bd"><div class="wz-i-t">' + esc(ev.title) + '</div><div class="wz-i-v">' + esc(venue) + (venue ? " · " : "") + dist + '</div>' + (ev.category === "Resto" && ev.description ? '<div style="margin:6px 0 0;font-size:13px;line-height:1.4;opacity:.8">' + esc(shortDesc(ev.description)) + '</div>' : '') + (isSocial(ev) ? '<div class="wz-i-soc" style="display:inline-block;margin:6px 0 0;padding:4px 10px;border-radius:999px;background:#E6F4F2;color:#13655F;font:800 12px inherit;font-family:inherit">🤝 Facile d’y aller seul(e)</div>' : '') + '<div class="wz-i-why">' + esc(x.label) + '</div>' + (big && whyText(x, price) ? '<div class="wz-i-why2" style="margin-top:6px;font-size:12.5px;font-weight:600;line-height:1.4;opacity:.85">Pourquoi cette idée : ' + esc(whyText(x, price)) + '</div>' : '') + (ev.lat && ev.lng ? '<span role="button" tabindex="0" class="wz-i-route" data-i="route" data-id="' + esc(ev.id) + '" style="display:inline-block;margin-top:10px;padding:8px 14px;border-radius:999px;background:#E85D3D;color:#fff;font:800 13px inherit;font-family:inherit;cursor:pointer">🚶 Itinéraire</span>' : "") + "</div></button>";
   }
   function screenResult() {
     var r = root(), lst = S.ranked.slice(S.offset, S.offset + 3);
@@ -277,14 +458,14 @@
   // ---- itinéraire à pied, affiché dans le site (carte Leaflet + tracé) ----
   var rmap = null;
   function killMap() { if (rmap) { try { rmap.remove(); } catch (e) {} rmap = null; } }
-  function findEv(id) { try { return allEvents().filter(function (e) { return String(e.id) === String(id); })[0]; } catch (e) { return null; } }
+  function findEv(id) { var bb = barById(id); if (bb) return barEv(bb); if (isRestoId(id)) { var rr = (window.__wzRestos || []).filter(function (x) { return x.id === id; })[0]; return rr ? restoEv(rr) : null; } try { return allEvents().filter(function (e) { return String(e.id) === String(id); })[0]; } catch (e) { return null; } }
   function screenRoute(id) {
     var ev = findEv(id), r = root();
     if (!ev || !ev.lat || !ev.lng) return screenResult();
     killMap();
     r.innerHTML = head(3) + '<div class="wz-i-k">Itinéraire à pied</div><h1 style="font-size:22px">' + esc(ev.title) + '</h1>' +
       '<div id="wz-i-map" style="height:300px;border-radius:18px;overflow:hidden;background:#EEF0F4;margin:8px 0 10px"></div>' +
-      '<div id="wz-i-rinfo" class="wz-i-sub" style="font-weight:700">Calcul du trajet…</div>' +
+      '<div id="wz-i-rinfo" class="wz-i-sub" style="font-weight:700">Calcul du trajet…</div>' + (ev.credit || ev.category === "Resto" ? '<div class="wz-i-sub" style="font-size:12px;opacity:.6">' + (ev.credit ? esc(ev.credit) + ' · ' : '') + 'vérifie les horaires avant de partir</div>' : '') +
       '<button type="button" class="wz-i-alt ghost" data-i="back">← Retour aux idées</button>';
     r.scrollTop = 0;
     var box = document.getElementById("wz-i-map"), info = document.getElementById("wz-i-rinfo");
@@ -318,7 +499,7 @@
 
   // ---- « Surprends-moi » : 1 toucher = 1 sortie, qu'on peut affiner par envie et par moment ----
   var SW = [["now", "Maintenant"], ["tonight", "Ce soir"], ["tomorrow", "Demain"], ["weekend", "Ce week-end"]];
-  var SWANT = ["any", "social", "musique", "soiree", "spectacle", "bar", "expo", "musee", "sport", "marche", "famille", "festival"];
+  var SWANT = ["any", "social", "musique", "soiree", "spectacle", "bar", "resto", "expo", "musee", "sport", "marche", "famille", "festival"];
   function track(n, p) { try { if (typeof analytics !== "undefined" && analytics && analytics.logEvent) analytics.logEvent(n, p || {}); } catch (e) {} }
   function loadWant() { try { var v = localStorage.getItem("wz-surprise-want"); if (v && SWANT.indexOf(v) !== -1) return v; } catch (e) {} return "any"; }
   function saveWant(v) { try { localStorage.setItem("wz-surprise-want", v); } catch (e) {} }
@@ -357,17 +538,70 @@
   function tabsHtml(cur) {
     return '<div class="wz-t-row"><button type="button" class="wz-t' + (cur === "idea" ? " on" : "") + '" data-i="tab" data-v="idea">🎲 Une idée</button><button type="button" class="wz-t' + (cur === "plan" ? " on" : "") + '" data-i="tab" data-v="plan">🎁 Un programme</button></div>';
   }
+
+  // ---- « Dîner surprise près de toi » : une adresse cachée choisie à la main, à moins de 15 min à pied ----
+  // dîner de 19 h à 22 h, déjeuner de 11 h 30 à 14 h ; on ne propose que les « perles » (sans photo, volontairement)
+  function dinnerSlot() {
+    var m = nowMin();
+    if (m >= 19 * 60 && m < 22 * 60) return "diner";
+    if (m >= 11 * 60 + 30 && m < 14 * 60) return "dejeuner";
+    return "";
+  }
+  function dinnerList(slot, maxMin) {
+    var ref = null; try { ref = referencePoint(); } catch (e) {}
+    if (!ref || !ref.lat || !ref.lng) return [];
+    var out = [];
+    (window.__wzRestos || []).forEach(function (r) {
+      if (!r || !/^perle-/.test(String(r.id || "")) || typeof r.la !== "number" || typeof r.lo !== "number") return;
+      var ok = (r.e || []).indexOf(slot) !== -1 || (slot === "dejeuner" && (r.e || []).indexOf("brunch") !== -1);
+      if (!ok) return;
+      var km = haversineKm(ref.lat, ref.lng, r.la, r.lo);
+      if (walkMin(km) > maxMin) return;
+      out.push({ r: r, km: km });
+    });
+    out.sort(function (a, b) { return a.km - b.km; });
+    return out;
+  }
+  function screenDinner() {
+    var slot = S.dSlot || dinnerSlot(), name = slot === "dejeuner" ? "Déjeuner" : "Dîner", r = root();
+    S.dSlot = slot;
+    var maxMin = S.dMax || 15, list = dinnerList(slot, maxMin);
+    var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button><div class="wz-i-k" style="margin:2px 0 14px">🍽️ ' + name.toUpperCase() + ' SURPRISE</div>';
+    if (!list.length) {
+      h += '<h1 style="font-size:24px">Pas d’adresse cachée à moins de ' + maxMin + ' min</h1><div class="wz-i-sub">On n’a pas encore d’adresse dans ce quartier.</div>';
+      if (maxMin < 30) h += '<button type="button" class="wz-i-go" data-i="dfar">Chercher plus loin (30 min)</button>';
+      h += '<button type="button" class="wz-i-alt" data-i="dback">Voir une autre idée de sortie</button>' +
+        '<div class="wz-q-note" style="margin-top:12px">Plus loin, c’est à pied ou en transport : on te montre la distance avant de choisir.</div>';
+      r.innerHTML = h; r.scrollTop = 0; return;
+    }
+    var x = list[(S.dOff || 0) % list.length], ev = restoEv(x.r);
+    ev.distance = x.km;
+    track("surprise_dinner_show", { slot: slot });
+    h += '<h1 style="font-size:26px">Une adresse cachée t’attend</h1>' +
+      '<div class="wz-i-ph" style="border-radius:18px;overflow:hidden;margin:8px 0 12px">' + phHTML(ev) + '</div>' +
+      '<div class="wz-i-k" style="color:#1F8F86">' + name.toUpperCase() + ' · ADRESSE CACHÉE</div>' +
+      '<div class="wz-i-t" style="font-size:22px;font-weight:800;margin:2px 0 4px">' + esc(ev.title) + '</div>' +
+      '<div class="wz-i-sub" style="margin:0 0 6px">' + esc(ev.kind || "") + (ev.city ? " · " + esc(ev.city) : "") + '</div>' +
+      (ev.description ? '<div class="wz-i-sub" style="margin:0 0 10px">' + esc(ev.description) + '</div>' : "") +
+      '<div class="wz-i-sub" style="font-weight:700;margin:0 0 12px">🚶 ' + walkMin(x.km) + ' min à pied · ' + (x.km < 1 ? Math.round(x.km * 1000) + ' m' : x.km.toFixed(1) + ' km') + ' · vérifie les horaires</div>' +
+      '<button type="button" class="wz-i-go" data-i="droute" data-id="' + esc(ev.id) + '">Y aller</button>' +
+      (list.length > 1 ? '<button type="button" class="wz-i-alt" data-i="dnext">Une autre adresse</button>' : '') +
+      '<div class="wz-q-note" style="margin-top:12px">Whazup ne dévoile pas de photo : la surprise fait partie du plaisir.</div>';
+    r.innerHTML = h; r.scrollTop = 0;
+  }
+
   function screenSurprise() {
     var r = root(), x = S.ranked[S.offset];
     var wl = (SW.filter(function (w) { return w[0] === S.when; })[0] || [0, ""])[1].toLowerCase();
     var wsel = S.sw && S.sw !== "any" ? (WANT.filter(function (y) { return y[0] === S.sw; })[0] || [0, ""])[1] : "";
     var showRows = S.refine || !x;
     var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button>' + (S.after ? "" : tabsHtml("idea")) + '<div class="wz-i-k" style="margin:2px 0 14px">' + (S.after ? "🎲 Et après · " + esc(String(S.after).slice(0, 40)) : "🎲 Ta surprise" + (wl ? " · " + esc(wl) : "")) + '</div>' +
+      (!S.after && dinnerSlot() ? '<button type="button" class="wz-i-card wz-d-card" data-i="dinner" style="display:block;width:100%;text-align:left;margin:0 0 12px;padding:14px 16px;border:2px solid #E85D3D;border-radius:18px;background:#fff;font:inherit;cursor:pointer;color:inherit"><b style="display:block;font-size:16px">🍽️ ' + (dinnerSlot() === "diner" ? "Dîner" : "Déjeuner") + ' surprise près de toi</b><span style="display:block;font-size:13px;opacity:.75;margin-top:2px">Une adresse cachée à moins de 15 min à pied</span></button>' : "") +
       (S.planMsg ? '<div class="wz-q-note" style="margin:0 0 12px"><b>PAS ASSEZ DE SORTIES POUR UN PROGRAMME</b>Il n’y a pas assez de sorties proches et bien placées dans la journée. Voici une idée à la place.</div>' : "");
     S.planMsg = false;
     if (showRows) {
     h += '<div class="wz-s-row">';
-    SWANT.forEach(function (k) { var w = WANT.filter(function (y) { return y[0] === k; })[0]; if (!w) return; h += '<button type="button" class="wz-i-c' + (S.sw === k ? " on" : "") + '" data-i="swant" data-v="' + k + '">' + (k === "any" ? "✨ Peu importe" : w[1]) + "</button>"; });
+    SWANT.forEach(function (k) { var w = WANT.filter(function (y) { return y[0] === k; })[0]; if (!w) return; if (k === "resto" && !(window.__wzRestos && window.__wzRestos.length)) return; h += '<button type="button" class="wz-i-c' + (S.sw === k ? " on" : "") + '" data-i="swant" data-v="' + k + '">' + (k === "any" ? "✨ Peu importe" : w[1]) + "</button>"; });
     h += '</div><div class="wz-s-row">';
     SW.forEach(function (w) { h += '<button type="button" class="wz-i-c' + (S.when === w[0] ? " on" : "") + '" data-i="swhen" data-v="' + w[0] + '">' + w[1] + "</button>"; });
     h += "</div>";
@@ -375,12 +609,13 @@
     if (!x) {
       h += '<h1 style="font-size:24px">Rien de prévu pour ce choix</h1><div class="wz-i-sub">' + (S.sw === "social" ? "Rien de convivial de prévu pour ce moment. Essaie un autre moment (le soir ou le week-end, c’est plus animé) ou « Peu importe »." : "Essaie un autre moment ou « Peu importe » : on ne te propose que de vraies sorties.") + '</div>';
     } else {
-      h += card(x, true);
+      h += card(x, true); memMark(x.ev, "shown");
       h += '<div class="wz-s-btns"><button type="button" class="wz-i-go" data-i="open" data-id="' + esc(x.ev.id) + '">J’y vais</button><button type="button" class="wz-i-alt" data-i="snext">🎲 Une autre</button></div>' +
         '<button type="button" class="wz-i-alt wz-s-send" data-i="sshare" data-id="' + esc(x.ev.id) + '">✈ Envoyer à un ami</button>';
     }
     if (!showRows && !S.after) h += '<button type="button" class="wz-i-alt ghost" data-i="refine">Affiner ma surprise' + (wsel ? " (" + esc(wsel) + ")" : "") + '</button>';
     if (showRows) h += '<button type="button" class="wz-i-alt ghost" data-i="full">Voir toutes les idées →</button>';   // un seul lien à la fois : « Affiner », puis « Voir toutes les idées »
+    h += '<a class="wz-i-alt ghost" href="adresses.html" style="display:block;text-align:center;text-decoration:none">📖 Cafés &amp; tables sympas<span style="display:block;font-weight:500;font-size:12px;opacity:.75">Où déjeuner, goûter ou dîner : tu choisis toi-même</span></a>';
     r.innerHTML = h; r.scrollTop = 0;
   }
   function planColor(cat) { return (typeof CATEGORY_COLORS !== "undefined" && CATEGORY_COLORS[cat]) || "#1F8F86"; }
@@ -415,21 +650,21 @@
     var wl = (SW.filter(function (w) { return w[0] === S.when; })[0] || [0, ""])[1].toLowerCase();
     var f = mins(st[0].ev.time), word = (S.when === "tonight" || (f != null && f >= 17 * 60)) ? "soirée" : "journée";
     var h = '<button type="button" class="wz-i-x" data-i="close" aria-label="Fermer">✕</button>' + tabsHtml("plan") + '<div class="wz-i-k" style="margin:2px 0 6px">🎁 Ton programme · ' + word + (wl ? " · " + esc(wl) : "") + '</div>' +
-      '<h1 class="wz-q-h">' + esc(dayTitle(st[0].ev.date)) + '</h1><div class="wz-q-sub">' + st.length + ' sorties au programme</div><div class="wz-q-tl">';
+      '<h1 class="wz-q-h">' + esc(dayTitle(st[0].ev.date)) + '</h1><div class="wz-q-sub">' + st.length + (st.some(function (s) { return s.meal; }) ? ' étapes au programme' : ' sorties au programme') + '</div><div class="wz-q-tl">';
     st.forEach(function (s, i) {
       var ev = s.ev, col = planColor(ev.category), venue = ev.place ? String(ev.place).split(",")[0] : "", m = mins(ev.time);
       var tm = m != null ? String(Math.floor(m / 60)).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0") : "";
       if (s.drink) tm = "Après";
       if (i) h += '<div class="wz-q-hop">↓ à environ ' + s.walk + ' min à pied</div>';
-      h += '<div class="wz-q-stop"><div class="wz-q-when"><b>' + esc(tm) + '</b><i>' + (s.drink ? "à ta guise" : ev.category === "Expo" ? "ouverture" : "heure fixe") + '</i></div><div class="wz-q-bar" style="background:' + col + '"></div>' +
-        '<div class="wz-q-body"><div class="wz-q-ph">' + eventPhotoHTML(ev) + '</div><div class="wz-q-kind" style="color:' + col + '">' + (s.drink ? "POUR FINIR · UN VERRE" : esc(catLabel(ev).toUpperCase())) + '</div>' +
-        '<div class="wz-q-ttl">' + esc(ev.title) + '</div><div class="wz-q-v">' + (s.drink ? (venue ? esc(venue) + " · " : "") + "vérifie les horaires" : esc(venue)) + '</div><div class="wz-q-acts">' +
+      h += '<div class="wz-q-stop"><div class="wz-q-when"><b>' + esc(tm) + '</b><i>' + (s.meal ? "à partir de" : s.drink ? "à ta guise" : ev.category === "Expo" ? "ouverture" : "heure fixe") + '</i></div><div class="wz-q-bar" style="background:' + col + '"></div>' +
+        '<div class="wz-q-body"><div class="wz-q-ph">' + phHTML(ev) + '</div><div class="wz-q-kind" style="color:' + col + '">' + (s.meal ? MEALS[s.meal].toUpperCase() + " · " + (ev.mystery || ev.perle ? "ADRESSE CACHÉE" : "ADRESSE DE CARACTÈRE") : s.drink ? "POUR FINIR · UN VERRE" : esc(catLabel(ev).toUpperCase())) + '</div>' +
+        '<div class="wz-q-ttl">' + esc(ev.title) + '</div><div class="wz-q-v">' + ((s.drink || s.meal) ? (venue ? esc(venue) + " · " : "") + "vérifie les horaires" : esc(venue)) + '</div><div class="wz-q-acts">' +
         '<button type="button" class="wz-q-lnk" data-i="open" data-id="' + esc(ev.id) + '">Voir la fiche</button>' +
         (i ? '<button type="button" class="wz-q-lnk dim" data-i="pswap" data-id="' + esc(ev.id) + '">Autre idée</button>' : "") + '</div>' +
         (S.swapNone === ev.id ? '<div class="wz-q-none">Pas d’autre idée proche à cette heure. Essaie « Un autre programme ».</div>' : "") + '</div></div>';
     });
     h += '</div><div class="wz-q-exp"><button type="button" class="wz-q-b1" data-i="pics">Ajouter au calendrier</button><button type="button" class="wz-q-b2" data-i="pshare">Partager</button></div>' +
-      '<div class="wz-q-note"><b>IL RESTE À PRÉVOIR DE TON CÔTÉ</b>Comment y aller et où manger. Distances à vol d’oiseau, vérifie les horaires avant de partir.</div>' +
+      '<div class="wz-q-note"><b>IL RESTE À PRÉVOIR DE TON CÔTÉ</b>' + (st.some(function (s) { return s.meal; }) ? 'Comment y aller, et réserver si besoin. Distances à vol d’oiseau, vérifie les horaires avant de partir.' : 'Comment y aller et où manger. Distances à vol d’oiseau, vérifie les horaires avant de partir.') + '</div>' +
       '<button type="button" class="wz-i-alt" data-i="pnext">🎲 Un autre programme</button>' +
       '<button type="button" class="wz-i-alt ghost" data-i="planback">← Retour à l’idée</button>';
     r.innerHTML = h; r.scrollTop = 0;
@@ -511,7 +746,8 @@
   });
   function openSurprise() {
     try { var av = document.getElementById("arrival-screen-overlay"); if (av) av.remove(); } catch (e) {}
-    surpriseCss();
+    surpriseCss(); wxPrefetch();
+    restosLoad();
     var h = new Date().getHours();
     S = { when: (h >= 22 || h < 5) ? "tomorrow" : h >= 17 ? "tonight" : "now" , want: [], sw: loadWant(), zone: "city", offset: 0, ranked: [], refine: false };
     try { showView("discover"); } catch (e) {}
@@ -529,7 +765,7 @@
     var f = mins(st[0].ev.time), word = (S.when === "tonight" || (f != null && f >= 17 * 60)) ? "soirée" : "journée";
     var lines = st.map(function (s) {
       var ev = s.ev, venue = ev.place ? String(ev.place).split(",")[0] : "";
-      return (s.drink ? "Pour finir · " : ev.time ? hh(ev.time) + " · " : "") + ev.title + (venue && !s.drink ? " (" + venue + ")" : "");
+      return (s.drink ? "Pour finir · " : s.meal ? (MEALS[s.meal] + " dès ") + hh(ev.time) + " · " : ev.time ? hh(ev.time) + " · " : "") + ev.title + (venue && !s.drink ? " (" + venue + ")" : "");
     });
     var txt = "Ma " + word + " avec Whazup, ça te dit ?\n" + lines.join("\n");
     var url = "https://whazup.fr";
@@ -557,8 +793,13 @@
     var b = e.target.closest("#wz-idea [data-i]"); if (!b) return;
     var a = b.dataset.i, v = b.dataset.v;
     if (a === "close") { killMap(); return close(); }
-    if (a === "route") { e.preventDefault(); return screenRoute(b.dataset.id); }
-    if (a === "back") { killMap(); return screenResult(); }
+    if (a === "route") { e.preventDefault(); S.fromDinner = false; return screenRoute(b.dataset.id); }
+    if (a === "back") { killMap(); return S.fromDinner ? screenDinner() : screenResult(); }
+    if (a === "dinner") { track("surprise_dinner"); S.dMax = 15; S.dOff = 0; S.dSlot = dinnerSlot(); S.fromDinner = false; return restosLoad().then(screenDinner); }
+    if (a === "dnext") { track("surprise_dinner_next"); S.dOff = (S.dOff || 0) + 1; return screenDinner(); }
+    if (a === "dfar") { track("surprise_dinner_far"); S.dMax = 30; S.dOff = 0; return screenDinner(); }
+    if (a === "dback") { S.fromDinner = false; return screenSurprise(); }
+    if (a === "droute") { track("surprise_dinner_go"); S.fromDinner = true; e.preventDefault(); return screenRoute(b.dataset.id); }
     if (a === "when") { S.when = v; return screenAsk(); }
     if (a === "when2") { S.when = v; return go(); }
     if (a === "zone") { S.zone = v; return screenAsk(); }
@@ -584,7 +825,8 @@
     if (a === "pswap") {
       track("surprise_plan_swap"); var px = S.ranked[S.offset];
       S.swapNone = null;
-      if (px) { S.planSkip = (S.planSkip || []).concat([b.dataset.id]); if (planFrom(px, planPool()).length < 2) { S.planSkip.pop(); S.swapNone = b.dataset.id; } }
+      if (px && isRestoId(b.dataset.id)) { S.planSkip = (S.planSkip || []).concat([b.dataset.id]); var ns = planStops(px); if (!ns.some(function (z) { return z.meal; })) { S.planSkip.pop(); S.swapNone = b.dataset.id; } }
+      else if (px) { S.planSkip = (S.planSkip || []).concat([b.dataset.id]); if (planFrom(px, planPool()).length < 2) { S.planSkip.pop(); S.swapNone = b.dataset.id; } }
       return screenPlan();
     }
     if (a === "pics") { track("surprise_plan_ics"); return downloadPlanIcs(); }
@@ -593,16 +835,16 @@
     if (a === "refine") { track("surprise_refine"); S.refine = true; return screenSurprise(); }
     if (a === "swant") { track("surprise_filter", { want: v }); S.sw = v; saveWant(v); surpriseRank(); return screenSurprise(); }
     if (a === "swhen") { track("surprise_when", { when: v }); S.when = v; surpriseRank(); return screenSurprise(); }
-    if (a === "snext") { track("surprise_next"); S.offset = S.ranked.length ? (S.offset + 1) % S.ranked.length : 0; return screenSurprise(); }
+    if (a === "snext") { track("surprise_next"); try { memMark(S.ranked[S.offset] && S.ranked[S.offset].ev, "skip"); } catch (x) {} S.offset = S.ranked.length ? (S.offset + 1) % S.ranked.length : 0; return screenSurprise(); }
     if (a === "sshare") { track("surprise_share"); return shareEv(b.dataset.id); }
     if (a === "full") { killMap(); return openIdea(); }
     if (a === "go") return go();
     if (a === "more") { S.offset += 3; return screenResult(); }
     if (a === "again") return screenAsk();
-    if (a === "open") { var id = b.dataset.id; if (root().querySelector(".wz-s-btns")) track("surprise_go"); close(); try { openDetail(id); } catch (x) {} }
+    if (a === "open") { var id = b.dataset.id; if (barById(id)) { track("surprise_bar"); return screenRoute(id); } if (isRestoId(id)) { track("surprise_resto"); return screenRoute(id); } if (root().querySelector(".wz-s-btns")) track("surprise_go"); close(); try { openDetail(id); } catch (x) {} }
   }, true);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
-  window.__wzIdeaOpen = openIdea; window.__wzSurpriseOpen = openSurprise; surpriseCss();
+  window.__wzIdeaOpen = openIdea; window.__wzSurpriseOpen = openSurprise; surpriseCss(); setTimeout(function () { wxPrefetch(); restosLoad(); }, 4000);
   // l'ancien parcours « Étape 1/2 » (guided-quest.js) est remplacé : ses accès ouvrent maintenant celui-ci
   try { Object.defineProperty(window, "__questOpen", { configurable: true, get: function () { return openIdea; }, set: function () {} }); } catch (e) {}
 
