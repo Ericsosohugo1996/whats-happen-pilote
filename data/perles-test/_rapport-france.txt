@@ -1,6 +1,5 @@
-Perles de France : 22 adresses à vérifier
+Perles de France : 338 adresses à vérifier
 ✓ Le Musée [lieu] sans photo
-✓ Miraflores [lieu] photo libre https://commons.wikimedia.org/wiki/File:Restaurant_Miraflores_60_rue_Garibaldi_(Lyon).jpg
 ✓ Le Passage [lieu] sans photo
 ✓ La Source [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 3210 m de l'adresse donnée, on garde l'adresse
 ✓ Piedra [lieu] sans photo
@@ -21,10 +20,345 @@ Perles de France : 22 adresses à vérifier
 ✓ La Luck [lieu] sans photo
 ✓ Les Casseroles Lilloises [lieu] photo du site https://www.casseroleslilloises.com/
 ✓ Les Fils à Maman [lieu] photo du site https://www.lesfilsamaman.com/restaurants/lille/
+✓ Restaurant du Petit Jardin [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 2689 m de l'adresse donnée, on garde l'adresse
+✓ Les Bains [lieu] sans photo
+✓ Le Jardin des Frangins [lieu] photo du site https://www.le-jardin-des-frangins-restaurant-montpellier.fr/
+✓ Le Bazar [lieu] sans photo
+✓ Carré d'Or [lieu] sans photo
+✓ Flowers [lieu] sans photo
+✓ Momo Tibétain [lieu] sans photo
+✓ Les Téléphones [adresse] sans photo
+✓ Delicatessen [lieu] sans photo
+✓ Les Fromagivores [lieu] sans photo
+✓ Les Demoiselles de Rochefort [lieu] sans photo
+✓ L'Argot [lieu] sans photo
+✓ La Table en Braille [lieu] photo du site https://table-enbraille.fr/
+✓ La Nef des Fous [lieu] sans photo
+✓ Les Fils à Maman [lieu] sans photo
+✗ introuvable : Jardin suspendu de l'Hôtel de Gadagne  (Hôtel de Gadagne, Vieux-Lyon)
+✓ Oto Oto [lieu] photo du site https://www.oto-oto.fr
+✓ Messob [lieu] photo libre https://commons.wikimedia.org/wiki/File:Messob,_restaurant_%C3%A9thiopien_-_rue_Mass%C3%A9na_(Lyon).jpg
+✓ Les Beaux Mets [lieu] sans photo
+✓ La Caravelle [lieu] sans photo
+✓ Teavora [lieu] sans photo
+✗ introuvable : Dans le Noir ?  (10 rue de Méry, Marseille)
+✓ La Place des Canailles [lieu] sans photo
+✓ La Grotte [lieu] sans photo
+✓ Dans le Noir ? [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 6737 m de l'adresse donnée, on garde l'adresse
+✓ Le 49R [adresse] sans photo
+✗ introuvable : Magmatic by Ephemera  (Magmatic Lille Ephemera)
+✓ Britney [lieu] sans photo
+✓ Dans le Noir ? [lieu] photo du site http://bordeaux.danslenoir.com/
+✗ introuvable : Taste The Screen  (Taste The Screen Bordeaux)
+✓ Back To! [lieu] sans photo
+✓ À Partager [lieu] sans photo
+✓ Le Reflet [lieu] photo libre https://commons.wikimedia.org/wiki/File:Restaurant_Le_Reflet.jpg
+✓ Les Petits Saints [adresse] sans photo
+✓ La Prison du Bouffay [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Prison_du_Bouffay_(Thomas_Drake).jpg)
+✓ Papy Mougeot [adresse] sans photo
+✓ La Cave du Fromager [lieu] photo libre https://commons.wikimedia.org/wiki/File:Raclette_de_Morbier_%C3%A0_La_Cave_du_Fromager,_Vieux-Nice.jpg
+✓ Caravane Palace [lieu] sans photo
+✓ Chez Alice [lieu] sans photo
+✓ Le Bon Pasteur [lieu] photo libre https://commons.wikimedia.org/wiki/File:Escalier_du_Bon-Pasteur.JPG
+✓ Le Prologue [lieu] sans photo
+✓ Chez Marius [lieu] sans photo
+✓ Le Café sur Cour [adresse] sans photo
+✓ Le Rouge Ardoise [adresse] sans photo
+✓ Le Bouchon [lieu] sans photo
+✓ Les Petits Pavés [lieu] sans photo
+✓ Cave de la Tour [lieu] sans photo
+✓ Le Lavomatique [adresse] sans photo
+✓ Le Plongeoir [lieu] photo libre https://commons.wikimedia.org/wiki/File:Nice_-_La_R%C3%A9serve_(32742233456).jpg
+✓ Le Bar des Oiseaux [lieu] sans photo
+✓ Chic et Bohème [lieu] sans photo
+✓ À la Piscine [adresse] sans photo
+✓ La Bicycletterie [adresse] sans photo
+✓ Les Innocents [lieu] photo du site http://les-innocents.fr/
+✓ Au Petit Tonnelier [lieu] sans photo
+✓ Tire-Bouchon [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Le_Tire-Bouchon_@_Strasbourg_(43763432680).jpg)
+✓ Un Cochon Pendu au Plafond [adresse] sans photo
+✓ Le Comptoir de Teddy [lieu] sans photo
+✓ La Cuisine d'Antan [adresse] sans photo
+✓ Café Maritime [lieu] sans photo
+✓ Estaminet Chez la Vieille [lieu] sans photo
+✓ Cédrat [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 7338 m de l'adresse donnée, on garde l'adresse
+✓ Café Borély [lieu] sans photo
+✓ Le Fantastique [lieu] sans photo
+✓ La Passarelle [lieu] sans photo
+✓ William Tennis Club [lieu] sans photo
+✓ La Guinguette du Couvent [adresse] sans photo
+✓ Le Patro de Jeannot [adresse] sans photo
+✓ Le Petit Jardin [lieu] sans photo
+✓ The Cat Counter [adresse] sans photo
+✓ Wash Bar [lieu] photo du site https://washbar.fr/
+✓ Café Utopia [lieu] photo libre https://commons.wikimedia.org/wiki/File:UTOPIA_Bx.jpg
+✓ Le Mancuso [adresse] sans photo
+✓ La Baignoire [lieu] sans photo
+✓ Le Nabuchodonosor [lieu] sans photo
+✓ La Coquetterie [adresse] sans photo
+✓ L'Authentic Restaurant [adresse] sans photo
+✓ Le Coin Caché [lieu] sans photo
+✓ Café Gadagne [lieu] sans photo
+✓ Café des Anges [lieu] photo du site https://www.cafedesanges.fr/
+✓ O'Kypos [lieu] photo du site https://www.o-kypos.fr/
+✓ Les Complices [lieu] sans photo
+✓ La Cour de Caro [adresse] sans photo
+✓ Bistro Sauvage [lieu] photo du site https://www.bistrosauvage.com/
+✓ Les Chantiers de la Garonne [lieu] photo du site https://leschantiersdelagaronne.camp/
+✓ Chez Alriq [lieu] sans photo
+✓ L'Effet Mer [lieu] sans photo
+✓ Gargalou [lieu] sans photo
+✓ French Kiss [lieu] photo du site https://www.frenchkiss.fr/nos-adresses/bordeaux
+✓ La Casa - Péniche tropicale [lieu] sans photo
+✓ Pépé Guinguette [lieu] photo du site https://pepe-guinguette-restaurant-nantes.eatbu.com/
+✓ Le Petit Baigneur [lieu] sans photo
+✓ Le Grain de Folie [adresse] sans photo
+✓ Sous le Balcon [adresse] sans photo
+✓ Le Limonadier [lieu] sans photo
+✓ UFO [lieu] sans photo
+✓ Milord Circus [lieu] sans photo
+✓ Zibou Lab [lieu] sans photo
+✓ Café Mio [adresse] sans photo
+✓ Un Brin de folie [lieu] photo du site https://www.unbrindefolie.fr/
+✓ Anahera [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 4457 m de l'adresse donnée, on garde l'adresse
+✓ Le Transsibérien [adresse] sans photo
+✓ Ombres Blanches Café [adresse] sans photo
+✓ Canithé [lieu] photo du site https://lecanithe.com/
+✓ Swinging Sisters [adresse] sans photo
+✓ Cacou [lieu] photo du site https://cacoucafe.eatbu.com/
+✓ Chapristea [lieu] sans photo
+✓ Le Répit de Notre-Dame [adresse] sans photo
+✓ Le Broc du Vieux Lille [lieu] sans photo
+✓ Darwin Éco-Système [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Monument_aux_R%C3%A9publicains_espagnols,_Eco-syst%C3%A8me_Darwin,_Caserne_Niel.jpg)
+✓ Les Ronrons des Chartrons [lieu] sans photo
+✓ Lila and the Barber [lieu] sans photo
+✓ Wave Surf Café [lieu] sans photo
+✓ Bakery Art Gallery [lieu] sans photo
+✓ Café Bun [lieu] photo du site https://cafebun.fr/
+✓ Faune [lieu] sans photo
+✓ Fada Bike [lieu] photo du site https://www.fada.bike
+✓ Barbotyne [lieu] sans photo
+✓ Mo:stera [lieu] sans photo
+✓ Fan2 [adresse] sans photo
+✓ Le Fil en Trop [adresse] sans photo
+✓ La Butinerie [adresse] sans photo
+✓ Terrakoa [lieu] photo du site https://www.terrakoa.fr/
+✓ Aux P'tit Joueurs [adresse] sans photo
+✓ Chez Maman [lieu] sans photo
+✓ La Ronronerie [adresse] sans photo
+✓ L'Art Gourmand [lieu] sans photo
+✓ Marinette Bakery [adresse] sans photo
+✓ Read the Room [lieu] sans photo
+✓ Alaska Brocante et Snack [adresse] sans photo
+✓ Le Chat Puccino [lieu] photo du site https://lechatpuccinorenne.wixsite.com/lechatpuccino
+✓ Now [lieu] sans photo
+✓ La Banque [lieu] sans photo
+✓ Le Pétrouchka [lieu] sans photo
+✓ Le GentleCat [lieu] photo du site https://legentlecat.fr/
+✓ La Bibliothèque [lieu] photo libre https://commons.wikimedia.org/wiki/File:Mosa%C3%AFque_BML.png
+✓ Les Arpenteurs [lieu] sans photo
+✓ Skull [lieu] sans photo
+✓ La Limonade de Marinette [lieu] sans photo
+✓ Café-Brocante Vintage By Fabichka [adresse] sans photo
+✓ Insolita - Bar à Chaussures [lieu] sans photo
+✓ Comptoir de l'Arc [lieu] sans photo
+✓ Napoléon Dynamite [lieu] sans photo
+✓ Restaurant du Parc de la Colombière [adresse] photo libre https://commons.wikimedia.org/wiki/File:Dijon_-_Parc_de_la_Colombi%C3%A8re_-_bo%C3%AEte_%C3%A0_livres.jpg
+✓ Maison Millière [lieu] photo libre https://commons.wikimedia.org/wiki/File:Dijon_-_Maison_Milli%C3%A8re_-_10_rue_de_la_Chouette_-_102.jpg
+✓ La Petite Cour [lieu] sans photo
+✓ Le restaurant du We Are Club [adresse] sans photo
+✓ Chez Le Pèr'Gras [lieu] sans photo
+✓ La Java Bleue [lieu] sans photo
+✓ Corne d'Aurochs [lieu] photo du site https://cornedaurochs.eatbu.com/
+✓ La Fabuleuse Cantine [lieu] photo libre https://commons.wikimedia.org/wiki/File:B%C3%A2timent_Fabuleuse_Cantine_Manufacture_Armes_-_Saint-%C3%89tienne_(FR42)_-_2025-06-29_-_2.jpg
+✓ The British Book Club [adresse] sans photo
+✓ Le Pescalou [adresse] sans photo
+✗ introuvable : Restaurant Bernard  (Sentier des Douaniers, Anse de Magaud, Toulon)
+✓ Drôle d'Endroit [lieu] sans photo
+✓ Les Caves Henri 4 [adresse] sans photo
+✓ L'Atypique [lieu] sans photo
+✓ La Cour des Marchands [adresse] sans photo
+✗ introuvable : Derrière l'Église  (3 rue du Château Fadaise, Nîmes)
+✓ L'Insolite [lieu] sans photo
+✓ Café Hamlet [lieu] sans photo
+✓ La Taverne Saint-Amand [adresse] sans photo
+✓ Les Papilles Insolites [lieu] sans photo
+✓ L'Insolite [lieu] sans photo
+✓ Le Bocal [lieu] sans photo
+✓ Au Petit Comptoir [lieu] photo du site https://au-petit-comptoir.fr
+✓ Version Originale [lieu] sans photo
+✓ Pierres et Gamelles [adresse] sans photo
+✓ Flambock [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 10817 m de l'adresse donnée, on garde l'adresse
+✓ A Buteghinna [lieu] sans photo
+✓ Slake Jacobins [adresse] sans photo
+✓ Langues de Chá [adresse] sans photo
+✓ Kiwa Café [lieu] sans photo
+✓ Le Luminarium [lieu] sans photo
+✓ Le Rancard [lieu] photo du site https://lerancard.com/
+✓ Cup of Tea [lieu] sans photo
+✓ OURS Café [adresse] sans photo
+✓ Oomji Café [adresse] sans photo
+✓ Jorlia [lieu] sans photo
+✓ Elizabeth's [adresse] sans photo
+✓ L'Impertinente [adresse] sans photo
+✓ Café Méo [lieu] sans photo
+✓ Marcel et ses Madeleines [adresse] sans photo
+✓ Les Bien-Aimés [adresse] sans photo
+✓ Le Chapitre T [adresse] sans photo
+✓ Le Livr'Ô Thé [adresse] sans photo
+✓ Le Bookshop [lieu] sans photo
+✓ La Cantinetta [lieu] sans photo
+✓ La Tasca [lieu] photo du site https://www.latasca.fr/
+✓ Le P'tit Jardin [adresse] sans photo
+✓ El Picoteo [adresse] sans photo
+✓ Le Café Thaï [lieu] sans photo
+✓ La Rôtisserie Montaigne [adresse] sans photo
+✓ Dos Hermanas [lieu] sans photo
+✓ Raconte-moi la Terre [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 8513 m de l'adresse donnée, on garde l'adresse
+✓ S'Burjerstuewel [adresse] sans photo
+✓ kRAZ [lieu] photo du site https://krazrennes.com/
+✓ La Marmite sénégauloise [lieu] sans photo
+✓ La Prison Saint-Michel [adresse] photo libre https://commons.wikimedia.org/wiki/File:Rennes_121229-46_Prison_Saint-Michel.jpg
+✓ Origines [lieu] sans photo
+✓ JAIA [lieu] sans photo
+✓ VAI Coffee [adresse] sans photo
+✓ OVNI [adresse] sans photo
+✓ HINO [adresse] sans photo
+✓ Espezia [lieu] sans photo
+✓ ARLO [adresse] sans photo
+✓ Entre Deux Vagues [adresse] sans photo
+✓ S'Kaechele [adresse] sans photo
+✓ Les Sales Gosses [lieu] sans photo
+✓ La Cloche à Fromage [lieu] sans photo
+✓ L'Épicerie [lieu] photo du site https://www.epicerie-strasbourg.com
+✓ La Manu't [adresse] sans photo
+✓ La Fignette [lieu] sans photo
+✓ Chez la Vieille [adresse] sans photo
+✓ YAYA [lieu] sans photo
+✓ Carmi [lieu] sans photo
+✓ Chiquita Bacana [lieu] sans photo
+✓ The Island of Crete [adresse] sans photo
+✓ Le Comptoir de Mamie Bigoude [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 11396 m de l'adresse donnée, on garde l'adresse
+✓ Le Figuier Bouchon Catalan [adresse] sans photo
+✓ Le Grain de Folie [lieu] sans photo
+✓ La Cour des Arts [lieu] photo du site https://la-cour-des-arts.eatbu.com
+✓ L'Ail des Ours [adresse] sans photo
+✓ L'Ardoise [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 732 m de l'adresse donnée, on garde l'adresse
+✓ Les Bons Enfants [lieu] sans photo
+✓ La Serrurerie [lieu] sans photo
+✓ Auberge Chez Cul de Paille [adresse] sans photo
+✓ Les Archives [lieu] sans photo
+✓ Le Vingélique [adresse] sans photo
+✓ Le Trait d'Union [lieu] sans photo
+✓ Ittshin Izakaya [lieu] sans photo
+✓ American Way [lieu] sans photo
+✓ Pastel et Porcelaine [lieu] sans photo
+✓ Ô-Bao [lieu] sans photo
+✓ Pica Pica [lieu] photo du site https://www.picapica-dijon.fr/
+✓ Café Joyeux [lieu] sans photo
+✓ Chez Tata [lieu] sans photo
+✓ Le Tohu Bohu [adresse] sans photo
+✓ Levrette Café [lieu] sans photo
+✓ Canard Café Cantine [adresse] sans photo
+✓ Le Nautilus [adresse] sans photo
+✓ Le Grand Réfectoire [lieu] photo du site https://legrandrefectoire.com/
+✓ La Cour d'Honneur [lieu] photo libre https://commons.wikimedia.org/wiki/File:Ancien_H%C3%B4tel_des_Taillades_%C3%A0_cot%C3%A9_du_restaurant_(La_cour_d%27honneur).JPG
+✓ Chez les Fondus [lieu] sans photo
+✓ Cantine Numéro Dix [adresse] sans photo
+✓ Cantine Clandestine [adresse] sans photo
+✓ Haven [lieu] sans photo
+✓ La Galerne [lieu] sans photo
+✓ Onni [lieu] sans photo
+✓ Anh Coffee & Bistro [adresse] sans photo
+✓ Le Pinson [adresse] sans photo
+✓ Amédée [lieu] photo du site https://www.amedeechambery.fr/
+✓ Le Bruit qui court [lieu] sans photo
+✓ Café de l'Horloge [lieu] photo libre https://commons.wikimedia.org/wiki/File:Horloge_Place_Saint-L%C3%A9ger_et_son_ombre_(Chamb%C3%A9ry).JPG
+✓ The Brick House [adresse] photo du site https://bistrotbrickhouse.com/
+✓ Ernest Pâtisserie & Café [lieu] sans photo
+✓ Bistrot Delicatessen [adresse] sans photo
+✓ L'Hydromel [lieu] sans photo
+✓ Memphis Coffee [adresse] sans photo
+✓ Les Halles [lieu] sans photo
+✓ Hôtel des Bains [lieu] photo du site https://www.hoteldesbains-charavines.com/
+✗ introuvable : Les Dauphins  (340 chemin des Plages, Charavines)
+✓ L'Épicentre [lieu] sans photo
+✓ Les Chants d'Ailes [adresse] sans photo
+✓ Coffee and Go [adresse] sans photo
+✓ Eyes Café [adresse] sans photo
+✓ Café de France [lieu] sans photo
+✓ Café de la Table Ronde [lieu] photo libre https://commons.wikimedia.org/wiki/File:La_table_ronde_interieur-Grenoble.jpg
+✓ NoMad Café [adresse] sans photo
+✓ Ad Hoc Café [lieu] sans photo
+✓ Green Corner [lieu] photo du site https://green-corner-amiens.eatbu.com/
+✓ Le Septime [adresse] sans photo
+✓ Le Comptoir de Mamie Bigoude [adresse] sans photo
+✓ Le Saint Flaceau [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Rue_Saint_Flaceau_-_Le_Mans_(FR72)_-_2026-07-31_-_1.jpg)
+✓ La Table du Brocanteur [adresse] sans photo
+✓ Maison Rouge [adresse] photo libre https://commons.wikimedia.org/wiki/File:Impasse_de_la_Maison-Rouge_(Colmar)_(2).JPG  ⚠ conflit : le lieu trouvé est à 9786 m de l'adresse donnée, on garde l'adresse
+✓ O p'tits bonheurs [adresse] sans photo
+✓ Le Seven Zola [adresse] sans photo
+✓ Crêperie du Frugy [lieu] sans photo
+✓ Café des Orfèvres [lieu] sans photo
+✓ Marie Papote [adresse] sans photo
+✓ Nananère [lieu] sans photo
+✓ L'Appart Café [adresse] sans photo
+✓ Le Vert Mi Sel [lieu] sans photo
+✓ Crêperie Gallo [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 8020 m de l'adresse donnée, on garde l'adresse
+✓ Bouliche [lieu] sans photo
+✓ Chez Coco [lieu] sans photo
+✓ La Barge [lieu] photo du site https://labarge-lyon.fr
+✓ Péniche Loupika [adresse] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Lyon_-_P%C3%A9niche_Loupika_(P13202F).jpg)
+✓ Le Sirius [adresse] sans photo
+✓ The Star Ferry [adresse] sans photo
+✓ Zaÿ Zaÿ [lieu] sans photo
+✓ Santorin [adresse] sans photo
+✓ Ollā [lieu] photo du site https://marsclub.fr/olla/
+✓ Luciole [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 995 m de l'adresse donnée, on garde l'adresse
+✓ Pitchoun' [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 8272 m de l'adresse donnée, on garde l'adresse
+✓ Guinguette du restaurant Merci [adresse] sans photo
+✗ introuvable : La Guytoune  (281 rue des 4 Casteras, Bègles, Bordeaux)
+✓ Les Halles du Faubourg [adresse] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Lyon_7e_-_Halles_du_Faubourg,_le_Comptoir_(1).jpg)
+✓ La Muse Café [lieu] sans photo
+✓ Bocce Saint-Paul [adresse] sans photo
+✓ La Douce Parenthèse [lieu] sans photo
+✓ Darwin [lieu] sans photo
+✓ Caserne B [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 816 m de l'adresse donnée, on garde l'adresse
+✓ La Friche Belle de Mai [lieu] photo libre https://commons.wikimedia.org/wiki/File:Toit_de_la_Friche_Belle_de_Mai_%C3%A0_Marseille.JPG
+✓ Flower's Café [lieu] photo du site https://www.theflowerscafe.com/
+✓ Les Rêveries d'Hercule [lieu] sans photo
+✓ Toast and Tea [adresse] sans photo
+✓ Rosemarie [lieu] sans photo
+✓ Manifik Céramic Café [adresse] sans photo
+✓ La Baleine [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 9449 m de l'adresse donnée, on garde l'adresse
+✓ HORACE [lieu] sans photo
+✓ Bartholomé [lieu] sans photo
+✓ Alaïa Café & Boutique [adresse] sans photo
+✓ Bocca Nissa [lieu] sans photo
+✓ La Gare du Sud [adresse] photo libre https://commons.wikimedia.org/wiki/File:LA_GARE_DU_SUD_(2)_(49733784276).jpg
+✓ Madame Julia [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:L%E2%80%99orgue_de_Strasbourg_ou_l%E2%80%99organiste_de_Strasbourg_-_chanson_cr%C3%A9%C3%A9e_par_Madame_Amiati_et_par_Mademoiselle_Julia_Vigouroux_-illustration_Donjean-_(M%C3%A9diHAL_1297179).jpg)
 
-RÉSUMÉ : 21 retrouvés sur 22 (dont 18 confirmés comme lieu par OpenStreetMap, 3 seulement par leur adresse)
-Photos libres trouvées : 1 / 21
-Photos du site du lieu : 3 / 21
-Sans aucune photo : 17
-Introuvables (écartés) : 1
+Photos candidates (non utilisées, à regarder à la main) :
+  - La Prison du Bouffay : https://commons.wikimedia.org/wiki/File:Prison_du_Bouffay_(Thomas_Drake).jpg
+  - Tire-Bouchon : https://commons.wikimedia.org/wiki/File:Le_Tire-Bouchon_@_Strasbourg_(43763432680).jpg
+  - Darwin Éco-Système : https://commons.wikimedia.org/wiki/File:Monument_aux_R%C3%A9publicains_espagnols,_Eco-syst%C3%A8me_Darwin,_Caserne_Niel.jpg
+  - Hôtel des Bains : https://commons.wikimedia.org/wiki/File:H%C3%B4tel_des_bains_%C3%A0_Charavines.jpg
+  - Le Saint Flaceau : https://commons.wikimedia.org/wiki/File:Rue_Saint_Flaceau_-_Le_Mans_(FR72)_-_2026-07-31_-_1.jpg
+  - Péniche Loupika : https://commons.wikimedia.org/wiki/File:Lyon_-_P%C3%A9niche_Loupika_(P13202F).jpg
+  - Les Halles du Faubourg : https://commons.wikimedia.org/wiki/File:Lyon_7e_-_Halles_du_Faubourg,_le_Comptoir_(1).jpg
+  - Madame Julia : https://commons.wikimedia.org/wiki/File:L%E2%80%99orgue_de_Strasbourg_ou_l%E2%80%99organiste_de_Strasbourg_-_chanson_cr%C3%A9%C3%A9e_par_Madame_Amiati_et_par_Mademoiselle_Julia_Vigouroux_-illustration_Donjean-_(M%C3%A9diHAL_1297179).jpg
+
+RÉSUMÉ : 329 retrouvés sur 338 (dont 211 confirmés comme lieu par OpenStreetMap, 118 seulement par leur adresse)
+Photos libres trouvées : 17 / 329
+Photos du site du lieu : 39 / 329
+Sans aucune photo : 273
+Introuvables (écartés) : 9
   - Le République : place Sadi-Carnot, 13002 Marseille
+  - Jardin suspendu de l'Hôtel de Gadagne : Hôtel de Gadagne, Vieux-Lyon
+  - Dans le Noir ? : 10 rue de Méry, Marseille
+  - Magmatic by Ephemera : Magmatic Lille Ephemera
+  - Taste The Screen : Taste The Screen Bordeaux
+  - Restaurant Bernard : Sentier des Douaniers, Anse de Magaud, Toulon
+  - Derrière l'Église : 3 rue du Château Fadaise, Nîmes
+  - Les Dauphins : 340 chemin des Plages, Charavines
+  - La Guytoune : 281 rue des 4 Casteras, Bègles, Bordeaux
