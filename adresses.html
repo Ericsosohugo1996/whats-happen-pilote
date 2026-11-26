@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cafés &amp; tables sympas – Whazup</title>
+<meta name="theme-color" content="#E85D3D">
+<link rel="icon" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7F2;--ink:#1F2433;--mut:#6B7280;--card:#fff;--line:#EADFD3;--acc:#E85D3D;--accs:#FDE9E3;--ok:#2F7D5B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 "Plus Jakarta Sans",system-ui,sans-serif;padding:0 16px calc(32px + env(safe-area-inset-bottom))}
+.wrap{max-width:760px;margin:0 auto}
+header{padding:calc(14px + env(safe-area-inset-top)) 0 6px}
+.back{display:inline-block;color:var(--acc);font-weight:700;text-decoration:none;padding:6px 0}
+h1{font:700 28px/1.15 Fraunces,Georgia,serif;margin:4px 0 4px}
+.sub{color:var(--mut);margin:0 0 14px}
+.what{list-style:none;margin:0 0 10px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.what li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 11px;display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--mut)}
+.what b{font-size:13px;color:var(--ink)}
+.how{margin:0 0 6px;font-size:13px;color:var(--mut)}
+@media (max-width:480px){.what{grid-template-columns:1fr}.what li{flex-direction:row;gap:8px;align-items:baseline;flex-wrap:wrap}}
+.bar{position:sticky;top:0;background:var(--bg);padding:8px 0 10px;z-index:5;border-bottom:1px solid var(--line)}
+#q{width:100%;font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+#q:focus,.chip:focus-visible,.go:focus-visible,.back:focus-visible{outline:3px solid #f6b3a3;outline-offset:1px}
+.row{display:flex;gap:8px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+.chip{flex:none;font:600 13px "Plus Jakarta Sans",sans-serif;padding:8px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.chip small{opacity:.7;font-weight:500;margin-left:4px}
+.count{margin:14px 0 8px;color:var(--mut);font-size:13px}
+.list{display:grid;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.tag{font-size:10.5px;letter-spacing:.14em;font-weight:700;color:var(--acc)}
+.card h2{font:700 18px/1.25 Fraunces,Georgia,serif;margin:3px 0 0}
+.k{color:var(--acc);font-weight:600;font-size:13px;margin:1px 0 6px}
+.d{margin:0 0 10px;color:#394055}
+.rep{display:block;margin-top:10px;font-size:12px;color:#6B7280;text-decoration:underline}
+.chk{margin:10px 0 0;font-size:12.5px;color:#6B7280}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:12.5px;color:var(--mut)}
+.slots{color:var(--ok);font-weight:600}
+.go{margin-left:auto;background:var(--accs);color:var(--acc);font-weight:700;text-decoration:none;padding:8px 14px;border-radius:999px}
+.empty{padding:28px 0;text-align:center;color:var(--mut)}
+@media (prefers-reduced-motion:no-preference){.card{transition:box-shadow .15s}.card:hover{box-shadow:0 4px 14px rgba(31,36,51,.08)}}
+</style></head><body><div class="wrap">
+<header>
+  <a class="back" href="/" id="back">← Retour à Whazup</a>
+  <h1>Cafés &amp; tables sympas</h1>
+  <p class="sub" id="intro">Des adresses pour déjeuner, goûter ou dîner, choisies à la main dans toute la France. Pas de photo : on garde la surprise.</p>
+  <p class="chk">Pense à vérifier les horaires avant de partir.</p>
+  <ul class="what" aria-label="Ce que tu vas trouver">
+    <li><b>☕ Cafés &amp; salons de thé</b><span>pour le goûter</span></li>
+    <li><b>🍽️ Tables sympas</b><span>déjeuner, dîner, brunch</span></li>
+    <li><b>✨ Lieux à ambiance</b><span>jardins, péniches, lieux reconvertis</span></li>
+  </ul>
+  <p class="how">Choisis un moment ou une ville, ou cherche un mot : « jardin », « péniche »…</p>
+</header>
+<div class="bar">
+  <input id="q" type="search" placeholder="Chercher un nom, une ville, une ambiance…" aria-label="Chercher une adresse" autocomplete="off">
+  <div class="row" id="slots" role="group" aria-label="Moment"></div>
+  <div class="row" id="cities" role="group" aria-label="Ville"></div>
+</div>
+<div class="count" id="count" aria-live="polite">Chargement…</div>
+<div class="list" id="list"></div>
+</div>
+<script>
+(function(){
+  var SL=[["all","Tous les moments"],["dejeuner","Déjeuner"],["diner","Dîner"],["gouter","Goûter"],["brunch","Brunch"]];
+  var LAB={dejeuner:"Déjeuner",diner:"Dîner",gouter:"Goûter",brunch:"Brunch"};
+  var ALL=[],slot="all",city="all",q="",me=null;
+  function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function norm(s){return String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"")}
+  function get(u){return fetch(u,{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return []})}
+  function km(a,b,c,d){var R=6371,t=Math.PI/180,x=(c-a)*t,y=(d-b)*t,h=Math.sin(x/2)*Math.sin(x/2)+Math.cos(a*t)*Math.cos(c*t)*Math.sin(y/2)*Math.sin(y/2);return 2*R*Math.asin(Math.sqrt(h))}
+  Promise.all([get("data/perles-paris.json"),get("data/perles-france.json")]).then(function(r){
+    var seen={};
+    r[0].concat(r[1]).forEach(function(x){
+      if(!x||!x.t||seen[x.id||x.t])return; seen[x.id||x.t]=1;
+      x.c=x.c||"Paris"; x._n=norm(x.t+" "+x.c+" "+(x.k||"")+" "+(x.d||"")); ALL.push(x);
+    });
+    ALL.sort(function(a,b){return a.t.localeCompare(b.t,"fr")});
+    build(); draw();
+    document.getElementById("intro").textContent=ALL.length+" adresses pour déjeuner, goûter ou dîner, choisies à la main dans toute la France. Pas de photo : on garde la surprise.";
+  });
+  function build(){
+    document.getElementById("slots").innerHTML=SL.map(function(s){return '<button type="button" class="chip'+(s[0]===slot?" on":"")+'" data-s="'+s[0]+'">'+s[1]+"</button>"}).join("");
+    var n={};ALL.forEach(function(x){n[x.c]=(n[x.c]||0)+1});
+    var names=Object.keys(n).sort(function(a,b){return a==="Paris"?-1:b==="Paris"?1:n[b]-n[a]||a.localeCompare(b,"fr")});
+    var h='<button type="button" class="chip'+(city==="all"?" on":"")+'" data-c="all">Toute la France<small>'+ALL.length+"</small></button>";
+    if(navigator.geolocation)h+='<button type="button" class="chip'+(city==="near"?" on":"")+'" data-c="near">📍 Près de moi</button>';
+    names.forEach(function(c){h+='<button type="button" class="chip'+(city===c?" on":"")+'" data-c="'+esc(c)+'">'+esc(c)+"<small>"+n[c]+"</small></button>"});
+    document.getElementById("cities").innerHTML=h;
+  }
+  function draw(){
+    var w=norm(q).split(/\s+/).filter(Boolean);
+    var L=ALL.filter(function(x){
+      if(slot!=="all"&&(x.e||[]).indexOf(slot)<0)return false;
+      if(city!=="all"&&city!=="near"&&x.c!==city)return false;
+      for(var i=0;i<w.length;i++)if(x._n.indexOf(w[i])<0)return false;
+      return true;});
+    if(city==="near"&&me){L.forEach(function(x){x._d=km(me[0],me[1],x.la,x.lo)});L=L.filter(function(x){return x._d<=15}).sort(function(a,b){return a._d-b._d})}
+    document.getElementById("count").textContent=L.length+(L.length>1?" adresses":" adresse")+(city==="near"?" à moins de 15 km":"");
+    document.getElementById("list").innerHTML=L.length?L.map(card).join(""):'<div class="empty">Aucune adresse pour ce choix. Essaie une autre ville ou un autre moment.</div>';
+  }
+  function card(x){
+    var s=(x.e||[]).map(function(k){return LAB[k]}).filter(Boolean).join(" · ");
+    var u="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(x.la+","+x.lo);
+    var rp="mailto:whazup.contact@gmail.com?subject="+encodeURIComponent("Adresse à vérifier : "+x.t+" ("+x.c+")")+"&body="+encodeURIComponent("Bonjour,\n\nAdresse : "+x.t+" ("+x.c+")\nProblème : fermée / adresse incorrecte / autre :\n\nMerci !");
+    return '<article class="card"><div class="tag">ADRESSE CACHÉE</div><h2>'+esc(x.t)+'</h2><div class="k">'+esc(x.k)+'</div><p class="d">'+esc(x.d)+'</p><div class="meta"><span>📍 '+esc(x.c)+(x._d!=null?" · "+(x._d<1?Math.round(x._d*1000)+" m":x._d.toFixed(1)+" km"):"")+'</span><span class="slots">'+esc(s)+'</span><a class="go" href="'+u+'" target="_blank" rel="noopener">Y aller</a></div><a class="rep" href="'+rp+'">Signaler : fermé ou erreur</a></article>';
+  }
+  document.addEventListener("click",function(e){
+    var b=e.target.closest(".chip");if(!b)return;
+    if(b.dataset.s){slot=b.dataset.s}
+    else if(b.dataset.c==="near"){
+      navigator.geolocation.getCurrentPosition(function(p){me=[p.coords.latitude,p.coords.longitude];city="near";build();draw()},function(){document.getElementById("count").textContent="Position non autorisée : choisis une ville."},{timeout:8000});return}
+    else city=b.dataset.c;
+    build();draw();
+  });
+  document.getElementById("q").addEventListener("input",function(e){q=e.target.value;draw()});
+  document.getElementById("back").addEventListener("click",function(e){if(history.length>1&&document.referrer&&document.referrer.indexOf(location.host)>-1){e.preventDefault();history.back()}});
+})();
+</script></body></html>
