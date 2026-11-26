@@ -61,6 +61,26 @@ for (const { kind, file } of SOURCES) {
       console.log("brocantes de Paris ajoutées :", addedB);
     } catch (e) { console.log("paris-brocantes.json illisible :", e.message); }
   }
+  // marchés de Noël des données ouvertes (noel-opendata.json, robot « Marchés de Noël ») : on les ajoute, sans doublon (même identifiant)
+  if (kind === "events" && fs.existsSync("noel-opendata.json")) {
+    try {
+      const extraN = JSON.parse(fs.readFileSync("noel-opendata.json", "utf8"));
+      const haveN = new Set(items.map((e) => e.id));
+      let addedN = 0;
+      if (Array.isArray(extraN)) for (const e of extraN) if (!haveN.has(e.id)) { items.push(e); addedN++; }
+      console.log("marchés de Noël (données ouvertes) ajoutés :", addedN);
+    } catch (e) { console.log("noel-opendata.json illisible :", e.message); }
+  }
+  // idées de sorties à Paris choisies à la main (paris-idees.json) : on les ajoute, sans doublon (même identifiant)
+  if (kind === "events" && fs.existsSync("paris-idees.json")) {
+    try {
+      const extraI = JSON.parse(fs.readFileSync("paris-idees.json", "utf8"));
+      const haveI = new Set(items.map((e) => e.id));
+      let addedI = 0;
+      if (Array.isArray(extraI)) for (const e of extraI) if (!haveI.has(e.id)) { items.push(e); addedI++; }
+      console.log("idées de Paris ajoutées :", addedI);
+    } catch (e) { console.log("paris-idees.json illisible :", e.message); }
+  }
   // concerts, soirées et sport via Ticketmaster (ticketmaster-sync.js) : on les ajoute, sans doublon (même ville, même titre, même jour)
   if (kind === "events" && fs.existsSync("ticketmaster-events.json")) {
     try {
