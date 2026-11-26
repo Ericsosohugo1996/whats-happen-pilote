@@ -84,7 +84,7 @@
   }
   window.__compressImage = compressImage;
 
-  async function saveSouvenir({ file, text, placeName, placeId, lat, lng, category, city }) {
+  async function saveSouvenir({ file, text, placeName, placeId, lat, lng, category, city, createdAt, skipWeather, importKey, maxSide }) {
     const user = auth.currentUser;
     if (!user) {
       alert("Connecte-toi pour enregistrer un souvenir.");
@@ -94,7 +94,7 @@
     const id = uid4();
     let photoUrl = "";
     if (file) {
-      file = await compressImage(file);
+      file = await compressImage(file, maxSide);
       const ref = storage.ref().child("souvenirs/" + user.uid + "/" + id + ".jpg");
       await ref.put(file, { contentType: "image/jpeg" });
       photoUrl = await ref.getDownloadURL();
@@ -105,7 +105,8 @@
     let weatherIcon = null, weatherTemp = null;
     try {
       const weatherCoords = (lat && lng) ? { lat: lat, lng: lng } : (resolvedCity && CITIES[resolvedCity] ? CITIES[resolvedCity] : null);
-      if (weatherCoords && typeof fetchWeatherSnapshot === "function") {
+      // skipWeather : photos importées après coup — la météo « actuelle » serait fausse pour ce jour-là.
+      if (weatherCoords && !skipWeather && typeof fetchWeatherSnapshot === "function") {
         const snap = await fetchWeatherSnapshot(weatherCoords.lat, weatherCoords.lng);
         if (snap) { weatherIcon = snap.icon; weatherTemp = snap.temp; }
       }
@@ -122,8 +123,9 @@
       category: category || "",
       weatherIcon: weatherIcon,
       weatherTemp: weatherTemp,
-      createdAt: Date.now(),
+      createdAt: createdAt || Date.now(),
     };
+    if (importKey) data.importKey = importKey; // évite d'importer deux fois la même photo
     await col.doc(id).set(data);
     return data;
   }
@@ -235,7 +237,7 @@
       '<div style="font-size:16px;font-weight:800;color:#14213D;">Ajouter un souvenir</div>' +
       '<button id="souvenir-modal-close" style="width:28px;height:28px;border-radius:50%;border:none;background:#f0f0f0;color:#666;font-size:14px;cursor:pointer;">✕</button>' +
       '</div>' +
-      '<input type="file" id="souvenir-photo-input" accept="image/*" capture="environment" style="display:none;" />' +
+      '<input type="file" id="souvenir-photo-input" accept="image/*" style="display:none;" />' +
       '<div id="souvenir-photo-preview" style="position:relative;width:100%;height:200px;border-radius:16px;overflow:hidden;background:#fafafa;border:2px dashed #ddd;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:14px;">' +
       '<div id="souvenir-photo-placeholder" style="text-align:center;color:#999;">' +
       '<div style="font-size:28px;margin-bottom:4px;">📷</div>' +
@@ -245,7 +247,7 @@
       '<div style="display:flex;flex-direction:column;gap:6px;padding:10px 12px;background:#f7f7f9;border-radius:12px;margin-bottom:14px;">' +
       '<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#333;">📍 <span id="souvenir-place-label" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span><input id="souvenir-place-input" type="text" maxlength="80" placeholder="Nom du lieu (ex. Chez Paul)" style="display:none;flex:1;min-width:0;border:1px solid #ddd;border-radius:10px;padding:7px 9px;font-size:13px;font-family:inherit;box-sizing:border-box;" /><button id="souvenir-place-edit" type="button" style="border:none;background:none;color:#E85D3D;font-size:12px;font-weight:700;cursor:pointer;padding:2px 4px;">Changer</button></div>' +
       (cityName ? '<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#888;">📍 ' + cityName + '</div>' : '') +
-      '<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#888;">📅 ' + nowStr + '</div>' +
+      '<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#888;">📅 <span id="souvenir-date-label">' + nowStr + '</span></div>' +
       '</div>' +
       '<textarea id="souvenir-text-input" placeholder="Écris ta pensée du moment..." style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:12px;padding:10px;font-family:inherit;font-size:14px;margin-bottom:12px;box-sizing:border-box;"></textarea>' +
       '<div style="font-size:11px;color:#888;font-weight:700;margin-bottom:6px;">CATÉGORIE</div>' +
@@ -293,11 +295,21 @@
     const photoInput = document.getElementById("souvenir-photo-input");
     const photoPreview = document.getElementById("souvenir-photo-preview");
     let selectedFile = null;
+    let photoDate = null; // date de prise de vue si la photo vient de la galerie
     photoPreview.addEventListener("click", function () {
       photoInput.click();
     });
     photoInput.addEventListener("change", function () {
       selectedFile = photoInput.files[0] || null;
+      photoDate = null;
+      if (selectedFile && selectedFile.lastModified && Date.now() - selectedFile.lastModified > 10 * 60 * 1000) {
+        photoDate = selectedFile.lastModified; // photo plus ancienne : on garde sa vraie date
+      }
+      const dl = document.getElementById("souvenir-date-label");
+      if (dl) {
+        const dd = new Date(photoDate || Date.now());
+        dl.textContent = dd.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" }) + " · " + dd.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+      }
       if (selectedFile) {
         const url = URL.createObjectURL(selectedFile);
         photoPreview.style.border = "none";
@@ -338,6 +350,8 @@
           lat: prefill.lat,
           lng: prefill.lng,
           category: category,
+          createdAt: photoDate || undefined,
+          skipWeather: !!photoDate,
         });
 
         const vis = overlay.querySelector('input[name="souvenir-visib"]:checked');
@@ -1111,6 +1125,9 @@
   };
 
   window.__renderSouvenirsScreen = renderSouvenirsScreen;
+  window.__saveSouvenir = saveSouvenir;                 // utilisé par photo-import.js
+  window.__findNearestPlace = findNearestPlace;
+  window.__nearestCityForCoords = nearestCityForCoords;
   window.__renderPassportScreen = renderPassportScreen;
   window.__loadSouvenirs = loadSouvenirs;
 })();
