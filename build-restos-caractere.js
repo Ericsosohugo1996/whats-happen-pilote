@@ -1,6 +1,6 @@
 // Robot « Adresses de caractère » : construit data/restos-caractere.json (une sélection, pas un annuaire). Lit un échantillon de restaurants dans
 // DATAtourisme (clé lue dans le secret, jamais affichée) et compte ceux qui sont « atypiques » (cadre, ambiance,
-// adresse cachée) ET qui ont une photo. Écrit un compte rendu + une liste d'exemples dans data/restos-test/.
+// adresse cachée) ; la photo n'est plus obligatoire (adresses « à découvrir »). Écrit un compte rendu + une liste d'exemples dans data/restos-test/.
 const fs = require("fs");
 const BASE = "https://api.datatourisme.fr";
 const KEY = process.env.DATATOURISME_API_KEY || "";
@@ -55,7 +55,7 @@ const STRONG = /(guinguette|p[eé]niche|ferme[- ]auberge|table d.h[oô]tes|insol
 const CORE = /(guinguette|p[eé]niche|ferme[- ]auberge|table d.h[oô]tes|insolite|lieu atypique|rooftop|toit[- ]terrasse|cabane|troglodyt|moulin|ch[aâ]teau|manoir|abbaye|chapelle|prieur[eé]|bastide|grange|phare|fortifi|ancienne? (ferme|moulin|grange|couvent|usine|gare|cin[eé]ma|atelier|[eé]glise|bergerie|chapelle|maison)|cave vo[uû]t[eé]e|jardin secret|adresse secr[eè]te|cach[eé]|hors du commun)/i;
 // Signes d'une adresse ordinaire : on retire des points
 const WEAK = /(menu ouvrier|after ?work|entre coll[eè]gues|cuisine familiale|plat du jour|grillades|pizzas?|brasserie|cuisine traditionnelle|salades?)/i;
-const BANAL = /(kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|cantine|restauration rapide|friterie|d[oö]ner|h[oô]tel|campanile|balladins|kyriad|ibis|mercure|au bureau|buffalo|hippopotamus|flunch|courtepaille|domino|mcdo|logis|camping|village vacances|\(groupes?\)|traiteur|livraison|[aà] emporter)/i;
+const BANAL = /(coffee|tea room|kebab|tacos|burger|pizza|snack|fast.?food|sandwich|cafeteria|cantine|restauration rapide|friterie|d[oö]ner|h[oô]tel|campanile|balladins|kyriad|ibis|mercure|au bureau|buffalo|hippopotamus|flunch|courtepaille|domino|mcdo|logis|camping|village vacances|\(groupes?\)|traiteur|livraison|[aà] emporter)/i;
 const HOTELISH = /(chambres?|h[oô]tel|\bspa\b|s[ée]minaires?|mariages?|r[ée]ceptions?|banquets?|gîte|camping|r[ée]sidence)/i;
 const PLUS = /(guinguette|insolite|atypique|secret|cach[eé]|cabane|p[eé]niche|ferme[- ]auberge|troglodyt|bastide|ancienne? (ferme|moulin|grange|couvent|usine|gare|cin[eé]ma|atelier|bergerie)|vue imprenable|pieds dans l.eau|hors du commun|d[eé]cor (unique|original))/gi;
 function score(title, desc) {
@@ -82,7 +82,7 @@ function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s
       const title = titleOf(o), desc = descOf(o), photo = photoOf(o);
       const lat = parseFloat(findKey(o.isLocatedAt, "latitude")), lng = parseFloat(findKey(o.isLocatedAt, "longitude"));
       const city = fr(findKey(o.isLocatedAt, "addressLocality")) || "";
-      if (!title || !photo || desc.length < 120 || isNaN(lat) || isNaN(lng) || !city) continue;
+      if (!title || desc.length < 120 || isNaN(lat) || isNaN(lng) || !city) continue;
       if (BANAL.test(title) || /(groupes?)/i.test(title) || !CORE.test(title + " " + desc)) continue;
       const s = score(title, desc); if (s < MIN) continue;
       cand.push({ s, id: "resto-" + hash(o.uri || title + city), t: title.replace(/\s+/g, " ").trim(), c: city, la: +lat.toFixed(5), lo: +lng.toFixed(5), p: photo, d: desc.replace(/\s+/g, " ").trim().slice(0, 240), k: (kindOf(title) !== "Adresse de caractère" ? kindOf(title) : kindOf(desc)), sc: s, u: o.uri || "" });
@@ -93,7 +93,7 @@ function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s
   const per = {}, keep = [];
   for (const c of cand) { per[c.c] = (per[c.c] || 0) + 1; if (per[c.c] <= PER_CITY && keep.length < TOTAL) keep.push(c); }
   say("Adresses de caractère : " + cand.length + " retenues par le score, " + keep.length + " gardées (aucune limite par ville), " + Object.keys(per).length + " villes");
-  if (keep.length < 200) { say("Trop peu d'adresses : fichier non écrasé."); fs.writeFileSync("data/restos-test/_build-resume.txt", out.join("\n") + "\n"); return; }
+  if (keep.length < 60) { say("Trop peu d'adresses : fichier non écrasé."); fs.writeFileSync("data/restos-test/_build-resume.txt", out.join("\n") + "\n"); return; }
   fs.mkdirSync("data", { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(keep.map(({ s, ...x }) => x)));
   fs.mkdirSync("data/restos-test", { recursive: true });
