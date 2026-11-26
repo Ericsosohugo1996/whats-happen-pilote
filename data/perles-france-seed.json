@@ -1,24 +1,4345 @@
 [
-{"id": "perle-lyon-le-musee", "t": "Le Musée", "q": "2 rue des Forces, 69002 Lyon", "ci": "Lyon", "k": "Bouchon caché", "e": ["dejeuner", "diner"], "d": "On entre par le hall de l'immeuble voisin, puis une petite porte : ancien écuries du XVIIe, traboule privée, menu annoncé à table et mâchon le samedi matin.", "v": 1},
-{"id": "perle-lyon-miraflores", "t": "Miraflores", "q": "112 boulevard des Belges, 69006 Lyon", "ci": "Lyon", "k": "Table cachée", "e": ["diner"], "d": "Derrière le bar YKA, une table gastronomique franco-péruvienne : foie gras, truffe, maïs choclo, cactus.", "v": 1},
-{"id": "perle-lyon-le-passage", "t": "Le Passage", "q": "8 rue du Plâtre, 69001 Lyon", "ci": "Lyon", "k": "Style speakeasy", "e": ["dejeuner", "diner"], "d": "Glissé dans un passage entre deux vitrines de boutiques de luxe : cuisine bourgeoise, côte de bœuf, crêpes Suzette.", "v": 1},
-{"id": "perle-lyon-la-source", "t": "La Source", "q": "17 rue Delandine, 69002 Lyon", "ci": "Lyon", "k": "Ancienne chapelle", "e": ["dejeuner", "diner"], "d": "Une ancienne chapelle près de Perrache, calme malgré l'autoroute, avec quatre terrasses et une carte qui change chaque semaine.", "v": 1},
-{"id": "perle-lyon-piedra", "t": "Piedra", "q": "17 rue d'Austerlitz, 69004 Lyon", "ci": "Lyon", "k": "Terrasse cachée", "e": ["dejeuner", "diner"], "d": "Bistronomie à la Croix-Rousse, plats à partager, et au fond une terrasse ombragée que l'on ne devine pas depuis la rue.", "v": 1},
-{"id": "perle-marseille-zitoune", "t": "Zitoune", "q": "rue Mazagran, 13001 Marseille", "ci": "Marseille", "k": "Ancien atelier d'artiste", "e": ["dejeuner", "gouter"], "d": "Café-cantine dans un ancien atelier d'artiste, avec un escalier en colimaçon rouge et des chaises sur le trottoir.", "v": 1},
-{"id": "perle-marseille-bistrot-n-2", "t": "Bistrot n°2", "q": "2 avenue du Maréchal Foch, 13004 Marseille", "ci": "Marseille", "k": "Ancienne poissonnerie", "e": ["dejeuner", "diner"], "d": "Poissons et fruits de mer dans l'ancienne poissonnerie du quartier : l'étal de l'écailler est devenu une vraie table.", "v": 1},
-{"id": "perle-marseille-le-republique", "t": "Le République", "q": "place Sadi-Carnot, 13002 Marseille", "ci": "Marseille", "k": "Table solidaire", "e": ["dejeuner", "diner"], "d": "Restaurant gastronomique solidaire : même menu pour tous, et ceux qui ont des difficultés paient un euro.", "v": 1},
-{"id": "perle-bordeaux-l-autre-petit-bois", "t": "L'Autre Petit Bois", "q": "12 place du Parlement, 33000 Bordeaux", "ci": "Bordeaux", "k": "Décor baroque", "e": ["dejeuner", "diner"], "d": "Place du Parlement, un décor baroque et bohème, de grosses tartines et des cassolettes de fromage.", "v": 1},
-{"id": "perle-bordeaux-brutus", "t": "Brutus", "q": "5 rue du Palais de l'Ombrière, 33000 Bordeaux", "ci": "Bordeaux", "k": "Sous les voûtes", "e": ["diner"], "d": "Viandes maturées dans une salle intime sous des voûtes de pierre, au cœur du vieux Bordeaux.", "v": 1},
-{"id": "perle-bordeaux-le-tout-du-cru", "t": "Le Tout du Cru", "q": "52 quai de Bacalan, 33300 Bordeaux", "ci": "Bordeaux", "k": "Cabane de pêcheur", "e": ["dejeuner", "diner"], "d": "Ambiance cabane de pêcheur à Bacalan : fruits de mer et soupe de rouille.", "v": 1},
-{"id": "perle-bordeaux-frida", "t": "Frida", "q": "29 rue Buhan, 33000 Bordeaux", "ci": "Bordeaux", "k": "Terrasse végétale", "e": ["diner", "gouter"], "d": "Bar-restaurant rustique et bohème, tapas et terrasse couverte de plantes.", "v": 1},
-{"id": "perle-bordeaux-la-source", "t": "La Source", "q": "26 rue Camille Sauvageau, 33800 Bordeaux", "ci": "Bordeaux", "k": "Cantine atypique", "e": ["dejeuner"], "d": "Petite cantine de saison qui est aussi un atelier de rénovation et de brocante.", "v": 1},
-{"id": "perle-toulouse-silex-fourchette", "t": "Silex & Fourchette", "q": "42 rue des Lois, 31000 Toulouse", "ci": "Toulouse", "k": "Cuisine préhistorique", "e": ["diner"], "d": "Cuisine au feu et à la pierre, décor préhistorique et produits bruts de saison.", "v": 1},
-{"id": "perle-toulouse-cockpit", "t": "Cockpit", "q": "174 route de Bayonne, 31300 Toulouse", "ci": "Toulouse", "k": "Salle d'avion", "e": ["dejeuner", "diner"], "d": "Une salle de restaurant en cabine d'avion, avec un menu qui change à chaque « vol » autour d'une cuisine du monde.", "v": 1},
-{"id": "perle-toulouse-sixta", "t": "Sixta", "q": "28 rue Bayard, 31000 Toulouse", "ci": "Toulouse", "k": "Menu surprise", "e": ["diner"], "d": "Ici on ne choisit pas : le menu reste secret jusqu'à l'arrivée des plats.", "v": 1},
-{"id": "perle-nantes-freia", "t": "Freia", "q": "22 boulevard de Berlin, 44000 Nantes", "ci": "Nantes", "k": "Serre sur un parking", "e": ["dejeuner"], "d": "Cuisine végétarienne dans une serre posée au sommet d'un parking silo à Malakoff.", "v": 1},
-{"id": "perle-nantes-obbo", "t": "Obbo", "q": "10 allée des Tanneurs, 44000 Nantes", "ci": "Nantes", "k": "Restaurant de desserts", "e": ["gouter", "dejeuner"], "d": "Salon de thé, restaurant de desserts et cave à manger, tenu par un ancien chef pâtissier.", "v": 1},
-{"id": "perle-lille-kok-piraat", "t": "Kok Piraat", "q": "Kok Piraat Lille", "ci": "Lille", "k": "Péniche pirate", "e": ["dejeuner", "diner"], "d": "Une péniche à thème pirate face à Euratech : poissons et rhums arrangés.", "v": 1},
-{"id": "perle-lille-la-luck", "t": "La Luck", "q": "La Luck Lille", "ci": "Lille", "k": "Brasserie à jeux", "e": ["dejeuner", "diner", "gouter"], "d": "Plus de mille jeux de société et un maître du jeu pour te conseiller, burgers et poutines à côté.", "v": 1},
-{"id": "perle-lille-les-casseroles-lilloises", "t": "Les Casseroles Lilloises", "q": "Les Casseroles Lilloises Lille", "ci": "Lille", "k": "Bouillon rétro", "e": ["dejeuner", "diner"], "d": "Bouillon rétro au décor chiné : plats comme chez mamie, frites et salade à volonté, crêpes Suzette flambées à table.", "v": 1},
-{"id": "perle-lille-les-fils-a-maman", "t": "Les Fils à Maman", "q": "Les Fils à Maman Lille", "ci": "Lille", "k": "Cuisine d'enfance", "e": ["dejeuner", "diner"], "d": "Cuisine d'enfance et déco nostalgique, avec le cordon bleu au maroilles en vedette.", "v": 1}
+{
+"id": "perle-lyon-le-musee",
+"t": "Le Musée",
+"q": "2 rue des Forces, 69002 Lyon",
+"ci": "Lyon",
+"k": "Bouchon caché",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "On entre par le hall de l'immeuble voisin, puis une petite porte : ancien écuries du XVIIe, traboule privée, menu annoncé à table et mâchon le samedi matin.",
+"v": 1
+},
+{
+"id": "perle-lyon-le-passage",
+"t": "Le Passage",
+"q": "8 rue du Plâtre, 69001 Lyon",
+"ci": "Lyon",
+"k": "Style speakeasy",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Glissé dans un passage entre deux vitrines de boutiques de luxe : cuisine bourgeoise, côte de bœuf, crêpes Suzette.",
+"v": 1
+},
+{
+"id": "perle-lyon-la-source",
+"t": "La Source",
+"q": "17 rue Delandine, 69002 Lyon",
+"ci": "Lyon",
+"k": "Ancienne chapelle",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une ancienne chapelle près de Perrache, calme malgré l'autoroute, avec quatre terrasses et une carte qui change chaque semaine.",
+"v": 1
+},
+{
+"id": "perle-lyon-piedra",
+"t": "Piedra",
+"q": "17 rue d'Austerlitz, 69004 Lyon",
+"ci": "Lyon",
+"k": "Terrasse cachée",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Bistronomie à la Croix-Rousse, plats à partager, et au fond une terrasse ombragée que l'on ne devine pas depuis la rue.",
+"v": 1
+},
+{
+"id": "perle-marseille-zitoune",
+"t": "Zitoune",
+"q": "rue Mazagran, 13001 Marseille",
+"ci": "Marseille",
+"k": "Ancien atelier d'artiste",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Café-cantine dans un ancien atelier d'artiste, avec un escalier en colimaçon rouge et des chaises sur le trottoir.",
+"v": 1
+},
+{
+"id": "perle-marseille-bistrot-n-2",
+"t": "Bistrot n°2",
+"q": "2 avenue du Maréchal Foch, 13004 Marseille",
+"ci": "Marseille",
+"k": "Ancienne poissonnerie",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Poissons et fruits de mer dans l'ancienne poissonnerie du quartier : l'étal de l'écailler est devenu une vraie table.",
+"v": 1
+},
+{
+"id": "perle-marseille-le-republique",
+"t": "Le République",
+"q": "place Sadi-Carnot, 13002 Marseille",
+"ci": "Marseille",
+"k": "Table solidaire",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Restaurant gastronomique solidaire : même menu pour tous, et ceux qui ont des difficultés paient un euro.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-l-autre-petit-bois",
+"t": "L'Autre Petit Bois",
+"q": "12 place du Parlement, 33000 Bordeaux",
+"ci": "Bordeaux",
+"k": "Décor baroque",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Place du Parlement, un décor baroque et bohème, de grosses tartines et des cassolettes de fromage.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-brutus",
+"t": "Brutus",
+"q": "5 rue du Palais de l'Ombrière, 33000 Bordeaux",
+"ci": "Bordeaux",
+"k": "Sous les voûtes",
+"e": [
+"diner"
+],
+"d": "Viandes maturées dans une salle intime sous des voûtes de pierre, au cœur du vieux Bordeaux.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-le-tout-du-cru",
+"t": "Le Tout du Cru",
+"q": "52 quai de Bacalan, 33300 Bordeaux",
+"ci": "Bordeaux",
+"k": "Cabane de pêcheur",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Ambiance cabane de pêcheur à Bacalan : fruits de mer et soupe de rouille.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-frida",
+"t": "Frida",
+"q": "29 rue Buhan, 33000 Bordeaux",
+"ci": "Bordeaux",
+"k": "Terrasse végétale",
+"e": [
+"diner",
+"gouter"
+],
+"d": "Bar-restaurant rustique et bohème, tapas et terrasse couverte de plantes.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-la-source",
+"t": "La Source",
+"q": "26 rue Camille Sauvageau, 33800 Bordeaux",
+"ci": "Bordeaux",
+"k": "Cantine atypique",
+"e": [
+"dejeuner"
+],
+"d": "Petite cantine de saison qui est aussi un atelier de rénovation et de brocante.",
+"v": 1
+},
+{
+"id": "perle-toulouse-silex-fourchette",
+"t": "Silex & Fourchette",
+"q": "42 rue des Lois, 31000 Toulouse",
+"ci": "Toulouse",
+"k": "Cuisine préhistorique",
+"e": [
+"diner"
+],
+"d": "Cuisine au feu et à la pierre, décor préhistorique et produits bruts de saison.",
+"v": 1
+},
+{
+"id": "perle-toulouse-cockpit",
+"t": "Cockpit",
+"q": "174 route de Bayonne, 31300 Toulouse",
+"ci": "Toulouse",
+"k": "Salle d'avion",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une salle de restaurant en cabine d'avion, avec un menu qui change à chaque « vol » autour d'une cuisine du monde.",
+"v": 1
+},
+{
+"id": "perle-toulouse-sixta",
+"t": "Sixta",
+"q": "28 rue Bayard, 31000 Toulouse",
+"ci": "Toulouse",
+"k": "Menu surprise",
+"e": [
+"diner"
+],
+"d": "Ici on ne choisit pas : le menu reste secret jusqu'à l'arrivée des plats.",
+"v": 1
+},
+{
+"id": "perle-nantes-freia",
+"t": "Freia",
+"q": "22 boulevard de Berlin, 44000 Nantes",
+"ci": "Nantes",
+"k": "Serre sur un parking",
+"e": [
+"dejeuner"
+],
+"d": "Cuisine végétarienne dans une serre posée au sommet d'un parking silo à Malakoff.",
+"v": 1
+},
+{
+"id": "perle-nantes-obbo",
+"t": "Obbo",
+"q": "10 allée des Tanneurs, 44000 Nantes",
+"ci": "Nantes",
+"k": "Restaurant de desserts",
+"e": [
+"gouter",
+"dejeuner"
+],
+"d": "Salon de thé, restaurant de desserts et cave à manger, tenu par un ancien chef pâtissier.",
+"v": 1
+},
+{
+"id": "perle-lille-kok-piraat",
+"t": "Kok Piraat",
+"q": "Kok Piraat Lille",
+"ci": "Lille",
+"k": "Péniche pirate",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une péniche à thème pirate face à Euratech : poissons et rhums arrangés.",
+"v": 1
+},
+{
+"id": "perle-lille-la-luck",
+"t": "La Luck",
+"q": "1 rue Princesse, Lille",
+"ci": "Lille",
+"k": "Brasserie à jeux",
+"e": [
+"dejeuner",
+"diner",
+"gouter"
+],
+"d": "Plus de mille jeux de société et un maître du jeu pour te conseiller, burgers et poutines à côté.",
+"v": 1
+},
+{
+"id": "perle-lille-les-casseroles-lilloises",
+"t": "Les Casseroles Lilloises",
+"q": "Les Casseroles Lilloises Lille",
+"ci": "Lille",
+"k": "Bouillon rétro",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Bouillon rétro au décor chiné : plats comme chez mamie, frites et salade à volonté, crêpes Suzette flambées à table.",
+"v": 1
+},
+{
+"id": "perle-lille-les-fils-a-maman",
+"t": "Les Fils à Maman",
+"q": "Les Fils à Maman Lille",
+"ci": "Lille",
+"k": "Cuisine d'enfance",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Cuisine d'enfance et déco nostalgique, avec le cordon bleu au maroilles en vedette.",
+"v": 1
+},
+{
+"id": "perle-montpellier-restaurant-du-petit-jardin",
+"t": "Restaurant du Petit Jardin",
+"q": "20 rue Jean-Jacques Rousseau, 34000 Montpellier",
+"ci": "Montpellier",
+"k": "Jardin secret",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un vieux restaurant de la ville retapé en jardin : arbres centenaires, rocailles et le clocher de la cathédrale en toile de fond.",
+"v": 1
+},
+{
+"id": "perle-montpellier-les-bains",
+"t": "Les Bains",
+"q": "6 rue Richelieu, 34000 Montpellier",
+"ci": "Montpellier",
+"k": "Ancien bain public",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Dans d'anciens bains, un patio intérieur avec palmiers et fontaine, des assiettes du midi et des vins de la région.",
+"v": 1
+},
+{
+"id": "perle-montpellier-le-jardin-des-frangins",
+"t": "Le Jardin des Frangins",
+"q": "2 rue des Loriots, 34070 Montpellier",
+"ci": "Montpellier",
+"k": "Maison de famille",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "La maison des parents de deux frères, devenue table de tapas à partager sous les arbres, avec une piscine au bord des tables.",
+"v": 1
+},
+{
+"id": "perle-montpellier-le-bazar",
+"t": "Le Bazar",
+"q": "448 rue de la Roqueturière, 34090 Montpellier",
+"ci": "Montpellier",
+"k": "Jardin méditerranéen",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un jardin d'oliviers, de cyprès et de chênes, et une cuisine méditerranéenne qui change chaque semaine.",
+"v": 1
+},
+{
+"id": "perle-nice-carre-d-or",
+"t": "Carré d'Or",
+"q": "Carré d'Or Nice",
+"ci": "Nice",
+"k": "Restaurant-théâtre",
+"e": [
+"diner"
+],
+"d": "Au centre de Nice, on dîne en regardant un spectacle.",
+"v": 1
+},
+{
+"id": "perle-nice-flowers",
+"t": "Flowers",
+"q": "Flowers Nice",
+"ci": "Nice",
+"k": "Dîner dans les fleurs",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant où l'on mange entouré de fleurs.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-momo-tibetain",
+"t": "Momo Tibétain",
+"q": "Momo Tibétain Strasbourg",
+"ci": "Strasbourg",
+"k": "Plus petit resto",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un minuscule restaurant tibétain, présenté comme le plus petit de Strasbourg.",
+"v": 1
+},
+{
+"id": "perle-lyon-les-telephones",
+"t": "Les Téléphones",
+"q": "23 rue Roger Radisson, Lyon",
+"ci": "Lyon",
+"k": "Cloître et téléphones",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Dans le cloître d'un hôtel de Fourvière, on commande depuis sa table avec un téléphone d'autrefois.",
+"v": 1
+},
+{
+"id": "perle-lyon-delicatessen",
+"t": "Delicatessen",
+"q": "6 rue de Savy, Lyon",
+"ci": "Lyon",
+"k": "Barbecue texan",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un coin de Texas sur les pentes de la Croix-Rousse : viandes fumées au barbecue, commandées au comptoir.",
+"v": 1
+},
+{
+"id": "perle-lyon-les-fromagivores",
+"t": "Les Fromagivores",
+"q": "3 rue Romarin, Lyon",
+"ci": "Lyon",
+"k": "Bar à fromages",
+"e": [
+"dejeuner",
+"diner",
+"gouter"
+],
+"d": "Une fromagerie le jour, un bar à fromages le soir, avec de la raclette fumée.",
+"v": 1
+},
+{
+"id": "perle-lyon-les-demoiselles-de-rochefort",
+"t": "Les Demoiselles de Rochefort",
+"q": "31 rue René Leynaud, Lyon",
+"ci": "Lyon",
+"k": "Décor d'objets",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une façade discrète, puis une salle remplie d'objets insolites, jusque dans les toilettes.",
+"v": 1
+},
+{
+"id": "perle-lyon-l-argot",
+"t": "L'Argot",
+"q": "132 rue Bugeaud, Lyon",
+"ci": "Lyon",
+"k": "Boucherie-restaurant",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "On choisit sa pièce de viande dans la vitrine de la boucherie, puis elle est cuisinée pour soi.",
+"v": 1
+},
+{
+"id": "perle-lyon-la-table-en-braille",
+"t": "La Table en Braille",
+"q": "44 quai Charles de Gaulle, Lyon",
+"ci": "Lyon",
+"k": "Dîner dans le noir",
+"e": [
+"diner"
+],
+"d": "On dîne dans le noir, sans connaître le menu : tout se joue au goût, à l'odorat et au toucher.",
+"v": 1
+},
+{
+"id": "perle-lyon-la-nef-des-fous",
+"t": "La Nef des Fous",
+"q": "5 rue du Bœuf, Lyon",
+"ci": "Lyon",
+"k": "Décor baroque",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un décor baroque très chargé, avec une baignoire au pied de l'escalier.",
+"v": 1
+},
+{
+"id": "perle-lyon-les-fils-a-maman",
+"t": "Les Fils à Maman",
+"q": "25 rue de l'Arbre Sec, Lyon",
+"ci": "Lyon",
+"k": "Cuisine de l'enfance",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Les plats de l'enfance, faits maison et un peu modernisés, dans un décor plein de souvenirs.",
+"v": 1
+},
+{
+"id": "perle-lyon-jardin-suspendu-de-l-hotel-de-gadagne",
+"t": "Jardin suspendu de l'Hôtel de Gadagne",
+"q": "Hôtel de Gadagne, Vieux-Lyon",
+"ci": "Lyon",
+"k": "Jardin suspendu",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café-restaurant dans un jardin suspendu au sommet d'un hôtel particulier du Vieux-Lyon.",
+"v": 1
+},
+{
+"id": "perle-lyon-oto-oto",
+"t": "Oto Oto",
+"q": "15 rue d'Aguesseau, Lyon",
+"ci": "Lyon",
+"k": "Izakaya en œuf",
+"e": [
+"diner"
+],
+"d": "Un izakaya japonais dont certaines places sont de petites alcôves en forme d'œuf.",
+"v": 1
+},
+{
+"id": "perle-lyon-messob",
+"t": "Messob",
+"q": "85 rue Masséna, Lyon",
+"ci": "Lyon",
+"k": "Éthiopien avec les mains",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "On mange avec les mains, avec de l'injera, un grand pain plat éthiopien, à la place des couverts.",
+"v": 1
+},
+{
+"id": "perle-marseille-les-beaux-mets",
+"t": "Les Beaux Mets",
+"q": "4 traverse de Rabat, Marseille",
+"ci": "Marseille",
+"k": "Restaurant en prison",
+"e": [
+"dejeuner"
+],
+"d": "Un restaurant dans le centre pénitentiaire des Baumettes, où des détenus se forment à la cuisine et au service.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-caravelle",
+"t": "La Caravelle",
+"q": "34 quai du Port, Marseille",
+"ci": "Marseille",
+"k": "Entrée par l'hôtel",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "On y entre par un hôtel, et la petite terrasse donne sur le Vieux-Port.",
+"v": 1
+},
+{
+"id": "perle-marseille-teavora",
+"t": "Teavora",
+"q": "65 boulevard Longchamp, Marseille",
+"ci": "Marseille",
+"k": "Cabane à thés",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Une cabane à thés où l'on mange les pieds dans le sable.",
+"v": 1
+},
+{
+"id": "perle-marseille-dans-le-noir",
+"t": "Dans le Noir ?",
+"q": "10 rue de Méry, Marseille",
+"ci": "Marseille",
+"k": "Dîner dans l'obscurité",
+"e": [
+"diner"
+],
+"d": "Un repas dans le noir complet, servi par des personnes malvoyantes ou non voyantes.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-place-des-canailles",
+"t": "La Place des Canailles",
+"q": "10 place de la Joliette, Marseille",
+"ci": "Marseille",
+"k": "Halle avec piste de danse",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une halle gourmande avec six stands et une piste de danse à ciel ouvert, au pied des Docks.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-grotte",
+"t": "La Grotte",
+"q": "La Grotte Callelongue Marseille",
+"ci": "Marseille",
+"k": "Au bout des calanques",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant au bout de la route de Callelongue, au bord de l'eau dans les calanques.",
+"v": 1
+},
+{
+"id": "perle-toulouse-dans-le-noir",
+"t": "Dans le Noir ?",
+"q": "84 allée Jean Jaurès, Toulouse",
+"ci": "Toulouse",
+"k": "Dîner dans l'obscurité",
+"e": [
+"diner"
+],
+"d": "Un dîner dans l'obscurité complète, guidé par des serveurs malvoyants ou non voyants.",
+"v": 1
+},
+{
+"id": "perle-lille-le-49r",
+"t": "Le 49R",
+"q": "49 rue Royale, Lille",
+"ci": "Lille",
+"k": "Cour d'hôtel particulier",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Derrière un haut portail, la terrasse d'un hôtel particulier du XVIIe siècle donne sur une cour privée.",
+"v": 1
+},
+{
+"id": "perle-lille-magmatic-by-ephemera",
+"t": "Magmatic by Ephemera",
+"q": "Magmatic Lille Ephemera",
+"ci": "Lille",
+"k": "Dîner immersif",
+"e": [
+"diner"
+],
+"d": "Un restaurant immersif où l'on dîne dans un décor de volcan.",
+"v": 1
+},
+{
+"id": "perle-lille-britney",
+"t": "Britney",
+"q": "Britney Lille",
+"ci": "Lille",
+"k": "Décor futuriste",
+"e": [
+"diner"
+],
+"d": "Un décor futuriste et très coloré, avec des petites assiettes à partager.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-dans-le-noir",
+"t": "Dans le Noir ?",
+"q": "Dans le Noir Bordeaux",
+"ci": "Bordeaux",
+"k": "Dîner dans l'obscurité",
+"e": [
+"diner"
+],
+"d": "Un repas dans l'obscurité complète, pour retrouver le goût et le toucher.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-taste-the-screen",
+"t": "Taste The Screen",
+"q": "Taste The Screen Bordeaux",
+"ci": "Bordeaux",
+"k": "Cinéma et dîner",
+"e": [
+"diner"
+],
+"d": "Un restaurant où le dîner se mêle au cinéma.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-back-to",
+"t": "Back To!",
+"q": "Back To Bordeaux",
+"ci": "Bordeaux",
+"k": "Voyage rétro",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant qui joue la carte nostalgie, avec un décor rétro.",
+"v": 1
+},
+{
+"id": "perle-nantes-a-partager",
+"t": "À Partager",
+"q": "6 place Aristide Briand, Nantes",
+"ci": "Nantes",
+"k": "Dîner dans le noir",
+"e": [
+"diner"
+],
+"d": "Un dîner menu surprise dans l'obscurité, servi par des guides malvoyants ou non voyants, les vendredis et samedis soirs.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-reflet",
+"t": "Le Reflet",
+"q": "4 rue des Trois Croissants, Nantes",
+"ci": "Nantes",
+"k": "Restaurant solidaire",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant où l'équipe de cuisine et de salle compte des personnes porteuses de trisomie 21, avec une carte qui change chaque semaine.",
+"v": 1
+},
+{
+"id": "perle-nantes-les-petits-saints",
+"t": "Les Petits Saints",
+"q": "1 place Saint-Vincent, Nantes",
+"ci": "Nantes",
+"k": "Ancienne chapelle",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "On mange sous les voûtes gothiques d'une ancienne chapelle du centre de Nantes.",
+"v": 1
+},
+{
+"id": "perle-nantes-la-prison-du-bouffay",
+"t": "La Prison du Bouffay",
+"q": "5 place du Bouffay, Nantes",
+"ci": "Nantes",
+"k": "Dans une ancienne prison",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un repas dans les murs et les cachots d'une ancienne prison, avec un décor de geôle.",
+"v": 1
+},
+{
+"id": "perle-nantes-papy-mougeot",
+"t": "Papy Mougeot",
+"q": "1 quai Turenne, Nantes",
+"ci": "Nantes",
+"k": "Bistrot années 70",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot qui joue les années 70, avec de la tapisserie d'époque et de vieux vélos de course au plafond.",
+"v": 1
+},
+{
+"id": "perle-nice-la-cave-du-fromager",
+"t": "La Cave du Fromager",
+"q": "29 rue Benoît Bunico, Nice",
+"ci": "Nice",
+"k": "Fondues en cave voûtée",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Des fromages fondus servis dans une cave voûtée en pierre, avec une belle carte de vins naturels.",
+"v": 1
+},
+{
+"id": "perle-rennes-caravane-palace",
+"t": "Caravane Palace",
+"q": "13 rue Saint-Georges, Rennes",
+"ci": "Rennes",
+"k": "Cuisine au feu de bois",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une salle colorée d'esprit brocante, avec une cuisine cuite au feu de bois.",
+"v": 1
+},
+{
+"id": "perle-montpellier-chez-alice",
+"t": "Chez Alice",
+"q": "5 boulevard du Jeu de Paume, Montpellier",
+"ci": "Montpellier",
+"k": "Salon de thé chez mamie",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un salon de thé et restaurant au décor dépareillé, comme chez une grand-mère, avec une vingtaine de thés et une petite terrasse.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-bon-pasteur",
+"t": "Le Bon Pasteur",
+"q": "3 place du Bon Pasteur, Nantes",
+"ci": "Nantes",
+"k": "Terrasse suspendue",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot dont la terrasse en hauteur, au fond de la salle, regarde la basilique Saint-Nicolas.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-prologue",
+"t": "Le Prologue",
+"q": "14 rue Capitaine Corhumel, Nantes",
+"ci": "Nantes",
+"k": "Cour verte cachée",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Il faut traverser la salle pour découvrir l'arrière-cour végétale, à l'abri du bruit.",
+"v": 1
+},
+{
+"id": "perle-nantes-chez-marius",
+"t": "Chez Marius",
+"q": "6 rue des Carmélites, Nantes",
+"ci": "Nantes",
+"k": "Cour du café-théâtre",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Le bar d'un café-théâtre avec une cour intérieure tranquille, au milieu d'une rue animée.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-cafe-sur-cour",
+"t": "Le Café sur Cour",
+"q": "9 place Louis Daubenton, Nantes",
+"ci": "Nantes",
+"k": "Cour intérieure et concerts",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café niché dans une cour en plein centre, où l'on croise parfois concerts et expositions.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-rouge-ardoise",
+"t": "Le Rouge Ardoise",
+"q": "48 rue Saint-Jacques, Nantes",
+"ci": "Nantes",
+"k": "Terrasse sous l'eucalyptus",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Petit restaurant de quartier à Pirmil, avec une terrasse à l'ombre d'un eucalyptus.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-bouchon",
+"t": "Le Bouchon",
+"q": "7 rue Bossuet, Nantes",
+"ci": "Nantes",
+"k": "Maison à colombages",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Derrière une façade à colombages du XVe siècle, une terrasse pavée et fleurie.",
+"v": 1
+},
+{
+"id": "perle-nantes-les-petits-paves",
+"t": "Les Petits Pavés",
+"q": "40 rue des Hauts-Pavés, Nantes",
+"ci": "Nantes",
+"k": "Bistrot-brocante",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot dans un décor de vieille épicerie, où certains objets sont à vendre.",
+"v": 1
+},
+{
+"id": "perle-nice-cave-de-la-tour",
+"t": "Cave de la Tour",
+"q": "3 rue de la Tour, Nice",
+"ci": "Nice",
+"k": "Cave du Vieux Nice",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une adresse du Vieux Nice installée depuis 1947, avec des œuvres d'artistes locaux aux murs.",
+"v": 1
+},
+{
+"id": "perle-nice-le-lavomatique",
+"t": "Le Lavomatique",
+"q": "11 rue du Pont Vieux, Nice",
+"ci": "Nice",
+"k": "Tapas dans une ancienne laverie",
+"e": [
+"diner"
+],
+"d": "Ambiance tapas dans le Vieux Nice ; les tables du premier service se libèrent vers 21h.",
+"v": 1
+},
+{
+"id": "perle-nice-le-plongeoir",
+"t": "Le Plongeoir",
+"q": "60 boulevard Franck Pilatte, Nice",
+"ci": "Nice",
+"k": "Au bout d'une passerelle",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant au bord de l'eau, relié par une passerelle à un kiosque de la Belle Époque.",
+"v": 1
+},
+{
+"id": "perle-nice-le-bar-des-oiseaux",
+"t": "Le Bar des Oiseaux",
+"q": "5 rue Saint-Vincent, Nice",
+"ci": "Nice",
+"k": "Maison d'angle discrète",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une maison d'angle discrète du Vieux Nice, cuisine française et pâtes artisanales.",
+"v": 1
+},
+{
+"id": "perle-montpellier-chic-et-boheme",
+"t": "Chic et Bohème",
+"q": "31 rue Proudhon, Montpellier",
+"ci": "Montpellier",
+"k": "Table et brocante",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "On y mange puis on chine : une table chaleureuse mêlée à un espace de brocante vintage.",
+"v": 1
+},
+{
+"id": "perle-lyon-a-la-piscine",
+"t": "À la Piscine",
+"q": "8 quai Claude Bernard, Lyon",
+"ci": "Lyon",
+"k": "Terrasse sur la piscine",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une terrasse au-dessus d'une piscine extérieure, avec vue sur le Rhône et un chef invité chaque mois.",
+"v": 1
+},
+{
+"id": "perle-lyon-la-bicycletterie",
+"t": "La Bicycletterie",
+"q": "16 rue Romarin, Lyon",
+"ci": "Lyon",
+"k": "Café-atelier de vélos",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café où l'on peut faire réparer son vélo le temps d'un verre.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-les-innocents",
+"t": "Les Innocents",
+"q": "4 rue Paul Muller Simonis, Strasbourg",
+"ci": "Strasbourg",
+"k": "Vins dans une cellule",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Cuisine alsacienne revisitée, avec les bouteilles gardées dans une cellule de prison au milieu de la salle.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-au-petit-tonnelier",
+"t": "Au Petit Tonnelier",
+"q": "16 rue des Tonneliers, Strasbourg",
+"ci": "Strasbourg",
+"k": "Cuisine d'Alsace et concerts",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une table de marché qui modernise l'Alsace, avec concerts et expositions temporaires.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-tire-bouchon",
+"t": "Tire-Bouchon",
+"q": "5 rue des Tailleurs de Pierre, Strasbourg",
+"ci": "Strasbourg",
+"k": "Winstub aux murs épais",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une winstub traditionnelle aux murs épais, où l'on oublie un peu son téléphone.",
+"v": 1
+},
+{
+"id": "perle-toulouse-un-cochon-pendu-au-plafond",
+"t": "Un Cochon Pendu au Plafond",
+"q": "6 rue Caminade, Toulouse",
+"ci": "Toulouse",
+"k": "Bistrot de briques aux Carmes",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot de briques apparentes aux Carmes, avec des viandes mijotées de la région.",
+"v": 1
+},
+{
+"id": "perle-toulouse-le-comptoir-de-teddy",
+"t": "Le Comptoir de Teddy",
+"q": "5 rue du Salé, Toulouse",
+"ci": "Toulouse",
+"k": "Salon de thé aux nounours",
+"e": [
+"gouter",
+"dejeuner"
+],
+"d": "Des grands nounours accueillent dès l'entrée, dans un salon de thé cosy aux accents vert foncé.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-la-cuisine-d-antan",
+"t": "La Cuisine d'Antan",
+"q": "59 rue du Maréchal Foch, Lingolsheim",
+"ci": "Strasbourg",
+"k": "Cave voûtée sous un kiosque",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un petit kiosque cache l'escalier vers une salle souterraine très ancienne, où l'on cuisine au feu ouvert.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-cafe-maritime",
+"t": "Café Maritime",
+"q": "1 quai Armand Lalande, Bordeaux",
+"ci": "Bordeaux",
+"k": "Hangar de 700 m²",
+"e": [
+"dejeuner",
+"diner",
+"brunch"
+],
+"d": "Un immense hangar aux Bassins à flot, transformé en restaurant au décor de loft.",
+"v": 1
+},
+{
+"id": "perle-lille-estaminet-chez-la-vieille",
+"t": "Estaminet Chez la Vieille",
+"q": "60 rue de Gand, Lille",
+"ci": "Lille",
+"k": "Estaminet du Vieux-Lille",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un estaminet traditionnel de la rue de Gand, avec cuisine du Nord et terrasse.",
+"v": 1
+},
+{
+"id": "perle-marseille-cedrat",
+"t": "Cédrat",
+"q": "81 rue Breteuil, Marseille",
+"ci": "Marseille",
+"k": "Jardin derrière une façade verte",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un jardin ombragé et discret caché à l'arrière, derrière une façade vert vif d'une grande artère.",
+"v": 1
+},
+{
+"id": "perle-marseille-cafe-borely",
+"t": "Café Borély",
+"q": "134 avenue Clot Bey, Marseille",
+"ci": "Marseille",
+"k": "Café dans le parc Borély",
+"e": [
+"dejeuner",
+"gouter",
+"brunch"
+],
+"d": "Un havre de paix dans le parc Borély, avec un figuier dans la cour.",
+"v": 1
+},
+{
+"id": "perle-marseille-le-fantastique",
+"t": "Le Fantastique",
+"q": "76 boulevard Baille, Marseille",
+"ci": "Marseille",
+"k": "Jardin de grand-mère derrière un bar",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Un petit coin de verdure à l'arrière d'un bar, sur un boulevard passant.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-passarelle",
+"t": "La Passarelle",
+"q": "52 rue Plan Fourmiguier, Marseille",
+"ci": "Marseille",
+"k": "Cour fleurie sous une passerelle",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Derrière le Vieux-Port, une cour verdoyante avec potager, loin de l'agitation.",
+"v": 1
+},
+{
+"id": "perle-marseille-william-tennis-club",
+"t": "William Tennis Club",
+"q": "82 rue du Commandant Rolland, Marseille",
+"ci": "Marseille",
+"k": "Terrasse dans un club de tennis",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Une terrasse au cœur d'un club de tennis, avec pétanque et cigales.",
+"v": 1
+},
+{
+"id": "perle-nice-la-guinguette-du-couvent",
+"t": "La Guinguette du Couvent",
+"q": "1 rue Honoré Ugo, Nice",
+"ci": "Nice",
+"k": "Jardin d'un ancien couvent",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Un jardin caché dans un ancien couvent du XVIIe, avec brasero et DJ sets au coucher du soleil.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-le-patro-de-jeannot",
+"t": "Le Patro de Jeannot",
+"q": "7 place Saint-Martial, Bordeaux",
+"ci": "Bordeaux",
+"k": "Guinguette des Chartrons",
+"e": [
+"dejeuner",
+"gouter",
+"diner"
+],
+"d": "Une guinguette champêtre dans un ancien centre de quartier restauré, avec jardin ombragé, pétanque et concerts.",
+"v": 1
+},
+{
+"id": "perle-montpellier-le-petit-jardin",
+"t": "Le Petit Jardin",
+"q": "20 rue Jean Jacques Rousseau, Montpellier",
+"ci": "Montpellier",
+"k": "Jardin aux arbres centenaires",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un jardin verdoyant près de l'Arc de Triomphe, avec des arbres centenaires et vue sur le clocher de la cathédrale.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-the-cat-counter",
+"t": "The Cat Counter",
+"q": "8 rue Pierre de Coubertin, Bordeaux",
+"ci": "Bordeaux",
+"k": "Salon de thé à chats",
+"e": [
+"gouter",
+"brunch"
+],
+"d": "Un salon de thé où des chats se promènent entre les tables, avec pâtisseries maison.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-wash-bar",
+"t": "Wash Bar",
+"q": "39 rue Ausone, Bordeaux",
+"ci": "Bordeaux",
+"k": "Café-laverie",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Une laverie qui est aussi café, bibliothèque et friperie, avec machines solidaires.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-cafe-utopia",
+"t": "Café Utopia",
+"q": "5 place Camille Jullian, Bordeaux",
+"ci": "Bordeaux",
+"k": "Café dans une ancienne église",
+"e": [
+"dejeuner",
+"gouter",
+"diner"
+],
+"d": "Un café-restaurant végétal dans une ancienne église, à côté d'un cinéma d'art et essai.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-le-mancuso",
+"t": "Le Mancuso",
+"q": "24 rue Ravez, Bordeaux",
+"ci": "Bordeaux",
+"k": "Restaurant audiophile",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant équipé de matériel hi-fi haut de gamme, où la musique compte autant que l'assiette.",
+"v": 1
+},
+{
+"id": "perle-rennes-la-baignoire",
+"t": "La Baignoire",
+"q": "16 rue Victor Hugo, Rennes",
+"ci": "Rennes",
+"k": "Table intimiste près de la piscine",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un tout petit restaurant intimiste, près de la piscine Saint-Georges, avec une carte courte de produits régionaux.",
+"v": 1
+},
+{
+"id": "perle-rennes-le-nabuchodonosor",
+"t": "Le Nabuchodonosor",
+"q": "12 rue Hoche, Rennes",
+"ci": "Rennes",
+"k": "Un thème culinaire par jour",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot de producteurs bio et vins naturels, avec un thème de cuisine différent chaque jour.",
+"v": 1
+},
+{
+"id": "perle-angers-la-coquetterie",
+"t": "La Coquetterie",
+"q": "17 rue Beaurepaire, Angers",
+"ci": "Angers",
+"k": "Salon de thé dans une chapelle",
+"e": [
+"gouter"
+],
+"d": "Un salon de thé installé dans une chapelle du XIIe siècle, derrière une brûlerie de café.",
+"v": 1
+},
+{
+"id": "perle-angers-l-authentic-restaurant",
+"t": "L'Authentic Restaurant",
+"q": "10 rue Hoche, Angers",
+"ci": "Angers",
+"k": "Fouace au feu de bois",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "La fouace, pain local cuit au four à bois, servie dans un décor aux couleurs de l'Anjou.",
+"v": 1
+},
+{
+"id": "perle-dijon-le-coin-cache",
+"t": "Le Coin Caché",
+"q": "2 place Barbe, Dijon",
+"ci": "Dijon",
+"k": "Bistrot discret du vieux Dijon",
+"e": [
+"dejeuner"
+],
+"d": "Un bistrot de quartier discret dans le vieux Dijon, pour déjeuner sans cérémonie.",
+"v": 1
+},
+{
+"id": "perle-lyon-cafe-gadagne",
+"t": "Café Gadagne",
+"q": "1 place du Petit Collège, Lyon",
+"ci": "Lyon",
+"k": "Terrasse au sommet d'un musée",
+"e": [
+"dejeuner",
+"brunch",
+"gouter"
+],
+"d": "Une terrasse verdoyante et discrète tout en haut du musée Gadagne, avec brunch à volonté le week-end.",
+"v": 1
+},
+{
+"id": "perle-lyon-cafe-des-anges",
+"t": "Café des Anges",
+"q": "81 rue Vauban, Lyon",
+"ci": "Lyon",
+"k": "Terrasse en arrière-cour",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot soigné avec une terrasse cachée en arrière-cour, très prisée aux beaux jours.",
+"v": 1
+},
+{
+"id": "perle-lyon-o-kypos",
+"t": "O'Kypos",
+"q": "56 rue Saint-Pierre de Vaise, Lyon",
+"ci": "Lyon",
+"k": "Grande terrasse discrète",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine méditerranéenne à Vaise, avec une grande terrasse discrète et ensoleillée.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-les-complices",
+"t": "Les Complices",
+"q": "18 rue Principale, Schiltigheim",
+"ci": "Strasbourg",
+"k": "Bistrot de copains",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot tenu par deux duos d'amis, avec une carte de saison autour de viandes choisies.",
+"v": 1
+},
+{
+"id": "perle-avignon-la-cour-de-caro",
+"t": "La Cour de Caro",
+"q": "7 rue Mazan, Avignon",
+"ci": "Avignon",
+"k": "Cour ombragée près de Crillon",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot de marché et bar à vin, servi dans une cour calme à l'ombre des arbres.",
+"v": 1
+},
+{
+"id": "perle-annecy-bistro-sauvage",
+"t": "Bistro Sauvage",
+"q": "9 avenue des Îles, Annecy",
+"ci": "Annecy",
+"k": "Patio couvert de vigne",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un rez-de-chaussée de maison de ville, avec patio ombragé de vigne et vins biodynamiques.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-les-chantiers-de-la-garonne",
+"t": "Les Chantiers de la Garonne",
+"q": "quai des Queyries, Bordeaux",
+"ci": "Bordeaux",
+"k": "Ancien hangar à bateaux",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un ancien hangar de chantier naval au bord de l'eau, avec fruits de mer, bière artisanale et soirées concerts.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-chez-alriq",
+"t": "Chez Alriq",
+"q": "quai des Queyries, Bordeaux",
+"ci": "Bordeaux",
+"k": "Guinguette sur le sable",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une guinguette face à la Garonne depuis 1990, avec danse sur le sable et musiques du monde.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-l-effet-mer",
+"t": "L'Effet Mer",
+"q": "280 boulevard Alfred Daney, Bordeaux",
+"ci": "Bordeaux",
+"k": "Guinguette sur les bassins à flot",
+"e": [
+"dejeuner",
+"gouter",
+"diner"
+],
+"d": "Une grande guinguette festive avec vue sur les bassins à flot, concerts et DJ sets.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-gargalou",
+"t": "Gargalou",
+"q": "118 quai de Bacalan, Bordeaux",
+"ci": "Bordeaux",
+"k": "Photomaton vintage et cocktails",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Une adresse ludique de Bacalan avec photomaton vintage et cocktails.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-french-kiss",
+"t": "French Kiss",
+"q": "10 rue de la Gare d'Orléans, Bordeaux",
+"ci": "Bordeaux",
+"k": "Rooftop sous verrière",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Un rooftop végétalisé sous verrière, avec cuisine de food-truck intérieur et concerts.",
+"v": 1
+},
+{
+"id": "perle-nantes-la-casa-peniche-tropicale",
+"t": "La Casa - Péniche tropicale",
+"q": "6 quai Henri Barbusse, Nantes",
+"ci": "Nantes",
+"k": "Péniche aux 85 rhums",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Une péniche d'inspiration caribéenne avec environ 85 rhums, cocktails maison et bowls exotiques.",
+"v": 1
+},
+{
+"id": "perle-nantes-pepe-guinguette",
+"t": "Pépé Guinguette",
+"q": "quai de Versailles, Nantes",
+"ci": "Nantes",
+"k": "Péniche sur l'Erdre",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une péniche bleue et blanche près du pont Saint-Michel, avec terrasse au bord de l'Erdre.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-petit-baigneur",
+"t": "Le Petit Baigneur",
+"q": "quai de Malakoff, Nantes",
+"ci": "Nantes",
+"k": "Guinguette flottante en bois",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Une guinguette flottante entièrement en bois, avec grande terrasse panoramique, concerts et bals.",
+"v": 1
+},
+{
+"id": "perle-lyon-le-grain-de-folie",
+"t": "Le Grain de Folie",
+"q": "1 rue Dumont d'Urville, Lyon",
+"ci": "Lyon",
+"k": "Décor excentrique et patio caché",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un décor excentrique de tapis persans et meubles vintage, avec un patio et une terrasse cachés.",
+"v": 1
+},
+{
+"id": "perle-lyon-sous-le-balcon",
+"t": "Sous le Balcon",
+"q": "4 rue Victor Fort, Lyon",
+"ci": "Lyon",
+"k": "Décor fleuri et pop",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un décor fleuri et coloré d'esprit haussmannien, avec une cuisine de bistrot maison.",
+"v": 1
+},
+{
+"id": "perle-lyon-le-limonadier",
+"t": "Le Limonadier",
+"q": "9 rue Justin Godart, Lyon",
+"ci": "Lyon",
+"k": "Café centenaire à étage bio",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un café centenaire avec tapas au rez-de-chaussée et table bio à l'étage.",
+"v": 1
+},
+{
+"id": "perle-lyon-ufo",
+"t": "UFO",
+"q": "4 rue René Leynaud, Lyon",
+"ci": "Lyon",
+"k": "Design space-age",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un lieu hybride au design space-age : café, bar, restaurant, coworking et studio de podcast.",
+"v": 1
+},
+{
+"id": "perle-lyon-milord-circus",
+"t": "Milord Circus",
+"q": "27 rue de Saint-Cyr, Lyon",
+"ci": "Lyon",
+"k": "Bar au décor de cirque",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un bar au décor de cirque rétro à Vaise, avec restauration le midi.",
+"v": 1
+},
+{
+"id": "perle-lyon-zibou-lab",
+"t": "Zibou Lab",
+"q": "71 rue Smith, Lyon",
+"ci": "Lyon",
+"k": "Tiers-lieu inclusif",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café-boutique-galerie où le service est assuré par des salariés en situation de handicap.",
+"v": 1
+},
+{
+"id": "perle-lyon-cafe-mio",
+"t": "Café Mio",
+"q": "2 rue Thimonnier, Lyon",
+"ci": "Lyon",
+"k": "Café-papeterie à lettres",
+"e": [
+"gouter"
+],
+"d": "Un café dédié à la correspondance, où l'on peut s'écrire une lettre à soi-même à recevoir dans 0 à 3 ans.",
+"v": 1
+},
+{
+"id": "perle-lyon-un-brin-de-folie",
+"t": "Un Brin de folie",
+"q": "12 place Tobie Robatel, Lyon",
+"ci": "Lyon",
+"k": "Café-fleuriste",
+"e": [
+"gouter"
+],
+"d": "Un café-fleuriste où l'on compose un terrarium en buvant un thé.",
+"v": 1
+},
+{
+"id": "perle-lyon-anahera",
+"t": "Anahera",
+"q": "22 avenue Jean Jaurès, Lyon",
+"ci": "Lyon",
+"k": "Jungle urbaine et brocante",
+"e": [
+"dejeuner",
+"gouter",
+"brunch"
+],
+"d": "Un café en jungle urbaine, avec créations locales, plantes, vinyles et brocante.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-le-transsiberien",
+"t": "Le Transsibérien",
+"q": "3 ruelle de la Bruche, Strasbourg",
+"ci": "Strasbourg",
+"k": "Petite salle russe de la Krutenau",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une petite salle intime, avec des spécialités russes préparées par un chef d'origine tatare.",
+"v": 1
+},
+{
+"id": "perle-toulouse-ombres-blanches-cafe",
+"t": "Ombres Blanches Café",
+"q": "50 rue Léon Gambetta, Toulouse",
+"ci": "Toulouse",
+"k": "Café de libraire",
+"e": [
+"gouter",
+"dejeuner"
+],
+"d": "Un café calme juste à côté de la librairie du même nom, pour lire autour d'un café.",
+"v": 1
+},
+{
+"id": "perle-toulouse-canithe",
+"t": "Canithé",
+"q": "1 rue des Trois Renards, Toulouse",
+"ci": "Toulouse",
+"k": "Salon de thé avec chiens",
+"e": [
+"gouter"
+],
+"d": "Un salon de thé où les chiens de la maison viennent à la rencontre des visiteurs.",
+"v": 1
+},
+{
+"id": "perle-toulouse-swinging-sisters",
+"t": "Swinging Sisters",
+"q": "15 quai Lucien Lombard, Toulouse",
+"ci": "Toulouse",
+"k": "Café rétro-chic et ateliers",
+"e": [
+"gouter",
+"dejeuner"
+],
+"d": "Un café rétro-chic et concept-store, avec créations locales et ateliers de couture ou de tricot.",
+"v": 1
+},
+{
+"id": "perle-toulouse-cacou",
+"t": "Cacou",
+"q": "20 rue Maury, Toulouse",
+"ci": "Toulouse",
+"k": "Café-brocante",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Plats et desserts maison, dans un café dont le mobilier et la déco vintage sont à vendre.",
+"v": 1
+},
+{
+"id": "perle-toulouse-chapristea",
+"t": "Chapristea",
+"q": "4 rue Jules Chalande, Toulouse",
+"ci": "Toulouse",
+"k": "Bar à chats",
+"e": [
+"gouter"
+],
+"d": "Un bar à chats : thé et pâtisseries pendant que les chats circulent librement.",
+"v": 1
+},
+{
+"id": "perle-marseille-le-repit-de-notre-dame",
+"t": "Le Répit de Notre-Dame",
+"q": "66 rue Vauvenargues, Marseille",
+"ci": "Marseille",
+"k": "Jardin solidaire",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café-restaurant dans un vaste jardin près de la basilique, projet solidaire qui forme des personnes en situation de handicap.",
+"v": 1
+},
+{
+"id": "perle-lille-le-broc-du-vieux-lille",
+"t": "Le Broc du Vieux Lille",
+"q": "32 place Louise de Bettignies, Lille",
+"ci": "Lille",
+"k": "Table au fromage et brocante",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une adresse du Vieux-Lille tournée vers le fromage, faite maison, avec terrasse de saison.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-darwin-eco-systeme",
+"t": "Darwin Éco-Système",
+"q": "87 quai des Queyries, Bordeaux",
+"ci": "Bordeaux",
+"k": "Ancienne caserne alternative",
+"e": [
+"dejeuner",
+"gouter",
+"brunch"
+],
+"d": "Une ancienne caserne militaire reconvertie en lieu alternatif, avec restauration, café et terrasse sur la rive droite.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-les-ronrons-des-chartrons",
+"t": "Les Ronrons des Chartrons",
+"q": "16 quai de Bacalan, Bordeaux",
+"ci": "Bordeaux",
+"k": "Café-refuge à chats",
+"e": [
+"gouter",
+"dejeuner"
+],
+"d": "Un café-refuge dont les chats attendent d'être adoptés, avec une carte végétarienne et vegan.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-lila-and-the-barber",
+"t": "Lila and the Barber",
+"q": "14 rue Saint-Sernin, Bordeaux",
+"ci": "Bordeaux",
+"k": "Taverne à jeux de société",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Un café-taverne sur deux niveaux, avec jeux de société, quiz et bières brassées sur place.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-wave-surf-cafe",
+"t": "Wave Surf Café",
+"q": "174 cours du Médoc, Bordeaux",
+"ci": "Bordeaux",
+"k": "Surf en intérieur",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant où l'on regarde (ou fait) du surf en intérieur, sur une vague artificielle.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-bakery-art-gallery",
+"t": "Bakery Art Gallery",
+"q": "24 rue du Mirail, Bordeaux",
+"ci": "Bordeaux",
+"k": "Galerie, boulangerie et librairie",
+"e": [
+"dejeuner",
+"gouter",
+"brunch"
+],
+"d": "Une galerie d'art avec café en terrasse, boulangerie bio sans gluten et librairie culinaire.",
+"v": 1
+},
+{
+"id": "perle-montpellier-cafe-bun",
+"t": "Café Bun",
+"q": "5 rue des Étuves, Montpellier",
+"ci": "Montpellier",
+"k": "Café sous une voûte",
+"e": [
+"gouter",
+"dejeuner"
+],
+"d": "Un café de spécialité dans une salle voûtée juste derrière l'Opéra Comédie.",
+"v": 1
+},
+{
+"id": "perle-montpellier-faune",
+"t": "Faune",
+"q": "13 rue de la République, Montpellier",
+"ci": "Montpellier",
+"k": "Terrasse dans un centre d'art",
+"e": [
+"dejeuner",
+"gouter",
+"diner"
+],
+"d": "Un bar-restaurant au sein du MO.CO., avec terrasse sous les arbres du parc Roblès.",
+"v": 1
+},
+{
+"id": "perle-marseille-fada-bike",
+"t": "Fada Bike",
+"q": "34 rue Plan Fourmiguier, Marseille",
+"ci": "Marseille",
+"k": "Café-cantine et atelier vélo",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Une cantine-café accolée à un atelier de réparation de vélos, avec balades en vélo électrique.",
+"v": 1
+},
+{
+"id": "perle-marseille-barbotyne",
+"t": "Barbotyne",
+"q": "103 rue Paradis, Marseille",
+"ci": "Marseille",
+"k": "Café-céramique",
+"e": [
+"gouter"
+],
+"d": "Un café où l'on peint sa propre pièce en céramique, cuite sur place et à récupérer quelques jours plus tard.",
+"v": 1
+},
+{
+"id": "perle-marseille-mo-stera",
+"t": "Mo:stera",
+"q": "84 rue de Lodi, Marseille",
+"ci": "Marseille",
+"k": "Café, plantes et BD",
+"e": [
+"gouter",
+"brunch"
+],
+"d": "Café de spécialité, plantes d'intérieur et bandes dessinées dans le même lieu.",
+"v": 1
+},
+{
+"id": "perle-marseille-fan2",
+"t": "Fan2",
+"q": "12 rue Bussy l'Indien, Marseille",
+"ci": "Marseille",
+"k": "Café-friperie années 2000",
+"e": [
+"gouter"
+],
+"d": "Un café-friperie à l'esthétique nostalgique des années 2000 et de la pop culture.",
+"v": 1
+},
+{
+"id": "perle-marseille-le-fil-en-trop",
+"t": "Le Fil en Trop",
+"q": "23 rue des Trois Mages, Marseille",
+"ci": "Marseille",
+"k": "Café tricot",
+"e": [
+"gouter"
+],
+"d": "Un café où l'on apprend à tricoter, avec une petite boutique de laine.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-butinerie",
+"t": "La Butinerie",
+"q": "103 rue Sainte, Marseille",
+"ci": "Marseille",
+"k": "Café-fleuriste",
+"e": [
+"gouter",
+"brunch"
+],
+"d": "Un café-fleuriste écoresponsable avec ateliers de composition florale.",
+"v": 1
+},
+{
+"id": "perle-marseille-terrakoa",
+"t": "Terrakoa",
+"q": "120 rue Sainte, Marseille",
+"ci": "Marseille",
+"k": "Chocolaterie et café",
+"e": [
+"gouter"
+],
+"d": "Une chocolaterie bean-to-bar avec espace café et ateliers de fabrication.",
+"v": 1
+},
+{
+"id": "perle-nantes-aux-p-tit-joueurs",
+"t": "Aux P'tit Joueurs",
+"q": "23 rue du Port Guichard, Nantes",
+"ci": "Nantes",
+"k": "Piste de boule nantaise",
+"e": [
+"diner",
+"gouter"
+],
+"d": "Un bar de façade sobre avec une piste de boule nantaise dans l'arrière-salle, cuisine maison et décor de brocante.",
+"v": 1
+},
+{
+"id": "perle-nantes-chez-maman",
+"t": "Chez Maman",
+"q": "2 rue de la Juiverie, Nantes",
+"ci": "Nantes",
+"k": "Restaurant-brocante aux Playmobil",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant-brocante décoré de Playmobil géants, où les objets sont à vendre.",
+"v": 1
+},
+{
+"id": "perle-nice-la-ronronerie",
+"t": "La Ronronerie",
+"q": "4 rue Lepante, Nice",
+"ci": "Nice",
+"k": "Café à chats",
+"e": [
+"gouter"
+],
+"d": "Un café où quatre chats vivent en liberté et viennent se faire caresser.",
+"v": 1
+},
+{
+"id": "perle-nice-l-art-gourmand",
+"t": "L'Art Gourmand",
+"q": "21 rue du Marché, Nice",
+"ci": "Nice",
+"k": "Salon de thé dans une ancienne armurerie",
+"e": [
+"gouter"
+],
+"d": "Une ancienne armurerie devenue chocolaterie, avec un salon de thé à l'étage sous des fresques anciennes et un chocolat chaud à l'italienne.",
+"v": 1
+},
+{
+"id": "perle-nice-marinette-bakery",
+"t": "Marinette Bakery",
+"q": "16 rue Colonna d'Istria, Nice",
+"ci": "Nice",
+"k": "Serre au-dessus d'une boulangerie",
+"e": [
+"gouter",
+"brunch"
+],
+"d": "Une serre vitrée au-dessus de la boulangerie, derrière la cathédrale, facile à rater.",
+"v": 1
+},
+{
+"id": "perle-nice-read-the-room",
+"t": "Read the Room",
+"q": "3 rue Papon, Nice",
+"ci": "Nice",
+"k": "Librairie anglophone avec café",
+"e": [
+"gouter"
+],
+"d": "Une librairie anglophone familiale avec café, fauteuils moelleux et gâteaux maison.",
+"v": 1
+},
+{
+"id": "perle-rennes-alaska-brocante-et-snack",
+"t": "Alaska Brocante et Snack",
+"q": "14 rue Dupont des Loges, Rennes",
+"ci": "Rennes",
+"k": "Brocante dans un ancien garage",
+"e": [
+"dejeuner",
+"gouter",
+"brunch"
+],
+"d": "Un ancien garage devenu café-brocante, où mobilier et vaisselle sont à vendre.",
+"v": 1
+},
+{
+"id": "perle-rennes-le-chat-puccino",
+"t": "Le Chat Puccino",
+"q": "1 rue des Francs Bourgeois, Rennes",
+"ci": "Rennes",
+"k": "Salon de thé à chats",
+"e": [
+"gouter"
+],
+"d": "Un salon de thé inspiré des cafés à chats japonais.",
+"v": 1
+},
+{
+"id": "perle-rennes-now",
+"t": "Now",
+"q": "6 rue des Polieux, Rennes",
+"ci": "Rennes",
+"k": "Bar-friperie",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Un bar où l'on chine des vêtements d'occasion en buvant un verre.",
+"v": 1
+},
+{
+"id": "perle-rennes-la-banque",
+"t": "La Banque",
+"q": "7 allée Rallier du Baty, Rennes",
+"ci": "Rennes",
+"k": "Bar dans une ancienne prison",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Un bar dans l'ancienne prison Saint-Michel, avec la porte des anciens cachots visible depuis la terrasse.",
+"v": 1
+},
+{
+"id": "perle-lille-le-petrouchka",
+"t": "Le Pétrouchka",
+"q": "67 rue Royale, Lille",
+"ci": "Lille",
+"k": "Dîner-cabaret en cave voûtée",
+"e": [
+"diner"
+],
+"d": "Un dîner-cabaret ouvert depuis 1974, dans une cave voûtée, avec sketches et chansons.",
+"v": 1
+},
+{
+"id": "perle-lyon-le-gentlecat",
+"t": "Le GentleCat",
+"q": "16 rue du Général Plessier, Lyon",
+"ci": "Lyon",
+"k": "Salon de thé à chats",
+"e": [
+"gouter"
+],
+"d": "Un salon de thé où sept chats se promènent librement parmi les clients.",
+"v": 1
+},
+{
+"id": "perle-lyon-la-bibliotheque",
+"t": "La Bibliothèque",
+"q": "13 rue du Général Plessier, Lyon",
+"ci": "Lyon",
+"k": "Cave à vin entourée de livres",
+"e": [
+"diner",
+"gouter"
+],
+"d": "Un bar à vin avec environ 2 500 livres de la collection familiale du patron, à feuilleter en dégustant.",
+"v": 1
+},
+{
+"id": "perle-lyon-les-arpenteurs",
+"t": "Les Arpenteurs",
+"q": "13 rue Lanterne, Lyon",
+"ci": "Lyon",
+"k": "Bar à jeux et à énigmes",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Une centaine de jeux de société et des énigmes cachées dans le lieu.",
+"v": 1
+},
+{
+"id": "perle-lyon-skull",
+"t": "Skull",
+"q": "229 grande rue de la Guillotière, Lyon",
+"ci": "Lyon",
+"k": "Décor steampunk",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Un bar aux décors steampunk et cinétiques, où de vieilles machines côtoient des créations contemporaines.",
+"v": 1
+},
+{
+"id": "perle-lyon-la-limonade-de-marinette",
+"t": "La Limonade de Marinette",
+"q": "47 rue Saint-Georges, Lyon",
+"ci": "Lyon",
+"k": "Bistrot rétro années 50",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un bistrot rétro du Vieux-Lyon, au mobilier kitsch années 50 et à la vaisselle d'antan.",
+"v": 1
+},
+{
+"id": "perle-grenoble-cafe-brocante-vintage-by-fabichka",
+"t": "Café-Brocante Vintage By Fabichka",
+"q": "22 rue Charrel, Grenoble",
+"ci": "Grenoble",
+"k": "Café-brocante",
+"e": [
+"gouter",
+"dejeuner"
+],
+"d": "Un café associé à une brocante vintage, où l'on boit son thé parmi les objets chinés.",
+"v": 1
+},
+{
+"id": "perle-grenoble-insolita-bar-a-chaussures",
+"t": "Insolita - Bar à Chaussures",
+"q": "12 rue du Docteur Mazet, Grenoble",
+"ci": "Grenoble",
+"k": "Bottier et bar italien",
+"e": [
+"gouter",
+"diner"
+],
+"d": "Un bottier et magasin de chaussures qui est aussi un bar italien.",
+"v": 1
+},
+{
+"id": "perle-montpellier-comptoir-de-l-arc",
+"t": "Comptoir de l'Arc",
+"q": "place de la Canourgue, Montpellier",
+"ci": "Montpellier",
+"k": "Terrasse sous les platanes",
+"e": [
+"dejeuner",
+"gouter",
+"diner"
+],
+"d": "Un bistrot de longue date avec une terrasse feuillue sous de vieux platanes.",
+"v": 1
+},
+{
+"id": "perle-montpellier-napoleon-dynamite",
+"t": "Napoléon Dynamite",
+"q": "5 place de la Canourgue, Montpellier",
+"ci": "Montpellier",
+"k": "Coffee-shop rétro-pop",
+"e": [
+"gouter",
+"brunch"
+],
+"d": "Un coffee-shop rétro-pop avec terrasse ensoleillée, connu pour son brunch et ses pancakes.",
+"v": 1
+},
+{
+"id": "perle-dijon-restaurant-du-parc-de-la-colombiere",
+"t": "Restaurant du Parc de la Colombière",
+"q": "49 cours du Parc, Dijon",
+"ci": "Dijon",
+"k": "Terrasse sous les tilleuls",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une grande terrasse sous les tilleuls, dans un bâtiment d'allure campagnarde au bord du parc.",
+"v": 1
+},
+{
+"id": "perle-dijon-maison-milliere",
+"t": "Maison Millière",
+"q": "14 rue de la Chouette, Dijon",
+"ci": "Dijon",
+"k": "Jardin pavé derrière une maison à colombages",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un petit jardin intérieur pavé derrière une maison à colombages classée, pour quiches, salades et thés.",
+"v": 1
+},
+{
+"id": "perle-lille-la-petite-cour",
+"t": "La Petite Cour",
+"q": "17 rue du Curé Saint-Étienne, Lille",
+"ci": "Lille",
+"k": "Estaminet dans une demeure du XVIIe",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un estaminet du Vieux-Lille dans une demeure du XVIIe siècle, avec une cour intérieure discrète.",
+"v": 1
+},
+{
+"id": "perle-lille-le-restaurant-du-we-are-club",
+"t": "Le restaurant du We Are Club",
+"q": "22 place Louise de Bettignies, Lille",
+"ci": "Lille",
+"k": "Hôtel particulier ouvert le week-end",
+"e": [
+"diner"
+],
+"d": "Une ancienne table réservée à des membres, ouverte au public le vendredi soir et le samedi dans un hôtel particulier du XVIIe.",
+"v": 1
+},
+{
+"id": "perle-grenoble-chez-le-per-gras",
+"t": "Chez Le Pèr'Gras",
+"q": "90 chemin de la Bastille, La Tronche",
+"ci": "Grenoble",
+"k": "Table au sommet de la Bastille",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant perché en haut de la Bastille, avec vue sur les montagnes.",
+"v": 1
+},
+{
+"id": "perle-saint-etienne-la-java-bleue",
+"t": "La Java Bleue",
+"q": "2 cours Fauriel, Saint-Étienne",
+"ci": "Saint-Étienne",
+"k": "Décor de bistrot d'antan",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un décor rétro de bistrot d'autrefois, pour une cuisine de tradition.",
+"v": 1
+},
+{
+"id": "perle-saint-etienne-corne-d-aurochs",
+"t": "Corne d'Aurochs",
+"q": "18 rue Michel Servet, Saint-Étienne",
+"ci": "Saint-Étienne",
+"k": "Décor de bouchon lyonnais",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un décor de bouchon lyonnais et une cuisine traditionnelle.",
+"v": 1
+},
+{
+"id": "perle-saint-etienne-la-fabuleuse-cantine",
+"t": "La Fabuleuse Cantine",
+"q": "Les Forces Motrices, Saint-Étienne",
+"ci": "Saint-Étienne",
+"k": "Guinguette associative",
+"e": [
+"dejeuner",
+"gouter",
+"diner"
+],
+"d": "Une guinguette associative et conviviale installée dans le bâtiment des Forces Motrices.",
+"v": 1
+},
+{
+"id": "perle-clermont-ferrand-the-british-book-club",
+"t": "The British Book Club",
+"q": "3 rue Claude Baccot, Clermont-Ferrand",
+"ci": "Clermont-Ferrand",
+"k": "Livres, musique et cuisine",
+"e": [
+"gouter",
+"dejeuner",
+"diner"
+],
+"d": "Un lieu qui mêle littérature, musique et gastronomie.",
+"v": 1
+},
+{
+"id": "perle-toulon-le-pescalou",
+"t": "Le Pescalou",
+"q": "3 place à l'Huile, Toulon",
+"ci": "Toulon",
+"k": "Poissonnerie-restaurant",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une poissonnerie qui sert aussi à table, près du port.",
+"v": 1
+},
+{
+"id": "perle-toulon-restaurant-bernard",
+"t": "Restaurant Bernard",
+"q": "Sentier des Douaniers, Anse de Magaud, Toulon",
+"ci": "Toulon",
+"k": "Salle vitrée au bord de l'eau",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une petite salle à baies vitrées et une grande terrasse au bord de l'eau, sur le sentier des douaniers.",
+"v": 1
+},
+{
+"id": "perle-aix-en-provence-drole-d-endroit",
+"t": "Drôle d'Endroit",
+"q": "14 rue Annonerie Vieille, Aix-en-Provence",
+"ci": "Aix-en-Provence",
+"k": "Cuisine de marché et expositions",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant d'une quinzaine d'années où les expositions d'art se succèdent, avec cuisine de marché et vins surtout régionaux.",
+"v": 1
+},
+{
+"id": "perle-aix-en-provence-les-caves-henri-4",
+"t": "Les Caves Henri 4",
+"q": "32 rue Espariat, Aix-en-Provence",
+"ci": "Aix-en-Provence",
+"k": "Celliers voûtés de 1495",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant installé dans d'anciens celliers voûtés de 1495, au cœur du centre-ville.",
+"v": 1
+},
+{
+"id": "perle-nimes-l-atypique",
+"t": "L'Atypique",
+"q": "27 rue de la Madeleine, Nîmes",
+"ci": "Nîmes",
+"k": "Cuisine nîmoise de saison",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant de tradition française qui met à l'honneur les plats de Nîmes et les produits du coin.",
+"v": 1
+},
+{
+"id": "perle-nimes-la-cour-des-marchands",
+"t": "La Cour des Marchands",
+"q": "7 rue des Marchands, Nîmes",
+"ci": "Nîmes",
+"k": "Cuisine du Sud-Ouest revisitée",
+"e": [
+"diner",
+"dejeuner"
+],
+"d": "Une cuisine du Sud-Ouest revisitée, avec produits frais et locaux, dans une rue du centre.",
+"v": 1
+},
+{
+"id": "perle-nimes-derriere-l-eglise",
+"t": "Derrière l'Église",
+"q": "3 rue du Château Fadaise, Nîmes",
+"ci": "Nîmes",
+"k": "Décor d'autrefois, 200 vins",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Brandade et taureau de Camargue dans un décor d'autrefois, avec plus de 200 vins à la carte.",
+"v": 1
+},
+{
+"id": "perle-caen-l-insolite",
+"t": "L'Insolite",
+"q": "16 rue du Vaugueux, Caen",
+"ci": "Caen",
+"k": "Maison du XVIe au Vaugueux",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bâtiment du XVIe siècle au décor atypique, dans le quartier historique du Vaugueux, avec poissons livrés par un chalutier.",
+"v": 1
+},
+{
+"id": "perle-rouen-cafe-hamlet",
+"t": "Café Hamlet",
+"q": "186 rue Martainville, Rouen",
+"ci": "Rouen",
+"k": "Dans l'ossuaire Saint-Maclou",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un café-restaurant installé dans l'ancien ossuaire Saint-Maclou, cuisine normande et décor littéraire autour de Flaubert.",
+"v": 1
+},
+{
+"id": "perle-rouen-la-taverne-saint-amand",
+"t": "La Taverne Saint-Amand",
+"q": "11 rue Saint-Amand, Rouen",
+"ci": "Rouen",
+"k": "Taverne avec piano",
+"e": [
+"diner"
+],
+"d": "Une taverne de charme dans le centre historique, avec un piano qui attend les musiciens du soir.",
+"v": 1
+},
+{
+"id": "perle-pau-les-papilles-insolites",
+"t": "Les Papilles Insolites",
+"q": "5 rue Alexandre Taylor, Pau",
+"ci": "Pau",
+"k": "Bistrot rétro, 400 vins",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot rétro façon années 50, carte qui suit les saisons et le marché du matin, cave de plus de 400 vins.",
+"v": 1
+},
+{
+"id": "perle-limoges-l-insolite",
+"t": "L'Insolite",
+"q": "27 cours Jourdan, Limoges",
+"ci": "Limoges",
+"k": "Tapas et grillades",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Cuisine française, grillades et tapas dans une ambiance de bar animée et décorée.",
+"v": 1
+},
+{
+"id": "perle-reims-le-bocal",
+"t": "Le Bocal",
+"q": "27 rue de Mars, Reims",
+"ci": "Reims",
+"k": "Resto adossé à la poissonnerie",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Le restaurant accolé à une poissonnerie des Halles du Boulingrin : poissons et coquillages du jour, un verre de champagne avec.",
+"v": 1
+},
+{
+"id": "perle-reims-au-petit-comptoir",
+"t": "Au Petit Comptoir",
+"q": "17 rue de Mars, Reims",
+"ci": "Reims",
+"k": "Bistrot gourmand du Boulingrin",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot gourmand près des Halles du Boulingrin, menu qui change souvent et terrasse sur le quartier.",
+"v": 1
+},
+{
+"id": "perle-reims-version-originale",
+"t": "Version Originale",
+"q": "25bis rue du Temple, Reims",
+"ci": "Reims",
+"k": "Menu renouvelé chaque semaine",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une table sans étiquette dans un quartier vivant : menu renouvelé chaque semaine, du poisson aux nouilles.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-pierres-et-gamelles",
+"t": "Pierres et Gamelles",
+"q": "4 rue des Charpentiers, Strasbourg",
+"ci": "Strasbourg",
+"k": "Viande dans une salle intimiste",
+"e": [
+"diner",
+"dejeuner"
+],
+"d": "Une petite salle intimiste, tout autour de la viande, à deux pas de la cathédrale.",
+"v": 1
+},
+{
+"id": "perle-nancy-flambock",
+"t": "Flambock",
+"q": "4 Grande Rue, Nancy",
+"ci": "Nancy",
+"k": "Comptoir alsacien dans la Vieille Ville",
+"e": [
+"diner",
+"dejeuner"
+],
+"d": "Un comptoir chaleureux à l'alsacienne, au cœur de la Vieille Ville.",
+"v": 1
+},
+{
+"id": "perle-nice-a-buteghinna",
+"t": "A Buteghinna",
+"q": "11 rue du Marché, Nice",
+"ci": "Nice",
+"k": "Pan bagnat à la niçoise",
+"e": [
+"dejeuner"
+],
+"d": "Une petite adresse du Vieux Nice repérable à l'autocollant « cuisine nissarde » sur la porte, réputée pour son pan bagnat traditionnel.",
+"v": 1
+},
+{
+"id": "perle-lyon-slake-jacobins",
+"t": "Slake Jacobins",
+"q": "9 rue de l'Ancienne Préfecture, Lyon",
+"ci": "Lyon",
+"k": "Canapés en forme de baignoire",
+"e": [
+"gouter"
+],
+"d": "Un décor feutré avec des canapés en forme de baignoire, connu pour son carrot cake.",
+"v": 1
+},
+{
+"id": "perle-lyon-langues-de-cha",
+"t": "Langues de Chá",
+"q": "13 rue du Plat, Lyon",
+"ci": "Lyon",
+"k": "Infusions coréennes maison",
+"e": [
+"gouter"
+],
+"d": "Des infusions coréennes artisanales à base de fruits macérés dans le sucre, très rares à Lyon.",
+"v": 1
+},
+{
+"id": "perle-lyon-kiwa-cafe",
+"t": "Kiwa Café",
+"q": "3 quai Antoine Riboud, Lyon",
+"ci": "Lyon",
+"k": "Coffee shop coréen et bingsu",
+"e": [
+"gouter"
+],
+"d": "Le premier coffee shop coréen de Lyon, dans un décor de maison traditionnelle, réputé pour son bingsu.",
+"v": 1
+},
+{
+"id": "perle-lyon-le-luminarium",
+"t": "Le Luminarium",
+"q": "9 rue des Trois-Maries, Lyon",
+"ci": "Lyon",
+"k": "Café sorcier au Vieux Lyon",
+"e": [
+"gouter"
+],
+"d": "Un café au décor de petite école de sorciers, avec un café très soigné.",
+"v": 1
+},
+{
+"id": "perle-lyon-le-rancard",
+"t": "Le Rancard",
+"q": "259 rue Vendôme, Lyon",
+"ci": "Lyon",
+"k": "Salon de thé, laverie et ateliers",
+"e": [
+"gouter"
+],
+"d": "Un salon de thé solidaire qui partage ses murs avec une laverie et des ateliers.",
+"v": 1
+},
+{
+"id": "perle-marseille-cup-of-tea",
+"t": "Cup of Tea",
+"q": "1 rue Caisserie, Marseille",
+"ci": "Marseille",
+"k": "Librairie-salon de thé du Panier",
+"e": [
+"gouter"
+],
+"d": "Une librairie-salon de thé du Panier à l'allure de café d'Amsterdam, avec une sélection de livres d'une seule maison d'édition.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-ours-cafe",
+"t": "OURS Café",
+"q": "18 rue Sainte-Colombe, Bordeaux",
+"ci": "Bordeaux",
+"k": "Café-surf et yoga en pierre claire",
+"e": [
+"gouter"
+],
+"d": "Un café-concept store dédié au surf et au yoga, dans un grand espace en pierre claire.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-oomji-cafe",
+"t": "Oomji Café",
+"q": "5 rue de Candale, Bordeaux",
+"ci": "Bordeaux",
+"k": "Street food coréenne et bingsu",
+"e": [
+"gouter"
+],
+"d": "Un café qui mêle street food coréenne et touches françaises : bingsus et brioches vapeur.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-jorlia",
+"t": "Jorlia",
+"q": "16 rue des Remparts, Bordeaux",
+"ci": "Bordeaux",
+"k": "Concept store bohème, cookies vegan",
+"e": [
+"gouter"
+],
+"d": "Un concept store bohème avec cookies bio et vegan et cantine équilibrée.",
+"v": 1
+},
+{
+"id": "perle-lille-elizabeth-s",
+"t": "Elizabeth's",
+"q": "71 rue Basse, Lille",
+"ci": "Lille",
+"k": "Tea room à l'anglaise du Vieux-Lille",
+"e": [
+"gouter"
+],
+"d": "Un salon de thé à l'anglaise dans le Vieux-Lille : thés choisis, scones, carrot cake et chocolat chaud.",
+"v": 1
+},
+{
+"id": "perle-lille-l-impertinente",
+"t": "L'Impertinente",
+"q": "9 boulevard Papin, Lille",
+"ci": "Lille",
+"k": "Chocolat chaud géant et sablés",
+"e": [
+"gouter"
+],
+"d": "Un salon de thé décalé, célèbre pour son chocolat chaud démesuré et ses sablés.",
+"v": 1
+},
+{
+"id": "perle-lille-cafe-meo",
+"t": "Café Méo",
+"q": "5 place du Général de Gaulle, Lille",
+"ci": "Lille",
+"k": "Chocolat chaud façon cocktail",
+"e": [
+"gouter"
+],
+"d": "Près de la Grand Place, un café qui traite le chocolat chaud comme un cocktail, avec toute une carte de variations.",
+"v": 1
+},
+{
+"id": "perle-nantes-marcel-et-ses-madeleines",
+"t": "Marcel et ses Madeleines",
+"q": "3 place Catinat, Nantes",
+"ci": "Nantes",
+"k": "Petit café de quartier aux madeleines",
+"e": [
+"gouter"
+],
+"d": "Un petit café de quartier ouvert dès 8h, réputé pour ses madeleines.",
+"v": 1
+},
+{
+"id": "perle-nantes-les-bien-aimes",
+"t": "Les Bien-Aimés",
+"q": "2 rue de la Paix, Nantes",
+"ci": "Nantes",
+"k": "Librairie et salon de thé",
+"e": [
+"gouter"
+],
+"d": "Une librairie qui est aussi un salon de thé, ouverte à partir de 10h.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-chapitre-t",
+"t": "Le Chapitre T",
+"q": "1 rue Camille Berruyer, Nantes",
+"ci": "Nantes",
+"k": "Thé et lecture entourés de livres",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Une petite adresse entourée de livres où l'on sert du thé et de la cuisine maison ; mieux vaut réserver le midi.",
+"v": 1
+},
+{
+"id": "perle-nantes-le-livr-o-the",
+"t": "Le Livr'Ô Thé",
+"q": "4 rue du Chapeau Rouge, Nantes",
+"ci": "Nantes",
+"k": "Livres d'occasion et salon de thé",
+"e": [
+"gouter"
+],
+"d": "Une librairie de livres d'occasion associée à un salon de thé, café et pâtisseries de producteurs locaux.",
+"v": 1
+},
+{
+"id": "perle-montpellier-le-bookshop",
+"t": "Le Bookshop",
+"q": "rue du Bras de Fer, Montpellier",
+"ci": "Montpellier",
+"k": "Librairie-café, thés d'auteurs",
+"e": [
+"gouter"
+],
+"d": "Une librairie-café chaleureuse, idéale les jours de pluie, avec des thés qui portent des noms d'auteurs.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-cantinetta",
+"t": "La Cantinetta",
+"q": "24 cours Julien, Marseille",
+"ci": "Marseille",
+"k": "Bistrot italien, patio discret",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine italienne d'ambiance bistrot, avec un patio discret en plein cours Julien.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-tasca",
+"t": "La Tasca",
+"q": "102 rue Ferrari, Marseille",
+"ci": "Marseille",
+"k": "Tapas dans une cour aux bougies",
+"e": [
+"diner"
+],
+"d": "Des tapas aux saveurs ibériques, corses et provençales, servis dans une cour éclairée aux bougies.",
+"v": 1
+},
+{
+"id": "perle-marseille-le-p-tit-jardin",
+"t": "Le P'tit Jardin",
+"q": "12-14 avenue des Goumiers, Marseille",
+"ci": "Marseille",
+"k": "Cuisine de saison, épicerie et jardin",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine française de saison, avec une épicerie et un petit jardin au fond de la salle.",
+"v": 1
+},
+{
+"id": "perle-marseille-el-picoteo",
+"t": "El Picoteo",
+"q": "53 rue Saint-Pierre, Marseille",
+"ci": "Marseille",
+"k": "Tapas dans un patio intimiste",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Des tapas espagnols au fil des saisons, dans un patio intimiste.",
+"v": 1
+},
+{
+"id": "perle-marseille-le-cafe-thai",
+"t": "Le Café Thaï",
+"q": "136 rue du Rouet, Marseille",
+"ci": "Marseille",
+"k": "Repas assis sur des coussins",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant thaï où l'on mange à des tables basses, assis sur des coussins.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-rotisserie-montaigne",
+"t": "La Rôtisserie Montaigne",
+"q": "62 rue Montaigne, Marseille",
+"ci": "Marseille",
+"k": "Viandes au feu de bois, beau patio",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Des viandes fermières Label Rouge cuites au feu de bois, à déguster dans un beau patio.",
+"v": 1
+},
+{
+"id": "perle-marseille-dos-hermanas",
+"t": "Dos Hermanas",
+"q": "18 rue Bussy l'Indien, Marseille",
+"ci": "Marseille",
+"k": "Tapas tenus par deux sœurs",
+"e": [
+"diner"
+],
+"d": "Des tapas copieux tenus par deux sœurs d'origine espagnole, avec uniquement des vins espagnols.",
+"v": 1
+},
+{
+"id": "perle-lyon-raconte-moi-la-terre",
+"t": "Raconte-moi la Terre",
+"q": "14 rue du Plat, Lyon",
+"ci": "Lyon",
+"k": "Resto caché au fond d'une librairie",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un restaurant-café discret au fond d'une librairie, sous une verrière, avec des produits équitables et bio.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-s-burjerstuewel",
+"t": "S'Burjerstuewel",
+"q": "15 rue de l'Outre, Strasbourg",
+"ci": "Strasbourg",
+"k": "Winstub discrète, spécialités rares",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une winstub cachée dans une rue calme, avec des spécialités moins courantes comme les quenelles de foie.",
+"v": 1
+},
+{
+"id": "perle-rennes-kraz",
+"t": "kRAZ",
+"q": "4 rue Saint-Georges, Rennes",
+"ci": "Rennes",
+"k": "Crêperie dans une ancienne fabrique",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une crêperie-moulerie installée dans l'ancienne fabrique Saint-Georges, avec une cour ensoleillée entourée de hauts murs.",
+"v": 1
+},
+{
+"id": "perle-rennes-la-marmite-senegauloise",
+"t": "La Marmite sénégauloise",
+"q": "13 rue Danton, Rennes",
+"ci": "Rennes",
+"k": "Cuisine métisse dans un jardin clos",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine métisse servie dans un jardin clos planté de palmiers et d'arbres fruitiers.",
+"v": 1
+},
+{
+"id": "perle-rennes-la-prison-saint-michel",
+"t": "La Prison Saint-Michel",
+"q": "7 allée Rallier-du-Baty, Rennes",
+"ci": "Rennes",
+"k": "Cour d'une ancienne prison",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "La cour d'une ancienne prison transformée en lieu où se partagent plusieurs bars et restaurants.",
+"v": 1
+},
+{
+"id": "perle-rennes-origines",
+"t": "Origines",
+"q": "2 rue de l'Hôtel-Dieu, Rennes",
+"ci": "Rennes",
+"k": "Bistro-brasserie dans l'ancien Hôtel-Dieu",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistro et sa microbrasserie logés dans l'ancien Hôtel-Dieu, avec de vastes patios.",
+"v": 1
+},
+{
+"id": "perle-bayonne-jaia",
+"t": "JAIA",
+"q": "7 rue de Luc, Bayonne",
+"ci": "Bayonne",
+"k": "Café-fleuriste au-dessus des Halles",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café-fleuriste perché au-dessus des Halles : on y déjeune, on goûte, ou on repart avec un bouquet.",
+"v": 1
+},
+{
+"id": "perle-bayonne-vai-coffee",
+"t": "VAI Coffee",
+"q": "14 rue du Pilori, Bayonne",
+"ci": "Bayonne",
+"k": "Café de spécialité et latte art",
+"e": [
+"gouter"
+],
+"d": "Un coffee shop tenu en couple, tout entier tourné vers le café de spécialité et le latte art.",
+"v": 1
+},
+{
+"id": "perle-biarritz-ovni",
+"t": "OVNI",
+"q": "18 allée du Moura, Biarritz",
+"ci": "Biarritz",
+"k": "Café-cantine dans la gare",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café-cantine installé dans la gare, avec friperie, créations d'artistes et espace de coworking.",
+"v": 1
+},
+{
+"id": "perle-biarritz-hino",
+"t": "HINO",
+"q": "3 rue Larralde, Biarritz",
+"ci": "Biarritz",
+"k": "Ravioles familiales aux touches asiatiques",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un lieu de vie connu pour ses ravioles familiales, aux garnitures qui changent avec les saisons.",
+"v": 1
+},
+{
+"id": "perle-biarritz-espezia",
+"t": "Espezia",
+"q": "30 rue de la Bergerie, Biarritz",
+"ci": "Biarritz",
+"k": "Café-cantine voyage et épices",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café-cantine inspiré des voyages et des épices : sandwichs le midi, pâtisseries parfumées.",
+"v": 1
+},
+{
+"id": "perle-biarritz-arlo",
+"t": "ARLO",
+"q": "8 bis avenue de la Reine Nathalie, Biarritz",
+"ci": "Biarritz",
+"k": "Cantine de quartier, carte de marché",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Une petite cantine de quartier à la carte de marché renouvelée chaque semaine, avec cafés, porridges et cookies.",
+"v": 1
+},
+{
+"id": "perle-biarritz-entre-deux-vagues",
+"t": "Entre Deux Vagues",
+"q": "11 avenue de la Marne, Biarritz",
+"ci": "Biarritz",
+"k": "Coffee shop à gaufres",
+"e": [
+"gouter"
+],
+"d": "Un coffee shop spécialisé dans la gaufre, avec brioches maison et lattes aromatisés.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-s-kaechele",
+"t": "S'Kaechele",
+"q": "8 rue de l'Argile, Strasbourg",
+"ci": "Strasbourg",
+"k": "Petite salle rustique, carte courte",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un petit restaurant rustique à la carte très courte : trois entrées, trois plats, qui changent avec les saisons.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-les-sales-gosses",
+"t": "Les Sales Gosses",
+"q": "56 boulevard Clemenceau, Strasbourg",
+"ci": "Strasbourg",
+"k": "Une région différente toutes les six semaines",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une carte qui explore la cuisine d'une autre région toutes les six semaines.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-la-cloche-a-fromage",
+"t": "La Cloche à Fromage",
+"q": "27 rue des Tonneliers, Strasbourg",
+"ci": "Strasbourg",
+"k": "Fondue et raclette sous une cloche géante",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant tout fromage : fondue, raclette et plateaux sous une grande cloche à fromage.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-l-epicerie",
+"t": "L'Épicerie",
+"q": "6 rue du Vieux Seigle, Strasbourg",
+"ci": "Strasbourg",
+"k": "Bistro années 60-70 et tartines",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistro au décor des années 60-70, avec une quinzaine de tartines sucrées ou salées.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-la-manu-t",
+"t": "La Manu't",
+"q": "7 rue de la Krutenau, Strasbourg",
+"ci": "Strasbourg",
+"k": "Dans une ancienne manufacture de tabac",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bar-restaurant installé dans une ancienne manufacture de tabac : burgers, cocktails et parfois concerts.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-la-fignette",
+"t": "La Fignette",
+"q": "5 rue de la Vignette, Strasbourg",
+"ci": "Strasbourg",
+"k": "Tartes flambées au feu de bois",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Des tartes flambées cuites au feu de bois, en de multiples versions.",
+"v": 1
+},
+{
+"id": "perle-lille-chez-la-vieille",
+"t": "Chez la Vieille",
+"q": "60 rue de Gand, Lille",
+"ci": "Lille",
+"k": "Estaminet vintage",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un estaminet à l'allure vintage qui sert les plats copieux du Nord ; mieux vaut réserver.",
+"v": 1
+},
+{
+"id": "perle-lille-yaya",
+"t": "YAYA",
+"q": "92 rue de Gand, Lille",
+"ci": "Lille",
+"k": "Grec et ch'ti, brunch et drag bingo",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant festif qui marie plats grecs et touches ch'tis, avec brunchs grecs et soirées drag bingo.",
+"v": 1
+},
+{
+"id": "perle-lille-carmi",
+"t": "Carmi",
+"q": "50 rue de Gand, Lille",
+"ci": "Lille",
+"k": "Deli new-yorkais et trattoria",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un café-bar qui mêle deli new-yorkais et trattoria italienne : pizzas et sandwichs faits sur place.",
+"v": 1
+},
+{
+"id": "perle-lille-chiquita-bacana",
+"t": "Chiquita Bacana",
+"q": "82 rue de Gand, Lille",
+"ci": "Lille",
+"k": "Cuisine brésilienne importée",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant brésilien dont les produits viennent du Brésil, avec une belle place pour la viande.",
+"v": 1
+},
+{
+"id": "perle-lille-the-island-of-crete",
+"t": "The Island of Crete",
+"q": "86 rue de Gand, Lille",
+"ci": "Lille",
+"k": "Salle bleu et blanc, grande terrasse",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant grec tout en bleu et blanc, avec vins grecs et grande terrasse l'été.",
+"v": 1
+},
+{
+"id": "perle-perpignan-le-comptoir-de-mamie-bigoude",
+"t": "Le Comptoir de Mamie Bigoude",
+"q": "11 quai François Batllo, Perpignan",
+"ci": "Perpignan",
+"k": "Crêperie rétro et déjantée",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une crêperie loin des codes : décor rétro, coloré et plein de surprises, inspiré du rock des années 50 et du cinéma américain.",
+"v": 1
+},
+{
+"id": "perle-perpignan-le-figuier-bouchon-catalan",
+"t": "Le Figuier Bouchon Catalan",
+"q": "7 rue du Figuier, Perpignan",
+"ci": "Perpignan",
+"k": "Bouchon catalan à Saint-Jean",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bouchon catalan du quartier Saint-Jean, produits locaux en version traditionnelle ou créative et terrasse ombragée l'été.",
+"v": 1
+},
+{
+"id": "perle-perpignan-le-grain-de-folie",
+"t": "Le Grain de Folie",
+"q": "71 avenue du Général Leclerc, Perpignan",
+"ci": "Perpignan",
+"k": "Petite adresse intime, cuisine de marché",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une petite adresse intime à la cuisine de marché pimentée d'épices, avec des vins des régions voisines.",
+"v": 1
+},
+{
+"id": "perle-nancy-la-cour-des-arts",
+"t": "La Cour des Arts",
+"q": "9 Cour des Arts, Nancy",
+"ci": "Nancy",
+"k": "Bistrot avec cour près de la place Stanislas",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot de saison avec cour et terrasse, à deux pas de la place Stanislas.",
+"v": 1
+},
+{
+"id": "perle-angers-l-ail-des-ours",
+"t": "L'Ail des Ours",
+"q": "8 rue Boisnet, Angers",
+"ci": "Angers",
+"k": "Bistro à l'ardoise, touche exotique",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistro simple à la carte d'ardoise de marché, avec une pointe de déco exotique.",
+"v": 1
+},
+{
+"id": "perle-angers-l-ardoise",
+"t": "L'Ardoise",
+"q": "7 rue de la Tannerie, Angers",
+"ci": "Angers",
+"k": "Petit bistro très demandé",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un petit bistro très prisé dans une rue discrète, avec un menu du midi abordable.",
+"v": 1
+},
+{
+"id": "perle-poitiers-les-bons-enfants",
+"t": "Les Bons Enfants",
+"q": "11 bis rue Cloche Perse, Poitiers",
+"ci": "Poitiers",
+"k": "Bar à l'ancienne, pain et légumes maison",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un petit bar à l'ancienne où le chef cuit le pain chaque matin et cultive une bonne part de ses légumes.",
+"v": 1
+},
+{
+"id": "perle-poitiers-la-serrurerie",
+"t": "La Serrurerie",
+"q": "28 rue des Grandes Écoles, Poitiers",
+"ci": "Poitiers",
+"k": "Salle façon brocante",
+"e": [
+"dejeuner"
+],
+"d": "Une salle aménagée comme une brocante, qui devient la cantine de midi des gens du quartier.",
+"v": 1
+},
+{
+"id": "perle-poitiers-auberge-chez-cul-de-paille",
+"t": "Auberge Chez Cul de Paille",
+"q": "3 rue Théophraste Renaudot, Poitiers",
+"ci": "Poitiers",
+"k": "Murs couverts de signatures d'artistes",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistro dont les murs sont couverts des signatures d'artistes de passage, parfois très connus.",
+"v": 1
+},
+{
+"id": "perle-poitiers-les-archives",
+"t": "Les Archives",
+"q": "14 rue Édouard Grimaux, Poitiers",
+"ci": "Poitiers",
+"k": "Dans une chapelle néo-gothique",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant installé dans une chapelle néo-gothique préservée, sous un clocher.",
+"v": 1
+},
+{
+"id": "perle-poitiers-le-vingelique",
+"t": "Le Vingélique",
+"q": "37 rue Carnot, Poitiers",
+"ci": "Poitiers",
+"k": "Cour verte et petite fontaine",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant avec une cour verdoyante et sa petite fontaine.",
+"v": 1
+},
+{
+"id": "perle-poitiers-le-trait-d-union",
+"t": "Le Trait d'Union",
+"q": "122 rue des 4 Roues, Poitiers",
+"ci": "Poitiers",
+"k": "Terrasse ombragée sur le Clain",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une terrasse ombragée au bord du Clain, pour des plats classiques ou exotiques.",
+"v": 1
+},
+{
+"id": "perle-dijon-ittshin-izakaya",
+"t": "Ittshin Izakaya",
+"q": "4 boulevard Georges Clemenceau, Dijon",
+"ci": "Dijon",
+"k": "Izakaya dans un décor manga années 80",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un izakaya japonais au décor inspiré des mangas et animés des années 80 : onigiris et curry velouté.",
+"v": 1
+},
+{
+"id": "perle-dijon-american-way",
+"t": "American Way",
+"q": "44 avenue Françoise Giroud, Dijon",
+"ci": "Dijon",
+"k": "Diner américain vintage",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un diner américain vintage : burgers, ribs, milkshakes, et des tireuses à bière cachées dans un moteur.",
+"v": 1
+},
+{
+"id": "perle-dijon-pastel-et-porcelaine",
+"t": "Pastel et Porcelaine",
+"q": "17 rue Jules Mercier, Dijon",
+"ci": "Dijon",
+"k": "Salon de thé à l'anglaise",
+"e": [
+"gouter",
+"brunch"
+],
+"d": "Un salon de thé à l'anglaise avec pâtisseries maison et brunch raffiné.",
+"v": 1
+},
+{
+"id": "perle-dijon-o-bao",
+"t": "Ô-Bao",
+"q": "4 rue de la Chouette, Dijon",
+"ci": "Dijon",
+"k": "Street food asiatique, baos et dim sum",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine de rue asiatique : baos, dim sum et woks préparés sur place.",
+"v": 1
+},
+{
+"id": "perle-dijon-pica-pica",
+"t": "Pica Pica",
+"q": "10 rue Dauphine, Dijon",
+"ci": "Dijon",
+"k": "Rooftop végétalisé",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un rooftop ensoleillé et végétalisé au sommet du centre Dauphine.",
+"v": 1
+},
+{
+"id": "perle-dijon-cafe-joyeux",
+"t": "Café Joyeux",
+"q": "17 rue Bossuet, Dijon",
+"ci": "Dijon",
+"k": "Café solidaire",
+"e": [
+"gouter"
+],
+"d": "Un café solidaire qui emploie des personnes en situation de handicap.",
+"v": 1
+},
+{
+"id": "perle-dijon-chez-tata",
+"t": "Chez Tata",
+"q": "16 rue du Tillot, Dijon",
+"ci": "Dijon",
+"k": "Café cosy et peinture sur céramique",
+"e": [
+"gouter"
+],
+"d": "Un café cosy associé à un atelier de peinture sur céramique.",
+"v": 1
+},
+{
+"id": "perle-grenoble-le-tohu-bohu",
+"t": "Le Tohu Bohu",
+"q": "16 rue Chenoise, Grenoble",
+"ci": "Grenoble",
+"k": "Plats à partager dans le centre historique",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant de quartier animé, avec des plats gourmands à partager et des vins choisis pour les accompagner.",
+"v": 1
+},
+{
+"id": "perle-grenoble-levrette-cafe",
+"t": "Levrette Café",
+"q": "50 boulevard Gambetta, Grenoble",
+"ci": "Grenoble",
+"k": "Dans un ancien poste de garde militaire",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un café-bar au look rétro-industriel logé dans un ancien poste de garde militaire, avec soirées blind test et karaoké.",
+"v": 1
+},
+{
+"id": "perle-brest-canard-cafe-cantine",
+"t": "Canard Café Cantine",
+"q": "1 rue de Glasgow, Brest",
+"ci": "Brest",
+"k": "Café jaune, carte à moitié vegan",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un coin de rue jaune soleil, ancien magasin de maquettes : bistro à moitié vegan qui change chaque semaine.",
+"v": 1
+},
+{
+"id": "perle-brest-le-nautilus",
+"t": "Le Nautilus",
+"q": "82 rue de Siam, Brest",
+"ci": "Brest",
+"k": "Repas à côté d'un aquarium de récif",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une salle où l'on mange à côté d'un bassin de récif de 3 000 litres, peuplé de poissons-clowns et d'anémones.",
+"v": 1
+},
+{
+"id": "perle-lyon-le-grand-refectoire",
+"t": "Le Grand Réfectoire",
+"q": "12 rue Bellecordière, Lyon",
+"ci": "Lyon",
+"k": "Ancien réfectoire du Grand Hôtel-Dieu",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Dans l'ancien réfectoire des sœurs de l'Hôtel-Dieu, un restaurant avec rooftop et terrasse face au dôme.",
+"v": 1
+},
+{
+"id": "perle-avignon-la-cour-d-honneur",
+"t": "La Cour d'Honneur",
+"q": "58 rue Joseph Vernet, Avignon",
+"ci": "Avignon",
+"k": "Cour à glycines dans une demeure du XVIe",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une ancienne demeure du XVIe siècle avec cour ombragée de glycines, arbres centenaires et fontaine.",
+"v": 1
+},
+{
+"id": "perle-saint-etienne-chez-les-fondus",
+"t": "Chez les Fondus",
+"q": "4 rue Sainte-Catherine, Saint-Étienne",
+"ci": "Saint-Étienne",
+"k": "Fondue au cœur de la carte",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une adresse savoyarde où la fondue est reine.",
+"v": 1
+},
+{
+"id": "perle-saint-etienne-cantine-numero-dix",
+"t": "Cantine Numéro Dix",
+"q": "19 rue de la Ville, Saint-Étienne",
+"ci": "Saint-Étienne",
+"k": "Cantine végétarienne",
+"e": [
+"dejeuner"
+],
+"d": "Une cuisine végétarienne avec options vegan et sans gluten ou sans lactose.",
+"v": 1
+},
+{
+"id": "perle-annecy-cantine-clandestine",
+"t": "Cantine Clandestine",
+"q": "13 avenue de Loverchy, Annecy",
+"ci": "Annecy",
+"k": "Café vintage, pâtisseries maison",
+"e": [
+"gouter"
+],
+"d": "Un café au décor vintage qui sert des pâtisseries faites sur place.",
+"v": 1
+},
+{
+"id": "perle-annecy-haven",
+"t": "Haven",
+"q": "5 rue Filaterie, Annecy",
+"ci": "Annecy",
+"k": "Esprit australien, terrasse sous les arches",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un lieu d'inspiration australienne, ambiance végétale et terrasse sous les arches.",
+"v": 1
+},
+{
+"id": "perle-le-havre-la-galerne",
+"t": "La Galerne",
+"q": "148 rue Victor Hugo, Le Havre",
+"ci": "Le Havre",
+"k": "Café dans une librairie de 100 000 livres",
+"e": [
+"gouter"
+],
+"d": "Un café installé dans une librairie dont les rayons comptent plus de 100 000 livres.",
+"v": 1
+},
+{
+"id": "perle-chambery-onni",
+"t": "Onni",
+"q": "94 rue Juiverie, Chambéry",
+"ci": "Chambéry",
+"k": "Café inspiré de la Finlande et de l'Australie",
+"e": [
+"brunch",
+"gouter"
+],
+"d": "Un café ouvert du petit-déjeuner au goûter, au concept né des voyages de son fondateur en Finlande et en Australie.",
+"v": 1
+},
+{
+"id": "perle-chambery-anh-coffee-bistro",
+"t": "Anh Coffee & Bistro",
+"q": "2 rue du Théâtre, Chambéry",
+"ci": "Chambéry",
+"k": "Café vietnamien et cocktails, décor coloré",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un café-bistro qui mêle cafés vietnamiens, plats asiatiques et cocktails créatifs dans un décor coloré.",
+"v": 1
+},
+{
+"id": "perle-chambery-le-pinson",
+"t": "Le Pinson",
+"q": "22 place Monge, Chambéry",
+"ci": "Chambéry",
+"k": "Cuisine inspirée du Liban",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant tenu par un couple, à la cuisine moderne influencée par leur séjour au Liban, avec un affogato signature.",
+"v": 1
+},
+{
+"id": "perle-chambery-amedee",
+"t": "Amédée",
+"q": "1 rue Sommeiller, Chambéry",
+"ci": "Chambéry",
+"k": "Taverne, viande et mousse au chocolat",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une taverne conviviale aux assiettes copieuses, où la viande est à l'honneur, suivie d'une généreuse mousse au chocolat.",
+"v": 1
+},
+{
+"id": "perle-chambery-le-bruit-qui-court",
+"t": "Le Bruit qui court",
+"q": "87 rue Sainte-Rose, Chambéry",
+"ci": "Chambéry",
+"k": "Café-resto de producteurs locaux, activités artistiques",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un café-restaurant qui soutient les agriculteurs de la région et accueille des activités artistiques.",
+"v": 1
+},
+{
+"id": "perle-chambery-cafe-de-l-horloge",
+"t": "Café de l'Horloge",
+"q": "107 place Saint-Léger, Chambéry",
+"ci": "Chambéry",
+"k": "Grande terrasse près de l'éléphant",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Une grande terrasse ensoleillée sur une place animée, à deux pas de la fontaine des Éléphants.",
+"v": 1
+},
+{
+"id": "perle-chambery-the-brick-house",
+"t": "The Brick House",
+"q": "91 rue Philibert Routin, Chambéry",
+"ci": "Chambéry",
+"k": "Bistro industriel et bistrot d'autrefois",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistro au style industriel qui marie design contemporain et charme des bistrots d'antan.",
+"v": 1
+},
+{
+"id": "perle-chambery-ernest-patisserie-cafe",
+"t": "Ernest Pâtisserie & Café",
+"q": "49 place Saint-Léger, Chambéry",
+"ci": "Chambéry",
+"k": "Pâtisserie de saison, chef passé par de grandes maisons",
+"e": [
+"gouter"
+],
+"d": "Une pâtisserie de quartier aux desserts qui changent avec les saisons.",
+"v": 1
+},
+{
+"id": "perle-bourgoin-jallieu-bistrot-delicatessen",
+"t": "Bistrot Delicatessen",
+"q": "7 rue Cuvière, Bourgoin-Jallieu",
+"ci": "Bourgoin-Jallieu",
+"k": "Bistrot de saison au centre",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistrot du centre qui marie cuisine traditionnelle et plats soignés de saison.",
+"v": 1
+},
+{
+"id": "perle-bourgoin-jallieu-l-hydromel",
+"t": "L'Hydromel",
+"q": "35 rue de la Libération, Bourgoin-Jallieu",
+"ci": "Bourgoin-Jallieu",
+"k": "Crêperie bretonne, cocktails au cidre",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une crêperie à la déco soignée : galettes et crêpes copieuses, cocktails au cidre, carte d'inspiration bretonne.",
+"v": 1
+},
+{
+"id": "perle-bourgoin-jallieu-memphis-coffee",
+"t": "Memphis Coffee",
+"q": "5 rue Denis Papin, Bourgoin-Jallieu",
+"ci": "Bourgoin-Jallieu",
+"k": "Diner américain des années 50",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un diner américain façon années 50, burgers servis à table.",
+"v": 1
+},
+{
+"id": "perle-bourgoin-jallieu-les-halles",
+"t": "Les Halles",
+"q": "2 rue des Halles, Bourgoin-Jallieu",
+"ci": "Bourgoin-Jallieu",
+"k": "Café-resto avec terrasse au centre",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café-restaurant du centre-ville avec terrasse, pour déjeuner, boire un verre ou grignoter.",
+"v": 1
+},
+{
+"id": "perle-charavines-hotel-des-bains",
+"t": "Hôtel des Bains",
+"q": "345 rue Principale, Charavines",
+"ci": "Charavines",
+"k": "Guinguette familiale au bord du lac de Paladru",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une table familiale au bord du lac de Paladru, dans un bâtiment de 1872, cuisine de saison locale et bio, ambiance guinguette.",
+"v": 1
+},
+{
+"id": "perle-charavines-les-dauphins",
+"t": "Les Dauphins",
+"q": "340 chemin des Plages, Charavines",
+"ci": "Charavines",
+"k": "Restaurant sur la plage du lac",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant au bord du lac de Paladru, avec plage privée, transats, locations nautiques et aire de jeux.",
+"v": 1
+},
+{
+"id": "perle-tullins-l-epicentre",
+"t": "L'Épicentre",
+"q": "1 rue de Parménie, Tullins",
+"ci": "Tullins",
+"k": "Resto en bois recyclé, concerts et ateliers",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine maison, souvent bio et locale, dans un lieu meublé en bois de récupération qui accueille concerts et ateliers.",
+"v": 1
+},
+{
+"id": "perle-saint-etienne-de-saint-geoirs-les-chants-d-ailes",
+"t": "Les Chants d'Ailes",
+"q": "123 route de Chartreuse, Saint-Étienne-de-Saint-Geoirs",
+"ci": "Saint-Étienne-de-Saint-Geoirs",
+"k": "Vieille ferme, terrasse à glycines",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une ancienne ferme : terrasse ombragée de glycines l'été, poêle à bois l'hiver.",
+"v": 1
+},
+{
+"id": "perle-grenoble-coffee-and-go",
+"t": "Coffee and Go",
+"q": "4 impasse Brocherie, Grenoble",
+"ci": "Grenoble",
+"k": "Café vintage dans la vieille ville",
+"e": [
+"gouter"
+],
+"d": "Un café rustique à la déco vintage, desserts maison et muffins en vedette.",
+"v": 1
+},
+{
+"id": "perle-grenoble-eyes-cafe",
+"t": "Eyes Café",
+"q": "1 rue Saint-Joseph, Grenoble",
+"ci": "Grenoble",
+"k": "Café et galerie d'art",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café qui fait aussi galerie : artistes et photographes locaux, café turc et plats bio.",
+"v": 1
+},
+{
+"id": "perle-grenoble-cafe-de-france",
+"t": "Café de France",
+"q": "17 rue Bayard, Grenoble",
+"ci": "Grenoble",
+"k": "Œuvres locales et objets anciens",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café décoré d'œuvres locales et d'antiquités, bien pour une pause après le shopping ; réserver le midi.",
+"v": 1
+},
+{
+"id": "perle-grenoble-cafe-de-la-table-ronde",
+"t": "Café de la Table Ronde",
+"q": "7 place Saint-André, Grenoble",
+"ci": "Grenoble",
+"k": "Café fondé en 1793",
+"e": [
+"gouter"
+],
+"d": "Fondé en 1793, un des plus anciens cafés de France, aux intérieurs d'époque sur une place de la vieille ville.",
+"v": 1
+},
+{
+"id": "perle-mulhouse-nomad-cafe",
+"t": "NoMad Café",
+"q": "28 B rue François Spoerry, Mulhouse",
+"ci": "Mulhouse",
+"k": "Dans une ancienne usine, brunch à volonté",
+"e": [
+"dejeuner",
+"diner",
+"brunch"
+],
+"d": "Un café-restaurant-bar installé dans une usine reconvertie du quartier de la Fonderie, avec grande terrasse, cuisine locale et brunch à volonté le week-end.",
+"v": 1
+},
+{
+"id": "perle-amiens-ad-hoc-cafe",
+"t": "Ad Hoc Café",
+"q": "1 place du Don, Amiens",
+"ci": "Amiens",
+"k": "Cuisine maison à Saint-Leu",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un resto-bar du quartier Saint-Leu, cuisine maison à la carte changeante, bières et cocktails, terrasse.",
+"v": 1
+},
+{
+"id": "perle-amiens-green-corner",
+"t": "Green Corner",
+"q": "43 quai Belu, Amiens",
+"ci": "Amiens",
+"k": "Brunch bio et terrasse au bord de l'eau",
+"e": [
+"brunch",
+"dejeuner",
+"gouter"
+],
+"d": "Un café-resto de Saint-Leu tourné vers le local et le bio : brunchs maison, bières artisanales, planches et terrasse à l'arrière.",
+"v": 1
+},
+{
+"id": "perle-orleans-le-septime",
+"t": "Le Septime",
+"q": "2 place du Châtelet, Orléans",
+"ci": "Orléans",
+"k": "Brunch, tapas du soir et rhums infusés",
+"e": [
+"brunch",
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant qui sert brunch, déjeuner et tapas le soir, avec bar à cocktails et rhums infusés.",
+"v": 1
+},
+{
+"id": "perle-orleans-le-comptoir-de-mamie-bigoude",
+"t": "Le Comptoir de Mamie Bigoude",
+"q": "21 rue Royale, Orléans",
+"ci": "Orléans",
+"k": "Crêperie kitsch et rock'n'roll",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une crêperie au décor coloré et kitsch façon maison de grand-mère bretonne, avec une touche rock'n'roll.",
+"v": 1
+},
+{
+"id": "perle-le-mans-le-saint-flaceau",
+"t": "Le Saint Flaceau",
+"q": "9 rue Saint-Flaceau, Le Mans",
+"ci": "Le Mans",
+"k": "Décor XVIIIe dans le Vieux Mans",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bar-restaurant du Vieux Mans au décor vintage façon XVIIIe siècle, avec cocktails, vins et terrasse.",
+"v": 1
+},
+{
+"id": "perle-colmar-la-table-du-brocanteur",
+"t": "La Table du Brocanteur",
+"q": "23 rue d'Alspach, Colmar",
+"ci": "Colmar",
+"k": "Brocante où tout est à vendre",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Murs, tables et terrasse garnis de trouvailles de brocante, presque toutes à vendre ; cuisine française maison aux accents asiatiques.",
+"v": 1
+},
+{
+"id": "perle-colmar-maison-rouge",
+"t": "Maison Rouge",
+"q": "9 rue des Écoles, Colmar",
+"ci": "Colmar",
+"k": "Winstub avec jambon à la broche",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une winstub à l'ambiance de pub, avec un jambon qui tourne à la broche près de l'entrée et des plats alsaciens copieux.",
+"v": 1
+},
+{
+"id": "perle-troyes-o-p-tits-bonheurs",
+"t": "O p'tits bonheurs",
+"q": "105 rue du Général de Gaulle, Troyes",
+"ci": "Troyes",
+"k": "Cuisine maison et jeux de société à table",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une carte courte de plats faits maison, dans une ambiance conviviale avec des jeux de société sur les tables.",
+"v": 1
+},
+{
+"id": "perle-troyes-le-seven-zola",
+"t": "Le Seven Zola",
+"q": "7 rue Émile Zola, Troyes",
+"ci": "Troyes",
+"k": "Menu complet à toute heure",
+"e": [
+"brunch",
+"dejeuner",
+"diner",
+"gouter"
+],
+"d": "Un bar-restaurant et coffee shop qui sert toute sa carte à toute heure, du petit-déjeuner aux tapas du soir.",
+"v": 1
+},
+{
+"id": "perle-quimper-creperie-du-frugy",
+"t": "Crêperie du Frugy",
+"q": "9 rue Sainte-Thérèse, Quimper",
+"ci": "Quimper",
+"k": "Tapisserie brodée à la main",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une crêperie bien installée dont la salle est ornée d'une tapisserie brodée à la main par un maître brodeur.",
+"v": 1
+},
+{
+"id": "perle-vannes-cafe-des-orfevres",
+"t": "Café des Orfèvres",
+"q": "18 rue des Vierges, Vannes",
+"ci": "Vannes",
+"k": "Brunch sans réservation, salon de thé",
+"e": [
+"brunch",
+"dejeuner",
+"gouter"
+],
+"d": "Un café-restaurant-salon de thé du quartier historique : brunchs sucrés ou salés, plats du midi, desserts maison ; pas de réservation.",
+"v": 1
+},
+{
+"id": "perle-vannes-marie-papote",
+"t": "Marie Papote",
+"q": "15 rue Hoche, Vannes",
+"ci": "Vannes",
+"k": "Café-cantine de saison",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un café-cantine et coffee shop : cuisine maison de saison, produits locaux, sur place ou à emporter.",
+"v": 1
+},
+{
+"id": "perle-antibes-nananere",
+"t": "Nananère",
+"q": "13 rue Championnet, Antibes",
+"ci": "Antibes",
+"k": "Salade niçoise et pissaladière revisitées",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une brasserie du centre qui donne un coup de jeune aux plats de la région, comme la salade niçoise et la pissaladière.",
+"v": 1
+},
+{
+"id": "perle-valence-l-appart-cafe",
+"t": "L'Appart Café",
+"q": "11 quai Thannaron, Bourg-lès-Valence, Valence",
+"ci": "Valence",
+"k": "Café-théâtre intime, repaire des humoristes",
+"e": [
+"diner"
+],
+"d": "Un petit café-théâtre intime tenu depuis 1999, un des lieux de l'humour de la Drôme et de l'Ardèche.",
+"v": 1
+},
+{
+"id": "perle-valence-le-vert-mi-sel",
+"t": "Le Vert Mi Sel",
+"q": "21 rue Bayard, Valence",
+"ci": "Valence",
+"k": "Carte qui change tout le temps, salle moderne",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un restaurant de style brasserie à la carte sans cesse renouvelée, dans une salle moderne et accueillante.",
+"v": 1
+},
+{
+"id": "perle-saint-malo-creperie-gallo",
+"t": "Crêperie Gallo",
+"q": "21 rue de Dinan, Saint-Malo",
+"ci": "Saint-Malo",
+"k": "Galette personnalisée devant le crêpier",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Dans la ville close, on compose sa galette et on regarde le crêpier la cuire sous ses yeux.",
+"v": 1
+},
+{
+"id": "perle-saint-malo-bouliche",
+"t": "Bouliche",
+"q": "16 rue Ville Pépin, Saint-Malo",
+"ci": "Saint-Malo",
+"k": "Tout est fait maison, même la glace et le pain",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un bistro qui fabrique tout lui-même, de la glace au pain, avec une carte qui tourne.",
+"v": 1
+},
+{
+"id": "perle-lorient-chez-coco",
+"t": "Chez Coco",
+"q": "22 rue des Fontaines, Lorient",
+"ci": "Lorient",
+"k": "Cuisine végétarienne créative, terrasse",
+"e": [
+"dejeuner"
+],
+"d": "Un déjeuner végétarien et vegan créatif, produits bio et locaux, menu renouvelé chaque jour, terrasse ensoleillée.",
+"v": 1
+},
+{
+"id": "perle-lyon-la-barge",
+"t": "La Barge",
+"q": "15 quai Général Sarrail, Lyon",
+"ci": "Lyon",
+"k": "Péniche-jardin couverte de plantes",
+"e": [
+"diner"
+],
+"d": "Une péniche couverte de plantes, comme un jardin flottant exotique ; elle n'ouvre pas toute l'année.",
+"v": 1
+},
+{
+"id": "perle-lyon-peniche-loupika",
+"t": "Péniche Loupika",
+"q": "47 quai Rambaud, Lyon",
+"ci": "Lyon",
+"k": "Terrasse colorée au ras de l'eau",
+"e": [
+"diner"
+],
+"d": "Une terrasse colorée au ras de l'eau, accueil chaleureux et soirées qui durent.",
+"v": 1
+},
+{
+"id": "perle-lyon-le-sirius",
+"t": "Le Sirius",
+"q": "4 quai Augagneur, Lyon",
+"ci": "Lyon",
+"k": "Péniche industrielle, concerts et DJ sets",
+"e": [
+"diner"
+],
+"d": "Un bateau au décor de récupération aux airs industriels, avec concerts live et DJ sets fréquents.",
+"v": 1
+},
+{
+"id": "perle-lyon-the-star-ferry",
+"t": "The Star Ferry",
+"q": "2 quai Victor Augagneur, Lyon",
+"ci": "Lyon",
+"k": "Péniche à burgers, grande terrasse",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une péniche connue pour ses burgers et sa vaste terrasse sur l'eau.",
+"v": 1
+},
+{
+"id": "perle-marseille-zay-zay",
+"t": "Zaÿ Zaÿ",
+"q": "134 rue Paradis, Marseille",
+"ci": "Marseille",
+"k": "Rooftop-jardin suspendu, menus midi doux",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine méditerranéenne et maghrébine avec un jardin suspendu sur le toit, et des formules déjeuner à petit prix.",
+"v": 1
+},
+{
+"id": "perle-marseille-santorin",
+"t": "Santorin",
+"q": "83 avenue de la Pointe Rouge, Marseille",
+"ci": "Marseille",
+"k": "Décor des Cyclades face aux îles du Frioul",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un décor blanc et bleu façon Cyclades, des classiques grecs et une vue sur la mer et les îles du Frioul.",
+"v": 1
+},
+{
+"id": "perle-marseille-olla",
+"t": "Ollā",
+"q": "2 rue de la Charité, Marseille",
+"ci": "Marseille",
+"k": "Dans la cour de la Vieille Charité",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine maison entre Méditerranée et Amérique du Sud, servie dans la cour de la Vieille Charité.",
+"v": 1
+},
+{
+"id": "perle-marseille-luciole",
+"t": "Luciole",
+"q": "180 rue du Rouet, Marseille",
+"ci": "Marseille",
+"k": "Véranda lumineuse, cuisine bio",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cuisine bio, locale et créative dans un lieu lumineux avec véranda.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-pitchoun",
+"t": "Pitchoun'",
+"q": "1 bis rue Blériot, Bègles, Bordeaux",
+"ci": "Bordeaux",
+"k": "Street-food lancée par d'anciens rugbymen",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un lieu de street-food et tapas lancé par d'anciens joueurs de rugby.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-guinguette-du-restaurant-merci",
+"t": "Guinguette du restaurant Merci",
+"q": "8 rue de la Capitainerie, Bègles, Bordeaux",
+"ci": "Bordeaux",
+"k": "Cabane au bord de la Garonne",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une petite cabane intimiste au bord de la Garonne, spécialisée dans les produits de la mer.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-la-guytoune",
+"t": "La Guytoune",
+"q": "281 rue des 4 Casteras, Bègles, Bordeaux",
+"ci": "Bordeaux",
+"k": "Petite adresse discrète à tapas",
+"e": [
+"diner"
+],
+"d": "Une petite adresse discrète où grignoter des tapas.",
+"v": 1
+},
+{
+"id": "perle-lyon-les-halles-du-faubourg",
+"t": "Les Halles du Faubourg",
+"q": "10 impasse des Chalets, Lyon",
+"ci": "Lyon",
+"k": "Ancienne usine : café-bar, scène, radio",
+"e": [
+"diner"
+],
+"d": "Une ancienne usine devenue lieu de vie : café-bar, galerie, scène, résidence d'artistes et station de radio.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-la-muse-cafe",
+"t": "La Muse Café",
+"q": "10 rue Brascassat, Bordeaux",
+"ci": "Bordeaux",
+"k": "Premier café ludique de France",
+"e": [
+"gouter"
+],
+"d": "Le premier café ludique de France : environ 1 500 jeux et une terrasse arborée.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-bocce-saint-paul",
+"t": "Bocce Saint-Paul",
+"q": "31 rue Bouquière, Bordeaux",
+"ci": "Bordeaux",
+"k": "Pizzeria avec terrains de pétanque",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une pizzeria napolitaine avec deux terrains de pétanque sur herbe au rez-de-chaussée.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-la-douce-parenthese",
+"t": "La Douce Parenthèse",
+"q": "8 bis rue Maucoudinat, Bordeaux",
+"ci": "Bordeaux",
+"k": "Salon de thé avec livres et jeux",
+"e": [
+"gouter"
+],
+"d": "Un salon de thé où l'on trouve livres et jeux de société, dont des jeux de culture générale.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-darwin",
+"t": "Darwin",
+"q": "87 quai de Queyries, Bordeaux",
+"ci": "Bordeaux",
+"k": "Ancienne caserne, resto bio et bière maison",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une ancienne caserne devenue restaurant bio, bar et boutiques au bord de la Garonne, avec sa bière brassée sur place.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-caserne-b",
+"t": "Caserne B",
+"q": "56 rue de la Garonne, Bordeaux",
+"ci": "Bordeaux",
+"k": "Food court dans une ancienne caserne de pompiers",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Un food court temporaire dans le garage d'une ancienne caserne de pompiers : street-food, grand bar, événements culturels, terrasse.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-friche-belle-de-mai",
+"t": "La Friche Belle de Mai",
+"q": "41 rue Jobin, Marseille",
+"ci": "Marseille",
+"k": "Ancienne manufacture de tabac, rooftop",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une ancienne manufacture de tabac devenue ville dans la ville : rooftop, club, expositions, théâtre.",
+"v": 1
+},
+{
+"id": "perle-toulouse-flower-s-cafe",
+"t": "Flower's Café",
+"q": "6 place Roger Salengro, Toulouse",
+"ci": "Toulouse",
+"k": "Salon de thé et brunch",
+"e": [
+"gouter",
+"dejeuner",
+"brunch"
+],
+"d": "Un salon de thé réputé pour ses pâtisseries et ses brunchs, avec une terrasse agréable aux beaux jours.",
+"v": 1
+},
+{
+"id": "perle-toulouse-les-reveries-d-hercule",
+"t": "Les Rêveries d'Hercule",
+"q": "5 rue de l'Étoile, Toulouse",
+"ci": "Toulouse",
+"k": "Café céramique",
+"e": [
+"gouter"
+],
+"d": "Un petit café calme du centre où l'on peint de la céramique pendant environ deux heures.",
+"v": 1
+},
+{
+"id": "perle-montpellier-toast-and-tea",
+"t": "Toast and Tea",
+"q": "7 rue Vallat, Montpellier",
+"ci": "Montpellier",
+"k": "Salon de thé du monde",
+"e": [
+"dejeuner",
+"gouter"
+],
+"d": "Un salon de thé aux plats frais et soignés, avec des thés du monde entier.",
+"v": 1
+},
+{
+"id": "perle-montpellier-rosemarie",
+"t": "Rosemarie",
+"q": "3 rue des Sœurs Noires, Montpellier",
+"ci": "Montpellier",
+"k": "Cantine méditerranéenne",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une cantine méditerranéenne avec une terrasse ombragée près de Saint-Roch, parfaite pour une pause détendue.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-manifik-ceramic-cafe",
+"t": "Manifik Céramic Café",
+"q": "7 quai de Paris, Strasbourg",
+"ci": "Strasbourg",
+"k": "Café céramique",
+"e": [
+"gouter"
+],
+"d": "Un café créatif où l'on peint de la céramique en atelier, dans une ambiance détendue.",
+"v": 1
+},
+{
+"id": "perle-marseille-la-baleine",
+"t": "La Baleine",
+"q": "59 cours Julien, Marseille",
+"ci": "Marseille",
+"k": "Cinéma et bistrot",
+"e": [
+"diner"
+],
+"d": "Un cinéma d'art et essai avec son bistrot, en plein cours Julien.",
+"v": 1
+},
+{
+"id": "perle-bordeaux-horace",
+"t": "HORACE",
+"q": "40 rue Poquelin Molière, Bordeaux",
+"ci": "Bordeaux",
+"k": "Café, cuisine et brunch",
+"e": [
+"brunch",
+"gouter",
+"dejeuner"
+],
+"d": "Un café de quartier cosy : chai latte, pâtisseries et assiettes de brunch.",
+"v": 1
+},
+{
+"id": "perle-lyon-bartholome",
+"t": "Bartholomé",
+"q": "38 rue Sergent Blandan, Lyon",
+"ci": "Lyon",
+"k": "Brunch généreux",
+"e": [
+"brunch",
+"dejeuner",
+"gouter"
+],
+"d": "Un brunch généreux et convivial sur la Presqu'île, très fréquenté : mieux vaut arriver tôt.",
+"v": 1
+},
+{
+"id": "perle-nantes-alaia-cafe-boutique",
+"t": "Alaïa Café & Boutique",
+"q": "4 rue de Budapest, Nantes",
+"ci": "Nantes",
+"k": "Café-boutique cosy",
+"e": [
+"gouter",
+"dejeuner"
+],
+"d": "Un café chaleureux avec boissons végétales et pâtisseries maison, doublé d'une petite boutique.",
+"v": 1
+},
+{
+"id": "perle-nice-bocca-nissa",
+"t": "Bocca Nissa",
+"q": "3 rue Saint-François de Paule, Nice",
+"ci": "Nice",
+"k": "Rooftop végétalisé",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Des tapas et des plats méditerranéens à partager dans le Vieux-Nice, avec un rooftop végétalisé.",
+"v": 1
+},
+{
+"id": "perle-nice-la-gare-du-sud",
+"t": "La Gare du Sud",
+"q": "35 avenue Malaussena, Nice",
+"ci": "Nice",
+"k": "Halle dans une ancienne gare",
+"e": [
+"dejeuner",
+"diner"
+],
+"d": "Une halle gourmande installée dans une ancienne gare : plusieurs cuisines sous le même toit, ambiance animée.",
+"v": 1
+},
+{
+"id": "perle-strasbourg-madame-julia",
+"t": "Madame Julia",
+"q": "34 rue de la 1ère Armée, Strasbourg",
+"ci": "Strasbourg",
+"k": "Brunch au charme vintage",
+"e": [
+"brunch",
+"dejeuner",
+"gouter"
+],
+"d": "Un café-brunch chaleureux au décor vintage, avec une petite terrasse. Pas de réservation : prévois un peu d'attente le week-end.",
+"v": 1
+}
 ]
