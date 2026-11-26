@@ -1,9 +1,9 @@
-Perles de Paris : 88 adresses à vérifier
+Perles de Paris : 105 adresses à vérifier
 ✓ La Cantine Arménienne [lieu · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:Maison_de_la_Culture_Arm%C3%A9nienne_(Paris)_-_1.JPG
 ✓ Centre Pouya [lieu · source ancienne] sans photo
 ✓ Shu [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 1293 m de l'adresse donnée, on garde l'adresse
 ✓ La Maison des Frigos [lieu · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:La_Maison_des_Frigos,_Paris_13_(9970364694).jpg
-✓ La tête dans les olives [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 5658 m de l'adresse donnée, on garde l'adresse
+✓ La tête dans les olives [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 5767 m de l'adresse donnée, on garde l'adresse
 ✓ Halo [lieu] sans photo
 ✓ Bidoche [lieu] sans photo
 ✓ Mezzanine [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 4062 m de l'adresse donnée, on garde l'adresse
@@ -27,7 +27,7 @@ Perles de Paris : 88 adresses à vérifier
 ✓ Pink Mamma [lieu] photo du site https://www.bigmammagroup.com/en/click-collect
 ✓ Babka Zana [lieu] sans photo
 ✓ Bouillon Chartier [lieu] photo libre https://commons.wikimedia.org/wiki/File:Paris_Chartier_1302.jpg
-✓ Café du Commerce [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 5688 m de l'adresse donnée, on garde l'adresse
+✓ Café du Commerce [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 7152 m de l'adresse donnée, on garde l'adresse
 ✓ Au Bœuf Couronné [adresse] sans photo
 ✓ Mollard [lieu] photo libre https://commons.wikimedia.org/wiki/File:Brasserie_Mollard_-_panoramio.jpg
 ✓ La Coupole [lieu] photo libre https://commons.wikimedia.org/wiki/File:La_Coupole_-_Paris.JPG
@@ -49,7 +49,6 @@ Perles de Paris : 88 adresses à vérifier
 ✓ Atica [lieu] sans photo
 ✓ Kodawari Ramen Yokocho [lieu] sans photo
 ✓ Dans le Noir ? [lieu] sans photo
-✓ Le Bustronome [adresse] photo du site https://bustronome.com/en/paris/original-concept/
 ✓ Rooster [lieu] sans photo
 ✓ Le Baratin [lieu] sans photo
 ✓ Le Dauphin [lieu] sans photo
@@ -87,6 +86,24 @@ Perles de Paris : 88 adresses à vérifier
 ✓ Café de l'Homme [lieu] photo du site https://www.cafedelhomme.com
 ✓ Joli - musée Carnavalet [lieu] sans photo
 ✓ Brasserie Lipp [lieu] photo libre https://commons.wikimedia.org/wiki/File:Brasserie_Lipp,_151_boulevard_Saint-Germain,_Paris_6e.jpg
+✗ introuvable : Tredici  (Tredici Club 13 restaurant Paris)
+✗ introuvable : Café de l'Usine  (Café de l'Usine Belleville Paris)
+✓ Foyer de la Madeleine [lieu] sans photo
+✗ introuvable : Borgo delle Tovaglie  (Borgo delle Tovaglie Paris 11e)
+✓ Paris Elysées Club [lieu] photo du site https://www.pariselyseesclub.com/
+✓ Gourou [lieu] photo du site https://www.gourouindianfood.fr/
+✓ Coco de Mer [lieu] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Album_Tangoville-sur-mer_Coco_Gabrielle_Chanel,_Arthur_Capel,_G.20678-15.jpg)
+✓ La Casbah [lieu] sans photo
+✓ Nos Ancêtres les Gaulois [adresse] sans photo
+✓ Le Derrière [adresse] sans photo
+✓ La Table des Gourmets [lieu] sans photo
+✓ Lavomatic [lieu] sans photo
+✓ ERH [lieu] photo du site https://www.restaurant-erh.com/
+✓ Le Shack [lieu] photo libre https://commons.wikimedia.org/wiki/File:Le_Shack_-_Flickr_-_JJ.BT.jpg
+✓ Sur un Arbre Perché [adresse · source ancienne] sans photo
+✓ Anne [lieu · source ancienne] sans photo
+✓ Ground Control [lieu · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:Paris_-_Ground_Control_(47128148922).jpg
+✓ Jogui [adresse · source ancienne] sans photo
 
 Photos candidates (non utilisées, à regarder à la main) :
   - Hôtel Particulier Montmartre : https://commons.wikimedia.org/wiki/File:Le_vieux_Montmartre_fa%C3%A7ade_d%27un_h%C3%B4tel_particulier,_18%C3%A8me_arrondissement,_Paris,_PH80740.jpg
@@ -95,9 +112,13 @@ Photos candidates (non utilisées, à regarder à la main) :
   - Flora Danica : https://commons.wikimedia.org/wiki/File:Flora_danica,_det_er_dansk_urtebog_2-2-054.jpg
   - Le Passage à Niveau : https://commons.wikimedia.org/wiki/File:Passage_%C3%A0_niveau_%C3%A0_Notre-Dame-de-Bondeville.jpg
   - Rosa Bonheur : https://commons.wikimedia.org/wiki/File:Rosa_Bonheur_-_Ploughing_in_Nevers_-_Google_Art_Project.jpg
+  - Coco de Mer : https://commons.wikimedia.org/wiki/File:Album_Tangoville-sur-mer_Coco_Gabrielle_Chanel,_Arthur_Capel,_G.20678-15.jpg
 
-RÉSUMÉ : 88 retrouvés sur 88 (dont 66 confirmés comme lieu par OpenStreetMap, 22 seulement par leur adresse)
-Photos libres trouvées : 23 / 88
-Photos du site du lieu : 10 / 88
-Sans aucune photo : 55
-Introuvables (écartés) : 0
+RÉSUMÉ : 102 retrouvés sur 105 (dont 77 confirmés comme lieu par OpenStreetMap, 25 seulement par leur adresse)
+Photos libres trouvées : 25 / 102
+Photos du site du lieu : 12 / 102
+Sans aucune photo : 65
+Introuvables (écartés) : 3
+  - Tredici : Tredici Club 13 restaurant Paris
+  - Café de l'Usine : Café de l'Usine Belleville Paris
+  - Borgo delle Tovaglie : Borgo delle Tovaglie Paris 11e
