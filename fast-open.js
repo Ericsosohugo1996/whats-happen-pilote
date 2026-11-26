@@ -14,15 +14,14 @@
   if (/[?&]intro=1/.test(location.search)) last = null;
   var fast = !!(last && typeof last.city === "string" && last.city);
 
-  // ---- on passe les écrans d'accueil (uniquement pour ceux qui reviennent) ----
+  // ---- on passe les écrans de bienvenue/choix (uniquement pour ceux qui reviennent) ; le bonhomme d'ouverture reste ----
   if (fast) {
     try {
       var css = document.createElement("style");
       css.id = "wz-fast-css";
-      css.textContent = "#splash-screen,#brand-intro-screen,#choice-screen,#arrival-searching-overlay{display:none!important}";
+      css.textContent = "#brand-intro-screen,#choice-screen,#arrival-searching-overlay{display:none!important}";
       document.head.appendChild(css);
-      var sp = document.getElementById("splash-screen");
-      if (sp) sp.remove();
+      // (le bonhomme d'ouverture est conserve : il anime l'ouverture du site et de l'appli a chaque fois)
       // app.js appelle cette fonction à la fin du délai de l'écran de démarrage : on la neutralise
       window.showBrandIntroScreen = function () {};
     } catch (e) {}
