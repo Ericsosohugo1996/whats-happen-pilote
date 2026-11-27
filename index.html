@@ -51,8 +51,13 @@ html.wz-boot body::after{content:"Whazup";position:fixed;left:0;right:0;top:42%;
     return !!document.getElementById("wz-searchbar")&&!!document.getElementById("wz-chips");
   }
   function go(){ if(done) return; done=true; d.classList.remove("wz-boot"); }
-  (function loop(){ if(done) return; try{ if(ready()||Date.now()-t0>5500) return setTimeout(go,60); }catch(e){ return go(); } setTimeout(loop,50); })();
-  setTimeout(go,6000);
+  /* Le délai de secours (5,5 s) se compte maintenant À PARTIR de la disparition du bonhomme de départ : sur une connexion lente, il durait plus longtemps que le voile, et on voyait l'accueil se réorganiser juste après. Plafond absolu : 12 s. */
+  var seen=false, goneAt=0;
+  (function loop(){ if(done) return; try{
+    var sp=!!document.getElementById("splash-screen"), now=Date.now();
+    if(sp) seen=true; else if(seen&&!goneAt) goneAt=now;
+    if(ready()||(goneAt?now-goneAt>2500:(!seen&&now-t0>5500))||now-t0>12000) return setTimeout(go,60); }catch(e){ return go(); } setTimeout(loop,50); })();
+  setTimeout(go,12500);
 })();
 </script>
 
