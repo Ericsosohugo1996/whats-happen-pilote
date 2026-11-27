@@ -1,4 +1,4 @@
-Bars de Paris : 112 adresses à vérifier
+Bars de Paris : 121 adresses à vérifier
 ✓ Doris Bar [adresse · source ancienne] sans photo
 ✓ Divine House [adresse · source ancienne] sans photo
 ✓ Little Red Door [lieu · source ancienne] sans photo
@@ -6,7 +6,7 @@ Bars de Paris : 112 adresses à vérifier
 ✓ Moonshiner [lieu · source ancienne] sans photo
 ✓ La Mezcaleria [lieu] sans photo
 ✓ Le Balzac [lieu · source ancienne] photo libre https://commons.wikimedia.org/wiki/File:Cin%C3%A9ma_Le_Balzac,_1_rue_Balzac,_Paris_8e_1.jpg
-✓ Poppy [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 3508 m de l'adresse donnée, on garde l'adresse
+✓ Poppy [adresse · source ancienne] sans photo  ⚠ conflit : le lieu trouvé est à 3503 m de l'adresse donnée, on garde l'adresse
 ✓ Le bar caché du Lombem [adresse · source ancienne] sans photo
 ✓ Gyoza Bar speakeasy [adresse · source ancienne] sans photo
 ✓ The Confidential [adresse · source ancienne] sans photo
@@ -20,10 +20,10 @@ Bars de Paris : 112 adresses à vérifier
 ✓ Solera [lieu] photo du site https://soleraparis.wixsite.com/solera
 ✓ Prescription Cosmic Theater [adresse] sans photo
 ✓ Dirty Lemon [lieu] sans photo
-✓ Fréquence [lieu] sans photo
+✓ Fréquence [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 2232 m de l'adresse donnée, on garde l'adresse
 ✓ Le Très Particulier [adresse] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:24_F%C3%A9vrierUn_particulier_tr%C3%A8s_connu,_qui_n%27a_pas_la_goutte._Paris_Mus%C3%A9es_20230514105953.jpg)
 ✓ Combat [lieu] sans photo
-✓ Kissproof [lieu] sans photo
+✓ Kissproof [lieu] photo du site https://www.instagram.com/kissproofbelleville
 ✓ Le 7e Ciel [adresse] sans photo
 ✓ Brach Paris [lieu] sans photo
 ✓ Bigoudi Rooftop [adresse] sans photo
@@ -49,7 +49,7 @@ Bars de Paris : 112 adresses à vérifier
 ✓ Donna [lieu] sans photo
 ✓ Bambino [lieu] sans photo
 ✓ La Renommée [lieu · source ancienne] sans photo
-✓ Danico [lieu · source ancienne] sans photo
+✓ Danico [lieu · source ancienne] photo du site https://daroco.com/
 ✓ La Candelaria [adresse] sans photo
 ✓ Sotto [adresse · source ancienne] sans photo
 ✓ Spootnik [lieu · source ancienne] sans photo
@@ -74,7 +74,7 @@ Bars de Paris : 112 adresses à vérifier
 ✓ Le rooftop de La Fantaisie [adresse] sans photo
 ✓ Le Bar du Louxor [lieu] photo libre https://commons.wikimedia.org/wiki/File:Louxor_cin%C3%A9ma_Paris.jpeg
 ✗ introuvable : Beaux Parleurs  (Beaux Parleurs bar rue Lepic Paris)
-✗ introuvable : Nanna  (Nanna péniche littéraire quai Montebello Paris)
+✓ Nanna [lieu] sans photo
 ✗ introuvable : Titi Amo  (Titi Amo cave à manger Paris 17e)
 ✓ Out of the Blue [lieu] sans photo
 ✗ introuvable : Zoutra  (Zoutra bar à vins Montmartre Paris)
@@ -108,9 +108,18 @@ Bars de Paris : 112 adresses à vérifier
 ✓ Le Baiser Salé [lieu] photo libre https://commons.wikimedia.org/wiki/File:Le_Baiser_Sal%C3%A9_-_Paris.jpg
 ✓ Le Duc des Lombards [lieu] photo libre https://commons.wikimedia.org/wiki/File:Le_Duc_des_Lombards_-_Paris_-_3.jpg
 ✓ Le Piano Vache [lieu] photo du site https://lepianovache.com/
-✓ Chez Georges [lieu] sans photo
+✓ Chez Georges [adresse] sans photo  ⚠ conflit : le lieu trouvé est à 4573 m de l'adresse donnée, on garde l'adresse
 ✓ Le Bal Blomet [adresse] sans photo fiable (candidate à regarder : https://commons.wikimedia.org/wiki/File:Le_Bal_de_la_rue_Blomet).jpeg)
 ✓ 38Riv [lieu] photo du site https://www.38riv.com/
+✓ Le Double Fond [adresse] sans photo
+✓ Dirty Dick [lieu] sans photo
+✓ Le Dernier Bar avant la Fin du Monde [lieu] sans photo
+✓ Gossima [lieu] sans photo
+✓ Les Cariatides [lieu] sans photo
+✓ La Felicità [lieu] photo libre https://commons.wikimedia.org/wiki/File:La_Felicit%C3%A0_juin_2022_1.jpg
+✓ Café Oz Châtelet [adresse] sans photo
+✓ Le Hide Châtelet [adresse] sans photo
+✓ La Baraque [lieu] sans photo
 
 Photos candidates (non utilisées, à regarder à la main) :
   - Le Très Particulier : https://commons.wikimedia.org/wiki/File:24_F%C3%A9vrierUn_particulier_tr%C3%A8s_connu,_qui_n%27a_pas_la_goutte._Paris_Mus%C3%A9es_20230514105953.jpg
@@ -119,13 +128,12 @@ Photos candidates (non utilisées, à regarder à la main) :
   - Brasserie de la Goutte d'Or : https://commons.wikimedia.org/wiki/File:Verre_de_la_brasserie_de_la_Goutte_d%27Or_%C3%A0_Paris.jpg
   - Le Bal Blomet : https://commons.wikimedia.org/wiki/File:Le_Bal_de_la_rue_Blomet).jpeg
 
-RÉSUMÉ : 105 retrouvés sur 112 (dont 67 confirmés comme lieu par OpenStreetMap, 38 seulement par leur adresse)
-Photos libres trouvées : 12 / 105
-Photos du site du lieu : 12 / 105
-Sans aucune photo : 81
-Introuvables (écartés) : 7
+RÉSUMÉ : 115 retrouvés sur 121 (dont 72 confirmés comme lieu par OpenStreetMap, 43 seulement par leur adresse)
+Photos libres trouvées : 13 / 115
+Photos du site du lieu : 14 / 115
+Sans aucune photo : 88
+Introuvables (écartés) : 6
   - Beaux Parleurs : Beaux Parleurs bar rue Lepic Paris
-  - Nanna : Nanna péniche littéraire quai Montebello Paris
   - Titi Amo : Titi Amo cave à manger Paris 17e
   - Zoutra : Zoutra bar à vins Montmartre Paris
   - La Fine Mousse : 6 avenue Jean Aicart, 75011 Paris
