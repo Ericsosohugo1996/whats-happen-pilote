@@ -152,8 +152,10 @@
       band.style.display = "";
       var html = '<span class="nl-p">🎄</span><span><b>Noël ' + esc(prep(where)) + "</b><small>" + n + " marché" + (n > 1 ? "s et sorties" : "") + " jusqu'au 26 décembre</small></span><span class=\"nl-go\">→</span>";
       if (band.__h !== html) { band.innerHTML = html; band.__h = html; }
-      var sc = document.getElementById("sc-surprise");
-      if (sc && sc.parentNode === host && band.previousElementSibling !== sc) host.insertBefore(band, sc.nextSibling);
+      // le bandeau se place APRÈS « Cafés & tables sympas » (#wz-ba) quand il existe : sinon les deux scripts se renvoient la place toutes les 2 s et l'écran saute
+      var sc = document.getElementById("sc-surprise"), ba = document.getElementById("wz-ba");
+      var prev = ba && ba.parentNode === host ? ba : sc;
+      if (prev && prev.parentNode === host && band.previousElementSibling !== prev) host.insertBefore(band, prev.nextSibling);
     } catch (e) {}
   }
   function start() { paint(); setInterval(paint, 2000); }
