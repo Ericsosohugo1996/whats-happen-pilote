@@ -48,6 +48,8 @@
     "#wz-so .so-back{border:1.5px solid #E5E7EB;background:#fff;color:#14213D;border-radius:12px;padding:8px 12px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer}",
     "#wz-so h1{font-size:22px;color:#14213D;margin:0;font-weight:800}",
     "#wz-so .so-lab{font-size:12px;font-weight:800;color:#6B7280;text-transform:uppercase;letter-spacing:.06em;margin:16px 0 6px}",
+    "#wz-so input[type=date]{-webkit-appearance:none;appearance:none;display:block;min-width:0;max-width:100%;height:50px;text-align:left}",
+    "#wz-so input[type=date]::-webkit-date-and-time-value{text-align:left}",
     "#wz-so input[type=text],#wz-so input[type=date]{width:100%;box-sizing:border-box;background:#fff;border:1.5px solid #E5E7EB;border-radius:14px;padding:13px 14px;font:inherit;font-size:16px;color:#1A1A1A}",
     "#wz-so .so-btn{display:block;width:100%;box-sizing:border-box;background:#E8604C;color:#fff;font-weight:800;text-align:center;padding:15px;border:0;border-radius:16px;font-family:inherit;font-weight:800;font-size:16px;cursor:pointer;margin-top:14px}",
     "#wz-so .so-btn.alt{background:#fff;color:#14213D;border:2px solid #14213D}",
@@ -196,6 +198,7 @@
         '<div class="so-hero"><b>' + esc(s.name) + '</b><span>' + esc(fmtDate(s.date)) + (s.place ? " · " + esc(s.place) : "") + '</span>' +
         '<span>' + nPeople + ' personne' + (nPeople > 1 ? "s" : "") + ' · ' + photos.length + ' photo' + (photos.length > 1 ? "s" : "") + '</span></div>' +
         '<button class="so-btn alt" id="so-inv" style="margin-top:0">🔗 Inviter quelqu\'un</button>' +
+        '<button class="so-link" id="so-copy" style="display:block;margin:8px auto 0">Copier seulement le lien</button>' +
         '<div class="so-tabs"><button data-t="all" class="' + (tab === "all" ? "on" : "") + '">Toutes</button><button data-t="mine" class="' + (tab === "mine" ? "on" : "") + '">Les miennes (' + mine.length + ')</button></div>' +
         (shown.length ? '<div class="so-grid" id="so-grid"></div>' : '<div class="so-empty">' + (tab === "mine" ? "Tu n'as pas encore ajouté de photo." : "Aucune photo pour l'instant.<br>Ajoute les premières !") + '</div>') +
         '<input type="file" id="so-file" accept="image/*" multiple style="display:none">' +
@@ -204,6 +207,10 @@
         (isOwner ? '<div style="text-align:center"><button class="so-link" id="so-del">Supprimer cette soirée</button></div>' : "");
       var rr = frame(s.name, listScreen, html);
       rr.querySelector("#so-inv").onclick = function () { shareInvite(s); };
+      rr.querySelector("#so-copy").onclick = async function () {
+        try { await navigator.clipboard.writeText(LINK + s.id); toast("✓ Lien copié."); }
+        catch (e) { try { prompt("Copie ce lien :", LINK + s.id); } catch (x) {} }
+      };
       rr.querySelectorAll(".so-tabs button").forEach(function (b) { b.onclick = function () { tab = b.getAttribute("data-t"); draw(); }; });
       var grid = rr.querySelector("#so-grid");
       if (grid) shown.forEach(function (p) {
