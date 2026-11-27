@@ -8,6 +8,7 @@ on:
       - datatourisme-events.json
       - datatourisme-places.json
       - osm-bars.json
+      - noel-opendata.json 
       - split-data.js
       - .github/workflows/split-data.yml
 
