@@ -20,7 +20,16 @@
   function FV() { return T().fieldValue || firebase.firestore.FieldValue; }
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
-  function toast(m) { try { if (typeof showShareToast === "function") return showShareToast(m); } catch (e) {} try { alert(m); } catch (e) {} }
+  var toastTimer = null;
+  function toast(m) {
+    try {
+      addCss();
+      var t = document.getElementById("wz-so-toast");
+      if (!t) { t = document.createElement("div"); t.id = "wz-so-toast"; document.body.appendChild(t); }
+      t.textContent = m; t.style.opacity = "1";
+      clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.style.opacity = "0"; }, 3200);
+    } catch (e) { try { alert(m); } catch (x) {} }
+  }
   function realUser() { try { var u = AUTH().currentUser; return (u && !u.isAnonymous) ? u : null; } catch (e) { return null; } }
   function myName() {
     try {
@@ -74,6 +83,8 @@
     "#wz-so-v .vb{display:flex;gap:10px;margin-top:14px}",
     "#wz-so-v button{border:0;border-radius:12px;padding:11px 16px;font-family:inherit;font-weight:800;font-size:14px;cursor:pointer;background:#fff;color:#14213D}",
     "#wz-so-v button.del{background:#E8604C;color:#fff}",
+    "#account-modal{z-index:100002!important}",
+    "#wz-so-toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);max-width:88vw;z-index:100003;background:#14213D;color:#fff;font:700 14px/1.35 system-ui,sans-serif;padding:12px 18px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;transition:opacity .25s;pointer-events:none;text-align:center}",
     "#wz-so-entry{display:flex;align-items:center;gap:10px;width:100%;box-sizing:border-box;margin:0 0 12px;padding:12px 14px;border-radius:16px;border:1.5px solid #E8604C;background:#FCEAE7;color:#C64A38;font-family:inherit;font-weight:800;font-size:15px;cursor:pointer}"
   ].join("\n");
   function addCss() {
@@ -97,9 +108,10 @@
     return r;
   }
 
+  var openAfterLogin = false;
   // ---- liste des soirées ----
   async function listScreen() {
-    if (!realUser()) { toast("Connecte-toi pour créer ou rejoindre une soirée."); openAccount(); return; }
+    if (!realUser()) { openAfterLogin = true; toast("Connecte-toi pour créer ou rejoindre une soirée."); openAccount(); return; }
     var r = frame("Mes soirées", closeAll,
       '<button class="so-btn" id="so-new" style="margin-top:0">＋ Créer une soirée</button><div id="so-list" class="so-empty">Chargement…</div>');
     r.querySelector("#so-new").onclick = createScreen;
@@ -344,7 +356,7 @@
   try { inject(); } catch (e) {}
   try {
     var wait = setInterval(function () {
-      try { AUTH().onAuthStateChanged(function () { handlePending(); }); clearInterval(wait); } catch (e) {}
+      try { AUTH().onAuthStateChanged(function () { handlePending(); if (openAfterLogin && realUser()) { openAfterLogin = false; listScreen(); } }); clearInterval(wait); } catch (e) {}
     }, 300);
     setTimeout(function () { clearInterval(wait); }, 20000);
   } catch (e) {}
