@@ -187,7 +187,7 @@
       state.selectedPeriod = sel.when || null;
       state.selectedCategories = new Set(whatOf(sel.what).cats);
       state.selectedArrondissement = null;
-      try { __searchQuery = String(sel.kw || "").trim(); if (__searchQuery && typeof __toggleResultsContent === "function") __toggleResultsContent(true); } catch (e) {}
+      try { __searchQuery = String(sel.kw || "").trim(); window.__wzQuerySig = __searchQuery ? (String(state.city) + "|" + (state.userPos ? state.userPos.lat + "," + state.userPos.lng : "")) : undefined; if (__searchQuery && typeof __toggleResultsContent === "function") __toggleResultsContent(true); } catch (e) {}
       state.radiusKm = 20;
       try { __hasPickedCity = true; } catch (e) {}
       try { __hasPickedFilter = true; } catch (e) {}

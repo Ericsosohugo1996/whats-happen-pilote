@@ -53,6 +53,7 @@ function __ensureSearchBox() {
   if (typeof applyTranslation === "function") applyTranslation();
   document.getElementById("free-search-box").oninput = function (e) {
     __searchQuery = e.target.value.trim();
+    window.__wzQuerySig = __searchQuery ? __wzPlaceSig() : undefined;
     if (__searchQuery && typeof __toggleResultsContent === "function") {
       __hasPickedFilter = true;
       __toggleResultsContent(true);
@@ -62,7 +63,20 @@ function __ensureSearchBox() {
 }
 
 const __renderDiscoverBaseSearch = renderDiscover;
+// Le mot cherché appartient à la ville (ou à « autour de moi ») où il a été tapé : si on change de ville, il est effacé,
+// sinon l'ancienne recherche reste active dans la nouvelle ville. (window.__wzQuerySig = lieu du mot cherché)
+function __wzPlaceSig() { try { return String(state.city) + "|" + (state.userPos ? state.userPos.lat + "," + state.userPos.lng : ""); } catch (e) { return ""; } }
 renderDiscover = function () {
+  try {
+    if (__searchQuery) {
+      const here = __wzPlaceSig();
+      if (window.__wzQuerySig === undefined) window.__wzQuerySig = here;
+      else if (window.__wzQuerySig !== here) {
+        __searchQuery = ""; window.__wzQuerySig = undefined;
+        const b = document.getElementById("free-search-box"); if (b) b.value = "";
+      }
+    } else window.__wzQuerySig = undefined;
+  } catch (e) {}
   __ensureSearchBox();
   __renderDiscoverBaseSearch();
   const wrap = document.getElementById("free-search-wrap");
