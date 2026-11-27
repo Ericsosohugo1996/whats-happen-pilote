@@ -349,6 +349,12 @@
     tabs.parentNode.insertBefore(b, tabs);
   }
 
+  var pollN = 0;
+  var poll = setInterval(function () {
+    pollN++;
+    if (pollN > 240) return clearInterval(poll);          // 4 minutes au maximum
+    if (pendingId() && realUser() && !handling && !document.getElementById("wz-so")) handlePending();
+  }, 1000);
   window.__wzOpenSoirees = listScreen;
   window.__wzSoireesHandlePending = handlePending;
   readParam();
@@ -356,7 +362,9 @@
   try { inject(); } catch (e) {}
   try {
     var wait = setInterval(function () {
-      try { AUTH().onAuthStateChanged(function () { handlePending(); if (openAfterLogin && realUser()) { openAfterLogin = false; listScreen(); } }); clearInterval(wait); } catch (e) {}
+      try { var onChange = function () { handlePending(); if (openAfterLogin && realUser()) { openAfterLogin = false; listScreen(); } };
+        AUTH().onAuthStateChanged(onChange);
+        if (AUTH().onIdTokenChanged) AUTH().onIdTokenChanged(onChange); clearInterval(wait); } catch (e) {}
     }, 300);
     setTimeout(function () { clearInterval(wait); }, 20000);
   } catch (e) {}
