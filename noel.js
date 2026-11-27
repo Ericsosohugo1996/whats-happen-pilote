@@ -1,5 +1,5 @@
 // ---- Temps fort Noël : un bandeau sur l'accueil qui regroupe les marchés et sorties de Noël de la ville ----
-// - s'affiche seulement du 27 novembre au 26 décembre, et s'il y a au moins 3 sorties de Noël autour de la ville choisie
+// - s'affiche seulement du 27 novembre au 26 décembre, et s'il y a au moins 1 sortie de Noël autour de la ville choisie
 // - aucune nouvelle donnée : on regroupe les événements déjà présents dans Whazup (titre contenant « Noël »)
 // - disparaît tout seul après le 26 décembre (rien à retirer). Pour l'enlever avant : retirer la ligne noel.js dans index.html.
 (function () {
@@ -106,7 +106,7 @@
     current = "all"; kind = nMar >= 3 ? "marche" : "all";
     function kchip(k, label, n) { return n ? '<button type="button" class="nl-chip nl-k' + (kind === k ? " on" : "") + '" data-kind="' + k + '">' + label + (k === "all" ? "" : " · " + n) + "</button>" : ""; }
     ov.innerHTML = '<div class="nl-in"><div class="nl-top"><button type="button" class="nl-back" data-nl="close">← Retour</button></div>' +
-      '<div class="nl-hero"><h2>🎄 Noël ' + esc(prep(where)) + "</h2><p>" + list.length + " marchés et sorties jusqu'au 26 décembre</p></div>" +
+      '<div class="nl-hero"><h2>🎄 Noël ' + esc(prep(where)) + "</h2><p>" + list.length + (list.length > 1 ? " marchés et sorties" : " marché") + " jusqu'au 26 décembre</p></div>" +
       '<div class="nl-chips">' + kchip("marche", "🎄 Marchés", nMar) + kchip("fam", "🎁 En famille", nFam) + kchip("autre", "✨ Spectacles et concerts", nAut) + kchip("all", "Tout", list.length) + "</div>" +
       '<div class="nl-chips"><button type="button" class="nl-chip on" data-day="all">Tous les jours</button>' +
       days.map(function (d) { return '<button type="button" class="nl-chip" data-day="' + d + '">' + esc(dayLabel(d)) + "</button>"; }).join("") +
@@ -141,7 +141,7 @@
       var band = document.getElementById("wz-nl");
       if (!season() || !host || document.body.classList.contains("wz-nocity")) { if (band) band.remove(); return; }
       var n = items().length, where = whereName();
-      if (n < 3 || !where) { if (band) band.style.display = "none"; return; }
+      if (n < 1 || !where) { if (band) band.style.display = "none"; return; }
       css();
       if (!band) {
         band = document.createElement("button"); band.type = "button"; band.id = "wz-nl";
